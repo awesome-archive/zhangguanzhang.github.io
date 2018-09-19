@@ -346,6 +346,51 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/09/18/kubernetes-1-11-x-bin/" >
+            
+                <span>二进制部署Kubernetes v1.11.x HA可选</span>
+        </a>
+        <div class="abstract-content">
+            本次采用二进制文件方式部署
+不建议使用secureCRT这个ssh软件复制本篇博客内容的命令,因为它的部分版本对包含多条命令的处理结果并不完美,可能很多命令不是预期结果
+本次安裝的版本：
+
+
+Kubernetes v1.11.1
+CNI v0.7.1
+Etcd v3.3.9
+Flannel v0.10.0 或者 Calico v3.1.3
+Docker CE latest version(18.06)
+
+
+ 不建议用docker 18.05 , docker CE 18.05有bind mount的bug 
+本次部署的网络信息：
+
+
+Cluster IP CIDR: 10.244.0.0...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/18</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/08/03/Kubernetes_install_1.11.1/" >
             
                 <span>Kubernetes v1.11.x HA全手动苦工安装教学</span>
@@ -1125,7 +1170,7 @@ Job的Pod运行完可以看到状态为Completed,低版本需要在get pod的时
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/18</span><a class="archive-post-title" href= "/2018/09/18/kubernetes-1-11-x-bin/" >二进制部署Kubernetes v1.11.x HA(可选)</a>
+            <span class="archive-post-date">09/18</span><a class="archive-post-title" href= "/2018/09/18/kubernetes-1-11-x-bin/" >二进制部署Kubernetes v1.11.x HA可选</a>
         </li>
     
     
