@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">6.2k</span>阅读时长: <span class="post-count reading-time">24 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">6.2k</span>阅读时长: <span class="post-count reading-time">25 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -472,12 +472,12 @@ height:50vh;
 <blockquote>
 <ul>
 <li>如果你业务进程挂了,你的容器还会在运行,你得进容器里查看,然后在容器里重启你的业务进程</li>
-<li>如果你多个服务放在同一个镜像里,后期你正在运行的容器里想更新一个服务怎么更新?一直镜像里去更新那会越来越臃肿,重做镜像那这个运行的容器停止所有服务都停止了</li>
+<li>如果你多个服务放在同一个镜像里,后期你正在运行的容器里想更新一个服务怎么更新?一直进容器里去更新那会越来越臃肿,重做镜像那代表这个运行的容器得停止,那么所有服务都得停止了业务会中断</li>
 <li>如果你的配置文件挂载进去的,而容器的镜像里没有修改命令,你得先宿主机修改文件再进容器你重启你的业务进程.</li>
 <li>你查看你业务进程的日志不方便,还得进容器或者用exec命令<br>上面更重要的是后期的容器编排swarm或者k8s,容器挂掉很正常,编排工具检测到容器挂了会去起一个新的,如果你容器里的业务进程挂了容器没挂那就呵呵了</li>
 </ul>
 </blockquote>
-<p>如果业务进程跑的是前台且是主进程</p>
+<p>如果业务进程跑的是前台且是主进程且一个容器一个服务</p>
 <blockquote>
 <ul>
 <li>docker stop或者api来停掉容器的时候业务进程能收到<code>SIGTERM</code>信号平滑退出</li>
@@ -528,7 +528,7 @@ height:50vh;
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2018/01/10/docker的一些概念/">http://zhangguanzhang.github.io/2018/01/10/docker的一些概念/</a>
             <p>发表日期：<a href="http://zhangguanzhang.github.io/2018/01/10/docker的一些概念/">January 10th 2018, 11:17:03 pm</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/01/10/docker的一些概念/">October 9th 2018, 10:44:21 pm</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/01/10/docker的一些概念/">October 9th 2018, 10:56:38 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
