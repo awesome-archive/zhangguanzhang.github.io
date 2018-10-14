@@ -583,7 +583,7 @@ height:50vh;
 <p>生成Etcd证书：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cfssl gencert \</span><br><span class="line">  -ca=<span class="variable">$&#123;ETCD_SSL&#125;</span>/etcd-ca.pem \</span><br><span class="line">  -ca-key=<span class="variable">$&#123;ETCD_SSL&#125;</span>/etcd-ca-key.pem \</span><br><span class="line">  -config=ca-config.json \</span><br><span class="line">  -hostname=127.0.0.1,$(xargs -n1&lt;&lt;&lt;<span class="variable">$&#123;MasterArray[@]&#125;</span> | sort  | paste -d, -s -) \</span><br><span class="line">  -profile=kubernetes \</span><br><span class="line">  etcd-csr.json | cfssljson -bare <span class="variable">$&#123;ETCD_SSL&#125;</span>/etcd</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <ul>
-<li><span style="color: red"><code>-hostname</code>需修改成所有<code>masters</code>节点的<code>IP</code></span>。</li>
+<li><span style="color: red"><code>-hostname</code>值为所有<code>masters</code>节点的<code>IP</code></span>。</li>
 </ul>
 </blockquote>
 <p>完成后删除不必要文件,确认<code>/etc/etcd/ssl</code>有以下文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rm -rf <span class="variable">$&#123;ETCD_SSL&#125;</span>/*.csr</span><br><span class="line">ls <span class="variable">$ETCD_SSL</span></span><br><span class="line">etcd-ca-key.pem  etcd-ca.pem  etcd-key.pem  etcd.pem</span><br></pre></td></tr></table></figure></p>
@@ -880,7 +880,7 @@ height:50vh;
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/</a>
             <p>发表日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">September 18th 2018, 9:36:53 am</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">October 13th 2018, 10:39:05 pm</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">October 14th 2018, 5:08:56 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
