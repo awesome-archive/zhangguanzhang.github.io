@@ -428,7 +428,7 @@ height:50vh;
 <li>镜像是<code>AUFS</code>实现的<code>分层</code>,容器是只读镜像,然后自己是一层读写层,称为<code>write on read</code></li>
 </ul>
 </blockquote>
-<p><img src="http://7xo6kd.com1.z0.glb.clouddn.com/upload-ueditor-image-20170706-1499336559453034659.jpg" alt=""><br>容器死亡(删除)这层读写层就没了,也就是容器<code>无状态</code>(数据无法持久,这点要铭记).<br>也就是使用宿主机内核,cgroup限制资源，读取镜像在namegroup隔离运行一个主进程(容器主进程),然后fork。在有docker下主要有镜像就行了</p>
+<p><img src="http://7xo6kd.com1.z0.glb.clouddn.com/upload-ueditor-image-20170706-1499336559453034659.jpg" alt=""><br>容器死亡(删除)这层读写层就没了,也就是容器<code>无状态</code>(数据无法持久,这点要铭记).<br>也就是使用宿主机内核,cgroup限制资源，读取镜像在namespace(pid,network,ipc啥的)隔离运行一个主进程(容器主进程),然后fork。在有docker下主要有镜像就行了</p>
 <p>下面接着说Dockerfile<br>就是个<code>CMD</code>和<code>entrypoint</code>很多人搞不清楚<br>拿nginx的官方的dockerfile来举例简化成下面的大概样子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FROM xxx:xxx</span><br><span class="line">RUN apt-get install nginx</span><br><span class="line">CMD [ &quot;nginx&quot;,&quot;-g&quot;,&quot;deamon off&quot;]</span><br></pre></td></tr></table></figure></p>
 <p>nginx镜像的主进程就是这个nginx -g deamon off的nginx前台命令作为默认的CMD</p>
 <blockquote>
@@ -507,7 +507,7 @@ height:50vh;
 </ul>
 <p>另外<code>docker stop</code>, <code>docker service rm</code>在停止容器时，都会先发 <code>SIGTERM</code> 信号，等待一段时间（默认为 10 秒）后，如果程序没响应，则强行 SIGKILL 杀掉进程。<br>这样应用进程就有机会平滑退出，在接收到 SIGTERM 后，可以去 Flush 缓存、完成文件读写、关闭数据库连接、释放文件资源、释放锁等等，然后再退出。所以试图截获 SIGTERM 信号的做法是对的。<br>但是，可能在截获 SIGTERM 时却发现，却发现应用并没有收到 SIGTERM，于是盲目的认为 Docker 不支持平滑退出，其实并非如此。<br>还记得我们提到过，Docker 不是虚拟机，容器只是受限进程，而一个容器只应该跑一个主进程的说法么？如果你发现你的程序没有截获到 SIGTERM，那就很可能你没有遵循这个最佳实践的做法。因为 SIGTERM 只会发给主进程，也就是容器内 PID 为 1 的进程。<br>至于说主进程启动的那些子进程，完全看主进程是否愿意转发 SIGTERM 给子进程了。所以那些把 Docker 当做虚拟机用的，主进程跑了个 bash，然后 exec 进去启动程序的，或者来个 &amp; 让程序跑后台的情况，应用进程必然无法收到 SIGTERM。</p>
 <p>还有一种可能是在 Dockerfile 中的 CMD 那行用的是 shell 格式写的命令，而不是 exec 格式。还记得前面提到过的 shell 格式的命令，会加一个 sh -c 来去执行么？因此使用 shell 格式写 CMD 的时候，PID 为 1 的进程是 sh，而它不转发信号，所以主程序收不到。<br>明白了道理，解决方法就很简单，换成 exec 格式，并且将主进程执行文件放在第一位即可。这也是为什么之前推荐 exec 格式的原因之一。</p>
-<p>另外实际应用场景里,用户还要docker exec执行其他命令,你entrypoint写命令的话,你docker exec command的时候,你的command部分将会被entrypoint设定的命令(例如上面的ls -l)当作选项,此时你设定的entrypoint命令是不可能达到这种功能的,各种镜像官方的entrypoint大多都是shell脚本<br>因为shell脚本可以接受参数来写逻辑代码(虽然其他也可以,但是shell自带的)</p>
+<p>另外实际应用场景里,用户最初要docker run执行其他命令,你entrypoint写命令的话,你docker run command的时候,你的command部分将会被entrypoint设定的命令(例如上面的ls -l)当作选项,此时你设定的entrypoint命令是不可能达到这种功能的,各种镜像官方的entrypoint大多都是shell脚本<br>因为shell脚本可以接受参数来写逻辑代码(虽然其他也可以,但是shell自带的)来让缺省运行业务的预期进程</p>
 <p>下面讲解下过程<br>先默认docker run的时候没带comand,使用是镜像自带的CMD,CMD会给entrypoint当作参数<br>此时$@就是CMD的内容了,但是用户docker run或者exec的时候命令也会传递进来,希望也可以执行其他所有命令那肯定会执行<code>exec &quot;$@&quot;</code></p>
 <p>所以entrypoint里肯定会先判断$@的结果是不是你设定的CMD,是的话前台执行主进程(当然也可以前面做一些容器启动后主进程启动前一些命令),不是的话此步跳过,结尾有句执行exec $@</p>
 <p>另外为啥实际场景里应用得多,是因为到现在dockerfile都是固定的,或者说某些步骤需要依赖用户挂载的文件或者总结说在容器启动后主进程启动前来执行<br>一个dockerfile只能有一个CMD和entrypoint,所以entrypoint使用shell脚本就能解决这个需求</p>
@@ -528,7 +528,7 @@ height:50vh;
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2018/01/10/docker的一些概念/">http://zhangguanzhang.github.io/2018/01/10/docker的一些概念/</a>
             <p>发表日期：<a href="http://zhangguanzhang.github.io/2018/01/10/docker的一些概念/">January 10th 2018, 11:17:03 pm</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/01/10/docker的一些概念/">October 9th 2018, 10:56:38 pm</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/01/10/docker的一些概念/">October 20th 2018, 5:11:38 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     

@@ -786,7 +786,7 @@ height:50vh;
 <li>如果想了解如何选择可以如阅读 Chris Love 的 <a href="https://chrislovecnm.com/kubernetes/cni/choosing-a-cni-provider/" target="_blank" rel="noopener">Choosing a CNI Network Provider for Kubernetes</a> 文章。</li>
 </ul>
 </blockquote>
-<h3 id="网络部署与设定-flannel或者calico任选其一"><a href="#网络部署与设定-flannel或者calico任选其一" class="headerlink" title="网络部署与设定(flannel或者calico任选其一)"></a>网络部署与设定(flannel或者calico任选其一)</h3><p>如果是公有云不在一个vpc里建议用flannel,因为公有云是SDN,只有vxlan才能到达目标.另外完成到集群可以使用后会发现只有pod所在的node能访问到它这台上面的clusterIP,是因为kubelet上报的节点的node public IP是取网卡的ip,公有云网卡ip都是内网ip,所以当flannel包要发到目标机器的flannel上的时候会发到目标机器的内网ip上,根本发不出去,解决方法可以私聊我我帮你解答</p>
+<h3 id="网络部署与设定-flannel或者calico任选其一"><a href="#网络部署与设定-flannel或者calico任选其一" class="headerlink" title="网络部署与设定(flannel或者calico任选其一)"></a>网络部署与设定(flannel或者calico任选其一)</h3><p>如果是公有云不在一个vpc里建议用flannel,因为公有云是SDN,只有vxlan才能到达目标,每个node上的flannel.1充当了vtep身份.另外完成到集群可以使用后会发现只有pod所在的node能访问到它这台上面的clusterIP,是因为kubelet上报的节点的node public IP是取网卡的ip,公有云网卡ip都是内网ip,所以当flannel包要发到目标机器的flannel上的时候会发到目标机器的内网ip上,根本发不出去,解决方法可以私聊我我帮你解答</p>
 <h4 id="flannel"><a href="#flannel" class="headerlink" title="flannel"></a>flannel</h4><p>flannel 使用 vxlan 技术为各节点创建一个可以互通的 Pod 网络，使用的端口为 UDP 8472，需要开放该端口（如公有云 AWS 等）。</p>
 <p>flannel 第一次启动时，从 etcd 获取 Pod 网段信息，为本节点分配一个未使用的 /24 段地址，然后创建 flannel.1（也可能是其它名称，如 flannel1 等） 接口。</p>
 <p>创建flannel,这边使用ds来创建<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sed -ri <span class="string">"s#\&#123;\&#123; interface \&#125;\&#125;#<span class="variable">$&#123;interface&#125;</span>#"</span> addons/flannel/kube-flannel.yml</span><br><span class="line"></span><br><span class="line">kubectl apply -f addons/flannel/kube-flannel.yml</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
@@ -950,7 +950,7 @@ height:50vh;
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/</a>
             <p>发表日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">September 18th 2018, 9:36:53 am</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">October 20th 2018, 4:38:09 pm</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">October 20th 2018, 4:54:32 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
