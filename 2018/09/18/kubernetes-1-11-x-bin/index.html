@@ -485,7 +485,7 @@ height:50vh;
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">disable</span> --now firewalld NetworkManager</span><br><span class="line">setenforce 0</span><br><span class="line">sed -ri <span class="string">'/^[^#]*SELINUX=/s#=.+$#=disabled#'</span> /etc/selinux/config</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>关闭 dnsmasq (可选)<br>linux 系统开启了 dnsmasq 后(如 GUI 环境)，将系统 DNS Server 设置为 127.0.0.1，这会导致 docker 容器无法解析域名，需要关闭它</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">disable</span> --now dnsmasq</span><br><span class="line">setenforce 0</span><br><span class="line">sed -ri <span class="string">'/^[^#]*SELINUX=/s#=.+$#=disabled#'</span> /etc/selinux/config</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">disable</span> --now dnsmasq</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Kubernetes v1.8+要求关闭系统Swap,若不关闭则需要修改kubelet设定参数( –fail-swap-on 设置为 false 来忽略 swap on),在<code>所有机器</code>使用以下指令关闭swap并注释掉<code>/etc/fstab</code>中swap的行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ swapoff -a &amp;&amp; sysctl -w vm.swappiness=0</span><br><span class="line">$ sed -ri <span class="string">'/^[^#]*swap/s@^@#@'</span> /etc/fstab</span><br></pre></td></tr></table></figure>
@@ -950,7 +950,7 @@ height:50vh;
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/</a>
             <p>发表日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">September 18th 2018, 9:36:53 am</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">October 20th 2018, 5:22:46 pm</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">October 22nd 2018, 1:36:30 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
