@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">14.8k</span>阅读时长: <span class="post-count reading-time">71 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">14.8k</span>阅读时长: <span class="post-count reading-time">70 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -626,7 +626,7 @@ height:50vh;
 <p>在<code>k8s-m1</code>建立<code>pki</code>文件夹,并生成根CA凭证用于签署其它的k8s证书。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p <span class="variable">$&#123;PKI_DIR&#125;</span></span><br><span class="line"><span class="built_in">cd</span> ~/k8s-manual-files/pki</span><br><span class="line">cfssl gencert -initca ca-csr.json | cfssljson -bare <span class="variable">$&#123;PKI_DIR&#125;</span>/ca</span><br><span class="line">ls <span class="variable">$&#123;PKI_DIR&#125;</span>/ca*.pem</span><br><span class="line">/etc/kubernetes/pki/ca-key.pem  /etc/kubernetes/pki/ca.pem</span><br></pre></td></tr></table></figure></p>
 <p><span style="font-size: 1.4em;color: #333;font-weight:bold">kubectl的参数意义为</span></p>
 <ul>
-<li>–certificate-authority：验证 kube-apiserver 证书的根证书；</li>
+<li>–certificate-authority：验证根证书；</li>
 <li>–client-certificate、–client-key：生成的 组件证书和私钥，连接 kube-apiserver 时会用到</li>
 <li>–embed-certs=true：将 ca.pem 和 组件.pem 证书内容嵌入到生成的 kubeconfig 文件中(不加时，写入的是证书文件路径)</li>
 </ul>
@@ -950,7 +950,7 @@ height:50vh;
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/</a>
             <p>发表日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">September 18th 2018, 9:36:53 am</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">October 22nd 2018, 5:24:23 pm</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">October 22nd 2018, 5:28:18 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
