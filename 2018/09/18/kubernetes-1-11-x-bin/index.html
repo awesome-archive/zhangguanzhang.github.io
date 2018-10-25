@@ -833,7 +833,7 @@ height:50vh;
 </ul>
 </blockquote>
 <p>由于 Calico 提供了 Kubernetes resources YAML 文娟来快速以容器方式部署网络插件至所有节点上，因此只需要在k8s-m1使用 kubeclt 执行下面指令來建立：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f addons/calico/v3.1</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sed -ri <span class="string">"s#\&#123;\&#123; interface \&#125;\&#125;#<span class="variable">$&#123;interface&#125;</span>#"</span> addons/calico/v3.1/calico.yml</span><br><span class="line">kubectl apply -f addons/calico/v3.1</span><br></pre></td></tr></table></figure>
 <blockquote>
 <ul>
 <li>另外当节点超过 50 台，可以使用 Calico 的 Typha 模式来减少通过 Kubernetes datastore 造成 API Server 的负担。</li>
@@ -984,7 +984,7 @@ height:50vh;
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/</a>
             <p>发表日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">September 18th 2018, 9:36:53 am</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">October 25th 2018, 8:37:23 pm</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">October 25th 2018, 8:49:40 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
