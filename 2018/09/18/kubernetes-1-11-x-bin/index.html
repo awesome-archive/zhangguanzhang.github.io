@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">15.9k</span>阅读时长: <span class="post-count reading-time">75 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">15.9k</span>阅读时长: <span class="post-count reading-time">76 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -491,7 +491,7 @@ height:50vh;
 <li><p>Kubernetes v1.8+要求关闭系统Swap,若不关闭则需要修改kubelet设定参数( –fail-swap-on 设置为 false 来忽略 swap on),在<code>所有机器</code>使用以下指令关闭swap并注释掉<code>/etc/fstab</code>中swap的行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">swapoff -a &amp;&amp; sysctl -w vm.swappiness=0</span><br><span class="line">sed -ri <span class="string">'/^[^#]*swap/s@^@#@'</span> /etc/fstab</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>如果是centos的话此时建议升级下系统</p>
+<li><p>如果是centos的话此时建议升级下系统(后面会升级内核,如果想偷懒直接升级到新内核可以此处的yum update -y后面加上<code>--exclude=kernel*</code>后不会安装保守内核,可以不重启直接往后直接跳到最新内核步骤)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install epel-release -y</span><br><span class="line">yum install wget git  jq  -y</span><br><span class="line">yum update -y</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>升级后建议重启下,因为后面会安装最新版内核,上面安装的是保守的内核,先加载看看</p>
@@ -1005,7 +1005,7 @@ height:50vh;
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/</a>
             <p>发表日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">September 18th 2018, 9:36:53 am</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">October 26th 2018, 11:53:08 am</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">October 26th 2018, 11:56:23 am</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
