@@ -409,7 +409,7 @@ height:50vh;
 <p>地址：<a href="https://api.onlyoffice.com/editors/demopreview" target="_blank" rel="noopener">https://api.onlyoffice.com/editors/demopreview</a></p>
 <p>看了下官方都是js写的,所以选了个Nodejs的demo来跑,另外之前用docker帮过同学搭建过一个nodejs的小程序后台环境,对nodejs项目部署有点经验</p>
 <p>选择 Node.js Example<br><img src="https://github.com/zhangguanzhang/Image-Hosting/blob/master/onlyoffice/1.png?raw=true" alt=""></p>
-<p>解压后，修改配置<code>config/default.jsonm</code>，siteUrl 为 DocumentServer的地址<br>一个标准的nodejs项目根目录有package.json文件,里面有模块依赖<br><code>npm install</code>安装模块<br><code>node bin/www</code>即可运行起来<br>之前帮同学搭建自己做了个nodejs的镜像,适合测试,每次主进程跑起来之前都会<code>npm install</code>,这里用我自己的镜像跑(后期npm的模块可以固化到镜像里,这里仅供快速搭建使用方便)</p>
+<p>解压后，修改配置<code>config/default.jsonm</code>，siteUrl 为 DocumentServer的地址<br>一个标准的nodejs项目根目录有package.json文件,里面有模块依赖<br><code>npm install</code>安装模块<br><code>node bin/www</code>即可运行起来<br>之前帮同学搭建小程序环境(同学是前端,所以用的nodejs写前后端)自己做了个nodejs的镜像,适合测试,每次主进程跑起来之前都会<code>npm install</code>,这里用我自己的镜像跑(后期npm的模块可以固化到镜像里,这里仅供快速搭建使用方便)</p>
 <p>先简单起来一个试试<code>documentserver</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 9980:80 onlyoffice/documentserver</span><br></pre></td></tr></table></figure></p>
 <p>然后把修改过后整个demo挂载到镜像的<code>workdir</code>跑起来<br><img src="https://github.com/zhangguanzhang/Image-Hosting/blob/master/onlyoffice/2.png?raw=true" alt=""></p>
 <p><img src="https://github.com/zhangguanzhang/Image-Hosting/blob/master/onlyoffice/3.png?raw=true" alt=""></p>
@@ -478,7 +478,7 @@ height:50vh;
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2018/11/06/onlyoffice/">http://zhangguanzhang.github.io/2018/11/06/onlyoffice/</a>
             <p>发表日期：<a href="http://zhangguanzhang.github.io/2018/11/06/onlyoffice/">November 6th 2018, 7:05:29 pm</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/11/06/onlyoffice/">November 8th 2018, 10:16:56 am</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/11/06/onlyoffice/">November 8th 2018, 10:18:27 am</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
