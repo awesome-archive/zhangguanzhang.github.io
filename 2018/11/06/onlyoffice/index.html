@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">2.4k</span>阅读时长: <span class="post-count reading-time">11 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">2.6k</span>阅读时长: <span class="post-count reading-time">12 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -468,9 +468,10 @@ height:50vh;
 <p>所以entrypoint里启动supervisor的时候会启动onlyoffice</p>
 <p>镜像里依赖安装太多了,然后找到了非docker安装的文档稍微清晰了些</p>
 <p><a href="https://helpcenter.onlyoffice.com/server/linux/document/linux-installation-centos.aspx?_ga=2.211658390.2064741635.1541596271-1982326324.1541482842" target="_blank" rel="noopener">https://helpcenter.onlyoffice.com/server/linux/document/linux-installation-centos.aspx?_ga=2.211658390.2064741635.1541596271-1982326324.1541482842</a></p>
-<p>安装了<code>onlyoffice-documentserver</code>后发现大体文件一样,解包rpm后更直观<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install onlyoffice-documentserver</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://helpcenter.onlyoffice.com/server/linux/document/index.aspx" target="_blank" rel="noopener">https://helpcenter.onlyoffice.com/server/linux/document/index.aspx</a><br>安装了<code>onlyoffice-documentserver</code>后发现大体文件一样,解包rpm后更直观<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install onlyoffice-documentserver</span><br></pre></td></tr></table></figure></p>
 <p>整体思路有了,documentserver的源码都放一起,里面几个组建都是supervisor跑<br>源码是js的,所以这几个组建分离解耦的话必须在nodejs作为基础镜像(so依赖啥的不知道解决起来麻烦不)<br>然后一些数据库啥的可以直接各自的官方镜像稍微挂载初始化sql啥的</p>
-<p>有空再更新</p>
+<p>由于对于nodejs不熟悉,同学上班也忙,无法帮我拆分项目,项目结构也不熟悉</p>
+<p><img src="https://github.com/zhangguanzhang/Image-Hosting/blob/master/onlyoffice/5.png?raw=true" alt=""><br>目前是打算是把nginx,supervisor(来管理这些组件)放同一个镜像算了,感觉documentserver拆分得太散没必要<br>看了官方文档的环境要求介绍<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Software requirements</span><br><span class="line">For Debian, Ubuntu and derivatives</span><br><span class="line">OS 64-bit Debian, Ubuntu or other compatible distribution with kernel version 3.13 or later</span><br><span class="line">Additional Requirements</span><br><span class="line">PostgreSQL: version 9.1 or later</span><br><span class="line">NGINX: version 1.3.13 or later</span><br><span class="line">Node.js: version 8.12.0 or later</span><br><span class="line">libstdc++6: version 4.8.4 or later</span><br><span class="line">Redis</span><br><span class="line">RabbitMQ</span><br><span class="line">For RHEL, CentOS and derivatives</span><br><span class="line">OS RHEL 7 or CentOS 7</span><br><span class="line">Additional Requirements</span><br><span class="line">PostgreSQL: version 9.1 or later</span><br><span class="line">NGINX: version 1.3.13 or later</span><br><span class="line">Node.js: version 8.12.0 or later</span><br><span class="line">Redis</span><br><span class="line">RabbitMQ</span><br></pre></td></tr></table></figure></p>
 
     </article>
     <!-- license  -->
@@ -478,8 +479,8 @@ height:50vh;
         <div class="license-wrapper">
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2018/11/06/onlyoffice/">http://zhangguanzhang.github.io/2018/11/06/onlyoffice/</a>
-            <p>发表日期：<a href="http://zhangguanzhang.github.io/2018/11/06/onlyoffice/">November 6th 2018, 7:05:29 pm</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/11/06/onlyoffice/">November 8th 2018, 10:20:26 am</a>
+            <p>发表日期：<a href="http://zhangguanzhang.github.io/2018/11/06/onlyoffice/">十一月 6日 2018, 7:05:29 晚上</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/11/06/onlyoffice/">November 8th 2018, 4:17:16 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
