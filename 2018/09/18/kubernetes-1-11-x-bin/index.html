@@ -854,7 +854,7 @@ height:50vh;
 <li>想了解 Calico 与传统 overlay networks 的差异，可以阅读 <a href="https://www.projectcalico.org/learn/" target="_blank" rel="noopener">Difficulties with traditional overlay networks</a> 文章。</li>
 </ul>
 </blockquote>
-<p>由于 Calico 提供了 Kubernetes resources YAML 文娟来快速以容器方式部署网络插件至所有节点上，因此只需要在k8s-m1使用 kubeclt 执行下面指令來建立：</p>
+<p>由于 Calico 提供了 Kubernetes resources YAML 文件来快速以容器方式部署网络插件至所有节点上，因此只需要在k8s-m1使用 kubeclt 执行下面指令來建立：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sed -ri <span class="string">"s#\&#123;\&#123; interface \&#125;\&#125;#<span class="variable">$&#123;interface&#125;</span>#"</span> addons/calico/v3.1/calico.yml</span><br><span class="line">kubectl apply -f addons/calico/v3.1</span><br></pre></td></tr></table></figure>
 <blockquote>
 <ul>
@@ -1025,8 +1025,8 @@ height:50vh;
         <div class="license-wrapper">
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/</a>
-            <p>发表日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">September 18th 2018, 9:36:53 am</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">November 17th 2018, 7:16:31 pm</a>
+            <p>发表日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">九月 18日 2018, 9:36:53 上午</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">November 21st 2018, 11:05:06 am</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
