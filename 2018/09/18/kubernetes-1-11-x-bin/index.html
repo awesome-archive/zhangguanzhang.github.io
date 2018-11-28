@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">17k</span>阅读时长: <span class="post-count reading-time">81 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">17.1k</span>阅读时长: <span class="post-count reading-time">81 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -952,7 +952,8 @@ height:50vh;
 </blockquote>
 <p>完成后通过 curl 命令来测试功能是否正常：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ curl <span class="variable">$&#123;INGRESS_VIP&#125;</span> -H <span class="string">'Host: nginx.k8s.local'</span></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;Welcome to nginx!&lt;/title&gt;</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试其他 domain name 是否会回返回 404</span></span><br><span class="line">$ curl <span class="variable">$&#123;INGRESS_VIP&#125;</span> -H <span class="string">'Host: nginx1.k8s.local'</span></span><br><span class="line">default backend - 404</span><br></pre></td></tr></table></figure></p>
 <p>虽然 Ingress 能够让我們通过域名方式访问 Kubernetes 內部服务,但是若域名无法被用户解析的话,将会显示<code>default backend - 404</code>结果,而这经常发送在內部自建环境上,虽然可以通过修改主机<code>/etc/hosts</code>来解决,但不能弹性扩展,因此下节将说明如何建立一个 External DNS 与 DNS 服务器来提供自动解析 Ingress 域名。</p>
-<h3 id="External-DNS-非公有云下很实用"><a href="#External-DNS-非公有云下很实用" class="headerlink" title="External DNS(非公有云下很实用)"></a>External DNS(非公有云下很实用)</h3><p>本部分说明如何通过 <a href="https://github.com/coredns/coredns" target="_blank" rel="noopener">CoreDNS</a> 自建一套DNS 服务,并利用<a href="https://github.com/kubernetes-incubator/external-dns" target="_blank" rel="noopener">Kubernetes ExternalDNS</a> 同步Kubernetes 的Ingress 与Service API object 中的域名(Domain Name)来产生资源纪录(Record Resources),让使用者能够通过自建DNS 服务来导向到Kubernetes 集群里的服务</p>
+<h3 id="External-DNS-非公有云下很实用"><a href="#External-DNS-非公有云下很实用" class="headerlink" title="External DNS(非公有云下很实用)"></a>External DNS(非公有云下很实用)</h3><p>用户部署了ingress controller后创建的ing资源对象的hosts需要访问的时候访问者一般是设置hosts文件来访问的,这样如果办公室或者内网下很麻烦,如果办公室或者内网自建了dns可以加一条解析记录解决<br>如果没有,可以部署它然后所有机器的dns的ip指向它即可访问到ing</p>
+<p>本部分说明如何通过 <a href="https://github.com/coredns/coredns" target="_blank" rel="noopener">CoreDNS</a> 自建一套DNS 服务,并利用<a href="https://github.com/kubernetes-incubator/external-dns" target="_blank" rel="noopener">Kubernetes ExternalDNS</a> 同步Kubernetes 的Ingress 与Service API object 中的域名(Domain Name)来产生资源纪录(Record Resources),让使用者能够通过自建DNS 服务来导向到Kubernetes 集群里的服务</p>
 <p>External DNS 是 Kubernetes 社区的孵化方案,被用于定期同步 Kubernetes Service 与 Ingress 资源,并依据资源內容来自动设定公有云 DNS 服务的资源记录(Record resources)。而由于部署不是公有云环境,因此需要通过 CoreDNS 提供一個內部 DNS 服务器,再由 ExternalDNS 与这个 CoreDNS 做串接。</p>
 <ul>
 <li>CoreDNS：用来提供使用者的 DNS 解析以处理服务导向,并利用 Etcd 插件来存储与查询 DNS 资源记录(Record resources)。CoreDNS 是由 CNCF 维护的开源 DNS 方案,该方案前身是 SkyDNS,其采用了 <a href="https://github.com/mholt/caddy" target="_blank" rel="noopener">Caddy</a> 的一部分来开发私有服务器框架,使其能够构建一套快速灵活的 DNS,而 CoreDNS 每个功能都可以被当作成一个插件的中介软体,如 Log、Cache 等功能,甚至能夠将资源存储存至 Redis、Etcd 中。另外 CoreDNS 目前也被 Kubernetes 作为一个內部服务查询的核心元件,并慢慢取代 KubeDNS 来提供使用。</li>
@@ -1031,7 +1032,7 @@ height:50vh;
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/</a>
             <p>发表日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">September 18th 2018, 9:36:53 am</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">November 28th 2018, 10:58:16 am</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">November 28th 2018, 11:01:33 am</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
