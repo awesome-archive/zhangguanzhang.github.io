@@ -346,6 +346,44 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/04/29/kubernetes-configMap-mount/" >
+            
+                <span>kubernetes的configMap文件挂载不同的路径且不覆盖目录的解决方法</span>
+        </a>
+        <div class="abstract-content">
+            看到configMap这个资源对象,突发奇想
+
+
+如何让一个configMap里文件挂载到容器的不同路径
+
+
+书上和网上都找不到对应例子
+最终github上搜索到了有个subPath选项除了支持路径还不会覆盖容器内部的整个目录参考链接https://github.com/dshulyak/kubernetes.github.io/commit/d58ba7b075bb4848349a2c920caaa08ff3773d70这里记录下1234567891011121314151617181920212223242526272829303132333435363738394041424344...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/29</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "ConfigMap">ConfigMap</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/02/05/docker-image-can-t-rm/" >
             
                 <span>docker无法删除掉镜像的解决方法</span>
@@ -1095,9 +1133,38 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 37
+        Total : 38
         </div>
         <!-- search  -->
         
@@ -1110,6 +1177,11 @@
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2018/11/28/how-to-use-kubeadm/" >how_to_use_kubeadm</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1327,11 +1399,13 @@
     
         <span class="sidebar-tag-name" data-tags="Altium Designer"><span class="iconfont-archer">&#xe606;</span>Altium Designer</span>
     
-        <span class="sidebar-tag-name" data-tags="k8s"><span class="iconfont-archer">&#xe606;</span>k8s</span>
-    
         <span class="sidebar-tag-name" data-tags="lnmp"><span class="iconfont-archer">&#xe606;</span>lnmp</span>
     
         <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
+    
+        <span class="sidebar-tag-name" data-tags="k8s"><span class="iconfont-archer">&#xe606;</span>k8s</span>
+    
+        <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
     
         <span class="sidebar-tag-name" data-tags="cad"><span class="iconfont-archer">&#xe606;</span>cad</span>
     
@@ -1339,15 +1413,15 @@
     
         <span class="sidebar-tag-name" data-tags="hello world"><span class="iconfont-archer">&#xe606;</span>hello world</span>
     
-        <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
-    
         <span class="sidebar-tag-name" data-tags="etcd"><span class="iconfont-archer">&#xe606;</span>etcd</span>
-    
-        <span class="sidebar-tag-name" data-tags="PodAffinity"><span class="iconfont-archer">&#xe606;</span>PodAffinity</span>
     
         <span class="sidebar-tag-name" data-tags="mqtt"><span class="iconfont-archer">&#xe606;</span>mqtt</span>
     
         <span class="sidebar-tag-name" data-tags="原创"><span class="iconfont-archer">&#xe606;</span>原创</span>
+    
+        <span class="sidebar-tag-name" data-tags="ConfigMap"><span class="iconfont-archer">&#xe606;</span>ConfigMap</span>
+    
+        <span class="sidebar-tag-name" data-tags="PodAffinity"><span class="iconfont-archer">&#xe606;</span>PodAffinity</span>
     
         <span class="sidebar-tag-name" data-tags="lamp"><span class="iconfont-archer">&#xe606;</span>lamp</span>
     
@@ -1361,8 +1435,6 @@
     
         <span class="sidebar-tag-name" data-tags="bash"><span class="iconfont-archer">&#xe606;</span>bash</span>
     
-        <span class="sidebar-tag-name" data-tags="ConfigMap"><span class="iconfont-archer">&#xe606;</span>ConfigMap</span>
-    
         <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
     
         <span class="sidebar-tag-name" data-tags="dockerhub"><span class="iconfont-archer">&#xe606;</span>dockerhub</span>
@@ -1371,13 +1443,13 @@
     
         <span class="sidebar-tag-name" data-tags="微信"><span class="iconfont-archer">&#xe606;</span>微信</span>
     
-        <span class="sidebar-tag-name" data-tags="正则"><span class="iconfont-archer">&#xe606;</span>正则</span>
-    
-        <span class="sidebar-tag-name" data-tags="awk"><span class="iconfont-archer">&#xe606;</span>awk</span>
-    
         <span class="sidebar-tag-name" data-tags="api"><span class="iconfont-archer">&#xe606;</span>api</span>
     
         <span class="sidebar-tag-name" data-tags="zabbix"><span class="iconfont-archer">&#xe606;</span>zabbix</span>
+    
+        <span class="sidebar-tag-name" data-tags="正则"><span class="iconfont-archer">&#xe606;</span>正则</span>
+    
+        <span class="sidebar-tag-name" data-tags="awk"><span class="iconfont-archer">&#xe606;</span>awk</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1414,21 +1486,21 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="日志"><span class="iconfont-archer">&#xe60a;</span>日志</span>
     
-        <span class="sidebar-category-name" data-categories="kubernetes"><span class="iconfont-archer">&#xe60a;</span>kubernetes</span>
-    
         <span class="sidebar-category-name" data-categories="日志/心得"><span class="iconfont-archer">&#xe60a;</span>日志/心得</span>
     
-        <span class="sidebar-category-name" data-categories="日志/Auto-cad"><span class="iconfont-archer">&#xe60a;</span>日志/Auto-cad</span>
+        <span class="sidebar-category-name" data-categories="kubernetes"><span class="iconfont-archer">&#xe60a;</span>kubernetes</span>
     
         <span class="sidebar-category-name" data-categories="日志/闲搞"><span class="iconfont-archer">&#xe60a;</span>日志/闲搞</span>
     
-        <span class="sidebar-category-name" data-categories="docker"><span class="iconfont-archer">&#xe60a;</span>docker</span>
-    
-        <span class="sidebar-category-name" data-categories="日志/闲聊"><span class="iconfont-archer">&#xe60a;</span>日志/闲聊</span>
-    
         <span class="sidebar-category-name" data-categories="日志/容器"><span class="iconfont-archer">&#xe60a;</span>日志/容器</span>
     
+        <span class="sidebar-category-name" data-categories="日志/Auto-cad"><span class="iconfont-archer">&#xe60a;</span>日志/Auto-cad</span>
+    
+        <span class="sidebar-category-name" data-categories="docker"><span class="iconfont-archer">&#xe60a;</span>docker</span>
+    
         <span class="sidebar-category-name" data-categories="容器"><span class="iconfont-archer">&#xe60a;</span>容器</span>
+    
+        <span class="sidebar-category-name" data-categories="日志/闲聊"><span class="iconfont-archer">&#xe60a;</span>日志/闲聊</span>
     
         <span class="sidebar-category-name" data-categories="kubernetes/k8s"><span class="iconfont-archer">&#xe60a;</span>kubernetes/k8s</span>
     
@@ -1438,9 +1510,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="CI"><span class="iconfont-archer">&#xe60a;</span>CI</span>
     
-        <span class="sidebar-category-name" data-categories="日志/技巧"><span class="iconfont-archer">&#xe60a;</span>日志/技巧</span>
-    
         <span class="sidebar-category-name" data-categories="日志/运维"><span class="iconfont-archer">&#xe60a;</span>日志/运维</span>
+    
+        <span class="sidebar-category-name" data-categories="日志/技巧"><span class="iconfont-archer">&#xe60a;</span>日志/技巧</span>
     
         <span class="sidebar-category-name" data-categories="日志/LVM"><span class="iconfont-archer">&#xe60a;</span>日志/LVM</span>
     
