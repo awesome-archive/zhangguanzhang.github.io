@@ -420,7 +420,7 @@ height:50vh;
 <p>  看过无数小白也怼过不少自以为是的人,大多觉得自己去手动搭建一套环境能学到一些k8s的东西<br>但是事实是根本学不到,类似于<code>先有鸡还是先有蛋</code>的哲学问题,搭建出错了或者别人搭建教程隐去了一些K8s的基础知识结果出错了不知道怎么排查<br>找群问因为不懂基础知识给了解决提醒他也听不懂,只有你帮他远程才能解决.举例这种头铁的人:</p>
 <ul>
 <li>文章里写了<code>编辑/etc/fstab文件来关闭swap</code>,结果他用sysctl关闭了.kubelet默认不配置选项下swap没关会起不来,他重启了一次后起不来也不会去看kubelet的log也不知道为啥要在/etc/fstab里注释</li>
-<li>按照一些写得详细的博客搭建起来确没学多少概念知识去staticPod目录去apply管理组建yml的</li>
+<li>按照一些写得详细的博客搭建起来确没学多少概念知识去staticPod目录去apply管理组件yml的</li>
 <li>按照<code>权威指南</code>搭建结果pod创建不了的(infra镜像是redhat的域名镜像仓库会无法拉取下来),不会用kubectl命令也不知道如何排查的</li>
 <li>按照老外或者台湾的博客搭建的,他们能直接拉到gcr.io的镜像,国内拉不到因为没学过k8s还有docker学得不怎么样也不会去看为啥一些起不来的</li>
 </ul>
@@ -443,7 +443,7 @@ height:50vh;
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2018/11/24/how-to-use-kubeadm/">http://zhangguanzhang.github.io/2018/11/24/how-to-use-kubeadm/</a>
             <p>发表日期：<a href="http://zhangguanzhang.github.io/2018/11/24/how-to-use-kubeadm/">November 24th 2018, 9:22:19 pm</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/11/24/how-to-use-kubeadm/">November 30th 2018, 7:23:54 pm</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/11/24/how-to-use-kubeadm/">November 30th 2018, 7:24:09 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
