@@ -903,7 +903,7 @@ height:50vh;
 <p>这里我们使用tls证书,证书前面的<code>Front Proxy Certificate</code>已经生成了</p>
 <p>首先在<code>k8s-m1</code>测试一下 kubectl top 指令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ kubectl top node</span><br><span class="line">Error from server (NotFound): the server could not find the requested resource (get services http:heapster:)</span><br></pre></td></tr></table></figure></p>
 <p>发现 top 命令无法取得 Metrics,这表示 Kubernetes 集群没有安装 Heapster 或着 Metrics Server 来提供 Metrics API 给 top 指令取得资源使用量。</p>
-<p>由于上述问题,我們要在<code>k8s-m1</code>部署 Metrics Server 元件来解決：<br>镜像v0.2.1的话直接使用下面的<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl create -f addons/metric-server/metrics-server.yml</span><br></pre></td></tr></table></figure></p>
+<p>由于上述问题,我們要在<code>k8s-m1</code>部署 Metrics Server 元件来解決：<br>镜像v0.2.1的话直接使用下面的(v1.12+版本建议使用后面的yml)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl create -f addons/metric-server/metrics-server.yml</span><br></pre></td></tr></table></figure></p>
 <p>v0.3.1镜像的yml相对于之前变化了如下:</p>
 <ul>
 <li><p>多了一个<a href="https://github.com/kubernetes-incubator/metrics-server/blob/master/deploy/1.8%2B/aggregated-metrics-reader.yaml" target="_blank">ClusterRole</a>并且选项有部分变化,可以<a href="https://github.com/zhangguanzhang/k8s-manual-files/tree/bin/addons/metric-server" target="_blank">自行比对</a></p>
@@ -1036,7 +1036,7 @@ height:50vh;
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/</a>
             <p>发表日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">September 18th 2018, 9:36:53 am</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">December 4th 2018, 8:16:53 pm</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">December 4th 2018, 8:19:37 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
