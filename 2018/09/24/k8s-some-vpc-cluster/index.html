@@ -421,7 +421,7 @@ height:50vh;
 <li>外部到 Service 通信：一样由 Service objects 结合 kube-proxy 解決。<br>上面可以得出pod得有一个ip,但是又不得影响宿主机的原有网络,于是svc和pod的ip都是集群内的宿主机自嗨内网(人为干预可以让非集群机器访问到clusterip)</li>
 </ul>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在flannel的vxlan模式里<code>flannel.1</code>充当了vxlan里的<code>vtep</code>身份,垮主机的pod通信流程可以简化到如下<br><img src="https://github.com/zhangguanzhang/Image-Hosting/blob/master/k8s/5B7A@13437XC28~112U%5BZTP.png?raw=true" alt="network"><br>flannel查找到目标pod所在节点是通过查询etcd的node信息维护一张fdb表,可以通过下面命令查看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bridge fdb show dev flannel.1</span><br></pre></td></tr></table></figure></p>
-<p>kubelet上报的ip是主机的eth0的网卡ip,由于做的ip的nat,这个ip是内网,各vpc里的主机根本在出公网后访问不到这个内网ip</p>
+<p>kubelet上报的ip是主机的eth0的网卡ip,由于公有云ecs都是做的ip的nat,上报的ip是内网ip,各vpc里的主机向这个内网ip发包的话会在出公网后被运营商路由器drop掉(源目ip为内网ip不允许上公网)</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最开始我从calico换成flannel的时候没注意目录<code>/etc/cni/net.d/</code>残留有calico的配置文件,导致kubelet还认为是跑的calico,但是找不到calico一直报错,后面一气之下全部重装了操作系统<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;后面又搭建起来后发现(只有同一个node上的pod能互相访问)跨节点的pod之间无法通信,然后云上开了flannel的udp端口<code>8472</code>后依然不通。</p>
 <p>测试udp端口通不通可以在flannel跑起来后安装nc命令测,发现几何云udp包会被drop掉,阿里、腾讯和百度的不会<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo -n foo | nc -4u -w1 &lt;dest_public_ip&gt; 8472</span><br></pre></td></tr></table></figure></p>
 <p>抓包则安装tcpdump抓<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -nn dev flannel.1</span><br></pre></td></tr></table></figure></p>
@@ -439,7 +439,7 @@ height:50vh;
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2018/09/24/k8s-some-vpc-cluster/">http://zhangguanzhang.github.io/2018/09/24/k8s-some-vpc-cluster/</a>
             <p>发表日期：<a href="http://zhangguanzhang.github.io/2018/09/24/k8s-some-vpc-cluster/">September 24th 2018, 8:28:26 pm</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/09/24/k8s-some-vpc-cluster/">December 27th 2018, 11:20:19 am</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/09/24/k8s-some-vpc-cluster/">December 27th 2018, 11:23:04 am</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
