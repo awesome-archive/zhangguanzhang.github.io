@@ -403,7 +403,7 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="写这篇文章原因"><a href="#写这篇文章原因" class="headerlink" title="写这篇文章原因"></a>写这篇文章原因</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所有的监控的agent底层最终都是查询的/proc和/sys里的信息推送(如果错了轻喷),因为收集宿主机信息方面也想用pod跑,会面临到问题<br>常见的zabbix_agent默认读取fs的/proc和/sys,容器跑agent会导致读取的不是宿主机的/proc和/sys,而prometheus的<code>node-exporter</code>有选项<code>--path.procfs</code>和<code>--path.sysfs</code>来指定从这俩选项的值的proc和sys读取,容器跑<code>node-exporter</code>只需要挂载宿主机的/proc和/sys到容器fs的某个路径挂载属性设置为readonly后用这两个选项指定即可,zabbix4.0看了文档和容器都找不到类似选项应该不支持</p>
+        <h2 id="写这篇文章原因"><a href="#写这篇文章原因" class="headerlink" title="写这篇文章原因"></a>写这篇文章原因</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所有的监控的agent底层最终都是查询的/proc和/sys里的信息推送(如果错了轻喷),因为收集宿主机信息方面也想用pod跑,会面临到问题<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;常见的zabbix_agent默认读取fs的/proc和/sys,容器跑agent会导致读取的不是宿主机的/proc和/sys<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;而prometheus的<code>node-exporter</code>有选项<code>--path.procfs</code>和<code>--path.sysfs</code>来指定从这俩选项的值的proc和sys读取,容器跑<code>node-exporter</code>只需要挂载宿主机的/proc和/sys到容器fs的某个路径挂载属性设置为readonly后用这两个选项指定即可,zabbix4.0看了文档和容器都找不到类似选项应该不支持</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;虽说上prometheus但是k8s监控这方面,经常看到如下问题:</p>
 <ul>
 <li>如何部署</li>
@@ -414,14 +414,14 @@ height:50vh;
 <li>operator相对手动部署的prometheus有啥优秀之处</li>
 <li>…..</li>
 </ul>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上面问题里大多都是对prometheus-operator不了解的,也就是说大多不看官方文档的,这里我几个例子加介绍说说怎样部署<code>prometheus-operator</code>,和一些常见的坑<br>另外网上大多是helm部署的以及管理组件是二进制下有几个target是0/0发现不了的解决办法</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;需要看懂本文要具备一下知识点</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上面问题里大多都是对prometheus-operator不了解的,也就是说大多不看官方文档的,这里我几个例子加介绍说说怎样部署<code>prometheus-operator</code>,和一些常见的坑<br>另外网上大多是helm部署的以及管理组件是二进制下有几个target是0/0发现不了的解决办法<br>&nbsp;&nbsp;</p>
+<p>需要看懂本文要具备一下知识点</p>
 <ul>
 <li>svc实现原理和会应用以及svc和endpoint关系</li>
 <li>了解prometheus(不是operator的)工作机制</li>
 <li>知道什么是metrics(不过有了prometheus-operator似乎不是必须)</li>
 </ul>
-<h2 id="速补基础"><a href="#速补基础" class="headerlink" title="速补基础"></a>速补基础</h2><h3 id="什么是metrics"><a href="#什么是metrics" class="headerlink" title="什么是metrics"></a>什么是metrics</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前面知识点第一条都考虑到k8s集群监控了想必都会了,第二条因为有operator的存在不太关心底层可能不太急需可以后面去稍微学学,第三条无论etcd还是k8s的管理组件基本都有metrics端口,这里来介绍啥什么是metrics<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;例如我们要查看etcd的metrics,先查看etcd的运行参数找到相关的值,这里我是所有参数写在一个yml文件里,非yml自行查看systemd文件或者运行参数找到相关参数和值即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@k8s-m1 ~]# ps aux | grep -P &apos;/etc[d] &apos;</span><br><span class="line">root      13531  2.8  0.8 10631072 140788 ?     Ssl   2018 472:58 /usr/local/bin/etcd --config-file=/etc/etcd/etcd.config.yml</span><br><span class="line">[root@k8s-m1 ~]# cat /etc/etcd/etcd.config.yml</span><br><span class="line">...</span><br><span class="line">listen-client-urls: &apos;https://172.16.0.2:2379&apos;</span><br><span class="line">...</span><br><span class="line">client-transport-security:</span><br><span class="line">  ca-file: &apos;/etc/etcd/ssl/etcd-ca.pem&apos;</span><br><span class="line">  cert-file: &apos;/etc/etcd/ssl/etcd.pem&apos;</span><br><span class="line">  key-file: &apos;/etc/etcd/ssl/etcd-key.pem&apos;</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<h2 id="速补基础"><a href="#速补基础" class="headerlink" title="速补基础"></a>速补基础</h2><h3 id="什么是metrics"><a href="#什么是metrics" class="headerlink" title="什么是metrics"></a>什么是metrics</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前面知识点第一条都考虑到k8s集群监控了想必都会了,第二条因为有operator的存在不太关心底层可能不太急需可以后面去稍微学学,第三条无论etcd还是k8s的管理组件基本都有metrics端口<br>&nbsp;&nbsp;<br>这里来介绍啥什么是metrics<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;例如我们要查看etcd的metrics,先查看etcd的运行参数找到相关的值,这里我是所有参数写在一个yml文件里,非yml自行查看systemd文件或者运行参数找到相关参数和值即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@k8s-m1 ~]# ps aux | grep -P &apos;/etc[d] &apos;</span><br><span class="line">root      13531  2.8  0.8 10631072 140788 ?     Ssl   2018 472:58 /usr/local/bin/etcd --config-file=/etc/etcd/etcd.config.yml</span><br><span class="line">[root@k8s-m1 ~]# cat /etc/etcd/etcd.config.yml</span><br><span class="line">...</span><br><span class="line">listen-client-urls: &apos;https://172.16.0.2:2379&apos;</span><br><span class="line">...</span><br><span class="line">client-transport-security:</span><br><span class="line">  ca-file: &apos;/etc/etcd/ssl/etcd-ca.pem&apos;</span><br><span class="line">  cert-file: &apos;/etc/etcd/ssl/etcd.pem&apos;</span><br><span class="line">  key-file: &apos;/etc/etcd/ssl/etcd-key.pem&apos;</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;我们需要两部分信息</p>
 <ul>
 <li>listen-client-urls的httpsurl,我这里是<code>https://172.16.0.2:2379</code></li>
@@ -498,7 +498,7 @@ height:50vh;
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2018/10/12/prometheus-operator/">http://zhangguanzhang.github.io/2018/10/12/prometheus-operator/</a>
             <p>发表日期：<a href="http://zhangguanzhang.github.io/2018/10/12/prometheus-operator/">October 12th 2018, 7:41:59 pm</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/10/12/prometheus-operator/">January 8th 2019, 12:28:33 am</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/10/12/prometheus-operator/">January 8th 2019, 12:31:15 am</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
