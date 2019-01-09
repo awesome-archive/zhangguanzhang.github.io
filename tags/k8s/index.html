@@ -499,15 +499,8 @@ Ingress Controller介绍与部署介绍...
 本文命令全部是在k8s-m1上执行
 本文很多步骤是选择其一,别啥都不看一路往下复制粘贴
 如果某些步骤理解不了可以上下内容一起看来理解
-本次安裝的版本：
-
-
-Kubernetes v1.11.3
-CNI v0.7.1
-Etcd v3.3.9
-Flannel v0.10.0 或者 Calico v3.1.3
-Docker CE latest version(18.06)
-...
+本文后面的几个svc用了externalIPs,上生产的话必须用VIP或者LB代替
+本文的HA是vip,生产和云上可以用LB和SLB,不过阿里的SLB四层有问题,可以每个node上代理127.0.0.1的某个port分摊在所有apise...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
