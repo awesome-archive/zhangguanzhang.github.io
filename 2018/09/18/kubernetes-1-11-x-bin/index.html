@@ -274,7 +274,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">19.9k</span>阅读时长: <span class="post-count reading-time">94 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">20k</span>阅读时长: <span class="post-count reading-time">94 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -595,7 +595,7 @@ height:50vh;
 <li><p><code>所有机器</code>需要设定<code>/etc/hosts</code>解析到所有集群主机。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">192.168.88.111 k8s-m1</span><br><span class="line">192.168.88.112 k8s-m2</span><br><span class="line">192.168.88.113 k8s-m3</span><br><span class="line">192.168.88.114 k8s-n1</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><code>所有机器</code>需要自行设定<code>ntp</code>,否则HA下时间不对可能apiserver通信有问题。</p>
+<li><p><code>所有机器</code>需要自行设定<code>ntp</code>,<span style="color: red">否则不只HA下apiserver通信有问题,各种千奇百怪的问题</span>。</p>
 </li>
 </ul>
 <p><span style="color: red">此时可以关机做个快照</span></p>
@@ -1097,8 +1097,8 @@ height:50vh;
         <div class="license-wrapper">
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/</a>
-            <p>发表日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">九月 18日 2018, 9:36:53 上午</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">January 22nd 2019, 2:39:29 pm</a>
+            <p>发表日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">September 18th 2018, 9:36:53 am</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/09/18/kubernetes-1-11-x-bin/">February 13th 2019, 7:08:11 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
