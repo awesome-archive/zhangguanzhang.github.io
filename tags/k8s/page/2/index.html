@@ -346,53 +346,32 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/02/05/docker-image-can-t-rm/" >
+        <a class="abstract-title" href = "/2018/04/29/kubernetes-configMap-mount/" >
             
-                <span>docker无法删除掉镜像的解决方法</span>
+                <span>kubernetes的configMap文件挂载不同的路径且不覆盖目录的解决方法</span>
         </a>
         <div class="abstract-content">
-            碰到了docker rmi无法删除掉image的问题版本如下12[root@guanvps ~]# docker --versionDocker version 17.12.1-ce, build 7390fc6
-问题如下,也没有任何容器在运行,重启发现依然无法删除掉12345678[root@guanvps ~]# docker imagesREPOSITORY          TAG                 IMAGE ID            CREATED             SIZEnginx               latest              ...
+            看到configMap这个资源对象,突发奇想
+
+
+如何让一个configMap里文件挂载到容器的不同路径
+
+
+书上和网上都找不到对应例子
+最终github上搜索到了有个subPath选项除了支持路径还不会覆盖容器内部的整个目录参考链接https://github.com/dshulyak/kubernetes.github.io/commit/d58ba7b075bb4848349a2c920caaa08ff3773d70这里记录下1234567891011121314151617181920212223242526272829303132333435363738394041424344...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/05</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/29</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/01/10/docker的一些概念/" >
-            
-                <span>docker的一些概念</span>
-        </a>
-        <div class="abstract-content">
-            <p>总结下容器的一些概念和虚拟机的区别以及<code>CMD</code>和<code>entrypoint</code><br>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "ConfigMap">ConfigMap</a>
     
 </div>
             
@@ -400,6 +379,10 @@
     </article>
     
     <!-- paginator  -->
+    
+    <nav class="page-nav">
+        <a class="extend prev" rel="prev" href="/tags/k8s/">&#60; PREV</a><a class="page-number" href="/tags/k8s/">1</a><span class="page-number current">2</span>
+    </nav>
     
 </main>
             <!-- profile -->

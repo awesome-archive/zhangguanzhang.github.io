@@ -266,7 +266,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">759</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">780</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -415,7 +415,7 @@ height:50vh;
 <p>接下来清理开机目录</p>
 <p><img src="https://github.com/zhangguanzhang/Image-Hosting/blob/master/10chars/@7BD_SYIK%7D0XYIX%60$E(2%7BXN.png?raw=true
 " alt=""><br>这里我偷懒下,用户组后的数字一样的,我全部删除的(每个rcx.d里数字不同,可以在大部分删之前稍微看看)<br><img src="https://github.com/zhangguanzhang/Image-Hosting/blob/master/10chars/1541398968(1).jpg?raw=true" alt=""><br>同样过程清理掉<code>/etc/rc.d/rcx.d/</code>的0-6目录里的</p>
-<p>然后杀掉之前STOP掉的进程后观察一段时间再看看<br>这里我怀疑过top和ps命令是不是替换了,因为top命令能看到病毒进程,ps查不到，我在其他机器下了对应的<code>procps-ng</code>和contab相关的包重新安装了。一般这里到现在病毒基本就起不来了,可以尝试重启机器看看<br>另外可能会遇到加了个uid为0的用户,可以查看下<code>/etc/passwd</code></p>
+<p>然后杀掉之前STOP掉的进程后观察一段时间再看看<br>这里我怀疑过top和ps命令是不是替换了,因为top命令能看到病毒进程,ps查不到，我在其他机器下了对应的<code>procps-ng</code>和contab相关的包重新安装了。一般这里到现在病毒基本就起不来了,可以尝试重启机器看看<br>另外可能会遇到加了个uid为0的用户,可以查看下<code>/etc/passwd</code>以及别人可能能互信免密登陆,ssh的key也自己清理下</p>
 
     </article>
     <!-- license  -->
@@ -424,7 +424,7 @@ height:50vh;
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2018/11/05/10chars/">http://zhangguanzhang.github.io/2018/11/05/10chars/</a>
             <p>发表日期：<a href="http://zhangguanzhang.github.io/2018/11/05/10chars/">November 5th 2018, 1:29:08 pm</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/11/05/10chars/">January 22nd 2019, 2:39:15 pm</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/11/05/10chars/">February 13th 2019, 11:40:08 am</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -1231,10 +1231,9 @@ top:50vh;
     
     
     
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 41
+        Total : 42
         </div>
         <!-- search  -->
         
@@ -1276,6 +1275,11 @@ top:50vh;
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/24</span><a class="archive-post-title" href= "/2018/09/24/k8s-some-vpc-cluster/" >跨VPC或者跨云供应商搭建K8S集群正确姿势</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/18</span><a class="archive-post-title" href= "/2018/09/18/kubernetes-127-HA-bin/" >基于127.0.0.1的Kubernetes HA集群搭建方式</a>
         </li>
     
     
