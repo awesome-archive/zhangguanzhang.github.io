@@ -346,6 +346,39 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/07/08/travis-sync-gcr-io/" >
+            
+                <span>利用travis同步gcr.io镜像到dockerhub</span>
+        </a>
+        <div class="abstract-content">
+            项目地址https://github.com/zhangguanzhang/gcr.io/tree/master
+利用gcloud sdk去查看谷歌镜像站的镜像,获取每一个镜像的tag后改名推送到自己的dockerhub上面全部是shell思路,脚本一旦写完就需要不断的执行去同步了,所以借用travis去构建两个分支,一个master分支和一个构建分支travis触发构建后拉取仓库后,切换到构建分支,pull构建分支,然后同步镜像
+脚本我写了两种https://github.com/zhangguanzhang/bash/tree/master/google_containers_syn...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/08</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "dockerhub">dockerhub</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "gcr.io">gcr.io</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/06/25/etcd-error/" >
             
                 <span>记录一次线上k8s节点故障</span>
@@ -1414,9 +1447,20 @@ An example of a pod that uses pod affinity:
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 45
+        Total : 46
         </div>
         <!-- search  -->
         
@@ -1482,6 +1526,11 @@ An example of a pod that uses pod affinity:
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/18</span><a class="archive-post-title" href= "/2018/09/18/kubernetes-1-11-x-bin/" >[持续更新]二进制部署Kubernetes v1.11.x(1.12.x) HA可选</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/18</span><a class="archive-post-title" href= "/2018/09/18/kubernetes-1-13-4/" >二进制部署Kubernetes v1.13.4 HA可选</a>
         </li>
     
     
