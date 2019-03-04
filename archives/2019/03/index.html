@@ -22,7 +22,7 @@
     <meta name="description" content="记录生活点滴">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>ssh互信 · zhangguanzhang&#39;s Blog</title>
+    <title>zhangguanzhang&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,23 +203,12 @@
 </head>
 
     
-        <body class="post-body">
-    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
-    
-    <div class="banner">
-            <div class="blog-title">
-                <a href="/" >zhangguanzhang&#39;s Blog</a>
-            </div>
-            <div class="post-title">
-                <a href="#" class="post-name">ssh互信</a>
-            </div>
-    </div>
     
     <a class="home-link" href=/>zhangguanzhang's Blog</a>
 </header>
@@ -231,74 +220,24 @@
 
 
 
-
-height:50vh;
 ">
     
     <!-- 主页  -->
-    
-    
-    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
-            
-            ssh互信
-            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
-            
-            <!-- 404 -->
-            
         </p>
         <!-- 文章页meta -->
-        
-            <div class="post-intros">
-                <!-- 文章页标签  -->
-                
-                    <div class= post-intro-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ssh">ssh</a>
-    
-</div>
-                
-                
-                    <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">677</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
-                    </div>
-                
-                <div class="post-intro-meta">
-                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2017/05/12</span>
-                    
-                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
-                        <span class="iconfont-archer">&#xe602;</span>
-                        <span id="busuanzi_value_page_pv"></span>
-                    </span>
-                    
-                    <span class="shareWrapper">
-                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
-                        <span class="shareText">Share</span>
-                        <ul class="shareList">
-                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
-                                <div class="share-qrcode"></div>
-                            </li>
-                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
-                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
-                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
-                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
-                        </ul>
-                    </span>
-                </div>
-            </div>
         
     </div>
 </div>
@@ -399,84 +338,47 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main post-page">
-    <article class="article-entry">
-        <p>ssh公钥免密码登录<br><a id="more"></a><br><img src="http://mmbiz.qpic.cn/mmbiz_jpg/IP70Vic417DPlnSnZ9Dfrm0DkSHG5zWEy0wGzmZ0S27a6dwjziaRicDQeicgcStBpfiaU3RDGzUbUTh4bAibQiccKBMaA/640.jpeg?tp=webp&wxfrom=5&wx_lazy=1" alt=""><br>ssh-keygen命令用来生成公钥和私钥密钥对的工具，通常用法是-t指定加密算法,-f指定输出路径，一般是~/.ssh/id_rsa，-P是指定私钥密码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@guan ~]# ssh-keygen -t rsa    # -t参数指定算法，可以是rsa或dsa</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/root/.ssh/id_rsa):  # 询问私钥保存路径</span><br><span class="line">Enter passphrase (empty for no passphrase):               # 询问是否加密私钥文件</span><br><span class="line">Enter same passphrase again:            </span><br><span class="line">Your identification has been saved in /root/.ssh/id_rsa. </span><br><span class="line">Your public key has been saved in /root/.ssh/id_rsa.pub.</span><br></pre></td></tr></table></figure>
-<p>如果不想被询问，则可以使用下面一条命令完成：”-f”指定私钥文件，”-P”指定passphrase，或者”-N”也一样。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@guan ~]# ssh-keygen -t rsa -f ~/.ssh/id_rsa -P &apos;&apos;   # 指定加密私钥文件的密码为空密码，即不加密</span><br></pre></td></tr></table></figure>
-<p>然后用ssh-copy-id分发公钥，ssh-copy-id用法很简单，只需指定待信任主机及目标用户即可。如果生成的公钥文件，路径不是~/.ssh/id_rsa.pub，则使用”-i”选项指定要分发的公钥。<br>例如分发到192.168.1.105上</p>
-<pre><code>[root@guan ~]# ssh-copy-id 192.168.1.105
-root@192.168.1.105's password:   #输入目标主机密码即可
-</code></pre>
-
-<p><code>ssh-copy-id</code>唯一需要注意的是，如果ssh服务端的端口不是22，则需要给ssh-copy-id传递端口号，传递方式为”-p port_num [user@]hostname”，例如”-p 22222 <a href="mailto:root@172.16.10.6" target="_blank" rel="noopener">root@172.16.10.6</a>“。之所以要如此传递，见下面摘自ssh-copy-id中公钥分发的命令部分。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; eval &quot;$GET_ID&quot; ; &#125; | ssh $1 &quot;umask 077; test -d ~/.ssh || mkdir ~/.ssh ; cat &gt;&gt; ~/.ssh/authorized_keys &amp;&amp; (test -x /sbin/restorecon &amp;&amp; /sbin/restorecon ~/.ssh ~/.ssh/authorized_keys &gt;/dev/null 2&gt;&amp;1 || true)&quot; || exit 1</span><br></pre></td></tr></table></figure>
-<p>其中”{ eval “$GET_ID” ; }”可理解为待分发的本地公钥内容，”(test -x /sbin/restorecon &amp;&amp; /sbin/restorecon ~/.ssh ~/.ssh/authorized_keys &gt;/dev/null 2&gt;&amp;1 || true)”和selinux有关，不用管，所以上述命令简化为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub | ssh $1 &quot;umask 077; test -d ~/.ssh || mkdir ~/.ssh ; cat &gt;&gt; ~/.ssh/authorized_keys || exit 1</span><br></pre></td></tr></table></figure>
-<p>可见，ssh-copy-id的所有参数都是存储在位置变量$1中传递给ssh，所以应该将ssh的端口选项”-p port_num”和user@hostname放在一起传递。</p>
-<p>通过分析上面的命令，也即知道了ssh-copy-id的作用：在目标主机的指定用户的家目录下，检测是否有~/.ssh目录，如果没有，则以700权限创建该目录，然后将本地的公钥追加到目标主机指定用户家目录下的~/.ssh/authorized_keys文件中。</p>
-<p><code>-o StrictHostKeyChecking=no</code>可以跳过证书验证,配合sshpass即可满足所有情况，否则初次的证书的yes得由expect脚本处理</p>
-
-    </article>
-    <!-- license  -->
+            <main class="main index-page">
     
-        <div class="license-wrapper">
-            <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
-            <p>原文链接：<a href="http://zhangguanzhang.github.io/2017/05/12/ssh互信/">http://zhangguanzhang.github.io/2017/05/12/ssh互信/</a>
-            <p>发表日期：<a href="http://zhangguanzhang.github.io/2017/05/12/ssh互信/">May 12th 2017, 3:33:55 pm</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2017/05/12/ssh互信/">May 27th 2018, 8:51:43 pm</a>
-            <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/03/03/kubernetes-1-13-4/" >
+            
+                <span>二进制部署Kubernetes v1.13.4 HA可选</span>
+        </a>
+        <div class="abstract-content">
+            本次采用二进制文件方式部署和之前的步骤差不多都是和kubeadm步骤一样,不过这次所有kubelet全部走bootstrap不会像之前master上的kubelet生成证书,另外证书换成openssl生成
+不建议使用secureCRT这个ssh软件复制本篇博客内容的命令,因为它的部分版本对包含多条命令的处理结果并不完美,可能很多命令不是预期结果
+本文命令里有些是输出,不要乱粘贴输入(虽然也没影响)
+本文命令全部是在k8s-m1上执行
+本文很多步骤是选择其一,别啥都不看一路往下复制粘贴
+如果某些步骤理解不了可以上下内容一起看来理解
+本文后面的几个svc用了externalIPs,上生产的话...
         </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/03</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "operator">operator</a>
+    
+</div>
+            
+        </div>
+    </article>
     
     <!-- paginator  -->
-    <ul class="post-paginator">
-        <li class="next">
-            
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2017/05/25/shell脚本的选项处理/" title= "shell脚本的选项和参数处理">
-                    <div class="nextTitle">shell脚本的选项和参数处理</div>
-                </a>
-            
-        </li>
-        <li class="previous">
-            
-                <div class="prevSlogan">Previous Post</div>
-                <a href= "/2017/05/06/shell快捷键提升效率/" title= "shell利用快捷键提升命令输入和编辑">
-                    <div class="prevTitle">shell利用快捷键提升命令输入和编辑</div>
-                </a>
-            
-        </li>
-    </ul>
-    <!-- 评论插件 -->
-    <!-- 来必力City版安装代码 -->
-
-    <div id="lv-container" data-id="city" data-uid= MTAyMC8zMzk1OC8xMDQ5Mw>
-        <script type="text/javascript">
-            (function (d, s) {
-                var j, e = d.getElementsByTagName(s)[0];
-                if (typeof LivereTower === 'function') { return; }
-                j = d.createElement(s);
-                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-                j.async = true;
-
-                e.parentNode.insertBefore(j, e);
-            })(document, 'script');
-        </script>
-        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
-
-<!-- City版安装代码已完成 -->
     
-    
-    <!-- partial('_partial/comment/changyan') -->
-    <!--PC版-->
-
-
-    
-    
-
-    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -565,24 +467,6 @@ root@192.168.1.105's password:   #输入目标主机密码即可
 </footer>
     </div>
     <!-- toc -->
-    
-    <div class="toc-wrapper" style=
-    
-
-
-
-
-
-
-
-top:50vh;
-
-    >
-        <div class="toc-catalog">
-            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
-        </div>
-        
-    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1773,8 +1657,6 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
-    
-        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
