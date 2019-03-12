@@ -454,6 +454,38 @@ OS CentOS 7.5.1804
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/12/04/black-box-exporter/" >
+            
+                <span>black_box_exporter</span>
+        </a>
+        <div class="abstract-content">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;常规的各种exporter都是和需要监控的机器一起安装的,如果需要监控一些tcp端口和七层应用层的状态呢,这个时候就需要黑盒监控了,不需要安装在目标机器上即可从外部去监控。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9115是它的http端点的默认监听端口，blackbox.yml它的配置文件里以基础的http、dns、tcp、icmp等prober定制配置出各种监测模块(module)，在prometheus server的配置文件里声明用哪个模块去探测哪个targets，下面以doc...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/04</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "prometheus">prometheus</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "exporter">exporter</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/11/24/how-to-use-kubeadm/" >
             
                 <span>对于初入k8s和kubeadm的一些建议</span>
@@ -650,44 +682,6 @@ Ingress Controller介绍与部署介绍...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/18/kubernetes-1-11-x-bin/" >
-            
-                <span>二进制部署Kubernetes v1.11.x(1.12.x) HA可选</span>
-        </a>
-        <div class="abstract-content">
-            本次采用二进制文件方式部署
-不建议使用secureCRT这个ssh软件复制本篇博客内容的命令,因为它的部分版本对包含多条命令的处理结果并不完美,可能很多命令不是预期结果
-本文命令里有些是输出,不要乱粘贴输入(虽然也没影响)
-本文命令全部是在k8s-m1上执行
-本文很多步骤是选择其一,别啥都不看一路往下复制粘贴
-如果某些步骤理解不了可以上下内容一起看来理解
-本文后面的几个svc用了externalIPs,上生产的话必须用VIP或者LB代替
-本文的HA是vip,生产和云上可以用LB和SLB,不过阿里的SLB四层有问题,可以每个node上代理127.0.0.1的某个port分摊在所有apise...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "operator">operator</a>
     
 </div>
             
@@ -1478,46 +1472,9 @@ Ingress Controller介绍与部署介绍...
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 46
+        Total : 47
         </div>
         <!-- search  -->
         
@@ -1554,6 +1511,11 @@ Ingress Controller介绍与部署介绍...
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/04</span><a class="archive-post-title" href= "/2018/12/04/black-box-exporter/" >black_box_exporter</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1793,15 +1755,15 @@ Ingress Controller介绍与部署介绍...
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="k8s"><span class="iconfont-archer">&#xe606;</span>k8s</span>
-    
-        <span class="sidebar-tag-name" data-tags="ingress"><span class="iconfont-archer">&#xe606;</span>ingress</span>
+        <span class="sidebar-tag-name" data-tags="diy"><span class="iconfont-archer">&#xe606;</span>diy</span>
     
         <span class="sidebar-tag-name" data-tags="8266"><span class="iconfont-archer">&#xe606;</span>8266</span>
     
         <span class="sidebar-tag-name" data-tags="总结"><span class="iconfont-archer">&#xe606;</span>总结</span>
     
-        <span class="sidebar-tag-name" data-tags="diy"><span class="iconfont-archer">&#xe606;</span>diy</span>
+        <span class="sidebar-tag-name" data-tags="k8s"><span class="iconfont-archer">&#xe606;</span>k8s</span>
+    
+        <span class="sidebar-tag-name" data-tags="ingress"><span class="iconfont-archer">&#xe606;</span>ingress</span>
     
         <span class="sidebar-tag-name" data-tags="Altium Designer"><span class="iconfont-archer">&#xe606;</span>Altium Designer</span>
     
@@ -1811,6 +1773,10 @@ Ingress Controller介绍与部署介绍...
     
         <span class="sidebar-tag-name" data-tags="cad"><span class="iconfont-archer">&#xe606;</span>cad</span>
     
+        <span class="sidebar-tag-name" data-tags="prometheus"><span class="iconfont-archer">&#xe606;</span>prometheus</span>
+    
+        <span class="sidebar-tag-name" data-tags="exporter"><span class="iconfont-archer">&#xe606;</span>exporter</span>
+    
         <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
     
         <span class="sidebar-tag-name" data-tags="Dockerfile"><span class="iconfont-archer">&#xe606;</span>Dockerfile</span>
@@ -1819,9 +1785,9 @@ Ingress Controller介绍与部署介绍...
     
         <span class="sidebar-tag-name" data-tags="etcd"><span class="iconfont-archer">&#xe606;</span>etcd</span>
     
-        <span class="sidebar-tag-name" data-tags="ftp"><span class="iconfont-archer">&#xe606;</span>ftp</span>
-    
         <span class="sidebar-tag-name" data-tags="hello world"><span class="iconfont-archer">&#xe606;</span>hello world</span>
+    
+        <span class="sidebar-tag-name" data-tags="ftp"><span class="iconfont-archer">&#xe606;</span>ftp</span>
     
         <span class="sidebar-tag-name" data-tags="mqtt"><span class="iconfont-archer">&#xe606;</span>mqtt</span>
     
@@ -1837,11 +1803,11 @@ Ingress Controller介绍与部署介绍...
     
         <span class="sidebar-tag-name" data-tags="lamp"><span class="iconfont-archer">&#xe606;</span>lamp</span>
     
+        <span class="sidebar-tag-name" data-tags="operator"><span class="iconfont-archer">&#xe606;</span>operator</span>
+    
         <span class="sidebar-tag-name" data-tags="openstack"><span class="iconfont-archer">&#xe606;</span>openstack</span>
     
         <span class="sidebar-tag-name" data-tags="cloud-init"><span class="iconfont-archer">&#xe606;</span>cloud-init</span>
-    
-        <span class="sidebar-tag-name" data-tags="operator"><span class="iconfont-archer">&#xe606;</span>operator</span>
     
         <span class="sidebar-tag-name" data-tags="js"><span class="iconfont-archer">&#xe606;</span>js</span>
     
@@ -1863,9 +1829,9 @@ Ingress Controller介绍与部署介绍...
     
         <span class="sidebar-tag-name" data-tags="api"><span class="iconfont-archer">&#xe606;</span>api</span>
     
-        <span class="sidebar-tag-name" data-tags="zabbix"><span class="iconfont-archer">&#xe606;</span>zabbix</span>
-    
         <span class="sidebar-tag-name" data-tags="正则"><span class="iconfont-archer">&#xe606;</span>正则</span>
+    
+        <span class="sidebar-tag-name" data-tags="zabbix"><span class="iconfont-archer">&#xe606;</span>zabbix</span>
     
         <span class="sidebar-tag-name" data-tags="awk"><span class="iconfont-archer">&#xe606;</span>awk</span>
     
@@ -1902,15 +1868,17 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
+        <span class="sidebar-category-name" data-categories="日志"><span class="iconfont-archer">&#xe60a;</span>日志</span>
+    
         <span class="sidebar-category-name" data-categories="kubernetes"><span class="iconfont-archer">&#xe60a;</span>kubernetes</span>
     
-        <span class="sidebar-category-name" data-categories="日志"><span class="iconfont-archer">&#xe60a;</span>日志</span>
+        <span class="sidebar-category-name" data-categories="日志/闲搞"><span class="iconfont-archer">&#xe60a;</span>日志/闲搞</span>
     
         <span class="sidebar-category-name" data-categories="日志/心得"><span class="iconfont-archer">&#xe60a;</span>日志/心得</span>
     
         <span class="sidebar-category-name" data-categories="日志/Auto-cad"><span class="iconfont-archer">&#xe60a;</span>日志/Auto-cad</span>
     
-        <span class="sidebar-category-name" data-categories="日志/闲搞"><span class="iconfont-archer">&#xe60a;</span>日志/闲搞</span>
+        <span class="sidebar-category-name" data-categories="prometheus"><span class="iconfont-archer">&#xe60a;</span>prometheus</span>
     
         <span class="sidebar-category-name" data-categories="日志/容器"><span class="iconfont-archer">&#xe60a;</span>日志/容器</span>
     
@@ -1920,25 +1888,25 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="openstack"><span class="iconfont-archer">&#xe60a;</span>openstack</span>
     
-        <span class="sidebar-category-name" data-categories="vsftp"><span class="iconfont-archer">&#xe60a;</span>vsftp</span>
-    
         <span class="sidebar-category-name" data-categories="日志/闲聊"><span class="iconfont-archer">&#xe60a;</span>日志/闲聊</span>
+    
+        <span class="sidebar-category-name" data-categories="vsftp"><span class="iconfont-archer">&#xe60a;</span>vsftp</span>
     
         <span class="sidebar-category-name" data-categories="kubernetes/k8s"><span class="iconfont-archer">&#xe60a;</span>kubernetes/k8s</span>
     
         <span class="sidebar-category-name" data-categories="kubernetes/Job"><span class="iconfont-archer">&#xe60a;</span>kubernetes/Job</span>
     
-        <span class="sidebar-category-name" data-categories="proxmox"><span class="iconfont-archer">&#xe60a;</span>proxmox</span>
-    
         <span class="sidebar-category-name" data-categories="kubernetes/prometheus"><span class="iconfont-archer">&#xe60a;</span>kubernetes/prometheus</span>
+    
+        <span class="sidebar-category-name" data-categories="proxmox"><span class="iconfont-archer">&#xe60a;</span>proxmox</span>
     
         <span class="sidebar-category-name" data-categories="日志/总结"><span class="iconfont-archer">&#xe60a;</span>日志/总结</span>
     
         <span class="sidebar-category-name" data-categories="CI"><span class="iconfont-archer">&#xe60a;</span>CI</span>
     
-        <span class="sidebar-category-name" data-categories="日志/运维"><span class="iconfont-archer">&#xe60a;</span>日志/运维</span>
-    
         <span class="sidebar-category-name" data-categories="日志/技巧"><span class="iconfont-archer">&#xe60a;</span>日志/技巧</span>
+    
+        <span class="sidebar-category-name" data-categories="日志/运维"><span class="iconfont-archer">&#xe60a;</span>日志/运维</span>
     
         <span class="sidebar-category-name" data-categories="日志/LVM"><span class="iconfont-archer">&#xe60a;</span>日志/LVM</span>
     
