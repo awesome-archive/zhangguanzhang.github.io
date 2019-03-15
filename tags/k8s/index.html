@@ -351,7 +351,7 @@
                 <span>不走etcd v2 api下二进制跑flannel的总结</span>
         </a>
         <div class="abstract-content">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这几天给线上搭建k8s集群,文件和systemd参数大多是从kubeadm的staticPod的yml里扣出来的,起初是除了flanneld全部是systemd管理二进制。但是当kube-proxy挂了的时候,flanneld的pod因为要watch节点是通过kubernetes这个svc走的连接断开,然后pod状态变成退出,而kubelet在不手动清理掉退出状态的flannel容器就不会创建新的flannel的pod,而改退出状态容器的gc时间又是全局这样不好,遂萌生了之前一个未完成的坑: flanneld扣成二进...
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这几天给线上搭建k8s集群,文件和systemd参数大多是从kubeadm的staticPod的yml里扣出来的,起初是除了flanneld全部是systemd管理二进制。起初因为脚本问题导致kube-proxy的kubeocnfig少执行了use-context所以显示的是匿名用户无法list node信息,kube-proxy是在运行但是无法维持svc的网络,flanneld因为是pod要watch节点是通过kubernetes这个svc走的连接导致不通,然后pod状态变成退出,而kubelet在不手动清理掉退出...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
