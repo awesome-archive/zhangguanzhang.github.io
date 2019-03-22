@@ -364,7 +364,7 @@ height:50vh;
                 <span>一次kube-controller-manager的bug导致的线上无法调度处理过程</span>
         </a>
         <div class="abstract-content">
-            线上的k8s环境普遍版本很低，今天同事心血来潮去一个新节点上去看了下发现根分区满了,清理了后发有一个pod没有创建出来。清理后把因为满了而down掉的进程起来后发现kubelet的log一直报错cannot remove /var/lib/kubelet/xxxxconfig/key resource busy now 啥的。查看了下describe对应rc还没有任何Event1234567891011121314151617181920212223242526272829303132333435363738$ kubectl describe rc rabbit3rc Name:		r...
+            线上的k8s环境普遍版本很低，今天同事心血来潮去一个新节点上去看了下发现根分区满了,清理了后发有一个pod没有创建出来。清理后把因为文件系统满了而down掉的k8s相关进程起来后发现kubelet的log一直报错cannot remove /var/lib/kubelet/xxxxconfig/key resource busy now 啥的。查看了下describe对应rc还没有任何Event1234567891011121314151617181920212223242526272829303132333435363738$ kubectl describe rc rabbit3rc...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
