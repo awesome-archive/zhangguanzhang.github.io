@@ -505,8 +505,9 @@
         </a>
         <div class="abstract-content">
             关闭防火墙和selinux123systemctl disable --now firewalld NetworkManagersetenforce 0sed -ri &apos;/^[^#]*SELINUX=/s#=.+$#=disabled#&apos; /etc/selinux/config
-安装vsftpd和db41234yum install -y \	vsftpd \	db4-utils \	db4
-创建vsftpd使用的系统用户，主目录为/home/vsftpd，禁止ssh登录。创建之后所有虚拟用户使用这个系统用户访问文件1useradd vsftpd -d /home/v...
+安装vsftpd和db4
+12345yum install -y epel-release &amp;&amp; \yum install -y \	vsftpd \	db4-utils \	db4
+创建vsftpd使用的系统用户，主目录为/home/vsftpd，禁止ssh登录。创建之后所有...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
