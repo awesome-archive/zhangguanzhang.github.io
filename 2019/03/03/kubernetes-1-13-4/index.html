@@ -274,7 +274,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">16.5k</span>阅读时长: <span class="post-count reading-time">78 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">16.5k</span>阅读时长: <span class="post-count reading-time">79 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -860,7 +860,7 @@ height:50vh;
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out  sa.key 2048</span><br><span class="line">openssl ecparam -name secp521r1 -genkey -noout -out sa.key</span><br><span class="line">openssl ec -in sa.key -outform PEM -pubout -out sa.pub</span><br><span class="line">openssl req -new -sha256 -key sa.key -subj &quot;/CN=system:kube-controller-manager&quot; -out sa.csr</span><br><span class="line">openssl x509 -req -in sa.csr -CA ca.crt -CAkey ca.key -CAcreateserial -days 10000 -extensions v3_req_client -extfile openssl.cnf -out sa.crt</span><br></pre></td></tr></table></figure>
 <p>admin</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out  admin.key 2048</span><br><span class="line">openssl req -new -key admin.key -subj &quot;/CN=kubernetes-admin/O=system:masters&quot; -out admin.csr</span><br><span class="line">openssl x509 -req -in admin.csr -CA ca.crt -CAkey ca.key -CAcreateserial -days 10000 -extensions v3_req_client -extfile openssl.cnf -out admin.crt</span><br></pre></td></tr></table></figure>
-<p>清理 csr srl</p>
+<p>清理 csr srl(csr只要key不变那每次生成都是一样的,所以可以删除,如果后期根据ca重新生成证书来添加ip的话可以此处不删除)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name &quot;*.csr&quot; -o -name &quot;*.srl&quot;|xargs  rm -f</span><br></pre></td></tr></table></figure>
 <h3 id="利用证书生成组件的kubeconfig"><a href="#利用证书生成组件的kubeconfig" class="headerlink" title="利用证书生成组件的kubeconfig"></a>利用证书生成组件的kubeconfig</h3><table>
 <thead>
@@ -1230,7 +1230,7 @@ height:50vh;
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/</a>
             <p>发表日期：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">March 3rd 2019, 7:36:53 pm</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">April 4th 2019, 10:47:39 pm</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">April 9th 2019, 4:12:33 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
