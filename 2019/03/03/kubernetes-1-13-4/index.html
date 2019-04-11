@@ -274,7 +274,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">16.5k</span>阅读时长: <span class="post-count reading-time">79 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">16.6k</span>阅读时长: <span class="post-count reading-time">79 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -891,6 +891,12 @@ height:50vh;
 </tr>
 </tbody>
 </table>
+<p><span style="font-size: 1.4em;color: #333;font-weight:bold">kubectl的参数意义为</span></p>
+<ul>
+<li>–certificate-authority：验证根证书；</li>
+<li>–client-certificate、–client-key：生成的 组件证书和私钥，连接 kube-apiserver 时会用到</li>
+<li>–embed-certs=true：将 ca.pem 和 组件.pem 证书内容嵌入到生成的 kubeconfig 文件中(不加时，写入的是证书文件路径)</li>
+</ul>
 <p>kube-controller-manager</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">CLUSTER_NAME=&quot;kubernetes&quot;</span><br><span class="line">KUBE_USER=&quot;system:kube-controller-manager&quot;</span><br><span class="line">KUBE_CERT=&quot;sa&quot;</span><br><span class="line">KUBE_CONFIG=&quot;controller-manager.kubeconfig&quot;</span><br><span class="line"></span><br><span class="line"># 设置集群参数</span><br><span class="line">kubectl config set-cluster $&#123;CLUSTER_NAME&#125; \</span><br><span class="line">  --certificate-authority=/etc/kubernetes/pki/ca.crt \</span><br><span class="line">  --embed-certs=true \</span><br><span class="line">  --server=$&#123;KUBE_APISERVER&#125; \</span><br><span class="line">  --kubeconfig=/etc/kubernetes/$&#123;KUBE_CONFIG&#125;</span><br><span class="line"></span><br><span class="line"># 设置客户端认证参数</span><br><span class="line">kubectl config set-credentials $&#123;KUBE_USER&#125; \</span><br><span class="line">  --client-certificate=/etc/kubernetes/pki/$&#123;KUBE_CERT&#125;.crt \</span><br><span class="line">  --client-key=/etc/kubernetes/pki/$&#123;KUBE_CERT&#125;.key \</span><br><span class="line">  --embed-certs=true \</span><br><span class="line">  --kubeconfig=/etc/kubernetes/$&#123;KUBE_CONFIG&#125;</span><br><span class="line"></span><br><span class="line"># 设置上下文参数</span><br><span class="line">kubectl config set-context $&#123;KUBE_USER&#125;@$&#123;CLUSTER_NAME&#125; \</span><br><span class="line">  --cluster=$&#123;CLUSTER_NAME&#125; \</span><br><span class="line">  --user=$&#123;KUBE_USER&#125; \</span><br><span class="line">  --kubeconfig=/etc/kubernetes/$&#123;KUBE_CONFIG&#125;</span><br><span class="line"></span><br><span class="line"># 设置当前使用的上下文</span><br><span class="line">kubectl config use-context $&#123;KUBE_USER&#125;@$&#123;CLUSTER_NAME&#125; --kubeconfig=/etc/kubernetes/$&#123;KUBE_CONFIG&#125;</span><br><span class="line"></span><br><span class="line"># 查看生成的配置文件</span><br><span class="line">kubectl config view --kubeconfig=/etc/kubernetes/$&#123;KUBE_CONFIG&#125;</span><br></pre></td></tr></table></figure>
 <p>kube-scheduler</p>
@@ -1229,8 +1235,8 @@ height:50vh;
         <div class="license-wrapper">
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/</a>
-            <p>发表日期：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">March 3rd 2019, 7:36:53 pm</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">April 9th 2019, 4:12:33 pm</a>
+            <p>发表日期：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">三月 3日 2019, 7:36:53 晚上</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">April 10th 2019, 3:11:20 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
