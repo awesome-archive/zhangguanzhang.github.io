@@ -451,9 +451,9 @@ height:50vh;
 <ul>
 <li>type为<code>LoadBalancer</code>的时候手写<code>externalIPs</code>很鸡肋,后面会再写文章去讲它</li>
 <li>type为<code>LoadBalancer</code>的时候只有云厂商支持分配公网ip来负载均衡,LoadBalancer 公开的每项服务都将获得自己的 IP 地址,但是需要收费,且自己建立集群无法使用</li>
-<li>不创建svc,pod直接用hostport,效率等同于<code>hostnetwork</code>,如果不代理四层端口还好,代理了需要修改pod的template来滚动更新来让nginx bind的四层端口能映射到宿主机上</li>
+<li>不创建svc,pod直接用hostport,效率等同于<code>hostNetwork</code>,如果不代理四层端口还好,代理了需要修改pod的template来滚动更新来让nginx bind的四层端口能映射到宿主机上</li>
 <li><code>Nodeport</code>,端口不是web端口(但是可以修改Nodeport的范围改成web端口),如果进来流量负载到Nodeport上可能某个流量路线到某个node上的时候因为<code>Ingress Controller</code>的pod不在这个node上,会走这个node的kube-proxy转发到Ingress Controller的pod上,多走一趟路</li>
-<li>不创建svc,效率最高,也能四层负载的时候不修改pod的template,唯一要注意的是hostnetwork下pod会继承宿主机的网络协议,也就是使用了主机的dns,会导致svc的请求直接走宿主机的上到公网的dns服务器而非集群里的dns server,需要设置pod的<code>dnsPolicy: ClusterFirstWithHostNet</code>即可解决</li>
+<li>不创建svc,效率最高,也能四层负载的时候不修改pod的template,唯一要注意的是hostNetworkk下pod会继承宿主机的网络协议,也就是使用了主机的dns,会导致svc的请求直接走宿主机的上到公网的dns服务器而非集群里的dns server,需要设置pod的<code>dnsPolicy: ClusterFirstWithHostNet</code>即可解决</li>
 </ul>
 <p>部署方式没多大区别开心就好</p>
 <ul>
@@ -475,8 +475,8 @@ height:50vh;
         <div class="license-wrapper">
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2018/10/06/IngressController/">http://zhangguanzhang.github.io/2018/10/06/IngressController/</a>
-            <p>发表日期：<a href="http://zhangguanzhang.github.io/2018/10/06/IngressController/">十月 6日 2018, 7:11:10 晚上</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/10/06/IngressController/">January 16th 2019, 3:37:16 pm</a>
+            <p>发表日期：<a href="http://zhangguanzhang.github.io/2018/10/06/IngressController/">October 6th 2018, 7:11:10 pm</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/10/06/IngressController/">April 11th 2019, 12:01:24 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
