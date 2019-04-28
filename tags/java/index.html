@@ -348,7 +348,7 @@
     <article class="index-post">
         <a class="abstract-title" href = "/2019/04/28/k8s-java-start-time-not-same/" >
             
-                <span>闲谈现上俩k8s环境同等limits下pod启动时间不一样解决过程</span>
+                <span>闲谈线上俩k8s环境同等limits下pod启动时间不一样解决过程</span>
         </a>
         <div class="abstract-content">
             线上用的k8s版本是1.6.7非常老，而且HA有问题，上个月研发想把里面的一些服务迁出来到一个新集群里，新集群的搭建是我负责的。上周开始陆陆续续的迁移过来了，但是同等limit下部分pod在测试环境上(测试环境和老环境部署是一样的,下文的老环境和测试环境可以理解为一样)启动非常快，在我搭建的新k8s环境上启动非常慢，研发他们应用都是java+springboot，这里不谈jvm无法识别cgroup，已经加选项识别到了。因为之前一次有个用户反映他们本地虚机启动springboot应用20s，我们云上启动就三分钟，后面漠然大佬教我加java的启动参数输出log，帮我远程debug找到原因是z...
@@ -1295,7 +1295,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/28</span><a class="archive-post-title" href= "/2019/04/28/k8s-java-start-time-not-same/" >闲谈现上俩k8s环境同等limits下pod启动时间不一样解决过程</a>
+            <span class="archive-post-date">04/28</span><a class="archive-post-title" href= "/2019/04/28/k8s-java-start-time-not-same/" >闲谈线上俩k8s环境同等limits下pod启动时间不一样解决过程</a>
         </li>
     
     
