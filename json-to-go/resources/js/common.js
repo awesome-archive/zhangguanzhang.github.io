@@ -118,7 +118,7 @@ $(function()
 	{
 		if(!dark)
 		{
-			$("head").append("<link rel="stylesheet" href="resources/css/dark.css" id="dark-css">");
+			$("head").append('<link rel="stylesheet" href="resources/css/dark.css" id="dark-css">');
 			$("#dark").html("light mode");
 		} else
 		{
