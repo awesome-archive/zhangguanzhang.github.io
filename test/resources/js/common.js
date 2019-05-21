@@ -131,7 +131,7 @@ $(function()
 	{
 		if(!dark)
 		{
-			$("head").append("<link rel='stylesheet' href='resources/css/dark.css' id='dark-css'>");
+			$("head").append("<link rel="stylesheet" href="resources/css/dark.css" id="dark-css">");
 			$("#dark").html("light mode");
 		} else
 		{
@@ -143,7 +143,7 @@ $(function()
 });
 
 function constructJSONErrorHTML(rawErrorMessage, errorIndex, json) {
-	var errorHeading = '<p><span class="clr-red">'+ rawErrorMessage +'</span><p>';
+	var errorHeading = '<p><span class="clr-red">'+ rawErrorMessage +'</span></p><p>';
 	var markedPart = '<span class="json-go-faulty-char">' + json[errorIndex] + '</span>';
 	var markedJsonString = [json.slice(0, errorIndex), markedPart, json.slice(errorIndex+1)].join('');
 	var jsonStringLines = markedJsonString.split(/\n/);
@@ -436,4 +436,4 @@ var sampleJson2 = {
 			"pull": true
 		}
 	}
-};
+};</span></p>
