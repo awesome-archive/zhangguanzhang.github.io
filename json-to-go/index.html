@@ -3,20 +3,11 @@
 	<head>
 		<title>JSON-to-Go: Convert JSON to Go instantly</title>
 		<meta charset="UTF-8">
-		<script>
-			if ('serviceWorker' in navigator) {
-				navigator.serviceWorker.register('./sw.js').then(function(reg) {
-					console.log('Successfully registered service worker', reg);
-				}).catch(function(err) {
-					console.warn('Error whilst registering service worker', err);
-				})
-			}
-		</script>
-		<script src="resources/js/jquery.min.js"></script>
-		<script src="resources/js/highlight.min.js"></script>
-		<script src="resources/js/json-to-go.js"></script>
-		<script src="resources/js/common.js"></script>
-		<script src="resources/js/gofmt.js" async></script>
+		<script src="https://mholt.github.io/json-to-go/resources/js/jquery.min.js"></script>
+		<script src="https://mholt.github.io/json-to-go/resources/js/highlight.min.js"></script>
+		<script src="https://mholt.github.io/json-to-go/resources/js/json-to-go.js"></script>
+		<script src="https://mholt.github.io/json-to-go/resources/js/common.js"></script>
+		<script src="https://mholt.github.io/json-to-go/resources/js/gofmt.js" async></script>
 		<link rel="stylesheet" href="resources/css/tomorrow.highlight.css">
 		<link rel="stylesheet" href="resources/css/common.css">
 	</head>
