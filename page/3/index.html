@@ -359,6 +359,36 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/07/18/ecs-vip/" >
+            
+                <span>基于openstack的ecs上使用VIP</span>
+        </a>
+        <div class="abstract-content">
+            客户需要在云上使用vip,后面发现不通，查询了后发现openstack的neutron会存在ip和mac绑定的关系,可以阅读下面的链接查看说明https://blog.codecentric.de/en/2016/11/highly-available-vips-openstack-vms-vrrp/即如果网卡上有不是下发的ip在向外发包后包会被drop掉,需要用neutron的cli解绑ip和mac的绑定,我们这这个功能已经做在了web上了,所以可以直接解绑
+后面发现另一个客户两台机器都出现了VIP,看了下他的检查脚本是检测mysql存活,以为是脑裂造成的,后面才发现是组播被SDN禁止...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/18</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "keepavlied">keepavlied</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/07/08/travis-sync-gcr-io/" >
             
                 <span>利用travis同步gcr.io镜像到dockerhub</span>
@@ -640,35 +670,6 @@ An example of a pod that uses pod affinity:
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/12/24/docker容器访问宿主机/" >
-            
-                <span>docker容器访问宿主机</span>
-        </a>
-        <div class="abstract-content">
-            有时候使用docker容器的时候经常有需要访问宿主机ip的需求,虽然可以用宿主机网卡的ip访问,但是有时候有些人的宿主机ip是dhcp方式通用方法就是给宿主机加个不可达的回环地址,然后容器的host指向这个回环地址(容器host这步是可选的)(PS:1.1.1.1这个地址在2018/04初成为了公共DNS所以能ping通了,不过思路还是一样的)环境如下123456[root@guanvps ~]# cat /etc/redhat-release CentOS Linux release 7.4.1708 (Core) [root@guanvps ~]# uname -aLinux gua...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/24</span>
             </div>
             <!-- tags  -->
             
@@ -1789,9 +1790,36 @@ An example of a pod that uses pod affinity:
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 54
+        Total : 55
         </div>
         <!-- search  -->
         
@@ -1808,6 +1836,11 @@ An example of a pod that uses pod affinity:
     
         <li class="archive-post-item">
             <span class="archive-post-date">06/02</span><a class="archive-post-title" href= "/2019/06/02/cobra/" >golang cobra的一些笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/02</span><a class="archive-post-title" href= "/2019/06/02/CLP/" >SMASH CLP的一些笔记</a>
         </li>
     
     
@@ -2199,6 +2232,10 @@ An example of a pod that uses pod affinity:
     
         <span class="sidebar-tag-name" data-tags="zabbix"><span class="iconfont-archer">&#xe606;</span>zabbix</span>
     
+        <span class="sidebar-tag-name" data-tags="ipmi"><span class="iconfont-archer">&#xe606;</span>ipmi</span>
+    
+        <span class="sidebar-tag-name" data-tags="CLP"><span class="iconfont-archer">&#xe606;</span>CLP</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -2283,6 +2320,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="日志/运维"><span class="iconfont-archer">&#xe60a;</span>日志/运维</span>
     
         <span class="sidebar-category-name" data-categories="日志/LVM/raid"><span class="iconfont-archer">&#xe60a;</span>日志/LVM/raid</span>
+    
+        <span class="sidebar-category-name" data-categories="ipmi"><span class="iconfont-archer">&#xe60a;</span>ipmi</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

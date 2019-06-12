@@ -359,6 +359,37 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/01/22/proxmox-cloud-init/" >
+            
+                <span>proxmox里使用cloud-init和一些笔记</span>
+        </a>
+        <div class="abstract-content">
+            cloud-init的镜像模板制作模板制作记录下proxmox制作带有cloud-init的虚机模板过程&nbsp;&nbsp;&nbsp;&nbsp;因为刚开始制作虚机模板的硬盘是固定大小,后面通过克隆后调整硬盘大小就会自动growpart,需要安装cloud-utils-growpart。好像只能往大的扩,我个人也倾向于最小20G,所以这里我开的是20G硬盘的虚机&nbsp;&nbsp;&nbsp;&nbsp;另外查了下和实际试了下cloud-utils-growpart好像只支持ext3和ext4不支持lvm自动扩,其他的文件系统可以考虑试试lvm自己写个脚本去开机启动自动扩。这里...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/22</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "openstack">openstack</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "cloud-init">cloud-init</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/12/04/black-box-exporter/" >
             
                 <span>prometheus的黑盒监控</span>
@@ -672,36 +703,6 @@ Cluster I...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/07/18/ecs-vip/" >
-            
-                <span>基于openstack的ecs上使用VIP</span>
-        </a>
-        <div class="abstract-content">
-            客户需要在云上使用vip,后面发现不通，查询了后发现openstack的neutron会存在ip和mac绑定的关系,可以阅读下面的链接查看说明https://blog.codecentric.de/en/2016/11/highly-available-vips-openstack-vms-vrrp/即如果网卡上有不是下发的ip在向外发包后包会被drop掉,需要用neutron的cli解绑ip和mac的绑定,我们这这个功能已经做在了web上了,所以可以直接解绑
-后面发现另一个客户两台机器都出现了VIP,看了下他的检查脚本是检测mysql存活,以为是脑裂造成的,后面才发现是组播被SDN禁止...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "keepavlied">keepavlied</a>
     
 </div>
             
@@ -1816,9 +1817,36 @@ Cluster I...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 54
+        Total : 55
         </div>
         <!-- search  -->
         
@@ -1835,6 +1863,11 @@ Cluster I...
     
         <li class="archive-post-item">
             <span class="archive-post-date">06/02</span><a class="archive-post-title" href= "/2019/06/02/cobra/" >golang cobra的一些笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/02</span><a class="archive-post-title" href= "/2019/06/02/CLP/" >SMASH CLP的一些笔记</a>
         </li>
     
     
@@ -2226,6 +2259,10 @@ Cluster I...
     
         <span class="sidebar-tag-name" data-tags="zabbix"><span class="iconfont-archer">&#xe606;</span>zabbix</span>
     
+        <span class="sidebar-tag-name" data-tags="ipmi"><span class="iconfont-archer">&#xe606;</span>ipmi</span>
+    
+        <span class="sidebar-tag-name" data-tags="CLP"><span class="iconfont-archer">&#xe606;</span>CLP</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -2310,6 +2347,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="日志/运维"><span class="iconfont-archer">&#xe60a;</span>日志/运维</span>
     
         <span class="sidebar-category-name" data-categories="日志/LVM/raid"><span class="iconfont-archer">&#xe60a;</span>日志/LVM/raid</span>
+    
+        <span class="sidebar-category-name" data-categories="ipmi"><span class="iconfont-archer">&#xe60a;</span>ipmi</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
