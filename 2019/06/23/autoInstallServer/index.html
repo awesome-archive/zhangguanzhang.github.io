@@ -433,7 +433,7 @@ height:50vh;
 <li>4.启动的iso里指定了kickstart文件，然后服务器在安装界面出来之前会dhcp获取ip去下载ks文件，而dhcp上线的mac就是四张电口的mac地址之一。获取ip是每个网口尝试去发dhcp请求，如下图实际上这个物理机我只连线了一个电口，电口网卡名为enp61s0f2，获取到了ip就会下载ks文件，那个speed相关就是curl下载的进度输出。<br><img src="https://raw.githubusercontent.com/zhangguanzhang/Image-Hosting/master/machineInstaller/007.png" alt="initrd-init"></li>
 <li>5.dhcp得到ip后从我这web拿ks文件，我这web返回ks文件之前那客户端的来源ip去连接交换机查客户端的mac地址(因为此时对于每一台服务器的来源ip不是固定的，mac地址是固定的)，查到mac地址后在excel看来源mac地址是那行确定了是哪个机器，返回渲染的ks文件（文件里渲染了ip和hostname之类的信息），服务器会自动安装和设置</li>
 </ul>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主要是从第三部开始实现，SMASH CLP就是ssh执行命令，里面路径信息得自己去找，具体的一些找过的资料可以看我另一个文章里的链接 <a href="https://zhangguanzhang.github.io/2019/06/12/CLP/">https://zhangguanzhang.github.io/2019/06/12/CLP/</a> 。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLP非常麻烦，寻思着有没有hdm的api，询问了社区和相关人员确定了没有api文档，只能浏览器界面上点击然后F12打开network抓包找接口。http请求用go的<code>net/http</code>包，excel用的<code>github.com/360EntSecGroup-Skylar/excelize/v2</code>国人开发的包，主要是由自己的example文档界面 <a href="https://xuri.me/excelize/zh-hans/utils.html#CellNameToCoordinates。ssh操作交换机找了下找到了一个大佬写的包，把其中连接交换机执行命令的部分给扣出来使用，但是字符串提取`dis" target="_blank" rel="noopener">https://xuri.me/excelize/zh-hans/utils.html#CellNameToCoordinates。ssh操作交换机找了下找到了一个大佬写的包，把其中连接交换机执行命令的部分给扣出来使用，但是字符串提取`dis</a> arp<code>的纯ip和mac部分文本遇到了诡异的问题，想着按照</code>\n`去split成切片然后去掉前面两个和最后一个就是纯arp列表了，然后每行按照空格split下就能提取到ip和mac了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   Type: S-Static    D-Dynamic    O-Openflow   R-Rule   I-Invalid</span><br><span class="line">IP address      MAC address    SVLAN/VSI  Interface/Link ID        Aging Type </span><br><span class="line">10.254.250.250  dcda-80fb-b321 --         GE1/0/0                  10    D    </span><br><span class="line">61.181.149.xxx  4c09-b4f4-c7f1 --         GE1/0/2                  20    D    </span><br><span class="line">10.0.6.253      a80c-0d00-26d4 --         GE1/0/3                  16    D    </span><br><span class="line">10.101.1.2      3cf5-cc94-155a 20         GE1/0/4                  8     D    </span><br><span class="line">&lt;FW-IT-TJ&gt;</span><br></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主要是从第三部开始实现，SMASH CLP就是ssh执行命令，里面路径信息得自己去找，具体的一些找过的资料可以看我另一个文章里的链接 <a href="https://zhangguanzhang.github.io/2019/06/12/CLP/">https://zhangguanzhang.github.io/2019/06/12/CLP/</a> 。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLP非常麻烦，寻思着有没有hdm的api，询问了社区和相关人员确定了没有api文档，只能浏览器界面上点击然后F12打开network抓包找接口。http请求用go的<code>net/http</code>包，excel用的<code>github.com/360EntSecGroup-Skylar/excelize/v2</code>国人开发的包，主要是由自己的example文档界面 <a href="https://xuri.me/excelize/zh-hans/utils.html#CellNameToCoordinates" target="_blank" rel="noopener">https://xuri.me/excelize/zh-hans/utils.html#CellNameToCoordinates</a> 。ssh操作交换机找了下找到了一个大佬写的包，把其中连接交换机执行命令的部分给扣出来使用，但是字符串提取<code>dis arp</code>的纯ip和mac部分文本遇到了诡异的问题，想着按照<code>\n</code>去split成切片然后去掉前面两个和最后一个就是纯arp列表了，然后每行按照空格split下就能提取到ip和mac了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   Type: S-Static    D-Dynamic    O-Openflow   R-Rule   I-Invalid</span><br><span class="line">IP address      MAC address    SVLAN/VSI  Interface/Link ID        Aging Type </span><br><span class="line">10.254.250.250  dcda-80fb-b321 --         GE1/0/0                  10    D    </span><br><span class="line">61.181.149.xxx  4c09-b4f4-c7f1 --         GE1/0/2                  20    D    </span><br><span class="line">10.0.6.253      a80c-0d00-26d4 --         GE1/0/3                  16    D    </span><br><span class="line">10.101.1.2      3cf5-cc94-155a 20         GE1/0/4                  8     D    </span><br><span class="line">&lt;FW-IT-TJ&gt;</span><br></pre></td></tr></table></figure></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;但是当时打印了是split后切片元素值不对，以为是库的问题给大佬发了好友请求，想咨询下大佬，后续自己找到问题了，是因为交换机的换行是<code>\r</code>，这里就不放代码了。后续加上大佬交流了下，把整个思路给他说了下，他说没必要ssh交换机，你只是获取信息用snmp就行了。之前对于snmp也是只知道有个mib库和oid啥的，具体干啥的不清楚。查阅了相关资料明白了 <a href="https://blog.csdn.net/zqixiao_09/article/details/77127448" target="_blank" rel="noopener">https://blog.csdn.net/zqixiao_09/article/details/77127448</a><br>我这里办公网的交换机没密码连不上，连了个防火墙，这部分是一样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;FW-IT-TJ&gt;dis current-configuration | include snmp</span><br><span class="line"> snmp-agent</span><br><span class="line"> snmp-agent local-engineid 800063A28088DF9E7356xxxxxxxx</span><br><span class="line"> snmp-agent community read public</span><br><span class="line"> snmp-agent sys-info version v2c v3 </span><br><span class="line">&lt;FW-IT-TJ&gt;</span><br></pre></td></tr></table></figure></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;现在来讲所有的网络设备都支持snmp ，协议版本号都是v2居多，v3认证挺严格的一般用的太少。<br>v2协议认证非常简单，snmp协议是161端口，udp和tcp均可，我们可以安装一个snmpwalk命令测试下，<code>community read</code>后面的字符串就是v2协议下认证的口令，默认是<code>public</code>。snmpwalk连接格式为下面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snmpwalk -v&lt;协议版本&gt; -c &lt;community string&gt; &lt;网络设备的登陆ip&gt;        &lt;对象标识符,也就是oid&gt;</span><br></pre></td></tr></table></figure></p>
 <p>协议版本号为 1|2c|3，我们用2就写2c<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snmpwalk -v2c -c public 10.0.23.1     .</span><br></pre></td></tr></table></figure></p>
@@ -518,13 +518,18 @@ height:50vh;
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2019/06/23/autoInstallServer/">http://zhangguanzhang.github.io/2019/06/23/autoInstallServer/</a>
             <p>发表日期：<a href="http://zhangguanzhang.github.io/2019/06/23/autoInstallServer/">June 23rd 2019, 7:11:10 pm</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2019/06/23/autoInstallServer/">June 26th 2019, 11:47:43 am</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2019/06/23/autoInstallServer/">June 30th 2019, 10:16:16 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
     <!-- paginator  -->
     <ul class="post-paginator">
         <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2019/06/26/uefi-pxe/" title= "uefi模式下docker+交换机部署pxe批量安装">
+                    <div class="nextTitle">uefi模式下docker+交换机部署pxe批量安装</div>
+                </a>
             
         </li>
         <li class="previous">
@@ -1542,9 +1547,94 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 56
+        Total : 57
         </div>
         <!-- search  -->
         
@@ -1557,6 +1647,11 @@ top:50vh;
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/26</span><a class="archive-post-title" href= "/2019/06/26/uefi-pxe/" >uefi模式下docker+交换机部署pxe批量安装</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1870,19 +1965,31 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="ipmi"><span class="iconfont-archer">&#xe606;</span>ipmi</span>
+    
+        <span class="sidebar-tag-name" data-tags="CLP"><span class="iconfont-archer">&#xe606;</span>CLP</span>
+    
         <span class="sidebar-tag-name" data-tags="diy"><span class="iconfont-archer">&#xe606;</span>diy</span>
     
         <span class="sidebar-tag-name" data-tags="8266"><span class="iconfont-archer">&#xe606;</span>8266</span>
     
         <span class="sidebar-tag-name" data-tags="总结"><span class="iconfont-archer">&#xe606;</span>总结</span>
     
-        <span class="sidebar-tag-name" data-tags="Altium Designer"><span class="iconfont-archer">&#xe606;</span>Altium Designer</span>
-    
         <span class="sidebar-tag-name" data-tags="k8s"><span class="iconfont-archer">&#xe606;</span>k8s</span>
     
         <span class="sidebar-tag-name" data-tags="ingress"><span class="iconfont-archer">&#xe606;</span>ingress</span>
     
-        <span class="sidebar-tag-name" data-tags="cobra"><span class="iconfont-archer">&#xe606;</span>cobra</span>
+        <span class="sidebar-tag-name" data-tags="Altium Designer"><span class="iconfont-archer">&#xe606;</span>Altium Designer</span>
+    
+        <span class="sidebar-tag-name" data-tags="initrd"><span class="iconfont-archer">&#xe606;</span>initrd</span>
+    
+        <span class="sidebar-tag-name" data-tags="grub"><span class="iconfont-archer">&#xe606;</span>grub</span>
+    
+        <span class="sidebar-tag-name" data-tags="raid"><span class="iconfont-archer">&#xe606;</span>raid</span>
+    
+        <span class="sidebar-tag-name" data-tags="lnmp"><span class="iconfont-archer">&#xe606;</span>lnmp</span>
+    
+        <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
     
         <span class="sidebar-tag-name" data-tags="cad"><span class="iconfont-archer">&#xe606;</span>cad</span>
     
@@ -1898,11 +2005,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="keepavlied"><span class="iconfont-archer">&#xe606;</span>keepavlied</span>
     
-        <span class="sidebar-tag-name" data-tags="lnmp"><span class="iconfont-archer">&#xe606;</span>lnmp</span>
-    
-        <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
+        <span class="sidebar-tag-name" data-tags="cobra"><span class="iconfont-archer">&#xe606;</span>cobra</span>
     
         <span class="sidebar-tag-name" data-tags="flannel"><span class="iconfont-archer">&#xe606;</span>flannel</span>
+    
+        <span class="sidebar-tag-name" data-tags="hello world"><span class="iconfont-archer">&#xe606;</span>hello world</span>
     
         <span class="sidebar-tag-name" data-tags="cifs"><span class="iconfont-archer">&#xe606;</span>cifs</span>
     
@@ -1910,23 +2017,21 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="原创"><span class="iconfont-archer">&#xe606;</span>原创</span>
     
-        <span class="sidebar-tag-name" data-tags="hello world"><span class="iconfont-archer">&#xe606;</span>hello world</span>
-    
         <span class="sidebar-tag-name" data-tags="ftp"><span class="iconfont-archer">&#xe606;</span>ftp</span>
+    
+        <span class="sidebar-tag-name" data-tags="kube-controller-manager"><span class="iconfont-archer">&#xe606;</span>kube-controller-manager</span>
+    
+        <span class="sidebar-tag-name" data-tags="java"><span class="iconfont-archer">&#xe606;</span>java</span>
+    
+        <span class="sidebar-tag-name" data-tags="springboot"><span class="iconfont-archer">&#xe606;</span>springboot</span>
     
         <span class="sidebar-tag-name" data-tags="jira"><span class="iconfont-archer">&#xe606;</span>jira</span>
     
         <span class="sidebar-tag-name" data-tags="confluence"><span class="iconfont-archer">&#xe606;</span>confluence</span>
     
-        <span class="sidebar-tag-name" data-tags="kube-controller-manager"><span class="iconfont-archer">&#xe606;</span>kube-controller-manager</span>
-    
-        <span class="sidebar-tag-name" data-tags="PodAffinity"><span class="iconfont-archer">&#xe606;</span>PodAffinity</span>
-    
         <span class="sidebar-tag-name" data-tags="ConfigMap"><span class="iconfont-archer">&#xe606;</span>ConfigMap</span>
     
-        <span class="sidebar-tag-name" data-tags="java"><span class="iconfont-archer">&#xe606;</span>java</span>
-    
-        <span class="sidebar-tag-name" data-tags="springboot"><span class="iconfont-archer">&#xe606;</span>springboot</span>
+        <span class="sidebar-tag-name" data-tags="PodAffinity"><span class="iconfont-archer">&#xe606;</span>PodAffinity</span>
     
         <span class="sidebar-tag-name" data-tags="lamp"><span class="iconfont-archer">&#xe606;</span>lamp</span>
     
@@ -1936,21 +2041,23 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="左右分散对齐文字"><span class="iconfont-archer">&#xe606;</span>左右分散对齐文字</span>
     
-        <span class="sidebar-tag-name" data-tags="linux"><span class="iconfont-archer">&#xe606;</span>linux</span>
-    
-        <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
-    
         <span class="sidebar-tag-name" data-tags="openstack"><span class="iconfont-archer">&#xe606;</span>openstack</span>
     
         <span class="sidebar-tag-name" data-tags="cloud-init"><span class="iconfont-archer">&#xe606;</span>cloud-init</span>
     
+        <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
+    
+        <span class="sidebar-tag-name" data-tags="linux"><span class="iconfont-archer">&#xe606;</span>linux</span>
+    
         <span class="sidebar-tag-name" data-tags="bash"><span class="iconfont-archer">&#xe606;</span>bash</span>
+    
+        <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
+    
+        <span class="sidebar-tag-name" data-tags="tftp"><span class="iconfont-archer">&#xe606;</span>tftp</span>
     
         <span class="sidebar-tag-name" data-tags="dockerhub"><span class="iconfont-archer">&#xe606;</span>dockerhub</span>
     
         <span class="sidebar-tag-name" data-tags="gcr.io"><span class="iconfont-archer">&#xe606;</span>gcr.io</span>
-    
-        <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
     
         <span class="sidebar-tag-name" data-tags="微信"><span class="iconfont-archer">&#xe606;</span>微信</span>
     
@@ -1958,19 +2065,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="正则"><span class="iconfont-archer">&#xe606;</span>正则</span>
     
-        <span class="sidebar-tag-name" data-tags="awk"><span class="iconfont-archer">&#xe606;</span>awk</span>
-    
         <span class="sidebar-tag-name" data-tags="zabbix"><span class="iconfont-archer">&#xe606;</span>zabbix</span>
     
-        <span class="sidebar-tag-name" data-tags="ipmi"><span class="iconfont-archer">&#xe606;</span>ipmi</span>
-    
-        <span class="sidebar-tag-name" data-tags="CLP"><span class="iconfont-archer">&#xe606;</span>CLP</span>
-    
-        <span class="sidebar-tag-name" data-tags="initrd"><span class="iconfont-archer">&#xe606;</span>initrd</span>
-    
-        <span class="sidebar-tag-name" data-tags="grub"><span class="iconfont-archer">&#xe606;</span>grub</span>
-    
-        <span class="sidebar-tag-name" data-tags="raid"><span class="iconfont-archer">&#xe606;</span>raid</span>
+        <span class="sidebar-tag-name" data-tags="awk"><span class="iconfont-archer">&#xe606;</span>awk</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -2005,31 +2102,39 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
+        <span class="sidebar-category-name" data-categories="ipmi"><span class="iconfont-archer">&#xe60a;</span>ipmi</span>
+    
         <span class="sidebar-category-name" data-categories="日志"><span class="iconfont-archer">&#xe60a;</span>日志</span>
-    
-        <span class="sidebar-category-name" data-categories="日志/心得"><span class="iconfont-archer">&#xe60a;</span>日志/心得</span>
-    
-        <span class="sidebar-category-name" data-categories="日志/闲搞"><span class="iconfont-archer">&#xe60a;</span>日志/闲搞</span>
     
         <span class="sidebar-category-name" data-categories="kubernetes"><span class="iconfont-archer">&#xe60a;</span>kubernetes</span>
     
-        <span class="sidebar-category-name" data-categories="golang"><span class="iconfont-archer">&#xe60a;</span>golang</span>
+        <span class="sidebar-category-name" data-categories="日志/闲搞"><span class="iconfont-archer">&#xe60a;</span>日志/闲搞</span>
+    
+        <span class="sidebar-category-name" data-categories="日志/心得"><span class="iconfont-archer">&#xe60a;</span>日志/心得</span>
+    
+        <span class="sidebar-category-name" data-categories="pxe"><span class="iconfont-archer">&#xe60a;</span>pxe</span>
+    
+        <span class="sidebar-category-name" data-categories="pxe/raid"><span class="iconfont-archer">&#xe60a;</span>pxe/raid</span>
     
         <span class="sidebar-category-name" data-categories="日志/Auto-cad"><span class="iconfont-archer">&#xe60a;</span>日志/Auto-cad</span>
     
         <span class="sidebar-category-name" data-categories="prometheus"><span class="iconfont-archer">&#xe60a;</span>prometheus</span>
     
-        <span class="sidebar-category-name" data-categories="日志/容器"><span class="iconfont-archer">&#xe60a;</span>日志/容器</span>
+        <span class="sidebar-category-name" data-categories="pxe/raid/kickstart"><span class="iconfont-archer">&#xe60a;</span>pxe/raid/kickstart</span>
     
-        <span class="sidebar-category-name" data-categories="容器"><span class="iconfont-archer">&#xe60a;</span>容器</span>
+        <span class="sidebar-category-name" data-categories="日志/容器"><span class="iconfont-archer">&#xe60a;</span>日志/容器</span>
     
         <span class="sidebar-category-name" data-categories="docker"><span class="iconfont-archer">&#xe60a;</span>docker</span>
     
+        <span class="sidebar-category-name" data-categories="容器"><span class="iconfont-archer">&#xe60a;</span>容器</span>
+    
         <span class="sidebar-category-name" data-categories="openstack"><span class="iconfont-archer">&#xe60a;</span>openstack</span>
     
-        <span class="sidebar-category-name" data-categories="fstab"><span class="iconfont-archer">&#xe60a;</span>fstab</span>
+        <span class="sidebar-category-name" data-categories="golang"><span class="iconfont-archer">&#xe60a;</span>golang</span>
     
         <span class="sidebar-category-name" data-categories="日志/闲聊"><span class="iconfont-archer">&#xe60a;</span>日志/闲聊</span>
+    
+        <span class="sidebar-category-name" data-categories="fstab"><span class="iconfont-archer">&#xe60a;</span>fstab</span>
     
         <span class="sidebar-category-name" data-categories="vsftp"><span class="iconfont-archer">&#xe60a;</span>vsftp</span>
     
@@ -2037,33 +2142,29 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="kubernetes/k8s"><span class="iconfont-archer">&#xe60a;</span>kubernetes/k8s</span>
     
-        <span class="sidebar-category-name" data-categories="kubernetes/Job"><span class="iconfont-archer">&#xe60a;</span>kubernetes/Job</span>
-    
         <span class="sidebar-category-name" data-categories="kubernetes/prometheus"><span class="iconfont-archer">&#xe60a;</span>kubernetes/prometheus</span>
     
         <span class="sidebar-category-name" data-categories="proxmox"><span class="iconfont-archer">&#xe60a;</span>proxmox</span>
     
-        <span class="sidebar-category-name" data-categories="CI"><span class="iconfont-archer">&#xe60a;</span>CI</span>
-    
         <span class="sidebar-category-name" data-categories="日志/总结"><span class="iconfont-archer">&#xe60a;</span>日志/总结</span>
     
-        <span class="sidebar-category-name" data-categories="CI/travis"><span class="iconfont-archer">&#xe60a;</span>CI/travis</span>
+        <span class="sidebar-category-name" data-categories="kubernetes/Job"><span class="iconfont-archer">&#xe60a;</span>kubernetes/Job</span>
     
-        <span class="sidebar-category-name" data-categories="日志/LVM"><span class="iconfont-archer">&#xe60a;</span>日志/LVM</span>
+        <span class="sidebar-category-name" data-categories="pxe/docker"><span class="iconfont-archer">&#xe60a;</span>pxe/docker</span>
+    
+        <span class="sidebar-category-name" data-categories="CI"><span class="iconfont-archer">&#xe60a;</span>CI</span>
     
         <span class="sidebar-category-name" data-categories="日志/技巧"><span class="iconfont-archer">&#xe60a;</span>日志/技巧</span>
     
+        <span class="sidebar-category-name" data-categories="日志/LVM"><span class="iconfont-archer">&#xe60a;</span>日志/LVM</span>
+    
         <span class="sidebar-category-name" data-categories="日志/运维"><span class="iconfont-archer">&#xe60a;</span>日志/运维</span>
     
+        <span class="sidebar-category-name" data-categories="pxe/docker/kickstart"><span class="iconfont-archer">&#xe60a;</span>pxe/docker/kickstart</span>
+    
+        <span class="sidebar-category-name" data-categories="CI/travis"><span class="iconfont-archer">&#xe60a;</span>CI/travis</span>
+    
         <span class="sidebar-category-name" data-categories="日志/LVM/raid"><span class="iconfont-archer">&#xe60a;</span>日志/LVM/raid</span>
-    
-        <span class="sidebar-category-name" data-categories="ipmi"><span class="iconfont-archer">&#xe60a;</span>ipmi</span>
-    
-        <span class="sidebar-category-name" data-categories="pxe"><span class="iconfont-archer">&#xe60a;</span>pxe</span>
-    
-        <span class="sidebar-category-name" data-categories="pxe/raid"><span class="iconfont-archer">&#xe60a;</span>pxe/raid</span>
-    
-        <span class="sidebar-category-name" data-categories="pxe/raid/kickstart"><span class="iconfont-archer">&#xe60a;</span>pxe/raid/kickstart</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

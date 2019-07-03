@@ -359,6 +359,36 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/02/12/dashboard/" >
+            
+                <span>通用的dashboard部署和tls，SSL相关部署</span>
+        </a>
+        <div class="abstract-content">
+            详细的讲解下部署dashboard，比市面上更详细和更多场景的选择，本文dashboard的暴露不会用nodeport(不喜欢使用它)和apiserver的web proxy代理也就是/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/这种
+讲下四种场景方式：
+
+
+纯dashboard http和https不惨合外部证书
+openssl 证书给dashboard当https
+个人向域名使用https小绿锁
+ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/12</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/01/30/fstab/" >
             
                 <span>fstab与systemd.mount自动挂载的一点研究和见解</span>
@@ -648,44 +678,6 @@ Ingress Controller介绍与部署介绍...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/18/kubernetes-1-11-x-bin/" >
-            
-                <span>二进制部署Kubernetes v1.11.x(1.12.x) HA可选</span>
-        </a>
-        <div class="abstract-content">
-            本次采用二进制文件方式部署
-不建议使用secureCRT这个ssh软件复制本篇博客内容的命令,因为它的部分版本对包含多条命令的处理结果并不完美,可能很多命令不是预期结果
-本文命令里有些是输出,不要乱粘贴输入(虽然也没影响)
-本文命令全部是在k8s-m1上执行
-本文很多步骤是选择其一,别啥都不看一路往下复制粘贴
-如果某些步骤理解不了可以上下内容一起看来理解
-本文后面的几个svc用了externalIPs,上生产的话必须用VIP或者LB代替
-本文的HA是vip,生产和云上可以用LB和SLB,不过阿里的SLB四层有问题,可以每个node上代理127.0.0.1的某个port分摊在所有apise...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "operator">operator</a>
     
 </div>
             
@@ -1780,9 +1772,94 @@ Ingress Controller介绍与部署介绍...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 56
+        Total : 57
         </div>
         <!-- search  -->
         
@@ -1795,6 +1872,11 @@ Ingress Controller介绍与部署介绍...
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/26</span><a class="archive-post-title" href= "/2019/06/26/uefi-pxe/" >uefi模式下docker+交换机部署pxe批量安装</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2108,19 +2190,31 @@ Ingress Controller介绍与部署介绍...
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="ipmi"><span class="iconfont-archer">&#xe606;</span>ipmi</span>
+    
+        <span class="sidebar-tag-name" data-tags="CLP"><span class="iconfont-archer">&#xe606;</span>CLP</span>
+    
         <span class="sidebar-tag-name" data-tags="diy"><span class="iconfont-archer">&#xe606;</span>diy</span>
     
         <span class="sidebar-tag-name" data-tags="8266"><span class="iconfont-archer">&#xe606;</span>8266</span>
     
         <span class="sidebar-tag-name" data-tags="总结"><span class="iconfont-archer">&#xe606;</span>总结</span>
     
-        <span class="sidebar-tag-name" data-tags="Altium Designer"><span class="iconfont-archer">&#xe606;</span>Altium Designer</span>
-    
         <span class="sidebar-tag-name" data-tags="k8s"><span class="iconfont-archer">&#xe606;</span>k8s</span>
     
         <span class="sidebar-tag-name" data-tags="ingress"><span class="iconfont-archer">&#xe606;</span>ingress</span>
     
-        <span class="sidebar-tag-name" data-tags="cobra"><span class="iconfont-archer">&#xe606;</span>cobra</span>
+        <span class="sidebar-tag-name" data-tags="Altium Designer"><span class="iconfont-archer">&#xe606;</span>Altium Designer</span>
+    
+        <span class="sidebar-tag-name" data-tags="initrd"><span class="iconfont-archer">&#xe606;</span>initrd</span>
+    
+        <span class="sidebar-tag-name" data-tags="grub"><span class="iconfont-archer">&#xe606;</span>grub</span>
+    
+        <span class="sidebar-tag-name" data-tags="raid"><span class="iconfont-archer">&#xe606;</span>raid</span>
+    
+        <span class="sidebar-tag-name" data-tags="lnmp"><span class="iconfont-archer">&#xe606;</span>lnmp</span>
+    
+        <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
     
         <span class="sidebar-tag-name" data-tags="cad"><span class="iconfont-archer">&#xe606;</span>cad</span>
     
@@ -2136,11 +2230,11 @@ Ingress Controller介绍与部署介绍...
     
         <span class="sidebar-tag-name" data-tags="keepavlied"><span class="iconfont-archer">&#xe606;</span>keepavlied</span>
     
-        <span class="sidebar-tag-name" data-tags="lnmp"><span class="iconfont-archer">&#xe606;</span>lnmp</span>
-    
-        <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
+        <span class="sidebar-tag-name" data-tags="cobra"><span class="iconfont-archer">&#xe606;</span>cobra</span>
     
         <span class="sidebar-tag-name" data-tags="flannel"><span class="iconfont-archer">&#xe606;</span>flannel</span>
+    
+        <span class="sidebar-tag-name" data-tags="hello world"><span class="iconfont-archer">&#xe606;</span>hello world</span>
     
         <span class="sidebar-tag-name" data-tags="cifs"><span class="iconfont-archer">&#xe606;</span>cifs</span>
     
@@ -2148,23 +2242,21 @@ Ingress Controller介绍与部署介绍...
     
         <span class="sidebar-tag-name" data-tags="原创"><span class="iconfont-archer">&#xe606;</span>原创</span>
     
-        <span class="sidebar-tag-name" data-tags="hello world"><span class="iconfont-archer">&#xe606;</span>hello world</span>
-    
         <span class="sidebar-tag-name" data-tags="ftp"><span class="iconfont-archer">&#xe606;</span>ftp</span>
+    
+        <span class="sidebar-tag-name" data-tags="kube-controller-manager"><span class="iconfont-archer">&#xe606;</span>kube-controller-manager</span>
+    
+        <span class="sidebar-tag-name" data-tags="java"><span class="iconfont-archer">&#xe606;</span>java</span>
+    
+        <span class="sidebar-tag-name" data-tags="springboot"><span class="iconfont-archer">&#xe606;</span>springboot</span>
     
         <span class="sidebar-tag-name" data-tags="jira"><span class="iconfont-archer">&#xe606;</span>jira</span>
     
         <span class="sidebar-tag-name" data-tags="confluence"><span class="iconfont-archer">&#xe606;</span>confluence</span>
     
-        <span class="sidebar-tag-name" data-tags="kube-controller-manager"><span class="iconfont-archer">&#xe606;</span>kube-controller-manager</span>
-    
-        <span class="sidebar-tag-name" data-tags="PodAffinity"><span class="iconfont-archer">&#xe606;</span>PodAffinity</span>
-    
         <span class="sidebar-tag-name" data-tags="ConfigMap"><span class="iconfont-archer">&#xe606;</span>ConfigMap</span>
     
-        <span class="sidebar-tag-name" data-tags="java"><span class="iconfont-archer">&#xe606;</span>java</span>
-    
-        <span class="sidebar-tag-name" data-tags="springboot"><span class="iconfont-archer">&#xe606;</span>springboot</span>
+        <span class="sidebar-tag-name" data-tags="PodAffinity"><span class="iconfont-archer">&#xe606;</span>PodAffinity</span>
     
         <span class="sidebar-tag-name" data-tags="lamp"><span class="iconfont-archer">&#xe606;</span>lamp</span>
     
@@ -2174,21 +2266,23 @@ Ingress Controller介绍与部署介绍...
     
         <span class="sidebar-tag-name" data-tags="左右分散对齐文字"><span class="iconfont-archer">&#xe606;</span>左右分散对齐文字</span>
     
-        <span class="sidebar-tag-name" data-tags="linux"><span class="iconfont-archer">&#xe606;</span>linux</span>
-    
-        <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
-    
         <span class="sidebar-tag-name" data-tags="openstack"><span class="iconfont-archer">&#xe606;</span>openstack</span>
     
         <span class="sidebar-tag-name" data-tags="cloud-init"><span class="iconfont-archer">&#xe606;</span>cloud-init</span>
     
+        <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
+    
+        <span class="sidebar-tag-name" data-tags="linux"><span class="iconfont-archer">&#xe606;</span>linux</span>
+    
         <span class="sidebar-tag-name" data-tags="bash"><span class="iconfont-archer">&#xe606;</span>bash</span>
+    
+        <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
+    
+        <span class="sidebar-tag-name" data-tags="tftp"><span class="iconfont-archer">&#xe606;</span>tftp</span>
     
         <span class="sidebar-tag-name" data-tags="dockerhub"><span class="iconfont-archer">&#xe606;</span>dockerhub</span>
     
         <span class="sidebar-tag-name" data-tags="gcr.io"><span class="iconfont-archer">&#xe606;</span>gcr.io</span>
-    
-        <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
     
         <span class="sidebar-tag-name" data-tags="微信"><span class="iconfont-archer">&#xe606;</span>微信</span>
     
@@ -2196,19 +2290,9 @@ Ingress Controller介绍与部署介绍...
     
         <span class="sidebar-tag-name" data-tags="正则"><span class="iconfont-archer">&#xe606;</span>正则</span>
     
-        <span class="sidebar-tag-name" data-tags="awk"><span class="iconfont-archer">&#xe606;</span>awk</span>
-    
         <span class="sidebar-tag-name" data-tags="zabbix"><span class="iconfont-archer">&#xe606;</span>zabbix</span>
     
-        <span class="sidebar-tag-name" data-tags="ipmi"><span class="iconfont-archer">&#xe606;</span>ipmi</span>
-    
-        <span class="sidebar-tag-name" data-tags="CLP"><span class="iconfont-archer">&#xe606;</span>CLP</span>
-    
-        <span class="sidebar-tag-name" data-tags="initrd"><span class="iconfont-archer">&#xe606;</span>initrd</span>
-    
-        <span class="sidebar-tag-name" data-tags="grub"><span class="iconfont-archer">&#xe606;</span>grub</span>
-    
-        <span class="sidebar-tag-name" data-tags="raid"><span class="iconfont-archer">&#xe606;</span>raid</span>
+        <span class="sidebar-tag-name" data-tags="awk"><span class="iconfont-archer">&#xe606;</span>awk</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -2243,31 +2327,39 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
+        <span class="sidebar-category-name" data-categories="ipmi"><span class="iconfont-archer">&#xe60a;</span>ipmi</span>
+    
         <span class="sidebar-category-name" data-categories="日志"><span class="iconfont-archer">&#xe60a;</span>日志</span>
-    
-        <span class="sidebar-category-name" data-categories="日志/心得"><span class="iconfont-archer">&#xe60a;</span>日志/心得</span>
-    
-        <span class="sidebar-category-name" data-categories="日志/闲搞"><span class="iconfont-archer">&#xe60a;</span>日志/闲搞</span>
     
         <span class="sidebar-category-name" data-categories="kubernetes"><span class="iconfont-archer">&#xe60a;</span>kubernetes</span>
     
-        <span class="sidebar-category-name" data-categories="golang"><span class="iconfont-archer">&#xe60a;</span>golang</span>
+        <span class="sidebar-category-name" data-categories="日志/闲搞"><span class="iconfont-archer">&#xe60a;</span>日志/闲搞</span>
+    
+        <span class="sidebar-category-name" data-categories="日志/心得"><span class="iconfont-archer">&#xe60a;</span>日志/心得</span>
+    
+        <span class="sidebar-category-name" data-categories="pxe"><span class="iconfont-archer">&#xe60a;</span>pxe</span>
+    
+        <span class="sidebar-category-name" data-categories="pxe/raid"><span class="iconfont-archer">&#xe60a;</span>pxe/raid</span>
     
         <span class="sidebar-category-name" data-categories="日志/Auto-cad"><span class="iconfont-archer">&#xe60a;</span>日志/Auto-cad</span>
     
         <span class="sidebar-category-name" data-categories="prometheus"><span class="iconfont-archer">&#xe60a;</span>prometheus</span>
     
-        <span class="sidebar-category-name" data-categories="日志/容器"><span class="iconfont-archer">&#xe60a;</span>日志/容器</span>
+        <span class="sidebar-category-name" data-categories="pxe/raid/kickstart"><span class="iconfont-archer">&#xe60a;</span>pxe/raid/kickstart</span>
     
-        <span class="sidebar-category-name" data-categories="容器"><span class="iconfont-archer">&#xe60a;</span>容器</span>
+        <span class="sidebar-category-name" data-categories="日志/容器"><span class="iconfont-archer">&#xe60a;</span>日志/容器</span>
     
         <span class="sidebar-category-name" data-categories="docker"><span class="iconfont-archer">&#xe60a;</span>docker</span>
     
+        <span class="sidebar-category-name" data-categories="容器"><span class="iconfont-archer">&#xe60a;</span>容器</span>
+    
         <span class="sidebar-category-name" data-categories="openstack"><span class="iconfont-archer">&#xe60a;</span>openstack</span>
     
-        <span class="sidebar-category-name" data-categories="fstab"><span class="iconfont-archer">&#xe60a;</span>fstab</span>
+        <span class="sidebar-category-name" data-categories="golang"><span class="iconfont-archer">&#xe60a;</span>golang</span>
     
         <span class="sidebar-category-name" data-categories="日志/闲聊"><span class="iconfont-archer">&#xe60a;</span>日志/闲聊</span>
+    
+        <span class="sidebar-category-name" data-categories="fstab"><span class="iconfont-archer">&#xe60a;</span>fstab</span>
     
         <span class="sidebar-category-name" data-categories="vsftp"><span class="iconfont-archer">&#xe60a;</span>vsftp</span>
     
@@ -2275,33 +2367,29 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="kubernetes/k8s"><span class="iconfont-archer">&#xe60a;</span>kubernetes/k8s</span>
     
-        <span class="sidebar-category-name" data-categories="kubernetes/Job"><span class="iconfont-archer">&#xe60a;</span>kubernetes/Job</span>
-    
         <span class="sidebar-category-name" data-categories="kubernetes/prometheus"><span class="iconfont-archer">&#xe60a;</span>kubernetes/prometheus</span>
     
         <span class="sidebar-category-name" data-categories="proxmox"><span class="iconfont-archer">&#xe60a;</span>proxmox</span>
     
-        <span class="sidebar-category-name" data-categories="CI"><span class="iconfont-archer">&#xe60a;</span>CI</span>
-    
         <span class="sidebar-category-name" data-categories="日志/总结"><span class="iconfont-archer">&#xe60a;</span>日志/总结</span>
     
-        <span class="sidebar-category-name" data-categories="CI/travis"><span class="iconfont-archer">&#xe60a;</span>CI/travis</span>
+        <span class="sidebar-category-name" data-categories="kubernetes/Job"><span class="iconfont-archer">&#xe60a;</span>kubernetes/Job</span>
     
-        <span class="sidebar-category-name" data-categories="日志/LVM"><span class="iconfont-archer">&#xe60a;</span>日志/LVM</span>
+        <span class="sidebar-category-name" data-categories="pxe/docker"><span class="iconfont-archer">&#xe60a;</span>pxe/docker</span>
+    
+        <span class="sidebar-category-name" data-categories="CI"><span class="iconfont-archer">&#xe60a;</span>CI</span>
     
         <span class="sidebar-category-name" data-categories="日志/技巧"><span class="iconfont-archer">&#xe60a;</span>日志/技巧</span>
     
+        <span class="sidebar-category-name" data-categories="日志/LVM"><span class="iconfont-archer">&#xe60a;</span>日志/LVM</span>
+    
         <span class="sidebar-category-name" data-categories="日志/运维"><span class="iconfont-archer">&#xe60a;</span>日志/运维</span>
     
+        <span class="sidebar-category-name" data-categories="pxe/docker/kickstart"><span class="iconfont-archer">&#xe60a;</span>pxe/docker/kickstart</span>
+    
+        <span class="sidebar-category-name" data-categories="CI/travis"><span class="iconfont-archer">&#xe60a;</span>CI/travis</span>
+    
         <span class="sidebar-category-name" data-categories="日志/LVM/raid"><span class="iconfont-archer">&#xe60a;</span>日志/LVM/raid</span>
-    
-        <span class="sidebar-category-name" data-categories="ipmi"><span class="iconfont-archer">&#xe60a;</span>ipmi</span>
-    
-        <span class="sidebar-category-name" data-categories="pxe"><span class="iconfont-archer">&#xe60a;</span>pxe</span>
-    
-        <span class="sidebar-category-name" data-categories="pxe/raid"><span class="iconfont-archer">&#xe60a;</span>pxe/raid</span>
-    
-        <span class="sidebar-category-name" data-categories="pxe/raid/kickstart"><span class="iconfont-archer">&#xe60a;</span>pxe/raid/kickstart</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
