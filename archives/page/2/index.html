@@ -346,6 +346,48 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/02/19/jira-confluence/" >
+            
+                <span>docker部署jira(8.0.0)和confluence(6.14.1)</span>
+        </a>
+        <div class="abstract-content">
+            记录下这几天搭建的过程jira和confluence是分别两台，数据库也是分开的,数据库是用mysql的rpm的repo添加后安装的,jira和confluence是docker跑的,把破解的jar加到镜像里然后改了下别人的Dockerfile本次安装的版本：
+
+
+jira-software 8.0.0
+confluence 6.14.1
+Docker CE 18.06.02
+OS CentOS 7.5.1804
+
+
+系统基本设置
+所有防火墙与SELinux 已关闭：
+123systemctl disable --now firewalld NetworkManagersetenforc...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/19</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "jira">jira</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "confluence">confluence</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/02/12/dashboard/" >
             
                 <span>通用的dashboard部署和tls，SSL相关部署</span>
@@ -635,36 +677,6 @@ Ingress Controller介绍与部署介绍...
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "ingress">ingress</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/24/k8s-some-vpc-cluster/" >
-            
-                <span>跨VPC或者跨云供应商搭建K8S集群正确姿势</span>
-        </a>
-        <div class="abstract-content">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;去年开始各大云厂商搞活动120元一年的云主机,当时还不会k8s,但是了解到搭建集群需要好几台,于是当时攒了好几台来做准备: tx一台,阿里两个别人账号买了两台,再加上很久之前几何云送了一台. 当时还有人怼说买这么多干啥,答曰:以后学k8s，此人曰:呵呵
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;后面刚开始接触的时候不太了解网络,用的calico,跨vpc根本不行,有大佬说只能vxlan能跨SDN下的vpc之间但是云厂商的主机都是做的ip的n...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
 </div>
             
@@ -1699,9 +1711,42 @@ Ingress Controller介绍与部署介绍...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 57
+        Total : 58
         </div>
         <!-- search  -->
         
@@ -1714,6 +1759,11 @@ Ingress Controller介绍与部署介绍...
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/07</span><a class="archive-post-title" href= "/2019/07/07/golang-http/" >golang的net/http包的客户端简单科普</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2136,6 +2186,8 @@ Ingress Controller介绍与部署介绍...
     
         <span class="sidebar-tag-name" data-tags="正则"><span class="iconfont-archer">&#xe606;</span>正则</span>
     
+        <span class="sidebar-tag-name" data-tags="http"><span class="iconfont-archer">&#xe606;</span>http</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -2232,6 +2284,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="pxe/docker/kickstart"><span class="iconfont-archer">&#xe60a;</span>pxe/docker/kickstart</span>
     
         <span class="sidebar-category-name" data-categories="日志/LVM/raid"><span class="iconfont-archer">&#xe60a;</span>日志/LVM/raid</span>
+    
+        <span class="sidebar-category-name" data-categories="golang/http"><span class="iconfont-archer">&#xe60a;</span>golang/http</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
