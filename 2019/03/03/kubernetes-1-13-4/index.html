@@ -581,7 +581,7 @@ height:50vh;
 <ul>
 <li><code>所有机器</code>需要安装Docker CE 版本的容器引擎,推荐使用年份命名版本的docker ce：</li>
 <li>在官方查看K8s支持的docker版本 <a href="https://github.com/kubernetes/kubernetes" target="_blank" rel="noopener">https://github.com/kubernetes/kubernetes</a> 里进对应版本的changelog里搜<code>The list of validated docker versions remain</code></li>
-<li><p>这里利用docker的官方安装脚本来安装,可以使用<code>yum list --showduplicates &#39;docker-ce</code>查询可用的docker版本,选择你要安装的k8s版本支持的docker版本即可,这里我使用的是<code>18.06.03</code></p>
+<li><p>这里利用docker的官方安装脚本来安装,可以使用<code>yum list --showduplicates docker-ce</code>查询可用的docker版本,选择你要安装的k8s版本支持的docker版本即可,这里我使用的是<code>18.06.03</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> VERSION=18.06</span><br><span class="line">curl -fsSL <span class="string">"https://get.docker.com/"</span> | bash -s -- --mirror Aliyun</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>所有机器</code>配置加速源并配置docker的启动参数使用systemd,使用systemd是官方的建议,详见 <a href="https://kubernetes.io/docs/setup/cri/" target="_blank" rel="noopener">https://kubernetes.io/docs/setup/cri/</a></p>
@@ -613,7 +613,7 @@ height:50vh;
 <li>设置所有机器的<code>hostname</code>,有些人喜欢用<code>master1</code>就自己改,我的是下面的<code>k8s-m1</code>,所有机器都要设置<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> <span class="variable">$&#123;!AllNode[@]&#125;</span>;<span class="keyword">do</span> </span><br><span class="line">      <span class="built_in">echo</span> <span class="string">"--- <span class="variable">$name</span> <span class="variable">$&#123;AllNode[$name]&#125;</span> ---"</span></span><br><span class="line">  ssh <span class="variable">$&#123;AllNode[$name]&#125;</span> <span class="string">"hostnamectl set-hostname <span class="variable">$name</span>"</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>首先在<code>k8s-m1</code>通过git获取部署要用到的二进制配置文件和yml<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zhangguanzhang/k8s-manual-files.git ~/k8s-manual-files -b v1.13.4</span><br><span class="line"><span class="built_in">cd</span> ~/k8s-manual-files/</span><br></pre></td></tr></table></figure></p>
+<p>首先在<code>k8s-m1</code>通过git获取部署要用到的二进制配置文件和yml，这里是<code>v1.13.4</code>分支，自己找文件别找到master分支了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zhangguanzhang/k8s-manual-files.git ~/k8s-manual-files -b v1.13.4</span><br><span class="line"><span class="built_in">cd</span> ~/k8s-manual-files/</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>在<code>k8s-m1</code>下载Kubernetes二进制文件后分发到其他机器</li>
 </ul>
@@ -1236,8 +1236,8 @@ height:50vh;
         <div class="license-wrapper">
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/</a>
-            <p>发表日期：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">三月 3日 2019, 7:36:53 晚上</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">July 29th 2019, 11:55:26 am</a>
+            <p>发表日期：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">March 3rd 2019, 7:36:53 pm</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">August 2nd 2019, 1:00:11 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
