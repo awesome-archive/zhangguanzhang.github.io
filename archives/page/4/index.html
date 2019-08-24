@@ -347,6 +347,39 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/06/02/kubernetes-nodeSelector/" >
+            
+                <span>kubernetes的PodAffinity的不解</span>
+        </a>
+        <div class="abstract-content">
+            官方文档来看是下面的说法,摘自官方文档https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
+
+An example of a pod that uses pod affinity:
+
+1234567891011121314151617181920212223242526272829apiVersion: v1kind: Podmetadata:  name: with-pod-affinityspec:  affinity:    podAffinity:      requiredDuringSchedul...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/02</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "PodAffinity">PodAffinity</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/05/05/Kubernetes_install/" >
             
                 <span>[转载+修正]Kubernetes v1.10.x HA全手动苦工安装教学</span>
@@ -635,39 +668,10 @@ getopt
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/05/12/ssh互信/" >
-            
-                <span>ssh互信</span>
-        </a>
-        <div class="abstract-content">
-            <p>ssh公钥免密码登录<br>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/05/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ssh">ssh</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/3/">&#60; PREV</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/6/">6</a><a class="extend next" rel="next" href="/archives/page/5/">NEXT &#62;</a>
+        <a class="extend prev" rel="prev" href="/archives/page/3/">&#60; PREV</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><a class="extend next" rel="next" href="/archives/page/5/">NEXT &#62;</a>
     </nav>
     
 </main>
@@ -1667,9 +1671,105 @@ getopt
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 60
+        Total : 62
         </div>
         <!-- search  -->
         
@@ -1691,6 +1791,11 @@ getopt
     
         <li class="archive-post-item">
             <span class="archive-post-date">07/14</span><a class="archive-post-title" href= "/2019/07/14/chromedp/" >golang headless browser包chromedp初探</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span><a class="archive-post-title" href= "/2019/07/08/nodeport-err/" >为什么我不用nodePort之偶然中奖几率</a>
         </li>
     
     
@@ -1953,6 +2058,11 @@ getopt
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">04/03</span><a class="archive-post-title" href= "/2017/04/03/bond/" >centos配置bond</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">03/20</span><a class="archive-post-title" href= "/2017/03/20/ftp-install/" >vsftpd虚拟用户简单部署</a>
         </li>
     
@@ -2126,6 +2236,8 @@ getopt
         <span class="sidebar-tag-name" data-tags="正则"><span class="iconfont-archer">&#xe606;</span>正则</span>
     
         <span class="sidebar-tag-name" data-tags="awk"><span class="iconfont-archer">&#xe606;</span>awk</span>
+    
+        <span class="sidebar-tag-name" data-tags="nodeport"><span class="iconfont-archer">&#xe606;</span>nodeport</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

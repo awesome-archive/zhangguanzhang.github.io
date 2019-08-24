@@ -347,6 +347,53 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/08/03/Kubernetes_install_1.11.1/" >
+            
+                <span>Kubernetes v1.11.x HA全手动苦工安装教学</span>
+        </a>
+        <div class="abstract-content">
+            
+多master高可用 或者 单master的ansible部署方案
+
+管理组件采用staticPod或者daemonSet形式跑的,宿主机os能跑docker应该本篇教程能大多适用安装完成仅供学习和实验
+本次安裝的版本：
+
+
+Kubernetes v1.11.1
+CNI v0.7.1
+Etcd v3.3.9
+Flannel v0.10.0 或者 Calico v3.1.3
+Docker CE latest version(18.06)
+
+
+ 不建议用docker 18.05 , docker CE 18.05有bind mount的bug 
+本次部署的网络信息：
+
+
+Cluster I...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/03</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/06/25/etcd-error/" >
             
                 <span>记录一次线上k8s节点故障</span>
@@ -1521,9 +1568,105 @@ An example of a pod that uses pod affinity:
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 60
+        Total : 62
         </div>
         <!-- search  -->
         
@@ -1545,6 +1688,11 @@ An example of a pod that uses pod affinity:
     
         <li class="archive-post-item">
             <span class="archive-post-date">07/14</span><a class="archive-post-title" href= "/2019/07/14/chromedp/" >golang headless browser包chromedp初探</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span><a class="archive-post-title" href= "/2019/07/08/nodeport-err/" >为什么我不用nodePort之偶然中奖几率</a>
         </li>
     
     
@@ -1807,6 +1955,11 @@ An example of a pod that uses pod affinity:
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">04/03</span><a class="archive-post-title" href= "/2017/04/03/bond/" >centos配置bond</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">03/20</span><a class="archive-post-title" href= "/2017/03/20/ftp-install/" >vsftpd虚拟用户简单部署</a>
         </li>
     
@@ -1980,6 +2133,8 @@ An example of a pod that uses pod affinity:
         <span class="sidebar-tag-name" data-tags="正则"><span class="iconfont-archer">&#xe606;</span>正则</span>
     
         <span class="sidebar-tag-name" data-tags="awk"><span class="iconfont-archer">&#xe606;</span>awk</span>
+    
+        <span class="sidebar-tag-name" data-tags="nodeport"><span class="iconfont-archer">&#xe606;</span>nodeport</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

@@ -408,6 +408,37 @@ ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/07/08/nodeport-err/" >
+            
+                <span>为什么我不用nodePort之偶然中奖几率</span>
+        </a>
+        <div class="abstract-content">
+            嗯，1.6.7的老集群。早上反应数据库实例创建不出来。发现接口port的tcp不可达，查看kube-proxy的日志如下123456[root@HB1-xxxxx-S03 kubernetes]# tailf  kube-proxy.INFO E0708 09:44:03.437284  394350 proxier.go:1062] can&apos;t open &quot;nodePort for cloudify/cloudae-cfy-nginx:port1&quot; (:16081/tcp), skipping this nodePort: listen tcp :1608...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/08</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "nodeport">nodeport</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/07/07/golang-http/" >
             
                 <span>golang的net/http包的客户端简单科普</span>
@@ -625,41 +656,10 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/03/15/flannel-bin/" >
-            
-                <span>不走etcd v2 api下二进制跑flannel的总结</span>
-        </a>
-        <div class="abstract-content">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这几天给线上搭建k8s集群,文件和systemd参数大多是从kubeadm的staticPod的yml里扣出来的,起初是除了flanneld全部是systemd管理二进制。起初因为脚本问题导致kube-proxy的kubeocnfig少执行了use-context所以显示的是匿名用户无法list node信息,kube-proxy是在运行但是无法维持svc的网络,flanneld因为是pod要watch节点是通过kubernetes这个svc走的连接导致不通,然后pod状态变成退出,而kubelet在不手动清理掉退出...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "flannel">flannel</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/6/">6</a><a class="extend next" rel="next" href="/archives/page/2/">NEXT &#62;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/7/">7</a><a class="extend next" rel="next" href="/archives/page/2/">NEXT &#62;</a>
     </nav>
     
 </main>
@@ -1659,9 +1659,105 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 60
+        Total : 62
         </div>
         <!-- search  -->
         
@@ -1683,6 +1779,11 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
         <li class="archive-post-item">
             <span class="archive-post-date">07/14</span><a class="archive-post-title" href= "/2019/07/14/chromedp/" >golang headless browser包chromedp初探</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span><a class="archive-post-title" href= "/2019/07/08/nodeport-err/" >为什么我不用nodePort之偶然中奖几率</a>
         </li>
     
     
@@ -1945,6 +2046,11 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">04/03</span><a class="archive-post-title" href= "/2017/04/03/bond/" >centos配置bond</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">03/20</span><a class="archive-post-title" href= "/2017/03/20/ftp-install/" >vsftpd虚拟用户简单部署</a>
         </li>
     
@@ -2118,6 +2224,8 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
         <span class="sidebar-tag-name" data-tags="正则"><span class="iconfont-archer">&#xe606;</span>正则</span>
     
         <span class="sidebar-tag-name" data-tags="awk"><span class="iconfont-archer">&#xe606;</span>awk</span>
+    
+        <span class="sidebar-tag-name" data-tags="nodeport"><span class="iconfont-archer">&#xe606;</span>nodeport</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
