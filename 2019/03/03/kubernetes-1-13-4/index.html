@@ -1143,7 +1143,7 @@ height:50vh;
 <li>复制<code>token</code>,然后贴到Kubernetes dashboard。注意这边一般来说要针对不同User开启特定存取权限。</li>
 </ul>
 </blockquote>
-<p><img src="https://kairen.github.io/images/kube/kubernetes-dashboard.png" alt="cmd-markdown-logo"></p>
+<p><img src="https://raw.githubusercontent.com/zhangguanzhang/Image-Hosting/master/k8s/dashboard/5.png" alt="cmd-markdown-logo"></p>
 <h3 id="Ingress-Controller"><a href="#Ingress-Controller" class="headerlink" title="Ingress Controller"></a>Ingress Controller</h3><p>部署见我博客另一篇文章: <a href="https://zhangguanzhang.github.io/2018/10/06/IngressController/">https://zhangguanzhang.github.io/2018/10/06/IngressController/</a> 建议用<code>hostnetwork</code>,</p>
 <p>确认上面步骤都沒问题后,就可以通过 kubeclt 建立简单 NGINX 来测试功能：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f apps/nginx/</span><br><span class="line"><span class="comment"># 下面是输出</span></span><br><span class="line">deployment.extensions/nginx created</span><br><span class="line">ingress.extensions/nginx-ingress created</span><br><span class="line">service/nginx created</span><br><span class="line"></span><br><span class="line">$ kubectl get po,svc,ing</span><br><span class="line">NAME                        READY     STATUS    RESTARTS   AGE</span><br><span class="line">pod/nginx-966857787-78kth   1/1       Running   0          32s</span><br><span class="line"></span><br><span class="line">NAME                 TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE</span><br><span class="line">service/kubernetes   ClusterIP   10.96.0.1        &lt;none&gt;        443/TCP   2d</span><br><span class="line">service/nginx        ClusterIP   10.104.180.119   &lt;none&gt;        80/TCP    32s</span><br><span class="line"></span><br><span class="line">NAME                               HOSTS             ADDRESS          PORTS     AGE</span><br><span class="line">ingress.extensions/nginx-ingress   nginx.k8s.local   10.0.6.170       80        33s</span><br></pre></td></tr></table></figure></p>
 <blockquote>
@@ -1237,8 +1237,8 @@ height:50vh;
         <div class="license-wrapper">
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/</a>
-            <p>发表日期：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">March 3rd 2019, 7:36:53 pm</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">August 26th 2019, 8:22:16 pm</a>
+            <p>发表日期：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">三月 3日 2019, 7:36:53 晚上</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">September 5th 2019, 11:47:37 am</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
