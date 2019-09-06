@@ -365,7 +365,8 @@ height:50vh;
                 <span>修改源码更改prometheus的时区问题</span>
         </a>
         <div class="abstract-content">
-            日志时区修改代码分析先起最新的prometheus挂载时区文件1234567docker run --net host -v /etc/localtime:/etc/localtime prom/prometheuslevel=info ts=2019-09-05T09:44:40.409Z caller=main.go:293 msg=&quot;no time or size retention was set so using the default time retention&quot; duration=15dlevel=info ts=2019-09-05T09:44:40...
+            先说明一点，时区UTC不影响prometheus和grafana，这篇文章只是提供一个修改的思路和步骤
+日志时区修改代码分析先起最新的prometheus挂载时区文件1234567docker run --net host -v /etc/localtime:/etc/localtime prom/prometheuslevel=info ts=2019-09-05T09:44:40.409Z caller=main.go:293 msg=&quot;no time or size retention was set so using the default time retention...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
