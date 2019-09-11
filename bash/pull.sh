@@ -16,9 +16,9 @@ sync_pull(){
     else
         pullName=zhangguanzhang/${pullName//\//.}
     fi
-    echo docker pull $pullName
-    echo docker tag $pullName $targetName
-    echo docker rmi $pullName
+    docker pull $pullName
+    docker tag $pullName $targetName
+    docker rmi $pullName
 }
 
 if [ "$1" == search ];then
