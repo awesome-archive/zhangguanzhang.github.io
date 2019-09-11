@@ -3,6 +3,24 @@
 
 [ -z "$1" ] && { echo '$1 is not set';exit 2; }
 
+
+
+// imgFullName 
+sync_pull(){
+    local targetName pullName
+    targetName=$1
+    pullName=${1//k8s.gcr.io/gcr.io\/google_containers}
+    pullName=${pullName//google-containers/google_containers}
+    if [ $( tr -dc '/' <<< $pullName | wc -c) -gt 2 ];then #大于2为gcr的超长镜像名字
+        pullName=$(echo $pullName | sed -r 's#io#azk8s.cn#')
+    else
+        pullName=zhangguanzhang/${pullName//\//.}
+    fi
+    echo docker pull $pullName
+    echo docker tag $pullName $targetName
+    echo docker rmi $pullName
+}
+
 if [ "$1" == search ];then
     shift
     which jq &> /dev/null || { echo 'search needs jq, please install the jq';exit 2; }
@@ -33,18 +51,3 @@ else
     fi
 fi
 
-// imgFullName 
-sync_pull(){
-    local targetName pullName
-    targetName=$1
-    pullName=${1//k8s.gcr.io/gcr.io\/google_containers}
-    pullName=${pullName//google-containers/google_containers}
-    if [ $( tr -dc '/' <<< $pullName | wc -c) -gt 2 ];then #大于2为gcr的超长镜像名字
-        pullName=$(echo $pullName | sed -r 's#io#azk8s.cn#')
-    else
-        pullName=zhangguanzhang/${pullName//\//.}
-    fi
-    echo docker pull $pullName
-    echo docker tag $pullName $targetName
-    echo docker rmi $pullName
-}
