@@ -5,7 +5,7 @@
 
 
 
-// imgFullName 
+# imgFullName 
 sync_pull(){
     local targetName pullName
     targetName=$1
