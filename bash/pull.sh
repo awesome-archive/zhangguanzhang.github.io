@@ -25,22 +25,26 @@ if [ "$1" == search ];then
         jq -r 'length as $len | if $len ==2 then .message elif $len ==12 then .name else .[].name  end'
 else
     img=$1
-    name=${img%:*}
-    [[ $img == *:* ]] && tag=${img##*:} || tag=latest
 
-    if [[ "$img" =~ ^gcr.io|^quay.io ]];then
-        repo=zhangguanzhang/${name//\//.}
-        [[ "$img" == *google-containers* ]] && repo=${repo/google-containers/google_containers}
-        docker pull $repo:$tag
-        docker tag $repo:$tag $img
-        docker rmi $repo:$tag
-
-    elif [[ "$img" =~ ^k8s.gcr.io ]];then
-        repo=zhangguanzhang/${name/k8s.gcr.io\//gcr.io.google_containers.}
-        docker pull $repo:$tag
-        docker tag $repo:$tag $img
-        docker rmi $repo:$tag
+    if [[ "$img" =~ ^gcr.io|^quay.io|^k8s.gcr.io ]];then
+        sync_pull $1
     else
         echo 'not sync the namespaces!';exit 0;
     fi
 fi
+
+// imgFullName 
+sync_pull(){
+    local targetName pullName
+    targetName=$1
+    pullName=${1//k8s.gcr.io/gcr.io\/google_containers}
+    pullName=${pullName//google-containers/google_containers}
+    if [ $( tr -dc '/' <<< $pullName | wc -c) -gt 2 ];then #大于2为gcr的超长镜像名字
+        pullName=$(echo $pullName | sed -r 's#io#azk8s.cn#')
+    else
+        pullName=zhangguanzhang/${pullName//\//.}
+    fi
+    echo docker pull $pullName
+    echo docker tag $pullName $targetName
+    echo docker rmi $pullName
+}
