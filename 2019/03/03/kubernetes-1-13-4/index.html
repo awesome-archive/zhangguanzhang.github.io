@@ -637,9 +637,9 @@ height:50vh;
 <h2 id="建立集群CA-keys-与Certificates"><a href="#建立集群CA-keys-与Certificates" class="headerlink" title="建立集群CA keys 与Certificates"></a>建立集群CA keys 与Certificates</h2><p>在这个部分,将需要产生多个元件的Certificates,这包含Etcd、Kubernetes 元件等,并且每个集群都会有一个根数位凭证认证机构(Root Certificate Authority)被用在认证API Server 与Kubelet 端的凭证。</p>
 <blockquote>
 <ul>
-<li>PS这边要注意CA JSON档的<code>CN(Common Name)</code>与<code>O(Organization)</code>等内容是会影响Kubernetes元件认证的。<br><code>CN</code> Common Name, apiserver 会从证书中提取该字段作为请求的用户名 (User Name)<br><code>O</code> Organization, apiserver 会从证书中提取该字段作为请求用户所属的组 (Group)</li>
+<li>PS这边要注意CA JSON档的<code>CN(Common Name)</code>与<code>O(Organization)</code>等内容是会影响Kubernetes元件认证的。具体可见<a href="https://kubernetes.io/docs/setup/best-practices/certificates/" target="_blank" rel="noopener">https://kubernetes.io/docs/setup/best-practices/certificates/</a><br><code>CN</code> Common Name, apiserver 会从证书中提取该字段作为请求的用户名 (User Name)<br><code>O</code> Organization, apiserver 会从证书中提取该字段作为请求用户所属的组 (Group)</li>
 <li>CA (Certificate Authority) 是自签名的根证书，用来签名后续创建的其它证书。</li>
-<li>本文使用openssl创建所有证书。</li>
+<li>本文使用openssl创建所有证书，参考<a href="https://kubernetes.io/fr/docs/concepts/cluster-administration/certificates/。" target="_blank" rel="noopener">https://kubernetes.io/fr/docs/concepts/cluster-administration/certificates/。</a></li>
 </ul>
 </blockquote>
 <p>etcd的话推荐下官方的在线工具,有兴趣可以去试试 <a href="http://play.etcd.io" target="_blank" rel="noopener">http://play.etcd.io</a></p>
@@ -1237,8 +1237,8 @@ height:50vh;
         <div class="license-wrapper">
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/</a>
-            <p>发表日期：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">March 3rd 2019, 7:36:53 pm</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">September 19th 2019, 9:34:40 pm</a>
+            <p>发表日期：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">三月 3日 2019, 7:36:53 晚上</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">September 29th 2019, 12:28:44 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
