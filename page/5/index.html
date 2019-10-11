@@ -360,6 +360,35 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2017/12/23/docker容器网络互联/" >
+            
+                <span>docker容器网络互联</span>
+        </a>
+        <div class="abstract-content">
+            官方文档说–link将来会被废弃，而且确实很鸡肋,有时候还要进去容器改东西。在 1-2 年前，Docker 所有容器都连接于默认的桥接网络上，也就是很多老文章鼓捣的 docker0 桥接网卡。因此实际上默认情况下所有容器都是可以互联的，没有隔离，当然这样安全性不好。而服务发现，是在这种环境下发展出来的，通过修改容器内的 /etc/hosts文件来完成的。凡是 --link 的主机的别名就会出现于 /etc/hosts 中，其地址由 Docker 引擎维护。因此容器间才可以通过别名互访。但是这种办法并不是好的解决方案，Docker 早在一年多以前就已经使用自定义网络了。在同一个网络中的容器...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2017/06/03/bash-complete/" >
             
                 <span>bash自定义补全</span>
@@ -626,37 +655,6 @@ getopt
         <a class="post-tag" href="javascript:void(0);" data-tags = "mqtt">mqtt</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "原创">原创</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/04/15/shell_process/" >
-            
-                <span>shell多进程并发执行</span>
-        </a>
-        <div class="abstract-content">
-            <p>图文记录下shell多进程<br>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/04/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "shell">shell</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "linux">linux</a>
     
 </div>
             
@@ -1947,9 +1945,14 @@ getopt
     
     
     
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 64
+        Total : 65
         </div>
         <!-- search  -->
         
@@ -1962,6 +1965,11 @@ getopt
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span><a class="archive-post-title" href= "/2019/09/27/consul-tls/" >高可用的SSL consul cluster实践</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2435,6 +2443,8 @@ getopt
     
         <span class="sidebar-tag-name" data-tags="timezone"><span class="iconfont-archer">&#xe606;</span>timezone</span>
     
+        <span class="sidebar-tag-name" data-tags="consul"><span class="iconfont-archer">&#xe606;</span>consul</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -2539,6 +2549,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="日志/LVM/raid"><span class="iconfont-archer">&#xe60a;</span>日志/LVM/raid</span>
     
         <span class="sidebar-category-name" data-categories="prometheus/golang"><span class="iconfont-archer">&#xe60a;</span>prometheus/golang</span>
+    
+        <span class="sidebar-category-name" data-categories="consul"><span class="iconfont-archer">&#xe60a;</span>consul</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

@@ -347,6 +347,38 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/12/04/black-box-exporter/" >
+            
+                <span>prometheus的黑盒监控</span>
+        </a>
+        <div class="abstract-content">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;常规的各种exporter都是和需要监控的机器一起安装的,如果需要监控一些tcp端口和七层应用层的状态呢,这个时候就需要黑盒监控了,不需要安装在目标机器上即可从外部去监控。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9115是它的http端点的默认监听端口，blackbox.yml它的配置文件里以基础的http、dns、tcp、icmp等prober定制配置出各种监测模块(module)，在prometheus server的配置文件里声明用哪个模块去探测哪个targets，下面以doc...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/04</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "prometheus">prometheus</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "exporter">exporter</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/11/24/how-to-use-kubeadm/" >
             
                 <span>对于初入k8s和kubeadm的一些建议</span>
@@ -661,39 +693,6 @@ Cluster I...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "keepavlied">keepavlied</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/07/08/travis-sync-gcr-io/" >
-            
-                <span>利用travis同步gcr.io镜像到dockerhub</span>
-        </a>
-        <div class="abstract-content">
-            项目地址https://github.com/zhangguanzhang/gcr.io/tree/master
-利用gcloud sdk去查看谷歌镜像站的镜像,获取每一个镜像的tag后改名推送到自己的dockerhub上面全部是shell思路,脚本一旦写完就需要不断的执行去同步了,所以借用travis去构建两个分支,一个master分支和一个构建分支travis触发构建后拉取仓库后,切换到构建分支,pull构建分支,然后同步镜像
-脚本我写了两种https://github.com/zhangguanzhang/bash/tree/master/google_containers_syn...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "dockerhub">dockerhub</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "gcr.io">gcr.io</a>
     
 </div>
             
@@ -1855,9 +1854,14 @@ Cluster I...
     
     
     
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 64
+        Total : 65
         </div>
         <!-- search  -->
         
@@ -1870,6 +1874,11 @@ Cluster I...
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span><a class="archive-post-title" href= "/2019/09/27/consul-tls/" >高可用的SSL consul cluster实践</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2343,6 +2352,8 @@ Cluster I...
     
         <span class="sidebar-tag-name" data-tags="timezone"><span class="iconfont-archer">&#xe606;</span>timezone</span>
     
+        <span class="sidebar-tag-name" data-tags="consul"><span class="iconfont-archer">&#xe606;</span>consul</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -2447,6 +2458,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="日志/LVM/raid"><span class="iconfont-archer">&#xe60a;</span>日志/LVM/raid</span>
     
         <span class="sidebar-category-name" data-categories="prometheus/golang"><span class="iconfont-archer">&#xe60a;</span>prometheus/golang</span>
+    
+        <span class="sidebar-category-name" data-categories="consul"><span class="iconfont-archer">&#xe60a;</span>consul</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
