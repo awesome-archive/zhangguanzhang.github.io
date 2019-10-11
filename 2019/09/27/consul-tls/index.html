@@ -273,7 +273,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">2.5k</span>阅读时长: <span class="post-count reading-time">11 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">2.7k</span>阅读时长: <span class="post-count reading-time">12 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -458,6 +458,7 @@ height:50vh;
 </tr>
 </tbody>
 </table>
+<p>利用Consul提供的服务实现服务的注册与发现，需要建立Consul Cluster。在Consul方案中，每个提供服务的节点上都要部署和运行Consul的agent，所有运行Consul agent节点的集合构成Consul Cluster。Consul agent有两种运行模式：Server和Client。这里的Server和Client只是Consul集群层面的区分，与搭建在Cluster之上 的应用服务无关。以Server模式运行的Consul agent节点用于维护Consul集群的状态，官方建议每个Consul Cluster至少有3个或以上的运行在Server mode的Agent，Client节点不限。</p>
 <p>文章很多步骤基本上都是在<code>172.19.0.3</code>上执行的，文件到其他机器的copy和配置文件修改自行整</p>
 <h2 id="下载最新版本并解压"><a href="#下载最新版本并解压" class="headerlink" title="下载最新版本并解压"></a>下载最新版本并解压</h2><p>目前最新版是1.6.1，下载页面 <a href="https://www.consul.io/downloads.html" target="_blank" rel="noopener">https://www.consul.io/downloads.html</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://releases.hashicorp.com/consul/1.6.1/consul_1.6.1_linux_amd64.zip</span><br><span class="line">unzip -x consul_1.6.1_linux_amd64.zip</span><br><span class="line">mv consul /usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure></p>
 <h2 id="tls"><a href="#tls" class="headerlink" title="tls"></a>tls</h2><h3 id="step-1-创建ca"><a href="#step-1-创建ca" class="headerlink" title="step 1: 创建ca"></a>step 1: 创建ca</h3><p>为了简单起见，这里我使用Consul的内置TLS助手来创建基本的CA。您只需为数据中心创建一个CA。您应该在用于创建CA的同一服务器上生成所有证书。<br>ca默认五年，其他的证书默认1年，这里需要带参数<code>-days=</code>设置长点的日期<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">consul tls ca create -days=36500</span><br><span class="line">==&gt; Saved consul-agent-ca.pem</span><br><span class="line">==&gt; Saved consul-agent-ca-key.pem</span><br></pre></td></tr></table></figure></p>
@@ -512,7 +513,7 @@ height:50vh;
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2019/09/27/consul-tls/">http://zhangguanzhang.github.io/2019/09/27/consul-tls/</a>
             <p>发表日期：<a href="http://zhangguanzhang.github.io/2019/09/27/consul-tls/">September 27th 2019, 7:36:53 pm</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2019/09/27/consul-tls/">October 11th 2019, 5:17:47 pm</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2019/09/27/consul-tls/">October 11th 2019, 5:18:28 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
