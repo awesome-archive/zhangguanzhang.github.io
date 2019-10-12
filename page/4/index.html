@@ -360,6 +360,83 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/08/03/Kubernetes_install_1.11.1/" >
+            
+                <span>Kubernetes v1.11.x HA全手动苦工安装教学</span>
+        </a>
+        <div class="abstract-content">
+            
+多master高可用 或者 单master的ansible部署方案
+
+管理组件采用staticPod或者daemonSet形式跑的,宿主机os能跑docker应该本篇教程能大多适用安装完成仅供学习和实验
+本次安裝的版本：
+
+
+Kubernetes v1.11.1
+CNI v0.7.1
+Etcd v3.3.9
+Flannel v0.10.0 或者 Calico v3.1.3
+Docker CE latest version(18.06)
+
+
+ 不建议用docker 18.05 , docker CE 18.05有bind mount的bug 
+本次部署的网络信息：
+
+
+Cluster I...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/03</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/07/18/ecs-vip/" >
+            
+                <span>基于openstack的ecs上使用VIP</span>
+        </a>
+        <div class="abstract-content">
+            客户需要在云上使用vip,后面发现不通，查询了后发现openstack的neutron会存在ip和mac绑定的关系,可以阅读下面的链接查看说明https://blog.codecentric.de/en/2016/11/highly-available-vips-openstack-vms-vrrp/即如果网卡上有不是下发的ip在向外发包后包会被drop掉,需要用neutron的cli解绑ip和mac的绑定,我们这这个功能已经做在了web上了,所以可以直接解绑
+后面发现另一个客户两台机器都出现了VIP,看了下他的检查脚本是检测mysql存活,以为是脑裂造成的,后面才发现是组播被SDN禁止...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/18</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "keepavlied">keepavlied</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/07/08/travis-sync-gcr-io/" >
             
                 <span>利用travis同步gcr.io镜像到dockerhub</span>
@@ -618,64 +695,6 @@ An example of a pod that uses pod affinity:
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "Dockerfile">Dockerfile</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/01/10/docker的一些概念/" >
-            
-                <span>docker的一些概念</span>
-        </a>
-        <div class="abstract-content">
-            <p>总结下容器的一些概念和虚拟机的区别以及<code>CMD</code>和<code>entrypoint</code><br>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/12/24/docker容器访问宿主机/" >
-            
-                <span>docker容器访问宿主机</span>
-        </a>
-        <div class="abstract-content">
-            有时候使用docker容器的时候经常有需要访问宿主机ip的需求,虽然可以用宿主机网卡的ip访问,但是有时候有些人的宿主机ip是dhcp方式通用方法就是给宿主机加个不可达的回环地址,然后容器的host指向这个回环地址(容器host这步是可选的)(PS:1.1.1.1这个地址在2018/04初成为了公共DNS所以能ping通了,不过思路还是一样的)环境如下123456[root@guanvps ~]# cat /etc/redhat-release CentOS Linux release 7.4.1708 (Core) [root@guanvps ~]# uname -aLinux gua...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
     
 </div>
             
@@ -1971,9 +1990,143 @@ An example of a pod that uses pod affinity:
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 65
+        Total : 67
         </div>
         <!-- search  -->
         
@@ -1986,6 +2139,16 @@ An example of a pod that uses pod affinity:
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/12</span><a class="archive-post-title" href= "/2019/10/12/boot-grub-rescue/" >/boot目录被清空下物理机无法开机的一次救援</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/11</span><a class="archive-post-title" href= "/2019/10/11/ansible-count-Idempotency/" >ansible数量限制达到幂等性(未写完)</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2466,6 +2629,10 @@ An example of a pod that uses pod affinity:
     
         <span class="sidebar-tag-name" data-tags="consul"><span class="iconfont-archer">&#xe606;</span>consul</span>
     
+        <span class="sidebar-tag-name" data-tags="ansible"><span class="iconfont-archer">&#xe606;</span>ansible</span>
+    
+        <span class="sidebar-tag-name" data-tags="boot"><span class="iconfont-archer">&#xe606;</span>boot</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -2572,6 +2739,14 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="prometheus/golang"><span class="iconfont-archer">&#xe60a;</span>prometheus/golang</span>
     
         <span class="sidebar-category-name" data-categories="consul"><span class="iconfont-archer">&#xe60a;</span>consul</span>
+    
+        <span class="sidebar-category-name" data-categories="ansible"><span class="iconfont-archer">&#xe60a;</span>ansible</span>
+    
+        <span class="sidebar-category-name" data-categories="ansible/心得"><span class="iconfont-archer">&#xe60a;</span>ansible/心得</span>
+    
+        <span class="sidebar-category-name" data-categories="boot"><span class="iconfont-archer">&#xe60a;</span>boot</span>
+    
+        <span class="sidebar-category-name" data-categories="boot/grub"><span class="iconfont-archer">&#xe60a;</span>boot/grub</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

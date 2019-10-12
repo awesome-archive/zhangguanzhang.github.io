@@ -360,6 +360,74 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/10/12/boot-grub-rescue/" >
+            
+                <span>/boot目录被清空下物理机无法开机的一次救援</span>
+        </a>
+        <div class="abstract-content">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;今天下午到公司被通知苏州一个节点的客户的裸金属无法开机，14:00上去到16:50终于给整好了，这里记录下笔记分享下
+故障现象物理机裸金属，连上跳板机通过带外连上去(等同于现场接了一个显示屏+键盘一样)错误为1234.errorL file `/grub2/i386-pc/normal.mod&apos; not found.Entering rescue mode...grub rescue&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/12</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "grub">grub</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "boot">boot</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/10/11/ansible-count-Idempotency/" >
+            
+                <span>ansible数量限制达到幂等性(未写完)</span>
+        </a>
+        <div class="abstract-content">
+            准备写上一篇文章的consul成ansible，
+https://docs.ansible.com/ansible/latest/modules/find_module.html
+https://docs.ansible.com/ansible/latest/plugins/lookup/sequence.html
+https://stackoverflow.com/questions/44724805/ansible-condition-on-with-sequence-loop-with-variable-end-that-could-be-less-t
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/11</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "consul">consul</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "ansible">ansible</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/09/27/consul-tls/" >
             
                 <span>高可用的SSL consul cluster实践</span>
@@ -636,71 +704,6 @@ ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/
         <a class="post-tag" href="javascript:void(0);" data-tags = "grub">grub</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "tftp">tftp</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/06/23/autoInstallServer/" >
-            
-                <span>拟定excel表格服务器自动按照表格配置信息和安装的实现过程</span>
-        </a>
-        <div class="abstract-content">
-            修改镜像以及编程实现了从服务器买来上电就会自动化安装指定ip和hostname的步骤（包含了自动做raid）,全程非交互
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;先讲讲事情的由来，新节点建设，几百台服务器得人为安装系统，虽说服务器有带外ipmi，但是raid和安装系统时候hostname和ip啥的得去配置。系统镜像还是修改过的，安装界面的菜单自动应答通用的流程还不行，于是决定看看能不能研究出来。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;想要达到的一个效果就是：服务器送货到节点后，...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "initrd">initrd</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "grub">grub</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "raid">raid</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/06/12/CLP/" >
-            
-                <span>SMASH CLP的一些笔记</span>
-        </a>
-        <div class="abstract-content">
-            https://support.hpe.com/hpsc/doc/public/display?docId=c03334058https://www.golinuxhub.com/2018/02/hp-ilo4--cli-guide-cheatsheet-example.htmlhttps://h50146.www5.hpe.com/lib/products/software/oe/linux/mainstream/support/doc/general/mgmt/hponcfg/lights-out1.70guide.pdfhttps://server-recycling.nl/ima...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ipmi">ipmi</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "CLP">CLP</a>
     
 </div>
             
@@ -1996,9 +1999,143 @@ ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 65
+        Total : 67
         </div>
         <!-- search  -->
         
@@ -2011,6 +2148,16 @@ ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/12</span><a class="archive-post-title" href= "/2019/10/12/boot-grub-rescue/" >/boot目录被清空下物理机无法开机的一次救援</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/11</span><a class="archive-post-title" href= "/2019/10/11/ansible-count-Idempotency/" >ansible数量限制达到幂等性(未写完)</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2491,6 +2638,10 @@ ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/
     
         <span class="sidebar-tag-name" data-tags="consul"><span class="iconfont-archer">&#xe606;</span>consul</span>
     
+        <span class="sidebar-tag-name" data-tags="ansible"><span class="iconfont-archer">&#xe606;</span>ansible</span>
+    
+        <span class="sidebar-tag-name" data-tags="boot"><span class="iconfont-archer">&#xe606;</span>boot</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -2597,6 +2748,14 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="prometheus/golang"><span class="iconfont-archer">&#xe60a;</span>prometheus/golang</span>
     
         <span class="sidebar-category-name" data-categories="consul"><span class="iconfont-archer">&#xe60a;</span>consul</span>
+    
+        <span class="sidebar-category-name" data-categories="ansible"><span class="iconfont-archer">&#xe60a;</span>ansible</span>
+    
+        <span class="sidebar-category-name" data-categories="ansible/心得"><span class="iconfont-archer">&#xe60a;</span>ansible/心得</span>
+    
+        <span class="sidebar-category-name" data-categories="boot"><span class="iconfont-archer">&#xe60a;</span>boot</span>
+    
+        <span class="sidebar-category-name" data-categories="boot/grub"><span class="iconfont-archer">&#xe60a;</span>boot/grub</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
