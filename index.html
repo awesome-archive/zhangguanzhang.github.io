@@ -398,9 +398,8 @@ height:50vh;
                 <span>ansible数量限制达到幂等性(未写完)</span>
         </a>
         <div class="abstract-content">
-            准备写上一篇文章的consul成ansible，
-三台server12345678910[root@consul ansible]# cat inventory/hosts [server]172.19.0.3172.19.0.4172.19.0.5[client]172.19.0.8172.19.0.9
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576...
+            由来准备写上一篇文章的consul成ansible，在证书方面，cli和ca需要执行一次生成，而server和agent证书需要多次执行产生。另外我们也要考虑，dc1-server-consul-0*.pem需要拷贝到机器1，1拷贝到机器2.如何在生成证书的时候中断后再次运行也会达到目标的数量来实现幂等性，而不是证书生成多了另外证书还得按照index去拷贝到指定机器，也就是类似下面的123scp 001.pem ip1:/etc/xxxscp 002.pem ip2:/etc/xxxscp 003.pem ip3:/etc/xxx
+场景1 – tls的幂等性规划这里我是三台server1...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
