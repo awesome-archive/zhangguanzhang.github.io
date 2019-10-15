@@ -353,10 +353,8 @@
         </a>
         <div class="abstract-content">
             准备写上一篇文章的consul成ansible，
-https://docs.ansible.com/ansible/latest/modules/find_module.html
-https://docs.ansible.com/ansible/latest/plugins/lookup/sequence.html
-https://stackoverflow.com/questions/44724805/ansible-condition-on-with-sequence-loop-with-variable-end-that-could-be-less-t
-
+三台server12345678910[root@consul ansible]# cat inventory/hosts [server]172.19.0.3172.19.0.4172.19.0.5[client]172.19.0.8172.19.0.9
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -388,6 +386,7 @@ https://stackoverflow.com/questions/44724805/ansible-condition-on-with-sequence-
         </a>
         <div class="abstract-content">
             同事dnsmasq + consul 整服务自动发现，但是不是tls且consul server是单点，而且进程启动用的nohub而不是systemd，这里查了下资料实践了下
+部署过程已经写成了ansible，地址 https://github.com/zhangguanzhang/consul-tls-ansible
 开了五台云主机，总体规划为下面，角色那有条件的可以分开，例如client单独一台
 
 
@@ -407,26 +406,10 @@ consul1
 4
 8G
 server
-consul
+172.19.0.3
 
 
-172.19.0.6
-consul2
-4
-8G
-server
-consul2
-
-
-172.19.0.8
-consul3
-4
-8G
-server
-consul3
-
-
-17...
+172.19....
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
