@@ -353,7 +353,7 @@
         </a>
         <div class="abstract-content">
             客户需要在云上使用vip,后面发现不通，查询了后发现openstack的neutron会存在ip和mac绑定的关系,可以阅读下面的链接查看说明https://blog.codecentric.de/en/2016/11/highly-available-vips-openstack-vms-vrrp/即如果网卡上有不是下发的ip在向外发包后包会被drop掉,需要用neutron的cli解绑ip和mac的绑定,我们这这个功能已经做在了web上了,所以可以直接解绑
-后面发现另一个客户两台机器都出现了VIP,看了下他的检查脚本是检测mysql存活,以为是脑裂造成的,后面才发现是组播被SDN禁止...
+存在绑定的关系，意味着flanneld不能使用host-gw模式，calico不能使用bgp模式，除非云厂商实现了cni-plu...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1625,78 +1625,9 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 67
+        Total : 68
         </div>
         <!-- search  -->
         
@@ -1709,6 +1640,11 @@
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/21</span><a class="archive-post-title" href= "/2019/10/21/k8s-v1.14-v1.15-fix-issue/" >手动修复v1.14-v1.15版本k8s的issue:76956</a>
+        </li>
     
     
         <li class="archive-post-item">

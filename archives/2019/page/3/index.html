@@ -347,6 +347,36 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/02/12/dashboard/" >
+            
+                <span>通用的dashboard部署和tls，SSL相关部署</span>
+        </a>
+        <div class="abstract-content">
+            详细的讲解下部署dashboard，比市面上更详细和更多场景的选择，本文dashboard的暴露不会用nodeport(不喜欢使用它)和apiserver的web proxy代理也就是/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/这种
+讲下四种场景方式：
+
+
+纯dashboard http和https不惨合外部证书
+openssl 证书给dashboard当https
+个人向域名使用https小绿锁
+ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/12</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/01/30/fstab/" >
             
                 <span>fstab与systemd.mount自动挂载的一点研究和见解</span>
@@ -1627,78 +1657,9 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 67
+        Total : 68
         </div>
         <!-- search  -->
         
@@ -1711,6 +1672,11 @@
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/21</span><a class="archive-post-title" href= "/2019/10/21/k8s-v1.14-v1.15-fix-issue/" >手动修复v1.14-v1.15版本k8s的issue:76956</a>
+        </li>
     
     
         <li class="archive-post-item">
