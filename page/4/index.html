@@ -360,6 +360,36 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/09/24/k8s-some-vpc-cluster/" >
+            
+                <span>跨VPC或者跨云供应商搭建K8S集群正确姿势</span>
+        </a>
+        <div class="abstract-content">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;去年开始各大云厂商搞活动120元一年的云主机,当时还不会k8s,但是了解到搭建集群需要好几台,于是当时攒了好几台来做准备: tx一台,阿里两个别人账号买了两台,再加上很久之前几何云送了一台. 当时还有人怼说买这么多干啥,答曰:以后学k8s，此人曰:呵呵
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;后面刚开始接触的时候不太了解网络,用的calico,跨vpc根本不行,有大佬说只能vxlan能跨SDN下的vpc之间但是云厂商的主机都是做的ip的n...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/24</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/09/18/kubernetes-1-11-x-bin/" >
             
                 <span>二进制部署Kubernetes v1.11.x(1.12.x) HA可选</span>
@@ -673,36 +703,6 @@ An example of a pod that uses pod affinity:
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "ConfigMap">ConfigMap</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/02/05/docker-image-can-t-rm/" >
-            
-                <span>docker无法删除掉镜像的解决方法</span>
-        </a>
-        <div class="abstract-content">
-            碰到了docker rmi无法删除掉image的问题版本如下12[root@guanvps ~]# docker --versionDocker version 17.12.1-ce, build 7390fc6
-问题如下,也没有任何容器在运行,重启发现依然无法删除掉12345678[root@guanvps ~]# docker imagesREPOSITORY          TAG                 IMAGE ID            CREATED             SIZEnginx               latest              ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
     
 </div>
             
@@ -2030,42 +2030,9 @@ An example of a pod that uses pod affinity:
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 68
+        Total : 69
         </div>
         <!-- search  -->
         
@@ -2078,6 +2045,11 @@ An example of a pod that uses pod affinity:
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/24</span><a class="archive-post-title" href= "/2019/10/24/deployment-consul-in-k8s/" >consul仅当服务发现在k8s无状态部署使用</a>
+        </li>
     
     
         <li class="archive-post-item">
