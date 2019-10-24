@@ -352,7 +352,7 @@
                 <span>consul仅当服务发现在k8s无状态部署使用</span>
         </a>
         <div class="abstract-content">
-            由来&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;consul server在机器上的部署已经写完了，但是dba还是希望部署在k8s上，昨天搜了下相关文章扣出来部分步骤自己验证实现了。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;先说下需求，三台物理机单独跑mysql主从mha，利用consul client的服务注册+ttl喜昂consul server注册成域名，然后配置k8s内部的coredns把域名*.service.consul转发到consul server。架构为下图123456789101112131415161718P...
+            由来&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;consul server在机器上的部署已经写完了，但是dba还是希望部署在k8s上，昨天搜了下相关文章扣出来部分步骤自己验证实现了。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;先说下需求，三台物理机单独跑mysql主从mha，利用consul client的服务注册+ttl向consul server注册成域名，然后配置k8s内部的coredns把域名*.service.consul转发到consul server。架构为下图123456789101112131415161718Ph...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
