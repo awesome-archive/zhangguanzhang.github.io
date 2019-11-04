@@ -492,7 +492,7 @@ height:50vh;
         <div class="abstract-content">
             同事dnsmasq + consul 整服务自动发现，但是不是tls且consul server是单点，而且进程启动用的nohub而不是systemd，这里查了下资料实践了下
 部署过程已经写成了ansible，地址 https://github.com/zhangguanzhang/consul-tls-ansible
-开了五台云主机，总体规划为下面，角色那有条件的可以分开，例如client单独一台
+开了五台云主机，总体规划为下面，角色那有条件的可以分开，例如client单独一台。不分开的话得配置client的端口和server的分开，自己去探索
 
 
 
@@ -507,14 +507,7 @@ nodeName
 
 
 172.19.0.3
-consul1
-4
-8G
-server
-172.19.0.3
-
-
-172.19....
+consul...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
