@@ -349,6 +349,38 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2017/03/20/ftp-install/" >
+            
+                <span>vsftpd虚拟用户简单部署</span>
+        </a>
+        <div class="abstract-content">
+            关闭防火墙和selinux123systemctl disable --now firewalld NetworkManagersetenforce 0sed -ri &apos;/^[^#]*SELINUX=/s#=.+$#=disabled#&apos; /etc/selinux/config
+安装vsftpd和db4
+12345yum install -y epel-release &amp;&amp; \yum install -y \	vsftpd \	db4-utils \	db4
+创建vsftpd使用的系统用户，主目录为/home/vsftpd，禁止ssh登录。创建之后所有...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/03/20</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "ftp">ftp</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2017/03/15/lnmp/" >
             
                 <span>源码编译安装lnmp</span>
@@ -1814,9 +1846,18 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 69
+        Total : 70
         </div>
         <!-- search  -->
         
@@ -1829,6 +1870,11 @@
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2019/11/24/kubeadm-base-use/" >应大多数人要求写下kubeadm的基础使用</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2333,6 +2379,8 @@
     
         <span class="sidebar-tag-name" data-tags="boot"><span class="iconfont-archer">&#xe606;</span>boot</span>
     
+        <span class="sidebar-tag-name" data-tags="kubeadm"><span class="iconfont-archer">&#xe606;</span>kubeadm</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -2447,6 +2495,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="boot"><span class="iconfont-archer">&#xe60a;</span>boot</span>
     
         <span class="sidebar-category-name" data-categories="boot/grub"><span class="iconfont-archer">&#xe60a;</span>boot/grub</span>
+    
+        <span class="sidebar-category-name" data-categories="kubernetes/kubeadm"><span class="iconfont-archer">&#xe60a;</span>kubernetes/kubeadm</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

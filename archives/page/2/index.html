@@ -349,6 +349,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/07/08/nodeport-err/" >
+            
+                <span>为什么我不用nodePort之偶然中奖几率</span>
+        </a>
+        <div class="abstract-content">
+            嗯，1.6.7的老集群。早上反应数据库实例创建不出来。发现接口port的tcp不可达，查看kube-proxy的日志如下123456[root@HB1-xxxxx-S03 kubernetes]# tailf  kube-proxy.INFO E0708 09:44:03.437284  394350 proxier.go:1062] can&apos;t open &quot;nodePort for cloudify/cloudae-cfy-nginx:port1&quot; (:16081/tcp), skipping this nodePort: listen tcp :1608...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/08</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "nodeport">nodeport</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/07/07/golang-http/" >
             
                 <span>golang的net/http包的客户端简单科普</span>
@@ -618,40 +649,6 @@ scheduler和controller连接的apiserver地址我看网上有写127的也有写L
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/11</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/03/03/kubernetes-1-13-4/" >
-            
-                <span>二进制部署Kubernetes v1.13.12 HA可选</span>
-        </a>
-        <div class="abstract-content">
-            本次采用二进制文件方式部署,本文过程写成了更详细更多可选方案的ansible部署方案 https://github.com/zhangguanzhang/Kubernetes-ansible和之前的步骤差不多都是和kubeadm步骤一样,不过这次所有kubelet全部走bootstrap不会像之前master上的kubelet生成证书,另外证书换成openssl生成
-不建议使用secureCRT这个ssh软件复制本篇博客内容的命令,因为它的部分版本对包含多条命令的处理结果并不完美,可能很多命令不是预期结果
-本文命令里有些是输出,不要乱粘贴输入(虽然也没影响)
-本文命令全部是在k8s-m1...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "operator">operator</a>
-    
-</div>
             
         </div>
     </article>
@@ -1852,9 +1849,18 @@ scheduler和controller连接的apiserver地址我看网上有写127的也有写L
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 69
+        Total : 70
         </div>
         <!-- search  -->
         
@@ -1867,6 +1873,11 @@ scheduler和controller连接的apiserver地址我看网上有写127的也有写L
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2019/11/24/kubeadm-base-use/" >应大多数人要求写下kubeadm的基础使用</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2371,6 +2382,8 @@ scheduler和controller连接的apiserver地址我看网上有写127的也有写L
     
         <span class="sidebar-tag-name" data-tags="boot"><span class="iconfont-archer">&#xe606;</span>boot</span>
     
+        <span class="sidebar-tag-name" data-tags="kubeadm"><span class="iconfont-archer">&#xe606;</span>kubeadm</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -2485,6 +2498,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="boot"><span class="iconfont-archer">&#xe60a;</span>boot</span>
     
         <span class="sidebar-category-name" data-categories="boot/grub"><span class="iconfont-archer">&#xe60a;</span>boot/grub</span>
+    
+        <span class="sidebar-category-name" data-categories="kubernetes/kubeadm"><span class="iconfont-archer">&#xe60a;</span>kubernetes/kubeadm</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
