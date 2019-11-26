@@ -277,7 +277,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">5.8k</span>阅读时长: <span class="post-count reading-time">29 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">5.9k</span>阅读时长: <span class="post-count reading-time">29 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -619,6 +619,9 @@ height:50vh;
 <li>yaml，yaml的结构就是无非那些字符，数字，object，数组的混合，可以尝试大脑中把一段yaml转换成json，不然看不懂yaml的结构学不会k8s。很多层级实际上是遵循着逻辑的，例如一个pod有多个容器，所以pod.spec.containers就是一个obkect的数组，又因为pod共享network namepsace，所以<code>hostNetwork</code>这个属性肯定是containers同个级别的</li>
 <li>kubeconfig实际上就是存了三个信息，一个是host(集群)，用户认证信息，这俩都是可以写多个的，所以都是yaml的数组-开头，以及当前的context是哪个host搭配哪个认证信息。和web的jwt思想一样</li>
 <li>互斥和污点都是基础知识，也在concept和tasks板块里，上生产的话多份pod肯定要互斥自己分散开来，就像没有容器技术的时代是每个节点跑一份服务，这样down了一个node业务不会挂</li>
+<li>获取和操作集群资源对象不单单是kubectl，你用curl带上证书啥的也能操作集群。</li>
+<li>kubectl的子命令带上-v=数字能够调试，很多时候是排查的一个手段</li>
+<li>如果不想打开网页，想查看<code>pod.spec.hostNetwork</code>字段的意思，<code>kubectl explain pod.spec.hostNetwork</code> </li>
 </ul>
 <h3 id="关于kubeadm过程和更多详细参数选项见下面文章"><a href="#关于kubeadm过程和更多详细参数选项见下面文章" class="headerlink" title="关于kubeadm过程和更多详细参数选项见下面文章"></a>关于kubeadm过程和更多详细参数选项见下面文章</h3><ul>
 <li><a href="https://www.jianshu.com/p/1e65610dd223" target="_blank" rel="noopener">https://www.jianshu.com/p/1e65610dd223</a></li>
@@ -631,7 +634,7 @@ height:50vh;
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2019/11/24/kubeadm-base-use/">http://zhangguanzhang.github.io/2019/11/24/kubeadm-base-use/</a>
             <p>发表日期：<a href="http://zhangguanzhang.github.io/2019/11/24/kubeadm-base-use/">November 24th 2019, 7:36:53 pm</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2019/11/24/kubeadm-base-use/">November 26th 2019, 10:10:03 am</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2019/11/24/kubeadm-base-use/">November 26th 2019, 10:14:08 am</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
