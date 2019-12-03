@@ -349,6 +349,31 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/03/11/k8s-ha/" >
+            
+                <span>k8s高可用涉及到ip填写的相关配置和一些坑</span>
+        </a>
+        <div class="abstract-content">
+            etcd就不说了,奇数个副本,可以坏(n-1)/2个,但是不可能同时坏那么多,这里不讨论etcd单独不单独跑。推荐个文档 https://github.com/etcd-io/etcd/tree/master/Documentation/op-guide
+管理组件&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;先说说k8s组件,kubelet和kube-proxy啥的肯定写LB或者VIP:HA_port,如官方的图
+scheduler和controller连接的apiserver地址我看网上有写127的也有写LB或者VIP:HA_port的,刚看到官方文档说两种都...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/11</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/03/03/kubernetes-1-13-4/" >
             
                 <span>二进制部署Kubernetes v1.13.12 HA可选</span>
@@ -650,43 +675,10 @@ crontab加计划(/var/spool/cron/用户名文件,/etc/crontab里,/etc/cron.hourl
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/12/prometheus-operator/" >
-            
-                <span class="stick-top iconfont-archer">&#xe63d;</span>
-                
-                <span>全手动部署prometheus-operator监控K8S集群以及一些坑</span>
-        </a>
-        <div class="abstract-content">
-            写这篇文章原因&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所有的监控的agent底层最终都是查询的/proc和/sys里的信息推送(如果错了轻喷),因为收集宿主机信息方面也想用pod跑,会面临到问题&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;常见的zabbix_agent默认读取fs的/proc和/sys,容器跑agent会导致读取的不是宿主机的/proc和/sys&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;而prometheus的n...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "operator">operator</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/2/">&#60; PREV</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/7/">7</a><a class="extend next" rel="next" href="/archives/page/4/">NEXT &#62;</a>
+        <a class="extend prev" rel="prev" href="/archives/page/2/">&#60; PREV</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/8/">8</a><a class="extend next" rel="next" href="/archives/page/4/">NEXT &#62;</a>
     </nav>
     
 </main>
@@ -1875,22 +1867,9 @@ crontab加计划(/var/spool/cron/用户名文件,/etc/crontab里,/etc/cron.hourl
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 70
+        Total : 71
         </div>
         <!-- search  -->
         
@@ -2238,6 +2217,29 @@ crontab加计划(/var/spool/cron/用户名文件,/etc/crontab里,/etc/cron.hourl
         </li>
     
     
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/12/03/dos-to-gpt/" >lvm tpye分区变成了dos的救援</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
+    
+    
         <li class="archive-post-item">
             <span class="archive-post-date">02/12</span><a class="archive-post-title" href= "/2017/02/12/wx00/" >微信公众号接入自己服务器</a>
         </li>
@@ -2286,15 +2288,15 @@ crontab加计划(/var/spool/cron/用户名文件,/etc/crontab里,/etc/cron.hourl
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="ipmi"><span class="iconfont-archer">&#xe606;</span>ipmi</span>
-    
-        <span class="sidebar-tag-name" data-tags="CLP"><span class="iconfont-archer">&#xe606;</span>CLP</span>
-    
         <span class="sidebar-tag-name" data-tags="diy"><span class="iconfont-archer">&#xe606;</span>diy</span>
     
         <span class="sidebar-tag-name" data-tags="8266"><span class="iconfont-archer">&#xe606;</span>8266</span>
     
         <span class="sidebar-tag-name" data-tags="总结"><span class="iconfont-archer">&#xe606;</span>总结</span>
+    
+        <span class="sidebar-tag-name" data-tags="ipmi"><span class="iconfont-archer">&#xe606;</span>ipmi</span>
+    
+        <span class="sidebar-tag-name" data-tags="CLP"><span class="iconfont-archer">&#xe606;</span>CLP</span>
     
         <span class="sidebar-tag-name" data-tags="k8s"><span class="iconfont-archer">&#xe606;</span>k8s</span>
     
@@ -2302,21 +2304,33 @@ crontab加计划(/var/spool/cron/用户名文件,/etc/crontab里,/etc/cron.hourl
     
         <span class="sidebar-tag-name" data-tags="Altium Designer"><span class="iconfont-archer">&#xe606;</span>Altium Designer</span>
     
+        <span class="sidebar-tag-name" data-tags="ansible"><span class="iconfont-archer">&#xe606;</span>ansible</span>
+    
+        <span class="sidebar-tag-name" data-tags="consul"><span class="iconfont-archer">&#xe606;</span>consul</span>
+    
+        <span class="sidebar-tag-name" data-tags="lnmp"><span class="iconfont-archer">&#xe606;</span>lnmp</span>
+    
+        <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
+    
         <span class="sidebar-tag-name" data-tags="initrd"><span class="iconfont-archer">&#xe606;</span>initrd</span>
     
         <span class="sidebar-tag-name" data-tags="grub"><span class="iconfont-archer">&#xe606;</span>grub</span>
     
         <span class="sidebar-tag-name" data-tags="raid"><span class="iconfont-archer">&#xe606;</span>raid</span>
     
-        <span class="sidebar-tag-name" data-tags="lnmp"><span class="iconfont-archer">&#xe606;</span>lnmp</span>
-    
-        <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
-    
-        <span class="sidebar-tag-name" data-tags="cad"><span class="iconfont-archer">&#xe606;</span>cad</span>
-    
         <span class="sidebar-tag-name" data-tags="prometheus"><span class="iconfont-archer">&#xe606;</span>prometheus</span>
     
         <span class="sidebar-tag-name" data-tags="exporter"><span class="iconfont-archer">&#xe606;</span>exporter</span>
+    
+        <span class="sidebar-tag-name" data-tags="boot"><span class="iconfont-archer">&#xe606;</span>boot</span>
+    
+        <span class="sidebar-tag-name" data-tags="cad"><span class="iconfont-archer">&#xe606;</span>cad</span>
+    
+        <span class="sidebar-tag-name" data-tags="golang"><span class="iconfont-archer">&#xe606;</span>golang</span>
+    
+        <span class="sidebar-tag-name" data-tags="chromedp"><span class="iconfont-archer">&#xe606;</span>chromedp</span>
+    
+        <span class="sidebar-tag-name" data-tags="cobra"><span class="iconfont-archer">&#xe606;</span>cobra</span>
     
         <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
     
@@ -2326,23 +2340,23 @@ crontab加计划(/var/spool/cron/用户名文件,/etc/crontab里,/etc/cron.hourl
     
         <span class="sidebar-tag-name" data-tags="etcd"><span class="iconfont-archer">&#xe606;</span>etcd</span>
     
-        <span class="sidebar-tag-name" data-tags="cobra"><span class="iconfont-archer">&#xe606;</span>cobra</span>
-    
         <span class="sidebar-tag-name" data-tags="flannel"><span class="iconfont-archer">&#xe606;</span>flannel</span>
+    
+        <span class="sidebar-tag-name" data-tags="cifs"><span class="iconfont-archer">&#xe606;</span>cifs</span>
+    
+        <span class="sidebar-tag-name" data-tags="ftp"><span class="iconfont-archer">&#xe606;</span>ftp</span>
     
         <span class="sidebar-tag-name" data-tags="gobot"><span class="iconfont-archer">&#xe606;</span>gobot</span>
     
         <span class="sidebar-tag-name" data-tags="esp8266"><span class="iconfont-archer">&#xe606;</span>esp8266</span>
     
-        <span class="sidebar-tag-name" data-tags="ftp"><span class="iconfont-archer">&#xe606;</span>ftp</span>
-    
-        <span class="sidebar-tag-name" data-tags="golang"><span class="iconfont-archer">&#xe606;</span>golang</span>
-    
-        <span class="sidebar-tag-name" data-tags="chromedp"><span class="iconfont-archer">&#xe606;</span>chromedp</span>
-    
         <span class="sidebar-tag-name" data-tags="hello world"><span class="iconfont-archer">&#xe606;</span>hello world</span>
     
-        <span class="sidebar-tag-name" data-tags="cifs"><span class="iconfont-archer">&#xe606;</span>cifs</span>
+        <span class="sidebar-tag-name" data-tags="http"><span class="iconfont-archer">&#xe606;</span>http</span>
+    
+        <span class="sidebar-tag-name" data-tags="mqtt"><span class="iconfont-archer">&#xe606;</span>mqtt</span>
+    
+        <span class="sidebar-tag-name" data-tags="原创"><span class="iconfont-archer">&#xe606;</span>原创</span>
     
         <span class="sidebar-tag-name" data-tags="jira"><span class="iconfont-archer">&#xe606;</span>jira</span>
     
@@ -2350,69 +2364,57 @@ crontab加计划(/var/spool/cron/用户名文件,/etc/crontab里,/etc/cron.hourl
     
         <span class="sidebar-tag-name" data-tags="kube-controller-manager"><span class="iconfont-archer">&#xe606;</span>kube-controller-manager</span>
     
-        <span class="sidebar-tag-name" data-tags="mqtt"><span class="iconfont-archer">&#xe606;</span>mqtt</span>
-    
-        <span class="sidebar-tag-name" data-tags="原创"><span class="iconfont-archer">&#xe606;</span>原创</span>
-    
         <span class="sidebar-tag-name" data-tags="java"><span class="iconfont-archer">&#xe606;</span>java</span>
     
         <span class="sidebar-tag-name" data-tags="springboot"><span class="iconfont-archer">&#xe606;</span>springboot</span>
     
-        <span class="sidebar-tag-name" data-tags="PodAffinity"><span class="iconfont-archer">&#xe606;</span>PodAffinity</span>
-    
         <span class="sidebar-tag-name" data-tags="ConfigMap"><span class="iconfont-archer">&#xe606;</span>ConfigMap</span>
+    
+        <span class="sidebar-tag-name" data-tags="kubeadm"><span class="iconfont-archer">&#xe606;</span>kubeadm</span>
+    
+        <span class="sidebar-tag-name" data-tags="PodAffinity"><span class="iconfont-archer">&#xe606;</span>PodAffinity</span>
     
         <span class="sidebar-tag-name" data-tags="lamp"><span class="iconfont-archer">&#xe606;</span>lamp</span>
     
-        <span class="sidebar-tag-name" data-tags="http"><span class="iconfont-archer">&#xe606;</span>http</span>
+        <span class="sidebar-tag-name" data-tags="nodeport"><span class="iconfont-archer">&#xe606;</span>nodeport</span>
     
         <span class="sidebar-tag-name" data-tags="preseed"><span class="iconfont-archer">&#xe606;</span>preseed</span>
     
+        <span class="sidebar-tag-name" data-tags="timezone"><span class="iconfont-archer">&#xe606;</span>timezone</span>
+    
         <span class="sidebar-tag-name" data-tags="operator"><span class="iconfont-archer">&#xe606;</span>operator</span>
-    
-        <span class="sidebar-tag-name" data-tags="nodeport"><span class="iconfont-archer">&#xe606;</span>nodeport</span>
-    
-        <span class="sidebar-tag-name" data-tags="js"><span class="iconfont-archer">&#xe606;</span>js</span>
-    
-        <span class="sidebar-tag-name" data-tags="左右分散对齐文字"><span class="iconfont-archer">&#xe606;</span>左右分散对齐文字</span>
     
         <span class="sidebar-tag-name" data-tags="openstack"><span class="iconfont-archer">&#xe606;</span>openstack</span>
     
         <span class="sidebar-tag-name" data-tags="cloud-init"><span class="iconfont-archer">&#xe606;</span>cloud-init</span>
     
-        <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
+        <span class="sidebar-tag-name" data-tags="js"><span class="iconfont-archer">&#xe606;</span>js</span>
+    
+        <span class="sidebar-tag-name" data-tags="左右分散对齐文字"><span class="iconfont-archer">&#xe606;</span>左右分散对齐文字</span>
     
         <span class="sidebar-tag-name" data-tags="linux"><span class="iconfont-archer">&#xe606;</span>linux</span>
     
-        <span class="sidebar-tag-name" data-tags="bash"><span class="iconfont-archer">&#xe606;</span>bash</span>
-    
-        <span class="sidebar-tag-name" data-tags="dockerhub"><span class="iconfont-archer">&#xe606;</span>dockerhub</span>
-    
-        <span class="sidebar-tag-name" data-tags="gcr.io"><span class="iconfont-archer">&#xe606;</span>gcr.io</span>
+        <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
     
         <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
+    
+        <span class="sidebar-tag-name" data-tags="bash"><span class="iconfont-archer">&#xe606;</span>bash</span>
     
         <span class="sidebar-tag-name" data-tags="微信"><span class="iconfont-archer">&#xe606;</span>微信</span>
     
         <span class="sidebar-tag-name" data-tags="api"><span class="iconfont-archer">&#xe606;</span>api</span>
     
+        <span class="sidebar-tag-name" data-tags="dockerhub"><span class="iconfont-archer">&#xe606;</span>dockerhub</span>
+    
+        <span class="sidebar-tag-name" data-tags="gcr.io"><span class="iconfont-archer">&#xe606;</span>gcr.io</span>
+    
         <span class="sidebar-tag-name" data-tags="tftp"><span class="iconfont-archer">&#xe606;</span>tftp</span>
-    
-        <span class="sidebar-tag-name" data-tags="zabbix"><span class="iconfont-archer">&#xe606;</span>zabbix</span>
-    
-        <span class="sidebar-tag-name" data-tags="awk"><span class="iconfont-archer">&#xe606;</span>awk</span>
     
         <span class="sidebar-tag-name" data-tags="正则"><span class="iconfont-archer">&#xe606;</span>正则</span>
     
-        <span class="sidebar-tag-name" data-tags="timezone"><span class="iconfont-archer">&#xe606;</span>timezone</span>
+        <span class="sidebar-tag-name" data-tags="awk"><span class="iconfont-archer">&#xe606;</span>awk</span>
     
-        <span class="sidebar-tag-name" data-tags="consul"><span class="iconfont-archer">&#xe606;</span>consul</span>
-    
-        <span class="sidebar-tag-name" data-tags="ansible"><span class="iconfont-archer">&#xe606;</span>ansible</span>
-    
-        <span class="sidebar-tag-name" data-tags="boot"><span class="iconfont-archer">&#xe606;</span>boot</span>
-    
-        <span class="sidebar-tag-name" data-tags="kubeadm"><span class="iconfont-archer">&#xe606;</span>kubeadm</span>
+        <span class="sidebar-tag-name" data-tags="zabbix"><span class="iconfont-archer">&#xe606;</span>zabbix</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -2447,43 +2449,55 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="ipmi"><span class="iconfont-archer">&#xe60a;</span>ipmi</span>
-    
         <span class="sidebar-category-name" data-categories="日志"><span class="iconfont-archer">&#xe60a;</span>日志</span>
+    
+        <span class="sidebar-category-name" data-categories="ipmi"><span class="iconfont-archer">&#xe60a;</span>ipmi</span>
     
         <span class="sidebar-category-name" data-categories="kubernetes"><span class="iconfont-archer">&#xe60a;</span>kubernetes</span>
     
+        <span class="sidebar-category-name" data-categories="日志/闲搞"><span class="iconfont-archer">&#xe60a;</span>日志/闲搞</span>
+    
         <span class="sidebar-category-name" data-categories="日志/心得"><span class="iconfont-archer">&#xe60a;</span>日志/心得</span>
     
-        <span class="sidebar-category-name" data-categories="日志/闲搞"><span class="iconfont-archer">&#xe60a;</span>日志/闲搞</span>
+        <span class="sidebar-category-name" data-categories="ansible"><span class="iconfont-archer">&#xe60a;</span>ansible</span>
     
         <span class="sidebar-category-name" data-categories="pxe"><span class="iconfont-archer">&#xe60a;</span>pxe</span>
     
-        <span class="sidebar-category-name" data-categories="日志/Auto-cad"><span class="iconfont-archer">&#xe60a;</span>日志/Auto-cad</span>
-    
         <span class="sidebar-category-name" data-categories="prometheus"><span class="iconfont-archer">&#xe60a;</span>prometheus</span>
     
-        <span class="sidebar-category-name" data-categories="日志/容器"><span class="iconfont-archer">&#xe60a;</span>日志/容器</span>
+        <span class="sidebar-category-name" data-categories="boot"><span class="iconfont-archer">&#xe60a;</span>boot</span>
     
-        <span class="sidebar-category-name" data-categories="容器"><span class="iconfont-archer">&#xe60a;</span>容器</span>
-    
-        <span class="sidebar-category-name" data-categories="docker"><span class="iconfont-archer">&#xe60a;</span>docker</span>
-    
-        <span class="sidebar-category-name" data-categories="openstack"><span class="iconfont-archer">&#xe60a;</span>openstack</span>
-    
-        <span class="sidebar-category-name" data-categories="pxe/raid"><span class="iconfont-archer">&#xe60a;</span>pxe/raid</span>
+        <span class="sidebar-category-name" data-categories="日志/Auto-cad"><span class="iconfont-archer">&#xe60a;</span>日志/Auto-cad</span>
     
         <span class="sidebar-category-name" data-categories="golang"><span class="iconfont-archer">&#xe60a;</span>golang</span>
     
-        <span class="sidebar-category-name" data-categories="gobot"><span class="iconfont-archer">&#xe60a;</span>gobot</span>
+        <span class="sidebar-category-name" data-categories="consul"><span class="iconfont-archer">&#xe60a;</span>consul</span>
     
-        <span class="sidebar-category-name" data-categories="vsftp"><span class="iconfont-archer">&#xe60a;</span>vsftp</span>
+        <span class="sidebar-category-name" data-categories="日志/容器"><span class="iconfont-archer">&#xe60a;</span>日志/容器</span>
     
-        <span class="sidebar-category-name" data-categories="日志/闲聊"><span class="iconfont-archer">&#xe60a;</span>日志/闲聊</span>
+        <span class="sidebar-category-name" data-categories="docker"><span class="iconfont-archer">&#xe60a;</span>docker</span>
+    
+        <span class="sidebar-category-name" data-categories="ansible/心得"><span class="iconfont-archer">&#xe60a;</span>ansible/心得</span>
+    
+        <span class="sidebar-category-name" data-categories="容器"><span class="iconfont-archer">&#xe60a;</span>容器</span>
+    
+        <span class="sidebar-category-name" data-categories="pxe/raid"><span class="iconfont-archer">&#xe60a;</span>pxe/raid</span>
+    
+        <span class="sidebar-category-name" data-categories="openstack"><span class="iconfont-archer">&#xe60a;</span>openstack</span>
     
         <span class="sidebar-category-name" data-categories="fstab"><span class="iconfont-archer">&#xe60a;</span>fstab</span>
     
+        <span class="sidebar-category-name" data-categories="vsftp"><span class="iconfont-archer">&#xe60a;</span>vsftp</span>
+    
+        <span class="sidebar-category-name" data-categories="boot/grub"><span class="iconfont-archer">&#xe60a;</span>boot/grub</span>
+    
+        <span class="sidebar-category-name" data-categories="gobot"><span class="iconfont-archer">&#xe60a;</span>gobot</span>
+    
+        <span class="sidebar-category-name" data-categories="日志/闲聊"><span class="iconfont-archer">&#xe60a;</span>日志/闲聊</span>
+    
         <span class="sidebar-category-name" data-categories="kubernetes/kube-controller-manager"><span class="iconfont-archer">&#xe60a;</span>kubernetes/kube-controller-manager</span>
+    
+        <span class="sidebar-category-name" data-categories="kubernetes/kubeadm"><span class="iconfont-archer">&#xe60a;</span>kubernetes/kubeadm</span>
     
         <span class="sidebar-category-name" data-categories="kubernetes/k8s"><span class="iconfont-archer">&#xe60a;</span>kubernetes/k8s</span>
     
@@ -2491,7 +2505,7 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="preseed"><span class="iconfont-archer">&#xe60a;</span>preseed</span>
     
-        <span class="sidebar-category-name" data-categories="pxe/raid/kickstart"><span class="iconfont-archer">&#xe60a;</span>pxe/raid/kickstart</span>
+        <span class="sidebar-category-name" data-categories="prometheus/golang"><span class="iconfont-archer">&#xe60a;</span>prometheus/golang</span>
     
         <span class="sidebar-category-name" data-categories="kubernetes/prometheus"><span class="iconfont-archer">&#xe60a;</span>kubernetes/prometheus</span>
     
@@ -2499,15 +2513,17 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="日志/总结"><span class="iconfont-archer">&#xe60a;</span>日志/总结</span>
     
+        <span class="sidebar-category-name" data-categories="pxe/raid/kickstart"><span class="iconfont-archer">&#xe60a;</span>pxe/raid/kickstart</span>
+    
         <span class="sidebar-category-name" data-categories="CI"><span class="iconfont-archer">&#xe60a;</span>CI</span>
     
         <span class="sidebar-category-name" data-categories="pxe/docker"><span class="iconfont-archer">&#xe60a;</span>pxe/docker</span>
     
-        <span class="sidebar-category-name" data-categories="日志/运维"><span class="iconfont-archer">&#xe60a;</span>日志/运维</span>
-    
         <span class="sidebar-category-name" data-categories="日志/技巧"><span class="iconfont-archer">&#xe60a;</span>日志/技巧</span>
     
         <span class="sidebar-category-name" data-categories="日志/LVM"><span class="iconfont-archer">&#xe60a;</span>日志/LVM</span>
+    
+        <span class="sidebar-category-name" data-categories="日志/运维"><span class="iconfont-archer">&#xe60a;</span>日志/运维</span>
     
         <span class="sidebar-category-name" data-categories="golang/http"><span class="iconfont-archer">&#xe60a;</span>golang/http</span>
     
@@ -2516,20 +2532,6 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="pxe/docker/kickstart"><span class="iconfont-archer">&#xe60a;</span>pxe/docker/kickstart</span>
     
         <span class="sidebar-category-name" data-categories="日志/LVM/raid"><span class="iconfont-archer">&#xe60a;</span>日志/LVM/raid</span>
-    
-        <span class="sidebar-category-name" data-categories="prometheus/golang"><span class="iconfont-archer">&#xe60a;</span>prometheus/golang</span>
-    
-        <span class="sidebar-category-name" data-categories="consul"><span class="iconfont-archer">&#xe60a;</span>consul</span>
-    
-        <span class="sidebar-category-name" data-categories="ansible"><span class="iconfont-archer">&#xe60a;</span>ansible</span>
-    
-        <span class="sidebar-category-name" data-categories="ansible/心得"><span class="iconfont-archer">&#xe60a;</span>ansible/心得</span>
-    
-        <span class="sidebar-category-name" data-categories="boot"><span class="iconfont-archer">&#xe60a;</span>boot</span>
-    
-        <span class="sidebar-category-name" data-categories="boot/grub"><span class="iconfont-archer">&#xe60a;</span>boot/grub</span>
-    
-        <span class="sidebar-category-name" data-categories="kubernetes/kubeadm"><span class="iconfont-archer">&#xe60a;</span>kubernetes/kubeadm</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
