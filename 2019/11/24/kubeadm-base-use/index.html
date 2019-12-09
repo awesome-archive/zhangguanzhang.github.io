@@ -609,7 +609,7 @@ height:50vh;
 <li><p>官方yaml自带了四种架构的daemonset，我们删掉除了amd64以外的，大概是227行到结尾</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -ri <span class="string">'227,$d'</span> kube-flannel.yml</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>pod的cidr修改了的话这里也要修改，如果是在同一个二层，可以使用把<code>vxlan</code>改为<code>host-gw</code>模式,vxlan的话需要安全组放开8472端口的udp</p>
+<li><p>pod的cidr修改了的话这里也要修改，如果是在同一个二层，可以使用把<code>vxlan</code>改为性能更强的<code>host-gw</code>模式,vxlan的话需要安全组放开8472端口的udp</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">net-conf.json: |</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;Network&quot;: &quot;10.244.0.0/16&quot;,</span><br><span class="line">    &quot;Backend&quot;: &#123;</span><br><span class="line">      &quot;Type&quot;: &quot;vxlan&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>使用下面命令修改镜像</p>
@@ -653,7 +653,7 @@ height:50vh;
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2019/11/24/kubeadm-base-use/">http://zhangguanzhang.github.io/2019/11/24/kubeadm-base-use/</a>
             <p>发表日期：<a href="http://zhangguanzhang.github.io/2019/11/24/kubeadm-base-use/">November 24th 2019, 7:36:53 pm</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2019/11/24/kubeadm-base-use/">December 9th 2019, 4:59:35 pm</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2019/11/24/kubeadm-base-use/">December 9th 2019, 5:40:13 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
