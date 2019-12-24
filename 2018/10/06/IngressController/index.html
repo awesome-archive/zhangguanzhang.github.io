@@ -277,7 +277,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">3.4k</span>阅读时长: <span class="post-count reading-time">13 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">3.5k</span>阅读时长: <span class="post-count reading-time">13 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -429,7 +429,7 @@ height:50vh;
 </ul>
 </blockquote>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们部署在集群里的服务的svc想暴露出来的时候,从长久眼光看和易于管理维护都是用的<code>Ingress Controller</code>来处理,clusterip非集群主机无法访问,Nodeport不方便长久管理和效率,LB服务多了不方便因为需要花费额外的钱,externalIPS不好用(后面有空写文章会说它)</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这里我们设想下，假如世界上没有ingress controller的时候，你自己开始造这个东西的时候的历程。拿你的vmware workstation，虚机是nat的，只有宿主机能访问虚机的ip。pod的overlay网络就是集群的node之间组了个自嗨的内网的cidr网络，集群的成员之间才能访问pod ip，非集群成员无法访问pod的ip。你想到了在node上跑一个进程做转发，暴露集群的7层http就得有个东西在node上转发，代理node 的host网络到pod的overlay网络上，你最熟悉nginx。<br>因为svc的ip是变化的：所以初期你想到的是:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这里我们设想下，假如世界上没有ingress controller的时候，你自己开始造这个东西的时候的历程。拿你的vmware workstation，虚机是nat的，只有宿主机能访问虚机的ip，和宿主机同一局域网的其他机器是无法访问你pc上的虚拟机的。pod的overlay网络就是集群的node之间组了个自嗨的内网的cidr网络，集群的成员(k8s的node)之间才能访问pod ip，非集群成员无法访问pod的ip。你想到了在node上跑一个进程做转发，暴露集群的7层http就得有个东西在node上转发，代理node 的host网络到pod的overlay网络上，你最熟悉nginx。<br>因为svc的ip是变化的：所以初期你想到的是:</p>
 <ul>
 <li>nginx + lua 连kube-apiserver，获取集群svc的域名，直接反向代理到svc的域名上，手动写nginx的配置文件决定哪些svc需要被反向代理。</li>
 </ul>
@@ -505,7 +505,7 @@ height:50vh;
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2018/10/06/IngressController/">http://zhangguanzhang.github.io/2018/10/06/IngressController/</a>
             <p>发表日期：<a href="http://zhangguanzhang.github.io/2018/10/06/IngressController/">October 6th 2018, 7:11:10 pm</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/10/06/IngressController/">December 24th 2019, 2:24:30 pm</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2018/10/06/IngressController/">December 24th 2019, 2:37:06 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
