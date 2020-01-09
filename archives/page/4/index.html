@@ -349,48 +349,6 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/11/24/how-to-use-kubeadm/" >
-            
-                <span>对于初入k8s和kubeadm的一些建议</span>
-        </a>
-        <div class="abstract-content">
-            主要还是简单说下kubeadm
-说说一些现象&nbsp;&nbsp;&nbsp;&nbsp;无论docker还是K8s群看见过太多人盲目了有些是赶鸭子上来的,有的是跟风盲目进来乱学的.其中较多的分类为:
-
-
-不学docker直接学k8s的跟风狗
-没有熟悉Linux操作和一些基础知识的开发
-Docker学得不怎么样就迫不及待来学的跟风狗
-
-
-入门最具有争议的问题就是如何开始,k8s各个组件对于小白来说搭建方式和配置文件对于入门的人来说太庞大了,对于环境来学习一般分为下面两种
-
-
-按照别人博客或者文章去手动搭建一个环境后学习
-找个简易部署的方案来部署环境来学(kubeadm或者ansible...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href = "/2018/11/06/onlyoffice/" >
             
                 <span>一次docker镜像的解耦--onlyoffice</span>
@@ -697,6 +655,43 @@ Cluster I...
         <a class="post-tag" href="javascript:void(0);" data-tags = "dockerhub">dockerhub</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "gcr.io">gcr.io</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/06/25/etcd-error/" >
+            
+                <span>记录一次线上k8s节点故障</span>
+        </a>
+        <div class="abstract-content">
+            
+
+邮件收到zabbix的告警,业务的网页登陆状态不是200,后面又自愈了
+
+
+说明服务挂掉过一次,登陆到机器上发现集群有台节点状态是nodelost状态上去看到相关服务都挂掉了然后排查到根分区占满了,排查到是k8s日志堆满了/var/log/
+12345678910111213141516[root@cloudos02 ~]# df -hFilesystem               Size  Used Avail Use% Mounted on/dev/mapper/centos-root  219G  216G     0 100% /devtmpfs             ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/25</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "etcd">etcd</a>
     
 </div>
             
@@ -1996,78 +1991,9 @@ Cluster I...
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 75
+        Total : 74
         </div>
         <!-- search  -->
         
@@ -2080,11 +2006,6 @@ Cluster I...
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/09</span><a class="archive-post-title" href= "/2020/01/09/docker-panic-invalid-page-type-1/" >docker-panic-invalid-page-type</a>
-        </li>
     
     
         <li class="archive-post-item">
