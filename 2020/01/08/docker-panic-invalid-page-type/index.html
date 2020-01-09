@@ -277,7 +277,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">3.4k</span>阅读时长: <span class="post-count reading-time">19 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">4.3k</span>阅读时长: <span class="post-count reading-time">25 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -416,7 +416,9 @@ height:50vh;
 <p>上面代码的最后一行是join的，也就说存储文件最终落地的basename是<code>meta.db</code>，进入docker的目录查找下db文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ cd /var/lib/docker</span><br><span class="line">$ find -type f -name &apos;*.db&apos; -exec md5sum &#123;&#125; \;</span><br><span class="line">....</span><br><span class="line">995edbf15ba217c7835ec28fb7295cb4  ./network/files/local-kv.db</span><br><span class="line">9701191ad9ef12f668f3adfc3667d668  ./containerd/daemon/io.containerd.metadata.v1.bolt/meta.db</span><br><span class="line">f27af34fccaea0094c8ff67242abdd05  ./builder/fscache.db</span><br><span class="line">1e38cfd83bc66e216cfcbbd78c2ddd5c  ./buildkit/cache.db</span><br><span class="line">f27af34fccaea0094c8ff67242abdd05  ./buildkit/metadata.db</span><br><span class="line">f27af34fccaea0094c8ff67242abdd05  ./buildkit/snapshots.db</span><br><span class="line">ed13bbe3a2c3ab7ae9f60822241b4910  ./volumes/metadata.db</span><br></pre></td></tr></table></figure></p>
 <p>可以看出<code>./containerd/daemon/io.containerd.metadata.v1.bolt/meta.db</code>就是那个bolt的db文件<br>然后cat下发现内容和同版本的正常docker上的文件不一样，正常docker上的这个文件cat的话虽然乱码但是隐约看到很多json输出，而这个文件内容只有一行类似sha256的字符串，给他改下名再启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">$ cd containerd/daemon/io.containerd.metadata.v1.bolt/</span><br><span class="line">$ mv meta.db&#123;,.bak&#125;</span><br><span class="line">$ dockerd -D</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">DEBU[2020-01-08T06:23:14.604593395+08:00] Registering GET, /Plugins/privileges</span><br><span class="line">DEBU[2020-01-08T06:23:14.604593395+08:00] Registering GET, /Plugins/privileges</span><br><span class="line">DEBU[2020-01-08T06:23:14.685104585+08:00] Registering DELETE, /Plugins/&#123;name:.*&#125;</span><br><span class="line">DEBU[2020-01-08T06:23:14.605624293+08:00] Registering POST, /Plugins/&#123;name:.*&#125;/enable </span><br><span class="line">DEBU[2020-01-08T06:23:14.606147187+08:00] Registering POST, /Plugins/&#123;name:.*&#125;/disable </span><br><span class="line">DEBU[2020-01-08T06:23:14.606680782+08:00] Registering POST, /plugins/pull</span><br><span class="line">DEBU[2020-01-08T06:23:14.607348680+88:00] Registering POST, /Plugins/&#123;name:.*&#125;/push</span><br><span class="line">DEBU[2020-01-08T06:23:14.607885151+88:00] Registering POST, /Plugins/&#123;name:.*&#125;/upgrade </span><br><span class="line">DEBU[2020-01-08T06:23:14.608422094+08:00] Registering POST, /Plugins/&#123;name:.*&#125;/set</span><br><span class="line">DEBU[2020-01-08T06:23:14.608942233+88:00] Registering POST, /Plugins/create </span><br><span class="line">DEBU[2020-01-08T06:23:14.609468422+08:00] Registering GET, /distribution/&#123;name:.*&#125;/json</span><br><span class="line">DEBU[2020-01-08T06:23:14.610006431+88:00] Registering GET, /networks</span><br><span class="line">DEBU[2020-01-08T06:23:14.610523576+08:00] Registering GET, /networks/</span><br><span class="line">DEBU[2020-01-08T06:23:14.611101665+08:00] Registering GET, /networks/fid:.+&#125;</span><br><span class="line">DEBU[2020-01-08T06:23:14.611691486+08:00] Registering POST, /networks/create</span><br><span class="line">DEBU[2020-01-08T06:23:14.612211635408:00] Registering POST, /networks/&#123;id:.*&#125;/comnect</span><br><span class="line">DEBU[2020-01-08T06:23:14.612755402+08:00] Registering POST, /networks/&#123;id:.*&#125;/discomect</span><br><span class="line">DEBU[2020-01-08T06:23:14.613293237+08:00] Registering POST, /networks/prune</span><br><span class="line">DEBU[2020-01-08T06:23:14.613818840+08:00] Registering DELETE, /networks/&#123;id:.*&#125;</span><br><span class="line">INFO[2020-01-08T06:23:14.614587823+08:00] API listen on /var/run/docker.sock</span><br><span class="line">^CINF0[2020-01-08T06:23:20.018648309+08:00] Processing signal &apos;interrupt&apos;</span><br><span class="line">DEBU[2020-01-08T06:23:20.019573968+08:00] daemon configured with a 15 seconds minimum shutdown timeout</span><br><span class="line">DEBUL2020-01-08T86:23:20.020244626+08:00] start clean shutdown of all containers with a 15 seconds timeout...</span><br><span class="line">DEBU[2020-01-08T06:23:20.021228579+88:00] Unix socket /run/docker/libnetwork/959ebdb74deb5e4b941deffa8c69cb1338874ef1e66b7964a13e79b0db3c6b32.sock doesn&apos;t exist. cannot accepet client connections</span><br><span class="line">DEBU[2020-01-08T06:23:20.021506723+08:00] Cleaning up old mountid : start.</span><br><span class="line">DEBU[2020-01-08T06:23:20.023363414+88:00] Cleaning up old mountid : done.</span><br><span class="line">DEBU[2020-01-08T06:23:20.024124509+88:00] Clean shutdown succeeded</span><br><span class="line">INF0[2020-01-08T06:23:20.024842690+08:00] stopping event stream following graceful shutdown error=&quot;context canceled&quot; module=libcontainerd namespace=moby</span><br><span class="line">DEBU[0018] received signa 1               signal=terminated</span><br><span class="line">INF0[2020-01-08T06:23:20.024842296+08:00] stopping event stream following graceful shutdown error=&quot;context canceled&quot; module=libcontainerd namespace=plugins.moby</span><br><span class="line">INF0[2020-01-08T06:23:20.024847832+08:00] stopping healthcheck following graceful shutdown module=libcontainerd</span><br><span class="line">INFO [2020-0108T86:23:20.027148599+08:00] pickfirstBalancer: HandleSubConnStateChange: 0xc420189620, TRANSIENT_FAILURE module=grpc</span><br><span class="line">INFO[2020-01-08T06:23:20.027167365+88:00] pickfirstBalancer: HandleSubConnStateChange: 0xc420190d60, TRANSIENT_FAILURE module=grpc</span><br><span class="line">INF0[2020-01-08T06:23:20.032788185+08:00] pickfirstBalancer: HandleSubConnStateChange: 0xc420190d60, CONNECTING  module=grpc</span><br><span class="line">INF0[2020-01-08T06:23:20.027224233+88:00] pickfirstBalancer: HandleSubConnStateChange: 0xc420398c00，TRANSIENT_FAILURE module=grpc</span><br><span class="line">INF0[2020-01-08T06:23:20.035701179+08:00] PickfirstBalancer: HandleSubConnStateChange: 0xc420398c00, CONNECTING module=grpc</span><br><span class="line">$ systemctl start docker</span><br></pre></td></tr></table></figure></p>
 <p>后面我查找了下源码，docker daemon会调用containerd，类似os.exec那样执行，具体可以去看下面的代码<br><a href="https://github.com/docker/docker-ce/blob/d7080c17a580919f5340a15a8e5e013133089680/components/engine/libcontainerd/remote_daemon.go#L244" target="_blank" rel="noopener">https://github.com/docker/docker-ce/blob/d7080c17a580919f5340a15a8e5e013133089680/components/engine/libcontainerd/remote_daemon.go#L244</a><br><a href="https://github.com/docker/docker-ce/blob/d7080c17a580919f5340a15a8e5e013133089680/components/engine/cmd/dockerd/daemon.go#L147" target="_blank" rel="noopener">https://github.com/docker/docker-ce/blob/d7080c17a580919f5340a15a8e5e013133089680/components/engine/cmd/dockerd/daemon.go#L147</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ find -type f -name &apos;*.go&apos; -exec grep -Pl &apos;containerd.New&apos; &#123;&#125; \;</span><br><span class="line">./components/engine/cmd/dockerd/daemon.go</span><br><span class="line">./components/engine/libcontainerd/remote_daemon.go</span><br></pre></td></tr></table></figure></p>
-<p>containerd在老版本(19以下)名为<code>docker-containerd</code>，新版本是<code>containerd</code>，不要手欠在终端执行它，不然docker和kubelet会退出</p>
+<p>containerd在老版本(19以下)名为<code>docker-containerd</code>，新版本是<code>containerd</code>，不要手欠在终端执行它，不然docker和kubelet会退出<br>讲句题外话，那个bolt的库老版本那行panic把许多知名应用给panic了，所以尽量使用新版本docker</p>
+<p>后续看了下kubelet在刷错误日志<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">Jan 08 20:43:29     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;cf46e57be21fcce97e0b34f14df1174c9f43784ae6c871fe306559239afeb0c0.bak&quot;: invalid character &apos;d&apos; in literal false (expecting &apos;a&apos;) </span><br><span class="line">Jan 08 20:43:30     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;05135ebf2e0a463207245ac71efefb9c25c255b73aef50bb7774ef9ef17818bf&quot;: invalid character &apos;q&apos; in numeric literal</span><br><span class="line">Jan 08 20:43:30     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;2aa54bfda449d33e0e69d8c972f9838d0653c8f04bb5e31a9a1bcb7efcea3f47&quot;: invalid character &apos;e&apos; looking for beginning of value</span><br><span class="line">Jan 08 20:43:30     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;42a46846bde5fc3bd713c5eb4a9b0781a8e8497472b2770b4ae557981c46f510&quot;: invalid character &apos;f&apos; after top-level value</span><br><span class="line">Jan 08 20:43:30     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;cf46e57be21fcce97e0b34f14df1174c9f43784ae6c871fe306559239afeb0c0.bak&quot;: invalid character &apos;d&apos; in literal false (expecting &apos;a&apos;) </span><br><span class="line">Jan 08 20:43:31     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;05135ebf2e0a463207245ac71efefb9c25c255b73aef50bb7774ef9ef17818bf&quot;: invalid character &apos;q&apos; in numeric literal</span><br><span class="line">Jan 08 20:43:31     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;2aa54bfda449d33e0e69d8c972f9838d0653c8f04bb5e31a9a1bcb7efcea3f47&quot;: invalid character &apos;e&apos; looking for beginning of value</span><br><span class="line">Jan 08 20:43:31     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;42a46846bde5fc3bd713c5eb4a9b0781a8e8497472b2770b4ae557981c46f510&quot;: invalid character &apos;f&apos; after top-level value</span><br><span class="line">Jan 08 20:43:31     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;cf46e57be21fcce97e0b34f14df1174c9f43784ae6c871fe306559239afeb0c0.bak&quot;: invalid character &apos;d&apos; in literal false (expecting &apos;a&apos;) </span><br><span class="line">Jan 08 20:43:32     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;05135ebf2e0a463207245ac71efefb9c25c255b73aef50bb7774ef9ef17818bf&quot;: invalid character &apos;q&apos; in numeric literal</span><br><span class="line">Jan 08 20:43:32     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;2aa54bfda449d33e0e69d8c972f9838d0653c8f04bb5e31a9a1bcb7efcea3f47&quot;: invalid character &apos;e&apos; looking for beginning of value</span><br><span class="line">Jan 08 20:43:32     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;42a46846bde5fc3bd713c5eb4a9b0781a8e8497472b2770b4ae557981c46f510&quot;: invalid character &apos;f&apos; after top-level value</span><br><span class="line">Jan 08 20:43:32     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;cf46e57be21fcce97e0b34f14df1174c9f43784ae6c871fe306559239afeb0c0.bak&quot;: invalid character &apos;d&apos; in literal false (expecting &apos;a&apos;) </span><br><span class="line">Jan 08 20:43:33     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;05135ebf2e0a463207245ac71efefb9c25c255b73aef50bb7774ef9ef17818bf&quot;: invalid character &apos;q&apos; in numeric literal</span><br><span class="line">Jan 08 20:43:33     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;2aa54bfda449d33e0e69d8c972f9838d0653c8f04bb5e31a9a1bcb7efcea3f47&quot;: invalid character &apos;e&apos; looking for beginning of value</span><br><span class="line">Jan 08 20:43:33     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;42a46846bde5fc3bd713c5eb4a9b0781a8e8497472b2770b4ae557981c46f510&quot;: invalid character &apos;f&apos; after top-level value</span><br><span class="line">Jan 08 20:43:33     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;cf46e57be21fcce97e0b34f14df1174c9f43784ae6c871fe306559239afeb0c0.bak&quot;: invalid character &apos;d&apos; in literal false (expecting &apos;a&apos;) </span><br><span class="line">Jan 08 20:43:34     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;05135ebf2e0a463207245ac71efefb9c25c255b73aef50bb7774ef9ef17818bf&quot;: invalid character &apos;q&apos; in numeric literal</span><br><span class="line">Jan 08 20:43:34     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;2aa54bfda449d33e0e69d8c972f9838d0653c8f04bb5e31a9a1bcb7efcea3f47&quot;: invalid character &apos;e&apos; looking for beginning of value</span><br><span class="line">Jan 08 20:43:34     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;42a46846bde5fc3bd713c5eb4a9b0781a8e8497472b2770b4ae557981c46f510&quot;: invalid character &apos;f&apos; after top-level value</span><br><span class="line">Jan 08 20:43:34     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;cf46e57be21fcce97e0b34f14df1174c9f43784ae6c871fe306559239afeb0c0.bak&quot;: invalid character &apos;d&apos; in literal false (expecting &apos;a&apos;) </span><br><span class="line">Jan 08 20:43:35     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;05135ebf2e0a463207245ac71efefb9c25c255b73aef50bb7774ef9ef17818bf&quot;: invalid character &apos;q&apos; in numeric literal</span><br><span class="line">Jan 08 20:43:35     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;2aa54bfda449d33e0e69d8c972f9838d0653c8f04bb5e31a9a1bcb7efcea3f47&quot;: invalid character &apos;e&apos; looking for beginning of value</span><br><span class="line">Jan 08 20:43:35     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;42a46846bde5fc3bd713c5eb4a9b0781a8e8497472b2770b4ae557981c46f510&quot;: invalid character &apos;f&apos; after top-level value</span><br><span class="line">Jan 08 20:43:35     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;cf46e57be21fcce97e0b34f14df1174c9f43784ae6c871fe306559239afeb0c0.bak&quot;: invalid character &apos;d&apos; in literal false (expecting &apos;a&apos;) </span><br><span class="line">Jan 08 20:43:36     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;05135ebf2e0a463207245ac71efefb9c25c255b73aef50bb7774ef9ef17818bf&quot;: invalid character &apos;q&apos; in numeric literal</span><br><span class="line">Jan 08 20:43:36     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;2aa54bfda449d33e0e69d8c972f9838d0653c8f04bb5e31a9a1bcb7efcea3f47&quot;: invalid character &apos;e&apos; looking for beginning of value</span><br><span class="line">Jan 08 20:43:36     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;42a46846bde5fc3bd713c5eb4a9b0781a8e8497472b2770b4ae557981c46f510&quot;: invalid character &apos;f&apos; after top-level value</span><br><span class="line">Jan 08 20:43:36     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;cf46e57be21fcce97e0b34f14df1174c9f43784ae6c871fe306559239afeb0c0.bak&quot;: invalid character &apos;d&apos; in literal false (expecting &apos;a&apos;) </span><br><span class="line">Jan 08 20:43:37     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;05135ebf2e0a463207245ac71efefb9c25c255b73aef50bb7774ef9ef17818bf&quot;: invalid character &apos;q&apos; in numeric literal</span><br><span class="line">Jan 08 20:43:37     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;2aa54bfda449d33e0e69d8c972f9838d0653c8f04bb5e31a9a1bcb7efcea3f47&quot;: invalid character &apos;e&apos; looking for beginning of value</span><br><span class="line">Jan 08 20:43:37     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;42a46846bde5fc3bd713c5eb4a9b0781a8e8497472b2770b4ae557981c46f510&quot;: invalid character &apos;f&apos; after top-level value</span><br><span class="line">Jan 08 20:43:37     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;cf46e57be21fcce97e0b34f14df1174c9f43784ae6c871fe306559239afeb0c0.bak&quot;: invalid character &apos;d&apos; in literal false (expecting &apos;a&apos;) </span><br><span class="line">Jan 08 20:43:38     docker_sandbox.go:538] Failed to retrieve checkpoint for sandbox &quot;05135ebf2e0a463207245ac71efefb9c25c255b73aef50bb7774ef9ef17818bf&quot;: invalid character &apos;q&apos; in numeric literal</span><br></pre></td></tr></table></figure></p>
+<p>解决办法是进目录删除相关文件还是目录来着<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /var/lib/dockershim/sandbox/</span><br><span class="line">rm -rf 05135ebf2e0a463207245ac71efefb9c25c255b73aef50bb7774ef9ef17818bf \</span><br><span class="line">  cf46e57be21fcce97e0b34f14df1174c9f43784ae6c871fe306559239afeb0c0 \</span><br><span class="line">  42a46846bde5fc3bd713c5eb4a9b0781a8e8497472b2770b4ae557981c46f510 \</span><br><span class="line">  2aa54bfda449d33e0e69d8c972f9838d0653c8f04bb5e31a9a1bcb7efcea3f47</span><br></pre></td></tr></table></figure></p>
 
     </article>
     <!-- license  -->
@@ -424,14 +426,19 @@ height:50vh;
         <div class="license-wrapper">
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2020/01/08/docker-panic-invalid-page-type/">http://zhangguanzhang.github.io/2020/01/08/docker-panic-invalid-page-type/</a>
-            <p>发表日期：<a href="http://zhangguanzhang.github.io/2020/01/08/docker-panic-invalid-page-type/">一月 8日 2020, 6:51:37 早上</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2020/01/08/docker-panic-invalid-page-type/">January 9th 2020, 6:24:27 pm</a>
+            <p>发表日期：<a href="http://zhangguanzhang.github.io/2020/01/08/docker-panic-invalid-page-type/">January 8th 2020, 6:51:37 am</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2020/01/08/docker-panic-invalid-page-type/">January 9th 2020, 6:33:45 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
     <!-- paginator  -->
     <ul class="post-paginator">
         <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2020/01/09/docker-panic-invalid-page-type-1/" title= "docker-panic-invalid-page-type">
+                    <div class="nextTitle">docker-panic-invalid-page-type</div>
+                </a>
             
         </li>
         <li class="previous">
@@ -1777,9 +1784,78 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 74
+        Total : 75
         </div>
         <!-- search  -->
         
@@ -1792,6 +1868,11 @@ top:50vh;
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/09</span><a class="archive-post-title" href= "/2020/01/09/docker-panic-invalid-page-type-1/" >docker-panic-invalid-page-type</a>
+        </li>
     
     
         <li class="archive-post-item">
