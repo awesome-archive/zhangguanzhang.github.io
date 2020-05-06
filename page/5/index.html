@@ -369,32 +369,23 @@ height:50vh;
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/18/kubernetes-1-11-x-bin/" >
+        <a class="abstract-title" href = "/2017/04/26/%E6%AD%A3%E5%88%99%E9%9B%B6%E5%AE%BD%E6%96%AD%E8%A8%80%E7%9A%84%E4%B8%80%E4%B8%AA%E6%B3%A8%E6%84%8F%E7%82%B9/" >
             
-                <span>二进制部署Kubernetes v1.11.x(1.12.x) HA可选</span>
+                <span>正则零宽断言的一个注意点</span>
         </a>
         <div class="abstract-content">
-            本次采用二进制文件方式部署
-不建议使用secureCRT这个ssh软件复制本篇博客内容的命令,因为它的部分版本对包含多条命令的处理结果并不完美,可能很多命令不是预期结果
-本文命令里有些是输出,不要乱粘贴输入(虽然也没影响)
-本文命令全部是在k8s-m1上执行
-本文很多步骤是选择其一,别啥都不看一路往下复制粘贴
-如果某些步骤理解不了可以上下内容一起看来理解
-本文后面的几个svc用了externalIPs,上生产的话必须用VIP或者LB代替
-本文的HA是vip,生产和云上可以用LB和SLB,不过阿里的SLB四层有问题,可以每个node上代理127.0.0.1的某个port分摊在所有apise...
+            <p>正则的零宽断言的一个冷门知识点</p>
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/18</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/04/26</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "operator">operator</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "正则">正则</a>
     
 </div>
             
@@ -407,41 +398,23 @@ height:50vh;
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/08/03/Kubernetes_install_1.11.1/" >
+        <a class="abstract-title" href = "/2017/04/25/%E8%BD%AC%E8%BD%BD-awk%E4%B8%ADRS-OFS-RS-ORS%E5%8C%BA%E5%88%AB%E4%BA%8E%E8%81%94%E7%B3%BB/" >
             
-                <span>Kubernetes v1.11.x HA全手动苦工安装教学</span>
+                <span>[转载]awk中RS,ORS,FS,OFS区别于联系</span>
         </a>
         <div class="abstract-content">
-            
-多master高可用 或者 单master的ansible部署方案
-
-管理组件采用staticPod或者daemonSet形式跑的,宿主机os能跑docker应该本篇教程能大多适用安装完成仅供学习和实验
-本次安裝的版本：
-
-
-Kubernetes v1.11.1
-CNI v0.7.1
-Etcd v3.3.9
-Flannel v0.10.0 或者 Calico v3.1.3
-Docker CE latest version(18.06)
-
-
-** 不建议用docker 18.05 , docker CE 18.05有bind mount的bug **
-本次部署的网络信息：
-
-
-Clust...
+            <p>awk中RS,ORS,FS,OFS区别于联系</p>
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/03</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/04/25</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "awk">awk</a>
     
 </div>
             
@@ -454,25 +427,23 @@ Clust...
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/07/18/ecs-vip/" >
+        <a class="abstract-title" href = "/2017/04/20/%E8%AE%B0%E5%BD%95LVM%E7%9A%84%E7%BB%83%E4%B9%A0/" >
             
-                <span>基于openstack的ecs上使用VIP</span>
+                <span>记录LVM和raid的练习</span>
         </a>
         <div class="abstract-content">
-            客户需要在云上使用vip,后面发现不通，查询了后发现openstack的neutron会存在ip和mac绑定的关系,可以阅读下面的链接查看说明https://blog.codecentric.de/en/2016/11/highly-available-vips-openstack-vms-vrrp/即如果网卡上有不是下发的ip在向外发包后包会被drop掉,需要用neutron的cli解绑ip和mac的绑定,我们这这个功能已经做在了web上了,所以可以直接解绑
-存在绑定的关系，意味着flanneld不能使用host-gw模式，除非云厂商实现了cni-plugins
-后面发现另一个客户两台...
+            <p>LVM和raid的创建和调整</p>
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/18</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/04/20</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "keepavlied">keepavlied</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "linux">linux</a>
     
 </div>
             
@@ -485,27 +456,25 @@ Clust...
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/07/08/travis-sync-gcr-io/" >
+        <a class="abstract-title" href = "/2017/04/17/iot/" >
             
-                <span>利用travis同步gcr.io镜像到dockerhub</span>
+                <span>分享下自己做的外网控制硬件</span>
         </a>
         <div class="abstract-content">
-            项目地址https://github.com/zhangguanzhang/gcr.io/tree/master
-利用gcloud sdk去查看谷歌镜像站的镜像,获取每一个镜像的tag后改名推送到自己的dockerhub上面全部是shell思路,脚本一旦写完就需要不断的执行去同步了,所以借用travis去构建两个分支,一个master分支和一个构建分支travis触发构建后拉取仓库后,切换到构建分支,pull构建分支,然后同步镜像
-脚本我写了两种https://github.com/zhangguanzhang/bash/tree/master/google_containers_syn...
+            <p>教程+源码+固件</p>
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/08</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/04/17</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "dockerhub">dockerhub</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "mqtt">mqtt</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "gcr.io">gcr.io</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "原创">原创</a>
     
 </div>
             
@@ -518,31 +487,25 @@ Clust...
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/06/25/etcd-error/" >
+        <a class="abstract-title" href = "/2017/04/15/shell_process/" >
             
-                <span>记录一次线上k8s节点故障</span>
+                <span>shell多进程并发执行</span>
         </a>
         <div class="abstract-content">
-            
-
-邮件收到zabbix的告警,业务的网页登陆状态不是200,后面又自愈了
-
-
-说明服务挂掉过一次,登陆到机器上发现集群有台节点状态是nodelost状态上去看到相关服务都挂掉了然后排查到根分区占满了,排查到是k8s日志堆满了/var/log/
-12345678910111213141516[root@cloudos02 ~]# df -hFilesystem               Size  Used Avail Use% Mounted on/dev/mapper/centos-root  219G  216G     0 100% /devtmpfs             ...
+            <p>图文记录下shell多进程</p>
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/25</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/04/15</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "linux">linux</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "etcd">etcd</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "shell">shell</a>
     
 </div>
             
@@ -555,26 +518,23 @@ Clust...
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/06/03/kubernetes-s-job/" >
+        <a class="abstract-title" href = "/2017/04/15/shellsubstring/" >
             
-                <span>kubernetes&#39;s Job总结和实战以及坑</span>
+                <span>shell的字符串截取</span>
         </a>
         <div class="abstract-content">
-            Job有三种主要类型的 Job：
-Job的Pod运行完可以看到状态为Completed,低版本需要在get pod的时候添加-a或者--show-all才能看到job创建的pod
-下面实例先创建一个固定完成数量2,并行数量4的Job
-12345678910111213141516171819202122232425262728293031[root@k8s-m1 k8s]# cat job.yml apiVersion: batch&#x2F;v1kind: Jobmetadata:  name: test-jobspec:  completions: 2  parallelism: 4...
+            <p>shell的字符串截取</p>
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/03</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/04/15</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "shell">shell</a>
     
 </div>
             
@@ -587,27 +547,25 @@ Job的Pod运行完可以看到状态为Completed,低版本需要在get pod的时
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/06/02/kubernetes-nodeSelector/" >
+        <a class="abstract-title" href = "/2017/04/11/8266hexdownload/" >
             
-                <span>kubernetes的PodAffinity的不解</span>
+                <span>8266模块的烧写和sdk的坑</span>
         </a>
         <div class="abstract-content">
-            官方文档来看是下面的说法,摘自官方文档https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
-
-An example of a pod that uses pod affinity:
-
-1234567891011121314151617181920212223242526272829apiVersion: v1kind: Podmetadata:  name: with-pod-affinityspec:  affinity:    podAffinity:      requiredDuringSchedul...
+            <p>记录下esp-12f,即8266的烧写</p>
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/02</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/04/11</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "PodAffinity">PodAffinity</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "8266">8266</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "总结">总结</a>
     
 </div>
             
@@ -620,32 +578,25 @@ An example of a pod that uses pod affinity:
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/05/05/Kubernetes_install/" >
+        <a class="abstract-title" href = "/2017/04/09/armlnmp/" >
             
-                <span>[转载+修正]Kubernetes v1.10.x HA全手动苦工安装教学</span>
+                <span>安卓安装linux并且源码编译安装搭建lnmp的坑和总结</span>
         </a>
         <div class="abstract-content">
-            转载自https://kairen.github.io/2018/04/05/kubernetes/deploy/manual-v1.10/作者文章的安装步骤文字是复制作者的1.8的安装步骤然后改的,安装过程变了部分,但是文字没有改正过来。
-此过程我写了ansible安装部署方案,地址(一些文件下载不了的话可以去下面的github里找对应的文件)
-
-多master高可用版
-单master版
-
-本文内容所有url都没改过，以下的添加的内容是我的建议和安装的经验
-本文里如果有些范围不知道在哪台主机上执行请看前后命令都可以判断出,不清楚的请下面评论我会更新
-以下我转载过来并修改+上我的提醒
-管...
+            <p>新买的内存卡到了,源码搭建lnmp</p>
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/05</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/04/09</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "lnmp">lnmp</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "安卓">安卓</a>
     
 </div>
             
@@ -658,33 +609,50 @@ An example of a pod that uses pod affinity:
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/04/29/kubernetes-configMap-mount/" >
+        <a class="abstract-title" href = "/2017/04/03/bond/" >
             
-                <span>kubernetes的configMap文件挂载不同的路径且不覆盖目录的解决方法</span>
+                <span>centos配置bond</span>
         </a>
         <div class="abstract-content">
-            看到configMap这个资源对象,突发奇想
-
-
-如何让一个configMap里文件挂载到容器的不同路径
-
-
-书上和网上都找不到对应例子
-最终github上搜索到了有个subPath选项除了支持路径还不会覆盖容器内部的整个目录参考链接https://github.com/dshulyak/kubernetes.github.io/commit/d58ba7b075bb4848349a2c920caaa08ff3773d70这里记录下
-123456789101112131415161718192021222324252627282930313233343536373839404142434...
+            1234567891011121314151617181920212223242526272829[root@APP-SRV-001 ~]# cat &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-eth0TYPE&#x3D;EthernetBOOTPROTO&#x3D;noneDEVICE&#x3D;eth0NAME&#x3D;eth0ONBOOT&#x3D;yesMASTER&#x3D;bond4SLAVE&#x3D;yes[root@APP-SRV-001 ~]# cat &#x2F;etc&#x2F;sysconf...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/29</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/04/03</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2017/03/20/ftp-install/" >
+            
+                <span>vsftpd虚拟用户简单部署</span>
+        </a>
+        <div class="abstract-content">
+            关闭防火墙和selinux
+123systemctl disable --now firewalld NetworkManagersetenforce 0sed -ri &#39;&#x2F;^[^#]*SELINUX&#x3D;&#x2F;s#&#x3D;.+$#&#x3D;disabled#&#39; &#x2F;etc&#x2F;selinux&#x2F;config
+安装vsftpd和db4
+12345yum install -y epel-release &amp;&amp; \yum install -y \	vsftpd \	db4-utils \	db4
+创建vsftpd...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/03/20</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ConfigMap">ConfigMap</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "ftp">ftp</a>
     
 </div>
             
@@ -697,27 +665,149 @@ An example of a pod that uses pod affinity:
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/02/05/docker-image-can-t-rm/" >
+        <a class="abstract-title" href = "/2017/03/15/lnmp/" >
             
-                <span>docker无法删除掉镜像的解决方法</span>
+                <span>源码编译安装lnmp</span>
         </a>
         <div class="abstract-content">
-            碰到了docker rmi无法删除掉image的问题版本如下
-12[root@guanvps ~]# docker --versionDocker version 17.12.1-ce, build 7390fc6
-
-问题如下,也没有任何容器在运行,重启发现依然无法删除掉
-12345678[root@guanvps ~]# docker imagesREPOSITORY          TAG                 IMAGE ID            CREATED             SIZEnginx               latest           ...
+            <p>自己总结的安装步骤,仅供参考</p>
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/05</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/03/15</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "lnmp">lnmp</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2017/02/26/ad/" >
+            
+                <span>Altium Designer里走线开窗和挖除铺铜还有一些技巧</span>
+        </a>
+        <div class="abstract-content">
+            <p>Altium Designer里铺铜开窗和绿油开窗还有一些技巧</p>
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/02/26</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "总结">总结</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Altium Designer">Altium Designer</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2017/02/12/wx00/" >
+            
+                <span>微信公众号接入自己服务器</span>
+        </a>
+        <div class="abstract-content">
+            <p>图文讲解下微信接入自己云主机</p>
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/02/12</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "linux">linux</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "微信">微信</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2017/02/02/lamp/" >
+            
+                <span>lamp环境搭建总结</span>
+        </a>
+        <div class="abstract-content">
+            <p>网上杂七杂八的lamp搭建或者到处抄袭的博客真是心烦</p>
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/02/02</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "原创">原创</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "lamp">lamp</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2017/01/08/tuling-wx/" >
+            
+                <span>微信公众号接入图灵机器人api</span>
+        </a>
+        <div class="abstract-content">
+            <p>最近在弄微信远程控制，闲来无聊把图灵机器人接入自己公众号</p>
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/01/08</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "原创">原创</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "微信">微信</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "api">api</a>
     
 </div>
             
@@ -727,7 +817,7 @@ An example of a pod that uses pod affinity:
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/page/4/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/">NEXT &gt;</a>
+        <a class="extend prev" rel="prev" href="/page/4/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">NEXT &gt;</a>
     </nav>
     
 </main>
