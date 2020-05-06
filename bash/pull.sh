@@ -11,11 +11,11 @@ sync_pull(){
     targetName=$1
     pullName=${1//k8s.gcr.io/gcr.io\/google_containers}
     pullName=${pullName//google-containers/google_containers}
-    if [ $( tr -dc '/' <<< $pullName | wc -c) -gt 2 ];then #大于2为gcr的超长镜像名字
-        pullName=$(echo $pullName | sed -r 's#io#azk8s.cn#')
-    else
+#    if [ $( tr -dc '/' <<< $pullName | wc -c) -gt 2 ];then #大于2为gcr的超长镜像名字
+#        pullName=$(echo $pullName | sed -r 's#io#azk8s.cn#')
+#    else
         pullName=zhangguanzhang/${pullName//\//.}
-    fi
+#    fi
     docker pull $pullName
     docker tag $pullName $targetName
     docker rmi $pullName
@@ -50,4 +50,5 @@ else
         echo 'not sync the namespaces!';exit 0;
     fi
 fi
+
 
