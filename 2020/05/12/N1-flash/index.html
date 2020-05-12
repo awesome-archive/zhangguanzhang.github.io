@@ -20,15 +20,15 @@
     <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="记录生活点滴">
-    <meta name="description" content="由来&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;之前一直是使用k2p刷openwrt或者pandora跑v2用，前几天看到了个v2的订阅地址给写到openwrt上了。结果运行了几天发现web上任何配置都无法更改，ssh上去发现touch报错没有容量，意识到k2p容量实在太小了，于是去恩山论坛逛了下准备买个N1盒子玩玩旁路由。 &amp;nbsp;&amp;nbs">
+    <meta name="description" content="由来&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;之前一直是使用k2p刷openwrt或者pandora跑v2用，前几天看到了个v2的订阅地址给写到openwrt上了。结果运行了几天发现web上任何配置都无法更改，ssh上去发现touch报错没有容量(而且重装后感觉还是有问题，github访问也不稳定了)，意识到k2p容量实在太小了，于是去恩山论坛">
 <meta property="og:type" content="article">
 <meta property="og:title" content="斐讯N1刷机和旁路由的设置">
 <meta property="og:url" content="http://zhangguanzhang.github.io/2020/05/12/N1-flash/">
 <meta property="og:site_name" content="Zhangguanzhang">
-<meta property="og:description" content="由来&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;之前一直是使用k2p刷openwrt或者pandora跑v2用，前几天看到了个v2的订阅地址给写到openwrt上了。结果运行了几天发现web上任何配置都无法更改，ssh上去发现touch报错没有容量，意识到k2p容量实在太小了，于是去恩山论坛逛了下准备买个N1盒子玩玩旁路由。 &amp;nbsp;&amp;nbs">
+<meta property="og:description" content="由来&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;之前一直是使用k2p刷openwrt或者pandora跑v2用，前几天看到了个v2的订阅地址给写到openwrt上了。结果运行了几天发现web上任何配置都无法更改，ssh上去发现touch报错没有容量(而且重装后感觉还是有问题，github访问也不稳定了)，意识到k2p容量实在太小了，于是去恩山论坛">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-12T19:14:06.000Z">
-<meta property="article:modified_time" content="2020-05-12T14:55:40.000Z">
+<meta property="article:modified_time" content="2020-05-12T15:07:45.000Z">
 <meta property="article:author" content="Zhangguanzhang">
 <meta property="article:tag" content="N1">
 <meta property="article:tag" content="openwrt">
@@ -417,9 +417,15 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="由来"><a href="#由来" class="headerlink" title="由来"></a>由来</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;之前一直是使用<code>k2p</code>刷<code>openwrt</code>或者<code>pandora</code>跑v2用，前几天看到了个v2的订阅地址给写到openwrt上了。结果运行了几天发现web上任何配置都无法更改，ssh上去发现touch报错没有容量，意识到k2p容量实在太小了，于是去恩山论坛逛了下准备买个N1盒子玩玩旁路由。</p>
+        <h2 id="由来"><a href="#由来" class="headerlink" title="由来"></a>由来</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;之前一直是使用<code>k2p</code>刷<code>openwrt</code>或者<code>pandora</code>跑v2用，前几天看到了个v2的订阅地址给写到openwrt上了。结果运行了几天发现web上任何配置都无法更改，ssh上去发现touch报错没有容量(而且重装后感觉还是有问题，github访问也不稳定了)，意识到k2p容量实在太小了，于是去恩山论坛逛了下准备买个N1盒子玩玩旁路由。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N1有8G的rom 2G的ram，cpu是armv8的。询问了一番pdd上有卖的，132买的<code>刷机+刷机线版本</code>。到手是安卓电视盒子系统，如果不刷机则是<code>天天链</code>系统。推荐买刷机版本的，省去解锁boot分区啥的（但不是意味着就啥都不用做，毕竟还是要刷openwrt），如果没解锁可以去看 <a href="https://zhuanlan.zhihu.com/p/129414399" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/129414399</a> 步骤跟着降级。下面步骤是我个人使用的，有些是需要键盘啥的，你没有键盘则应该思考我步骤的目的是干啥的。我步骤全部不带图，毕竟读者都懂Linux</p>
-<h3 id="刷机"><a href="#刷机" class="headerlink" title="刷机"></a>刷机</h3><p>我的环境是一个路由器，我笔记本和N1盒子网口都连路由器的lan，CIDR是<code>192.168.2.1/24</code>, 我盒子作为旁路由，后续准备用<code>192.168.2.2</code>静态ip</p>
+<h3 id="刷机"><a href="#刷机" class="headerlink" title="刷机"></a>刷机</h3><ul>
+<li>网线一根</li>
+<li>一个显示屏或者家里电视，一根HDMI线</li>
+<li>一个1G以上的USB刻录iso</li>
+<li>一个键盘和一个鼠标</li>
+</ul>
+<p>我的环境是一个路由器，我笔记本和N1盒子网口都连路由器的lan，CIDR是<code>192.168.2.1/24</code>, 我盒子作为旁路由，后续准备用<code>192.168.2.2</code>静态ip</p>
 <h4 id="adb"><a href="#adb" class="headerlink" title="adb"></a>adb</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;盒子插上电，然后接上网线和笔记本同一个局域网，盒子HDMI线接个显示屏或者电视。接上usb鼠标点两下设置的齿轮，最下面进去点击版本号多点几次开启开发者选项。鼠标随意右击返回，进开发者选项确认adb状态开启，进法律信息里看局域网的ip</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;笔记本windows如果没adb的话自行下载 <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip" target="_blank" rel="noopener">https://dl.google.com/android/repository/platform-tools-latest-windows.zip</a> 解压到目录，把目录加到环境变量PATH里</p>
 <h4 id="准备镜像文件"><a href="#准备镜像文件" class="headerlink" title="准备镜像文件"></a>准备镜像文件</h4><p>去恩山找个N1的openwrt镜像，下载了后准备一个大于1G的usb刻录，使用软件<code>balenaEtcher</code>刻录，下载地址 <a href="https://www.balena.io/etcher/" target="_blank" rel="noopener">https://www.balena.io/etcher/</a> ，下载Portable免安装的。刻录后usb插到盒子上</p>
@@ -463,8 +469,8 @@ height:50vh;
         <div class="license-wrapper">
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2020/05/12/N1-flash/">http://zhangguanzhang.github.io/2020/05/12/N1-flash/</a>
-            <p>发表日期：<a href="http://zhangguanzhang.github.io/2020/05/12/N1-flash/">五月 12日 2020, 7:14:06 晚上</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2020/05/12/N1-flash/">May 12th 2020, 2:55:40 pm</a>
+            <p>发表日期：<a href="http://zhangguanzhang.github.io/2020/05/12/N1-flash/">May 12th 2020, 7:14:06 pm</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2020/05/12/N1-flash/">May 12th 2020, 3:07:45 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
