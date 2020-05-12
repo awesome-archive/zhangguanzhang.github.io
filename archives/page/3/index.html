@@ -356,6 +356,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/07/07/golang-http/" >
+            
+                <span>golang的net/http包的客户端简单科普</span>
+        </a>
+        <div class="abstract-content">
+            之前准备写个简单的api的调用，百度和问了很多人后发现基本对于http的客户端熟悉的人非常少。或者对包的不了解自己造了效率很低的轮子，而且官方一些包里有坑，被坑过，这里简单科普下
+简单的get和posthttp包里下列可以直接使用的请求方法
+1234func Head(url string) (resp *Response, err error)func Get(url string) (resp *Response, err error)func Post(url string, bodyType string, body io.Reader) (resp *Response, err...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/07</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "http">http</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/06/26/uefi-pxe/" >
             
                 <span>uefi模式下docker+交换机部署pxe批量安装</span>
@@ -629,47 +660,6 @@ scheduler和controller连接的apiserver地址我看网上有写127的也有写L
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "operator">operator</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/02/19/jira-confluence/" >
-            
-                <span>docker部署jira(8.0.0)和confluence(6.14.1)</span>
-        </a>
-        <div class="abstract-content">
-            记录下这几天搭建的过程jira和confluence是分别两台，数据库也是分开的,数据库是用mysql的rpm的repo添加后安装的,jira和confluence是docker跑的,把破解的jar加到镜像里然后改了下别人的Dockerfile本次安装的版本：
-
-
-jira-software 8.0.0
-confluence 6.14.1
-Docker CE 18.06.02
-OS CentOS 7.5.1804
-
-
-系统基本设置
-所有防火墙与SELinux 已关闭：123systemctl disable --now firewalld NetworkManagersetenforce...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/19</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "jira">jira</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "confluence">confluence</a>
     
 </div>
             
@@ -1965,9 +1955,20 @@ OS CentOS 7.5.1804
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 78
+        Total : 79
         </div>
         <!-- search  -->
         
@@ -1980,6 +1981,11 @@ OS CentOS 7.5.1804
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/12</span><a class="archive-post-title" href= "/2020/05/12/N1-flash/" >斐讯N1刷机和旁路由的设置</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2555,6 +2561,10 @@ OS CentOS 7.5.1804
         <span class="sidebar-tag-name" data-tags="正则"><span class="iconfont-archer">&#xe606;</span>正则</span>
     
         <span class="sidebar-tag-name" data-tags="awk"><span class="iconfont-archer">&#xe606;</span>awk</span>
+    
+        <span class="sidebar-tag-name" data-tags="N1"><span class="iconfont-archer">&#xe606;</span>N1</span>
+    
+        <span class="sidebar-tag-name" data-tags="openwrt"><span class="iconfont-archer">&#xe606;</span>openwrt</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

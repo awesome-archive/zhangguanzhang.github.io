@@ -369,6 +369,43 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/06/25/etcd-error/" >
+            
+                <span>记录一次线上k8s节点故障</span>
+        </a>
+        <div class="abstract-content">
+            
+
+邮件收到zabbix的告警,业务的网页登陆状态不是200,后面又自愈了
+
+
+说明服务挂掉过一次,登陆到机器上发现集群有台节点状态是nodelost状态上去看到相关服务都挂掉了然后排查到根分区占满了,排查到是k8s日志堆满了/var/log/
+12345678910111213141516[root@cloudos02 ~]# df -hFilesystem               Size  Used Avail Use% Mounted on/dev/mapper/centos-root  219G  216G     0 100% /devtmpfs             ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/25</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "etcd">etcd</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/06/03/kubernetes-s-job/" >
             
                 <span>kubernetes&#39;s Job总结和实战以及坑</span>
@@ -808,37 +845,6 @@ getopt...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "shell">shell</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/04/29/zabbixsetup/" >
-            
-                <span>个人zabbix安装和坑的解决</span>
-        </a>
-        <div class="abstract-content">
-            <p>自己的摸索和坑的总结</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/04/29</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "linux">linux</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "zabbix">zabbix</a>
     
 </div>
             
@@ -2283,9 +2289,20 @@ getopt...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 78
+        Total : 79
         </div>
         <!-- search  -->
         
@@ -2298,6 +2315,11 @@ getopt...
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/12</span><a class="archive-post-title" href= "/2020/05/12/N1-flash/" >斐讯N1刷机和旁路由的设置</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2873,6 +2895,10 @@ getopt...
         <span class="sidebar-tag-name" data-tags="正则"><span class="iconfont-archer">&#xe606;</span>正则</span>
     
         <span class="sidebar-tag-name" data-tags="awk"><span class="iconfont-archer">&#xe606;</span>awk</span>
+    
+        <span class="sidebar-tag-name" data-tags="N1"><span class="iconfont-archer">&#xe606;</span>N1</span>
+    
+        <span class="sidebar-tag-name" data-tags="openwrt"><span class="iconfont-archer">&#xe606;</span>openwrt</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
