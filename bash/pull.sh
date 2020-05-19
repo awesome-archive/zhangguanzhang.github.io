@@ -44,7 +44,7 @@ if [ "$1" == search ];then
 else
     img=$1
 
-    if [[ "$img" =~ ^gcr.io|^quay.io|^k8s.gcr.io ]];then
+    if [[ "$img" =~ ^gcr.io|^quay.io|^k8s.gcr.io|^docker.elastic.co ]];then
         sync_pull $1
     else
         echo 'not sync the namespaces!';exit 0;
