@@ -356,6 +356,45 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/04/29/kubernetes-configMap-mount/" >
+            
+                <span>kubernetes的configMap文件挂载不同的路径且不覆盖目录的解决方法</span>
+        </a>
+        <div class="abstract-content">
+            看到configMap这个资源对象,突发奇想
+
+
+如何让一个configMap里文件挂载到容器的不同路径
+
+
+书上和网上都找不到对应例子
+最终github上搜索到了有个subPath选项除了支持路径还不会覆盖容器内部的整个目录参考链接https://github.com/dshulyak/kubernetes.github.io/commit/d58ba7b075bb4848349a2c920caaa08ff3773d70这里记录下
+123456789101112131415161718192021222324252627282930313233343536373839404142434...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/29</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "ConfigMap">ConfigMap</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/02/05/docker-image-can-t-rm/" >
             
                 <span>docker无法删除掉镜像的解决方法</span>
@@ -624,35 +663,6 @@ getopt...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "ssh">ssh</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/05/06/shell%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%8F%90%E5%8D%87%E6%95%88%E7%8E%87/" >
-            
-                <span>shell利用快捷键提升命令输入和编辑</span>
-        </a>
-        <div class="abstract-content">
-            <p>快速编辑命令高效率输入</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/05/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "shell">shell</a>
     
 </div>
             
@@ -1959,9 +1969,32 @@ getopt...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 79
+        Total : 80
         </div>
         <!-- search  -->
         
@@ -1978,6 +2011,11 @@ getopt...
     
         <li class="archive-post-item">
             <span class="archive-post-date">05/12</span><a class="archive-post-title" href= "/2020/05/12/N1-flash/" >斐讯N1刷机和旁路由的设置</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/27</span><a class="archive-post-title" href= "/2020/04/27/go-version-ifno/" >git工作流下golang项目的version信息该如何处理</a>
         </li>
     
     
@@ -2559,6 +2597,8 @@ getopt...
     
         <span class="sidebar-tag-name" data-tags="openwrt"><span class="iconfont-archer">&#xe606;</span>openwrt</span>
     
+        <span class="sidebar-tag-name" data-tags="go"><span class="iconfont-archer">&#xe606;</span>go</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -2699,6 +2739,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="pxe/docker/kickstart"><span class="iconfont-archer">&#xe60a;</span>pxe/docker/kickstart</span>
     
         <span class="sidebar-category-name" data-categories="日志/LVM/raid"><span class="iconfont-archer">&#xe60a;</span>日志/LVM/raid</span>
+    
+        <span class="sidebar-category-name" data-categories="golang/version"><span class="iconfont-archer">&#xe60a;</span>golang/version</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

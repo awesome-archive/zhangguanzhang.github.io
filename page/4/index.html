@@ -369,6 +369,39 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/07/08/travis-sync-gcr-io/" >
+            
+                <span>利用travis同步gcr.io镜像到dockerhub</span>
+        </a>
+        <div class="abstract-content">
+            项目地址https://github.com/zhangguanzhang/gcr.io/tree/master
+利用gcloud sdk去查看谷歌镜像站的镜像,获取每一个镜像的tag后改名推送到自己的dockerhub上面全部是shell思路,脚本一旦写完就需要不断的执行去同步了,所以借用travis去构建两个分支,一个master分支和一个构建分支travis触发构建后拉取仓库后,切换到构建分支,pull构建分支,然后同步镜像
+脚本我写了两种https://github.com/zhangguanzhang/bash/tree/master/google_containers_syn...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/08</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "dockerhub">dockerhub</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "gcr.io">gcr.io</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/06/25/etcd-error/" >
             
                 <span>记录一次线上k8s节点故障</span>
@@ -816,35 +849,6 @@ getopt...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "ssh">ssh</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/05/06/shell%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%8F%90%E5%8D%87%E6%95%88%E7%8E%87/" >
-            
-                <span>shell利用快捷键提升命令输入和编辑</span>
-        </a>
-        <div class="abstract-content">
-            <p>快速编辑命令高效率输入</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/05/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "shell">shell</a>
     
 </div>
             
@@ -2300,9 +2304,32 @@ getopt...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 79
+        Total : 80
         </div>
         <!-- search  -->
         
@@ -2319,6 +2346,11 @@ getopt...
     
         <li class="archive-post-item">
             <span class="archive-post-date">05/12</span><a class="archive-post-title" href= "/2020/05/12/N1-flash/" >斐讯N1刷机和旁路由的设置</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/27</span><a class="archive-post-title" href= "/2020/04/27/go-version-ifno/" >git工作流下golang项目的version信息该如何处理</a>
         </li>
     
     
@@ -2900,6 +2932,8 @@ getopt...
     
         <span class="sidebar-tag-name" data-tags="openwrt"><span class="iconfont-archer">&#xe606;</span>openwrt</span>
     
+        <span class="sidebar-tag-name" data-tags="go"><span class="iconfont-archer">&#xe606;</span>go</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -3040,6 +3074,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="pxe/docker/kickstart"><span class="iconfont-archer">&#xe60a;</span>pxe/docker/kickstart</span>
     
         <span class="sidebar-category-name" data-categories="日志/LVM/raid"><span class="iconfont-archer">&#xe60a;</span>日志/LVM/raid</span>
+    
+        <span class="sidebar-category-name" data-categories="golang/version"><span class="iconfont-archer">&#xe60a;</span>golang/version</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
