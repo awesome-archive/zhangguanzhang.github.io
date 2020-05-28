@@ -356,6 +356,44 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/05/05/Kubernetes_install/" >
+            
+                <span>[转载+修正]Kubernetes v1.10.x HA全手动苦工安装教学</span>
+        </a>
+        <div class="abstract-content">
+            转载自https://kairen.github.io/2018/04/05/kubernetes/deploy/manual-v1.10/作者文章的安装步骤文字是复制作者的1.8的安装步骤然后改的,安装过程变了部分,但是文字没有改正过来。
+此过程我写了ansible安装部署方案,地址(一些文件下载不了的话可以去下面的github里找对应的文件)
+
+多master高可用版
+单master版
+
+本文内容所有url都没改过，以下的添加的内容是我的建议和安装的经验
+本文里如果有些范围不知道在哪台主机上执行请看前后命令都可以判断出,不清楚的请下面评论我会更新
+以下我转载过来并修改+上我的提醒
+管...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/05</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/04/29/kubernetes-configMap-mount/" >
             
                 <span>kubernetes的configMap文件挂载不同的路径且不覆盖目录的解决方法</span>
@@ -640,39 +678,10 @@ getopt...
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/05/12/ssh%E4%BA%92%E4%BF%A1/" >
-            
-                <span>ssh互信</span>
-        </a>
-        <div class="abstract-content">
-            <p>ssh公钥免密码登录</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/05/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ssh">ssh</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/5/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><a class="extend next" rel="next" href="/archives/page/7/">NEXT &gt;</a>
+        <a class="extend prev" rel="prev" href="/archives/page/5/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><a class="extend next" rel="next" href="/archives/page/7/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -1992,9 +2001,36 @@ getopt...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 80
+        Total : 81
         </div>
         <!-- search  -->
         
@@ -2007,6 +2043,11 @@ getopt...
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2020/05/23/k8s-vxlan-63-timeout/" >1.17+ k8s使用cni的vxlan模式下63秒超时的一次定位</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2599,6 +2640,10 @@ getopt...
     
         <span class="sidebar-tag-name" data-tags="go"><span class="iconfont-archer">&#xe606;</span>go</span>
     
+        <span class="sidebar-tag-name" data-tags="63s"><span class="iconfont-archer">&#xe606;</span>63s</span>
+    
+        <span class="sidebar-tag-name" data-tags="timeout"><span class="iconfont-archer">&#xe606;</span>timeout</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -2741,6 +2786,10 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="日志/LVM/raid"><span class="iconfont-archer">&#xe60a;</span>日志/LVM/raid</span>
     
         <span class="sidebar-category-name" data-categories="golang/version"><span class="iconfont-archer">&#xe60a;</span>golang/version</span>
+    
+        <span class="sidebar-category-name" data-categories="k8s"><span class="iconfont-archer">&#xe60a;</span>k8s</span>
+    
+        <span class="sidebar-category-name" data-categories="k8s/vxlan"><span class="iconfont-archer">&#xe60a;</span>k8s/vxlan</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

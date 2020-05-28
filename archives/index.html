@@ -356,6 +356,38 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/05/23/k8s-vxlan-63-timeout/" >
+            
+                <span>1.17+ k8s使用cni的vxlan模式下63秒超时的一次定位</span>
+        </a>
+        <div class="abstract-content">
+            flannel的vxlan和calco的vxlan模式都有这个问题，原因是v1.17+的k8s会引起内核的某个bug而不是cni的软件层面，weave没有，后面说。写这篇文章的日期是05/28，发现是上周五也就是05/23号，文章从时间线写起(因为很多时候想发文章但是没空，所以文章的发布日期是05/23)
+由来上周五我经过同事的工位看到同事的桌面是k8s的get po的输出，问他咋开始学k8s了，他说跟着视频学下，看了下用的kubeadm部署了一套1.18.2的集群。1.18的kube-proxy的ipvs包的parseIP有bug，我推荐他换v1.17.5。他当时在部署一个入门的svc...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "63s">63s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "timeout">timeout</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/05/12/N1-flash/" >
             
                 <span>斐讯N1刷机和旁路由的设置</span>
@@ -639,43 +671,10 @@
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/03/dos-to-gpt/" >
-            
-                <span>从PTTYPE=&#34;dos&#34;到TYPE=&#34;LVM2_member&#34;的救援</span>
-        </a>
-        <div class="abstract-content">
-            同事叫我救援一台云主机，虽说是虚拟机，但是类比到硬件服务器还是一样的操作，这里记录下给后来者查阅
-故障信息控制台进去看到centos7的背景虚化的数字7+转圈，重启下看下完整的错误，重启选了内核然后进到图形界面的时候按下ecs取消，观察终端
-123456789101112131415161718192021222324[  OK ] Started Show Plymouth Boot Screen.[  OK ] Reached target Paths.[  OK ] Reached target Basic System.[  124.522110] dracut-initqueu...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "grub">grub</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "boot">boot</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/8/">8</a><a class="extend next" rel="next" href="/archives/page/2/">NEXT &gt;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/9/">9</a><a class="extend next" rel="next" href="/archives/page/2/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -1995,9 +1994,36 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 80
+        Total : 81
         </div>
         <!-- search  -->
         
@@ -2010,6 +2036,11 @@
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2020/05/23/k8s-vxlan-63-timeout/" >1.17+ k8s使用cni的vxlan模式下63秒超时的一次定位</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2602,6 +2633,10 @@
     
         <span class="sidebar-tag-name" data-tags="go"><span class="iconfont-archer">&#xe606;</span>go</span>
     
+        <span class="sidebar-tag-name" data-tags="63s"><span class="iconfont-archer">&#xe606;</span>63s</span>
+    
+        <span class="sidebar-tag-name" data-tags="timeout"><span class="iconfont-archer">&#xe606;</span>timeout</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -2744,6 +2779,10 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="日志/LVM/raid"><span class="iconfont-archer">&#xe60a;</span>日志/LVM/raid</span>
     
         <span class="sidebar-category-name" data-categories="golang/version"><span class="iconfont-archer">&#xe60a;</span>golang/version</span>
+    
+        <span class="sidebar-category-name" data-categories="k8s"><span class="iconfont-archer">&#xe60a;</span>k8s</span>
+    
+        <span class="sidebar-category-name" data-categories="k8s/vxlan"><span class="iconfont-archer">&#xe60a;</span>k8s/vxlan</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

@@ -369,6 +369,31 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/03/11/k8s-ha/" >
+            
+                <span>k8s高可用涉及到ip填写的相关配置和一些坑</span>
+        </a>
+        <div class="abstract-content">
+            etcd就不说了,奇数个副本,可以坏(n-1)/2个,但是不可能同时坏那么多,这里不讨论etcd单独不单独跑。推荐个文档 https://github.com/etcd-io/etcd/tree/master/Documentation/op-guide
+管理组件&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;先说说k8s组件,kubelet和kube-proxy啥的肯定写LB或者VIP:HA_port,如官方的图
+scheduler和controller连接的apiserver地址我看网上有写127的也有写LB或者VIP:HA_port的,刚看到官方文档说两种都...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/11</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/03/03/kubernetes-1-13-4/" >
             
                 <span>二进制部署Kubernetes v1.13.12 HA可选</span>
@@ -851,37 +876,6 @@ Clust...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/07/18/ecs-vip/" >
-            
-                <span>基于openstack的ecs上使用VIP</span>
-        </a>
-        <div class="abstract-content">
-            客户需要在云上使用vip,后面发现不通，查询了后发现openstack的neutron会存在ip和mac绑定的关系,可以阅读下面的链接查看说明https://blog.codecentric.de/en/2016/11/highly-available-vips-openstack-vms-vrrp/即如果网卡上有不是下发的ip在向外发包后包会被drop掉,需要用neutron的cli解绑ip和mac的绑定,我们这这个功能已经做在了web上了,所以可以直接解绑
-存在绑定的关系，意味着flanneld不能使用host-gw模式，除非云厂商实现了cni-plugins
-后面发现另一个客户两台...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "keepavlied">keepavlied</a>
     
 </div>
             
@@ -2360,9 +2354,36 @@ Clust...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 80
+        Total : 81
         </div>
         <!-- search  -->
         
@@ -2375,6 +2396,11 @@ Clust...
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2020/05/23/k8s-vxlan-63-timeout/" >1.17+ k8s使用cni的vxlan模式下63秒超时的一次定位</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2967,6 +2993,10 @@ Clust...
     
         <span class="sidebar-tag-name" data-tags="go"><span class="iconfont-archer">&#xe606;</span>go</span>
     
+        <span class="sidebar-tag-name" data-tags="63s"><span class="iconfont-archer">&#xe606;</span>63s</span>
+    
+        <span class="sidebar-tag-name" data-tags="timeout"><span class="iconfont-archer">&#xe606;</span>timeout</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -3109,6 +3139,10 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="日志/LVM/raid"><span class="iconfont-archer">&#xe60a;</span>日志/LVM/raid</span>
     
         <span class="sidebar-category-name" data-categories="golang/version"><span class="iconfont-archer">&#xe60a;</span>golang/version</span>
+    
+        <span class="sidebar-category-name" data-categories="k8s"><span class="iconfont-archer">&#xe60a;</span>k8s</span>
+    
+        <span class="sidebar-category-name" data-categories="k8s/vxlan"><span class="iconfont-archer">&#xe60a;</span>k8s/vxlan</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

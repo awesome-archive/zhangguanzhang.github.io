@@ -356,6 +356,31 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/03/11/k8s-ha/" >
+            
+                <span>k8s高可用涉及到ip填写的相关配置和一些坑</span>
+        </a>
+        <div class="abstract-content">
+            etcd就不说了,奇数个副本,可以坏(n-1)/2个,但是不可能同时坏那么多,这里不讨论etcd单独不单独跑。推荐个文档 https://github.com/etcd-io/etcd/tree/master/Documentation/op-guide
+管理组件&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;先说说k8s组件,kubelet和kube-proxy啥的肯定写LB或者VIP:HA_port,如官方的图
+scheduler和controller连接的apiserver地址我看网上有写127的也有写LB或者VIP:HA_port的,刚看到官方文档说两种都...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/11</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/03/03/kubernetes-1-13-4/" >
             
                 <span>二进制部署Kubernetes v1.13.12 HA可选</span>
@@ -656,43 +681,10 @@ crontab加计划(/var/spool/cron/用户名文件,/etc/crontab里,/etc/cron.hourl
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/12/prometheus-operator/" >
-            
-                <span class="stick-top iconfont-archer">&#xe63d;</span>
-                
-                <span>全手动部署prometheus-operator监控K8S集群以及一些坑</span>
-        </a>
-        <div class="abstract-content">
-            写这篇文章原因&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所有的监控的agent底层最终都是查询的/proc和/sys里的信息推送(如果错了轻喷),因为收集宿主机信息方面也想用pod跑,会面临到问题&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;常见的zabbix_agent默认读取fs的/proc和/sys,容器跑agent会导致读取的不是宿主机的/proc和/sys&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;而prometheus的n...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "operator">operator</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/3/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/8/">8</a><a class="extend next" rel="next" href="/archives/page/5/">NEXT &gt;</a>
+        <a class="extend prev" rel="prev" href="/archives/page/3/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/9/">9</a><a class="extend next" rel="next" href="/archives/page/5/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -2012,9 +2004,36 @@ crontab加计划(/var/spool/cron/用户名文件,/etc/crontab里,/etc/cron.hourl
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 80
+        Total : 81
         </div>
         <!-- search  -->
         
@@ -2027,6 +2046,11 @@ crontab加计划(/var/spool/cron/用户名文件,/etc/crontab里,/etc/cron.hourl
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2020/05/23/k8s-vxlan-63-timeout/" >1.17+ k8s使用cni的vxlan模式下63秒超时的一次定位</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2619,6 +2643,10 @@ crontab加计划(/var/spool/cron/用户名文件,/etc/crontab里,/etc/cron.hourl
     
         <span class="sidebar-tag-name" data-tags="go"><span class="iconfont-archer">&#xe606;</span>go</span>
     
+        <span class="sidebar-tag-name" data-tags="63s"><span class="iconfont-archer">&#xe606;</span>63s</span>
+    
+        <span class="sidebar-tag-name" data-tags="timeout"><span class="iconfont-archer">&#xe606;</span>timeout</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -2761,6 +2789,10 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="日志/LVM/raid"><span class="iconfont-archer">&#xe60a;</span>日志/LVM/raid</span>
     
         <span class="sidebar-category-name" data-categories="golang/version"><span class="iconfont-archer">&#xe60a;</span>golang/version</span>
+    
+        <span class="sidebar-category-name" data-categories="k8s"><span class="iconfont-archer">&#xe60a;</span>k8s</span>
+    
+        <span class="sidebar-category-name" data-categories="k8s/vxlan"><span class="iconfont-archer">&#xe60a;</span>k8s/vxlan</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
