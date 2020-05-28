@@ -358,11 +358,11 @@
     <article class="index-post">
         <a class="abstract-title" href = "/2020/05/23/k8s-vxlan-63-timeout/" >
             
-                <span>1.17+ k8s使用cni的vxlan模式下svc访问63秒延迟的定位</span>
+                <span>v1.17+ k8s集群下CNI使用VXLAN模式SVC有63秒延迟的触发原因定位</span>
         </a>
         <div class="abstract-content">
-            flannel的vxlan和calco的vxlan模式都有这个问题，原因是v1.17+的k8s会引起内核的某个bug而不是cni的软件层面，weave没有，后面说。写这篇文章的日期是05/28，发现是上周五也就是05/23号，文章从时间线写起(因为很多时候想发文章但是没空，所以文章的发布日期是05/23)
-由来上周五我经过同事的工位看到同事的桌面是k8s的get po的输出，问他咋开始学k8s了，他说跟着视频学下，看了下用的kubeadm部署了一套1.18.2的集群。1.18的kube-proxy的ipvs包的parseIP有bug，我推荐他换v1.17.5。他当时在部署一个入门的svc...
+            这个问题 flannel 和 calico 的 VXLAN 模式下都会发生，部分人的现象是集群的A记录 UDP 下查询可能有问题，原因是v1.17+的k8s会引起内核的某个 UDP 相关 bug而不是cni的软件层面，weave没有，后面说。写这篇文章的日期是05/28，发现是上周五也就是05/23号，文章从时间线写起(因为很多时候想发文章但是没空，所以文章的发布日期是05/23)
+由来上周五我经过同事的工位看到同事的桌面是k8s的get po的输出，问他咋开始学k8s了，他说跟着视频学下，看了下用的kubeadm部署了一套1.18.2的集群。1.18的kube-proxy的ipvs包的...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1778,7 +1778,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2020/05/23/k8s-vxlan-63-timeout/" >1.17+ k8s使用cni的vxlan模式下svc访问63秒延迟的定位</a>
+            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2020/05/23/k8s-vxlan-63-timeout/" >v1.17+ k8s集群下CNI使用VXLAN模式SVC有63秒延迟的触发原因定位</a>
         </li>
     
     
