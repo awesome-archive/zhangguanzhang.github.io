@@ -369,6 +369,91 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/09/18/kubernetes-1-11-x-bin/" >
+            
+                <span>二进制部署Kubernetes v1.11.x(1.12.x) HA可选</span>
+        </a>
+        <div class="abstract-content">
+            本次采用二进制文件方式部署
+不建议使用secureCRT这个ssh软件复制本篇博客内容的命令,因为它的部分版本对包含多条命令的处理结果并不完美,可能很多命令不是预期结果
+本文命令里有些是输出,不要乱粘贴输入(虽然也没影响)
+本文命令全部是在k8s-m1上执行
+本文很多步骤是选择其一,别啥都不看一路往下复制粘贴
+如果某些步骤理解不了可以上下内容一起看来理解
+本文后面的几个svc用了externalIPs,上生产的话必须用VIP或者LB代替
+本文的HA是vip,生产和云上可以用LB和SLB,不过阿里的SLB四层有问题,可以每个node上代理127.0.0.1的某个port分摊在所有apise...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/18</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "operator">operator</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/08/03/Kubernetes_install_1.11.1/" >
+            
+                <span>Kubernetes v1.11.x HA全手动苦工安装教学</span>
+        </a>
+        <div class="abstract-content">
+            
+多master高可用 或者 单master的ansible部署方案
+
+管理组件采用staticPod或者daemonSet形式跑的,宿主机os能跑docker应该本篇教程能大多适用安装完成仅供学习和实验
+本次安裝的版本：
+
+
+Kubernetes v1.11.1
+CNI v0.7.1
+Etcd v3.3.9
+Flannel v0.10.0 或者 Calico v3.1.3
+Docker CE latest version(18.06)
+
+
+** 不建议用docker 18.05 , docker CE 18.05有bind mount的bug **
+本次部署的网络信息：
+
+
+Clust...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/03</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/07/18/ecs-vip/" >
             
                 <span>基于openstack的ecs上使用VIP</span>
@@ -782,75 +867,6 @@ An example of a pod that uses pod affinity:
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "nginx">nginx</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/06/03/bash-complete/" >
-            
-                <span>bash自定义补全</span>
-        </a>
-        <div class="abstract-content">
-            总结下bash的补全
-终端下按两次tab就是补全
-补全常见的分为下面几种场景:
-
-第一部分的命令补全
-命令补全后补全路径到文件
-变量补全
-类似systemctl命令的选项补全 
-
-当然bash支持自定义补全,也就是让我们实现和systemctl命令那样补全
-假设我们要systemctl disable --now firewalldsystemctl空格后按tab键会显示systemctl的第二个部分的所有支持的选项此时继续输入di按tab键会补全成systemctl disable,输入--now(相似的太多了,所以基本输入完)补全,当然最后的服务名此时补全不了,因为systemctl...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/06/03</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/05/25/shell%E8%84%9A%E6%9C%AC%E7%9A%84%E9%80%89%E9%A1%B9%E5%A4%84%E7%90%86/" >
-            
-                <span>shell脚本的选项和参数处理</span>
-        </a>
-        <div class="abstract-content">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在写shell脚本时经常会用到命令行选项、参数处理方式，如:
-1.&#x2F;test.sh -f 5 -rF --host-file&#x3D;&#x2F;etc&#x2F;hosts
-其中-f和-rF都是短选项,–host-file是长选项&nbsp;&nbsp;&nbsp;短选项又分为可选参数和必选参数,不需要参数的短选项可以合着写&nbsp;&nbsp;&nbsp;例如cat和tail的-n有默认值10在shell中，可以用以下三种方式来处理命令行参数，每种方式都有自己的应用场景
-
-手工处理方式
-getopt...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/05/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "shell">shell</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "bash">bash</a>
     
 </div>
             
@@ -2356,9 +2372,41 @@ getopt...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 81
+        Total : 83
         </div>
         <!-- search  -->
         
@@ -2371,6 +2419,16 @@ getopt...
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/23</span><a class="archive-post-title" href= "/2020/06/23/host-gw-in-aliyun/" >阿里云上使用flannel host-gw跨节点pod不通的解决</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/19</span><a class="archive-post-title" href= "/2020/06/19/go-prom-exporter/" >[未写完]使用go开发一个Prometheus的exporter</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2972,6 +3030,8 @@ getopt...
     
         <span class="sidebar-tag-name" data-tags="timeout"><span class="iconfont-archer">&#xe606;</span>timeout</span>
     
+        <span class="sidebar-tag-name" data-tags="host-gw"><span class="iconfont-archer">&#xe606;</span>host-gw</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -3118,6 +3178,10 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="k8s"><span class="iconfont-archer">&#xe60a;</span>k8s</span>
     
         <span class="sidebar-category-name" data-categories="k8s/vxlan"><span class="iconfont-archer">&#xe60a;</span>k8s/vxlan</span>
+    
+        <span class="sidebar-category-name" data-categories="go"><span class="iconfont-archer">&#xe60a;</span>go</span>
+    
+        <span class="sidebar-category-name" data-categories="go/Prometheus"><span class="iconfont-archer">&#xe60a;</span>go/Prometheus</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

@@ -356,6 +356,81 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/06/23/host-gw-in-aliyun/" >
+            
+                <span>阿里云上使用flannel host-gw跨节点pod不通的解决</span>
+        </a>
+        <div class="abstract-content">
+            挺多人问的，写下解决办法
+前言首先主机得在同一个专有vpc下，跨vpc或者经典vpc就扯淡了。还有flannel别把网络信息存储在etcd里，目前flannel只支持v2的etcd api。但是现在k8s都是使用v3 etcd存储了。如果v2和v3共存会导致无法恢复etcd的备份
+所以网上那些etcdctl set flannel的cidr的文章别看了，都没做过备份恢复实验就到处发k8s搭建教程)
+环境信息先来说下host-gw的包走向，假设两台机器
+
+
+
+IP
+pod cidr
+
+
+
+10.0.6.166
+10.200.1.0/24
+
+
+10.0.6.167
+10.200.2.0/24...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "host-gw">host-gw</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/06/19/go-prom-exporter/" >
+            
+                <span>[未写完]使用go开发一个Prometheus的exporter</span>
+        </a>
+        <div class="abstract-content">
+            <p>市面上的例子太多都太简单了，这里详细写下我知道的</p>
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/19</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "exporter">exporter</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/05/23/k8s-vxlan-63-timeout/" >
             
                 <span>v1.17+ k8s集群下CNI使用VXLAN模式SVC有63秒延迟的触发原因定位</span>
@@ -600,72 +675,6 @@
         <a class="post-tag" href="javascript:void(0);" data-tags = "graph">graph</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "onedrive">onedrive</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/08/docker-panic-invalid-page-type/" >
-            
-                <span>docker-18.06.3-ce启动panic: invalid page type: 0: 0的解决处理</span>
-        </a>
-        <div class="abstract-content">
-            凌晨pod状态异常且没有恢复，上线查看后docker ps -a命令无响应，kubelet日志也刷和docker的rpc通信context deadline cancel重启了docker后docker无法启动，前台运行开debug log level刚开始刷了个/var/lib/docker/tmp是个文件，对比了下其他机器上这个路径应该是个目录，然后改名后创建个权限和正常docker下权限一样的tmp文件夹再起
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/05/suse-fix-data-but-device-busy/" >
-            
-                <span>opensuse的一次救援</span>
-        </a>
-        <div class="abstract-content">
-            昨晚吃完晚饭回到办公室，右边同事在控制台看着一个suse起不来一直启动的时候卡在suse的蜥蜴logo背景图那。见我来了叫我看下，他们已经尝试过恢复快照，但是还不行，应该是很久之前损坏的，只不过因为没重启没发现，我叫他重启下看看卡在哪，重启后进入内核后显示背景图那按下esc然后看卡在/sysroot挂载那。目测分区损坏了，经历了ubuntu的安装iso的rescue mode就是渣渣后，我还是信任centos的iso。
-处理先备份和准备工作关闭虚机，后台拷贝下系统盘的卷先备份下。然后给虚机的IDE光驱挂载了个centos 7.5 DVD的iso，修改虚机启动顺序到ISO，进Trouble...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "grub">grub</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "boot">boot</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "suse">suse</a>
     
 </div>
             
@@ -2022,9 +2031,41 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 81
+        Total : 83
         </div>
         <!-- search  -->
         
@@ -2037,6 +2078,16 @@
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/23</span><a class="archive-post-title" href= "/2020/06/23/host-gw-in-aliyun/" >阿里云上使用flannel host-gw跨节点pod不通的解决</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/19</span><a class="archive-post-title" href= "/2020/06/19/go-prom-exporter/" >[未写完]使用go开发一个Prometheus的exporter</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2638,6 +2689,8 @@
     
         <span class="sidebar-tag-name" data-tags="timeout"><span class="iconfont-archer">&#xe606;</span>timeout</span>
     
+        <span class="sidebar-tag-name" data-tags="host-gw"><span class="iconfont-archer">&#xe606;</span>host-gw</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -2784,6 +2837,10 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="k8s"><span class="iconfont-archer">&#xe60a;</span>k8s</span>
     
         <span class="sidebar-category-name" data-categories="k8s/vxlan"><span class="iconfont-archer">&#xe60a;</span>k8s/vxlan</span>
+    
+        <span class="sidebar-category-name" data-categories="go"><span class="iconfont-archer">&#xe60a;</span>go</span>
+    
+        <span class="sidebar-category-name" data-categories="go/Prometheus"><span class="iconfont-archer">&#xe60a;</span>go/Prometheus</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

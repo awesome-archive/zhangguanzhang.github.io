@@ -369,6 +369,72 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/10/21/k8s-v1.14-v1.15-fix-issue/" >
+            
+                <span>手动修复v1.14-v1.15版本k8s的issue:76956</span>
+        </a>
+        <div class="abstract-content">
+            由来该issue见 https://github.com/kubernetes/kubernetes/issues/76956, apiserver和controller-manager每次start的时候会刷下面信息。不影响使用，但是有强迫症可以按照本文思路手动修改。当然本文也是自己编译k8s的教程
+123456E0423 17:35:58.491576       1 prometheus.go:138] failed to register depth metric admission_quota_controller: duplicate metrics collector re...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/21</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "golang">golang</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/10/12/boot-grub-rescue/" >
+            
+                <span>/boot目录被清空下物理机无法开机的一次救援</span>
+        </a>
+        <div class="abstract-content">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;今天下午到公司被通知苏州一个节点的客户的裸金属无法开机，14:00上去到16:50终于给整好了，这里记录下笔记分享下
+故障现象物理机裸金属，连上跳板机通过带外连上去(等同于现场接了一个显示屏+键盘一样)错误为
+1234.errorL file &#96;&#x2F;grub2&#x2F;i386-pc&#x2F;normal.mod&#39; not found.Entering rescue mode...grub rescue&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nb...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/12</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "grub">grub</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "boot">boot</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/10/11/ansible-count-Idempotency/" >
             
                 <span>ansible数量限制上的幂等性</span>
@@ -786,69 +852,6 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
         <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "springboot">springboot</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/03/22/k8s-controller-error/" >
-            
-                <span>一次kube-controller-manager的bug导致的线上无法调度处理过程</span>
-        </a>
-        <div class="abstract-content">
-            线上的k8s环境普遍版本很低，今天同事心血来潮去一个新节点上去看了下发现根分区满了,清理了后发有一个pod没有创建出来。清理后把因为文件系统满了而down掉的k8s相关进程起来后发现kubelet的log一直报错cannot remove /var/lib/kubelet/xxxxconfig/key resource busy now 啥的。查看了下describe对应rc还没有任何Event
-1234567891011121314151617181920212223242526272829303132333435363738$ kubectl describe rc rabbit3r...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kube-controller-manager">kube-controller-manager</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/03/15/flannel-bin/" >
-            
-                <span>不走etcd v2 api下二进制跑flannel的总结</span>
-        </a>
-        <div class="abstract-content">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这几天给线上搭建k8s集群,文件和systemd参数大多是从kubeadm的staticPod的yml里扣出来的,起初是除了flanneld全部是systemd管理二进制。起初因为脚本问题导致kube-proxy的kubeocnfig少执行了use-context所以显示的是匿名用户无法list node信息,kube-proxy是在运行但是无法维持svc的网络,flanneld因为是pod要watch节点是通过kubernetes这个svc走的连接导致不通,然后pod状态变成退出,而kubelet在不手动清理掉退出...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "flannel">flannel</a>
     
 </div>
             
@@ -2354,9 +2357,41 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 81
+        Total : 83
         </div>
         <!-- search  -->
         
@@ -2369,6 +2404,16 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/23</span><a class="archive-post-title" href= "/2020/06/23/host-gw-in-aliyun/" >阿里云上使用flannel host-gw跨节点pod不通的解决</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/19</span><a class="archive-post-title" href= "/2020/06/19/go-prom-exporter/" >[未写完]使用go开发一个Prometheus的exporter</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2970,6 +3015,8 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
         <span class="sidebar-tag-name" data-tags="timeout"><span class="iconfont-archer">&#xe606;</span>timeout</span>
     
+        <span class="sidebar-tag-name" data-tags="host-gw"><span class="iconfont-archer">&#xe606;</span>host-gw</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -3116,6 +3163,10 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="k8s"><span class="iconfont-archer">&#xe60a;</span>k8s</span>
     
         <span class="sidebar-category-name" data-categories="k8s/vxlan"><span class="iconfont-archer">&#xe60a;</span>k8s/vxlan</span>
+    
+        <span class="sidebar-category-name" data-categories="go"><span class="iconfont-archer">&#xe60a;</span>go</span>
+    
+        <span class="sidebar-category-name" data-categories="go/Prometheus"><span class="iconfont-archer">&#xe60a;</span>go/Prometheus</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
