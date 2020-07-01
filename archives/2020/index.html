@@ -363,7 +363,7 @@
         <div class="abstract-content">
             挺多人问的，写下解决办法
 前言首先主机得在同一个专有vpc下，跨vpc或者经典vpc就扯淡了。还有flannel别把网络信息存储在etcd里，目前flannel只支持v2的etcd api。但是现在k8s都是使用v3 etcd存储了。如果v2和v3共存会导致无法恢复etcd的备份
-所以网上那些etcdctl set flannel的cidr的文章别看了，都没做过备份恢复实验就到处发k8s搭建教程)
+所以网上那些etcdctl set flannel的cidr的文章别看了，都没做过备份恢复实验就到处发k8s搭建教程。flannel v3的话看我过往文章
 环境信息先来说下host-gw的包走向，假设两台机器
 
 
@@ -377,8 +377,7 @@ pod cidr
 10.200.1.0/24
 
 
-10.0.6.167
-10.200.2.0/24...
+10.0.6...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
