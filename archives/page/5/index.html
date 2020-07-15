@@ -422,6 +422,39 @@ crontab加计划(/var/spool/cron/用户名文件,/etc/crontab里,/etc/cron.hourl
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/10/27/create-kubeconfig/" >
+            
+                <span>生成kubeconfig常规的两种方法</span>
+        </a>
+        <div class="abstract-content">
+            方式总得来讲有两种创建kubeconfig，证书的话市面上很多教程，要注意下面事项为以下:
+
+
+要注意CN(Common Name)与O(Organization)等内容是会影响Kubernetes元件认证的。具体可见https://kubernetes.io/docs/setup/best-practices/certificates/CN Common Name, apiserver 会从证书中提取该字段作为请求的用户名 (User Name)O Organization, apiserver 会从证书中提取该字段作为请求用户所属的组 (Group)
+CA (Certificate ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/27</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "kubeconfig">kubeconfig</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/10/12/prometheus-operator/" >
             
                 <span class="stick-top iconfont-archer">&#xe63d;</span>
@@ -662,43 +695,6 @@ Clust...
         <a class="post-tag" href="javascript:void(0);" data-tags = "dockerhub">dockerhub</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "gcr.io">gcr.io</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/06/25/etcd-error/" >
-            
-                <span>记录一次线上k8s节点故障</span>
-        </a>
-        <div class="abstract-content">
-            
-
-邮件收到zabbix的告警,业务的网页登陆状态不是200,后面又自愈了
-
-
-说明服务挂掉过一次,登陆到机器上发现集群有台节点状态是nodelost状态上去看到相关服务都挂掉了然后排查到根分区占满了,排查到是k8s日志堆满了/var/log/
-12345678910111213141516[root@cloudos02 ~]# df -hFilesystem               Size  Used Avail Use% Mounted on/dev/mapper/centos-root  219G  216G     0 100% /devtmpfs             ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "etcd">etcd</a>
     
 </div>
             
@@ -2087,9 +2083,30 @@ Clust...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 83
+        Total : 84
         </div>
         <!-- search  -->
         
@@ -2329,6 +2346,11 @@ Clust...
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/05</span><a class="archive-post-title" href= "/2018/11/05/10chars/" >记录一次十字符病毒清理过程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span><a class="archive-post-title" href= "/2018/10/27/create-kubeconfig/" >生成kubeconfig常规的两种方法</a>
         </li>
     
     
@@ -2715,6 +2737,8 @@ Clust...
     
         <span class="sidebar-tag-name" data-tags="host-gw"><span class="iconfont-archer">&#xe606;</span>host-gw</span>
     
+        <span class="sidebar-tag-name" data-tags="kubeconfig"><span class="iconfont-archer">&#xe606;</span>kubeconfig</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -2865,6 +2889,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="go"><span class="iconfont-archer">&#xe60a;</span>go</span>
     
         <span class="sidebar-category-name" data-categories="go/Prometheus"><span class="iconfont-archer">&#xe60a;</span>go/Prometheus</span>
+    
+        <span class="sidebar-category-name" data-categories="kubeconfig"><span class="iconfont-archer">&#xe60a;</span>kubeconfig</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
