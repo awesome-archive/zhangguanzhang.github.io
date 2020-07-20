@@ -369,6 +369,35 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2017/12/23/docker%E5%AE%B9%E5%99%A8%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94/" >
+            
+                <span>docker容器网络互联</span>
+        </a>
+        <div class="abstract-content">
+            官方文档说–link将来会被废弃，而且确实很鸡肋,有时候还要进去容器改东西。在 1-2 年前，Docker 所有容器都连接于默认的桥接网络上，也就是很多老文章鼓捣的 docker0 桥接网卡。因此实际上默认情况下所有容器都是可以互联的，没有隔离，当然这样安全性不好。而服务发现，是在这种环境下发展出来的，通过修改容器内的 /etc/hosts文件来完成的。凡是 --link 的主机的别名就会出现于 /etc/hosts 中，其地址由 Docker 引擎维护。因此容器间才可以通过别名互访。但是这种办法并不是好的解决方案，Docker 早在一年多以前就已经使用自定义网络了。在同一个网络中的容器...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2017/06/26/lua-list-all-upsteam/" >
             
                 <span>lua列出所有upsteam</span>
@@ -787,29 +816,6 @@ getopt...
         <a class="post-tag" href="javascript:void(0);" data-tags = "安卓">安卓</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/04/03/bond/" >
-            
-                <span>centos配置bond</span>
-        </a>
-        <div class="abstract-content">
-            1234567891011121314151617181920212223242526272829[root@APP-SRV-001 ~]# cat &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-eth0TYPE&#x3D;EthernetBOOTPROTO&#x3D;noneDEVICE&#x3D;eth0NAME&#x3D;eth0ONBOOT&#x3D;yesMASTER&#x3D;bond4SLAVE&#x3D;yes[root@APP-SRV-001 ~]# cat &#x2F;etc&#x2F;sysconf...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/04/03</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -2366,9 +2372,18 @@ getopt...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 84
+        Total : 85
         </div>
         <!-- search  -->
         
@@ -2395,6 +2410,11 @@ getopt...
     
         <li class="archive-post-item">
             <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2020/05/23/k8s-vxlan-63-timeout/" >v1.17+ k8s集群下CNI使用VXLAN模式SVC有63秒延迟的触发原因定位</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/13</span><a class="archive-post-title" href= "/2020/05/13/x86-router-flash/" >proxmox x86软路由笔记</a>
         </li>
     
     
@@ -3000,6 +3020,8 @@ getopt...
         <span class="sidebar-tag-name" data-tags="host-gw"><span class="iconfont-archer">&#xe606;</span>host-gw</span>
     
         <span class="sidebar-tag-name" data-tags="kubeconfig"><span class="iconfont-archer">&#xe606;</span>kubeconfig</span>
+    
+        <span class="sidebar-tag-name" data-tags="x86"><span class="iconfont-archer">&#xe606;</span>x86</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
