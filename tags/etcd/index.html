@@ -356,6 +356,39 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/07/23/fs-error-fix-k8s-master/" >
+            
+                <span>k8s master机器文件系统故障的一次恢复过程</span>
+        </a>
+        <div class="abstract-content">
+            研发反馈他们那边一套集群有台master文件系统损坏无法开机，他们是三台openstack上的虚机，三台机器是master+node，指导他修复后开机，修复过程和我之前文章一样
+起来后我上去看，因为做了 HA 的，所以只有这个node有问题，集群没影响
+12345[root@k8s-m1 ~]# kubectl get node -o wideNAME             STATUS     ROLES    AGE   VERSION   INTERNAL-IP      EXTERNAL-IP   OS-IMAGE                KERNEL-VERSION  ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "etcd">etcd</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/06/25/etcd-error/" >
             
                 <span>记录一次线上k8s节点故障</span>
@@ -1795,9 +1828,34 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 85
+        Total : 86
         </div>
         <!-- search  -->
         
@@ -1810,6 +1868,11 @@
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/23</span><a class="archive-post-title" href= "/2020/07/23/fs-error-fix-k8s-master/" >k8s master机器文件系统故障的一次恢复过程</a>
+        </li>
     
     
         <li class="archive-post-item">

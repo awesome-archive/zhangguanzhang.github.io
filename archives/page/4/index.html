@@ -356,6 +356,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/06/02/cobra/" >
+            
+                <span>golang cobra的一些笔记</span>
+        </a>
+        <div class="abstract-content">
+            这几天稍微写了下cobra，网上搜到的博客分为两类，一类是把官方的readme翻译一下完事的，一类是写的都太简单了没有实际常见场景的。这里不废话了，先用官方demo讲解下
+Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代的CLI接口，类似于git或者go工具。同时，它也是一个应用，用来生成个人应用框架，从而开发以Cobra为基础的应用。热门的docker和k8s源码中都使用了CobraCobra 结构由三部分组成：命令( Command )、标志( Flag )、参数( Args )。
+1234567type Command struct &#123;    Use ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/02</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "cobra">cobra</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/04/28/k8s-java-start-time-not-same/" >
             
                 <span>闲谈线上俩k8s环境同等limits下pod启动时间不一样解决过程</span>
@@ -631,38 +662,6 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
         <a class="post-tag" href="javascript:void(0);" data-tags = "openstack">openstack</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "cloud-init">cloud-init</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/04/black-box-exporter/" >
-            
-                <span>prometheus的黑盒监控</span>
-        </a>
-        <div class="abstract-content">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;常规的各种exporter都是和需要监控的机器一起安装的,如果需要监控一些tcp端口和七层应用层的状态呢,这个时候就需要黑盒监控了,不需要安装在目标机器上即可从外部去监控。
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9115是它的http端点的默认监听端口，blackbox.yml它的配置文件里以基础的http、dns、tcp、icmp等prober定制配置出各种监测模块(module)，在prometheus server的配置文件里声明用哪个模块去探测哪个targets，下面以doc...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "prometheus">prometheus</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "exporter">exporter</a>
     
 </div>
             
@@ -2081,9 +2080,34 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 85
+        Total : 86
         </div>
         <!-- search  -->
         
@@ -2096,6 +2120,11 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/23</span><a class="archive-post-title" href= "/2020/07/23/fs-error-fix-k8s-master/" >k8s master机器文件系统故障的一次恢复过程</a>
+        </li>
     
     
         <li class="archive-post-item">
