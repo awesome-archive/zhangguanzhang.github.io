@@ -356,6 +356,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/07/30/prometheus-rate-and-irate/" >
+            
+                <span>prometheus的rate与irate内部是如何计算的</span>
+        </a>
+        <div class="abstract-content">
+            由来市面上的翻译误导人，看了下源码和结合自己算来理解
+rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/promql/functions.go 的extrapolatedRate 和 funcRate，funcRate为
+123func funcRate(vals []parser.Value, args parser.Expressions, enh *EvalNodeHelper) Vector &#123;  return extrapolatedRate(vals, args, enh, true, t...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Prometheus">Prometheus</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/07/23/fs-error-fix-k8s-master/" >
             
                 <span>k8s master机器文件系统故障的一次恢复过程</span>
@@ -1816,9 +1847,26 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 86
+        Total : 87
         </div>
         <!-- search  -->
         
@@ -1831,6 +1879,11 @@
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/30</span><a class="archive-post-title" href= "/2020/07/30/prometheus-rate-and-irate/" >prometheus的rate与irate内部是如何计算的</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2463,6 +2516,8 @@
     
         <span class="sidebar-tag-name" data-tags="x86"><span class="iconfont-archer">&#xe606;</span>x86</span>
     
+        <span class="sidebar-tag-name" data-tags="Prometheus"><span class="iconfont-archer">&#xe606;</span>Prometheus</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -2615,6 +2670,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="go/Prometheus"><span class="iconfont-archer">&#xe60a;</span>go/Prometheus</span>
     
         <span class="sidebar-category-name" data-categories="kubeconfig"><span class="iconfont-archer">&#xe60a;</span>kubeconfig</span>
+    
+        <span class="sidebar-category-name" data-categories="Prometheus"><span class="iconfont-archer">&#xe60a;</span>Prometheus</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
