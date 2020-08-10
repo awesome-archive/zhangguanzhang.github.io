@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangguanzhang/Image-Hosting/master/k8s/JI470BWWU%7D7(PF%5D~LL8%5B%246F.png">
 <meta property="og:image" content="https://kairen.github.io/images/kube/helm-jenkins-v1.10.png">
 <meta property="article:published_time" content="2019-03-03T19:36:53.000Z">
-<meta property="article:modified_time" content="2020-07-15T10:16:11.000Z">
+<meta property="article:modified_time" content="2020-08-10T08:45:40.000Z">
 <meta property="article:author" content="Zhangguanzhang">
 <meta property="article:tag" content="k8s">
 <meta property="article:tag" content="operator">
@@ -735,7 +735,58 @@ Ubuntu:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span c
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out front-proxy-ca.key 2048</span><br><span class="line">openssl req -x509 -new -nodes -key front-proxy-ca.key -config openssl.cnf -subj &quot;&#x2F;CN&#x3D;kubernetes-ca&quot; -extensions v3_ca -out front-proxy-ca.crt -days 10000</span><br></pre></td></tr></table></figure>
 
 <p>生成所有的证书信息</p>
-<p>| Default CN | Parent CA | O (in Subject) | kind |<br>| — | — | — | — | — |<br>| kube-etcd | etcd-ca || server, client |<br>| kube-etcd-peer | etcd-ca || server, client |<br>| kube-etcd-healthcheck-client | etcd-ca || client |<br>| kube-apiserver-etcd-client | etcd-ca | system:masters | client |<br>| kube-apiserver | kubernetes-ca || server |<br>| kube-apiserver-kubelet-client | kubernetes-ca | system:masters | client |<br>| front-proxy-client | kubernetes-front-proxy-ca || client |</p>
+<table>
+<thead>
+<tr>
+<th>Default CN</th>
+<th>Parent CA</th>
+<th>O (in Subject)</th>
+<th>kind</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>kube-etcd</td>
+<td>etcd-ca</td>
+<td></td>
+<td>server, client</td>
+</tr>
+<tr>
+<td>kube-etcd-peer</td>
+<td>etcd-ca</td>
+<td></td>
+<td>server, client</td>
+</tr>
+<tr>
+<td>kube-etcd-healthcheck-client</td>
+<td>etcd-ca</td>
+<td></td>
+<td>client</td>
+</tr>
+<tr>
+<td>kube-apiserver-etcd-client</td>
+<td>etcd-ca</td>
+<td>system:masters</td>
+<td>client</td>
+</tr>
+<tr>
+<td>kube-apiserver</td>
+<td>kubernetes-ca</td>
+<td></td>
+<td>server</td>
+</tr>
+<tr>
+<td>kube-apiserver-kubelet-client</td>
+<td>kubernetes-ca</td>
+<td>system:masters</td>
+<td>client</td>
+</tr>
+<tr>
+<td>front-proxy-client</td>
+<td>kubernetes-front-proxy-ca</td>
+<td></td>
+<td>client</td>
+</tr>
+</tbody></table>
 <p>证书路径</p>
 <table>
 <thead>
@@ -1398,7 +1449,7 @@ Ubuntu:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span c
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/</a>
             <p>发表日期：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">March 3rd 2019, 7:36:53 pm</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">July 15th 2020, 10:16:11 am</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2019/03/03/kubernetes-1-13-4/">August 10th 2020, 8:45:40 am</a>
             <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
