@@ -374,9 +374,9 @@ height:50vh;
                 <span>prometheus的rate与irate内部是如何计算的</span>
         </a>
         <div class="abstract-content">
-            由来市面上的翻译误导人，看了下源码和结合自己算来理解
+            由来市面上的翻译误导人，压根不是啥平均增长率，看了下源码和实际算下来让大家好理解
 rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/promql/functions.go 的extrapolatedRate 和 funcRate，funcRate为
-123func funcRate(vals []parser.Value, args parser.Expressions, enh *EvalNodeHelper) Vector &#123;  return extrapolatedRate(vals, args, enh, true, t...
+123func funcRate(vals []parser.Value, args parser.Expressions, enh *EvalNodeHelper) Vector &#123;  return extrapolatedRate(vals, args...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
