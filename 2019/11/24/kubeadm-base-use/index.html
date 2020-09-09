@@ -28,7 +28,7 @@
 <meta property="og:description" content="市面上很多kubeadm的文章都是错误示范或者不够详细，大多数都没写系统设置之类的就直接kubeadm init导致很多跟着做的人会报错 我期望看到本文的读者最少具备以下知识:  Linux一些目录规范和systemd 学过一点docker 懂dns和&#x2F;etc&#x2F;hosts、curl互相结合来测试一些web的接口响应状态 不要求github有自己项目，至少会浏览github  本教学将以下列节点数与">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-11-24T19:36:53.000Z">
-<meta property="article:modified_time" content="2020-09-09T08:55:59.000Z">
+<meta property="article:modified_time" content="2020-09-09T13:49:09.000Z">
 <meta property="article:author" content="Zhangguanzhang">
 <meta property="article:tag" content="k8s">
 <meta property="article:tag" content="kubeadm">
@@ -653,7 +653,7 @@ apt系列的系统先使用<code>systemctl cat systemd-modules-load</code>看下
 <p>init的yaml信息实际上会存在集群的configmap里，我们可以随时查看，该yaml在其他node和master join的时候会使用到</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl -n kube-system get cm kubeadm-config -o yaml</span><br></pre></td></tr></table></figure>
 
-<p>如果单个master，也不想整其他的node，需要去掉master节点上的污点,下一步的多master操作不需要整</p>
+<p>如果单个master，也不想整其他的node，需要去掉master节点上的污点，多master一般是+n个node的，所以一般是不需要去掉master上的污点的</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl taint nodes --all node-role.kubernetes.io/master-</span><br></pre></td></tr></table></figure>
 
 <h4 id="设置ep的rbac"><a href="#设置ep的rbac" class="headerlink" title="设置ep的rbac"></a>设置ep的rbac</h4><p>kube-apiserver的web健康检查路由有权限，我们需要开放用来监控或者对接SLB的健康检查,yaml文件 <a href="https://github.com/zhangguanzhang/Kubernetes-ansible-base/blob/roles/master/files/healthz-rbac.yml" target="_blank" rel="noopener">https://github.com/zhangguanzhang/Kubernetes-ansible-base/blob/roles/master/files/healthz-rbac.yml</a> 。因为网络因素而无法apply的话就自己下载或者赋值内容后创建文件后apply文件</p>
@@ -789,7 +789,7 @@ apt系列的系统先使用<code>systemctl cat systemd-modules-load</code>看下
             <p>原文作者：<a href="http://zhangguanzhang.github.io">Zhangguanzhang</a>
             <p>原文链接：<a href="http://zhangguanzhang.github.io/2019/11/24/kubeadm-base-use/">http://zhangguanzhang.github.io/2019/11/24/kubeadm-base-use/</a>
             <p>发表日期：<a href="http://zhangguanzhang.github.io/2019/11/24/kubeadm-base-use/">November 24th 2019, 7:36:53 pm</a>
-            <p>更新日期：<a href="http://zhangguanzhang.github.io/2019/11/24/kubeadm-base-use/">September 9th 2020, 8:55:59 am</a>
+            <p>更新日期：<a href="http://zhangguanzhang.github.io/2019/11/24/kubeadm-base-use/">September 9th 2020, 1:49:09 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
