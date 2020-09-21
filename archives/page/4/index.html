@@ -356,6 +356,40 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/06/23/autoInstallServer/" >
+            
+                <span>拟定excel表格服务器自动按照表格配置信息和安装的实现过程</span>
+        </a>
+        <div class="abstract-content">
+            修改镜像以及编程实现了从服务器买来上电就会自动化安装指定ip和hostname的步骤（包含了自动做raid）,全程非交互
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;先讲讲事情的由来，新节点建设，几百台服务器得人为安装系统，虽说服务器有带外ipmi，但是raid和安装系统时候hostname和ip啥的得去配置。系统镜像还是修改过的，安装界面的菜单自动应答通用的流程还不行，于是决定看看能不能研究出来。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;想要达到的一个效果就是：服务器送货到节点后，...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "initrd">initrd</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "grub">grub</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "raid">raid</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/06/12/CLP/" >
             
                 <span>SMASH CLP的一些笔记</span>
@@ -633,36 +667,6 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/12</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/01/30/fstab/" >
-            
-                <span>fstab与systemd.mount自动挂载的一点研究和见解</span>
-        </a>
-        <div class="abstract-content">
-            每次挂nfs,iscsi，cifs改fstab都心惊胆颤，怕改错了开机hang在那影响业务。每次都是改之前去搜第四列列的所有选项值。写下今天趁线上挂了cifs的一台机器可能重启之前在我自己虚机上做了测试和一些问题搜到的见解虚机桥接网络，宿主机共享一个目录，折腾了半天autofs都没配置起来，而且网上普遍的samba的fstab为下面这样
-1&#x2F;&#x2F;10.0.23.85&#x2F;test  &#x2F;mnt  cifs  username&#x3D;zhangguanzhang@xxxxx.com,password&#x3D;xxxxxxxxx,iocharset&#x...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "cifs">cifs</a>
-    
-</div>
             
         </div>
     </article>
@@ -2121,9 +2125,38 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 87
+        Total : 88
         </div>
         <!-- search  -->
         
@@ -2136,6 +2169,11 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/18</span><a class="archive-post-title" href= "/2020/09/18/ocp-4.5-install/" >openshift 4.5.9 离线安装</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2774,6 +2812,10 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
         <span class="sidebar-tag-name" data-tags="x86"><span class="iconfont-archer">&#xe606;</span>x86</span>
     
         <span class="sidebar-tag-name" data-tags="Prometheus"><span class="iconfont-archer">&#xe606;</span>Prometheus</span>
+    
+        <span class="sidebar-tag-name" data-tags="openshift"><span class="iconfont-archer">&#xe606;</span>openshift</span>
+    
+        <span class="sidebar-tag-name" data-tags="ocp"><span class="iconfont-archer">&#xe606;</span>ocp</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

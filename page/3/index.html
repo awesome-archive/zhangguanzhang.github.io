@@ -369,6 +369,40 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/06/23/autoInstallServer/" >
+            
+                <span>拟定excel表格服务器自动按照表格配置信息和安装的实现过程</span>
+        </a>
+        <div class="abstract-content">
+            修改镜像以及编程实现了从服务器买来上电就会自动化安装指定ip和hostname的步骤（包含了自动做raid）,全程非交互
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;先讲讲事情的由来，新节点建设，几百台服务器得人为安装系统，虽说服务器有带外ipmi，但是raid和安装系统时候hostname和ip啥的得去配置。系统镜像还是修改过的，安装界面的菜单自动应答通用的流程还不行，于是决定看看能不能研究出来。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;想要达到的一个效果就是：服务器送货到节点后，...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "initrd">initrd</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "grub">grub</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "raid">raid</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/06/12/CLP/" >
             
                 <span>SMASH CLP的一些笔记</span>
@@ -815,38 +849,6 @@ Docker学得不怎么样就迫不及待来学的跟风狗
         <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/11/05/10chars/" >
-            
-                <span>记录一次十字符病毒清理过程</span>
-        </a>
-        <div class="abstract-content">
-            周五网络组同事告知几个租户的session过大,建议我把租户这几台机器关机了我进去后把网卡down了后开始看稍微看了下是好几个十个字符的进程一直杀不完,叫存储同事把快照挂载了准备周一恢复
-结果今天挂载上去后开机发现还是有,好吧,手动查杀结合猜想和状态输出想了下逻辑是如下思路
-
-
-crontab加计划(/var/spool/cron/用户名文件,/etc/crontab里,/etc/cron.hourly/x.sh)
-进程互相守护,杀掉一个生成一个新的在/usr/bin/目录,命名是十个字符
-/etc/init.d/和/etc/rc.d/rcx.d/对应的软链接保证开机启动
-
-
-首先ssh...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/05</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -2454,9 +2456,38 @@ crontab加计划(/var/spool/cron/用户名文件,/etc/crontab里,/etc/cron.hourl
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 87
+        Total : 88
         </div>
         <!-- search  -->
         
@@ -2469,6 +2500,11 @@ crontab加计划(/var/spool/cron/用户名文件,/etc/crontab里,/etc/cron.hourl
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/18</span><a class="archive-post-title" href= "/2020/09/18/ocp-4.5-install/" >openshift 4.5.9 离线安装</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3107,6 +3143,10 @@ crontab加计划(/var/spool/cron/用户名文件,/etc/crontab里,/etc/cron.hourl
         <span class="sidebar-tag-name" data-tags="x86"><span class="iconfont-archer">&#xe606;</span>x86</span>
     
         <span class="sidebar-tag-name" data-tags="Prometheus"><span class="iconfont-archer">&#xe606;</span>Prometheus</span>
+    
+        <span class="sidebar-tag-name" data-tags="openshift"><span class="iconfont-archer">&#xe606;</span>openshift</span>
+    
+        <span class="sidebar-tag-name" data-tags="ocp"><span class="iconfont-archer">&#xe606;</span>ocp</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
