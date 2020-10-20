@@ -356,6 +356,38 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/10/21/k8s-v1.14-v1.15-fix-issue/" >
+            
+                <span>手动修复v1.14-v1.15版本k8s的issue:76956</span>
+        </a>
+        <div class="abstract-content">
+            由来该issue见 https://github.com/kubernetes/kubernetes/issues/76956, apiserver和controller-manager每次start的时候会刷下面信息。不影响使用，但是有强迫症可以按照本文思路手动修改。当然本文也是自己编译k8s的教程
+123456E0423 17:35:58.491576       1 prometheus.go:138] failed to register depth metric admission_quota_controller: duplicate metrics collector re...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/21</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "golang">golang</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/10/12/boot-grub-rescue/" >
             
                 <span>/boot目录被清空下物理机无法开机的一次救援</span>
@@ -644,40 +676,6 @@ ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "http">http</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/06/26/uefi-pxe/" >
-            
-                <span>uefi模式下docker+交换机部署pxe批量安装</span>
-        </a>
-        <div class="abstract-content">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;华三服务器的ipmi的web提供了nfs挂载iso去安装，也是我之前使用的，发现研发给的镜像在4g以上(镜像基于centos7.3改的，我之前测试都是用的minimal镜像890M左右)。安装的时候报错，然后当面测试得出结论nfs的网速原因，其次也是我们这边办公网是百兆。。。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;办公网被it接管了，交换机密码不给，自己找了台5130交换机，下面接服务器和我自己电脑搭建测了下定制iso的pxe流程
-这是组...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "initrd">initrd</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "grub">grub</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "tftp">tftp</a>
     
 </div>
             
@@ -2167,9 +2165,10 @@ ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/
     
     
     
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 88
+        Total : 89
         </div>
         <!-- search  -->
         
@@ -2182,6 +2181,11 @@ ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/20</span><a class="archive-post-title" href= "/2020/10/20/kylin-v10-k8s-overlay-error/" >银河麒麟arm64系统上k8s集群跨节点不通的一次排查</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2830,6 +2834,8 @@ ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/
     
         <span class="sidebar-tag-name" data-tags="ocp"><span class="iconfont-archer">&#xe606;</span>ocp</span>
     
+        <span class="sidebar-tag-name" data-tags="Kylin"><span class="iconfont-archer">&#xe606;</span>Kylin</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -2984,6 +2990,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="kubeconfig"><span class="iconfont-archer">&#xe60a;</span>kubeconfig</span>
     
         <span class="sidebar-category-name" data-categories="Prometheus"><span class="iconfont-archer">&#xe60a;</span>Prometheus</span>
+    
+        <span class="sidebar-category-name" data-categories="k8s/Kylin"><span class="iconfont-archer">&#xe60a;</span>k8s/Kylin</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

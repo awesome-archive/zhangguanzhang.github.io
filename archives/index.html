@@ -356,6 +356,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/10/20/kylin-v10-k8s-overlay-error/" >
+            
+                <span>银河麒麟arm64系统上k8s集群跨节点不通的一次排查</span>
+        </a>
+        <div class="abstract-content">
+            由来同事在客户那边部署的集群问题频繁，先给他解决了个问题后又反映说业务 POD 由于 DNS 无法解析而启动失败，排查完发现这样的情况从没遇到过，挺有意思的，这里记录下。实际排查过程也有往错误的方向浪费了一些实际和尝试，就不写进来了，以正确的角度写下排查过程。
+环境信息集群信息:
+12345678910111213141516171819202122232425$ kubectl version -o json&#123;  "clientVersion": &#123;    "major": "1",    "minor": "15",    "gitVersion": "v1.15...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/20</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Kylin">Kylin</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/09/18/ocp-4.5-install/" >
             
                 <span>openshift 4.5.9 离线安装</span>
@@ -643,38 +674,6 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "go">go</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/26/KubeXXXMismatch/" >
-            
-                <span>一次deploy,rs,sts Mismatch 的处理</span>
-        </a>
-        <div class="abstract-content">
-              这次文章是远程帮群友解决故障后的总结，以时间线描述  群友一开始是apiserver响应慢，使用角度上就是kubectl请求慢，如
-123E0326 07:49:37.586690       1 available_controller.go:416] v1beta1.metrics.k8s.io failed with: failing or missing response  from https:&#x2F;&#x2F;10.99.174.208:443&#x2F;apis&#x2F;metrics.k8s.io&#x2F;v1beta1: Get https:&#x2F;&...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Mismatch">Mismatch</a>
     
 </div>
             
@@ -2164,9 +2163,10 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     
     
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 88
+        Total : 89
         </div>
         <!-- search  -->
         
@@ -2179,6 +2179,11 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/20</span><a class="archive-post-title" href= "/2020/10/20/kylin-v10-k8s-overlay-error/" >银河麒麟arm64系统上k8s集群跨节点不通的一次排查</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2827,6 +2832,8 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
         <span class="sidebar-tag-name" data-tags="ocp"><span class="iconfont-archer">&#xe606;</span>ocp</span>
     
+        <span class="sidebar-tag-name" data-tags="Kylin"><span class="iconfont-archer">&#xe606;</span>Kylin</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -2981,6 +2988,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="kubeconfig"><span class="iconfont-archer">&#xe60a;</span>kubeconfig</span>
     
         <span class="sidebar-category-name" data-categories="Prometheus"><span class="iconfont-archer">&#xe60a;</span>Prometheus</span>
+    
+        <span class="sidebar-category-name" data-categories="k8s/Kylin"><span class="iconfont-archer">&#xe60a;</span>k8s/Kylin</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

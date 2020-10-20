@@ -356,6 +356,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2017/04/29/zabbixsetup/" >
+            
+                <span>个人zabbix安装和坑的解决</span>
+        </a>
+        <div class="abstract-content">
+            <p>自己的摸索和坑的总结</p>
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/04/29</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "linux">linux</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "zabbix">zabbix</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2017/04/26/%E6%AD%A3%E5%88%99%E9%9B%B6%E5%AE%BD%E6%96%AD%E8%A8%80%E7%9A%84%E4%B8%80%E4%B8%AA%E6%B3%A8%E6%84%8F%E7%82%B9/" >
             
                 <span>正则零宽断言的一个注意点</span>
@@ -609,39 +640,6 @@
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/04/03</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/03/20/ftp-install/" >
-            
-                <span>vsftpd虚拟用户简单部署</span>
-        </a>
-        <div class="abstract-content">
-            关闭防火墙和selinux
-123systemctl disable --now firewalld NetworkManagersetenforce 0sed -ri &#39;&#x2F;^[^#]*SELINUX&#x3D;&#x2F;s#&#x3D;.+$#&#x3D;disabled#&#39; &#x2F;etc&#x2F;selinux&#x2F;config
-安装vsftpd和db4
-12345yum install -y epel-release &amp;&amp; \yum install -y \	vsftpd \	db4-utils \	db4
-创建vsftpd...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/03/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ftp">ftp</a>
-    
-</div>
             
         </div>
     </article>
@@ -2129,9 +2127,10 @@
     
     
     
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 88
+        Total : 89
         </div>
         <!-- search  -->
         
@@ -2144,6 +2143,11 @@
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/20</span><a class="archive-post-title" href= "/2020/10/20/kylin-v10-k8s-overlay-error/" >银河麒麟arm64系统上k8s集群跨节点不通的一次排查</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2792,6 +2796,8 @@
     
         <span class="sidebar-tag-name" data-tags="ocp"><span class="iconfont-archer">&#xe606;</span>ocp</span>
     
+        <span class="sidebar-tag-name" data-tags="Kylin"><span class="iconfont-archer">&#xe606;</span>Kylin</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -2946,6 +2952,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="kubeconfig"><span class="iconfont-archer">&#xe60a;</span>kubeconfig</span>
     
         <span class="sidebar-category-name" data-categories="Prometheus"><span class="iconfont-archer">&#xe60a;</span>Prometheus</span>
+    
+        <span class="sidebar-category-name" data-categories="k8s/Kylin"><span class="iconfont-archer">&#xe60a;</span>k8s/Kylin</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
