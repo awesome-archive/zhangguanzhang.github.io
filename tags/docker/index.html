@@ -356,6 +356,71 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/10/30/stupid-check-of-docker/" >
+            
+                <span>一次错误的耗时排查</span>
+        </a>
+        <div class="abstract-content">
+            由来客户是深信服的订制系统，基于 centos 改的，排查半天发现居然是文件损坏，而不是 docker 的问题。
+环境信息docker信息:
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950$ docker infoContainers: 0 Running: 0 Paused: 0 Stopped: 0Images: 2Server Version: 18.09.3Storage Driver: overlay2 Backing Filesystem: ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/08/05/http-pull-docker-image/" >
+            
+                <span>使用http模拟docker pull拉取镜像</span>
+        </a>
+        <div class="abstract-content">
+            之前写了个小工具可以不用 docker 来拉取镜像，当时写的时候也打算写个文章的，昨天有人问到了，就写下过程。
+前提须知docker 镜像的格式为domain/ns/img:tag或者domain/ns/img:tag@sha256:xxx:
+
+domain：是域名或者 IP:port，docker的话默认是docker.io
+ns：就是命名空间，也有在源码里称为repo或者repository，dockerhub 的话会强制 ns 和用户名一样，其他大多数仓库没有强制要求
+tag：默认是latest，也可以直接镜像的sha256值来拉取镜像，例如us.gcr.io/k8s-artifa...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/05</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/01/08/docker-panic-invalid-page-type/" >
             
                 <span>docker-18.06.3-ce启动panic: invalid page type: 0: 0的解决处理</span>
@@ -2017,9 +2082,78 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 89
+        Total : 92
         </div>
         <!-- search  -->
         
@@ -2035,12 +2169,27 @@
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/30</span><a class="archive-post-title" href= "/2020/10/30/stupid-check-of-docker/" >一次错误的耗时排查</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/30</span><a class="archive-post-title" href= "/2020/10/30/uos20-nftables/" >统信USO 20 hostPort 无法访问</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/20</span><a class="archive-post-title" href= "/2020/10/20/kylin-v10-k8s-overlay-error/" >银河麒麟arm64系统上k8s集群跨节点不通的一次排查</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/18</span><a class="archive-post-title" href= "/2020/09/18/ocp-4.5-install/" >openshift 4.5.9 离线安装</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/05</span><a class="archive-post-title" href= "/2020/08/05/http-pull-docker-image/" >使用http模拟docker pull拉取镜像</a>
         </li>
     
     
@@ -2687,6 +2836,8 @@
     
         <span class="sidebar-tag-name" data-tags="Kylin"><span class="iconfont-archer">&#xe606;</span>Kylin</span>
     
+        <span class="sidebar-tag-name" data-tags="uos"><span class="iconfont-archer">&#xe606;</span>uos</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -2843,6 +2994,10 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="Prometheus"><span class="iconfont-archer">&#xe60a;</span>Prometheus</span>
     
         <span class="sidebar-category-name" data-categories="k8s/Kylin"><span class="iconfont-archer">&#xe60a;</span>k8s/Kylin</span>
+    
+        <span class="sidebar-category-name" data-categories="docker/image"><span class="iconfont-archer">&#xe60a;</span>docker/image</span>
+    
+        <span class="sidebar-category-name" data-categories="k8s/uos"><span class="iconfont-archer">&#xe60a;</span>k8s/uos</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
