@@ -356,39 +356,6 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/27/create-kubeconfig/" >
-            
-                <span>生成kubeconfig常规的两种方法</span>
-        </a>
-        <div class="abstract-content">
-            方式总得来讲有两种创建kubeconfig，证书的话市面上很多教程，要注意下面事项为以下:
-
-
-要注意CN(Common Name)与O(Organization)等内容是会影响Kubernetes元件认证的。具体可见https://kubernetes.io/docs/setup/best-practices/certificates/CN Common Name, apiserver 会从证书中提取该字段作为请求的用户名 (User Name)O Organization, apiserver 会从证书中提取该字段作为请求用户所属的组 (Group)
-CA (Certificate ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kubeconfig">kubeconfig</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href = "/2018/10/12/prometheus-operator/" >
             
                 <span class="stick-top iconfont-archer">&#xe63d;</span>
@@ -697,6 +664,39 @@ Job的Pod运行完可以看到状态为Completed,低版本需要在get pod的时
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/06/02/kubernetes-nodeSelector/" >
+            
+                <span>kubernetes的PodAffinity的不解</span>
+        </a>
+        <div class="abstract-content">
+            官方文档来看是下面的说法,摘自官方文档https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
+
+An example of a pod that uses pod affinity:
+
+1234567891011121314151617181920212223242526272829apiVersion: v1kind: Podmetadata:  name: with-pod-affinityspec:  affinity:    podAffinity:      requiredDuringSchedul...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/02</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "PodAffinity">PodAffinity</a>
     
 </div>
             
@@ -2219,46 +2219,9 @@ Job的Pod运行完可以看到状态为Completed,低版本需要在get pod的时
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 92
+        Total : 91
         </div>
         <!-- search  -->
         
@@ -2290,11 +2253,6 @@ Job的Pod运行完可以看到状态为Completed,低版本需要在get pod的时
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/18</span><a class="archive-post-title" href= "/2020/09/18/ocp-4.5-install/" >openshift 4.5.9 离线安装</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/05</span><a class="archive-post-title" href= "/2020/08/05/http-pull-docker-image/" >使用http模拟docker pull拉取镜像</a>
         </li>
     
     
@@ -3099,8 +3057,6 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="Prometheus"><span class="iconfont-archer">&#xe60a;</span>Prometheus</span>
     
         <span class="sidebar-category-name" data-categories="k8s/Kylin"><span class="iconfont-archer">&#xe60a;</span>k8s/Kylin</span>
-    
-        <span class="sidebar-category-name" data-categories="docker/image"><span class="iconfont-archer">&#xe60a;</span>docker/image</span>
     
         <span class="sidebar-category-name" data-categories="k8s/uos"><span class="iconfont-archer">&#xe60a;</span>k8s/uos</span>
     

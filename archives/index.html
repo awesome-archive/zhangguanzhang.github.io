@@ -482,40 +482,6 @@ openshift 不像其他的 dashboard 诸如 rancher，k3s 之类的，它自己�
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/08/05/http-pull-docker-image/" >
-            
-                <span>使用http模拟docker pull拉取镜像</span>
-        </a>
-        <div class="abstract-content">
-            之前写了个小工具可以不用 docker 来拉取镜像，当时写的时候也打算写个文章的，昨天有人问到了，就写下过程。
-前提须知docker 镜像的格式为domain/ns/img:tag或者domain/ns/img:tag@sha256:xxx:
-
-domain：是域名或者 IP:port，docker的话默认是docker.io
-ns：就是命名空间，也有在源码里称为repo或者repository，dockerhub 的话会强制 ns 和用户名一样，其他大多数仓库没有强制要求
-tag：默认是latest，也可以直接镜像的sha256值来拉取镜像，例如us.gcr.io/k8s-artifa...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href = "/2020/07/30/prometheus-rate-and-irate/" >
             
                 <span>prometheus的rate与irate内部是如何计算的</span>
@@ -676,6 +642,39 @@ pod cidr
         <a class="post-tag" href="javascript:void(0);" data-tags = "63s">63s</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "timeout">timeout</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/05/13/x86-router-flash/" >
+            
+                <span>proxmox x86软路由笔记</span>
+        </a>
+        <div class="abstract-content">
+            由来办公室有台式机，不想整天带着N1上下班，整下x86的软路由，exsi性能会比pve好，但是pve毕竟Linux，兼容性和对接很多场景方便，这里我使用pve开机器安装openwrt。
+pve已经安装好系统(如果你还没安装且打算安装，安装完后可以看看我这个文章安装完proxmox的一些设置)，并且台式机的口子接主路由的lan口。主路由是我的路由器，它wan口接办公室的网口，台式机只有一个口子，所以软路由作为旁路由使用。
+前置工作虚机准备先去恩山论坛x86版块下一个固件，如果你有办公室—&gt; ecs &lt;— 个人家里组网的要求的话，推荐你去找个带wireguard的固件pve上开台...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/13</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "openwrt">openwrt</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "x86">x86</a>
     
 </div>
             
@@ -2198,46 +2197,9 @@ pod cidr
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 92
+        Total : 91
         </div>
         <!-- search  -->
         
@@ -2269,11 +2231,6 @@ pod cidr
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/18</span><a class="archive-post-title" href= "/2020/09/18/ocp-4.5-install/" >openshift 4.5.9 离线安装</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/05</span><a class="archive-post-title" href= "/2020/08/05/http-pull-docker-image/" >使用http模拟docker pull拉取镜像</a>
         </li>
     
     
@@ -3078,8 +3035,6 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="Prometheus"><span class="iconfont-archer">&#xe60a;</span>Prometheus</span>
     
         <span class="sidebar-category-name" data-categories="k8s/Kylin"><span class="iconfont-archer">&#xe60a;</span>k8s/Kylin</span>
-    
-        <span class="sidebar-category-name" data-categories="docker/image"><span class="iconfont-archer">&#xe60a;</span>docker/image</span>
     
         <span class="sidebar-category-name" data-categories="k8s/uos"><span class="iconfont-archer">&#xe60a;</span>k8s/uos</span>
     
