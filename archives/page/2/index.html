@@ -356,6 +356,39 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/05/13/x86-router-flash/" >
+            
+                <span>proxmox x86软路由笔记</span>
+        </a>
+        <div class="abstract-content">
+            由来办公室有台式机，不想整天带着N1上下班，整下x86的软路由，exsi性能会比pve好，但是pve毕竟Linux，兼容性和对接很多场景方便，这里我使用pve开机器安装openwrt。
+pve已经安装好系统(如果你还没安装且打算安装，安装完后可以看看我这个文章安装完proxmox的一些设置)，并且台式机的口子接主路由的lan口。主路由是我的路由器，它wan口接办公室的网口，台式机只有一个口子，所以软路由作为旁路由使用。
+前置工作虚机准备先去恩山论坛x86版块下一个固件，如果你有办公室—&gt; ecs &lt;— 个人家里组网的要求的话，推荐你去找个带wireguard的固件pve上开台...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/13</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "openwrt">openwrt</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "x86">x86</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/05/12/N1-flash/" >
             
                 <span>斐讯N1刷机和旁路由的设置</span>
@@ -633,39 +666,6 @@
         <a class="post-tag" href="javascript:void(0);" data-tags = "boot">boot</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "suse">suse</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/03/dos-to-gpt/" >
-            
-                <span>从PTTYPE=&#34;dos&#34;到TYPE=&#34;LVM2_member&#34;的救援</span>
-        </a>
-        <div class="abstract-content">
-            同事叫我救援一台云主机，虽说是虚拟机，但是类比到硬件服务器还是一样的操作，这里记录下给后来者查阅
-故障信息控制台进去看到centos7的背景虚化的数字7+转圈，重启下看下完整的错误，重启选了内核然后进到图形界面的时候按下ecs取消，观察终端
-123456789101112131415161718192021222324[  OK ] Started Show Plymouth Boot Screen.[  OK ] Reached target Paths.[  OK ] Reached target Basic System.[  124.522110] dracut-initqueu...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "grub">grub</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "boot">boot</a>
     
 </div>
             
@@ -2190,9 +2190,41 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 91
+        Total : 93
         </div>
         <!-- search  -->
         
@@ -2224,6 +2256,11 @@
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/18</span><a class="archive-post-title" href= "/2020/09/18/ocp-4.5-install/" >openshift 4.5.9 离线安装</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/05</span><a class="archive-post-title" href= "/2020/08/05/wireguard-for-personal/" >个人办公用 wireguard 组网记录</a>
         </li>
     
     
@@ -2532,6 +2569,11 @@
     
         <li class="archive-post-item">
             <span class="archive-post-date">04/29</span><a class="archive-post-title" href= "/2018/04/29/kubernetes-configMap-mount/" >kubernetes的configMap文件挂载不同的路径且不覆盖目录的解决方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/keepalived-Heartbeat-use-mg-net/" >使用管理网当作业务网keepalived VIP的心跳线</a>
         </li>
     
     
@@ -2872,6 +2914,10 @@
     
         <span class="sidebar-tag-name" data-tags="uos"><span class="iconfont-archer">&#xe606;</span>uos</span>
     
+        <span class="sidebar-tag-name" data-tags="vip"><span class="iconfont-archer">&#xe606;</span>vip</span>
+    
+        <span class="sidebar-tag-name" data-tags="wireguard"><span class="iconfont-archer">&#xe606;</span>wireguard</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -3030,6 +3076,10 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="k8s/Kylin"><span class="iconfont-archer">&#xe60a;</span>k8s/Kylin</span>
     
         <span class="sidebar-category-name" data-categories="k8s/uos"><span class="iconfont-archer">&#xe60a;</span>k8s/uos</span>
+    
+        <span class="sidebar-category-name" data-categories="keepalived"><span class="iconfont-archer">&#xe60a;</span>keepalived</span>
+    
+        <span class="sidebar-category-name" data-categories="wireguard"><span class="iconfont-archer">&#xe60a;</span>wireguard</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

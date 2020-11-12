@@ -356,6 +356,39 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/10/27/create-kubeconfig/" >
+            
+                <span>生成kubeconfig常规的两种方法</span>
+        </a>
+        <div class="abstract-content">
+            方式总得来讲有两种创建kubeconfig，证书的话市面上很多教程，要注意下面事项为以下:
+
+
+要注意CN(Common Name)与O(Organization)等内容是会影响Kubernetes元件认证的。具体可见https://kubernetes.io/docs/setup/best-practices/certificates/CN Common Name, apiserver 会从证书中提取该字段作为请求的用户名 (User Name)O Organization, apiserver 会从证书中提取该字段作为请求用户所属的组 (Group)
+CA (Certificate ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/27</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "kubeconfig">kubeconfig</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/10/12/prometheus-operator/" >
             
                 <span class="stick-top iconfont-archer">&#xe63d;</span>
@@ -664,39 +697,6 @@ Job的Pod运行完可以看到状态为Completed,低版本需要在get pod的时
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/06/02/kubernetes-nodeSelector/" >
-            
-                <span>kubernetes的PodAffinity的不解</span>
-        </a>
-        <div class="abstract-content">
-            官方文档来看是下面的说法,摘自官方文档https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
-
-An example of a pod that uses pod affinity:
-
-1234567891011121314151617181920212223242526272829apiVersion: v1kind: Podmetadata:  name: with-pod-affinityspec:  affinity:    podAffinity:      requiredDuringSchedul...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "PodAffinity">PodAffinity</a>
     
 </div>
             
@@ -2221,9 +2221,41 @@ An example of a pod that uses pod affinity:
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 91
+        Total : 93
         </div>
         <!-- search  -->
         
@@ -2255,6 +2287,11 @@ An example of a pod that uses pod affinity:
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/18</span><a class="archive-post-title" href= "/2020/09/18/ocp-4.5-install/" >openshift 4.5.9 离线安装</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/05</span><a class="archive-post-title" href= "/2020/08/05/wireguard-for-personal/" >个人办公用 wireguard 组网记录</a>
         </li>
     
     
@@ -2563,6 +2600,11 @@ An example of a pod that uses pod affinity:
     
         <li class="archive-post-item">
             <span class="archive-post-date">04/29</span><a class="archive-post-title" href= "/2018/04/29/kubernetes-configMap-mount/" >kubernetes的configMap文件挂载不同的路径且不覆盖目录的解决方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/keepalived-Heartbeat-use-mg-net/" >使用管理网当作业务网keepalived VIP的心跳线</a>
         </li>
     
     
@@ -2903,6 +2945,10 @@ An example of a pod that uses pod affinity:
     
         <span class="sidebar-tag-name" data-tags="uos"><span class="iconfont-archer">&#xe606;</span>uos</span>
     
+        <span class="sidebar-tag-name" data-tags="vip"><span class="iconfont-archer">&#xe606;</span>vip</span>
+    
+        <span class="sidebar-tag-name" data-tags="wireguard"><span class="iconfont-archer">&#xe606;</span>wireguard</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -3061,6 +3107,10 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="k8s/Kylin"><span class="iconfont-archer">&#xe60a;</span>k8s/Kylin</span>
     
         <span class="sidebar-category-name" data-categories="k8s/uos"><span class="iconfont-archer">&#xe60a;</span>k8s/uos</span>
+    
+        <span class="sidebar-category-name" data-categories="keepalived"><span class="iconfont-archer">&#xe60a;</span>keepalived</span>
+    
+        <span class="sidebar-category-name" data-categories="wireguard"><span class="iconfont-archer">&#xe60a;</span>wireguard</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
