@@ -356,6 +356,72 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/11/06/onlyoffice/" >
+            
+                <span>一次docker镜像的解耦--onlyoffice</span>
+        </a>
+        <div class="abstract-content">
+            年初的时候就考虑过搭建个在线编辑excel的,之前试过很多owncloud，seafile,nextcloud,kodexplorer基本都是纯网盘或者不免费
+这几天又有需求多人同时在线编辑office文件,同事找了个onlyoffice的用docker跑起来了. dockerhub上看了下镜像挺大的而且没有跳转到github上Dockerfile的超链接
+稍微用docker history看了下发现里面一堆各种数据库都放同一个镜像里,根本没有解耦
+于是便有了解耦这个镜像的冲动
+先找官方的例子跑跑看
+地址：https://api.onlyoffice.com/editors/demopr...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/06</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/11/05/10chars/" >
+            
+                <span>记录一次十字符病毒清理过程</span>
+        </a>
+        <div class="abstract-content">
+            周五网络组同事告知几个租户的session过大,建议我把租户这几台机器关机了我进去后把网卡down了后开始看稍微看了下是好几个十个字符的进程一直杀不完,叫存储同事把快照挂载了准备周一恢复
+结果今天挂载上去后开机发现还是有,好吧,手动查杀结合猜想和状态输出想了下逻辑是如下思路
+
+
+crontab加计划(/var/spool/cron/用户名文件,/etc/crontab里,/etc/cron.hourly/x.sh)
+进程互相守护,杀掉一个生成一个新的在/usr/bin/目录,命名是十个字符
+/etc/init.d/和/etc/rc.d/rcx.d/对应的软链接保证开机启动
+
+
+首先ssh...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/05</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/10/27/create-kubeconfig/" >
             
                 <span>生成kubeconfig常规的两种方法</span>
@@ -628,75 +694,6 @@ Clust...
         <a class="post-tag" href="javascript:void(0);" data-tags = "dockerhub">dockerhub</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "gcr.io">gcr.io</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/06/25/etcd-error/" >
-            
-                <span>记录一次线上k8s节点故障</span>
-        </a>
-        <div class="abstract-content">
-            
-
-邮件收到zabbix的告警,业务的网页登陆状态不是200,后面又自愈了
-
-
-说明服务挂掉过一次,登陆到机器上发现集群有台节点状态是nodelost状态上去看到相关服务都挂掉了然后排查到根分区占满了,排查到是k8s日志堆满了/var/log/
-12345678910111213141516[root@cloudos02 ~]# df -hFilesystem               Size  Used Avail Use% Mounted on/dev/mapper/centos-root  219G  216G     0 100% /devtmpfs             ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "etcd">etcd</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/06/03/kubernetes-s-job/" >
-            
-                <span>kubernetes&#39;s Job总结和实战以及坑</span>
-        </a>
-        <div class="abstract-content">
-            Job有三种主要类型的 Job：
-Job的Pod运行完可以看到状态为Completed,低版本需要在get pod的时候添加-a或者--show-all才能看到job创建的pod
-下面实例先创建一个固定完成数量2,并行数量4的Job
-12345678910111213141516171819202122232425262728293031[root@k8s-m1 k8s]# cat job.yml apiVersion: batch&#x2F;v1kind: Jobmetadata:  name: test-jobspec:  completions: 2  parallelism: 4...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
 </div>
             
@@ -2247,9 +2244,47 @@ Job的Pod运行完可以看到状态为Completed,低版本需要在get pod的时
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 93
+        Total : 95
         </div>
         <!-- search  -->
         
@@ -2262,6 +2297,16 @@ Job的Pod运行完可以看到状态为Completed,低版本需要在get pod的时
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2020/11/23/ansible-hang-in-docker/" >ansible hang in docker container</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/20</span><a class="archive-post-title" href= "/2020/11/20/disable-swap/" >永久关闭swap的正确姿势</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2943,6 +2988,8 @@ Job的Pod运行完可以看到状态为Completed,低版本需要在get pod的时
     
         <span class="sidebar-tag-name" data-tags="wireguard"><span class="iconfont-archer">&#xe606;</span>wireguard</span>
     
+        <span class="sidebar-tag-name" data-tags="swap"><span class="iconfont-archer">&#xe606;</span>swap</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -3105,6 +3152,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="keepalived"><span class="iconfont-archer">&#xe60a;</span>keepalived</span>
     
         <span class="sidebar-category-name" data-categories="wireguard"><span class="iconfont-archer">&#xe60a;</span>wireguard</span>
+    
+        <span class="sidebar-category-name" data-categories="linux"><span class="iconfont-archer">&#xe60a;</span>linux</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

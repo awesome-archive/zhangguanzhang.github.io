@@ -369,6 +369,68 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/08/24/gobot-build/" >
+            
+                <span>gobot控制esp8266</span>
+        </a>
+        <div class="abstract-content">
+            材料gobot官网是Arduino的demo，官网上看了下支持esp8266，整好之前整wifi攻击器的时候有就玩了下。我是在windows编译的，没有8266的话自己去淘宝上一块儿node-mcu+数据线(本质上就是个带串口和排针的esp8266-12，买驱动是CH340G的，就是usb口旁边有个长条形ic，方的是cp2102不稳定会导致windows蓝屏)
+环境搭建用goland写代码，不推荐vscode写golang，自行安装golang(记得设置好环境变量)和goland，现在golang最新版本是12.9整个demo分为两部分，客户端gobot去设置和控制esp8266，826...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/24</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "gobot">gobot</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "esp8266">esp8266</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/08/06/preseed/" >
+            
+                <span>ubuntu preseed无人应答安装</span>
+        </a>
+        <div class="abstract-content">
+            之前的centos自动安装整得差不多了，今天有空研究下ubuntu的自动应答安装，过程是按照我遇到的问题的时间线的角度来描述，并不是总结后正确的开始姿势。kickstart是red hat开发的。ubuntu的安装界面是一个debian-installer的二进制文件进程运行tty1提供的选择交互安装界面:
+ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/lts/installation-guide/amd64/apb.html实际上安装完成后我们可以安装debconf-utils后使用debconf-get-selections ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/06</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "preseed">preseed</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/07/14/chromedp/" >
             
                 <span>golang headless browser包chromedp初探</span>
@@ -776,66 +838,6 @@ OS CentOS 7.5.1804
         <a class="post-tag" href="javascript:void(0);" data-tags = "jira">jira</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "confluence">confluence</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/02/12/dashboard/" >
-            
-                <span>通用的dashboard部署和tls，SSL相关部署</span>
-        </a>
-        <div class="abstract-content">
-            详细的讲解下部署dashboard，比市面上更详细和更多场景的选择，本文dashboard的暴露不会用nodeport(不喜欢使用它)和apiserver的web proxy代理也就是/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/这种
-讲下四种场景方式：
-
-
-纯dashboard http和https不惨合外部证书
-openssl 证书给dashboard当https
-个人向域名使用https小绿锁
-ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/12</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/01/30/fstab/" >
-            
-                <span>fstab与systemd.mount自动挂载的一点研究和见解</span>
-        </a>
-        <div class="abstract-content">
-            每次挂nfs,iscsi，cifs改fstab都心惊胆颤，怕改错了开机hang在那影响业务。每次都是改之前去搜第四列列的所有选项值。写下今天趁线上挂了cifs的一台机器可能重启之前在我自己虚机上做了测试和一些问题搜到的见解虚机桥接网络，宿主机共享一个目录，折腾了半天autofs都没配置起来，而且网上普遍的samba的fstab为下面这样
-1&#x2F;&#x2F;10.0.23.85&#x2F;test  &#x2F;mnt  cifs  username&#x3D;zhangguanzhang@xxxxx.com,password&#x3D;xxxxxxxxx,iocharset&#x...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "cifs">cifs</a>
     
 </div>
             
@@ -2541,9 +2543,47 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 93
+        Total : 95
         </div>
         <!-- search  -->
         
@@ -2556,6 +2596,16 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2020/11/23/ansible-hang-in-docker/" >ansible hang in docker container</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/20</span><a class="archive-post-title" href= "/2020/11/20/disable-swap/" >永久关闭swap的正确姿势</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3237,6 +3287,8 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
     
         <span class="sidebar-tag-name" data-tags="wireguard"><span class="iconfont-archer">&#xe606;</span>wireguard</span>
     
+        <span class="sidebar-tag-name" data-tags="swap"><span class="iconfont-archer">&#xe606;</span>swap</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -3399,6 +3451,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="keepalived"><span class="iconfont-archer">&#xe60a;</span>keepalived</span>
     
         <span class="sidebar-category-name" data-categories="wireguard"><span class="iconfont-archer">&#xe60a;</span>wireguard</span>
+    
+        <span class="sidebar-category-name" data-categories="linux"><span class="iconfont-archer">&#xe60a;</span>linux</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

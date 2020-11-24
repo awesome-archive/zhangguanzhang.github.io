@@ -356,6 +356,69 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/03/22/k8s-controller-error/" >
+            
+                <span>一次kube-controller-manager的bug导致的线上无法调度处理过程</span>
+        </a>
+        <div class="abstract-content">
+            线上的k8s环境普遍版本很低，今天同事心血来潮去一个新节点上去看了下发现根分区满了,清理了后发有一个pod没有创建出来。清理后把因为文件系统满了而down掉的k8s相关进程起来后发现kubelet的log一直报错cannot remove /var/lib/kubelet/xxxxconfig/key resource busy now 啥的。查看了下describe对应rc还没有任何Event
+1234567891011121314151617181920212223242526272829303132333435363738$ kubectl describe rc rabbit3r...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/22</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "kube-controller-manager">kube-controller-manager</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/03/15/flannel-bin/" >
+            
+                <span>不走etcd v2 api下二进制跑flannel的总结</span>
+        </a>
+        <div class="abstract-content">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这几天给线上搭建k8s集群,文件和systemd参数大多是从kubeadm的staticPod的yml里扣出来的,起初是除了flanneld全部是systemd管理二进制。起初因为脚本问题导致kube-proxy的kubeocnfig少执行了use-context所以显示的是匿名用户无法list node信息,kube-proxy是在运行但是无法维持svc的网络,flanneld因为是pod要watch节点是通过kubernetes这个svc走的连接导致不通,然后pod状态变成退出,而kubelet在不手动清理掉退出...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/15</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "flannel">flannel</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/03/11/k8s-ha/" >
             
                 <span>k8s高可用涉及到ip填写的相关配置和一些坑</span>
@@ -610,72 +673,6 @@ Docker学得不怎么样就迫不及待来学的跟风狗
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/11/06/onlyoffice/" >
-            
-                <span>一次docker镜像的解耦--onlyoffice</span>
-        </a>
-        <div class="abstract-content">
-            年初的时候就考虑过搭建个在线编辑excel的,之前试过很多owncloud，seafile,nextcloud,kodexplorer基本都是纯网盘或者不免费
-这几天又有需求多人同时在线编辑office文件,同事找了个onlyoffice的用docker跑起来了. dockerhub上看了下镜像挺大的而且没有跳转到github上Dockerfile的超链接
-稍微用docker history看了下发现里面一堆各种数据库都放同一个镜像里,根本没有解耦
-于是便有了解耦这个镜像的冲动
-先找官方的例子跑跑看
-地址：https://api.onlyoffice.com/editors/demopr...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/11/05/10chars/" >
-            
-                <span>记录一次十字符病毒清理过程</span>
-        </a>
-        <div class="abstract-content">
-            周五网络组同事告知几个租户的session过大,建议我把租户这几台机器关机了我进去后把网卡down了后开始看稍微看了下是好几个十个字符的进程一直杀不完,叫存储同事把快照挂载了准备周一恢复
-结果今天挂载上去后开机发现还是有,好吧,手动查杀结合猜想和状态输出想了下逻辑是如下思路
-
-
-crontab加计划(/var/spool/cron/用户名文件,/etc/crontab里,/etc/cron.hourly/x.sh)
-进程互相守护,杀掉一个生成一个新的在/usr/bin/目录,命名是十个字符
-/etc/init.d/和/etc/rc.d/rcx.d/对应的软链接保证开机启动
-
-
-首先ssh...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/05</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -2224,9 +2221,47 @@ crontab加计划(/var/spool/cron/用户名文件,/etc/crontab里,/etc/cron.hourl
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 93
+        Total : 95
         </div>
         <!-- search  -->
         
@@ -2239,6 +2274,16 @@ crontab加计划(/var/spool/cron/用户名文件,/etc/crontab里,/etc/cron.hourl
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2020/11/23/ansible-hang-in-docker/" >ansible hang in docker container</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/20</span><a class="archive-post-title" href= "/2020/11/20/disable-swap/" >永久关闭swap的正确姿势</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2920,6 +2965,8 @@ crontab加计划(/var/spool/cron/用户名文件,/etc/crontab里,/etc/cron.hourl
     
         <span class="sidebar-tag-name" data-tags="wireguard"><span class="iconfont-archer">&#xe606;</span>wireguard</span>
     
+        <span class="sidebar-tag-name" data-tags="swap"><span class="iconfont-archer">&#xe606;</span>swap</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -3082,6 +3129,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="keepalived"><span class="iconfont-archer">&#xe60a;</span>keepalived</span>
     
         <span class="sidebar-category-name" data-categories="wireguard"><span class="iconfont-archer">&#xe60a;</span>wireguard</span>
+    
+        <span class="sidebar-category-name" data-categories="linux"><span class="iconfont-archer">&#xe60a;</span>linux</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

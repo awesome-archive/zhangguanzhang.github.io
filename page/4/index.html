@@ -369,6 +369,66 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/02/12/dashboard/" >
+            
+                <span>通用的dashboard部署和tls，SSL相关部署</span>
+        </a>
+        <div class="abstract-content">
+            详细的讲解下部署dashboard，比市面上更详细和更多场景的选择，本文dashboard的暴露不会用nodeport(不喜欢使用它)和apiserver的web proxy代理也就是/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/这种
+讲下四种场景方式：
+
+
+纯dashboard http和https不惨合外部证书
+openssl 证书给dashboard当https
+个人向域名使用https小绿锁
+ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/12</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/01/30/fstab/" >
+            
+                <span>fstab与systemd.mount自动挂载的一点研究和见解</span>
+        </a>
+        <div class="abstract-content">
+            每次挂nfs,iscsi，cifs改fstab都心惊胆颤，怕改错了开机hang在那影响业务。每次都是改之前去搜第四列列的所有选项值。写下今天趁线上挂了cifs的一台机器可能重启之前在我自己虚机上做了测试和一些问题搜到的见解虚机桥接网络，宿主机共享一个目录，折腾了半天autofs都没配置起来，而且网上普遍的samba的fstab为下面这样
+1&#x2F;&#x2F;10.0.23.85&#x2F;test  &#x2F;mnt  cifs  username&#x3D;zhangguanzhang@xxxxx.com,password&#x3D;xxxxxxxxx,iocharset&#x...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "cifs">cifs</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/01/22/proxmox-cloud-init/" >
             
                 <span>proxmox里使用cloud-init和一些笔记</span>
@@ -812,75 +872,6 @@ Clust...
         <a class="post-tag" href="javascript:void(0);" data-tags = "dockerhub">dockerhub</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "gcr.io">gcr.io</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/06/25/etcd-error/" >
-            
-                <span>记录一次线上k8s节点故障</span>
-        </a>
-        <div class="abstract-content">
-            
-
-邮件收到zabbix的告警,业务的网页登陆状态不是200,后面又自愈了
-
-
-说明服务挂掉过一次,登陆到机器上发现集群有台节点状态是nodelost状态上去看到相关服务都挂掉了然后排查到根分区占满了,排查到是k8s日志堆满了/var/log/
-12345678910111213141516[root@cloudos02 ~]# df -hFilesystem               Size  Used Avail Use% Mounted on/dev/mapper/centos-root  219G  216G     0 100% /devtmpfs             ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "etcd">etcd</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/06/03/kubernetes-s-job/" >
-            
-                <span>kubernetes&#39;s Job总结和实战以及坑</span>
-        </a>
-        <div class="abstract-content">
-            Job有三种主要类型的 Job：
-Job的Pod运行完可以看到状态为Completed,低版本需要在get pod的时候添加-a或者--show-all才能看到job创建的pod
-下面实例先创建一个固定完成数量2,并行数量4的Job
-12345678910111213141516171819202122232425262728293031[root@k8s-m1 k8s]# cat job.yml apiVersion: batch&#x2F;v1kind: Jobmetadata:  name: test-jobspec:  completions: 2  parallelism: 4...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
 </div>
             
@@ -2586,9 +2577,47 @@ Job的Pod运行完可以看到状态为Completed,低版本需要在get pod的时
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 93
+        Total : 95
         </div>
         <!-- search  -->
         
@@ -2601,6 +2630,16 @@ Job的Pod运行完可以看到状态为Completed,低版本需要在get pod的时
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2020/11/23/ansible-hang-in-docker/" >ansible hang in docker container</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/20</span><a class="archive-post-title" href= "/2020/11/20/disable-swap/" >永久关闭swap的正确姿势</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3282,6 +3321,8 @@ Job的Pod运行完可以看到状态为Completed,低版本需要在get pod的时
     
         <span class="sidebar-tag-name" data-tags="wireguard"><span class="iconfont-archer">&#xe606;</span>wireguard</span>
     
+        <span class="sidebar-tag-name" data-tags="swap"><span class="iconfont-archer">&#xe606;</span>swap</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -3444,6 +3485,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="keepalived"><span class="iconfont-archer">&#xe60a;</span>keepalived</span>
     
         <span class="sidebar-category-name" data-categories="wireguard"><span class="iconfont-archer">&#xe60a;</span>wireguard</span>
+    
+        <span class="sidebar-category-name" data-categories="linux"><span class="iconfont-archer">&#xe60a;</span>linux</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

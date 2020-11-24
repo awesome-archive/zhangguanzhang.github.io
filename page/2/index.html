@@ -369,6 +369,67 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/03/26/KubeXXXMismatch/" >
+            
+                <span>一次deploy,rs,sts Mismatch 的处理</span>
+        </a>
+        <div class="abstract-content">
+              这次文章是远程帮群友解决故障后的总结，以时间线描述  群友一开始是apiserver响应慢，使用角度上就是kubectl请求慢，如
+123E0326 07:49:37.586690       1 available_controller.go:416] v1beta1.metrics.k8s.io failed with: failing or missing response  from https:&#x2F;&#x2F;10.99.174.208:443&#x2F;apis&#x2F;metrics.k8s.io&#x2F;v1beta1: Get https:&#x2F;&...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/26</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Mismatch">Mismatch</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/03/10/go-mod-base-use/" >
+            
+                <span>go mod的基础使用-科普</span>
+        </a>
+        <div class="abstract-content">
+            go mod由来&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文章主要是针对新人来介绍go mod是啥以及新手如何使用，老手不用看。现阶段go mod已经完全GA了，你会用了的话会非常方便&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;像python的项目根目录有requirement.txt记录依赖包，nodejs是packages.json，同样go的包管理从早期的go dep(gopkg)到vendor到现在的go mod.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/10</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "go mod">go mod</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/03/02/centos6-hung-while-booting/" >
             
                 <span>centos6中毒重启后卡在启动页面</span>
@@ -802,68 +863,6 @@ consul1...
         <a class="post-tag" href="javascript:void(0);" data-tags = "prometheus">prometheus</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "timezone">timezone</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/08/24/gobot-build/" >
-            
-                <span>gobot控制esp8266</span>
-        </a>
-        <div class="abstract-content">
-            材料gobot官网是Arduino的demo，官网上看了下支持esp8266，整好之前整wifi攻击器的时候有就玩了下。我是在windows编译的，没有8266的话自己去淘宝上一块儿node-mcu+数据线(本质上就是个带串口和排针的esp8266-12，买驱动是CH340G的，就是usb口旁边有个长条形ic，方的是cp2102不稳定会导致windows蓝屏)
-环境搭建用goland写代码，不推荐vscode写golang，自行安装golang(记得设置好环境变量)和goland，现在golang最新版本是12.9整个demo分为两部分，客户端gobot去设置和控制esp8266，826...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "gobot">gobot</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "esp8266">esp8266</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/08/06/preseed/" >
-            
-                <span>ubuntu preseed无人应答安装</span>
-        </a>
-        <div class="abstract-content">
-            之前的centos自动安装整得差不多了，今天有空研究下ubuntu的自动应答安装，过程是按照我遇到的问题的时间线的角度来描述，并不是总结后正确的开始姿势。kickstart是red hat开发的。ubuntu的安装界面是一个debian-installer的二进制文件进程运行tty1提供的选择交互安装界面:
-ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/lts/installation-guide/amd64/apb.html实际上安装完成后我们可以安装debconf-utils后使用debconf-get-selections ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "preseed">preseed</a>
     
 </div>
             
@@ -2569,9 +2568,47 @@ ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 93
+        Total : 95
         </div>
         <!-- search  -->
         
@@ -2584,6 +2621,16 @@ ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2020/11/23/ansible-hang-in-docker/" >ansible hang in docker container</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/20</span><a class="archive-post-title" href= "/2020/11/20/disable-swap/" >永久关闭swap的正确姿势</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3265,6 +3312,8 @@ ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/
     
         <span class="sidebar-tag-name" data-tags="wireguard"><span class="iconfont-archer">&#xe606;</span>wireguard</span>
     
+        <span class="sidebar-tag-name" data-tags="swap"><span class="iconfont-archer">&#xe606;</span>swap</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -3427,6 +3476,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="keepalived"><span class="iconfont-archer">&#xe60a;</span>keepalived</span>
     
         <span class="sidebar-category-name" data-categories="wireguard"><span class="iconfont-archer">&#xe60a;</span>wireguard</span>
+    
+        <span class="sidebar-category-name" data-categories="linux"><span class="iconfont-archer">&#xe60a;</span>linux</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

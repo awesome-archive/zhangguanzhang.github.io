@@ -356,6 +356,69 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/06/19/go-prom-exporter/" >
+            
+                <span>[未写完]使用go开发一个Prometheus的exporter</span>
+        </a>
+        <div class="abstract-content">
+            <p>市面上的例子太多都太简单了，这里详细写下我知道的</p>
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/19</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "exporter">exporter</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/05/23/k8s-vxlan-63-timeout/" >
+            
+                <span>v1.17+ k8s集群下CNI使用VXLAN模式SVC有63秒延迟的触发原因定位</span>
+        </a>
+        <div class="abstract-content">
+            这个问题 flannel 和 calico 的 VXLAN 模式下都会发生，部分人的现象是集群的A记录 UDP 下查询可能有问题，原因是v1.17+的k8s会引起内核的某个 UDP 相关 bug而不是cni的软件层面，weave没有，后面说。
+写这篇文章的日期是05/28，发现是上周五也就是05/23号，文章从时间线写起(因为很多时候想发文章但是没空，所以文章的发布日期是05/23)
+2020-07-19更新，版本v1.18.6, v1.16.13, v1.17.9+已经修复这个问题，可以同版本内升级，或者只切kube-proxy版本
+由来上周五我经过同事的工位看到同事的桌面是k8s的g...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "63s">63s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "timeout">timeout</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/05/13/x86-router-flash/" >
             
                 <span>proxmox x86软路由笔记</span>
@@ -606,42 +669,10 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/08/docker-panic-invalid-page-type/" >
-            
-                <span>docker-18.06.3-ce启动panic: invalid page type: 0: 0的解决处理</span>
-        </a>
-        <div class="abstract-content">
-            凌晨pod状态异常且没有恢复，上线查看后docker ps -a命令无响应，kubelet日志也刷和docker的rpc通信context deadline cancel重启了docker后docker无法启动，前台运行开debug log level刚开始刷了个/var/lib/docker/tmp是个文件，对比了下其他机器上这个路径应该是个目录，然后改名后创建个权限和正常docker下权限一样的tmp文件夹再起
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/2020/">&lt; PREV</a><a class="page-number" href="/archives/2020/">1</a><span class="page-number current">2</span>
+        <a class="extend prev" rel="prev" href="/archives/2020/">&lt; PREV</a><a class="page-number" href="/archives/2020/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2020/page/3/">3</a><a class="extend next" rel="next" href="/archives/2020/page/3/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -2182,9 +2213,47 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 93
+        Total : 95
         </div>
         <!-- search  -->
         
@@ -2197,6 +2266,16 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2020/11/23/ansible-hang-in-docker/" >ansible hang in docker container</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/20</span><a class="archive-post-title" href= "/2020/11/20/disable-swap/" >永久关闭swap的正确姿势</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2878,6 +2957,8 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
         <span class="sidebar-tag-name" data-tags="wireguard"><span class="iconfont-archer">&#xe606;</span>wireguard</span>
     
+        <span class="sidebar-tag-name" data-tags="swap"><span class="iconfont-archer">&#xe606;</span>swap</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -3040,6 +3121,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="keepalived"><span class="iconfont-archer">&#xe60a;</span>keepalived</span>
     
         <span class="sidebar-category-name" data-categories="wireguard"><span class="iconfont-archer">&#xe60a;</span>wireguard</span>
+    
+        <span class="sidebar-category-name" data-categories="linux"><span class="iconfont-archer">&#xe60a;</span>linux</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
