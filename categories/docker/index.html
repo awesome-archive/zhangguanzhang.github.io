@@ -356,6 +356,36 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/12/04/docker1803-hang-container-restore/" >
+            
+                <span>docker18.03 hang at &#39;restoring container&#39;</span>
+        </a>
+        <div class="abstract-content">
+            由来起初是 k8s 有几个 node not ready，上去看了下 kubelet 日志刷 container runtime down，重启了下 docker 后还是没用，docker ps 命令都卡住。
+环境信息1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253$ cat /etc/redhat-release Linux xxx-disk0 3.10.0-1127.13.1.el7.x86_64 #1 SMP Tue Jun 23 15:...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/12/04</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "hang">hang</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/02/19/jira-confluence/" >
             
                 <span>docker部署jira(8.0.0)和confluence(6.14.1)</span>
@@ -2072,12 +2102,9 @@ OS CentOS 7.5.1804
     
     
     
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 96
+        Total : 97
         </div>
         <!-- search  -->
         
@@ -2090,6 +2117,11 @@ OS CentOS 7.5.1804
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/04</span><a class="archive-post-title" href= "/2020/12/04/docker1803-hang-container-restore/" >docker18.03 hang at 'restoring container'</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2787,6 +2819,8 @@ OS CentOS 7.5.1804
         <span class="sidebar-tag-name" data-tags="wireguard"><span class="iconfont-archer">&#xe606;</span>wireguard</span>
     
         <span class="sidebar-tag-name" data-tags="swap"><span class="iconfont-archer">&#xe606;</span>swap</span>
+    
+        <span class="sidebar-tag-name" data-tags="hang"><span class="iconfont-archer">&#xe606;</span>hang</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
