@@ -393,7 +393,7 @@
                 <span>不走etcd v2 api下二进制跑flannel的总结</span>
         </a>
         <div class="abstract-content">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这几天给线上搭建k8s集群,文件和systemd参数大多是从kubeadm的staticPod的yml里扣出来的,起初是除了flanneld全部是systemd管理二进制。起初因为脚本问题导致kube-proxy的kubeocnfig少执行了use-context所以显示的是匿名用户无法list node信息,kube-proxy是在运行但是无法维持svc的网络,flanneld因为是pod要watch节点是通过kubernetes这个svc走的连接导致不通,然后pod状态变成退出,而kubelet在不手动清理掉退出...
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这几天给线上搭建 k8s 集群,文件和 systemd 参数大多是从 kubeadm 的 staticPod 的 yml 里扣出来的，起初是除了 flanneld 全部是 systemd 管理二进制。起初因为脚本问题导致 kube-proxy 的 kubeocnfig少执行了use-context所以显示的是匿名用户无法list node信息，kube-proxy是在运行但是无法维持 svc 的网络，flanneld 因为是 pod 要 watch 节点是通过 kubernetes 这个 svc 走的连接导致不通，然...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
