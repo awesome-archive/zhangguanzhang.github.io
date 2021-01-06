@@ -10,5 +10,10 @@
 0.0.0.0 www.netsarang.com
 0.0.0.0 sales.netsarang.com
 
+# atlium - dxp, ad
+0.0.0.0 atlium.com
+0.0.0.0 www.atlium.com
+
 # miui
 0.0.0.0 data.mistat.xiaomi.com
+0.0.0.0 api.ad.xiaomi.com
