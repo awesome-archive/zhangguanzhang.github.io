@@ -363,7 +363,7 @@
         </a>
         <div class="abstract-content">
             由来这几天我们内部在做新项目的容灾测试，业务都是在 K8S 上的。容灾里就是随便选节点 shutdown -h now。关机后同事便发现了（页面有错误，最终问题是）集群内 DNS 解析会有几率无法解析（导致的）。
-根据 SVC 的流程，node 关机后，由于 kubelet 没有 update 自己。node 和 pod 在 apiserver get 的时候显示还是正常的。在 kube-controller-manager 的 --node-monitor-grace-period 时间后再过 --pod-eviction-timeout 时间开始 eviction pod。大概流程是...
+根据 SVC 的流程，node 关机后，由于 kubelet 没有 update 自己。node 和 pod 在 apiserver get 的时候显示还是正常的。在 kube-controller-manager 的 --node-monitor-grace-period 时间后再过 --pod-eviction-timeout 时间开始 eviction pod，大概流程是...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
