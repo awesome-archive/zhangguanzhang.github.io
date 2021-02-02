@@ -357,6 +357,38 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/12/04/black-box-exporter/" >
+            
+                <span>prometheus的黑盒监控</span>
+        </a>
+        <div class="abstract-content">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;常规的各种exporter都是和需要监控的机器一起安装的,如果需要监控一些tcp端口和七层应用层的状态呢,这个时候就需要黑盒监控了,不需要安装在目标机器上即可从外部去监控。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9115是它的http端点的默认监听端口，blackbox.yml它的配置文件里以基础的http、dns、tcp、icmp等prober定制配置出各种监测模块(module)，在prometheus server的配置文件里声明用哪个模块去探测哪个targets，下面以doc...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/04</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "prometheus">prometheus</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "exporter">exporter</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/11/24/how-to-use-kubeadm/" >
             
                 <span>对于初入k8s和kubeadm的一些建议</span>
@@ -674,36 +706,6 @@ Clust...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/07/18/ecs-vip/" >
-            
-                <span>基于openstack的ecs上使用VIP</span>
-        </a>
-        <div class="abstract-content">
-            客户需要在云上使用vip,后面发现不通，查询了后发现openstack的neutron会存在ip和mac绑定的关系,可以阅读下面的链接查看说明https://blog.codecentric.de/en/2016/11/highly-available-vips-openstack-vms-vrrp/即如果网卡上有不是下发的ip在向外发包后包会被drop掉,需要用neutron的cli解绑ip和mac的绑定,我们这这个功能已经做在了web上了,所以可以直接解绑
-存在绑定的关系下，意味着flanneld不能使用host-gw模式，除非云厂商实现了cni-plugins或者不是原生的open...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "keepavlied">keepavlied</a>
     
 </div>
             
@@ -2330,9 +2332,52 @@ Clust...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 97
+        Total : 98
         </div>
         <!-- search  -->
         
@@ -2342,6 +2387,20 @@ Clust...
     
     
     
+    
+    <div class="archive-year"> 2021 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/02</span><a class="archive-post-title" href= "/2021/02/02/node-shutdown-dns-unavailable/" >集群节点关机导致dns在eviction pod之前几率不可用</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
@@ -3050,6 +3109,8 @@ Clust...
     
         <span class="sidebar-tag-name" data-tags="hang"><span class="iconfont-archer">&#xe606;</span>hang</span>
     
+        <span class="sidebar-tag-name" data-tags="coredns"><span class="iconfont-archer">&#xe606;</span>coredns</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -3214,6 +3275,10 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="wireguard"><span class="iconfont-archer">&#xe60a;</span>wireguard</span>
     
         <span class="sidebar-category-name" data-categories="linux"><span class="iconfont-archer">&#xe60a;</span>linux</span>
+    
+        <span class="sidebar-category-name" data-categories="kubernetes/coredns"><span class="iconfont-archer">&#xe60a;</span>kubernetes/coredns</span>
+    
+        <span class="sidebar-category-name" data-categories="kubernetes/coredns/node-cache"><span class="iconfont-archer">&#xe60a;</span>kubernetes/coredns/node-cache</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

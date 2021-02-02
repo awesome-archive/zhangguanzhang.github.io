@@ -370,6 +370,50 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/09/27/consul-tls/" >
+            
+                <span>高可用的SSL consul cluster实践</span>
+        </a>
+        <div class="abstract-content">
+            同事dnsmasq + consul 整服务自动发现，但是不是 tls 且consul server是单点，而且进程启动用的nohub而不是systemd，这里查了下资料实践了下
+部署过程已经写成了ansible，地址 https://github.com/zhangguanzhang/consul-tls-ansible
+开了五台云主机，总体规划为下面，角色那有条件的可以分开，例如 client 单独一台。不分开的话得配置 client 的端口和 server 的分开，自己去探索
+
+
+
+IP
+Hostname
+CPU
+Memory
+role
+nodeName
+
+
+
+172.19.0.3...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/27</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "consul">consul</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/09/05/prometheus-change-timezone/" >
             
                 <span>修改源码更改prometheus的时区问题</span>
@@ -799,40 +843,6 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/11</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/03/03/kubernetes-1-13-4/" >
-            
-                <span>二进制部署Kubernetes v1.13.12 HA可选</span>
-        </a>
-        <div class="abstract-content">
-            本次采用二进制文件方式部署,本文过程写成了更详细更多可选方案的ansible部署方案 https://github.com/zhangguanzhang/Kubernetes-ansible和之前的步骤差不多都是和kubeadm步骤一样,不过这次所有kubelet全部走bootstrap不会像之前master上的kubelet生成证书,另外证书换成openssl生成
-不建议使用secureCRT这个ssh软件复制本篇博客内容的命令,因为它的部分版本对包含多条命令的处理结果并不完美,可能很多命令不是预期结果
-本文命令里有些是输出,不要乱粘贴输入(虽然也没影响)
-本文命令全部是在k8s-m1...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "operator">operator</a>
-    
-</div>
             
         </div>
     </article>
@@ -2612,9 +2622,52 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 97
+        Total : 98
         </div>
         <!-- search  -->
         
@@ -2624,6 +2677,20 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
     
     
+    
+    <div class="archive-year"> 2021 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/02</span><a class="archive-post-title" href= "/2021/02/02/node-shutdown-dns-unavailable/" >集群节点关机导致dns在eviction pod之前几率不可用</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
@@ -3332,6 +3399,8 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
         <span class="sidebar-tag-name" data-tags="hang"><span class="iconfont-archer">&#xe606;</span>hang</span>
     
+        <span class="sidebar-tag-name" data-tags="coredns"><span class="iconfont-archer">&#xe606;</span>coredns</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -3496,6 +3565,10 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="wireguard"><span class="iconfont-archer">&#xe60a;</span>wireguard</span>
     
         <span class="sidebar-category-name" data-categories="linux"><span class="iconfont-archer">&#xe60a;</span>linux</span>
+    
+        <span class="sidebar-category-name" data-categories="kubernetes/coredns"><span class="iconfont-archer">&#xe60a;</span>kubernetes/coredns</span>
+    
+        <span class="sidebar-category-name" data-categories="kubernetes/coredns/node-cache"><span class="iconfont-archer">&#xe60a;</span>kubernetes/coredns/node-cache</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

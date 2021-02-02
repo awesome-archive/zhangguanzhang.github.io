@@ -357,6 +357,36 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/02/02/node-shutdown-dns-unavailable/" >
+            
+                <span>集群节点关机导致dns在eviction pod之前几率不可用</span>
+        </a>
+        <div class="abstract-content">
+            由来这几天我们内部在做新项目的容灾测试，业务都是在 K8S 上的。容灾里就是随便选节点 shutdown -h now。关机后同事便发现了（页面有错误，最终问题是）集群内 DNS 解析会有几率无法解析（导致的）。
+根据 SVC 的流程，node 关机后，由于 kubelet 没有 update 自己。node 和 pod 在 apiserver get 的时候显示还是正常的。在 kube-controller-manager 的 --node-monitor-grace-period 时间后再过 --pod-eviction-timeout 时间开始 eviction pod。大概流程是...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/02/02</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "coredns">coredns</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/12/04/docker1803-hang-container-restore/" >
             
                 <span>docker18.03 hang at &#39;restoring container&#39;</span>
@@ -629,39 +659,6 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "Prometheus">Prometheus</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/23/fs-error-fix-k8s-master/" >
-            
-                <span>k8s master机器文件系统故障的一次恢复过程</span>
-        </a>
-        <div class="abstract-content">
-            由来研发反馈他们那边一套集群有台master文件系统损坏无法开机，他们是三台openstack上的虚机，是虚拟化宿主机故障导致的虚机文件系统损坏。三台机器是master+node，指导他修复后开机，修复过程和我之前文章opensuse的一次救援步骤一样
-起来后我上去看，因为做了 HA 的，所以只有这个node有问题，集群没影响
-12345[root@k8s-m1 ~]# kubectl get node -o wideNAME             STATUS     ROLES    AGE   VERSION   INTERNAL-IP      EXTERNAL-IP   OS...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "etcd">etcd</a>
     
 </div>
             
@@ -2288,9 +2285,52 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 97
+        Total : 98
         </div>
         <!-- search  -->
         
@@ -2300,6 +2340,20 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
     
     
     
+    
+    <div class="archive-year"> 2021 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/02</span><a class="archive-post-title" href= "/2021/02/02/node-shutdown-dns-unavailable/" >集群节点关机导致dns在eviction pod之前几率不可用</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
@@ -3008,6 +3062,8 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
     
         <span class="sidebar-tag-name" data-tags="hang"><span class="iconfont-archer">&#xe606;</span>hang</span>
     
+        <span class="sidebar-tag-name" data-tags="coredns"><span class="iconfont-archer">&#xe606;</span>coredns</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -3172,6 +3228,10 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="wireguard"><span class="iconfont-archer">&#xe60a;</span>wireguard</span>
     
         <span class="sidebar-category-name" data-categories="linux"><span class="iconfont-archer">&#xe60a;</span>linux</span>
+    
+        <span class="sidebar-category-name" data-categories="kubernetes/coredns"><span class="iconfont-archer">&#xe60a;</span>kubernetes/coredns</span>
+    
+        <span class="sidebar-category-name" data-categories="kubernetes/coredns/node-cache"><span class="iconfont-archer">&#xe60a;</span>kubernetes/coredns/node-cache</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

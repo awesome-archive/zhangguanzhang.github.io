@@ -370,6 +370,36 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/07/18/ecs-vip/" >
+            
+                <span>基于openstack的ecs上使用VIP</span>
+        </a>
+        <div class="abstract-content">
+            客户需要在云上使用vip,后面发现不通，查询了后发现openstack的neutron会存在ip和mac绑定的关系,可以阅读下面的链接查看说明https://blog.codecentric.de/en/2016/11/highly-available-vips-openstack-vms-vrrp/即如果网卡上有不是下发的ip在向外发包后包会被drop掉,需要用neutron的cli解绑ip和mac的绑定,我们这这个功能已经做在了web上了,所以可以直接解绑
+存在绑定的关系下，意味着flanneld不能使用host-gw模式，除非云厂商实现了cni-plugins或者不是原生的open...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/18</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "keepavlied">keepavlied</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/07/08/travis-sync-gcr-io/" >
             
                 <span>利用travis同步gcr.io镜像到dockerhub</span>
@@ -812,39 +842,6 @@ ffmpeg1234567https://rpmfusion.org/mirror list:https://mirrors.rpmfusion.org/mm/
         <a class="post-tag" href="javascript:void(0);" data-tags = "nginx">nginx</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/06/03/bash-complete/" >
-            
-                <span>bash自定义补全</span>
-        </a>
-        <div class="abstract-content">
-            总结下bash的补全
-终端下按两次tab就是补全
-补全常见的分为下面几种场景:
-
-第一部分的命令补全
-命令补全后补全路径到文件
-变量补全
-类似systemctl命令的选项补全 
-
-当然bash支持自定义补全,也就是让我们实现和systemctl命令那样补全
-假设我们要systemctl disable --now firewalldsystemctl空格后按tab键会显示systemctl的第二个部分的所有支持的选项此时继续输入di按tab键会补全成systemctl disable,输入--now(相似的太多了,所以基本输入完)补全,当然最后的服务名此时补全不了,因为systemctl...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/06/03</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -2624,9 +2621,52 @@ ffmpeg1234567https://rpmfusion.org/mirror list:https://mirrors.rpmfusion.org/mm/
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 97
+        Total : 98
         </div>
         <!-- search  -->
         
@@ -2636,6 +2676,20 @@ ffmpeg1234567https://rpmfusion.org/mirror list:https://mirrors.rpmfusion.org/mm/
     
     
     
+    
+    <div class="archive-year"> 2021 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/02</span><a class="archive-post-title" href= "/2021/02/02/node-shutdown-dns-unavailable/" >集群节点关机导致dns在eviction pod之前几率不可用</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
@@ -3344,6 +3398,8 @@ ffmpeg1234567https://rpmfusion.org/mirror list:https://mirrors.rpmfusion.org/mm/
     
         <span class="sidebar-tag-name" data-tags="hang"><span class="iconfont-archer">&#xe606;</span>hang</span>
     
+        <span class="sidebar-tag-name" data-tags="coredns"><span class="iconfont-archer">&#xe606;</span>coredns</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -3508,6 +3564,10 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="wireguard"><span class="iconfont-archer">&#xe60a;</span>wireguard</span>
     
         <span class="sidebar-category-name" data-categories="linux"><span class="iconfont-archer">&#xe60a;</span>linux</span>
+    
+        <span class="sidebar-category-name" data-categories="kubernetes/coredns"><span class="iconfont-archer">&#xe60a;</span>kubernetes/coredns</span>
+    
+        <span class="sidebar-category-name" data-categories="kubernetes/coredns/node-cache"><span class="iconfont-archer">&#xe60a;</span>kubernetes/coredns/node-cache</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

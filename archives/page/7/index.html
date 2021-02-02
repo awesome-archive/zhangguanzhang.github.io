@@ -357,6 +357,36 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/07/18/ecs-vip/" >
+            
+                <span>基于openstack的ecs上使用VIP</span>
+        </a>
+        <div class="abstract-content">
+            客户需要在云上使用vip,后面发现不通，查询了后发现openstack的neutron会存在ip和mac绑定的关系,可以阅读下面的链接查看说明https://blog.codecentric.de/en/2016/11/highly-available-vips-openstack-vms-vrrp/即如果网卡上有不是下发的ip在向外发包后包会被drop掉,需要用neutron的cli解绑ip和mac的绑定,我们这这个功能已经做在了web上了,所以可以直接解绑
+存在绑定的关系下，意味着flanneld不能使用host-gw模式，除非云厂商实现了cni-plugins或者不是原生的open...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/18</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "keepavlied">keepavlied</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/07/08/travis-sync-gcr-io/" >
             
                 <span>利用travis同步gcr.io镜像到dockerhub</span>
@@ -652,35 +682,6 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "Dockerfile">Dockerfile</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/01/10/docker%E7%9A%84%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5/" >
-            
-                <span>docker的一些概念</span>
-        </a>
-        <div class="abstract-content">
-            <p>总结下容器的一些概念和虚拟机的区别以及<code>CMD</code>和<code>entrypoint</code></p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
     
 </div>
             
@@ -2307,9 +2308,52 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 97
+        Total : 98
         </div>
         <!-- search  -->
         
@@ -2319,6 +2363,20 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
     
     
     
+    
+    <div class="archive-year"> 2021 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/02</span><a class="archive-post-title" href= "/2021/02/02/node-shutdown-dns-unavailable/" >集群节点关机导致dns在eviction pod之前几率不可用</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
@@ -3027,6 +3085,8 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
     
         <span class="sidebar-tag-name" data-tags="hang"><span class="iconfont-archer">&#xe606;</span>hang</span>
     
+        <span class="sidebar-tag-name" data-tags="coredns"><span class="iconfont-archer">&#xe606;</span>coredns</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -3191,6 +3251,10 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="wireguard"><span class="iconfont-archer">&#xe60a;</span>wireguard</span>
     
         <span class="sidebar-category-name" data-categories="linux"><span class="iconfont-archer">&#xe60a;</span>linux</span>
+    
+        <span class="sidebar-category-name" data-categories="kubernetes/coredns"><span class="iconfont-archer">&#xe60a;</span>kubernetes/coredns</span>
+    
+        <span class="sidebar-category-name" data-categories="kubernetes/coredns/node-cache"><span class="iconfont-archer">&#xe60a;</span>kubernetes/coredns/node-cache</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
