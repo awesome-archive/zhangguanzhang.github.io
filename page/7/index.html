@@ -370,6 +370,39 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2017/03/20/ftp-install/" >
+            
+                <span>vsftpd虚拟用户简单部署</span>
+        </a>
+        <div class="abstract-content">
+            关闭防火墙和selinux
+123systemctl disable --now firewalld NetworkManagersetenforce 0sed -ri &#39;&#x2F;^[^#]*SELINUX&#x3D;&#x2F;s#&#x3D;.+$#&#x3D;disabled#&#39; &#x2F;etc&#x2F;selinux&#x2F;config
+安装vsftpd和db4
+12345yum install -y epel-release &amp;&amp; \yum install -y \	vsftpd \	db4-utils \	db4
+创建vsftpd...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/03/20</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "ftp">ftp</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2017/03/15/lnmp/" >
             
                 <span>源码编译安装lnmp</span>
@@ -2424,9 +2457,10 @@ height:50vh;
     
     
     
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 98
+        Total : 99
         </div>
         <!-- search  -->
         
@@ -2439,6 +2473,11 @@ height:50vh;
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/12</span><a class="archive-post-title" href= "/2021/03/12/build-arm64-docker-compose-action/" >使用github action 配合 docker buildx 编译 arm64 docker-compose</a>
+        </li>
     
     
         <li class="archive-post-item">

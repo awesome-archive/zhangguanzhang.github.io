@@ -370,6 +370,36 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2017/06/26/lua-list-all-upsteam/" >
+            
+                <span>lua列出所有upsteam</span>
+        </a>
+        <div class="abstract-content">
+            需要在http的路由上暴露出所有的upsteam配置段
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758upstream names&#123;    server 127.0.0.1:8050 ;    server 127.0.0.1:8060 ;&#125;upstream tuling &#123;    server 127.0.0.1:8051       weight&#x3D;5;    server 127...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/06/26</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "nginx">nginx</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2017/06/03/bash-complete/" >
             
                 <span>bash自定义补全</span>
@@ -781,39 +811,6 @@ getopt...
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/04/03</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/03/20/ftp-install/" >
-            
-                <span>vsftpd虚拟用户简单部署</span>
-        </a>
-        <div class="abstract-content">
-            关闭防火墙和selinux
-123systemctl disable --now firewalld NetworkManagersetenforce 0sed -ri &#39;&#x2F;^[^#]*SELINUX&#x3D;&#x2F;s#&#x3D;.+$#&#x3D;disabled#&#39; &#x2F;etc&#x2F;selinux&#x2F;config
-安装vsftpd和db4
-12345yum install -y epel-release &amp;&amp; \yum install -y \	vsftpd \	db4-utils \	db4
-创建vsftpd...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/03/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ftp">ftp</a>
-    
-</div>
             
         </div>
     </article>
@@ -2636,9 +2633,10 @@ getopt...
     
     
     
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 98
+        Total : 99
         </div>
         <!-- search  -->
         
@@ -2651,6 +2649,11 @@ getopt...
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/12</span><a class="archive-post-title" href= "/2021/03/12/build-arm64-docker-compose-action/" >使用github action 配合 docker buildx 编译 arm64 docker-compose</a>
+        </li>
     
     
         <li class="archive-post-item">
