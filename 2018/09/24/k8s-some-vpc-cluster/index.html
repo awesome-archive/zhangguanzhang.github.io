@@ -438,7 +438,7 @@ height:50vh;
 </ul>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最首先的，master肯定是单个了，宣告的apiserver，也就是选项<code>--advertise-address</code>必须配置为master的公网IP，kubeadm的话是配置<code>controlPlaneEndpoint</code>，或者把一个指定域名加到certSAN里，用hosts代替</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在flannel的vxlan模式里<code>flannel.1</code>充当了vxlan里的<code>vtep</code>身份,垮主机的pod通信流程可以简化到如下<br><img src="https://github.com/zhangguanzhang/Image-Hosting/blob/master/k8s/5B7A@13437XC28~112U%5BZTP.png?raw=true" alt="network"><br>flannel查找到目标pod所在节点是通过查询etcd的node信息维护一张fdb表,可以通过下面命令查看。安装 iproute </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;usr&#x2F;sbin&#x2F;bridge fdb show dev flannel.1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;usr&#x2F;sbin&#x2F;bridge fdb show dev flannel.1</span><br><span class="line"></span><br><span class="line">ip neigh show dev flannel.1</span><br></pre></td></tr></table></figure>
 <p>kubelet上报的ip是主机的eth0的网卡ip,由于公有云ecs都是做的ip的nat,上报的ip是内网ip,各vpc里的主机向这个内网ip发包的话会在出公网后被运营商路由器drop掉(源目ip为内网ip不允许上公网)</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最开始我从calico换成flannel的时候没注意目录<code>/etc/cni/net.d/</code>残留有calico的配置文件,导致kubelet还认为是跑的calico,但是找不到calico一直报错,后面一气之下全部重装了操作系统<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;后面又搭建起来后发现(只有同一个node上的pod能互相访问)跨节点的pod之间无法通信,然后云上开了flannel的udp端口<code>8472</code>后依然不通。</p>
 <p>测试udp端口通不通可以在flannel跑起来后安装nc命令测,发现几何云udp包会被drop掉,阿里、腾讯和百度的不会</p>
