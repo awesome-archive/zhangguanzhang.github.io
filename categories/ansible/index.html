@@ -362,8 +362,8 @@
                 <span>ansible hang in docker container</span>
         </a>
         <div class="abstract-content">
-            由来这几天同事发现在 docker 容器里运行 ansible 命令很卡，发来了个命令叫我试试 ansible localhost -m setup -a &#39;filter=ansible_default_ipv4&#39; 2&gt;/dev/null |grep &#39;\&quot;address\&quot;&#39; |awk -F&#39;\&quot;&#39; &#39;{print $4}&#39;
-环境信息123456789101112131415161718192021222324252627282930313233343536373839404142434...
+            由来这几天同事发现在 docker 容器里运行 ansible 命令很卡，发来了个命令叫我试试 ansible localhost -m setup -a &#39;filter=ansible_default_ipv4&#39; 2&gt;/dev/null |grep &#39;\&quot;address\&quot;&#39; |awk -F&#39;\&quot;&#39; &#39;&#123;print $4&#125;&#39;
+环境信息12345678910111213141516171819202122232425262728293031323334353637383...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -2099,26 +2099,9 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 100
+        Total : 101
         </div>
         <!-- search  -->
         
@@ -2131,6 +2114,11 @@
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2021/03/22/jsonpatch-doc-is-missing-path/" >Internal error occurred: jsonpatch add operation does not apply: doc is missing path: xxx</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3030,6 +3018,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="kubernetes/coredns"><span class="iconfont-archer">&#xe60a;</span>kubernetes/coredns</span>
     
         <span class="sidebar-category-name" data-categories="kubernetes/coredns/node-cache"><span class="iconfont-archer">&#xe60a;</span>kubernetes/coredns/node-cache</span>
+    
+        <span class="sidebar-category-name" data-categories="admission"><span class="iconfont-archer">&#xe60a;</span>admission</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

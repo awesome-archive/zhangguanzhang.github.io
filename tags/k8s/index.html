@@ -357,6 +357,35 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/03/22/jsonpatch-doc-is-missing-path/" >
+            
+                <span>Internal error occurred: jsonpatch add operation does not apply: doc is missing path: xxx</span>
+        </a>
+        <div class="abstract-content">
+            由来今天在折腾 admission webhook 注入一些属性的时候遇到了 Error from server (InternalError): error when creating &quot;xxx.yml&quot;: Internal error occurred: jsonpatch add operation does not apply: doc is missing path: &quot;/spec/template/spec/dnsConfig/options&quot;。折腾半天才发现在代码里使用 jsonPatch 的话不能直接绕过结构体实例去 patch。 ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/22</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/07/23/fs-error-fix-k8s-master/" >
             
                 <span>k8s master机器文件系统故障的一次恢复过程</span>
@@ -647,44 +676,10 @@ Linux一些目录规范和systemd
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/03/03/kubernetes-1-13-4/" >
-            
-                <span>二进制部署Kubernetes v1.13.12 HA可选</span>
-        </a>
-        <div class="abstract-content">
-            本次采用二进制文件方式部署,本文过程写成了更详细更多可选方案的ansible部署方案 https://github.com/zhangguanzhang/Kubernetes-ansible和之前的步骤差不多都是和kubeadm步骤一样,不过这次所有kubelet全部走bootstrap不会像之前master上的kubelet生成证书,另外证书换成openssl生成
-不建议使用secureCRT这个ssh软件复制本篇博客内容的命令,因为它的部分版本对包含多条命令的处理结果并不完美,可能很多命令不是预期结果
-本文命令里有些是输出,不要乱粘贴输入(虽然也没影响)
-本文命令全部是在k8s-m1...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "operator">operator</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/tags/k8s/page/2/">2</a><a class="extend next" rel="next" href="/tags/k8s/page/2/">NEXT &gt;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/tags/k8s/page/2/">2</a><a class="page-number" href="/tags/k8s/page/3/">3</a><a class="extend next" rel="next" href="/tags/k8s/page/2/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -2371,26 +2366,9 @@ Linux一些目录规范和systemd
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 100
+        Total : 101
         </div>
         <!-- search  -->
         
@@ -2403,6 +2381,11 @@ Linux一些目录规范和systemd
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2021/03/22/jsonpatch-doc-is-missing-path/" >Internal error occurred: jsonpatch add operation does not apply: doc is missing path: xxx</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3302,6 +3285,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="kubernetes/coredns"><span class="iconfont-archer">&#xe60a;</span>kubernetes/coredns</span>
     
         <span class="sidebar-category-name" data-categories="kubernetes/coredns/node-cache"><span class="iconfont-archer">&#xe60a;</span>kubernetes/coredns/node-cache</span>
+    
+        <span class="sidebar-category-name" data-categories="admission"><span class="iconfont-archer">&#xe60a;</span>admission</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

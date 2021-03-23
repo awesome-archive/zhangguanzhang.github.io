@@ -357,6 +357,44 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/09/18/kubernetes-1-11-x-bin/" >
+            
+                <span>二进制部署Kubernetes v1.11.x(1.12.x) HA可选</span>
+        </a>
+        <div class="abstract-content">
+            本次采用二进制文件方式部署
+不建议使用secureCRT这个ssh软件复制本篇博客内容的命令,因为它的部分版本对包含多条命令的处理结果并不完美,可能很多命令不是预期结果
+本文命令里有些是输出,不要乱粘贴输入(虽然也没影响)
+本文命令全部是在k8s-m1上执行
+本文很多步骤是选择其一,别啥都不看一路往下复制粘贴
+如果某些步骤理解不了可以上下内容一起看来理解
+本文后面的几个svc用了externalIPs,上生产的话必须用VIP或者LB代替
+本文的HA是vip,生产和云上可以用LB和SLB,不过阿里的SLB四层有问题,可以每个node上代理127.0.0.1的某个port分摊在所有apise...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/18</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "operator">operator</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/08/03/Kubernetes_install_1.11.1/" >
             
                 <span>Kubernetes v1.11.x HA全手动苦工安装教学</span>
@@ -671,43 +709,10 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/02/05/docker-image-can-t-rm/" >
-            
-                <span>docker无法删除掉镜像的解决方法</span>
-        </a>
-        <div class="abstract-content">
-            碰到了docker rmi无法删除掉image的问题版本如下
-12[root@guanvps ~]# docker --versionDocker version 17.12.1-ce, build 7390fc6
-
-问题如下,也没有任何容器在运行,重启发现依然无法删除掉
-12345678[root@guanvps ~]# docker imagesREPOSITORY          TAG                 IMAGE ID            CREATED             SIZEnginx               latest           ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/6/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><a class="page-number" href="/archives/page/10/">10</a><a class="extend next" rel="next" href="/archives/page/8/">NEXT &gt;</a>
+        <a class="extend prev" rel="prev" href="/archives/page/6/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/11/">11</a><a class="extend next" rel="next" href="/archives/page/8/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -2394,26 +2399,9 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 100
+        Total : 101
         </div>
         <!-- search  -->
         
@@ -2426,6 +2414,11 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2021/03/22/jsonpatch-doc-is-missing-path/" >Internal error occurred: jsonpatch add operation does not apply: doc is missing path: xxx</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3325,6 +3318,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="kubernetes/coredns"><span class="iconfont-archer">&#xe60a;</span>kubernetes/coredns</span>
     
         <span class="sidebar-category-name" data-categories="kubernetes/coredns/node-cache"><span class="iconfont-archer">&#xe60a;</span>kubernetes/coredns/node-cache</span>
+    
+        <span class="sidebar-category-name" data-categories="admission"><span class="iconfont-archer">&#xe60a;</span>admission</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
