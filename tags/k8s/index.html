@@ -357,17 +357,19 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/22/jsonpatch-doc-is-missing-path/" >
+        <a class="abstract-title" href = "/2021/03/23/iptables-docker-no-chain/" >
             
-                <span>Internal error occurred: jsonpatch add operation does not apply: doc is missing path: xxx</span>
+                <span>iptables --wait -t nat -A DOCKER...: iptables NO chain/target/match by that name</span>
         </a>
         <div class="abstract-content">
-            由来今天在折腾 admission webhook 注入一些属性的时候遇到了 Error from server (InternalError): error when creating &quot;xxx.yml&quot;: Internal error occurred: jsonpatch add operation does not apply: doc is missing path: &quot;/spec/template/spec/dnsConfig/options&quot;。折腾半天才发现在代码里使用 jsonPatch 的话不能直接绕过结构体实例去 patch。 ...
+            由来我们内部有套部署的工具， 我们部署的流程是先在部署机器（部署机器可能也是node1 ）上用脚本安装好 docker，然后进容器里去起我们部署平台，有个很久的 bug 就是，部署机器上端口映射起容器会有如下报错
+1iptables --wait -t nat -A DOCKER -p tcp -d 0&#x2F;8 --dport 8089 -j DNAT --to-destination 172.25.0.2:80 ! -i docker0: iptables NO chain&#x2F;target&#x2F;match by that name
+排查也很简单，缺少链，添加上即可:...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/22</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/23</span>
             </div>
             <!-- tags  -->
             
@@ -386,14 +388,12 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/22/iptables-docker-no-chain/" >
+        <a class="abstract-title" href = "/2021/03/22/jsonpatch-doc-is-missing-path/" >
             
-                <span>iptables --wait -t nat -A DOCKER...: iptables NO chain/target/match by that name</span>
+                <span>Internal error occurred: jsonpatch add operation does not apply: doc is missing path: xxx</span>
         </a>
         <div class="abstract-content">
-            由来我们内部有套部署的工具， 我们部署的流程是先在部署机器（部署机器可能也是node1 ）上用脚本安装好 docker，然后进容器里去起我们部署平台，有个很久的 bug 就是，部署机器上端口映射起容器会有如下报错
-1iptables --wait -t nat -A DOCKER -p tcp -d 0&#x2F;8 --dport 8089 -j DNAT --to-destination 172.25.0.2:80 ! -i docker0: iptables NO chain&#x2F;target&#x2F;match by that name
-排查也很简单，缺少链，添加上即可:...
+            由来今天在折腾 admission webhook 注入一些属性的时候遇到了 Error from server (InternalError): error when creating &quot;xxx.yml&quot;: Internal error occurred: jsonpatch add operation does not apply: doc is missing path: &quot;/spec/template/spec/dnsConfig/options&quot;。折腾半天才发现在代码里使用 jsonPatch 的话不能直接绕过结构体实例去 patch。 ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -2425,12 +2425,12 @@ Linux一些目录规范和systemd
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2021/03/22/jsonpatch-doc-is-missing-path/" >Internal error occurred: jsonpatch add operation does not apply: doc is missing path: xxx</a>
+            <span class="archive-post-date">03/23</span><a class="archive-post-title" href= "/2021/03/23/iptables-docker-no-chain/" >iptables --wait -t nat -A DOCKER...: iptables NO chain/target/match by that name</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2021/03/22/iptables-docker-no-chain/" >iptables --wait -t nat -A DOCKER...: iptables NO chain/target/match by that name</a>
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2021/03/22/jsonpatch-doc-is-missing-path/" >Internal error occurred: jsonpatch add operation does not apply: doc is missing path: xxx</a>
         </li>
     
     
