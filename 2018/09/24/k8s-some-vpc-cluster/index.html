@@ -288,7 +288,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">1.5k</span>阅读时长: <span class="post-count reading-time">6 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.6k</span>阅读时长: <span class="post-count reading-time">6 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -445,6 +445,8 @@ height:50vh;
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo -n foo | nc -4u -w1 &lt;dest_public_ip&gt; 8472</span><br></pre></td></tr></table></figure>
 <p>抓包则安装tcpdump抓</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -nn port 8472</span><br></pre></td></tr></table></figure>
+<p>或者 nc 测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># server</span><br><span class="line">nc -l -u 8472</span><br><span class="line"></span><br><span class="line"># client</span><br><span class="line">nc -u &lt;dest_public_ip&gt; 8472</span><br></pre></td></tr></table></figure>
 <p>最后找flannel的选项发现如下字段可以指定其他的vtep与自己通信的时候应该使用这个ip来通信</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@k8s-m1 ~]# docker run --rm quay.io&#x2F;coreos&#x2F;flannel:v0.10.0-amd64 --help |&amp; grep -A1 public</span><br><span class="line">  -public-ip string</span><br><span class="line">    	IP accessible by other nodes for inter-host communication</span><br></pre></td></tr></table></figure>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;但是flannel的pod是ds跑的,如果每台机器都要配置各自的public ip,可以通过改写initContainers的逻辑,通过类似<code>curl ip.sb</code>查询自己主机的公网出口ip来注入到一个变量里,然后工作容器的ars加上-public-ip即可<br>另一种是flannel官方yaml里有RBAC能够读取node的状态,<code>kubectl describe node nodeName</code>信息发现有<code>Annotations</code>如下</p>
@@ -456,7 +458,7 @@ height:50vh;
 <p>&nbsp;&nbsp;&nbsp;&nbsp;这里发现很小几率会出现做完上面的DNAT也不通和超时,我的某个node就出现这样情况,需要配合增加下面命令解决</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -t nat -I POSTROUTING -o eth0 -s &lt;目标节点内网ip&gt; -j MASQUERADE</span><br></pre></td></tr></table></figure>
 <p>然后测试pod的ip访问和svc的ip访问即可通信</p>
-<h1 id="一些flannel网络文章"><a href="#一些flannel网络文章" class="headerlink" title="一些flannel网络文章"></a>一些flannel网络文章</h1><p><a target="_blank" rel="noopener" href="http://yangjunsss.github.io/2018-07-21/%E5%AE%B9%E5%99%A8%E7%BD%91%E7%BB%9C-Flannel-%E4%B8%BB%E8%A6%81-Backend-%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%92%8C%E9%AA%8C%E8%AF%81/">http://yangjunsss.github.io/2018-07-21/%E5%AE%B9%E5%99%A8%E7%BD%91%E7%BB%9C-Flannel-%E4%B8%BB%E8%A6%81-Backend-%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%92%8C%E9%AA%8C%E8%AF%81/</a><br><a target="_blank" rel="noopener" href="https://blog.51cto.com/14146751/2334560?source=dra">https://blog.51cto.com/14146751/2334560?source=dra</a><br><a target="_blank" rel="noopener" href="https://ieevee.com/tech/2017/08/12/k8s-flannel-src.html">https://ieevee.com/tech/2017/08/12/k8s-flannel-src.html</a></p>
+<h1 id="一些flannel网络文章"><a href="#一些flannel网络文章" class="headerlink" title="一些flannel网络文章"></a>一些flannel网络文章</h1><p><a target="_blank" rel="noopener" href="http://yangjunsss.github.io/2018-07-21/%E5%AE%B9%E5%99%A8%E7%BD%91%E7%BB%9C-Flannel-%E4%B8%BB%E8%A6%81-Backend-%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%92%8C%E9%AA%8C%E8%AF%81/">http://yangjunsss.github.io/2018-07-21/%E5%AE%B9%E5%99%A8%E7%BD%91%E7%BB%9C-Flannel-%E4%B8%BB%E8%A6%81-Backend-%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%92%8C%E9%AA%8C%E8%AF%81/</a><br><a target="_blank" rel="noopener" href="https://blog.51cto.com/14146751/2334560?source=dra">https://blog.51cto.com/14146751/2334560?source=dra</a><br><a target="_blank" rel="noopener" href="https://ieevee.com/tech/2017/08/12/k8s-flannel-src.html">https://ieevee.com/tech/2017/08/12/k8s-flannel-src.html</a><br><a target="_blank" rel="noopener" href="https://programmer.ink/think/5da939768e5cb.html">https://programmer.ink/think/5da939768e5cb.html</a></p>
 
     </article>
     <!-- license  -->
