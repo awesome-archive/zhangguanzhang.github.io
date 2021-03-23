@@ -357,6 +357,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/03/18/keepalived-Heartbeat-use-mg-net/" >
+            
+                <span>使用管理网当作业务网keepalived VIP的心跳线</span>
+        </a>
+        <div class="abstract-content">
+            客户的业务情况如下，我们连的 vpn2 上去部署的业务，一开始三台机器，上面只有 NC1 这一个网卡，客户给了个 vip 让我们配置上，说 vip 两个 vpn 都能访问到。后面实际配置完发现不通，沟通了一番了解清楚网络后，使用了如下方案。
+NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 172.18.27.99/25 via 172.18.27.1，两个网卡不同的 vlan，172.18.27.0/25 的网络里没有多少 IP 了，所以拿来做 VIP 的话得用 NC1 做心跳线。
+123456789101112131415...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/18</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "vip">vip</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/02/05/docker-image-can-t-rm/" >
             
                 <span>docker无法删除掉镜像的解决方法</span>
@@ -614,42 +645,6 @@ ffmpeg1234567https://rpmfusion.org/mirror list:https://mirrors.rpmfusion.org/mm/
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/06/03</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/05/25/shell%E8%84%9A%E6%9C%AC%E7%9A%84%E9%80%89%E9%A1%B9%E5%A4%84%E7%90%86/" >
-            
-                <span>shell脚本的选项和参数处理</span>
-        </a>
-        <div class="abstract-content">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在写shell脚本时经常会用到命令行选项、参数处理方式，如:
-1.&#x2F;test.sh -f 5 -rF --host-file&#x3D;&#x2F;etc&#x2F;hosts
-其中-f和-rF都是短选项,–host-file是长选项&nbsp;&nbsp;&nbsp;短选项又分为可选参数和必选参数,不需要参数的短选项可以合着写&nbsp;&nbsp;&nbsp;例如cat和tail的-n有默认值10在shell中，可以用以下三种方式来处理命令行参数，每种方式都有自己的应用场景
-
-手工处理方式
-getopt...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/05/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "shell">shell</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "bash">bash</a>
-    
-</div>
             
         </div>
     </article>
@@ -2344,9 +2339,50 @@ getopt...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 101
+        Total : 102
         </div>
         <!-- search  -->
         
@@ -2363,6 +2399,11 @@ getopt...
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2021/03/22/jsonpatch-doc-is-missing-path/" >Internal error occurred: jsonpatch add operation does not apply: doc is missing path: xxx</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2021/03/22/iptables-docker-no-chain/" >iptables --wait -t nat -A DOCKER...: iptables NO chain/target/match by that name</a>
         </li>
     
     
@@ -3265,6 +3306,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="kubernetes/coredns/node-cache"><span class="iconfont-archer">&#xe60a;</span>kubernetes/coredns/node-cache</span>
     
         <span class="sidebar-category-name" data-categories="admission"><span class="iconfont-archer">&#xe60a;</span>admission</span>
+    
+        <span class="sidebar-category-name" data-categories="iptables"><span class="iconfont-archer">&#xe60a;</span>iptables</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

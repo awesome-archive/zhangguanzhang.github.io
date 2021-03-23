@@ -357,6 +357,40 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/06/26/uefi-pxe/" >
+            
+                <span>uefi模式下docker+交换机部署pxe批量安装</span>
+        </a>
+        <div class="abstract-content">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;华三服务器的ipmi的web提供了nfs挂载iso去安装，也是我之前使用的，发现研发给的镜像在4g以上(镜像基于centos7.3改的，我之前测试都是用的minimal镜像890M左右)。安装的时候报错，然后当面测试得出结论nfs的网速原因，其次也是我们这边办公网是百兆。。。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;办公网被it接管了，交换机密码不给，自己找了台5130交换机，下面接服务器和我自己电脑搭建测了下定制iso的pxe流程
+这是组...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/26</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "initrd">initrd</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "grub">grub</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "tftp">tftp</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/06/23/autoInstallServer/" >
             
                 <span>拟定excel表格服务器自动按照表格配置信息和安装的实现过程</span>
@@ -638,36 +672,6 @@ OS CentOS 7.5.1804
         <a class="post-tag" href="javascript:void(0);" data-tags = "confluence">confluence</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/02/12/dashboard/" >
-            
-                <span>通用的dashboard部署和tls，SSL相关部署</span>
-        </a>
-        <div class="abstract-content">
-            详细的讲解下部署dashboard，比市面上更详细和更多场景的选择，本文dashboard的暴露不会用nodeport(不喜欢使用它)和apiserver的web proxy代理也就是/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/这种
-讲下四种场景方式：
-
-
-纯dashboard http和https不惨合外部证书
-openssl 证书给dashboard当https
-个人向域名使用https小绿锁
-ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/12</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -2362,9 +2366,50 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 101
+        Total : 102
         </div>
         <!-- search  -->
         
@@ -2381,6 +2426,11 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2021/03/22/jsonpatch-doc-is-missing-path/" >Internal error occurred: jsonpatch add operation does not apply: doc is missing path: xxx</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2021/03/22/iptables-docker-no-chain/" >iptables --wait -t nat -A DOCKER...: iptables NO chain/target/match by that name</a>
         </li>
     
     
@@ -3283,6 +3333,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="kubernetes/coredns/node-cache"><span class="iconfont-archer">&#xe60a;</span>kubernetes/coredns/node-cache</span>
     
         <span class="sidebar-category-name" data-categories="admission"><span class="iconfont-archer">&#xe60a;</span>admission</span>
+    
+        <span class="sidebar-category-name" data-categories="iptables"><span class="iconfont-archer">&#xe60a;</span>iptables</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
