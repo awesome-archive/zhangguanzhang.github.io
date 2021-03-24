@@ -550,13 +550,11 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
         </a>
         <div class="abstract-content">
             今天遇到了 kylin 系统上无法关闭 swap 的情况。记录下和方便别人搜到这个知识点。
-环境信息1234$ at /etc/issueKylin 4.0.2 \n \l$ uname -aLinux H-192-168-63-132 4.15.0- 58-generic #64kord1k1'SMP Thu Aug 1S15:51:97 csT 2919 aarch64 ......
-
+环境信息1234$ at /etc/issueKylin 4.0.2 \n \l$ uname -aLinux H-192-168-63-132 4.15.0- 58-generic #64kord1k1&#x27;SMP Thu Aug 1S15:51:97 csT 2919 aarch64 ......
 尝试的步骤fstab 里没有 swap 的挂载，
 1swapoff -a &amp;&amp; sysctl -w vm.swappiness=0
-
 重启后，内核参数是关闭的，但是实际没有关闭
-123...
+...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
