@@ -16,4 +16,7 @@
 
 # miui
 0.0.0.0 data.mistat.xiaomi.com
+0.0.0.0 data.mistat.xiaomi.com.lan
 0.0.0.0 api.ad.xiaomi.com
+0.0.0.0 api.ad.xiaomi.com.lan
+0.0.0.0 o2o.api.xiaomi.com
