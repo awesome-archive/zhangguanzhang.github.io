@@ -20,12 +20,12 @@
     <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="记录生活点滴">
-    <meta name="description" content="看配置文件和日志啥的都是扯淡，现在Linux发行版种类太多了。ip 和 ifconfig 命令遇到过某些 os 下不显示 dhcp 和 dynamic 字样。租约文件路径有的 os 是 &#x2F;var&#x2F;lib&#x2F;dhcp&#x2F;dhclient.xxx.leases， 有的 os 是 &#x2F;var&#x2F;lib&#x2F;dhclient&#x2F;dhclient.xxx.leases。直接看 pid 文件就行了： &#x2F;var&#x2F;run&#x2F;dh">
+    <meta name="description" content="看配置文件和日志啥的都是扯淡，现在Linux发行版种类太多了。ip 和 ifconfig 命令遇到过某些 os 下不显示 dhcp 和 dynamic 字样。租约文件路径有的 os 是 &#x2F;var&#x2F;lib&#x2F;dhcp&#x2F;dhclient.xxx.leases， 有的 os 是 &#x2F;var&#x2F;lib&#x2F;dhclient&#x2F;dhclient.xxx.leases。而且 NetworkManager 不是每个系统都有">
 <meta property="og:type" content="article">
 <meta property="og:title" content="判断是否是 dhcp 获取ip的一个手段">
 <meta property="og:url" content="http://zhangguanzhang.github.io/2017/03/23/check-dhcp-or-static/">
 <meta property="og:site_name" content="Zhangguanzhang">
-<meta property="og:description" content="看配置文件和日志啥的都是扯淡，现在Linux发行版种类太多了。ip 和 ifconfig 命令遇到过某些 os 下不显示 dhcp 和 dynamic 字样。租约文件路径有的 os 是 &#x2F;var&#x2F;lib&#x2F;dhcp&#x2F;dhclient.xxx.leases， 有的 os 是 &#x2F;var&#x2F;lib&#x2F;dhclient&#x2F;dhclient.xxx.leases。直接看 pid 文件就行了： &#x2F;var&#x2F;run&#x2F;dh">
+<meta property="og:description" content="看配置文件和日志啥的都是扯淡，现在Linux发行版种类太多了。ip 和 ifconfig 命令遇到过某些 os 下不显示 dhcp 和 dynamic 字样。租约文件路径有的 os 是 &#x2F;var&#x2F;lib&#x2F;dhcp&#x2F;dhclient.xxx.leases， 有的 os 是 &#x2F;var&#x2F;lib&#x2F;dhclient&#x2F;dhclient.xxx.leases。而且 NetworkManager 不是每个系统都有">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2017-03-23T18:28:30.000Z">
 <meta property="article:modified_time" content="2017-03-23T18:28:30.000Z">
@@ -279,7 +279,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">85</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">102</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -408,7 +408,7 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>看配置文件和日志啥的都是扯淡，现在Linux发行版种类太多了。ip 和 ifconfig 命令遇到过某些 os 下不显示 dhcp 和 dynamic 字样。租约文件路径有的 os 是 <code>/var/lib/dhcp/dhclient.xxx.leases</code>， 有的 os 是 <code>/var/lib/dhclient/dhclient.xxx.leases</code>。<br>直接看 pid 文件就行了： <code>/var/run/dhclient-xxx.pid</code></p>
+        <p>看配置文件和日志啥的都是扯淡，现在Linux发行版种类太多了。ip 和 ifconfig 命令遇到过某些 os 下不显示 dhcp 和 dynamic 字样。租约文件路径有的 os 是 <code>/var/lib/dhcp/dhclient.xxx.leases</code>， 有的 os 是 <code>/var/lib/dhclient/dhclient.xxx.leases</code>。而且 NetworkManager 不是每个系统都有。找到了个姿势，直接看 pid 文件就行了： <code>/var/run/dhclient-xxx.pid</code></p>
 
     </article>
     <!-- license  -->

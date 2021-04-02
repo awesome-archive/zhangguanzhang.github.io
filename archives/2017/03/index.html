@@ -362,7 +362,7 @@
                 <span>判断是否是 dhcp 获取ip的一个手段</span>
         </a>
         <div class="abstract-content">
-            看配置文件和日志啥的都是扯淡，现在Linux发行版种类太多了。ip 和 ifconfig 命令遇到过某些 os 下不显示 dhcp 和 dynamic 字样。租约文件路径有的 os 是 /var/lib/dhcp/dhclient.xxx.leases， 有的 os 是 /var/lib/dhclient/dhclient.xxx.leases。直接看 pid 文件就行了： /var/run/dhclient-xxx.pid
+            看配置文件和日志啥的都是扯淡，现在Linux发行版种类太多了。ip 和 ifconfig 命令遇到过某些 os 下不显示 dhcp 和 dynamic 字样。租约文件路径有的 os 是 /var/lib/dhcp/dhclient.xxx.leases， 有的 os 是 /var/lib/dhclient/dhclient.xxx.leases。而且 NetworkManager 不是每个系统都有。找到了个姿势，直接看 pid 文件就行了： /var/run/dhclient-xxx.pid
 
         </div>
         <div class="abstract-post-meta">
