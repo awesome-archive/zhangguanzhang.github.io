@@ -418,7 +418,7 @@ height:50vh;
         <h2 id="前提详情"><a href="#前提详情" class="headerlink" title="前提详情"></a>前提详情</h2><p>在 3.x 的内核上，cgroup 的 kmem account 特性有内存泄露问题。kubelet 和 runc 都需要修复。升级 Linux 内核至 <code>kernel-3.10.0-1075.el7</code> 及以上就可以修复这个问题，详细可见 <a target="_blank" rel="noopener" href="https://bugzilla.redhat.com/show_bug.cgi?id=1507149#c101">slab leak causing a crash when using kmem control group</a>，其在发行版中 CentOS 7.8 已经发布。<br>这里我们编译 kubelet 关闭 kmem。</p>
 <h2 id="准备条件"><a href="#准备条件" class="headerlink" title="准备条件"></a>准备条件</h2><p>这里我们使用的编译参数会使用容器编译的，不需要宿主机上安装 golang，安装个 docker 就行了。</p>
 <ol>
-<li><p><code>1c 4g</code> 的机器，这里我是使用 <code>7.8.2003 (Core)</code><br>机器配置 2g 内存的时候编译提示 oom，升级到 4g 内存才编译成功的。</p>
+<li><p><code>1c 4g</code> 的机器，这里我是使用 <code> CentOS 7.8.2003 (Core)</code><br>机器配置 2g 内存的时候编译提示 oom，升级到 4g 内存才编译成功的。</p>
 </li>
 <li><p>最好安装最新版本的docker</p>
 </li>
