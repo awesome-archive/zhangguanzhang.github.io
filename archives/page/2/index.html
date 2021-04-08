@@ -357,6 +357,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/10/20/kylin-v10-k8s-overlay-error/" >
+            
+                <span>银河麒麟arm64系统上k8s集群跨节点不通的一次排查</span>
+        </a>
+        <div class="abstract-content">
+            由来同事在客户那边部署的集群问题频繁，先给他解决了个问题后又反映说业务 POD 由于 DNS 无法解析而启动失败，排查完发现这样的情况从没遇到过，挺有意思的，这里记录下。实际排查过程也有往错误的方向浪费了一些时间和尝试，就不写进来了，以正确的角度写下排查过程。
+环境信息集群信息:
+12345678910111213141516171819202122232425$ kubectl version -o json&#123;  &quot;clientVersion&quot;: &#123;    &quot;major&quot;: &quot;1&quot;,    &quot;mi...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/20</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Kylin">Kylin</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/09/18/ocp-4.5-install/" >
             
                 <span>openshift 4.5.9 离线安装</span>
@@ -645,35 +676,6 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
         <a class="post-tag" href="javascript:void(0);" data-tags = "N1">N1</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "openwrt">openwrt</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/04/27/go-version-ifno/" >
-            
-                <span>git工作流下golang项目的version信息该如何处理</span>
-        </a>
-        <div class="abstract-content">
-            <p>来探讨下git工作流下golang项目的version信息该如何处理比较符合标准</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "go">go</a>
     
 </div>
             
@@ -2398,9 +2400,50 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 103
+        Total : 104
         </div>
         <!-- search  -->
         
@@ -2413,6 +2456,11 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/08</span><a class="archive-post-title" href= "/2021/04/08/kubelet-runc-disable-kmem/" >kubelet 和 runc 编译 kmem</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3331,6 +3379,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="admission"><span class="iconfont-archer">&#xe60a;</span>admission</span>
     
         <span class="sidebar-category-name" data-categories="iptables"><span class="iconfont-archer">&#xe60a;</span>iptables</span>
+    
+        <span class="sidebar-category-name" data-categories="k8s/kmem"><span class="iconfont-archer">&#xe60a;</span>k8s/kmem</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

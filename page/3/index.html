@@ -370,6 +370,36 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/10/24/deployment-consul-in-k8s/" >
+            
+                <span>consul仅当服务发现在k8s无状态部署使用</span>
+        </a>
+        <div class="abstract-content">
+            由来&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;consul server在机器上的部署已经写完了，但是dba还是希望部署在k8s上，昨天搜了下相关文章扣出来部分步骤自己验证实现了。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;先说下需求，三台物理机单独跑mysql主从mha，利用consul client的服务注册+ttl向consul server注册成域名，然后配置k8s内部的coredns把域名*.service.consul转发到consul server。架构为下图
+123456789101112131415161718P...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/24</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "consul">consul</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/10/21/k8s-v1.14-v1.15-fix-issue/" >
             
                 <span>手动修复v1.14-v1.15版本k8s的issue:76956</span>
@@ -819,39 +849,6 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "cobra">cobra</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/04/28/k8s-java-start-time-not-same/" >
-            
-                <span>闲谈线上俩k8s环境同等limits下pod启动时间不一样解决过程</span>
-        </a>
-        <div class="abstract-content">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;线上用的k8s版本是1.6.7非常老，而且HA有问题，上个月研发想把里面的一些服务迁出来到一个新集群里，新集群的搭建是我负责的。上周开始陆陆续续的迁移过来了，但是同等limit下部分pod在测试环境上(测试环境和老环境部署是一样的,下文的老环境和测试环境可以理解为一样)启动非常快，在我搭建的新k8s环境上启动非常慢，研发他们应用都是java+springboot，这里不谈jvm无法识别cgroup，已经加选项识别到了还有那个随机熵的选项肯定也是加了的。&nbsp;&nbsp;&nbsp;&nb...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "springboot">springboot</a>
     
 </div>
             
@@ -2731,9 +2728,50 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 103
+        Total : 104
         </div>
         <!-- search  -->
         
@@ -2746,6 +2784,11 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/08</span><a class="archive-post-title" href= "/2021/04/08/kubelet-runc-disable-kmem/" >kubelet 和 runc 编译 kmem</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3664,6 +3707,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="admission"><span class="iconfont-archer">&#xe60a;</span>admission</span>
     
         <span class="sidebar-category-name" data-categories="iptables"><span class="iconfont-archer">&#xe60a;</span>iptables</span>
+    
+        <span class="sidebar-category-name" data-categories="k8s/kmem"><span class="iconfont-archer">&#xe60a;</span>k8s/kmem</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

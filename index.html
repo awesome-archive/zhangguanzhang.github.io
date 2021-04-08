@@ -370,6 +370,38 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/04/08/kubelet-runc-disable-kmem/" >
+            
+                <span>kubelet 和 runc 编译 kmem</span>
+        </a>
+        <div class="abstract-content">
+            前提详情在 3.x 的内核上，cgroup 的 kmem account 特性有内存泄露问题。kubelet 和 runc 都需要修复。升级 Linux 内核至 kernel-3.10.0-1075.el7 及以上就可以修复这个问题，详细可见 slab leak causing a crash when using kmem control group，其在发行版中 CentOS 7.8 已经发布。这里我们编译 kubelet 关闭 kmem。
+准备条件这里我们使用的编译参数会使用容器编译的，不需要宿主机上安装 golang，安装个 docker 就行了。
+
+1c 4g 的机器，这里我是...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/08</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/03/23/iptables-docker-no-chain/" >
             
                 <span>iptables --wait -t nat -A DOCKER...: iptables NO chain/target/match by that name</span>
@@ -787,51 +819,6 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "etcd">etcd</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/06/23/host-gw-in-aliyun/" >
-            
-                <span>阿里云上使用flannel host-gw跨节点pod不通的解决</span>
-        </a>
-        <div class="abstract-content">
-            挺多人问的，写下解决办法
-前言首先主机得在同一个专有vpc下，跨vpc或者经典vpc就扯淡了。还有flannel别把网络信息存储在etcd里，目前flannel只支持v2的etcd api。但是现在k8s都是使用v3 etcd存储了。如果v2和v3共存会导致无法恢复etcd的备份
-所以网上那些etcdctl set flannel的cidr的文章别看了，都没做过备份恢复实验就到处发k8s搭建教程。flannel v3的话看我过往文章
-环境信息先来说下host-gw的包走向，假设两台机器
-
-
-
-IP
-pod cidr
-
-
-
-10.0.6.166
-10.200.1.0/24
-
-
-10.0.6...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "host-gw">host-gw</a>
     
 </div>
             
@@ -2711,9 +2698,50 @@ pod cidr
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 103
+        Total : 104
         </div>
         <!-- search  -->
         
@@ -2726,6 +2754,11 @@ pod cidr
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/08</span><a class="archive-post-title" href= "/2021/04/08/kubelet-runc-disable-kmem/" >kubelet 和 runc 编译 kmem</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3644,6 +3677,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="admission"><span class="iconfont-archer">&#xe60a;</span>admission</span>
     
         <span class="sidebar-category-name" data-categories="iptables"><span class="iconfont-archer">&#xe60a;</span>iptables</span>
+    
+        <span class="sidebar-category-name" data-categories="k8s/kmem"><span class="iconfont-archer">&#xe60a;</span>k8s/kmem</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

@@ -357,6 +357,38 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/04/08/kubelet-runc-disable-kmem/" >
+            
+                <span>kubelet 和 runc 编译 kmem</span>
+        </a>
+        <div class="abstract-content">
+            前提详情在 3.x 的内核上，cgroup 的 kmem account 特性有内存泄露问题。kubelet 和 runc 都需要修复。升级 Linux 内核至 kernel-3.10.0-1075.el7 及以上就可以修复这个问题，详细可见 slab leak causing a crash when using kmem control group，其在发行版中 CentOS 7.8 已经发布。这里我们编译 kubelet 关闭 kmem。
+准备条件这里我们使用的编译参数会使用容器编译的，不需要宿主机上安装 golang，安装个 docker 就行了。
+
+1c 4g 的机器，这里我是...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/08</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/03/23/iptables-docker-no-chain/" >
             
                 <span>iptables --wait -t nat -A DOCKER...: iptables NO chain/target/match by that name</span>
@@ -638,38 +670,6 @@ Linux一些目录规范和systemd
         <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "springboot">springboot</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/03/22/k8s-controller-error/" >
-            
-                <span>一次kube-controller-manager的bug导致的线上无法调度处理过程</span>
-        </a>
-        <div class="abstract-content">
-            线上的k8s环境普遍版本很低，今天同事心血来潮去一个新节点上去看了下发现根分区满了,清理了后发有一个pod没有创建出来。清理后把因为文件系统满了而down掉的k8s相关进程起来后发现kubelet的log一直报错cannot remove /var/lib/kubelet/xxxxconfig/key resource busy now 啥的。查看了下describe对应rc还没有任何Event
-1234567891011121314151617181920212223242526272829303132333435363738$ kubectl describe rc rabbit3r...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kube-controller-manager">kube-controller-manager</a>
     
 </div>
             
@@ -2394,9 +2394,50 @@ Linux一些目录规范和systemd
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 103
+        Total : 104
         </div>
         <!-- search  -->
         
@@ -2409,6 +2450,11 @@ Linux一些目录规范和systemd
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/08</span><a class="archive-post-title" href= "/2021/04/08/kubelet-runc-disable-kmem/" >kubelet 和 runc 编译 kmem</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3327,6 +3373,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="admission"><span class="iconfont-archer">&#xe60a;</span>admission</span>
     
         <span class="sidebar-category-name" data-categories="iptables"><span class="iconfont-archer">&#xe60a;</span>iptables</span>
+    
+        <span class="sidebar-category-name" data-categories="k8s/kmem"><span class="iconfont-archer">&#xe60a;</span>k8s/kmem</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
