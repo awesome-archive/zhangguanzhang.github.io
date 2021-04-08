@@ -359,7 +359,7 @@
     <article class="index-post">
         <a class="abstract-title" href = "/2021/04/08/kubelet-runc-disable-kmem/" >
             
-                <span>kubelet 和 runc 编译 kmem</span>
+                <span>kubelet 和 runc 编译关闭 kmem</span>
         </a>
         <div class="abstract-content">
             前提详情在 3.x 的内核上，cgroup 的 kmem account 特性有内存泄露问题。kubelet 和 runc 都需要修复。升级 Linux 内核至 kernel-3.10.0-1075.el7 及以上就可以修复这个问题，详细可见 slab leak causing a crash when using kmem control group，其在发行版中 CentOS 7.8 已经发布。这里我们编译 kubelet 关闭 kmem。
@@ -2270,7 +2270,7 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/08</span><a class="archive-post-title" href= "/2021/04/08/kubelet-runc-disable-kmem/" >kubelet 和 runc 编译 kmem</a>
+            <span class="archive-post-date">04/08</span><a class="archive-post-title" href= "/2021/04/08/kubelet-runc-disable-kmem/" >kubelet 和 runc 编译关闭 kmem</a>
         </li>
     
     
