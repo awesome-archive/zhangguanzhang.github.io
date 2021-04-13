@@ -375,8 +375,13 @@ height:50vh;
                 <span>kubelet 和 runc 编译关闭 kmem</span>
         </a>
         <div class="abstract-content">
-            前提详情在 3.x 的内核上，cgroup 的 kmem account 特性有内存泄露问题。kubelet 和 runc 都需要修复。升级 Linux 内核至 kernel-3.10.0-1075.el7 及以上就可以修复这个问题CentOS7.7的3.10.0-1062测试还是存在bug），详细可见 slab leak causing a crash when using kmem control group，其在发行版中 CentOS 7.8 已经发布。这里我们编译 kubelet 关闭 kmem。
-准备条件这里我们使用的编译参数会使用容器编译的，不需要宿主机上安装 golang，...
+            前提详情在 3.x 的内核上，cgroup 的 kmem account 特性有内存泄露问题。kubelet 和 runc 都需要修复。
+网上有言论说升级 Linux 内核至 kernel-3.10.0-1075.el7 及以上就可以修复这个问题，详细可见 slab leak causing a crash when using kmem control group。但是我测试了下面的都不行：
+
+CentOS7.4
+CentOS7.6
+CentOS7.7的 3.10.0-1062.el7.x86_64 
+CentOS Linux release 7.8.2003 (Core) - 3.1...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
