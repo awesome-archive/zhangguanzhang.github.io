@@ -357,6 +357,39 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/10/12/prometheus-operator/" >
+            
+                <span class="stick-top iconfont-archer">&#xe63d;</span>
+                
+                <span>全手动部署prometheus-operator监控K8S集群以及一些坑</span>
+        </a>
+        <div class="abstract-content">
+            写这篇文章原因&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所有的监控的agent底层最终都是查询的/proc和/sys里的信息推送(如果错了轻喷),因为收集宿主机信息方面也想用pod跑,会面临到问题&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;常见的zabbix_agent默认读取fs的/proc和/sys,容器跑agent会导致读取的不是宿主机的/proc和/sys&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;而prometheus的n...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/12</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "operator">operator</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/10/06/IngressController/" >
             
                 <span>IngressController使用和它的高可用落地</span>
@@ -665,44 +698,6 @@ An example of a pod that uses pod affinity:
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "PodAffinity">PodAffinity</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/05/05/Kubernetes_install/" >
-            
-                <span>[转载+修正]Kubernetes v1.10.x HA全手动苦工安装教学</span>
-        </a>
-        <div class="abstract-content">
-            转载自https://kairen.github.io/2018/04/05/kubernetes/deploy/manual-v1.10/作者文章的安装步骤文字是复制作者的1.8的安装步骤然后改的,安装过程变了部分,但是文字没有改正过来。
-此过程我写了ansible安装部署方案,地址(一些文件下载不了的话可以去下面的github里找对应的文件)
-
-多master高可用版
-单master版
-
-本文内容所有url都没改过，以下的添加的内容是我的建议和安装的经验
-本文里如果有些范围不知道在哪台主机上执行请看前后命令都可以判断出,不清楚的请下面评论我会更新
-以下我转载过来并修改+上我的提醒
-管...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
 </div>
             
@@ -2467,10 +2462,9 @@ An example of a pod that uses pod affinity:
     
     
     
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 104
+        Total : 105
         </div>
         <!-- search  -->
         
@@ -2483,6 +2477,11 @@ An example of a pod that uses pod affinity:
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span><a class="archive-post-title" href= "/2021/04/30/kubernetes-sec-agent-node-network-error/" >一次单节点单个pod网络问题排查过程</a>
+        </li>
     
     
         <li class="archive-post-item">

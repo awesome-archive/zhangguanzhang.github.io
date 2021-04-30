@@ -370,6 +370,39 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/07/23/fs-error-fix-k8s-master/" >
+            
+                <span>k8s master机器文件系统故障的一次恢复过程</span>
+        </a>
+        <div class="abstract-content">
+            由来研发反馈他们那边一套集群有台master文件系统损坏无法开机，他们是三台openstack上的虚机，是虚拟化宿主机故障导致的虚机文件系统损坏。三台机器是master+node，指导他修复后开机，修复过程和我之前文章opensuse的一次救援步骤一样
+起来后我上去看，因为做了 HA 的，所以只有这个node有问题，集群没影响
+12345[root@k8s-m1 ~]# kubectl get node -o wideNAME             STATUS     ROLES    AGE   VERSION   INTERNAL-IP      EXTERNAL-IP   OS...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "etcd">etcd</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/06/23/host-gw-in-aliyun/" >
             
                 <span>阿里云上使用flannel host-gw跨节点pod不通的解决</span>
@@ -820,45 +853,6 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
         <a class="post-tag" href="javascript:void(0);" data-tags = "grub">grub</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "boot">boot</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/24/kubeadm-base-use/" >
-            
-                <span>[长期更新]--应大多数人要求写下kubeadm的基础使用</span>
-        </a>
-        <div class="abstract-content">
-            市面上很多kubeadm的文章都是错误示范或者不够详细，大多数都没写系统设置之类的就直接kubeadm init导致很多跟着做的人会报错
-我期望看到本文的读者最少具备以下知识:
-
-Linux一些目录规范和systemd
-学过一点docker
-懂dns和/etc/hosts、curl互相结合来测试一些web的接口响应状态
-不要求github有自己项目，至少会浏览github
-
-本教学将以下列节点数与规格来进行部署Kubernetes集群,系统CentOS 7.6+，有条件7.8，不要使用centos7.4以及一下，容器技术依赖于内核技术，低版本系统部署和运行后问题会非常多。有读者用debi...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kubeadm">kubeadm</a>
     
 </div>
             
@@ -2778,10 +2772,9 @@ Linux一些目录规范和systemd
     
     
     
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 104
+        Total : 105
         </div>
         <!-- search  -->
         
@@ -2794,6 +2787,11 @@ Linux一些目录规范和systemd
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span><a class="archive-post-title" href= "/2021/04/30/kubernetes-sec-agent-node-network-error/" >一次单节点单个pod网络问题排查过程</a>
+        </li>
     
     
         <li class="archive-post-item">

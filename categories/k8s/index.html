@@ -357,6 +357,38 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/04/30/kubernetes-sec-agent-node-network-error/" >
+            
+                <span>一次单节点单个pod网络问题排查过程</span>
+        </a>
+        <div class="abstract-content">
+            about现场反馈客户环境上业务不正常，根据调用链去看某个业务A日志，发现无法请求另一个业务B，把业务 A 的探针取消了，加上
+12tty: truecommand: [&quot;bash&quot;]
+起来后进去 curl 了下 B 对应的 svcIP 接口是能通的。然后手动起业务进程，再开个窗口 exec 进去就不通了，只有一个节点，并且只有这一个 pod 有问题。后面排查到是用户的安全软件导致的。软件名是
+1234567$ ps aux | grep agentroot       6349  0.3  0.1 21046316 116820 ?     Sl   11:08  ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/04/08/kubelet-runc-disable-kmem/" >
             
                 <span>kubelet 和 runc 编译关闭 kmem</span>
@@ -2266,10 +2298,9 @@ CentOS Linux release 7.8.2003 (Core) - 3.1...
     
     
     
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 104
+        Total : 105
         </div>
         <!-- search  -->
         
@@ -2282,6 +2313,11 @@ CentOS Linux release 7.8.2003 (Core) - 3.1...
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span><a class="archive-post-title" href= "/2021/04/30/kubernetes-sec-agent-node-network-error/" >一次单节点单个pod网络问题排查过程</a>
+        </li>
     
     
         <li class="archive-post-item">

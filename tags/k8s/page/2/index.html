@@ -357,6 +357,39 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/04/28/k8s-java-start-time-not-same/" >
+            
+                <span>闲谈线上俩k8s环境同等limits下pod启动时间不一样解决过程</span>
+        </a>
+        <div class="abstract-content">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;线上用的k8s版本是1.6.7非常老，而且HA有问题，上个月研发想把里面的一些服务迁出来到一个新集群里，新集群的搭建是我负责的。上周开始陆陆续续的迁移过来了，但是同等limit下部分pod在测试环境上(测试环境和老环境部署是一样的,下文的老环境和测试环境可以理解为一样)启动非常快，在我搭建的新k8s环境上启动非常慢，研发他们应用都是java+springboot，这里不谈jvm无法识别cgroup，已经加选项识别到了还有那个随机熵的选项肯定也是加了的。&nbsp;&nbsp;&nbsp;&nb...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/28</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "springboot">springboot</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/03/22/k8s-controller-error/" >
             
                 <span>一次kube-controller-manager的bug导致的线上无法调度处理过程</span>
@@ -672,43 +705,6 @@ Clust...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/06/25/etcd-error/" >
-            
-                <span>记录一次线上k8s节点故障</span>
-        </a>
-        <div class="abstract-content">
-            
-
-邮件收到zabbix的告警,业务的网页登陆状态不是200,后面又自愈了
-
-
-说明服务挂掉过一次,登陆到机器上发现集群有台节点状态是nodelost状态上去看到相关服务都挂掉了然后排查到根分区占满了,排查到是k8s日志堆满了/var/log/
-12345678910111213141516[root@cloudos02 ~]# df -hFilesystem               Size  Used Avail Use% Mounted on/dev/mapper/centos-root  219G  216G     0 100% /devtmpfs             ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "etcd">etcd</a>
     
 </div>
             
@@ -2473,10 +2469,9 @@ Clust...
     
     
     
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 104
+        Total : 105
         </div>
         <!-- search  -->
         
@@ -2489,6 +2484,11 @@ Clust...
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span><a class="archive-post-title" href= "/2021/04/30/kubernetes-sec-agent-node-network-error/" >一次单节点单个pod网络问题排查过程</a>
+        </li>
     
     
         <li class="archive-post-item">

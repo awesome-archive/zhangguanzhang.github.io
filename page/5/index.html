@@ -370,6 +370,39 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/10/12/prometheus-operator/" >
+            
+                <span class="stick-top iconfont-archer">&#xe63d;</span>
+                
+                <span>全手动部署prometheus-operator监控K8S集群以及一些坑</span>
+        </a>
+        <div class="abstract-content">
+            写这篇文章原因&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所有的监控的agent底层最终都是查询的/proc和/sys里的信息推送(如果错了轻喷),因为收集宿主机信息方面也想用pod跑,会面临到问题&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;常见的zabbix_agent默认读取fs的/proc和/sys,容器跑agent会导致读取的不是宿主机的/proc和/sys&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;而prometheus的n...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/12</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "operator">operator</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/10/06/IngressController/" >
             
                 <span>IngressController使用和它的高可用落地</span>
@@ -850,35 +883,6 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "Dockerfile">Dockerfile</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/01/10/docker%E7%9A%84%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5/" >
-            
-                <span>docker的一些概念</span>
-        </a>
-        <div class="abstract-content">
-            <p>总结下容器的一些概念和虚拟机的区别以及<code>CMD</code>和<code>entrypoint</code></p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
     
 </div>
             
@@ -2798,10 +2802,9 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
     
     
     
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 104
+        Total : 105
         </div>
         <!-- search  -->
         
@@ -2814,6 +2817,11 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span><a class="archive-post-title" href= "/2021/04/30/kubernetes-sec-agent-node-network-error/" >一次单节点单个pod网络问题排查过程</a>
+        </li>
     
     
         <li class="archive-post-item">

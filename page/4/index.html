@@ -370,6 +370,37 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/06/02/cobra/" >
+            
+                <span>golang cobra的一些笔记</span>
+        </a>
+        <div class="abstract-content">
+            这几天稍微写了下cobra，网上搜到的博客分为两类，一类是把官方的readme翻译一下完事的，一类是写的都太简单了没有实际常见场景的。这里不废话了，先用官方demo讲解下
+Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代的CLI接口，类似于git或者go工具。同时，它也是一个应用，用来生成个人应用框架，从而开发以Cobra为基础的应用。热门的docker和k8s源码中都使用了CobraCobra 结构由三部分组成：命令( Command )、标志( Flag )、参数( Args )。
+1234567type Command struct &#123;    Use ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/02</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "cobra">cobra</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/04/28/k8s-java-start-time-not-same/" >
             
                 <span>闲谈线上俩k8s环境同等limits下pod启动时间不一样解决过程</span>
@@ -817,39 +848,6 @@ CA (Certificate ...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "kubeconfig">kubeconfig</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/12/prometheus-operator/" >
-            
-                <span class="stick-top iconfont-archer">&#xe63d;</span>
-                
-                <span>全手动部署prometheus-operator监控K8S集群以及一些坑</span>
-        </a>
-        <div class="abstract-content">
-            写这篇文章原因&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所有的监控的agent底层最终都是查询的/proc和/sys里的信息推送(如果错了轻喷),因为收集宿主机信息方面也想用pod跑,会面临到问题&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;常见的zabbix_agent默认读取fs的/proc和/sys,容器跑agent会导致读取的不是宿主机的/proc和/sys&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;而prometheus的n...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "operator">operator</a>
     
 </div>
             
@@ -2769,10 +2767,9 @@ CA (Certificate ...
     
     
     
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 104
+        Total : 105
         </div>
         <!-- search  -->
         
@@ -2785,6 +2782,11 @@ CA (Certificate ...
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span><a class="archive-post-title" href= "/2021/04/30/kubernetes-sec-agent-node-network-error/" >一次单节点单个pod网络问题排查过程</a>
+        </li>
     
     
         <li class="archive-post-item">
