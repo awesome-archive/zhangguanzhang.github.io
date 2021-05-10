@@ -364,8 +364,8 @@
         <div class="abstract-content">
             about现场反馈客户环境上业务不正常，根据调用链去看某个业务A日志，发现无法请求另一个业务B，把业务 A 的探针取消了，加上
 12tty: truecommand: [&quot;bash&quot;]
-起来后进去 curl 了下 B 对应的 svcIP 接口是能通的。然后手动起业务进程，再开个窗口 exec 进去 curl 发现就不通了，只有一个节点，并且只有这一个 pod 有问题。后面排查到是用户的安全软件导致的。软件名是
-1234567$ ps aux | grep agentroot       6349  0.3  0.1 21046316 116820 ?     Sl  ...
+起来后进去 curl 了下 B 对应的 svcIP 接口是能通的。然后手动起业务进程，再开个窗口 exec 进去 curl 发现就不通了，k8s node数量是只有一个，并且只有这一个 pod 有问题。后面排查到是用户的安全软件导致的。软件名是
+1234567$ ps aux | grep agentroot       6349  0.3  0.1 21046316 116820 ?...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
