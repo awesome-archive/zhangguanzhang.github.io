@@ -357,6 +357,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/03/15/flannel-bin/" >
+            
+                <span>不走etcd v2 api下二进制跑flannel的总结</span>
+        </a>
+        <div class="abstract-content">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这几天给线上搭建 k8s 集群,文件和 systemd 参数大多是从 kubeadm 的 staticPod 的 yml 里扣出来的，起初是除了 flanneld 全部是 systemd 管理二进制。起初因为脚本问题导致 kube-proxy 的 kubeocnfig少执行了use-context所以显示的是匿名用户无法list node信息，kube-proxy是在运行但是无法维持 svc 的网络，flanneld 因为是 pod 要 watch 节点是通过 kubernetes 这个 svc 走的连接导致不通，然...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/15</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "flannel">flannel</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/03/03/kubernetes-1-13-4/" >
             
                 <span>二进制部署Kubernetes v1.13.12 HA可选</span>
@@ -678,39 +709,6 @@ Job的Pod运行完可以看到状态为Completed,低版本需要在get pod的时
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/06/02/kubernetes-nodeSelector/" >
-            
-                <span>kubernetes的PodAffinity的不解</span>
-        </a>
-        <div class="abstract-content">
-            官方文档来看是下面的说法,摘自官方文档https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
-
-An example of a pod that uses pod affinity:
-
-1234567891011121314151617181920212223242526272829apiVersion: v1kind: Podmetadata:  name: with-pod-affinityspec:  affinity:    podAffinity:      requiredDuringSchedul...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "PodAffinity">PodAffinity</a>
     
 </div>
             
@@ -2475,9 +2473,50 @@ An example of a pod that uses pod affinity:
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 105
+        Total : 106
         </div>
         <!-- search  -->
         
@@ -2490,6 +2529,11 @@ An example of a pod that uses pod affinity:
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/26</span><a class="archive-post-title" href= "/2021/05/26/docker-panic-invalid-freelist-page/" >docker-ce 18.09.3 启动panic: panic: invalid freelist page: 56, page type is leaf的解决处理</a>
+        </li>
     
     
         <li class="archive-post-item">

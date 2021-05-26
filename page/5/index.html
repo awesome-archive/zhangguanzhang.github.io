@@ -370,6 +370,39 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/10/27/create-kubeconfig/" >
+            
+                <span>生成kubeconfig常规的两种方法</span>
+        </a>
+        <div class="abstract-content">
+            方式总得来讲有两种创建kubeconfig，证书的话市面上很多教程，要注意下面事项为以下:
+
+
+要注意CN(Common Name)与O(Organization)等内容是会影响Kubernetes元件认证的。具体可见https://kubernetes.io/docs/setup/best-practices/certificates/CN Common Name, apiserver 会从证书中提取该字段作为请求的用户名 (User Name)O Organization, apiserver 会从证书中提取该字段作为请求用户所属的组 (Group)
+CA (Certificate ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/27</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "kubeconfig">kubeconfig</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/10/12/prometheus-operator/" >
             
                 <span class="stick-top iconfont-archer">&#xe63d;</span>
@@ -858,41 +891,10 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/01/20/docker-rm%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9/" >
-            
-                <span>慎用docker的--rm选项!!!</span>
-        </a>
-        <div class="abstract-content">
-            Dockerfile里的VOLUME和docker run -v /path的时候挂载容器的挂载点效果是一致的会在宿主机/var/lib/docker/volumes目录生成随机目录发现--rm不单单是删除掉容器，还会删掉挂载点的数据
-首先不使用--rm下看看效果
-1234567891011[root@guan_tx ]#  docker run  -tid --name busybox -v &#x2F;guan busyboxbe59bd455fbde8a8d195220d96c6676ad8fa6f26e1ebac6533020c83dacbf907[root@guan_tx ]#...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Dockerfile">Dockerfile</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/page/4/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/">NEXT &gt;</a>
+        <a class="extend prev" rel="prev" href="/page/4/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -2802,9 +2804,50 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 105
+        Total : 106
         </div>
         <!-- search  -->
         
@@ -2817,6 +2860,11 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/26</span><a class="archive-post-title" href= "/2021/05/26/docker-panic-invalid-freelist-page/" >docker-ce 18.09.3 启动panic: panic: invalid freelist page: 56, page type is leaf的解决处理</a>
+        </li>
     
     
         <li class="archive-post-item">

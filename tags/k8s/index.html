@@ -357,6 +357,39 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/05/26/docker-panic-invalid-freelist-page/" >
+            
+                <span>docker-ce 18.09.3 启动panic: panic: invalid freelist page: 56, page type is leaf的解决处理</span>
+        </a>
+        <div class="abstract-content">
+            这个问题和之前的docker-18.06.3-ce启动panic: invalid page type: 0: 0的解决处理差不多，不过 db 文件不同。客户停止 docker 后起不来了，查看日志：
+1journalctl -xe -u docker
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879805月 26 18:42:17 xxxx...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/26</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/04/30/kubernetes-sec-agent-node-network-error/" >
             
                 <span>一次单节点单个pod网络问题排查过程</span>
@@ -640,38 +673,6 @@ Linux一些目录规范和systemd
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "golang">golang</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/07/08/nodeport-err/" >
-            
-                <span>为什么我不用nodePort之偶然中奖几率</span>
-        </a>
-        <div class="abstract-content">
-            嗯，1.6.7的老集群。早上反应数据库实例创建不出来。发现接口port的tcp不可达，查看kube-proxy的日志如下
-123456[root@HB1-xxxxx-S03 kubernetes]# tailf  kube-proxy.INFO E0708 09:44:03.437284  394350 proxier.go:1062] can&#39;t open &quot;nodePort for cloudify&#x2F;cloudae-cfy-nginx:port1&quot; (:16081&#x2F;tcp), skipping this nodePort: listen...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "nodeport">nodeport</a>
     
 </div>
             
@@ -2436,9 +2437,50 @@ Linux一些目录规范和systemd
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 105
+        Total : 106
         </div>
         <!-- search  -->
         
@@ -2451,6 +2493,11 @@ Linux一些目录规范和systemd
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/26</span><a class="archive-post-title" href= "/2021/05/26/docker-panic-invalid-freelist-page/" >docker-ce 18.09.3 启动panic: panic: invalid freelist page: 56, page type is leaf的解决处理</a>
+        </li>
     
     
         <li class="archive-post-item">

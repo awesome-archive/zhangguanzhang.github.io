@@ -357,6 +357,39 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/05/26/docker-panic-invalid-freelist-page/" >
+            
+                <span>docker-ce 18.09.3 启动panic: panic: invalid freelist page: 56, page type is leaf的解决处理</span>
+        </a>
+        <div class="abstract-content">
+            这个问题和之前的docker-18.06.3-ce启动panic: invalid page type: 0: 0的解决处理差不多，不过 db 文件不同。客户停止 docker 后起不来了，查看日志：
+1journalctl -xe -u docker
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879805月 26 18:42:17 xxxx...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/26</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/02/02/node-shutdown-dns-unavailable/" >
             
                 <span>集群节点关机导致dns在eviction pod之前几率不可用</span>
@@ -640,37 +673,6 @@ Linux一些目录规范和systemd
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "kube-controller-manager">kube-controller-manager</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/03/15/flannel-bin/" >
-            
-                <span>不走etcd v2 api下二进制跑flannel的总结</span>
-        </a>
-        <div class="abstract-content">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这几天给线上搭建 k8s 集群,文件和 systemd 参数大多是从 kubeadm 的 staticPod 的 yml 里扣出来的，起初是除了 flanneld 全部是 systemd 管理二进制。起初因为脚本问题导致 kube-proxy 的 kubeocnfig少执行了use-context所以显示的是匿名用户无法list node信息，kube-proxy是在运行但是无法维持 svc 的网络，flanneld 因为是 pod 要 watch 节点是通过 kubernetes 这个 svc 走的连接导致不通，然...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "flannel">flannel</a>
     
 </div>
             
@@ -2435,9 +2437,50 @@ Linux一些目录规范和systemd
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 105
+        Total : 106
         </div>
         <!-- search  -->
         
@@ -2450,6 +2493,11 @@ Linux一些目录规范和systemd
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/26</span><a class="archive-post-title" href= "/2021/05/26/docker-panic-invalid-freelist-page/" >docker-ce 18.09.3 启动panic: panic: invalid freelist page: 56, page type is leaf的解决处理</a>
+        </li>
     
     
         <li class="archive-post-item">

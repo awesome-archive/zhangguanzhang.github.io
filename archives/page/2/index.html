@@ -357,6 +357,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/11/06/kylin-arm-clone-vxlan-error/" >
+            
+                <span>银河麒麟arm64系统克隆机器上k8s vxlan跨节点不通的一次排查</span>
+        </a>
+        <div class="abstract-content">
+            由来和前一篇文章不一样，从来没遇到过这样的问题，这里记录下。实施在客户那边部署业务后，业务在浏览器上无法访问，我远程上去查看日志发现 pod 内部无法 DNS 无法解析，nginx 连不上 upsteam 报错而启动失败，实际上也是跨节点不通。实际排查过程也有往错误的方向浪费了一些时间和尝试，就不写进来了，以正确的角度写下排查过程。
+环境信息OS 是 arm64 的银河麒麟系统：
+123456789$ cat /etc/os-releaseNAME="Kylin Linux Advanced Server"VERSION="V10 (Tercel)"ID="kylin"VERSION_I...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/06</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Kylin">Kylin</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/10/30/uos20-nftables/" >
             
                 <span>统信USO 20 hostPort 无法访问</span>
@@ -642,39 +673,6 @@ pod cidr
         <a class="post-tag" href="javascript:void(0);" data-tags = "63s">63s</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "timeout">timeout</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/05/13/x86-router-flash/" >
-            
-                <span>proxmox x86软路由笔记</span>
-        </a>
-        <div class="abstract-content">
-            由来办公室有台式机，不想整天带着N1上下班，整下x86的软路由，exsi性能会比pve好，但是pve毕竟Linux，兼容性和对接很多场景方便，这里我使用pve开机器安装openwrt。
-pve已经安装好系统(如果你还没安装且打算安装，安装完后可以看看我这个文章安装完proxmox的一些设置)，并且台式机的口子接主路由的lan口。主路由是我的路由器，它wan口接办公室的网口，台式机只有一个口子，所以软路由作为旁路由使用。
-前置工作虚机准备先去恩山论坛x86版块下一个固件，或者下载我的 action 编译的固件找 Build OpenWrt的 step 点进去，然后最下面的OpenWrt_f...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "openwrt">openwrt</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "x86">x86</a>
     
 </div>
             
@@ -2439,9 +2437,50 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 105
+        Total : 106
         </div>
         <!-- search  -->
         
@@ -2454,6 +2493,11 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/26</span><a class="archive-post-title" href= "/2021/05/26/docker-panic-invalid-freelist-page/" >docker-ce 18.09.3 启动panic: panic: invalid freelist page: 56, page type is leaf的解决处理</a>
+        </li>
     
     
         <li class="archive-post-item">

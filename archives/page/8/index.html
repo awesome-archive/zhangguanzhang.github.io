@@ -357,6 +357,39 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/06/02/kubernetes-nodeSelector/" >
+            
+                <span>kubernetes的PodAffinity的不解</span>
+        </a>
+        <div class="abstract-content">
+            官方文档来看是下面的说法,摘自官方文档https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
+
+An example of a pod that uses pod affinity:
+
+1234567891011121314151617181920212223242526272829apiVersion: v1kind: Podmetadata:  name: with-pod-affinityspec:  affinity:    podAffinity:      requiredDuringSchedul...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/02</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "PodAffinity">PodAffinity</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/05/05/Kubernetes_install/" >
             
                 <span>[转载+修正]Kubernetes v1.10.x HA全手动苦工安装教学</span>
@@ -630,33 +663,6 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/07/25</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/07/05/centos7-some-mirror/" >
-            
-                <span>centos7 的一些常见软件的安装 mirror</span>
-        </a>
-        <div class="abstract-content">
-            git 2centos 7 自带的 git 版本很低：
-12$ git versiongit version 1.8.3.1
-安装 git 2 
-123yum -y install \   https://packages.endpoint.com/rhel/7/os/x86_64/endpoint-repo-1.7-1.x86_64.rpm \   &amp;&amp; yum install -y git
-ffmpeg1234567https://rpmfusion.org/mirror list:https://mirrors.rpmfusion.org/mm/publiclist...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/07/05</span>
             </div>
             <!-- tags  -->
             
@@ -2421,9 +2427,50 @@ ffmpeg1234567https://rpmfusion.org/mirror list:https://mirrors.rpmfusion.org/mm/
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 105
+        Total : 106
         </div>
         <!-- search  -->
         
@@ -2436,6 +2483,11 @@ ffmpeg1234567https://rpmfusion.org/mirror list:https://mirrors.rpmfusion.org/mm/
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/26</span><a class="archive-post-title" href= "/2021/05/26/docker-panic-invalid-freelist-page/" >docker-ce 18.09.3 启动panic: panic: invalid freelist page: 56, page type is leaf的解决处理</a>
+        </li>
     
     
         <li class="archive-post-item">
