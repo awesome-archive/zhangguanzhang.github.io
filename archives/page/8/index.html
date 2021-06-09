@@ -357,6 +357,38 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/06/03/kubernetes-s-job/" >
+            
+                <span>kubernetes&#39;s Job总结和实战以及坑</span>
+        </a>
+        <div class="abstract-content">
+            Job有三种主要类型的 Job：
+Job的Pod运行完可以看到状态为Completed,低版本需要在get pod的时候添加-a或者--show-all才能看到job创建的pod
+下面实例先创建一个固定完成数量2,并行数量4的Job
+12345678910111213141516171819202122232425262728293031[root@k8s-m1 k8s]# cat job.yml apiVersion: batch&#x2F;v1kind: Jobmetadata:  name: test-jobspec:  completions: 2  parallelism: 4...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/03</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/06/02/kubernetes-nodeSelector/" >
             
                 <span>kubernetes的PodAffinity的不解</span>
@@ -640,31 +672,6 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
         <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/07/25/linux-bridge/" >
-            
-                <span>centos桥接测试</span>
-        </a>
-        <div class="abstract-content">
-            需求机器上的虚拟机桥接宿主机的网卡上网，类似于 vmware workstation，宿主机和虚拟机都接网桥上，虚拟机和宿主机同一个网段。
-原有配置centos7 
-1234567891011cat ifcfg-eth0TYPE&#x3D;&quot;Ethernet&quot;BOOTPROTO&#x3D;&quot;static&quot;DEFROUTE&#x3D;&quot;yes&quot;NAME&#x3D;&quot;eth0&quot;DEVICE&#x3D;&quot;eth0&quot;ONBOOT&#x3D;&quot;yes&quot;IPADDR&#x3D;19...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/07/25</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -2461,16 +2468,9 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
     
     
     
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 106
+        Total : 107
         </div>
         <!-- search  -->
         
@@ -2483,6 +2483,11 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/08</span><a class="archive-post-title" href= "/2021/06/08/ocp4.5.9-restore-etcd/" >openshift 4.5.9 etcd损坏+脑裂修复过程</a>
+        </li>
     
     
         <li class="archive-post-item">

@@ -357,6 +357,39 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/05/23/k8s-vxlan-63-timeout/" >
+            
+                <span>v1.17+ k8s集群下CNI使用VXLAN模式SVC有63秒延迟的触发原因定位</span>
+        </a>
+        <div class="abstract-content">
+            这个问题 flannel 和 calico 的 VXLAN 模式下都会发生，部分人的现象是集群的A记录 UDP 下查询可能有问题（也有人在 azure 上在宿主机上访问 svc 的 clusterIP 10%几率才能通），原因是v1.17+的k8s会引起内核的某个 UDP 相关 bug而不是cni的软件层面，weave没有，后面说。
+写这篇文章的日期是05/28，发现是上周五也就是05/23号，文章从时间线写起(因为很多时候想发文章但是没空，所以文章的发布日期是05/23)
+2020-07-19更新，版本v1.18.6, v1.16.13, v1.17.9+已经修复这个问题，可以同版本内...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "63s">63s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "timeout">timeout</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/05/13/x86-router-flash/" >
             
                 <span>proxmox x86软路由笔记</span>
@@ -633,40 +666,6 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/05/suse-fix-data-but-device-busy/" >
-            
-                <span>opensuse的一次救援</span>
-        </a>
-        <div class="abstract-content">
-            昨晚吃完晚饭回到办公室，右边同事在控制台看着一个suse起不来一直启动的时候卡在suse的蜥蜴logo背景图那。见我来了叫我看下，他们已经尝试过恢复快照，但是还不行，应该是很久之前损坏的，只不过因为没重启没发现，我叫他重启下看看卡在哪，重启后进入内核后显示背景图那按下esc然后看卡在/sysroot挂载那。目测分区损坏了，经历了ubuntu的安装iso的rescue mode就是渣渣后，我还是信任centos的iso。
-处理先备份和准备工作关闭虚机，后台拷贝下系统盘的卷先备份下。然后给虚机的IDE光驱挂载了个centos 7.5 DVD的iso，修改虚机启动顺序到ISO，进Trouble...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "grub">grub</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "boot">boot</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "suse">suse</a>
     
 </div>
             
@@ -2465,16 +2464,9 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     
     
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 106
+        Total : 107
         </div>
         <!-- search  -->
         
@@ -2487,6 +2479,11 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/08</span><a class="archive-post-title" href= "/2021/06/08/ocp4.5.9-restore-etcd/" >openshift 4.5.9 etcd损坏+脑裂修复过程</a>
+        </li>
     
     
         <li class="archive-post-item">

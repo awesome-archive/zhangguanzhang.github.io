@@ -370,6 +370,37 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/08/05/wireguard-for-personal/" >
+            
+                <span>个人办公用 wireguard 组网笔记</span>
+        </a>
+        <div class="abstract-content">
+            作为 IT 人员，经常需要连到办公网工作，并不是每个公司都有 vpn，自己搭建的话 openvpn 之类的配置麻烦啰嗦。这里写下 wireguard 的简单搭建。它比 IPSec 更快，更简单，更精简，更有用。它比 OpenVPN 更高效。WireGuard 设计为通用 VPN，适用于多种不同情况。它是跨平台的，可大规模部署。
+通常如下图的部署: 一台 ECS 主机，得有公网 IP，下图就是 pc ----&gt; ECS &lt;------ 公司的 pc
+12345678910111213141516            +----------+            |     ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/05</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "wireguard">wireguard</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/07/30/prometheus-rate-and-irate/" >
             
                 <span>prometheus的rate与irate内部是如何计算的</span>
@@ -817,40 +848,6 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/05/suse-fix-data-but-device-busy/" >
-            
-                <span>opensuse的一次救援</span>
-        </a>
-        <div class="abstract-content">
-            昨晚吃完晚饭回到办公室，右边同事在控制台看着一个suse起不来一直启动的时候卡在suse的蜥蜴logo背景图那。见我来了叫我看下，他们已经尝试过恢复快照，但是还不行，应该是很久之前损坏的，只不过因为没重启没发现，我叫他重启下看看卡在哪，重启后进入内核后显示背景图那按下esc然后看卡在/sysroot挂载那。目测分区损坏了，经历了ubuntu的安装iso的rescue mode就是渣渣后，我还是信任centos的iso。
-处理先备份和准备工作关闭虚机，后台拷贝下系统盘的卷先备份下。然后给虚机的IDE光驱挂载了个centos 7.5 DVD的iso，修改虚机启动顺序到ISO，进Trouble...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "grub">grub</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "boot">boot</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "suse">suse</a>
     
 </div>
             
@@ -2804,16 +2801,9 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     
     
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 106
+        Total : 107
         </div>
         <!-- search  -->
         
@@ -2826,6 +2816,11 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/08</span><a class="archive-post-title" href= "/2021/06/08/ocp4.5.9-restore-etcd/" >openshift 4.5.9 etcd损坏+脑裂修复过程</a>
+        </li>
     
     
         <li class="archive-post-item">

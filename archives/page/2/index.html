@@ -357,6 +357,40 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/11/20/disable-swap/" >
+            
+                <span>永久关闭swap的正确姿势</span>
+        </a>
+        <div class="abstract-content">
+            今天遇到了 kylin 系统上无法关闭 swap 的情况。记录下和方便别人搜到这个知识点。
+环境信息1234$ at /etc/issueKylin 4.0.2 \n \l$ uname -aLinux H-192-168-63-132 4.15.0- 58-generic #64kord1k1&#x27;SMP Thu Aug 1S15:51:97 csT 2919 aarch64 ......
+尝试的步骤fstab 里没有 swap 的挂载，
+1swapoff -a &amp;&amp; sysctl -w vm.swappiness=0
+重启后，内核参数是关闭的，但是实际没有关闭
+...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/20</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "swap">swap</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/11/06/kylin-arm-clone-vxlan-error/" >
             
                 <span>银河麒麟arm64系统克隆机器上k8s vxlan跨节点不通的一次排查</span>
@@ -640,39 +674,6 @@ pod cidr
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "exporter">exporter</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/05/23/k8s-vxlan-63-timeout/" >
-            
-                <span>v1.17+ k8s集群下CNI使用VXLAN模式SVC有63秒延迟的触发原因定位</span>
-        </a>
-        <div class="abstract-content">
-            这个问题 flannel 和 calico 的 VXLAN 模式下都会发生，部分人的现象是集群的A记录 UDP 下查询可能有问题（也有人在 azure 上在宿主机上访问 svc 的 clusterIP 10%几率才能通），原因是v1.17+的k8s会引起内核的某个 UDP 相关 bug而不是cni的软件层面，weave没有，后面说。
-写这篇文章的日期是05/28，发现是上周五也就是05/23号，文章从时间线写起(因为很多时候想发文章但是没空，所以文章的发布日期是05/23)
-2020-07-19更新，版本v1.18.6, v1.16.13, v1.17.9+已经修复这个问题，可以同版本内...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "63s">63s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "timeout">timeout</a>
     
 </div>
             
@@ -2471,16 +2472,9 @@ pod cidr
     
     
     
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 106
+        Total : 107
         </div>
         <!-- search  -->
         
@@ -2493,6 +2487,11 @@ pod cidr
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/08</span><a class="archive-post-title" href= "/2021/06/08/ocp4.5.9-restore-etcd/" >openshift 4.5.9 etcd损坏+脑裂修复过程</a>
+        </li>
     
     
         <li class="archive-post-item">

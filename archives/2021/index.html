@@ -357,6 +357,39 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/06/08/ocp4.5.9-restore-etcd/" >
+            
+                <span>openshift 4.5.9 etcd损坏+脑裂修复过程</span>
+        </a>
+        <div class="abstract-content">
+            前言介绍内部机器和环境都是在 vcenter 里，之前的 ocp 集群是 3 master + 1 worker，也就是之前的openshift 4.5.9 离线安装后的环境，后面有几台宿主机负载太高，同事看我机器负载最高，关了几台，这几天需要用下 openshift 环境。登录到 bastion 上 get 超时，看了下 haproxy 的 stat web，全部红了。。然后把所有机器开机后发现还是起不来。
+操作openshift 的 master 节点和 kubeadm 很像，几个组件都是 staticPod 形式起的。客户端也不是 docker，使用 crictl 就行了
+查看 k...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/06/08</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "openshift">openshift</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "ocp">ocp</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/05/26/docker-panic-invalid-freelist-page/" >
             
                 <span>docker-ce 18.09.3 启动panic: invalid freelist page: 56, page type is leaf的解决处理</span>
@@ -2353,16 +2386,9 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
     
     
     
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 106
+        Total : 107
         </div>
         <!-- search  -->
         
@@ -2375,6 +2401,11 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/08</span><a class="archive-post-title" href= "/2021/06/08/ocp4.5.9-restore-etcd/" >openshift 4.5.9 etcd损坏+脑裂修复过程</a>
+        </li>
     
     
         <li class="archive-post-item">
