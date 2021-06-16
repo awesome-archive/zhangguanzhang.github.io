@@ -286,7 +286,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">712</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">796</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -424,8 +424,12 @@ height:50vh;
 <p>2021/06/16:<br>如果是容器的话，可以使用 nsenter 列出 hostname 来查看是哪个容器:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nsenter --pid --uts -t <span class="variable">$pid</span>   hostname</span><br></pre></td></tr></table></figure>
 <p>停止父进程就一般就能解决了，当然停止不是解决手段，要在父进程代码层面去解决。</p>
+<p>python 的 <code>Subprocess</code> 下僵尸进程的解决</p>
+<p>最简单的方法，保证主进程不退出的情况下不出现僵尸进程zombia，在文件中加入以下函数：<br>特点 ： 非阻塞，不会影响父进程运行。可以处理所有子进程退出，：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> signal</span><br><span class="line">signal.signal(signal.SIGCHLD, signal.SIG_IGN)</span><br></pre></td></tr></table></figure>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://coolshell.cn/articles/656.html">LINUX 的僵尸(ZOMBIE)进程</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Freshduke/article/details/111544319">python僵尸进程</a></li>
 </ul>
 
     </article>
