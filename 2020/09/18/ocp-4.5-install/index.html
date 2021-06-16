@@ -916,9 +916,9 @@ height:50vh;
 </ul>
 <p><strong>platform</strong> 实际上支持 gcp，aws，vshpere，bmc之类的自动创建机器，有兴趣可以去去研究下</p>
 <p>修改好上面的文件后接着生成 Ignition 配置文件，创建后<code>install-config.yaml</code>会被删除，所以备份下，同时该文件实际上会被生成 configmap 的 yaml 放在<code>manifests/cluster-config.yaml</code>)里，在集群起来后会存在<code>kube-system cm/cluster-config-v1</code>里</p>
-<h4 id="生成部署配置文件"><a href="#生成部署配置文件" class="headerlink" title="生成部署配置文件"></a>生成部署配置文件</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp install-config.yaml  install-config.yaml.$(date +%Y%m%d)</span><br></pre></td></tr></table></figure>
+<h4 id="生成部署配置文件"><a href="#生成部署配置文件" class="headerlink" title="生成部署配置文件"></a>生成部署配置文件</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /data/ocpinstall</span><br><span class="line">cp install-config.yaml  install-config.yaml.$(date +%Y%m%d)</span><br></pre></td></tr></table></figure>
 <p>创建部署清单manifests</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openshift-install create manifests</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /data/ocpinstall</span><br><span class="line">openshift-install create manifests</span><br></pre></td></tr></table></figure>
 <p>如果你的 worker 节点很多，不希望 master 节点上有pod被调度，修改 <code>manifests/cluster-scheduler-02-config.yml</code> 文件，将 <code>mastersSchedulable</code> 的值设为 flase，以防止 Pod 调度到控制节点。</p>
 <p>后面的install create会转换manifest目录下所有文件，这里备份下manifest目录，有兴趣后面可以研究下</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cp -a manifests manifests-bak</span><br><span class="line"><span class="meta">#</span><span class="bash"> 把部署清单转换成 Ignition 配置文件</span></span><br><span class="line">openshift-install create ignition-configs</span><br></pre></td></tr></table></figure>
