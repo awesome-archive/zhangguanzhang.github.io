@@ -519,7 +519,7 @@ height:50vh;
 <td>8GB</td>
 <td>100 GB</td>
 <td>10.226.45.226</td>
-<td>registry.openshit4.example.com</td>
+<td>registry.openshift4.example.com</td>
 <td>镜像仓库</td>
 </tr>
 <tr>
@@ -529,7 +529,7 @@ height:50vh;
 <td>8GB</td>
 <td>100 GB</td>
 <td>10.226.45.250</td>
-<td>bastion.openshit4.example.com</td>
+<td>bastion.openshift4.example.com</td>
 <td>dns，负载均衡(LB)，http文件下载</td>
 </tr>
 <tr>
@@ -539,7 +539,7 @@ height:50vh;
 <td>16GB</td>
 <td>120 GB</td>
 <td>10.226.45.223</td>
-<td>bootstrap.openshit4.example.com</td>
+<td>bootstrap.openshift4.example.com</td>
 <td>也叫引导节点(Bootstrap)</td>
 </tr>
 <tr>
@@ -549,7 +549,7 @@ height:50vh;
 <td>16 GB</td>
 <td>120 GB</td>
 <td>10.226.45.251</td>
-<td>master1.openshit4.example.com</td>
+<td>master1.openshift4.example.com</td>
 <td>也叫控制节点(Control plane)</td>
 </tr>
 <tr>
@@ -559,7 +559,7 @@ height:50vh;
 <td>16 GB</td>
 <td>120 GB</td>
 <td>10.226.45.252</td>
-<td>master2.openshit4.example.com</td>
+<td>master2.openshift4.example.com</td>
 <td>也叫控制节点(Control plane)</td>
 </tr>
 <tr>
@@ -569,7 +569,7 @@ height:50vh;
 <td>16 GB</td>
 <td>120 GB</td>
 <td>10.226.45.222</td>
-<td>master3.openshit4.example.com</td>
+<td>master3.openshift4.example.com</td>
 <td>也叫控制节点(Control plane)</td>
 </tr>
 <tr>
@@ -579,7 +579,7 @@ height:50vh;
 <td>16 GB</td>
 <td>120 GB</td>
 <td>10.226.45.223</td>
-<td>worker1.openshit4.example.com</td>
+<td>worker1.openshift4.example.com</td>
 <td>也叫计算节点(Compute)</td>
 </tr>
 </tbody></table>
@@ -738,7 +738,7 @@ height:50vh;
 <h3 id="本地镜像仓库-registry"><a href="#本地镜像仓库-registry" class="headerlink" title="本地镜像仓库 - registry"></a>本地镜像仓库 - registry</h3><p>仓库没必要开始搭建，在下文的 oc 同步镜像之前搭建好即可</p>
 <p>这里使用<code>docker-compose</code>搭建 quay 仓库，自行安装 <code>docker</code> 和 <code>docker-compose</code> 设置好系统和内核参数，如果你也使用容器搭建，可以不用和我一样的操作系统。容器已经能通过<code>alias</code>互联，所以没必要的端口不用映射到宿主机上，你也可以使用 <code>podman</code> 或者其他容器工具起一个环境，甚至<code>docker run</code>起来这些容器。</p>
 <p>设置机器的 hostname</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hostnamectl set-hostname registry.openshit4.example.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hostnamectl set-hostname registry.openshift4.example.com</span><br></pre></td></tr></table></figure>
 <h4 id="docker-compose-for-registry"><a href="#docker-compose-for-registry" class="headerlink" title="docker-compose for registry"></a>docker-compose for registry</h4><p>这里数据都存放在<code>/data/quay/xxx</code>，创建目录</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /data/quay/lib/mysql \</span><br><span class="line">  /data/quay/lib/redis \</span><br><span class="line">  /data/quay/config \</span><br><span class="line">  /data/quay/storage</span><br><span class="line"><span class="meta">#</span><span class="bash"> 容器权限问题，容器的user都在root组下，但是默认<span class="built_in">umask</span>下组没有w权限，所以这里加下</span></span><br><span class="line">chmod g+w /data/quay/lib/mysql/ \</span><br><span class="line">  /data/quay/lib/redis/ \</span><br><span class="line">  /data/quay/config \</span><br><span class="line">  /data/quay/storage</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>创建quay仓库的<code>docker-compose.yml</code>文件</p>
