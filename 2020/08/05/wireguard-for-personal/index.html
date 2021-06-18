@@ -450,7 +450,7 @@ height:50vh;
 <h4 id="一些注意点"><a href="#一些注意点" class="headerlink" title="一些注意点"></a>一些注意点</h4><ul>
 <li>如果是软路由，开了 passwall 代理之类的，记得把 ECS 的 公网IP 设置为不走代理。</li>
 <li>openwrt 的 wireguard 多次配置可能会有问题，gateway上无法看到它上线，重启下后再试试。也可能需要下面规则<ul>
-<li><code>网络</code> – <code>防火墙</code> – <code>自定义规则</code>：<code>iptables -A FORWARD -i wg0 -j ACCEPT</code> <code>iptables -A FORWARD -o wg0 -j ACCEPT</code> <code>iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</code></li>
+<li><code>网络</code> – <code>防火墙</code> – <code>自定义规则</code>：<code>iptables -I FORWARD -i wg0 -j ACCEPT</code> <code>iptables -I FORWARD -o wg0 -j ACCEPT</code> <code>iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</code></li>
 </ul>
 </li>
 </ul>
