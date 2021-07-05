@@ -357,6 +357,36 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/11/23/ansible-hang-in-docker/" >
+            
+                <span>ansible hang in docker container</span>
+        </a>
+        <div class="abstract-content">
+            由来这几天同事发现在 docker 容器里运行 ansible 命令很卡，发来了个命令叫我试试 ansible localhost -m setup -a &#39;filter=ansible_default_ipv4&#39; 2&gt;/dev/null |grep &#39;\&quot;address\&quot;&#39; |awk -F&#39;\&quot;&#39; &#39;&#123;print $4&#125;&#39;
+环境信息12345678910111213141516171819202122232425262728293031323334353637383...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/11/20/disable-swap/" >
             
                 <span>永久关闭swap的正确姿势</span>
@@ -639,55 +669,10 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/06/23/host-gw-in-aliyun/" >
-            
-                <span>阿里云上使用flannel host-gw跨节点pod不通的解决</span>
-        </a>
-        <div class="abstract-content">
-            挺多人问的，写下解决办法
-前言首先主机得在同一个专有vpc下，跨vpc或者经典vpc就扯淡了。还有flannel别把网络信息存储在etcd里，目前flannel只支持v2的etcd api。但是现在k8s都是使用v3 etcd存储了。如果v2和v3共存会导致无法恢复etcd的备份
-所以网上那些etcdctl set flannel的cidr的文章别看了，都没做过备份恢复实验就到处发k8s搭建教程。flannel v3的话看我过往文章
-环境信息先来说下host-gw的包走向，假设两台机器
-
-
-
-IP
-pod cidr
-
-
-
-10.0.6.166
-10.200.1.0/24
-
-
-10.0.6...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "host-gw">host-gw</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/11/">11</a><a class="extend next" rel="next" href="/archives/page/3/">NEXT &gt;</a>
+        <a class="extend prev" rel="prev" href="/archives/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/12/">12</a><a class="extend next" rel="next" href="/archives/page/3/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -2540,24 +2525,9 @@ pod cidr
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 110
+        Total : 111
         </div>
         <!-- search  -->
         
@@ -2570,6 +2540,11 @@ pod cidr
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span><a class="archive-post-title" href= "/2021/07/05/systemctl-start-docker-canceled/" >Job for docker.service canceled</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3354,6 +3329,8 @@ pod cidr
         <span class="sidebar-tag-name" data-tags="zombie"><span class="iconfont-archer">&#xe606;</span>zombie</span>
     
         <span class="sidebar-tag-name" data-tags="audit"><span class="iconfont-archer">&#xe606;</span>audit</span>
+    
+        <span class="sidebar-tag-name" data-tags="systemd"><span class="iconfont-archer">&#xe606;</span>systemd</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

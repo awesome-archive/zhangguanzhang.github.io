@@ -370,6 +370,45 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/04/29/kubernetes-configMap-mount/" >
+            
+                <span>kubernetes的configMap文件挂载不同的路径且不覆盖目录的解决方法</span>
+        </a>
+        <div class="abstract-content">
+            看到configMap这个资源对象,突发奇想
+
+
+如何让一个configMap里文件挂载到容器的不同路径
+
+
+书上和网上都找不到对应例子
+最终github上搜索到了有个subPath选项除了支持路径还不会覆盖容器内部的整个目录参考链接https://github.com/dshulyak/kubernetes.github.io/commit/d58ba7b075bb4848349a2c920caaa08ff3773d70这里记录下
+123456789101112131415161718192021222324252627282930313233343536373839404142434...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/29</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "ConfigMap">ConfigMap</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/03/18/keepalived-Heartbeat-use-mg-net/" >
             
                 <span>使用管理网当作业务网keepalived VIP的心跳线</span>
@@ -774,37 +813,6 @@ getopt...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "shell">shell</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/04/29/zabbixsetup/" >
-            
-                <span>个人zabbix安装和坑的解决</span>
-        </a>
-        <div class="abstract-content">
-            <p>自己的摸索和坑的总结</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/04/29</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "linux">linux</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "zabbix">zabbix</a>
     
 </div>
             
@@ -2822,24 +2830,9 @@ getopt...
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 110
+        Total : 111
         </div>
         <!-- search  -->
         
@@ -2852,6 +2845,11 @@ getopt...
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span><a class="archive-post-title" href= "/2021/07/05/systemctl-start-docker-canceled/" >Job for docker.service canceled</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3636,6 +3634,8 @@ getopt...
         <span class="sidebar-tag-name" data-tags="zombie"><span class="iconfont-archer">&#xe606;</span>zombie</span>
     
         <span class="sidebar-tag-name" data-tags="audit"><span class="iconfont-archer">&#xe606;</span>audit</span>
+    
+        <span class="sidebar-tag-name" data-tags="systemd"><span class="iconfont-archer">&#xe606;</span>systemd</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

@@ -357,6 +357,39 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/09/05/prometheus-change-timezone/" >
+            
+                <span>修改源码更改prometheus的时区问题</span>
+        </a>
+        <div class="abstract-content">
+            先说明一点，时区UTC不影响prometheus和grafana，这篇文章只是提供一个修改的思路和步骤
+日志时区修改代码分析先起最新的prometheus挂载时区文件
+1234567docker run --net host -v &#x2F;etc&#x2F;localtime:&#x2F;etc&#x2F;localtime prom&#x2F;prometheuslevel&#x3D;info ts&#x3D;2019-09-05T09:44:40.409Z caller&#x3D;main.go:293 msg&#x3D;&quot;no time or size retenti...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/05</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "prometheus">prometheus</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "timezone">timezone</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/08/24/gobot-build/" >
             
                 <span>gobot控制esp8266</span>
@@ -637,43 +670,10 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/04/28/k8s-java-start-time-not-same/" >
-            
-                <span>闲谈线上俩k8s环境同等limits下pod启动时间不一样解决过程</span>
-        </a>
-        <div class="abstract-content">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;线上用的k8s版本是1.6.7非常老，而且HA有问题，上个月研发想把里面的一些服务迁出来到一个新集群里，新集群的搭建是我负责的。上周开始陆陆续续的迁移过来了，但是同等limit下部分pod在测试环境上(测试环境和老环境部署是一样的,下文的老环境和测试环境可以理解为一样)启动非常快，在我搭建的新k8s环境上启动非常慢，研发他们应用都是java+springboot，这里不谈jvm无法识别cgroup，已经加选项识别到了还有那个随机熵的选项肯定也是加了的。&nbsp;&nbsp;&nbsp;&nb...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "springboot">springboot</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/4/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/11/">11</a><a class="extend next" rel="next" href="/archives/page/6/">NEXT &gt;</a>
+        <a class="extend prev" rel="prev" href="/archives/page/4/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/12/">12</a><a class="extend next" rel="next" href="/archives/page/6/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -2526,24 +2526,9 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 110
+        Total : 111
         </div>
         <!-- search  -->
         
@@ -2556,6 +2541,11 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span><a class="archive-post-title" href= "/2021/07/05/systemctl-start-docker-canceled/" >Job for docker.service canceled</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3340,6 +3330,8 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
         <span class="sidebar-tag-name" data-tags="zombie"><span class="iconfont-archer">&#xe606;</span>zombie</span>
     
         <span class="sidebar-tag-name" data-tags="audit"><span class="iconfont-archer">&#xe606;</span>audit</span>
+    
+        <span class="sidebar-tag-name" data-tags="systemd"><span class="iconfont-archer">&#xe606;</span>systemd</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
