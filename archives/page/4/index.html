@@ -357,6 +357,39 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/03/02/binfmt-0000/" >
+            
+                <span>记录一次request_module: runaway loop modeprobe binfmt-0000</span>
+        </a>
+        <div class="abstract-content">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;昨天一台gpu的主机的阵列卡突然坏了，最终整起来后上面的几台虚机恢复后有一台虚机无法正常开机，开机进emergency mode，同事看上面的报错以为是挂载了啥iscsi，当然无法开机应该找到最开始的错误，进到emergency mode这个视角的时候已经是雪崩的最后的错误了，多半是没有意义的。输入root密码后执行journalctl -xb翻看最开始的错误
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;按照关键字request_modul...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/02</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "kernel">kernel</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/02/27/microsoft-graph-for-onedrive/" >
             
                 <span>使用microsoft-graph的api对接onedrive</span>
@@ -642,50 +675,6 @@ Linux一些目录规范和systemd
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "ansible">ansible</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "consul">consul</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/27/consul-tls/" >
-            
-                <span>高可用的SSL consul cluster实践</span>
-        </a>
-        <div class="abstract-content">
-            同事dnsmasq + consul 整服务自动发现，但是不是 tls 且consul server是单点，而且进程启动用的nohub而不是systemd，这里查了下资料实践了下
-部署过程已经写成了ansible，地址 https://github.com/zhangguanzhang/consul-tls-ansible
-开了五台云主机，总体规划为下面，角色那有条件的可以分开，例如 client 单独一台。不分开的话得配置 client 的端口和 server 的分开，自己去探索
-
-
-
-IP
-Hostname
-CPU
-Memory
-role
-nodeName
-
-
-
-172.19.0.3...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "consul">consul</a>
     
@@ -2550,9 +2539,54 @@ nodeName
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 111
+        Total : 112
         </div>
         <!-- search  -->
         
@@ -2569,6 +2603,11 @@ nodeName
     
         <li class="archive-post-item">
             <span class="archive-post-date">07/05</span><a class="archive-post-title" href= "/2021/07/05/systemctl-start-docker-canceled/" >Job for docker.service canceled</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span><a class="archive-post-title" href= "/2021/07/05/kube-apiserver-cannot-start-after-reboot/" >机器重启后 kube-apiserver 无法启动，etcd刷(error "EOF", ServerName "")</a>
         </li>
     
     
