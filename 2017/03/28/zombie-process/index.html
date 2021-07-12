@@ -20,12 +20,12 @@
     <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="记录生活点滴">
-    <meta name="description" content="借用下别人的话： 12345678可能很少有人意识到，在一个进程调用了exit之后，该进程 并非马上就消失掉，而是留下一个称为僵尸进程（Zombie）的数据结构。在Linux进程的5种状态中，僵尸进程是非常特殊的一种，它已经放弃了几乎所 有内存空间，没有任何可执行代码，也不能被调度，仅仅在进程列表中保留一个位置，记载该进程的退出状态等信息供其他进程收集，除此之外，僵尸进程不再占有 任何内存空间。僵">
+    <meta name="description" content="借用下别人的话： 可能很少有人意识到，在一个进程调用了exit之后，该进程 并非马上就消失掉，而是留下一个称为僵尸进程（Zombie）的数据结构。在Linux进程的5种状态中，僵尸进程是非常特殊的一种，它已经放弃了几乎所 有内存空间，没有任何可执行代码，也不能被调度，仅仅在进程列表中保留一个位置，记载该进程的退出状态等信息供其他进程收集，除此之外，僵尸进程不再占有 任何内存空间。 僵尸进程的来由，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 僵尸进程处理">
 <meta property="og:url" content="http://zhangguanzhang.github.io/2017/03/28/zombie-process/">
 <meta property="og:site_name" content="Zhangguanzhang">
-<meta property="og:description" content="借用下别人的话： 12345678可能很少有人意识到，在一个进程调用了exit之后，该进程 并非马上就消失掉，而是留下一个称为僵尸进程（Zombie）的数据结构。在Linux进程的5种状态中，僵尸进程是非常特殊的一种，它已经放弃了几乎所 有内存空间，没有任何可执行代码，也不能被调度，仅仅在进程列表中保留一个位置，记载该进程的退出状态等信息供其他进程收集，除此之外，僵尸进程不再占有 任何内存空间。僵">
+<meta property="og:description" content="借用下别人的话： 可能很少有人意识到，在一个进程调用了exit之后，该进程 并非马上就消失掉，而是留下一个称为僵尸进程（Zombie）的数据结构。在Linux进程的5种状态中，僵尸进程是非常特殊的一种，它已经放弃了几乎所 有内存空间，没有任何可执行代码，也不能被调度，仅仅在进程列表中保留一个位置，记载该进程的退出状态等信息供其他进程收集，除此之外，僵尸进程不再占有 任何内存空间。 僵尸进程的来由，">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2017-03-28T11:36:53.000Z">
 <meta property="article:modified_time" content="2017-03-28T11:36:53.000Z">
@@ -448,27 +448,39 @@ height:50vh;
             <main class="main post-page">
     <article class="article-entry">
         <p>借用下别人的话：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">可能很少有人意识到，在一个进程调用了exit之后，该进程 并非马上就消失掉，而是留下一个称为僵尸进程（Zombie）的数据结构。在Linux进程的5种状态中，僵尸进程是非常特殊的一种，它已经放弃了几乎所 有内存空间，没有任何可执行代码，也不能被调度，仅仅在进程列表中保留一个位置，记载该进程的退出状态等信息供其他进程收集，除此之外，僵尸进程不再占有 任何内存空间。</span><br><span class="line"></span><br><span class="line">僵尸进程的来由，要追溯到Unix，Unix的设计者们设计这个东西并非是因为闲来无事想装装酷什么的。上面说到，僵尸进程中保存着很多对程序员和系统管理员非常重要的信息，首先，这个进程是怎么死亡的？是正常退出呢，还是出现了错误，还是被其它进程强迫退出的？也就是说，这个程序的退出码是什么？其次，这个进程占用的总系统CPU时间和总用户CPU时间分别是多少？发生页错误的数目和收到信号的数目。这些信息都被存储在僵尸进程中，试想如果没有僵尸进程，进程执行多长我们并不知道，一旦其退出，所有与之相关的信息都立刻都从系统中清除，而如果此时父进程或系统管理员需要用到，就只好干瞪眼了。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">所以，进程退出后，系统会把该进程的状态变成Zombie，然后给上一定的时间等着父进程来收集其退出信息，因为可能父进程正忙于别的事情来不及收集，所以，使用Zombie状态表示进程退出了，正在等待父进程收集信息中。</span><br><span class="line"></span><br><span class="line">Zombie进程不可以用kill命令清楚，因为进程已退出，如果需要清除这样的进程，那么需要清除其父进程，或是等很长的时间后被内核清除。因为Zombie的进程还占着个进程ID号呢，这样的进程如果很多的话，不利于系统的进程调度。</span><br></pre></td></tr></table></figure>
+<p>可能很少有人意识到，在一个进程调用了exit之后，该进程 并非马上就消失掉，而是留下一个称为僵尸进程（Zombie）的数据结构。在Linux进程的5种状态中，僵尸进程是非常特殊的一种，它已经放弃了几乎所 有内存空间，没有任何可执行代码，也不能被调度，仅仅在进程列表中保留一个位置，记载该进程的退出状态等信息供其他进程收集，除此之外，僵尸进程不再占有 任何内存空间。</p>
+<p>僵尸进程的来由，要追溯到Unix，Unix的设计者们设计这个东西并非是因为闲来无事想装装酷什么的。上面说到，僵尸进程中保存着很多对程序员和系统管理员非常重要的信息，首先，这个进程是怎么死亡的？是正常退出呢，还是出现了错误，还是被其它进程强迫退出的？也就是说，这个程序的退出码是什么？其次，这个进程占用的总系统CPU时间和总用户CPU时间分别是多少？发生页错误的数目和收到信号的数目。这些信息都被存储在僵尸进程中，试想如果没有僵尸进程，进程执行多长我们并不知道，一旦其退出，所有与之相关的信息都立刻都从系统中清除，而如果此时父进程或系统管理员需要用到，就只好干瞪眼了。</p>
+<p>所以，进程退出后，系统会把该进程的状态变成Zombie，然后给上一定的时间等着父进程来收集其退出信息，因为可能父进程正忙于别的事情来不及收集，所以，使用Zombie状态表示进程退出了，正在等待父进程收集信息中。</p>
+<p>Zombie进程不可以用kill命令清楚，因为进程已退出，如果需要清除这样的进程，那么需要清除其父进程，或是等很长的时间后被内核清除。因为Zombie的进程还占着个进程ID号呢，这样的进程如果很多的话，不利于系统的进程调度。</p>
 <h2 id="查找进程的方法"><a href="#查找进程的方法" class="headerlink" title="查找进程的方法"></a>查找进程的方法</h2><h3 id="常规"><a href="#常规" class="headerlink" title="常规"></a>常规</h3><p>僵尸进程可以用 top 命令看到。单独过滤 pid 的话可以:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps axo pid&#x3D;,stat&#x3D; | awk &#39;$2~&#x2F;^Z&#x2F; &#123; print &#125;&#39;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps axo pid=,stat= | awk &#x27;$2~/^Z/ &#123; print &#125;&#x27;</span><br></pre></td></tr></table></figure>
+
 <p>列出僵尸进程的进程树</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pstree -p -s $pid</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pstree -p -s $pid</span><br></pre></td></tr></table></figure>
+
 <p>2021/06/16:<br>如果是容器的话，可以使用 nsenter 列出 hostname 来查看是哪个容器:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nsenter --pid --uts -t <span class="variable">$pid</span>   hostname</span><br></pre></td></tr></table></figure>
+
 <h3 id="查找容器的名字"><a href="#查找容器的名字" class="headerlink" title="查找容器的名字"></a>查找容器的名字</h3><p>如果容器是 host 网络，上面的命令就没用了。我们可以下面这样查询:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ ps axo pid&#x3D;,stat&#x3D; | awk &#39;$2~&#x2F;^Z&#x2F; &#123; print &#125;&#39;</span><br><span class="line">19749 Zs</span><br><span class="line">19750 Zs</span><br><span class="line"></span><br><span class="line">这两个进程 pid 间隔一个数字，应该是同一个父进程：</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;bash</span><br><span class="line">$  pstree -sp 19749</span><br><span class="line">systemd(1)───dockerd(781)───containerd(1129)───containerd-shim(10642)───python(10733)───ssh(19749)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ ps axo pid=,stat= | awk &#x27;$2~/^Z/ &#123; print &#125;&#x27;</span><br><span class="line">19749 Zs</span><br><span class="line">19750 Zs</span><br><span class="line"></span><br><span class="line">这两个进程 pid 间隔一个数字，应该是同一个父进程：</span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">$  pstree -sp 19749</span><br><span class="line">systemd(1)───dockerd(781)───containerd(1129)───containerd-shim(10642)───python(10733)───ssh(19749)</span><br></pre></td></tr></table></figure>
+
 <p>这个容器是 host 网络，没设置 hostname 下默认是宿主机的 hostname：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ nsenter --uts -t 10733 hostname</span><br><span class="line">RedHat79</span><br></pre></td></tr></table></figure>
+
 <p>这个容器是 host 网络，nsenter看不到。我们可以查看 <code>containerd-shim</code> 来看容器：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux | grep 1064[2]</span><br><span class="line">root     10642  0.0  0.0 108716  7360 ?        Sl   Jun17   0:03 containerd-shim -namespace moby -workdir /data/kube/docker/containerd/daemon/io.containerd.runtime.v1.linux/moby/ed79172356270e81b1683f633904780f4a41c5022ea34a590dd69231fdc330b9 -address /var/run/docker/containerd/containerd.sock -containerd-binary /data/kube/bin/containerd -runtime-root /var/run/docker/runtime-runc</span><br></pre></td></tr></table></figure>
+
 <p>我们拿 <code>moby/ed7917</code> 后面部分字符来查询：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ docker ps -a | grep ed79172</span><br><span class="line">ed7917235627        reg.xxx.lan:5000/xxx/xxxxx-tools:fsp                                                                         <span class="string">&quot;bash -c &#x27;python man…&quot;</span>   2 days ago          Up 22 hours                                                     xxxxx-tools-fsp</span><br></pre></td></tr></table></figure>
+
 <p>查看这个容器进程：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ docker <span class="built_in">exec</span> ed7917235627 ps aux</span><br><span class="line">USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND</span><br><span class="line">root         1  0.0  0.0  74700 50000 pts/0    Ss+  Jun17   0:53 python manage.py runserver 0.0.0.0:8888</span><br><span class="line">root         7  2.4  0.1 379552 112524 pts/0   Sl+  Jun17  32:17 /usr/<span class="built_in">local</span>/bin/python manage.py runserver 0.0.0.0:8888</span><br><span class="line">root        18  0.0  0.0      0     0 ?        Zs   Jun17   0:00 [ssh] &lt;defunct&gt;</span><br><span class="line">root        19  0.0  0.0      0     0 ?        Zs   Jun17   0:00 [ssh] &lt;defunct&gt;</span><br><span class="line">root        44  0.0  0.0   9380  1520 ?        Rs   09:41   0:00 ps aux</span><br></pre></td></tr></table></figure>
+
 <h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>停止父进程就一般就能解决了，当然停止不是解决手段，要在父进程代码层面去解决。</p>
 <p>python 的 <code>Subprocess</code> 下僵尸进程的解决</p>
 <p>最简单的方法，保证主进程不退出的情况下不出现僵尸进程zombia，在文件中加入以下函数：<br>特点 ： 非阻塞，不会影响父进程运行。可以处理所有子进程退出，：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> signal</span><br><span class="line">signal.signal(signal.SIGCHLD, signal.SIG_IGN)</span><br></pre></td></tr></table></figure>
+
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://coolshell.cn/articles/656.html">LINUX 的僵尸(ZOMBIE)进程</a></li>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Freshduke/article/details/111544319">python僵尸进程</a></li>
