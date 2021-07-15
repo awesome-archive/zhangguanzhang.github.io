@@ -593,6 +593,42 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/05/11/container-too-many-open-file/" >
+            
+                <span>standard_init_linux.go:211: exec user process caused &#34;too many open files in system&#34;</span>
+        </a>
+        <div class="abstract-content">
+            故障现象部署好业务 pod 后，有很多 pod 一直 Crash 或者无法就绪。
+处理过程describe pod 的状态有显示下面的：
+1Error: failed to start container &quot;xxxxx&quot;: Error response from daemon: OCI runtime start failed: cannot start a container that has stopped: unkown
+
+上去这个节点查看容器状态:
+12345$ docker ps -a | grep 6cb6440a7e90bde reg.xxx.lan:5...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/11</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "linux">linux</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/04/28/k8s-java-start-time-not-same/" >
             
                 <span>闲谈线上俩k8s环境同等limits下pod启动时间不一样解决过程</span>
@@ -836,37 +872,6 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "cifs">cifs</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/01/22/proxmox-cloud-init/" >
-            
-                <span>proxmox里使用cloud-init和一些笔记</span>
-        </a>
-        <div class="abstract-content">
-            cloud-init的镜像模板制作模板制作记录下proxmox制作带有cloud-init的虚机模板过程&nbsp;&nbsp;&nbsp;&nbsp;因为刚开始制作虚机模板的硬盘是固定大小,后面通过克隆后调整硬盘大小就会自动growpart,需要安装cloud-utils-growpart。好像只能往大的扩,我个人也倾向于最小20G,所以这里我开的是20G硬盘的虚机&nbsp;&nbsp;&nbsp;&nbsp;另外查了下和实际试了下cloud-utils-growpart好像只支持ext3和ext4不支持lvm自动扩,其他的文件系统可以考虑试试lvm自己写个脚本去开机启动自动扩。这里...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "openstack">openstack</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "cloud-init">cloud-init</a>
     
 </div>
             
@@ -2929,10 +2934,9 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
     
     
     
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 112
+        Total : 113
         </div>
         <!-- search  -->
         
@@ -3217,6 +3221,11 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
     
         <li class="archive-post-item">
             <span class="archive-post-date">06/02</span><a class="archive-post-title" href= "/2019/06/02/cobra/" >golang cobra的一些笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/11</span><a class="archive-post-title" href= "/2019/05/11/container-too-many-open-file/" >standard_init_linux.go:211: exec user process caused "too many open files in system"</a>
         </li>
     
     

@@ -400,6 +400,39 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/06/02/kubernetes-nodeSelector/" >
+            
+                <span>kubernetes的PodAffinity的不解</span>
+        </a>
+        <div class="abstract-content">
+            官方文档来看是下面的说法,摘自官方文档https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
+
+An example of a pod that uses pod affinity:
+
+1234567891011121314151617181920212223242526272829apiVersion: v1kind: Podmetadata:  name: with-pod-affinityspec:  affinity:    podAffinity:      requiredDuringSchedul...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/02</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "PodAffinity">PodAffinity</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/05/05/Kubernetes_install/" >
             
                 <span>[转载+修正]Kubernetes v1.10.x HA全手动苦工安装教学</span>
@@ -823,35 +856,6 @@ getopt...
         <a class="post-tag" href="javascript:void(0);" data-tags = "shell">shell</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "bash">bash</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/05/12/ssh-trust/" >
-            
-                <span>ssh互信</span>
-        </a>
-        <div class="abstract-content">
-            <p>ssh公钥免密码登录</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/05/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ssh">ssh</a>
     
 </div>
             
@@ -2914,10 +2918,9 @@ getopt...
     
     
     
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 112
+        Total : 113
         </div>
         <!-- search  -->
         
@@ -3202,6 +3205,11 @@ getopt...
     
         <li class="archive-post-item">
             <span class="archive-post-date">06/02</span><a class="archive-post-title" href= "/2019/06/02/cobra/" >golang cobra的一些笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/11</span><a class="archive-post-title" href= "/2019/05/11/container-too-many-open-file/" >standard_init_linux.go:211: exec user process caused "too many open files in system"</a>
         </li>
     
     

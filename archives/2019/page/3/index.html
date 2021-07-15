@@ -387,6 +387,38 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/03/22/k8s-controller-error/" >
+            
+                <span>一次kube-controller-manager的bug导致的线上无法调度处理过程</span>
+        </a>
+        <div class="abstract-content">
+            线上的k8s环境普遍版本很低，今天同事心血来潮去一个新节点上去看了下发现根分区满了,清理了后发有一个pod没有创建出来。清理后把因为文件系统满了而down掉的k8s相关进程起来后发现kubelet的log一直报错cannot remove /var/lib/kubelet/xxxxconfig/key resource busy now 啥的。查看了下describe对应rc还没有任何Event
+1234567891011121314151617181920212223242526272829303132333435363738$ kubectl describe rc rabbit3r...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/22</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "kube-controller-manager">kube-controller-manager</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/03/15/flannel-bin/" >
             
                 <span>不走etcd v2 api下二进制跑flannel的总结</span>
@@ -2503,10 +2535,9 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
     
     
     
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 112
+        Total : 113
         </div>
         <!-- search  -->
         
@@ -2791,6 +2822,11 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
     
         <li class="archive-post-item">
             <span class="archive-post-date">06/02</span><a class="archive-post-title" href= "/2019/06/02/cobra/" >golang cobra的一些笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/11</span><a class="archive-post-title" href= "/2019/05/11/container-too-many-open-file/" >standard_init_linux.go:211: exec user process caused "too many open files in system"</a>
         </li>
     
     
