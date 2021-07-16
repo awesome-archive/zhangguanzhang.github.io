@@ -387,6 +387,45 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/07/16/consul-mips64le/" >
+            
+                <span>编译mips64le架构的consul</span>
+        </a>
+        <div class="abstract-content">
+            编译建议使用容器编译，否则建议 clone 进 GOPATH 里
+clone12git clone https://github.com/hashicorp/consul.gitcd consul
+
+
+线上使用的是 v1.8 版本，这里我以 v1.8.14 (2021/07/19 发布的)搞的。
+1git checkout v1.8.14
+
+准备工作拉取需要的镜像。貌似 golang 1.16 更好的支持 mips64 了，所以条件允许的话，这里可以下改下 golang 的版本试试
+1234$ head -n2 build-support/docker/Build-Go.dockerfi...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/07/16</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "consul">consul</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "mips64le">mips64le</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/10/24/deployment-consul-in-k8s/" >
             
                 <span>consul仅当服务发现在k8s无状态部署使用</span>
@@ -2384,9 +2423,54 @@ nodeName
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 113
+        Total : 114
         </div>
         <!-- search  -->
         
@@ -2399,6 +2483,11 @@ nodeName
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href= "/2021/07/16/consul-mips64le/" >编译mips64le架构的consul</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3200,6 +3289,8 @@ nodeName
         <span class="sidebar-tag-name" data-tags="audit"><span class="iconfont-archer">&#xe606;</span>audit</span>
     
         <span class="sidebar-tag-name" data-tags="systemd"><span class="iconfont-archer">&#xe606;</span>systemd</span>
+    
+        <span class="sidebar-tag-name" data-tags="mips64le"><span class="iconfont-archer">&#xe606;</span>mips64le</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

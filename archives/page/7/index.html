@@ -387,6 +387,36 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/01/30/fstab/" >
+            
+                <span>fstab与systemd.mount自动挂载的一点研究和见解</span>
+        </a>
+        <div class="abstract-content">
+            每次挂nfs,iscsi，cifs改fstab都心惊胆颤，怕改错了开机hang在那影响业务。每次都是改之前去搜第四列列的所有选项值。写下今天趁线上挂了cifs的一台机器可能重启之前在我自己虚机上做了测试和一些问题搜到的见解虚机桥接网络，宿主机共享一个目录，折腾了半天autofs都没配置起来，而且网上普遍的samba的fstab为下面这样
+1&#x2F;&#x2F;10.0.23.85&#x2F;test  &#x2F;mnt  cifs  username&#x3D;zhangguanzhang@xxxxx.com,password&#x3D;xxxxxxxxx,iocharset&#x...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "cifs">cifs</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/01/22/proxmox-cloud-init/" >
             
                 <span>proxmox里使用cloud-init和一些笔记</span>
@@ -682,44 +712,6 @@ Ingress Co...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/18/kubernetes-1-11-x-bin/" >
-            
-                <span>二进制部署Kubernetes v1.11.x(1.12.x) HA可选</span>
-        </a>
-        <div class="abstract-content">
-            本次采用二进制文件方式部署
-不建议使用secureCRT这个ssh软件复制本篇博客内容的命令,因为它的部分版本对包含多条命令的处理结果并不完美,可能很多命令不是预期结果
-本文命令里有些是输出,不要乱粘贴输入(虽然也没影响)
-本文命令全部是在k8s-m1上执行
-本文很多步骤是选择其一,别啥都不看一路往下复制粘贴
-如果某些步骤理解不了可以上下内容一起看来理解
-本文后面的几个svc用了externalIPs,上生产的话必须用VIP或者LB代替
-本文的HA是vip,生产和云上可以用LB和SLB,不过阿里的SLB四层有问题,可以每个node上代理127.0.0.1的某个port分摊在所有apise...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "operator">operator</a>
     
 </div>
             
@@ -2627,9 +2619,54 @@ Ingress Co...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 113
+        Total : 114
         </div>
         <!-- search  -->
         
@@ -2642,6 +2679,11 @@ Ingress Co...
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href= "/2021/07/16/consul-mips64le/" >编译mips64le架构的consul</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3443,6 +3485,8 @@ Ingress Co...
         <span class="sidebar-tag-name" data-tags="audit"><span class="iconfont-archer">&#xe606;</span>audit</span>
     
         <span class="sidebar-tag-name" data-tags="systemd"><span class="iconfont-archer">&#xe606;</span>systemd</span>
+    
+        <span class="sidebar-tag-name" data-tags="mips64le"><span class="iconfont-archer">&#xe606;</span>mips64le</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
