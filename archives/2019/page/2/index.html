@@ -454,7 +454,7 @@ ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/
         </a>
         <div class="abstract-content">
             嗯，1.6.7 的老集群。早上反应数据库实例创建不出来。发现接口 port 的 tcp 不可达，查看 kube-proxy 的日志如下
-123456[root@HB1-xxxxx-S03 kubernetes]# tailf  kube-proxy.INFO E0708 09:44:03.437284  394350 proxier.go:1062] can&#39;t open &quot;nodePort for cloudify&#x2F;cloudae-cfy-nginx:port1&quot; (:16081&#x2F;tcp), skipping this nodePort:...
+123456[root@HB1-xxxxx-S03 kubernetes]# tailf  kube-proxy.INFO E0708 09:44:03.437284  394350 proxier.go:1062] can&#x27;t open &quot;nodePort for cloudify/cloudae-cfy-nginx:port1&quot; (:16081/tcp), skipping this nodePort: listen t...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
