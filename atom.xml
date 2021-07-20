@@ -17,7 +17,7 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>dlv命令行的远程调试 golang 步骤</title>
+    <title>dlv命令行的远程调试 golang 进程步骤(包含容器进程)</title>
     <link href="http://zhangguanzhang.github.io/2021/07/20/dlv-remote/"/>
     <id>http://zhangguanzhang.github.io/2021/07/20/dlv-remote/</id>
     <published>2021-07-20T20:08:06.000Z</published>
