@@ -400,6 +400,37 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/11/06/kylin-arm-clone-vxlan-error/" >
+            
+                <span>银河麒麟arm64系统克隆机器上k8s vxlan跨节点不通的一次排查</span>
+        </a>
+        <div class="abstract-content">
+            由来和前一篇文章不一样，从来没遇到过这样的问题，这里记录下。实施在客户那边部署业务后，业务在浏览器上无法访问，我远程上去查看日志发现 pod 内部无法 DNS 无法解析，nginx 连不上 upsteam 报错而启动失败，实际上也是跨节点不通。实际排查过程也有往错误的方向浪费了一些时间和尝试，就不写进来了，以正确的角度写下排查过程。
+环境信息OS 是 arm64 的银河麒麟系统：
+123456789$ cat /etc/os-releaseNAME="Kylin Linux Advanced Server"VERSION="V10 (Tercel)"ID="kylin"VERSION_I...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/06</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Kylin">Kylin</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/10/30/uos20-nftables/" >
             
                 <span>统信USO 20 hostPort 无法访问</span>
@@ -844,35 +875,6 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "Mismatch">Mismatch</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/10/go-mod-base-use/" >
-            
-                <span>go mod的基础使用-科普</span>
-        </a>
-        <div class="abstract-content">
-            go mod由来&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文章主要是针对新人来介绍go mod是啥以及新手如何使用，老手不用看。现阶段go mod已经完全GA了，你会用了的话会非常方便&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;像python的项目根目录有requirement.txt记录依赖包，nodejs是packages.json，同样go的包管理从早期的go dep(gopkg)到vendor到现在的go mod.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "go mod">go mod</a>
     
 </div>
             
@@ -2971,18 +2973,9 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 114
+        Total : 115
         </div>
         <!-- search  -->
         
@@ -2995,6 +2988,11 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/20</span><a class="archive-post-title" href= "/2021/07/20/dlv-remote/" >dlv命令行的远程调试 golang 步骤</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3803,6 +3801,8 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
         <span class="sidebar-tag-name" data-tags="systemd"><span class="iconfont-archer">&#xe606;</span>systemd</span>
     
         <span class="sidebar-tag-name" data-tags="mips64le"><span class="iconfont-archer">&#xe606;</span>mips64le</span>
+    
+        <span class="sidebar-tag-name" data-tags="dlv"><span class="iconfont-archer">&#xe606;</span>dlv</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

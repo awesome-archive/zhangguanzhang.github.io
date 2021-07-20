@@ -400,6 +400,39 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2017/06/03/bash-complete/" >
+            
+                <span>bash自定义补全</span>
+        </a>
+        <div class="abstract-content">
+            总结下bash的补全
+终端下按两次tab就是补全
+补全常见的分为下面几种场景:
+
+第一部分的命令补全
+命令补全后补全路径到文件
+变量补全
+类似systemctl命令的选项补全 
+
+当然bash支持自定义补全,也就是让我们实现和systemctl命令那样补全
+假设我们要systemctl disable --now firewalldsystemctl空格后按tab键会显示systemctl的第二个部分的所有支持的选项此时继续输入di按tab键会补全成systemctl disable,输入--now(相似的太多了,所以基本输入完)补全,当然最后的服务名此时补全不了,因为systemctl...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/06/03</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2017/05/25/shell%E8%84%9A%E6%9C%AC%E7%9A%84%E9%80%89%E9%A1%B9%E5%A4%84%E7%90%86/" >
             
                 <span>shell脚本的选项和参数处理</span>
@@ -809,30 +842,6 @@ getopt...
         <a class="post-tag" href="javascript:void(0);" data-tags = "zombie">zombie</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/03/23/check-dhcp-or-static/" >
-            
-                <span>判断是否是 dhcp 获取ip的一个手段</span>
-        </a>
-        <div class="abstract-content">
-            看配置文件和日志啥的都是扯淡，现在Linux发行版种类太多了。ip 和 ifconfig 命令遇到过某些 os 下不显示 dhcp 和 dynamic 字样。租约文件路径有的 os 是 /var/lib/dhcp/dhclient.xxx.leases， 有的 os 是 /var/lib/dhclient/dhclient.xxx.leases。而且 NetworkManager 不是每个系统都有。找到了个姿势，直接看 pid 文件就行了： /var/run/dhclient-xxx.pid ubuntu 上是 /var/run/dhclient.xxx.pid
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/03/23</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -2929,18 +2938,9 @@ getopt...
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 114
+        Total : 115
         </div>
         <!-- search  -->
         
@@ -2953,6 +2953,11 @@ getopt...
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/20</span><a class="archive-post-title" href= "/2021/07/20/dlv-remote/" >dlv命令行的远程调试 golang 步骤</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3761,6 +3766,8 @@ getopt...
         <span class="sidebar-tag-name" data-tags="systemd"><span class="iconfont-archer">&#xe606;</span>systemd</span>
     
         <span class="sidebar-tag-name" data-tags="mips64le"><span class="iconfont-archer">&#xe606;</span>mips64le</span>
+    
+        <span class="sidebar-tag-name" data-tags="dlv"><span class="iconfont-archer">&#xe606;</span>dlv</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

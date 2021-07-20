@@ -400,6 +400,43 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/06/25/etcd-error/" >
+            
+                <span>记录一次线上k8s节点故障</span>
+        </a>
+        <div class="abstract-content">
+            
+
+邮件收到zabbix的告警,业务的网页登陆状态不是200,后面又自愈了
+
+
+说明服务挂掉过一次,登陆到机器上发现集群有台节点状态是nodelost状态上去看到相关服务都挂掉了然后排查到根分区占满了,排查到是k8s日志堆满了/var/log/
+12345678910111213141516[root@cloudos02 ~]# df -hFilesystem               Size  Used Avail Use% Mounted on/dev/mapper/centos-root  219G  216G     0 100% /devtmpfs             ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/25</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "etcd">etcd</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/06/03/kubernetes-s-job/" >
             
                 <span>kubernetes&#39;s Job总结和实战以及坑</span>
@@ -823,39 +860,6 @@ ffmpeg1234567https://rpmfusion.org/mirror list:https://mirrors.rpmfusion.org/mm/
         <a class="post-tag" href="javascript:void(0);" data-tags = "nginx">nginx</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/06/03/bash-complete/" >
-            
-                <span>bash自定义补全</span>
-        </a>
-        <div class="abstract-content">
-            总结下bash的补全
-终端下按两次tab就是补全
-补全常见的分为下面几种场景:
-
-第一部分的命令补全
-命令补全后补全路径到文件
-变量补全
-类似systemctl命令的选项补全 
-
-当然bash支持自定义补全,也就是让我们实现和systemctl命令那样补全
-假设我们要systemctl disable --now firewalldsystemctl空格后按tab键会显示systemctl的第二个部分的所有支持的选项此时继续输入di按tab键会补全成systemctl disable,输入--now(相似的太多了,所以基本输入完)补全,当然最后的服务名此时补全不了,因为systemctl...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/06/03</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -2952,18 +2956,9 @@ ffmpeg1234567https://rpmfusion.org/mirror list:https://mirrors.rpmfusion.org/mm/
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 114
+        Total : 115
         </div>
         <!-- search  -->
         
@@ -2976,6 +2971,11 @@ ffmpeg1234567https://rpmfusion.org/mirror list:https://mirrors.rpmfusion.org/mm/
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/20</span><a class="archive-post-title" href= "/2021/07/20/dlv-remote/" >dlv命令行的远程调试 golang 步骤</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3784,6 +3784,8 @@ ffmpeg1234567https://rpmfusion.org/mirror list:https://mirrors.rpmfusion.org/mm/
         <span class="sidebar-tag-name" data-tags="systemd"><span class="iconfont-archer">&#xe606;</span>systemd</span>
     
         <span class="sidebar-tag-name" data-tags="mips64le"><span class="iconfont-archer">&#xe606;</span>mips64le</span>
+    
+        <span class="sidebar-tag-name" data-tags="dlv"><span class="iconfont-archer">&#xe606;</span>dlv</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

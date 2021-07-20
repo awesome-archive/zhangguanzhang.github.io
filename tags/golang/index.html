@@ -387,6 +387,40 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/07/20/dlv-remote/" >
+            
+                <span>dlv命令行的远程调试 golang 步骤</span>
+        </a>
+        <div class="abstract-content">
+            前情提要记录下 dlv 的远程调试，建议不要在代码里加 fmt 去调试。不谈 goland 啥的远程调试，本文章目前只写 dlv 的命令行配合远端调试。
+一些前提须知符号链接路径1234567891011package mainimport (	&quot;fmt&quot;	&quot;os&quot;)func main() &#123;	f, _ := os.Open(&quot;asdasdasd&quot;)	fmt.Println(f.Name())&#125;
+
+上面代码你编译了后，在其他机器上运行，panic 的堆栈信息会是你机器上的路径信息，路径信息是保留的，例如下面的...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/07/20</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "golang">golang</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "dlv">dlv</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/10/21/k8s-v1.14-v1.15-fix-issue/" >
             
                 <span>手动修复v1.14-v1.15版本k8s的issue:76956</span>
@@ -2377,18 +2411,9 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 114
+        Total : 115
         </div>
         <!-- search  -->
         
@@ -2401,6 +2426,11 @@
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/20</span><a class="archive-post-title" href= "/2021/07/20/dlv-remote/" >dlv命令行的远程调试 golang 步骤</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3209,6 +3239,8 @@
         <span class="sidebar-tag-name" data-tags="systemd"><span class="iconfont-archer">&#xe606;</span>systemd</span>
     
         <span class="sidebar-tag-name" data-tags="mips64le"><span class="iconfont-archer">&#xe606;</span>mips64le</span>
+    
+        <span class="sidebar-tag-name" data-tags="dlv"><span class="iconfont-archer">&#xe606;</span>dlv</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

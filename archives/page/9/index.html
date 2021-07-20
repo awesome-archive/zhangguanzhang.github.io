@@ -387,6 +387,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/03/18/keepalived-Heartbeat-use-mg-net/" >
+            
+                <span>使用管理网当作业务网keepalived VIP的心跳线</span>
+        </a>
+        <div class="abstract-content">
+            客户的业务情况如下，我们连的 vpn2 上去部署的业务，一开始三台机器，上面只有 NC1 这一个网卡，客户给了个 vip 让我们配置上，说 vip 两个 vpn 都能访问到。后面实际配置完发现不通，沟通了一番了解清楚网络后，使用了如下方案。
+NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 172.18.27.99/25 via 172.18.27.1，两个网卡不同的 vlan，172.18.27.0/25 的网络里没有多少 IP 了，所以拿来做 VIP 的话得用 NC1 做心跳线。
+123456789101112131415...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/18</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "vip">vip</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/02/15/linux-tc/" >
             
                 <span>Linux tc基础使用</span>
@@ -637,39 +668,6 @@ ffmpeg1234567https://rpmfusion.org/mirror list:https://mirrors.rpmfusion.org/mm/
         <a class="post-tag" href="javascript:void(0);" data-tags = "nginx">nginx</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/06/03/bash-complete/" >
-            
-                <span>bash自定义补全</span>
-        </a>
-        <div class="abstract-content">
-            总结下bash的补全
-终端下按两次tab就是补全
-补全常见的分为下面几种场景:
-
-第一部分的命令补全
-命令补全后补全路径到文件
-变量补全
-类似systemctl命令的选项补全 
-
-当然bash支持自定义补全,也就是让我们实现和systemctl命令那样补全
-假设我们要systemctl disable --now firewalldsystemctl空格后按tab键会显示systemctl的第二个部分的所有支持的选项此时继续输入di按tab键会补全成systemctl disable,输入--now(相似的太多了,所以基本输入完)补全,当然最后的服务名此时补全不了,因为systemctl...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/06/03</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -2611,18 +2609,9 @@ ffmpeg1234567https://rpmfusion.org/mirror list:https://mirrors.rpmfusion.org/mm/
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 114
+        Total : 115
         </div>
         <!-- search  -->
         
@@ -2635,6 +2624,11 @@ ffmpeg1234567https://rpmfusion.org/mirror list:https://mirrors.rpmfusion.org/mm/
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/20</span><a class="archive-post-title" href= "/2021/07/20/dlv-remote/" >dlv命令行的远程调试 golang 步骤</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3443,6 +3437,8 @@ ffmpeg1234567https://rpmfusion.org/mirror list:https://mirrors.rpmfusion.org/mm/
         <span class="sidebar-tag-name" data-tags="systemd"><span class="iconfont-archer">&#xe606;</span>systemd</span>
     
         <span class="sidebar-tag-name" data-tags="mips64le"><span class="iconfont-archer">&#xe606;</span>mips64le</span>
+    
+        <span class="sidebar-tag-name" data-tags="dlv"><span class="iconfont-archer">&#xe606;</span>dlv</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
