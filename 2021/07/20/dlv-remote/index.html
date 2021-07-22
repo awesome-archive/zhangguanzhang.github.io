@@ -321,7 +321,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">1.7k</span>阅读时长: <span class="post-count reading-time">7 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.8k</span>阅读时长: <span class="post-count reading-time">8 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -495,7 +495,7 @@ height:50vh;
 <p>源码包已经相对路径存在了，但是 golang 的自带包还没有，我们需要配置映射路径，接着在 dlv 的交互里执行下面的:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config substitute-path /usr/local/go D:\Install\Go</span><br></pre></td></tr></table></figure>
 
-<p>然后我们在 <code>main.go:10</code> 打个断点（），然后 <code>c</code> 执行：</p>
+<p>然后我们在 <code>main.go:10</code> 打个断点（也可以通过包名加函数名，例如 main.main:xxx，包名函数名的行数是相对于函数内的，不是文件的行数），然后 <code>c</code> 执行：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">b main.go:10</span><br><span class="line">Breakpoint 1 (enabled) set at 0x891be0 for main.main.func1() main.go:10</span><br><span class="line">c</span><br></pre></td></tr></table></figure>
 
 <p>然后我们触发下请求，例如在 Linux 上直接用 curl 触发请求：</p>
