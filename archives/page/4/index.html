@@ -387,6 +387,38 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/03/26/KubeXXXMismatch/" >
+            
+                <span>一次deploy,rs,sts Mismatch 的处理</span>
+        </a>
+        <div class="abstract-content">
+              这次文章是远程帮群友解决故障后的总结，以时间线描述  群友一开始是apiserver响应慢，使用角度上就是kubectl请求慢，如
+123E0326 07:49:37.586690       1 available_controller.go:416] v1beta1.metrics.k8s.io failed with: failing or missing response  from https:&#x2F;&#x2F;10.99.174.208:443&#x2F;apis&#x2F;metrics.k8s.io&#x2F;v1beta1: Get https:&#x2F;&...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/26</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Mismatch">Mismatch</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/03/10/go-mod-base-use/" >
             
                 <span>go mod的基础使用-科普</span>
@@ -673,38 +705,6 @@ Linux一些目录规范和systemd
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "consul">consul</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/10/21/k8s-v1.14-v1.15-fix-issue/" >
-            
-                <span>手动修复v1.14-v1.15版本k8s的issue:76956</span>
-        </a>
-        <div class="abstract-content">
-            由来该issue见 https://github.com/kubernetes/kubernetes/issues/76956, apiserver和controller-manager每次start的时候会刷下面信息。不影响使用，但是有强迫症可以按照本文思路手动修改。当然本文也是自己编译k8s的教程
-123456E0423 17:35:58.491576       1 prometheus.go:138] failed to register depth metric admission_quota_controller: duplicate metrics collector re...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "golang">golang</a>
     
 </div>
             
@@ -2648,9 +2648,54 @@ Linux一些目录规范和systemd
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 115
+        Total : 116
         </div>
         <!-- search  -->
         
@@ -2663,6 +2708,11 @@ Linux一些目录规范和systemd
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/26</span><a class="archive-post-title" href= "/2021/07/26/kylin-v10-boot-hang/" >鲲鹏920的麒麟v10物理服务器断电后无法启动处理</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3478,6 +3528,10 @@ Linux一些目录规范和systemd
         <span class="sidebar-tag-name" data-tags="mips64le"><span class="iconfont-archer">&#xe606;</span>mips64le</span>
     
         <span class="sidebar-tag-name" data-tags="dlv"><span class="iconfont-archer">&#xe606;</span>dlv</span>
+    
+        <span class="sidebar-tag-name" data-tags="kylin"><span class="iconfont-archer">&#xe606;</span>kylin</span>
+    
+        <span class="sidebar-tag-name" data-tags="arm64"><span class="iconfont-archer">&#xe606;</span>arm64</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

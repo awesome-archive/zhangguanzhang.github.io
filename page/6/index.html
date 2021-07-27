@@ -400,6 +400,39 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/07/08/travis-sync-gcr-io/" >
+            
+                <span>利用travis同步gcr.io镜像到dockerhub</span>
+        </a>
+        <div class="abstract-content">
+            项目地址https://github.com/zhangguanzhang/gcr.io/tree/master
+利用gcloud sdk去查看谷歌镜像站的镜像,获取每一个镜像的tag后改名推送到自己的dockerhub上面全部是shell思路,脚本一旦写完就需要不断的执行去同步了,所以借用travis去构建两个分支,一个master分支和一个构建分支travis触发构建后拉取仓库后,切换到构建分支,pull构建分支,然后同步镜像
+脚本我写了两种https://github.com/zhangguanzhang/bash/tree/master/google_containers_syn...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/08</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "dockerhub">dockerhub</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "gcr.io">gcr.io</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/06/25/etcd-error/" >
             
                 <span>记录一次线上k8s节点故障</span>
@@ -830,36 +863,6 @@ ffmpeg1234567https://rpmfusion.org/mirror list:https://mirrors.rpmfusion.org/mm/
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/07/05</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/06/26/lua-list-all-upsteam/" >
-            
-                <span>lua列出所有upsteam</span>
-        </a>
-        <div class="abstract-content">
-            需要在http的路由上暴露出所有的upsteam配置段
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758upstream names&#123;    server 127.0.0.1:8050 ;    server 127.0.0.1:8060 ;&#125;upstream tuling &#123;    server 127.0.0.1:8051       weight&#x3D;5;    server 127...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/06/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "nginx">nginx</a>
-    
-</div>
             
         </div>
     </article>
@@ -2956,9 +2959,54 @@ ffmpeg1234567https://rpmfusion.org/mirror list:https://mirrors.rpmfusion.org/mm/
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 115
+        Total : 116
         </div>
         <!-- search  -->
         
@@ -2971,6 +3019,11 @@ ffmpeg1234567https://rpmfusion.org/mirror list:https://mirrors.rpmfusion.org/mm/
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/26</span><a class="archive-post-title" href= "/2021/07/26/kylin-v10-boot-hang/" >鲲鹏920的麒麟v10物理服务器断电后无法启动处理</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3786,6 +3839,10 @@ ffmpeg1234567https://rpmfusion.org/mirror list:https://mirrors.rpmfusion.org/mm/
         <span class="sidebar-tag-name" data-tags="mips64le"><span class="iconfont-archer">&#xe606;</span>mips64le</span>
     
         <span class="sidebar-tag-name" data-tags="dlv"><span class="iconfont-archer">&#xe606;</span>dlv</span>
+    
+        <span class="sidebar-tag-name" data-tags="kylin"><span class="iconfont-archer">&#xe606;</span>kylin</span>
+    
+        <span class="sidebar-tag-name" data-tags="arm64"><span class="iconfont-archer">&#xe606;</span>arm64</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

@@ -387,6 +387,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/08/05/wireguard-for-personal/" >
+            
+                <span>个人办公用 wireguard 组网笔记</span>
+        </a>
+        <div class="abstract-content">
+            作为 IT 人员，经常需要连到办公网工作，并不是每个公司都有 vpn，自己搭建的话 openvpn 之类的配置麻烦啰嗦。这里写下 wireguard 的简单搭建。它比 IPSec 更快，更简单，更精简，更有用。它比 OpenVPN 更高效。WireGuard 设计为通用 VPN，适用于多种不同情况。它是跨平台的，可大规模部署。
+通常如下图的部署: 一台 ECS 主机，得有公网 IP，下图就是 pc ----&gt; ECS &lt;------ 公司的 pc
+12345678910111213141516            +----------+            |     ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/05</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "wireguard">wireguard</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/07/30/prometheus-rate-and-irate/" >
             
                 <span>prometheus的rate与irate内部是如何计算的</span>
@@ -673,38 +704,6 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "go">go</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/26/KubeXXXMismatch/" >
-            
-                <span>一次deploy,rs,sts Mismatch 的处理</span>
-        </a>
-        <div class="abstract-content">
-              这次文章是远程帮群友解决故障后的总结，以时间线描述  群友一开始是apiserver响应慢，使用角度上就是kubectl请求慢，如
-123E0326 07:49:37.586690       1 available_controller.go:416] v1beta1.metrics.k8s.io failed with: failing or missing response  from https:&#x2F;&#x2F;10.99.174.208:443&#x2F;apis&#x2F;metrics.k8s.io&#x2F;v1beta1: Get https:&#x2F;&...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Mismatch">Mismatch</a>
     
 </div>
             
@@ -2648,9 +2647,54 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 115
+        Total : 116
         </div>
         <!-- search  -->
         
@@ -2663,6 +2707,11 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/26</span><a class="archive-post-title" href= "/2021/07/26/kylin-v10-boot-hang/" >鲲鹏920的麒麟v10物理服务器断电后无法启动处理</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3478,6 +3527,10 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
         <span class="sidebar-tag-name" data-tags="mips64le"><span class="iconfont-archer">&#xe606;</span>mips64le</span>
     
         <span class="sidebar-tag-name" data-tags="dlv"><span class="iconfont-archer">&#xe606;</span>dlv</span>
+    
+        <span class="sidebar-tag-name" data-tags="kylin"><span class="iconfont-archer">&#xe606;</span>kylin</span>
+    
+        <span class="sidebar-tag-name" data-tags="arm64"><span class="iconfont-archer">&#xe606;</span>arm64</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

@@ -400,6 +400,39 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/07/26/kylin-v10-boot-hang/" >
+            
+                <span>鲲鹏920的麒麟v10物理服务器断电后无法启动处理</span>
+        </a>
+        <div class="abstract-content">
+            前情提要珠海园区升压前置检查，上周六整个园区关电检查，然后今天来后连不上我们在 鲲鹏920的麒麟v10机器上开的虚拟机了，进 bmc 的 web 看了下是开机进入后卡住。
+信息同步是当初安装系统的同事去处理这个事情的，他 bmc 的 web 上去重启在菜单那里按 e 编辑准备改 boot cmdline 进单用户，结果按 e 后要输入用户名和密码，询问了麒麟他们。很久也没给答复。然后就在那干等，上面的虚机有我的环境，我就过去看了下。
+尝试的处理麒麟那边的人员没有回复，我打算这边同步尝试下其他手段，而且不只一台无法开机，哪怕麒麟的回复了密码也能同步尝试不同手段。Linux 无法开机的就搞个...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/07/26</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "kylin">kylin</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "arm64">arm64</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/07/20/dlv-remote/" >
             
                 <span>dlv命令行的远程调试 golang 进程步骤(包含容器进程)</span>
@@ -832,40 +865,6 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/11/20/disable-swap/" >
-            
-                <span>永久关闭swap的正确姿势</span>
-        </a>
-        <div class="abstract-content">
-            今天遇到了 kylin 系统上无法关闭 swap 的情况。记录下和方便别人搜到这个知识点。
-环境信息1234$ at /etc/issueKylin 4.0.2 \n \l$ uname -aLinux H-192-168-63-132 4.15.0- 58-generic #64kord1k1&#x27;SMP Thu Aug 1S15:51:97 csT 2919 aarch64 ......
-尝试的步骤fstab 里没有 swap 的挂载，
-1swapoff -a &amp;&amp; sysctl -w vm.swappiness=0
-重启后，内核参数是关闭的，但是实际没有关闭
-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "swap">swap</a>
     
 </div>
             
@@ -2964,9 +2963,54 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 115
+        Total : 116
         </div>
         <!-- search  -->
         
@@ -2979,6 +3023,11 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/26</span><a class="archive-post-title" href= "/2021/07/26/kylin-v10-boot-hang/" >鲲鹏920的麒麟v10物理服务器断电后无法启动处理</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3794,6 +3843,10 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
         <span class="sidebar-tag-name" data-tags="mips64le"><span class="iconfont-archer">&#xe606;</span>mips64le</span>
     
         <span class="sidebar-tag-name" data-tags="dlv"><span class="iconfont-archer">&#xe606;</span>dlv</span>
+    
+        <span class="sidebar-tag-name" data-tags="kylin"><span class="iconfont-archer">&#xe606;</span>kylin</span>
+    
+        <span class="sidebar-tag-name" data-tags="arm64"><span class="iconfont-archer">&#xe606;</span>arm64</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

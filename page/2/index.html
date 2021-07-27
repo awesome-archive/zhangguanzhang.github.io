@@ -400,6 +400,40 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/11/20/disable-swap/" >
+            
+                <span>永久关闭swap的正确姿势</span>
+        </a>
+        <div class="abstract-content">
+            今天遇到了 kylin 系统上无法关闭 swap 的情况。记录下和方便别人搜到这个知识点。
+环境信息1234$ at /etc/issueKylin 4.0.2 \n \l$ uname -aLinux H-192-168-63-132 4.15.0- 58-generic #64kord1k1&#x27;SMP Thu Aug 1S15:51:97 csT 2919 aarch64 ......
+尝试的步骤fstab 里没有 swap 的挂载，
+1swapoff -a &amp;&amp; sysctl -w vm.swappiness=0
+重启后，内核参数是关闭的，但是实际没有关闭
+...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/20</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "swap">swap</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/11/06/kylin-arm-clone-vxlan-error/" >
             
                 <span>银河麒麟arm64系统克隆机器上k8s vxlan跨节点不通的一次排查</span>
@@ -843,38 +877,6 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "go">go</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/26/KubeXXXMismatch/" >
-            
-                <span>一次deploy,rs,sts Mismatch 的处理</span>
-        </a>
-        <div class="abstract-content">
-              这次文章是远程帮群友解决故障后的总结，以时间线描述  群友一开始是apiserver响应慢，使用角度上就是kubectl请求慢，如
-123E0326 07:49:37.586690       1 available_controller.go:416] v1beta1.metrics.k8s.io failed with: failing or missing response  from https:&#x2F;&#x2F;10.99.174.208:443&#x2F;apis&#x2F;metrics.k8s.io&#x2F;v1beta1: Get https:&#x2F;&...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Mismatch">Mismatch</a>
     
 </div>
             
@@ -2973,9 +2975,54 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 115
+        Total : 116
         </div>
         <!-- search  -->
         
@@ -2988,6 +3035,11 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/26</span><a class="archive-post-title" href= "/2021/07/26/kylin-v10-boot-hang/" >鲲鹏920的麒麟v10物理服务器断电后无法启动处理</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3803,6 +3855,10 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
         <span class="sidebar-tag-name" data-tags="mips64le"><span class="iconfont-archer">&#xe606;</span>mips64le</span>
     
         <span class="sidebar-tag-name" data-tags="dlv"><span class="iconfont-archer">&#xe606;</span>dlv</span>
+    
+        <span class="sidebar-tag-name" data-tags="kylin"><span class="iconfont-archer">&#xe606;</span>kylin</span>
+    
+        <span class="sidebar-tag-name" data-tags="arm64"><span class="iconfont-archer">&#xe606;</span>arm64</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

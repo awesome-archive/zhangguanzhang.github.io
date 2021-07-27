@@ -387,6 +387,40 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/06/26/uefi-pxe/" >
+            
+                <span>uefi模式下docker+交换机部署pxe批量安装</span>
+        </a>
+        <div class="abstract-content">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;华三服务器的ipmi的web提供了nfs挂载iso去安装，也是我之前使用的，发现研发给的镜像在4g以上(镜像基于centos7.3改的，我之前测试都是用的minimal镜像890M左右)。安装的时候报错，然后当面测试得出结论nfs的网速原因，其次也是我们这边办公网是百兆。。。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;办公网被it接管了，交换机密码不给，自己找了台5130交换机，下面接服务器和我自己电脑搭建测了下定制iso的pxe流程
+这是组...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/26</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "initrd">initrd</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "grub">grub</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "tftp">tftp</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/06/23/autoInstallServer/" >
             
                 <span>拟定excel表格服务器自动按照表格配置信息和安装的实现过程</span>
@@ -661,47 +695,6 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "operator">operator</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/02/19/jira-confluence/" >
-            
-                <span>docker部署jira(8.0.0)和confluence(6.14.1)</span>
-        </a>
-        <div class="abstract-content">
-            记录下这几天搭建的过程jira和confluence是分别两台，数据库也是分开的,数据库是用mysql的rpm的repo添加后安装的,jira和confluence是docker跑的,把破解的jar加到镜像里然后改了下别人的Dockerfile本次安装的版本：
-
-
-jira-software 8.0.0
-confluence 6.14.1
-Docker CE 18.06.02
-OS CentOS 7.5.1804
-
-
-系统基本设置
-所有防火墙与SELinux 已关闭：123systemctl disable --now firewalld NetworkManagersetenforce...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/19</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "jira">jira</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "confluence">confluence</a>
     
 </div>
             
@@ -2645,9 +2638,54 @@ OS CentOS 7.5.1804
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 115
+        Total : 116
         </div>
         <!-- search  -->
         
@@ -2660,6 +2698,11 @@ OS CentOS 7.5.1804
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/26</span><a class="archive-post-title" href= "/2021/07/26/kylin-v10-boot-hang/" >鲲鹏920的麒麟v10物理服务器断电后无法启动处理</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3475,6 +3518,10 @@ OS CentOS 7.5.1804
         <span class="sidebar-tag-name" data-tags="mips64le"><span class="iconfont-archer">&#xe606;</span>mips64le</span>
     
         <span class="sidebar-tag-name" data-tags="dlv"><span class="iconfont-archer">&#xe606;</span>dlv</span>
+    
+        <span class="sidebar-tag-name" data-tags="kylin"><span class="iconfont-archer">&#xe606;</span>kylin</span>
+    
+        <span class="sidebar-tag-name" data-tags="arm64"><span class="iconfont-archer">&#xe606;</span>arm64</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
