@@ -321,7 +321,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">5k</span>阅读时长: <span class="post-count reading-time">23 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">5k</span>阅读时长: <span class="post-count reading-time">24 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -452,7 +452,7 @@ height:50vh;
     <article class="article-entry">
         <p>文章写于 <code>2021-08-02</code>，防止排列在前面，所以 markdown 里的时间改成 <code>2017-05-15</code> 。</p>
 <h2 id="rpm-一些知识"><a href="#rpm-一些知识" class="headerlink" title="rpm 一些知识"></a>rpm 一些知识</h2><h3 id="Linux-里的-so"><a href="#Linux-里的-so" class="headerlink" title="Linux 里的 so"></a>Linux 里的 so</h3><p>用白话说，就是类似于 windows 的 dll 文件，通常是底层库，或者经常用到的 c 函数。比如说 curl 命令和 wget 命令，他们很多的底层例如 http 请求，dns 解析，hosts 解析这块逻辑是一样的。如果他们全部打包在二进制文件里（也就是静态编译）会造成二进制体积很大（golang 一般都是静态编译的）。如果共用（共用的一个其中原因是因为早期的系统硬盘容量很小）的话体积会很小，所以安装 rpm 的时候一般会检查依赖。</p>
-<h3 id="rpm-制作目录"><a href="#rpm-制作目录" class="headerlink" title="rpm 制作目录"></a>rpm 制作目录</h3><p>rpm 包分为两种，rpm 和 srpm。前者基本是打包文件，后者里面有源码包，安装的时候会编译安装，通常的 rpm 包是代指前者。</p>
+<h3 id="rpm-制作目录"><a href="#rpm-制作目录" class="headerlink" title="rpm 制作目录"></a>rpm 制作目录</h3><p>rpm 包分为两种，rpm 和 srpm。前者基本是打包文件（编译好的二进制文件例如/usr/sbin/nginx、lograte、conf、和 systemd 文件），后者里面有源码包，安装的时候会编译安装，通常的 rpm 包是代指前者。</p>
 <p>制作 rpm 包需要以下目录：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">BUILD       # 编译 rpm 包的临时目录</span><br><span class="line">BUILDROOT   # 虚拟安装目录，即在整个 install 的过程中临时安装到这个目录，把这个目录当作根来用的，所以在这个目录下的文件，才是真正的目录文件。最终, Spec 文件中最后有清理阶段，这个目录中的内容将被删除</span><br><span class="line">RPMS        # 制作完成后的rpm包存放目录，会以架构名存放，例如 RPMS/&#123;aarch64,x86_64&#125;/xxx.rpm</span><br><span class="line">SOURCES     # 存放源文件,配置文件,补丁文件等放置的目录，如果是 srpm 的话，一般这个目录是有源码，不是 srpm 的话，里面一般有编译好的二进制文件。</span><br><span class="line">SPECS       # 核心文件，里面的文件描述 rpm 包的制作和每个步骤怎么执行</span><br><span class="line">SRPMS       # srpm 包生成存放文件</span><br></pre></td></tr></table></figure>
 
