@@ -499,6 +499,39 @@ getopt...
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2017/05/15/rpmbuild/" >
+            
+                <span>rpm包的制作笔记</span>
+        </a>
+        <div class="abstract-content">
+            文章写于 2021-08-02，防止排列在前面，所以 markdown 里的时间改成 2017-05-15 。
+rpm 一些知识Linux 里的 so用白话说，就是类似于 windows 的 dll 文件，通常是底层库，或者经常用到的 c 函数。比如说 curl 命令和 wget 命令，他们很多的底层例如 http 请求，dns 解析，hosts 解析这块逻辑是一样的。如果他们全部打包在二进制文件里（也就是静态编译）会造成二进制体积很大（golang 一般都是静态编译的）。如果共用（共用的一个其中原因是因为早期的系统硬盘容量很小）的话体积会很小，所以安装 rpm 的时候一般会检查依赖。
+...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/05/15</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "rpm">rpm</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "rpmbuild">rpmbuild</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2017/05/12/ssh-trust/" >
             
                 <span>ssh互信</span>
@@ -818,29 +851,6 @@ getopt...
         <a class="post-tag" href="javascript:void(0);" data-tags = "安卓">安卓</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/04/03/bond/" >
-            
-                <span>centos配置bond</span>
-        </a>
-        <div class="abstract-content">
-            1234567891011121314151617181920212223242526272829[root@APP-SRV-001 ~]# cat &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-eth0TYPE&#x3D;EthernetBOOTPROTO&#x3D;noneDEVICE&#x3D;eth0NAME&#x3D;eth0ONBOOT&#x3D;yesMASTER&#x3D;bond4SLAVE&#x3D;yes[root@APP-SRV-001 ~]# cat &#x2F;etc&#x2F;sysconf...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/04/03</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -2969,22 +2979,9 @@ getopt...
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 116
+        Total : 117
         </div>
         <!-- search  -->
         
@@ -3501,6 +3498,11 @@ getopt...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">05/15</span><a class="archive-post-title" href= "/2017/05/15/rpmbuild/" >rpm包的制作笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">05/12</span><a class="archive-post-title" href= "/2017/05/12/ssh-trust/" >ssh互信</a>
         </li>
     
@@ -3821,6 +3823,10 @@ getopt...
         <span class="sidebar-tag-name" data-tags="kylin"><span class="iconfont-archer">&#xe606;</span>kylin</span>
     
         <span class="sidebar-tag-name" data-tags="arm64"><span class="iconfont-archer">&#xe606;</span>arm64</span>
+    
+        <span class="sidebar-tag-name" data-tags="rpm"><span class="iconfont-archer">&#xe606;</span>rpm</span>
+    
+        <span class="sidebar-tag-name" data-tags="rpmbuild"><span class="iconfont-archer">&#xe606;</span>rpmbuild</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
