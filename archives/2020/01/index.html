@@ -387,6 +387,33 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/01/15/kill-ctr-with-grace-period/" >
+            
+                <span>Killing container &#34;docker://xxx with 30 second grace period</span>
+        </a>
+        <div class="abstract-content">
+            由来开发反应他们环境上有个 pod 不正常。他们先操作然后卡住后来找我的。
+12345$ kubectl -n xxx get pod -o wide | grep 0/1xstorage-6d959cd8c8-rdscv      0/1     Init:0/1    0       15m     xxxx$ kubectl -n xxx delete po xstorage-6d959cd8c8-rdscvpod &quot;xstorage-6d959cd8c8-rdscv&quot; deleted      ^[[A^[[A^[[A^[[A
+
+处理过程查看日志：
+1234$...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/15</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/01/08/docker-panic-invalid-page-type/" >
             
                 <span>docker-18.06.3-ce启动panic: invalid page type: 0: 0的解决处理</span>
@@ -2425,6 +2452,8 @@
     
     
     
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 118
@@ -2440,11 +2469,6 @@
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/04</span><a class="archive-post-title" href= "/2021/08/04/kill-ctr-with-grace-period/" >[Untitled Post]</a>
-        </li>
     
     
         <li class="archive-post-item">
@@ -2628,6 +2652,11 @@
     
         <li class="archive-post-item">
             <span class="archive-post-date">02/27</span><a class="archive-post-title" href= "/2020/02/27/microsoft-graph-for-onedrive/" >使用microsoft-graph的api对接onedrive</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/15</span><a class="archive-post-title" href= "/2020/01/15/kill-ctr-with-grace-period/" >Killing container "docker://xxx with 30 second grace period</a>
         </li>
     
     

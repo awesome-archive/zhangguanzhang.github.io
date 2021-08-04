@@ -400,33 +400,6 @@ height:50vh;
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2021/08/04/kill-ctr-with-grace-period/" >
-            
-                <span>[Untitled Post]</span>
-        </a>
-        <div class="abstract-content">
-            d 不正常。他们先操作然后卡住后来找我的。
-12345$ kubectl -n xxx get pod -o wide | grep 0/1xstorage-6d959cd8c8-rdscv      0/1     Init:0/1    0       15m     xxxx$ kubectl -n xxx delete po xstorage-6d959cd8c8-rdscvpod &quot;xstorage-6d959cd8c8-rdscv&quot; deleted      ^[[A^[[A^[[A^[[A
-
-处理过程查看日志：
-123$ journalctl -xe -...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/08/04</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href = "/2021/07/26/kylin-v10-boot-hang/" >
             
                 <span>鲲鹏920的麒麟v10物理服务器断电后无法启动处理</span>
@@ -862,6 +835,36 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "hang">hang</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/11/23/ansible-hang-in-docker/" >
+            
+                <span>ansible hang in docker container</span>
+        </a>
+        <div class="abstract-content">
+            由来这几天同事发现在 docker 容器里运行 ansible 命令很卡，发来了个命令叫我试试 ansible localhost -m setup -a &#39;filter=ansible_default_ipv4&#39; 2&gt;/dev/null |grep &#39;\&quot;address\&quot;&#39; |awk -F&#39;\&quot;&#39; &#39;&#123;print $4&#125;&#39;
+环境信息12345678910111213141516171819202122232425262728293031323334353637383...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
     
 </div>
             
@@ -3039,6 +3042,8 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
     
     
     
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 118
@@ -3054,11 +3059,6 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/04</span><a class="archive-post-title" href= "/2021/08/04/kill-ctr-with-grace-period/" >[Untitled Post]</a>
-        </li>
     
     
         <li class="archive-post-item">
@@ -3242,6 +3242,11 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
     
         <li class="archive-post-item">
             <span class="archive-post-date">02/27</span><a class="archive-post-title" href= "/2020/02/27/microsoft-graph-for-onedrive/" >使用microsoft-graph的api对接onedrive</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/15</span><a class="archive-post-title" href= "/2020/01/15/kill-ctr-with-grace-period/" >Killing container "docker://xxx with 30 second grace period</a>
         </li>
     
     
