@@ -59,13 +59,17 @@
 0.0.0.0 adesknews2.autodesk.com
 0.0.0.0 adeskout.autodesk.com
 0.0.0.0 adsknateur.autodesk.com
+0.0.0.0 akn.analytics.autodesk.com
 0.0.0.0 amernetlog.autodesk.com
 0.0.0.0 app5.autodesk.com
 0.0.0.0 aprimo-relay1.autodesk.com
 0.0.0.0 aprimo-relay2.autodesk.com
 0.0.0.0 aprimo-relay3.autodesk.com
 0.0.0.0 aprimo-relay4.autodesk.com
+0.0.0.0 api.genuine.autodesk.com
+0.0.0.0 ase.autodesk.com
 0.0.0.0 autosketch.autodesk.com
+0.0.0.0 beehive.autodesk.com
 0.0.0.0 blues.autodesk.com
 0.0.0.0 cbuanprd.autodesk.com
 0.0.0.0 cbuanprhcllb.autodesk.com
@@ -83,6 +87,7 @@
 0.0.0.0 extupg.autodesk.com
 0.0.0.0 ftp-users.autodesk.com
 0.0.0.0 ftp2b.autodesk.com
+0.0.0.0 genuine-software.autodesk.com
 0.0.0.0 gisdmzpdc.autodesk.com
 0.0.0.0 hqaribasrf04.autodesk.com
 0.0.0.0 hqmgwww01.autodesk.com
@@ -108,7 +113,9 @@
 0.0.0.0 locationservices.autodesk.com
 0.0.0.0 lsctsol04.autodesk.com
 0.0.0.0 mail-relay.autodesk.com
+0.0.0.0 micro.akn.autodesk.com
 0.0.0.0 mneprdext-svc.autodesk.com
+0.0.0.0 mpa.autodesk.com
 0.0.0.0 mut.autodesk.com
 0.0.0.0 nbugma-dmz.autodesk.com
 0.0.0.0 ns1.autodesk.com
