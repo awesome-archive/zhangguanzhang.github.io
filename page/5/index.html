@@ -400,6 +400,30 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/03/11/k8s-ha/" >
+            
+                <span>k8s高可用涉及到ip填写的相关配置和一些坑</span>
+        </a>
+        <div class="abstract-content">
+            etcd就不说了,奇数个副本,可以坏(n-1)/2个,但是不可能同时坏那么多,这里不讨论etcd单独不单独跑。推荐个文档 https://github.com/etcd-io/etcd/tree/master/Documentation/op-guide
+管理组件&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;先说说k8s组件,kubelet和kube-proxy啥的肯定写LB或者VIP:HA_port,如官方的图和 https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/h...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/11</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/03/03/kubernetes-1-13-4/" >
             
                 <span>二进制部署Kubernetes v1.13.12 HA可选</span>
@@ -868,53 +892,6 @@ Ingress Co...
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "operator">operator</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/08/03/Kubernetes_install_1.11.1/" >
-            
-                <span>Kubernetes v1.11.x HA全手动苦工安装教学</span>
-        </a>
-        <div class="abstract-content">
-            
-多master高可用 或者 单master的ansible部署方案
-
-管理组件采用staticPod或者daemonSet形式跑的,宿主机os能跑docker应该本篇教程能大多适用安装完成仅供学习和实验
-本次安裝的版本：
-
-
-Kubernetes v1.11.1
-CNI v0.7.1
-Etcd v3.3.9
-Flannel v0.10.0 或者 Calico v3.1.3
-Docker CE latest version(18.06)
-
-
-** 不建议用docker 18.05 , docker CE 18.05有bind mount的bug **
-本次部署的网络信息：
-
-
-Clust...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
 </div>
             
@@ -3089,14 +3066,9 @@ Clust...
     
     
     
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 118
+        Total : 119
         </div>
         <!-- search  -->
         
@@ -3109,6 +3081,11 @@ Clust...
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/16</span><a class="archive-post-title" href= "/2021/08/16/reserve-compute-resources/" >kubelet 为系统配置预留资源</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3947,6 +3924,8 @@ Clust...
         <span class="sidebar-tag-name" data-tags="rpm"><span class="iconfont-archer">&#xe606;</span>rpm</span>
     
         <span class="sidebar-tag-name" data-tags="rpmbuild"><span class="iconfont-archer">&#xe606;</span>rpmbuild</span>
+    
+        <span class="sidebar-tag-name" data-tags="kubelet"><span class="iconfont-archer">&#xe606;</span>kubelet</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

@@ -400,6 +400,53 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/08/03/Kubernetes_install_1.11.1/" >
+            
+                <span>Kubernetes v1.11.x HA全手动苦工安装教学</span>
+        </a>
+        <div class="abstract-content">
+            
+多master高可用 或者 单master的ansible部署方案
+
+管理组件采用staticPod或者daemonSet形式跑的,宿主机os能跑docker应该本篇教程能大多适用安装完成仅供学习和实验
+本次安裝的版本：
+
+
+Kubernetes v1.11.1
+CNI v0.7.1
+Etcd v3.3.9
+Flannel v0.10.0 或者 Calico v3.1.3
+Docker CE latest version(18.06)
+
+
+** 不建议用docker 18.05 , docker CE 18.05有bind mount的bug **
+本次部署的网络信息：
+
+
+Clust...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/03</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/07/18/ecs-vip/" >
             
                 <span>基于openstack的ecs上使用VIP</span>
@@ -839,31 +886,6 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
         <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/07/25/linux-bridge/" >
-            
-                <span>centos桥接测试</span>
-        </a>
-        <div class="abstract-content">
-            需求机器上的虚拟机桥接宿主机的网卡上网，类似于 vmware workstation，宿主机和虚拟机都接网桥上，虚拟机和宿主机同一个网段。
-原有配置centos7 
-1234567891011cat ifcfg-eth0TYPE&#x3D;&quot;Ethernet&quot;BOOTPROTO&#x3D;&quot;static&quot;DEFROUTE&#x3D;&quot;yes&quot;NAME&#x3D;&quot;eth0&quot;DEVICE&#x3D;&quot;eth0&quot;ONBOOT&#x3D;&quot;yes&quot;IPADDR&#x3D;19...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/07/25</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -3036,14 +3058,9 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
     
     
     
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 118
+        Total : 119
         </div>
         <!-- search  -->
         
@@ -3056,6 +3073,11 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/16</span><a class="archive-post-title" href= "/2021/08/16/reserve-compute-resources/" >kubelet 为系统配置预留资源</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3894,6 +3916,8 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
         <span class="sidebar-tag-name" data-tags="rpm"><span class="iconfont-archer">&#xe606;</span>rpm</span>
     
         <span class="sidebar-tag-name" data-tags="rpmbuild"><span class="iconfont-archer">&#xe606;</span>rpmbuild</span>
+    
+        <span class="sidebar-tag-name" data-tags="kubelet"><span class="iconfont-archer">&#xe606;</span>kubelet</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
