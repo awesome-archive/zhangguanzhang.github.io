@@ -471,6 +471,34 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2017/07/15/dd-make-boot-device/" >
+            
+                <span>使用 dd 利用 iso 文件制作 USB 启动盘</span>
+        </a>
+        <div class="abstract-content">
+            命令1234# bs ，每个块的填充字节，不足用空(NUL) 字符对齐# sync  直接写磁盘，不写缓存dd if=xxx.iso  of=/dev/xxx bs=256k oflag=sync
+
+可以利用 watch -n 5 每 5s 发送信号触发 dd 命令打印进度
+1watch -n 5 pkill -USR1 ^dd$
+
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/07/15</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2017/07/05/centos7-some-mirror/" >
             
                 <span>centos7 的一些常见软件的安装 mirror</span>
@@ -649,35 +677,6 @@ Linux 里的 so用白话说，就是类似于 windows 的 dll 文件，通常是
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "ssh">ssh</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/05/06/shell%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%8F%90%E5%8D%87%E6%95%88%E7%8E%87/" >
-            
-                <span>shell利用快捷键提升命令输入和编辑</span>
-        </a>
-        <div class="abstract-content">
-            <p>快速编辑命令高效率输入</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/05/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "shell">shell</a>
     
 </div>
             
@@ -2697,9 +2696,56 @@ Linux 里的 so用白话说，就是类似于 windows 的 dll 文件，通常是
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 119
+        Total : 120
         </div>
         <!-- search  -->
         
@@ -3202,6 +3248,11 @@ Linux 里的 so用白话说，就是类似于 windows 的 dll 文件，通常是
     
         <li class="archive-post-item">
             <span class="archive-post-date">07/25</span><a class="archive-post-title" href= "/2017/07/25/linux-bridge/" >centos桥接测试</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/15</span><a class="archive-post-title" href= "/2017/07/15/dd-make-boot-device/" >使用 dd 利用 iso 文件制作 USB 启动盘</a>
         </li>
     
     
