@@ -430,12 +430,12 @@ height:50vh;
                 <span>使用 dd 利用 iso 文件制作 USB 启动盘</span>
         </a>
         <div class="abstract-content">
-            命令1234# bs ，每个块的填充字节，不足用空(NUL) 字符对齐# sync  直接写磁盘，不写缓存dd if=xxx.iso  of=/dev/xxx bs=256k oflag=sync
+            命令1234# bs ，每个块的填充字节，不足用空(NUL) 字符对齐# sync  直接写磁盘，不写缓存dd if=xxx.iso  of=/dev/xxx bs=8M
 
 可以利用 watch -n 5 每 5s 发送信号触发 dd 命令打印进度
 1watch -n 5 pkill -USR1 ^dd$
 
-
+块大小不带的速度对比123456789101112131415161718192021222324252627282930313233343536373839404142$ dd if=xxxxx.iso of=/dev/sdc oflag=sync2937+0 records in...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
