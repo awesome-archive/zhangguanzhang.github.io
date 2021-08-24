@@ -387,6 +387,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2017/03/28/zombie-process/" >
+            
+                <span>Linux 僵尸进程处理</span>
+        </a>
+        <div class="abstract-content">
+            借用下别人的话：
+可能很少有人意识到，在一个进程调用了exit之后，该进程 并非马上就消失掉，而是留下一个称为僵尸进程（Zombie）的数据结构。在Linux进程的5种状态中，僵尸进程是非常特殊的一种，它已经放弃了几乎所 有内存空间，没有任何可执行代码，也不能被调度，仅仅在进程列表中保留一个位置，记载该进程的退出状态等信息供其他进程收集，除此之外，僵尸进程不再占有 任何内存空间。
+僵尸进程的来由，要追溯到Unix，Unix的设计者们设计这个东西并非是因为闲来无事想装装酷什么的。上面说到，僵尸进程中保存着很多对程序员和系统管理员非常重要的信息，首先，这个进程是怎么死亡的？是正常退出呢，还是...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/03/28</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "zombie">zombie</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2017/03/23/check-dhcp-or-static/" >
             
                 <span>判断是否是 dhcp 获取ip的一个手段</span>
@@ -651,39 +682,10 @@
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2016/10/28/hello/" >
-            
-                <span>hello world</span>
-        </a>
-        <div class="abstract-content">
-            <p>花了一两个小时终于弄好了第一个博客</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "hello world">hello world</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/11/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/10/">10</a><a class="page-number" href="/archives/page/11/">11</a><span class="page-number current">12</span>
+        <a class="extend prev" rel="prev" href="/archives/page/11/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/10/">10</a><a class="page-number" href="/archives/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/archives/page/13/">13</a><a class="extend next" rel="next" href="/archives/page/13/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -2739,10 +2741,9 @@
     
     
     
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 120
+        Total : 121
         </div>
         <!-- search  -->
         
@@ -2755,6 +2756,11 @@
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span><a class="archive-post-title" href= "/2021/08/24/cni-plugins-bridge-err/" >一次 cni-plugins 导致集群 dns 无法解析的排错</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3605,6 +3611,10 @@
         <span class="sidebar-tag-name" data-tags="rpmbuild"><span class="iconfont-archer">&#xe606;</span>rpmbuild</span>
     
         <span class="sidebar-tag-name" data-tags="kubelet"><span class="iconfont-archer">&#xe606;</span>kubelet</span>
+    
+        <span class="sidebar-tag-name" data-tags="kubernetes"><span class="iconfont-archer">&#xe606;</span>kubernetes</span>
+    
+        <span class="sidebar-tag-name" data-tags="cni-plugins"><span class="iconfont-archer">&#xe606;</span>cni-plugins</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

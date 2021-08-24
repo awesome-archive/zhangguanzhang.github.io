@@ -387,6 +387,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/10/20/kylin-v10-k8s-overlay-error/" >
+            
+                <span>银河麒麟arm64系统上k8s集群跨节点不通的一次排查</span>
+        </a>
+        <div class="abstract-content">
+            由来同事在客户那边部署的集群问题频繁，先给他解决了个问题后又反映说业务 POD 由于 DNS 无法解析而启动失败，排查完发现这样的情况从没遇到过，挺有意思的，这里记录下。实际排查过程也有往错误的方向浪费了一些时间和尝试，就不写进来了，以正确的角度写下排查过程。
+环境信息集群信息:
+12345678910111213141516171819202122232425$ kubectl version -o json&#123;  &quot;clientVersion&quot;: &#123;    &quot;major&quot;: &quot;1&quot;,    &quot;mi...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/20</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Kylin">Kylin</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/09/18/ocp-4.5-install/" >
             
                 <span>openshift 4.5.9 离线安装</span>
@@ -682,42 +713,10 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/05/12/N1-flash/" >
-            
-                <span>斐讯N1刷机和旁路由的设置</span>
-        </a>
-        <div class="abstract-content">
-            由来&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;之前一直是使用k2p刷openwrt或者pandora跑 xx 用，前几天看到了个 xx 的订阅地址给写到openwrt上了。结果运行了几天发现 web 上任何配置都无法更改，ssh 上去发现 touch 报错没有容量(而且重装后感觉还是有问题，github 访问也不稳定了)，意识到 k2p 容量实在太小了，于是去恩山论坛逛了下准备买个 N1 盒子玩玩旁路由。
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N1有8G的rom 2G的ram，...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "N1">N1</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "openwrt">openwrt</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/2/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/12/">12</a><a class="extend next" rel="next" href="/archives/page/4/">NEXT &gt;</a>
+        <a class="extend prev" rel="prev" href="/archives/page/2/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/13/">13</a><a class="extend next" rel="next" href="/archives/page/4/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -2773,10 +2772,9 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     
     
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 120
+        Total : 121
         </div>
         <!-- search  -->
         
@@ -2789,6 +2787,11 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span><a class="archive-post-title" href= "/2021/08/24/cni-plugins-bridge-err/" >一次 cni-plugins 导致集群 dns 无法解析的排错</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3639,6 +3642,10 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
         <span class="sidebar-tag-name" data-tags="rpmbuild"><span class="iconfont-archer">&#xe606;</span>rpmbuild</span>
     
         <span class="sidebar-tag-name" data-tags="kubelet"><span class="iconfont-archer">&#xe606;</span>kubelet</span>
+    
+        <span class="sidebar-tag-name" data-tags="kubernetes"><span class="iconfont-archer">&#xe606;</span>kubernetes</span>
+    
+        <span class="sidebar-tag-name" data-tags="cni-plugins"><span class="iconfont-archer">&#xe606;</span>cni-plugins</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

@@ -400,6 +400,38 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/10/11/ansible-count-Idempotency/" >
+            
+                <span>ansible数量限制上的幂等性</span>
+        </a>
+        <div class="abstract-content">
+            由来准备写上一篇文章的consul成ansible，在证书方面，cli和ca需要执行一次生成，而server和agent证书需要多次执行产生。另外我们也要考虑，dc1-server-consul-0*.pem需要拷贝到机器1，1拷贝到机器2.如何在生成证书的时候中断后再次运行也会达到目标的数量来实现幂等性，而不是证书生成多了另外证书还得按照index去拷贝到指定机器，也就是类似下面的
+123scp 001.pem ip1:&#x2F;etc&#x2F;xxxscp 002.pem ip2:&#x2F;etc&#x2F;xxxscp 003.pem ip3:&#x2F;etc&#x2F;x...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/11</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "ansible">ansible</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "consul">consul</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/09/27/consul-tls/" >
             
                 <span>高可用的SSL consul cluster实践</span>
@@ -858,41 +890,10 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/03/15/flannel-bin/" >
-            
-                <span>不走etcd v2 api下二进制跑flannel的总结</span>
-        </a>
-        <div class="abstract-content">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这几天给线上搭建 k8s 集群,文件和 systemd 参数大多是从 kubeadm 的 staticPod 的 yml 里扣出来的，起初是除了 flanneld 全部是 systemd 管理二进制。起初因为脚本问题导致 kube-proxy 的 kubeocnfig少执行了use-context所以显示的是匿名用户无法list node信息，kube-proxy是在运行但是无法维持 svc 的网络，flanneld 因为是 pod 要 watch 节点是通过 kubernetes 这个 svc 走的连接导致不通，然...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "flannel">flannel</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/page/3/">&lt; PREV</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/5/">NEXT &gt;</a>
+        <a class="extend prev" rel="prev" href="/page/3/">&lt; PREV</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/5/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -3103,10 +3104,9 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
     
     
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 120
+        Total : 121
         </div>
         <!-- search  -->
         
@@ -3119,6 +3119,11 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span><a class="archive-post-title" href= "/2021/08/24/cni-plugins-bridge-err/" >一次 cni-plugins 导致集群 dns 无法解析的排错</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3969,6 +3974,10 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
         <span class="sidebar-tag-name" data-tags="rpmbuild"><span class="iconfont-archer">&#xe606;</span>rpmbuild</span>
     
         <span class="sidebar-tag-name" data-tags="kubelet"><span class="iconfont-archer">&#xe606;</span>kubelet</span>
+    
+        <span class="sidebar-tag-name" data-tags="kubernetes"><span class="iconfont-archer">&#xe606;</span>kubernetes</span>
+    
+        <span class="sidebar-tag-name" data-tags="cni-plugins"><span class="iconfont-archer">&#xe606;</span>cni-plugins</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

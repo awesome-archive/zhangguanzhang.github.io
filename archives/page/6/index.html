@@ -387,6 +387,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/07/14/chromedp/" >
+            
+                <span>golang headless browser包chromedp初探</span>
+        </a>
+        <div class="abstract-content">
+            什么是cdp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前天晚上想写个网站自动投稿，但是chrome F12抓的包里请求的几个参数里的值不知道js咋生成的，看不懂js。询问了下网友，网友看我截图请求蛮多的，说有空帮我看看。并且他说到了模拟过程虽然能成功但是可能反爬措施强会导致封号，建议我用无头浏览器整。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;搜了下相关概念，无头浏览器的话python里就是selenium驱动的，广泛使用的headless browser解决方案PhantomJS已...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/14</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "golang">golang</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "chromedp">chromedp</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/07/08/nodeport-err/" >
             
                 <span>为什么我不用nodePort之偶然中奖几率</span>
@@ -675,41 +706,10 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/03/15/flannel-bin/" >
-            
-                <span>不走etcd v2 api下二进制跑flannel的总结</span>
-        </a>
-        <div class="abstract-content">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这几天给线上搭建 k8s 集群,文件和 systemd 参数大多是从 kubeadm 的 staticPod 的 yml 里扣出来的，起初是除了 flanneld 全部是 systemd 管理二进制。起初因为脚本问题导致 kube-proxy 的 kubeocnfig少执行了use-context所以显示的是匿名用户无法list node信息，kube-proxy是在运行但是无法维持 svc 的网络，flanneld 因为是 pod 要 watch 节点是通过 kubernetes 这个 svc 走的连接导致不通，然...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "flannel">flannel</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/5/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/12/">12</a><a class="extend next" rel="next" href="/archives/page/7/">NEXT &gt;</a>
+        <a class="extend prev" rel="prev" href="/archives/page/5/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/13/">13</a><a class="extend next" rel="next" href="/archives/page/7/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -2765,10 +2765,9 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
     
     
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 120
+        Total : 121
         </div>
         <!-- search  -->
         
@@ -2781,6 +2780,11 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span><a class="archive-post-title" href= "/2021/08/24/cni-plugins-bridge-err/" >一次 cni-plugins 导致集群 dns 无法解析的排错</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3631,6 +3635,10 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
         <span class="sidebar-tag-name" data-tags="rpmbuild"><span class="iconfont-archer">&#xe606;</span>rpmbuild</span>
     
         <span class="sidebar-tag-name" data-tags="kubelet"><span class="iconfont-archer">&#xe606;</span>kubelet</span>
+    
+        <span class="sidebar-tag-name" data-tags="kubernetes"><span class="iconfont-archer">&#xe606;</span>kubernetes</span>
+    
+        <span class="sidebar-tag-name" data-tags="cni-plugins"><span class="iconfont-archer">&#xe606;</span>cni-plugins</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
