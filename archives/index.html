@@ -393,8 +393,8 @@
         </a>
         <div class="abstract-content">
             故障问题和版本没关系，客户的 node 信息啥的后面排错里有。有个节点通信有问题，其余节点都没问题。
-排查惯例信息先看下 flannel 的 vxlan 的 vtep 信息，客户是双网卡的，但是默认路由是这个网卡，不用管另外的网卡了
-123456789101112131415161718192021222324252627282930313233343536$ kubectl get node -o yaml | grep -B4 public    annotations:      flannel.alpha.coreos.com/backend-data: &#x27;&#123;...
+排查惯例信息先看下 flannel 的 vxlan 的 vtep 信息，客户是双网卡的，但是默认路由是这个网卡，不用管另外的网卡了。下面信息看了下 VtepMAC 和 public-ip 都正常。
+123456789101112131415161718192021222324252627282930313233343536$ kubectl get node -o yaml | grep -B4 public    annotations:      flannel.alpha.core...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
