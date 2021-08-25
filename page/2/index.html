@@ -400,6 +400,36 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/02/02/node-shutdown-dns-unavailable/" >
+            
+                <span>集群节点关机导致dns在eviction pod之前几率不可用</span>
+        </a>
+        <div class="abstract-content">
+            由来这几天我们内部在做新项目的容灾测试，业务都是在 K8S 上的。容灾里就是随便选节点 shutdown -h now。关机后同事便发现了（页面有错误，最终问题是）集群内 DNS 解析会有几率无法解析（导致的）。
+根据 SVC 的流程，node 关机后，由于 kubelet 没有 update 自己。node 和 pod 在 apiserver get 的时候显示还是正常的。在 kube-controller-manager 的 --node-monitor-grace-period 时间后再过 --pod-eviction-timeout 时间开始 eviction pod，大概流程是...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/02/02</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "coredns">coredns</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/12/04/docker1803-hang-container-restore/" >
             
                 <span>docker18.03 hang at &#39;restoring container&#39;</span>
@@ -843,39 +873,6 @@ pod cidr
         <a class="post-tag" href="javascript:void(0);" data-tags = "63s">63s</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "timeout">timeout</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/05/13/x86-router-flash/" >
-            
-                <span>proxmox x86软路由笔记</span>
-        </a>
-        <div class="abstract-content">
-            由来办公室有台式机，不想整天带着N1上下班，整下x86的软路由，exsi性能会比pve好，但是pve毕竟Linux，兼容性和对接很多场景方便，这里我使用pve开机器安装openwrt。
-pve已经安装好系统(如果你还没安装且打算安装，安装完后可以看看我这个文章安装完proxmox的一些设置)，并且台式机的口子接主路由的lan口。主路由是我的路由器，它wan口接办公室的网口，台式机只有一个口子，所以软路由作为旁路由使用。
-前置工作虚机准备先去恩山论坛x86版块下一个固件，或者下载我的 action 编译的固件找 Build OpenWrt的 step 点进去，然后最下面的OpenWrt_f...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "openwrt">openwrt</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "x86">x86</a>
     
 </div>
             
@@ -3096,9 +3093,54 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 121
+        Total : 122
         </div>
         <!-- search  -->
         
@@ -3111,6 +3153,11 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/25</span><a class="archive-post-title" href= "/2021/08/25/flannel-a-host-net-tmout/" >flannel下集群有个节点网络不通的一次排查</a>
+        </li>
     
     
         <li class="archive-post-item">
