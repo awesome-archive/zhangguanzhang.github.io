@@ -457,7 +457,7 @@ height:50vh;
 <p>coredns 的 pod ip 和 node 分布情况</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ kubectl -n kube-system get pod -o wide</span><br><span class="line">NAME                                  READY   STATUS    RESTARTS   AGE   IP           NODE         NOMINATED NODE   READINESS GATES</span><br><span class="line">coredns-5757945748-cr67w              1/1     Running   0          19h   172.27.2.7   10.25.1.56   &lt;none&gt;           &lt;none&gt;</span><br><span class="line">coredns-5757945748-krwfd              1/1     Running   0          19h   172.27.1.4   10.25.1.55   &lt;none&gt;           &lt;none&gt;</span><br><span class="line">coredns-5757945748-zf4zm              1/1     Running   0          19h   172.27.3.7   10.25.1.54   &lt;none&gt;           &lt;none&gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id="排查-1"><a href="#排查-1" class="headerlink" title="排查"></a>排查</h3><p>curl 下 coredns 的 metrics 接口试试，只有 <code>10.25.1.51</code> 和其他节点无法通信。会导下面的 curl 卡住。</p>
+<h3 id="排查-1"><a href="#排查-1" class="headerlink" title="排查"></a>排查</h3><p>curl 下 coredns 的 metrics 接口试试，只有 <code>10.25.1.51</code> 和其他节点无法通信。会导致下面的 curl 卡住。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl  172.27.1.4:9153</span><br></pre></td></tr></table></figure>
 
 <p>目标机器 <code>10.25.1.55</code> 上通过 flannel.1 接口抓我们的 curl 包:</p>
