@@ -20,12 +20,12 @@
     <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="记录生活点滴">
-    <meta name="description" content="什么是audit？linux audit子系统是一个用于收集记录系统、内核、用户进程发生的行为事件的一种安全审计系统。该系统可以可靠地收集有关上任何与安全相关（或与安全无关）事件的信息，它可以帮助跟踪在系统上执行过的一些操作。 使用安装好像高版本 os 都自带了，没有就 yum install -y audit 1systemctl status auditd.service 例如追踪一个内核参数">
+    <meta name="description" content="什么是audit？linux audit子系统是一个用于收集记录系统、内核、用户进程发生的行为事件的一种安全审计系统。该系统可以可靠地收集有关上任何与安全相关（或与安全无关）事件的信息，它可以帮助跟踪在系统上执行过的一些操作。 使用安装好像高版本 os 都自带了，没有就 yum install -y audit 1systemctl status auditd.service  例如追踪一个内核参">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux audit 审计">
 <meta property="og:url" content="http://zhangguanzhang.github.io/2020/07/05/linux-auditd/">
 <meta property="og:site_name" content="Zhangguanzhang">
-<meta property="og:description" content="什么是audit？linux audit子系统是一个用于收集记录系统、内核、用户进程发生的行为事件的一种安全审计系统。该系统可以可靠地收集有关上任何与安全相关（或与安全无关）事件的信息，它可以帮助跟踪在系统上执行过的一些操作。 使用安装好像高版本 os 都自带了，没有就 yum install -y audit 1systemctl status auditd.service 例如追踪一个内核参数">
+<meta property="og:description" content="什么是audit？linux audit子系统是一个用于收集记录系统、内核、用户进程发生的行为事件的一种安全审计系统。该系统可以可靠地收集有关上任何与安全相关（或与安全无关）事件的信息，它可以帮助跟踪在系统上执行过的一些操作。 使用安装好像高版本 os 都自带了，没有就 yum install -y audit 1systemctl status auditd.service  例如追踪一个内核参">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-05T19:52:37.000Z">
 <meta property="article:modified_time" content="2020-07-05T19:52:37.000Z">
@@ -318,7 +318,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">415</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">441</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -449,21 +449,29 @@ height:50vh;
     <article class="article-entry">
         <h2 id="什么是audit？"><a href="#什么是audit？" class="headerlink" title="什么是audit？"></a>什么是audit？</h2><p>linux audit子系统是一个用于收集记录系统、内核、用户进程发生的行为事件的一种安全审计系统。该系统可以可靠地收集有关上任何与安全相关（或与安全无关）事件的信息，它可以帮助跟踪在系统上执行过的一些操作。</p>
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>好像高版本 os 都自带了，没有就 <code>yum install -y audit</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status auditd.service</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status auditd.service</span><br></pre></td></tr></table></figure>
+
 <h3 id="例如追踪一个内核参数被谁修改"><a href="#例如追踪一个内核参数被谁修改" class="headerlink" title="例如追踪一个内核参数被谁修改"></a>例如追踪一个内核参数被谁修改</h3><p>要注意的是 auditctl 只能临时生效，要想永久生效使用文件 <code>audit.rules</code></p>
-<h4 id="基本信息查看"><a href="#基本信息查看" class="headerlink" title="基本信息查看"></a>基本信息查看</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 查看状态</span><br><span class="line">$ auditctl -s</span><br><span class="line">enabled 1</span><br><span class="line">failure 1</span><br><span class="line">pid 705</span><br><span class="line">rate_limit 0</span><br><span class="line">backlog_limit 8192</span><br><span class="line">lost 0</span><br><span class="line">backlog 0</span><br><span class="line">loginuid_immutable 0 unlocked</span><br><span class="line"># 查看 rule</span><br><span class="line">$ auditctl -l</span><br><span class="line">No rules</span><br></pre></td></tr></table></figure>
+<h4 id="基本信息查看"><a href="#基本信息查看" class="headerlink" title="基本信息查看"></a>基本信息查看</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 查看状态</span><br><span class="line">$ auditctl -s</span><br><span class="line">enabled 1</span><br><span class="line">failure 1</span><br><span class="line">pid 705</span><br><span class="line">rate_limit 0</span><br><span class="line">backlog_limit 8192</span><br><span class="line">lost 0</span><br><span class="line">backlog 0</span><br><span class="line">loginuid_immutable 0 unlocked</span><br><span class="line"># 查看 rule</span><br><span class="line">$ auditctl -l</span><br><span class="line">No rules</span><br></pre></td></tr></table></figure>
+
 <h4 id="增加一个-rule"><a href="#增加一个-rule" class="headerlink" title="增加一个 rule"></a>增加一个 rule</h4><p><code>-w</code> 选项增加一个 path 审计，<code>-p</code> 审计权限</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ auditctl -w &#x2F;proc&#x2F;sys&#x2F;net&#x2F;ipv4&#x2F;ip_forward -pw -k sysctl-exec</span><br><span class="line">$ auditctl -l</span><br><span class="line">-w &#x2F;proc&#x2F;sys&#x2F;net&#x2F;ipv4&#x2F;ip_forward -p w -k sysctl-exec</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ auditctl -w /proc/sys/net/ipv4/ip_forward -pw -k sysctl-exec</span><br><span class="line">$ auditctl -l</span><br><span class="line">-w /proc/sys/net/ipv4/ip_forward -p w -k sysctl-exec</span><br></pre></td></tr></table></figure>
+
 <p>监听日志:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tailf /var/<span class="built_in">log</span>/audit/audit.log  | grep sysctl-exec</span><br></pre></td></tr></table></figure>
 <p>另一个窗口写入触发审计日志记录</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> 1 &gt; /proc/sys/net/ipv4/ip_forward</span><br></pre></td></tr></table></figure>
-<p>可以看到日志审计到了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type&#x3D;SYSCALL msg&#x3D;audit(1624344618.910:10909123): arch&#x3D;c000003e syscall&#x3D;2 success&#x3D;yes exit&#x3D;3 a0&#x3D;166ec40 a1&#x3D;241 a2&#x3D;1b6 a3&#x3D;fffffff0 items&#x3D;2 ppid&#x3D;6419 pid&#x3D;6421 auid&#x3D;0 uid&#x3D;0 gid&#x3D;0 euid&#x3D;0 suid&#x3D;0 fsuid&#x3D;0 egid&#x3D;0 sgid&#x3D;0 fsgid&#x3D;0 tty&#x3D;pts3 ses&#x3D;61322 comm&#x3D;&quot;bash&quot; exe&#x3D;&quot;&#x2F;usr&#x2F;bin&#x2F;bash&quot; key&#x3D;&quot;sysctl-exec&quot;</span><br></pre></td></tr></table></figure>
-<p>使用 pstree 来查看进程树，也就是我另一个终端的 shell</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ pstree -sp 6419</span><br><span class="line">systemd(1)───sshd(4866)───sshd(6419)───bash(6421)</span><br></pre></td></tr></table></figure>
-<h4 id="清空-rule"><a href="#清空-rule" class="headerlink" title="清空 rule"></a>清空 rule</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auditctl -D</span><br></pre></td></tr></table></figure>
 
+<p>可以看到日志审计到了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type=SYSCALL msg=audit(1624344618.910:10909123): arch=c000003e syscall=2 success=yes exit=3 a0=166ec40 a1=241 a2=1b6 a3=fffffff0 items=2 ppid=6419 pid=6421 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts3 ses=61322 comm=&quot;bash&quot; exe=&quot;/usr/bin/bash&quot; key=&quot;sysctl-exec&quot;</span><br></pre></td></tr></table></figure>
+
+<p>使用 pstree 来查看进程树，也就是我另一个终端的 shell</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ pstree -sp 6419</span><br><span class="line">systemd(1)───sshd(4866)───sshd(6419)───bash(6421)</span><br></pre></td></tr></table></figure>
+
+<h4 id="清空-rule"><a href="#清空-rule" class="headerlink" title="清空 rule"></a>清空 rule</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auditctl -D</span><br></pre></td></tr></table></figure>
+
+<h4 id="持久化-rule"><a href="#持久化-rule" class="headerlink" title="持久化 rule"></a>持久化 rule</h4><p>建议写到子配置文件里，某些系统主配置文件的内容是等于 <code>子配置文件内容加起来后 &gt; /etc/audit/audit.rules</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &#x27;-w /proc/sys/net/ipv4/ip_forward -p w -k sysctl-exec&#x27; &gt; /etc/audit/rules.d/zgz.rules</span><br></pre></td></tr></table></figure>
 
     </article>
     <!-- license  -->
@@ -639,7 +647,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFaudit%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">什么是audit？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">2.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E5%A6%82%E8%BF%BD%E8%B8%AA%E4%B8%80%E4%B8%AA%E5%86%85%E6%A0%B8%E5%8F%82%E6%95%B0%E8%A2%AB%E8%B0%81%E4%BF%AE%E6%94%B9"><span class="toc-number">2.2.</span> <span class="toc-text">例如追踪一个内核参数被谁修改</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF%E6%9F%A5%E7%9C%8B"><span class="toc-number">2.2.1.</span> <span class="toc-text">基本信息查看</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AA-rule"><span class="toc-number">2.2.2.</span> <span class="toc-text">增加一个 rule</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%85%E7%A9%BA-rule"><span class="toc-number">2.2.3.</span> <span class="toc-text">清空 rule</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFaudit%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">什么是audit？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">2.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E5%A6%82%E8%BF%BD%E8%B8%AA%E4%B8%80%E4%B8%AA%E5%86%85%E6%A0%B8%E5%8F%82%E6%95%B0%E8%A2%AB%E8%B0%81%E4%BF%AE%E6%94%B9"><span class="toc-number">2.2.</span> <span class="toc-text">例如追踪一个内核参数被谁修改</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF%E6%9F%A5%E7%9C%8B"><span class="toc-number">2.2.1.</span> <span class="toc-text">基本信息查看</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AA-rule"><span class="toc-number">2.2.2.</span> <span class="toc-text">增加一个 rule</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%85%E7%A9%BA-rule"><span class="toc-number">2.2.3.</span> <span class="toc-text">清空 rule</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%81%E4%B9%85%E5%8C%96-rule"><span class="toc-number">2.2.4.</span> <span class="toc-text">持久化 rule</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="sidebar sidebar-hide">
@@ -2628,9 +2636,58 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 123
+        Total : 124
         </div>
         <!-- search  -->
         
@@ -3212,6 +3269,11 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2017/04/20/linux-partition-grow/" >虚拟化扩容硬盘大小</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">04/17</span><a class="archive-post-title" href= "/2017/04/17/iot/" >分享下自己做的外网控制硬件</a>
         </li>
     
@@ -3512,6 +3574,8 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="kubernetes"><span class="iconfont-archer">&#xe606;</span>kubernetes</span>
     
         <span class="sidebar-tag-name" data-tags="cni-plugins"><span class="iconfont-archer">&#xe606;</span>cni-plugins</span>
+    
+        <span class="sidebar-tag-name" data-tags="fs"><span class="iconfont-archer">&#xe606;</span>fs</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
