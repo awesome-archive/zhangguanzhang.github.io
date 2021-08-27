@@ -462,7 +462,7 @@ height:50vh;
 <ul>
 <li><code>net-conf.json</code>包含所有 <code>flanneld</code> 的 <code>CIDR</code> 信息文件挂载在目录<code>/etc/kube-flannel/</code>,手动创建目录和存放文件。当然可以看到源码 <a target="_blank" rel="noopener" href="https://github.com/coreos/flannel/blob/master/subnet/kube/kube.go#L54">https://github.com/coreos/flannel/blob/master/subnet/kube/kube.go#L54</a> 是固定文件名的</li>
 <li><code>cni-conf.json</code>文件同样挂载在目录<code>/etc/kube-flannel/</code>,但是<code>initContainer</code>逻辑复制到目录<code>/etc/cni/net.d/10-flannel.conflist</code>了,systemd脚本里可以写prestart exec啥的模仿,这里我偷懒直接改名放进去</li>
-<li>flanneld的pod会在宿主机目录 <code>/run/flannel</code> 生成自己分配到的cidr和mtu信息文件,文件是连接apiserver后生成的,所以我们只需要创建目录</li>
+<li>flanneld的pod会在宿主机目录 <code>/run/flannel</code> 生成自己分配到的 cidr 和 mtu 信息文件,文件是连接 apiserver 后生成的,所以我们只需要创建目录</li>
 <li>把<code>kube-flannel.yml</code> 里的 clusterrole 和 sa 啥的都创建好然后用 sa 的 token 生成了 kubeconfig 给 flannel 使用</li>
 <li>准备二进制文件然后就是 systemd 脚本,明确 bind 哪张网卡,然后 ip ,还有健康检查 bind 的 ip 和 port 来用于监控。吐槽下 flannel 从 prometheus 的爸爸 coreos 出生居然到现在还没有 <code>metrics</code> 指标功能<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">cat&lt;&lt;<span class="string">EOF&gt;/usr/lib/systemd/system/flanneld.service</span></span><br><span class="line"><span class="string">[Unit]</span></span><br><span class="line"><span class="string">Description=Network fabric for containers</span></span><br><span class="line"><span class="string">Documentation=https://github.com/coreos/flannel</span></span><br><span class="line"><span class="string">After=network.target</span></span><br><span class="line"><span class="string">After=network-online.target</span></span><br><span class="line"><span class="string">Wants=network-online.target</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Service]</span></span><br><span class="line"><span class="string">Type=notify</span></span><br><span class="line"><span class="string">Restart=always</span></span><br><span class="line"><span class="string">RestartSec=5</span></span><br><span class="line"><span class="string"># Kubernetes knows the nodes by their FQDN so we have to use the FQDN</span></span><br><span class="line"><span class="string">#Environment=NODE_NAME=my-node.foo.bar.com</span></span><br><span class="line"><span class="string"># Note that we don&#x27;t specify any etcd option. This is because we want to talk</span></span><br><span class="line"><span class="string"># to the apiserver instead. The apiserver then talks to etcd on flannel&#x27;s</span></span><br><span class="line"><span class="string"># behalf.</span></span><br><span class="line"><span class="string">Environment=NODE_NAME=&#123;&#123; nodename &#125;&#125;</span></span><br><span class="line"><span class="string">ExecStart=/usr/local/bin/flanneld \</span></span><br><span class="line"><span class="string">  --kube-subnet-mgr=true \</span></span><br><span class="line"><span class="string">  --kubeconfig-file=/etc/kubernetes/flanneld.kubeconfig \</span></span><br><span class="line"><span class="string">  --ip-masq=true \</span></span><br><span class="line"><span class="string">  --iface=&#123;&#123; INTERFACE_NAME &#125;&#125; \</span></span><br><span class="line"><span class="string">  --public-ip &#123;&#123; inventory_hostname &#125;&#125; \</span></span><br><span class="line"><span class="string">  --healthz-ip &#123;&#123; inventory_hostname &#125;&#125; \</span></span><br><span class="line"><span class="string">  --healthz-port &#123;&#123; flanneld_healthz_port &#125;&#125; \</span></span><br><span class="line"><span class="string">  --v=2</span></span><br></pre></td></tr></table></figure>
 <img src="https://raw.githubusercontent.com/zhangguanzhang/Image-Hosting/master/k8s/flannel_1.png" alt="k8s"><br><img src="https://raw.githubusercontent.com/zhangguanzhang/Image-Hosting/master/k8s/flannel_2.png" alt="k8s"></li>
@@ -2632,28 +2632,9 @@ top:50vh;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 122
+        Total : 123
         </div>
         <!-- search  -->
         
@@ -2666,6 +2647,11 @@ top:50vh;
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/27</span><a class="archive-post-title" href= "/2021/08/27/k8s-runxtables.lock/" >干掉烦人的 open /run/xtables.lock: is a directory</a>
+        </li>
     
     
         <li class="archive-post-item">

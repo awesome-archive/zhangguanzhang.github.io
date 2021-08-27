@@ -387,6 +387,39 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/05/26/docker-panic-invalid-freelist-page/" >
+            
+                <span>docker-ce 18.09.3 启动panic: invalid freelist page: 56, page type is leaf的解决处理</span>
+        </a>
+        <div class="abstract-content">
+            这个问题和之前的docker-18.06.3-ce启动panic: invalid page type: 0: 0的解决处理差不多，不过 db 文件不同。客户停止 docker 后起不来了，查看日志：
+1journalctl -xe -u docker
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879805月 26 18:42:17 xxxx...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/26</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/04/30/kubernetes-sec-agent-node-network-error/" >
             
                 <span>一次单节点单个pod网络问题排查过程</span>
@@ -650,37 +683,6 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "swap">swap</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/11/06/kylin-arm-clone-vxlan-error/" >
-            
-                <span>银河麒麟arm64系统克隆机器上k8s vxlan跨节点不通的一次排查</span>
-        </a>
-        <div class="abstract-content">
-            由来和前一篇文章不一样，从来没遇到过这样的问题，这里记录下。实施在客户那边部署业务后，业务在浏览器上无法访问，我远程上去查看日志发现 pod 内部无法 DNS 无法解析，nginx 连不上 upsteam 报错而启动失败，实际上也是跨节点不通。实际排查过程也有往错误的方向浪费了一些时间和尝试，就不写进来了，以正确的角度写下排查过程。
-环境信息OS 是 arm64 的银河麒麟系统：
-123456789$ cat /etc/os-releaseNAME=&quot;Kylin Linux Advanced Server&quot;VERSION=&quot;V10 (Tercel)&quot...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Kylin">Kylin</a>
     
 </div>
             
@@ -2772,28 +2774,9 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 122
+        Total : 123
         </div>
         <!-- search  -->
         
@@ -2806,6 +2789,11 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/27</span><a class="archive-post-title" href= "/2021/08/27/k8s-runxtables.lock/" >干掉烦人的 open /run/xtables.lock: is a directory</a>
+        </li>
     
     
         <li class="archive-post-item">
