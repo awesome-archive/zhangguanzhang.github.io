@@ -512,7 +512,7 @@ height:50vh;
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./udp2raw_mp.exe -c -l 0.0.0.0:16000 -r &lt;public_ip&gt;:86 -k passwd123 --raw-mode faketcp --cipher-mode xor</span><br></pre></td></tr></table></figure>
 
 <p>所有 client 端的 <code>[peer]</code> 部分里之前连云主机的 ip 都写成<code>127.0.0.1:16000</code>，这样 wg 客户端是先向本地的 udp2raw 客户端发 udp 报文，然后报文被封装成 tcp 发往云主机上的 udp2raw server，再到 wg server 上。</p>
-<p>** 客户端和云主机上 ** 的 wg 的 mtu 设置成 <code>1280</code>(网上有写1200的，但是 windows 的 wg 客户端无法启动，邮件询问作者说最小 <code>1280</code> 才能启动)。例如我路由器配置</p>
+<p><strong>客户端和云主机上</strong> 的 wg 的 mtu 设置成 <code>1280</code>(网上有写1200的，但是 windows 的 wg 客户端无法启动，邮件询问作者说最小 <code>1280</code> 才能启动)。例如我路由器配置</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[Interface]</span><br><span class="line">...</span><br><span class="line">MTU = 1280</span><br><span class="line">[Peer]</span><br><span class="line">...</span><br><span class="line">Endpoint = 127.0.0.1:16000</span><br><span class="line">PersistentKeepalive = 10</span><br></pre></td></tr></table></figure>
 
 <p>windows的 wg 目前 <code>Endpoint</code>必须写本机的 ip（ipconfig命令查看），不能写<code>127.0.0.1</code>，否则无法连 peer（日志会一直刷<code>Failed to send handshake initiation write udp4 0.0.0.0:xxx-&gt;127.0.0.1:16000: wsasendto: The requested address is not valid in its context</code>），这个 bug 已经反馈给作者了。</p>
