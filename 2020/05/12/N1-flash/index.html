@@ -321,7 +321,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">4k</span>阅读时长: <span class="post-count reading-time">17 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">4.1k</span>阅读时长: <span class="post-count reading-time">17 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -533,12 +533,19 @@ height:50vh;
 <li><code>DNS 服务器端口</code> 53</li>
 </ul>
 <h5 id="猫儿"><a href="#猫儿" class="headerlink" title="猫儿"></a>猫儿</h5><p>如果用了 wg ，不走代理的 wan 那里添加下</p>
-<p>上游 <code>127.0.0.1:5300 udp</code> 一个就行。然后禁止缓存。 更改它的 dns 端口</p>
+<p>上游 <code>127.0.0.1:5300 udp</code> 一个就行。然后:</p>
+<ul>
+<li>本地DNS劫持</li>
+<li>自定义上游DNS服务器</li>
+<li>禁止Dnsmasq缓存DNS</li>
+</ul>
+<p>更改它的 dns 端口，不过没必要</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">OP_NAME=o-p-e-n-c-l-a-s-h</span><br><span class="line">OP_NAME=$&#123;OP_NAME//-/&#125;</span><br><span class="line">uci set $&#123;OP_NAME&#125;.config.dns_port=&#x27;7874&#x27;</span><br></pre></td></tr></table></figure>
 
 <h5 id="adh"><a href="#adh" class="headerlink" title="adh"></a>adh</h5><p>adh 端口 5300，然后 5300重定向无</p>
 <p>此时是 dnsmasq，然后它的上游 <code>DNS转发</code> 配置为 <code>127.0.0.1#7874</code> 的猫儿，再上游是 adh。要在 <code>网络</code> - <code>DHCP/DNS</code> - <code>重绑定保护(丢弃 RFC1918 上行响应数据)</code> 取消了。</p>
-<h5 id="猫儿的-dns-bind"><a href="#猫儿的-dns-bind" class="headerlink" title="猫儿的 dns bind"></a>猫儿的 dns bind</h5><p>改 bind 0.0.0.0</p>
+<h5 id="猫儿的-dns-bind"><a href="#猫儿的-dns-bind" class="headerlink" title="猫儿的 dns bind"></a>猫儿的 dns bind</h5><p>2021/09/02 不推荐改猫儿直接 bind 53，去看下它的启动和停止脚本就知道了，下面是给人参考</p>
+<p>改 bind 0.0.0.0</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">OP_NAME=o-p-e-n-c-l-a-s-h</span><br><span class="line">OP_NAME=$&#123;OP_NAME//-/&#125;</span><br><span class="line">/etc/init.d/$&#123;OP_NAME&#125; 里的 `start()` 里的 `/usr/share/$&#123;OP_NAME//-/&#125;/yml_change.sh` 的第 17 个参数有注入 dns 的端口</span><br><span class="line"></span><br><span class="line">`/usr/share/$&#123;OP_NAME//-/&#125;/yml_change.sh`里有下面逻辑</span><br><span class="line">if $8 != 1 then</span><br><span class="line">   Value[&#x27;dns&#x27;][&#x27;listen&#x27;]=&#x27;127.0.0.1:$&#123;17&#125;&#x27;</span><br><span class="line">else</span><br><span class="line">   Value[&#x27;dns&#x27;][&#x27;listen&#x27;]=&#x27;0.0.0.0:$&#123;17&#125;&#x27;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">第 8 个参数 `$ipv6_enable` 测试了下开 ipv6 就会 bind 0.0.0.0 了，不想开 ipv6 的话就改文件</span><br><span class="line"></span><br><span class="line">uci set $&#123;OP_NAME&#125;.config.ipv6_enable=1</span><br></pre></td></tr></table></figure>
 
 <h4 id="安装tcpdump"><a href="#安装tcpdump" class="headerlink" title="安装tcpdump"></a>安装tcpdump</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://archive.openwrt.org/releases/packages-18.06/aarch64_generic/base/</span><br></pre></td></tr></table></figure>
