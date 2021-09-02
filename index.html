@@ -400,6 +400,35 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/09/01/ubuntu18-and-cfq/" >
+            
+                <span>ubuntu18下io调度算法是cfq导致mysql非常慢</span>
+        </a>
+        <div class="abstract-content">
+            <p>记录线上一次 io 调度算法导致的 mysql 读写慢问题</p>
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/01</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "ubuntu18">ubuntu18</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/08/27/k8s-runxtables.lock/" >
             
                 <span>干掉烦人的 open /run/xtables.lock: is a directory</span>
@@ -835,35 +864,6 @@ CentOS Linux release 7.8.2003 (Core) - 3.1...
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/22/jsonpatch-doc-is-missing-path/" >
-            
-                <span>Internal error occurred: jsonpatch add operation does not apply: doc is missing path: xxx</span>
-        </a>
-        <div class="abstract-content">
-            由来今天在折腾 admission webhook 注入一些属性的时候遇到了 Error from server (InternalError): error when creating &quot;xxx.yml&quot;: Internal error occurred: jsonpatch add operation does not apply: doc is missing path: &quot;/spec/template/spec/dnsConfig/options&quot;。折腾半天才发现在代码里使用 jsonPatch 的话不能直接绕过结构体实例去 patch。 ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/22</span>
             </div>
             <!-- tags  -->
             
@@ -3150,24 +3150,9 @@ CentOS Linux release 7.8.2003 (Core) - 3.1...
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 124
+        Total : 125
         </div>
         <!-- search  -->
         
@@ -3180,6 +3165,11 @@ CentOS Linux release 7.8.2003 (Core) - 3.1...
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2021/09/01/ubuntu18-and-cfq/" >ubuntu18下io调度算法是cfq导致mysql非常慢</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -4057,6 +4047,8 @@ CentOS Linux release 7.8.2003 (Core) - 3.1...
     
         <span class="sidebar-tag-name" data-tags="fs"><span class="iconfont-archer">&#xe606;</span>fs</span>
     
+        <span class="sidebar-tag-name" data-tags="ubuntu18"><span class="iconfont-archer">&#xe606;</span>ubuntu18</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -4233,6 +4225,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="k8s/kmem"><span class="iconfont-archer">&#xe60a;</span>k8s/kmem</span>
     
         <span class="sidebar-category-name" data-categories="zombie"><span class="iconfont-archer">&#xe60a;</span>zombie</span>
+    
+        <span class="sidebar-category-name" data-categories="ubuntu18"><span class="iconfont-archer">&#xe60a;</span>ubuntu18</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

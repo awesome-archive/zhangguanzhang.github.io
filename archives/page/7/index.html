@@ -387,6 +387,42 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/05/11/container-too-many-open-file/" >
+            
+                <span>standard_init_linux.go:211: exec user process caused &#34;too many open files in system&#34;</span>
+        </a>
+        <div class="abstract-content">
+            故障现象部署好业务 pod 后，有很多 pod 一直 Crash 或者无法就绪。
+处理过程describe pod 的状态有显示下面的：
+1Error: failed to start container &quot;xxxxx&quot;: Error response from daemon: OCI runtime start failed: cannot start a container that has stopped: unkown
+
+上去这个节点查看容器状态:
+12345$ docker ps -a | grep 6cb6440a7e90bde reg.xxx.lan:5...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/11</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "linux">linux</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/04/28/k8s-java-start-time-not-same/" >
             
                 <span>闲谈线上俩k8s环境同等limits下pod启动时间不一样解决过程</span>
@@ -661,38 +697,6 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
         <a class="post-tag" href="javascript:void(0);" data-tags = "openstack">openstack</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "cloud-init">cloud-init</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/04/black-box-exporter/" >
-            
-                <span>prometheus的黑盒监控</span>
-        </a>
-        <div class="abstract-content">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;常规的各种exporter都是和需要监控的机器一起安装的,如果需要监控一些tcp端口和七层应用层的状态呢,这个时候就需要黑盒监控了,不需要安装在目标机器上即可从外部去监控。
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9115是它的http端点的默认监听端口，blackbox.yml它的配置文件里以基础的http、dns、tcp、icmp等prober定制配置出各种监测模块(module)，在prometheus server的配置文件里声明用哪个模块去探测哪个targets，下面以doc...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "prometheus">prometheus</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "exporter">exporter</a>
     
 </div>
             
@@ -2818,24 +2822,9 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 124
+        Total : 125
         </div>
         <!-- search  -->
         
@@ -2848,6 +2837,11 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2021/09/01/ubuntu18-and-cfq/" >ubuntu18下io调度算法是cfq导致mysql非常慢</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3725,6 +3719,8 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
     
         <span class="sidebar-tag-name" data-tags="fs"><span class="iconfont-archer">&#xe606;</span>fs</span>
     
+        <span class="sidebar-tag-name" data-tags="ubuntu18"><span class="iconfont-archer">&#xe606;</span>ubuntu18</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -3901,6 +3897,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="k8s/kmem"><span class="iconfont-archer">&#xe60a;</span>k8s/kmem</span>
     
         <span class="sidebar-category-name" data-categories="zombie"><span class="iconfont-archer">&#xe60a;</span>zombie</span>
+    
+        <span class="sidebar-category-name" data-categories="ubuntu18"><span class="iconfont-archer">&#xe60a;</span>ubuntu18</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
