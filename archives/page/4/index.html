@@ -387,6 +387,51 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/06/23/host-gw-in-aliyun/" >
+            
+                <span>阿里云上使用flannel host-gw跨节点pod不通的解决</span>
+        </a>
+        <div class="abstract-content">
+            挺多人问的，写下解决办法
+前言首先主机得在同一个专有vpc下，跨vpc或者经典vpc就扯淡了。还有flannel别把网络信息存储在etcd里，目前flannel只支持v2的etcd api。但是现在k8s都是使用v3 etcd存储了。如果v2和v3共存会导致无法恢复etcd的备份
+所以网上那些etcdctl set flannel的cidr的文章别看了，都没做过备份恢复实验就到处发k8s搭建教程。flannel v3的话看我过往文章
+环境信息先来说下host-gw的包走向，假设两台机器
+
+
+
+IP
+pod cidr
+
+
+
+10.0.6.166
+10.200.1.0/24
+
+
+10.0.6...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "host-gw">host-gw</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/06/19/go-prom-exporter/" >
             
                 <span>[未写完]使用go开发一个Prometheus的exporter</span>
@@ -660,39 +705,6 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
         <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "kernel">kernel</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/27/microsoft-graph-for-onedrive/" >
-            
-                <span>使用microsoft-graph的api对接onedrive</span>
-        </a>
-        <div class="abstract-content">
-            前言这几天打算把文件备份下，最后看到有网友说onedrive不错，就是容量小了点只有5g，然后酷安去安装安卓客户端，下面看到一堆人送office e5子账户的。看了下大概是微软为了推广自己产品面向开发者送的优惠，账户有免费的5t存储，而且安装office啥的免费。试用30天，30天内调用api来保持活跃度的话就会延期。评论里一大堆都是搭建oneindex或者onelist的，主要作用就是把onedrive给抽象成一个公共的网盘使用，oneindex是php写的，我看issue居然385个，作者的github也在更新，而且作者学了golang，居然也不打算重构下，估计也是烂尾了。oneli...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "microsoft">microsoft</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "graph">graph</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "onedrive">onedrive</a>
     
 </div>
             
@@ -2818,9 +2830,52 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 125
+        Total : 126
         </div>
         <!-- search  -->
         
@@ -2833,6 +2888,11 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/03</span><a class="archive-post-title" href= "/2021/09/03/openwrt-usb-net/" >[持续更新] - Openwrt USB 网络</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3717,6 +3777,8 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
         <span class="sidebar-tag-name" data-tags="ubuntu18"><span class="iconfont-archer">&#xe606;</span>ubuntu18</span>
     
+        <span class="sidebar-tag-name" data-tags="usb-net"><span class="iconfont-archer">&#xe606;</span>usb-net</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -3895,6 +3957,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="zombie"><span class="iconfont-archer">&#xe60a;</span>zombie</span>
     
         <span class="sidebar-category-name" data-categories="ubuntu18"><span class="iconfont-archer">&#xe60a;</span>ubuntu18</span>
+    
+        <span class="sidebar-category-name" data-categories="openwrt"><span class="iconfont-archer">&#xe60a;</span>openwrt</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

@@ -387,6 +387,43 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/09/03/openwrt-usb-net/" >
+            
+                <span>[持续更新] - Openwrt USB 网络</span>
+        </a>
+        <div class="abstract-content">
+            about记录下 openwrt 下 usb 网络的折腾
+N1 上的 usb 网络共享折腾固件依赖暂时没完全区分 usb 网络共享和 usb-cdc 的关系，所以我编译的时候把很多 usb-net-xxx 都编译进去了
+听其他大佬说编译的时候主要有下面的包:
+
+安卓: kmod-usb-net kmod-usb-net-rndis
+苹果: kmod-usb-net-ipheth usbmuxd
+
+建议下面这些也安装上方便调试:
+123456789101112131415161718CONFIG_PACKAGE_luci-proto-3g=yCONFIG_PACKAGE_luci-prot...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/03</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "usb-net">usb-net</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/09/01/ubuntu18-and-cfq/" >
             
                 <span>ubuntu18下io调度算法是cfq导致mysql非常慢</span>
@@ -2525,9 +2562,52 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 125
+        Total : 126
         </div>
         <!-- search  -->
         
@@ -2540,6 +2620,11 @@
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/03</span><a class="archive-post-title" href= "/2021/09/03/openwrt-usb-net/" >[持续更新] - Openwrt USB 网络</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3424,6 +3509,8 @@
     
         <span class="sidebar-tag-name" data-tags="ubuntu18"><span class="iconfont-archer">&#xe606;</span>ubuntu18</span>
     
+        <span class="sidebar-tag-name" data-tags="usb-net"><span class="iconfont-archer">&#xe606;</span>usb-net</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -3602,6 +3689,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="zombie"><span class="iconfont-archer">&#xe60a;</span>zombie</span>
     
         <span class="sidebar-category-name" data-categories="ubuntu18"><span class="iconfont-archer">&#xe60a;</span>ubuntu18</span>
+    
+        <span class="sidebar-category-name" data-categories="openwrt"><span class="iconfont-archer">&#xe60a;</span>openwrt</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

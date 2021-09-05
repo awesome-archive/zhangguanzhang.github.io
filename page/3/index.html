@@ -400,6 +400,51 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/06/23/host-gw-in-aliyun/" >
+            
+                <span>阿里云上使用flannel host-gw跨节点pod不通的解决</span>
+        </a>
+        <div class="abstract-content">
+            挺多人问的，写下解决办法
+前言首先主机得在同一个专有vpc下，跨vpc或者经典vpc就扯淡了。还有flannel别把网络信息存储在etcd里，目前flannel只支持v2的etcd api。但是现在k8s都是使用v3 etcd存储了。如果v2和v3共存会导致无法恢复etcd的备份
+所以网上那些etcdctl set flannel的cidr的文章别看了，都没做过备份恢复实验就到处发k8s搭建教程。flannel v3的话看我过往文章
+环境信息先来说下host-gw的包走向，假设两台机器
+
+
+
+IP
+pod cidr
+
+
+
+10.0.6.166
+10.200.1.0/24
+
+
+10.0.6...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "host-gw">host-gw</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/06/19/go-prom-exporter/" >
             
                 <span>[未写完]使用go开发一个Prometheus的exporter</span>
@@ -832,45 +877,6 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
         <a class="post-tag" href="javascript:void(0);" data-tags = "grub">grub</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "boot">boot</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/24/kubeadm-base-use/" >
-            
-                <span>[长期更新]--应大多数人要求写下kubeadm的基础使用</span>
-        </a>
-        <div class="abstract-content">
-            市面上很多kubeadm的文章都是错误示范或者不够详细，大多数都没写系统设置之类的就直接kubeadm init导致很多跟着做的人会报错
-我期望看到本文的读者最少具备以下知识:
-
-Linux一些目录规范和systemd
-学过一点docker
-懂dns和/etc/hosts、curl互相结合来测试一些web的接口响应状态
-不要求github有自己项目，至少会浏览github
-
-本教学将以下列节点数与规格来进行部署Kubernetes集群,系统CentOS 7.6+，有条件7.8，不要使用centos7.4以及一下，容器技术依赖于内核技术，低版本系统部署和运行后问题会非常多。有读者用debi...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kubeadm">kubeadm</a>
     
 </div>
             
@@ -3151,9 +3157,52 @@ Linux一些目录规范和systemd
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 125
+        Total : 126
         </div>
         <!-- search  -->
         
@@ -3166,6 +3215,11 @@ Linux一些目录规范和systemd
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/03</span><a class="archive-post-title" href= "/2021/09/03/openwrt-usb-net/" >[持续更新] - Openwrt USB 网络</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -4050,6 +4104,8 @@ Linux一些目录规范和systemd
     
         <span class="sidebar-tag-name" data-tags="ubuntu18"><span class="iconfont-archer">&#xe606;</span>ubuntu18</span>
     
+        <span class="sidebar-tag-name" data-tags="usb-net"><span class="iconfont-archer">&#xe606;</span>usb-net</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -4228,6 +4284,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="zombie"><span class="iconfont-archer">&#xe60a;</span>zombie</span>
     
         <span class="sidebar-category-name" data-categories="ubuntu18"><span class="iconfont-archer">&#xe60a;</span>ubuntu18</span>
+    
+        <span class="sidebar-category-name" data-categories="openwrt"><span class="iconfont-archer">&#xe60a;</span>openwrt</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

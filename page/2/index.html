@@ -400,6 +400,37 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/03/23/iptables-docker-no-chain/" >
+            
+                <span>iptables --wait -t nat -A DOCKER...: iptables NO chain/target/match by that name</span>
+        </a>
+        <div class="abstract-content">
+            由来我们内部有套部署的工具， 我们部署的流程是先在部署机器（部署机器可能也是node1 ）上用脚本安装好 docker，然后进容器里去起我们部署平台，有个很久的 bug 就是，部署机器上端口映射起容器会有如下报错
+1iptables --wait -t nat -A DOCKER -p tcp -d 0&#x2F;8 --dport 8089 -j DNAT --to-destination 172.25.0.2:80 ! -i docker0: iptables NO chain&#x2F;target&#x2F;match by that name
+排查也很简单，缺少链，添加上即可:...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/03/22/jsonpatch-doc-is-missing-path/" >
             
                 <span>Internal error occurred: jsonpatch add operation does not apply: doc is missing path: xxx</span>
@@ -821,51 +852,6 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "audit">audit</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/06/23/host-gw-in-aliyun/" >
-            
-                <span>阿里云上使用flannel host-gw跨节点pod不通的解决</span>
-        </a>
-        <div class="abstract-content">
-            挺多人问的，写下解决办法
-前言首先主机得在同一个专有vpc下，跨vpc或者经典vpc就扯淡了。还有flannel别把网络信息存储在etcd里，目前flannel只支持v2的etcd api。但是现在k8s都是使用v3 etcd存储了。如果v2和v3共存会导致无法恢复etcd的备份
-所以网上那些etcdctl set flannel的cidr的文章别看了，都没做过备份恢复实验就到处发k8s搭建教程。flannel v3的话看我过往文章
-环境信息先来说下host-gw的包走向，假设两台机器
-
-
-
-IP
-pod cidr
-
-
-
-10.0.6.166
-10.200.1.0/24
-
-
-10.0.6...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "host-gw">host-gw</a>
     
 </div>
             
@@ -3146,9 +3132,52 @@ pod cidr
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 125
+        Total : 126
         </div>
         <!-- search  -->
         
@@ -3161,6 +3190,11 @@ pod cidr
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/03</span><a class="archive-post-title" href= "/2021/09/03/openwrt-usb-net/" >[持续更新] - Openwrt USB 网络</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -4045,6 +4079,8 @@ pod cidr
     
         <span class="sidebar-tag-name" data-tags="ubuntu18"><span class="iconfont-archer">&#xe606;</span>ubuntu18</span>
     
+        <span class="sidebar-tag-name" data-tags="usb-net"><span class="iconfont-archer">&#xe606;</span>usb-net</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -4223,6 +4259,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="zombie"><span class="iconfont-archer">&#xe60a;</span>zombie</span>
     
         <span class="sidebar-category-name" data-categories="ubuntu18"><span class="iconfont-archer">&#xe60a;</span>ubuntu18</span>
+    
+        <span class="sidebar-category-name" data-categories="openwrt"><span class="iconfont-archer">&#xe60a;</span>openwrt</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
