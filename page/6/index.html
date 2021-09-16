@@ -400,6 +400,38 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/11/05/10chars/" >
+            
+                <span>记录一次十字符病毒清理过程</span>
+        </a>
+        <div class="abstract-content">
+            周五网络组同事告知几个租户的session过大,建议我把租户这几台机器关机了我进去后把网卡down了后开始看稍微看了下是好几个十个字符的进程一直杀不完,叫存储同事把快照挂载了准备周一恢复
+结果今天挂载上去后开机发现还是有,好吧,手动查杀结合猜想和状态输出想了下逻辑是如下思路
+
+
+crontab加计划(/var/spool/cron/用户名文件,/etc/crontab里,/etc/cron.hourly/x.sh)
+进程互相守护,杀掉一个生成一个新的在/usr/bin/目录,命名是十个字符
+/etc/init.d/和/etc/rc.d/rcx.d/对应的软链接保证开机启动
+
+
+首先ssh...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/05</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/10/27/create-kubeconfig/" >
             
                 <span>生成kubeconfig常规的两种方法</span>
@@ -884,30 +916,6 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
         <a class="post-tag" href="javascript:void(0);" data-tags = "vip">vip</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/02/15/linux-tc/" >
-            
-                <span>Linux tc基础使用</span>
-        </a>
-        <div class="abstract-content">
-            ens192 网卡 63%丢包率+6s延迟作用于目标 ip 是 114.114.114.114
-12345tc qdisc add dev ens192 root handle 1: priotc qdisc add dev ens192 parent 1:3 handle 30: netem loss 63% delay 6000mstc filter add dev ens192 protocol ip parent 1:0 u32 match ip dst 114.114.114.114   flowid 1:3# 清理网卡上的规则tc qdisc del dev  ens192 ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/15</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -3224,14 +3232,9 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
     
     
     
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 126
+        Total : 127
         </div>
         <!-- search  -->
         
@@ -3244,6 +3247,11 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/16</span><a class="archive-post-title" href= "/2021/09/16/read-containerd-con-reset/" >解决 docker 的 read unix @->/run/containerd/s/xxx read: connection reset by peer: unknown</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -4134,6 +4142,8 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
         <span class="sidebar-tag-name" data-tags="ubuntu18"><span class="iconfont-archer">&#xe606;</span>ubuntu18</span>
     
         <span class="sidebar-tag-name" data-tags="usb-net"><span class="iconfont-archer">&#xe606;</span>usb-net</span>
+    
+        <span class="sidebar-tag-name" data-tags="containerd"><span class="iconfont-archer">&#xe606;</span>containerd</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

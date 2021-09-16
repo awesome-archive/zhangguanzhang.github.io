@@ -387,6 +387,36 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/12/04/docker1803-hang-container-restore/" >
+            
+                <span>docker18.03 hang at &#39;restoring container&#39;</span>
+        </a>
+        <div class="abstract-content">
+            由来起初是 k8s 有几个 node not ready，上去看了下 kubelet 日志刷 container runtime down，重启了下 docker 后还是没用，docker ps 命令都卡住。
+环境信息1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253$ cat /etc/redhat-release Linux xxx-disk0 3.10.0-1127.13.1.el7.x86_64 #1 SMP Tue Jun 23 15:...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/12/04</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "hang">hang</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/11/23/ansible-hang-in-docker/" >
             
                 <span>ansible hang in docker container</span>
@@ -661,40 +691,6 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "etcd">etcd</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/05/linux-auditd/" >
-            
-                <span>Linux audit 审计</span>
-        </a>
-        <div class="abstract-content">
-            什么是audit？linux audit子系统是一个用于收集记录系统、内核、用户进程发生的行为事件的一种安全审计系统。该系统可以可靠地收集有关上任何与安全相关（或与安全无关）事件的信息，它可以帮助跟踪在系统上执行过的一些操作。
-使用安装好像高版本 os 都自带了，没有就 yum install -y audit
-1systemctl status auditd.service
-
-例如追踪一个内核参数被谁修改要注意的是 auditctl 只能临时生效，要想永久生效使用文件 audit.rules
-基本信息查看12345678910111213# 查看状态$ auditctl -senabl...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "audit">audit</a>
     
 </div>
             
@@ -2858,14 +2854,9 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
     
     
     
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 126
+        Total : 127
         </div>
         <!-- search  -->
         
@@ -2878,6 +2869,11 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/16</span><a class="archive-post-title" href= "/2021/09/16/read-containerd-con-reset/" >解决 docker 的 read unix @->/run/containerd/s/xxx read: connection reset by peer: unknown</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3768,6 +3764,8 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
         <span class="sidebar-tag-name" data-tags="ubuntu18"><span class="iconfont-archer">&#xe606;</span>ubuntu18</span>
     
         <span class="sidebar-tag-name" data-tags="usb-net"><span class="iconfont-archer">&#xe606;</span>usb-net</span>
+    
+        <span class="sidebar-tag-name" data-tags="containerd"><span class="iconfont-archer">&#xe606;</span>containerd</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
