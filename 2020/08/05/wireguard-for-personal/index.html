@@ -501,9 +501,10 @@ height:50vh;
 </ul>
 </li>
 </ul>
-<p>路由器上可以访问任何，但是路由器下的设备访问 peer B 在部分https 网址一直 timeout ， 路由器上 firewall 里 lan -&gt; wan 开下 动态伪装 和 mss ，我试开了后取消了后就好了，不知道为啥。对比了下规则开启的话就加了下面的:</p>
+<p>路由器上可以访问任何，但是路由器下的设备访问 peer B 在部分https 网址一直 timeout ， 路由器上 firewall 里 lan -&gt; wan 开下 动态伪装 和 mss 。对比了下规则开启的话就加了下面的:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -t nat -A zone_lan_postrouting -m comment --comment &quot;!fw3&quot; -j FULLCONENAT</span><br><span class="line">iptables -t nat -A zone_lan_prerouting -m comment --comment &quot;!fw3&quot; -j FULLCONENAT</span><br></pre></td></tr></table></figure>
 
+<p>也可以 wg0 添加一个 wg0 的 firewall zone，然后 zone 里修改，允许转发到 lan。这个zone 开 动态伪装 和 mss 。 </p>
 <h2 id="udp被-qos-下配合-udp2raw-使用"><a href="#udp被-qos-下配合-udp2raw-使用" class="headerlink" title="udp被 qos 下配合 udp2raw 使用"></a>udp被 qos 下配合 udp2raw 使用</h2><p>实际使用中很大几率遇到 udp 被 qos 了，导致连接经常断开，这里使用 <a target="_blank" rel="noopener" href="https://github.com/wangyu-/udp2raw-tunnel">udp2raw</a> 把 udp 报文伪装成 tcp 避免被 qos。这里我使用 docker 部署的，实体进程和相关文档见 <a target="_blank" rel="noopener" href="https://github.com/wangyu-/udp2raw-tunnel/blob/master/doc/README.zh-cn.md#%E8%BF%90%E8%A1%8C">udp2raw运行</a></p>
 <p>Linux server端 :</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 监听86的tcp端口，把86端口收到的伪装成tcp的udp报文转发到 127.0.0.1:16000 上</span></span><br><span class="line">docker run \</span><br><span class="line">    -d --name udp2raw  \</span><br><span class="line">    --restart always \</span><br><span class="line">    --net host \</span><br><span class="line">    --cap-add NET_RAW \</span><br><span class="line">    --cap-add NET_ADMIN  \</span><br><span class="line">    -v /run/xtables.lock:/run/xtables.lock \</span><br><span class="line">    zhangguanzhang/udp2raw \</span><br><span class="line">    -s -l 0.0.0.0:86 \</span><br><span class="line">    -r 127.0.0.1:16000 \</span><br><span class="line">    -k passwd123 \</span><br><span class="line">    --raw-mode faketcp  \</span><br><span class="line">    --cipher-mode xor  -a</span><br></pre></td></tr></table></figure>
@@ -528,6 +529,7 @@ height:50vh;
 <h3 id="一个注意点"><a href="#一个注意点" class="headerlink" title="一个注意点"></a>一个注意点</h3><p>openwrt 上在接口 添加 wireguard 接口，然后 peer 那里的 ip 写 127.0.0.1(也就是openwrt上的udp2raw的ip)可能不行，换成 openwrt 的 局域网 ip试下</p>
 <h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://anyisalin.github.io/2018/11/21/fast-flexible-nat-to-nat-vpn-wireguard/">https://anyisalin.github.io/2018/11/21/fast-flexible-nat-to-nat-vpn-wireguard/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/thread-1346042-1-1.html">https://www.right.com.cn/forum/thread-1346042-1-1.html</a></li>
 </ul>
 
     </article>
