@@ -17,7 +17,7 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>在非容器环境上实现散装的 IPVSSVC</title>
+    <title>在非容器环境上实现散装的 IPVS SVC</title>
     <link href="http://zhangguanzhang.github.io/2021/09/28/ipvs-svc/"/>
     <id>http://zhangguanzhang.github.io/2021/09/28/ipvs-svc/</id>
     <published>2021-09-28T19:28:30.000Z</published>

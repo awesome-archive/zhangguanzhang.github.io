@@ -22,7 +22,7 @@
     <meta name="description" content="记录生活点滴">
     <meta name="description" content="前言内部有非 K8S 环境上需要类似 SVC 的负载实现，一开始是用 NGINX 做的，所有 SVC 域名都解析成一个 dummy IP ，然后 NGINX 根据 server_name 去 proxy 不同的 upstream 。 开始还是能用的，但是后面结果后面很多服务依赖 host 这个 header ，报错签名错误，而且毕竟这样是在用户态，效率不如内核态高。于是打算搞下之前的打算：把 IP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在非容器环境上实现散装的 IPVSSVC">
+<meta property="og:title" content="在非容器环境上实现散装的 IPVS SVC">
 <meta property="og:url" content="http://zhangguanzhang.github.io/2021/09/28/ipvs-svc/">
 <meta property="og:site_name" content="Zhangguanzhang">
 <meta property="og:description" content="前言内部有非 K8S 环境上需要类似 SVC 的负载实现，一开始是用 NGINX 做的，所有 SVC 域名都解析成一个 dummy IP ，然后 NGINX 根据 server_name 去 proxy 不同的 upstream 。 开始还是能用的，但是后面结果后面很多服务依赖 host 这个 header ，报错签名错误，而且毕竟这样是在用户态，效率不如内核态高。于是打算搞下之前的打算：把 IP">
@@ -40,7 +40,7 @@
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     
-    <title>在非容器环境上实现散装的 IPVSSVC · zhangguanzhang&#39;s Blog</title>
+    <title>在非容器环境上实现散装的 IPVS SVC · zhangguanzhang&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -255,7 +255,7 @@
             <a href="/" >zhangguanzhang&#39;s Blog</a>
         </div>
         <div class="post-title header-element">
-            <a href="#" class="post-name">在非容器环境上实现散装的 IPVSSVC</a>
+            <a href="#" class="post-name">在非容器环境上实现散装的 IPVS SVC</a>
         </div>
     </div>
     
@@ -298,7 +298,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            在非容器环境上实现散装的 IPVSSVC
+            在非容器环境上实现散装的 IPVS SVC
             <!-- 404 -->
             
         </h1>
@@ -2908,7 +2908,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2021/09/28/ipvs-svc/" >在非容器环境上实现散装的 IPVSSVC</a>
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2021/09/28/ipvs-svc/" >在非容器环境上实现散装的 IPVS SVC</a>
         </li>
     
     
