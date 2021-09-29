@@ -563,6 +563,40 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2017/09/28/ipvs-svc/" >
+            
+                <span>在非容器环境上实现散装的 ipvs svc</span>
+        </a>
+        <div class="abstract-content">
+            前言内部有非 k8s 环境上需要类似 svc 的负载实现，一开始是用 nginx 做的，所有 svc 域名都解析成一个 dummy IP ，然后 nginx 根据 server_name 去 proxy 不同的 upstream 。 开始还是能用的，但是后面结果后面很多服务依赖 host 这个 header ，报错签名错误，而且毕竟这样是在用户态，效率不如内核态高。于是打算搞下之前的打算：把 ipvs 的 clusterip 的 svc 扣到非 k8s 环境上使用。
+kube-proxy 的 svc 简单讲就是 node 上任何进程访问 SVC IP:SVC PORT 会被 dnat 成...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/09/28</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "lvs">lvs</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "ipvsadm">ipvsadm</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "kube-proxy">kube-proxy</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2017/07/25/linux-bridge/" >
             
                 <span>centos桥接测试</span>
@@ -636,36 +670,6 @@ keepalived 2方式1：
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/07/05</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/06/26/lua-list-all-upsteam/" >
-            
-                <span>lua列出所有upsteam</span>
-        </a>
-        <div class="abstract-content">
-            需要在http的路由上暴露出所有的upsteam配置段
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758upstream names&#123;    server 127.0.0.1:8050 ;    server 127.0.0.1:8060 ;&#125;upstream tuling &#123;    server 127.0.0.1:8051       weight&#x3D;5;    server 127...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/06/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "nginx">nginx</a>
-    
-</div>
             
         </div>
     </article>
@@ -2827,9 +2831,36 @@ keepalived 2方式1：
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 127
+        Total : 128
         </div>
         <!-- search  -->
         
@@ -3361,6 +3392,11 @@ keepalived 2方式1：
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/ipvs-svc/" >在非容器环境上实现散装的 ipvs svc</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">07/25</span><a class="archive-post-title" href= "/2017/07/25/linux-bridge/" >centos桥接测试</a>
         </li>
     
@@ -3739,6 +3775,12 @@ keepalived 2方式1：
         <span class="sidebar-tag-name" data-tags="usb-net"><span class="iconfont-archer">&#xe606;</span>usb-net</span>
     
         <span class="sidebar-tag-name" data-tags="containerd"><span class="iconfont-archer">&#xe606;</span>containerd</span>
+    
+        <span class="sidebar-tag-name" data-tags="lvs"><span class="iconfont-archer">&#xe606;</span>lvs</span>
+    
+        <span class="sidebar-tag-name" data-tags="ipvsadm"><span class="iconfont-archer">&#xe606;</span>ipvsadm</span>
+    
+        <span class="sidebar-tag-name" data-tags="kube-proxy"><span class="iconfont-archer">&#xe606;</span>kube-proxy</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
