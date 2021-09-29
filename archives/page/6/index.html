@@ -387,6 +387,40 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/10/12/boot-grub-rescue/" >
+            
+                <span>/boot目录被清空下物理机无法开机的一次救援</span>
+        </a>
+        <div class="abstract-content">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;今天下午到公司被通知苏州一个节点的客户的裸金属无法开机，14:00上去到16:50终于给整好了，这里记录下笔记分享下
+故障现象物理机裸金属，连上跳板机通过带外连上去(等同于现场接了一个显示屏+键盘一样)错误为
+1234.errorL file &#96;&#x2F;grub2&#x2F;i386-pc&#x2F;normal.mod&#39; not found.Entering rescue mode...grub rescue&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nb...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/12</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "grub">grub</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "boot">boot</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/10/11/ansible-count-Idempotency/" >
             
                 <span>ansible数量限制上的幂等性</span>
@@ -674,40 +708,6 @@ ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/
         <a class="post-tag" href="javascript:void(0);" data-tags = "grub">grub</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "tftp">tftp</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/06/23/autoInstallServer/" >
-            
-                <span>拟定excel表格服务器自动按照表格配置信息和安装的实现过程</span>
-        </a>
-        <div class="abstract-content">
-            修改镜像以及编程实现了从服务器买来上电就会自动化安装指定ip和hostname的步骤（包含了自动做raid）,全程非交互
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;先讲讲事情的由来，新节点建设，几百台服务器得人为安装系统，虽说服务器有带外ipmi，但是raid和安装系统时候hostname和ip啥的得去配置。系统镜像还是修改过的，安装界面的菜单自动应答通用的流程还不行，于是决定看看能不能研究出来。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;想要达到的一个效果就是：服务器送货到节点后，...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "initrd">initrd</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "grub">grub</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "raid">raid</a>
     
 </div>
             
@@ -2896,8 +2896,6 @@ ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 128
@@ -2913,6 +2911,11 @@ ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2021/09/28/ipvs-svc/" >在非容器环境上实现散装的 IPVSSVC</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3428,11 +3431,6 @@ ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2017/12/23/docker%E5%AE%B9%E5%99%A8%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94/" >docker容器网络互联</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/ipvs-svc/" >在非容器环境上实现散装的 IPVSSVC</a>
         </li>
     
     

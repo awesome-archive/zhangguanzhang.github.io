@@ -387,6 +387,40 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/09/28/ipvs-svc/" >
+            
+                <span>在非容器环境上实现散装的 IPVSSVC</span>
+        </a>
+        <div class="abstract-content">
+            前言内部有非 K8S 环境上需要类似 SVC 的负载实现，一开始是用 NGINX 做的，所有 SVC 域名都解析成一个 dummy IP ，然后 NGINX 根据 server_name 去 proxy 不同的 upstream 。 开始还是能用的，但是后面结果后面很多服务依赖 host 这个 header ，报错签名错误，而且毕竟这样是在用户态，效率不如内核态高。于是打算搞下之前的打算：把 IPVS 的 ClusterIP 的 SVC 扣到非 K8S 环境上使用。
+kube-proxy 的 SVC 简单讲就是 node 上任何进程访问 SVC IP:SVC PORT 会被 dnat 成...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/28</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "lvs">lvs</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "ipvsadm">ipvsadm</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "kube-proxy">kube-proxy</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/09/16/read-containerd-con-reset/" >
             
                 <span>解决 docker 的 read unix @-&gt;/run/containerd/s/xxx read: connection reset by peer: unknown</span>
@@ -665,49 +699,10 @@ N1 上的 usb 网络共享折腾固件依赖暂时没完全区分 usb 网络共�
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/07/16/consul-mips64le/" >
-            
-                <span>编译mips64le架构的consul</span>
-        </a>
-        <div class="abstract-content">
-            编译建议使用容器编译，否则建议 clone 进 GOPATH 里
-clone12git clone https://github.com/hashicorp/consul.gitcd consul
-
-
-线上使用的是 v1.8 版本，这里我以 v1.8.14 (2021/07/19 发布的)搞的。
-1git checkout v1.8.14
-
-准备工作拉取需要的镜像。貌似 golang 1.16 更好的支持 mips64 了，所以条件允许的话，这里可以下改下 golang 的版本试试
-1234$ head -n2 build-support/docker/Build-Go.dockerfi...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/07/16</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "consul">consul</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "mips64le">mips64le</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/archives/2021/page/2/">2</a><a class="extend next" rel="next" href="/archives/2021/page/2/">NEXT &gt;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/archives/2021/page/2/">2</a><a class="page-number" href="/archives/2021/page/3/">3</a><a class="extend next" rel="next" href="/archives/2021/page/2/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -2886,8 +2881,6 @@ clone12git clone https://github.com/hashicorp/consul.gitcd consul
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 128
@@ -2903,6 +2896,11 @@ clone12git clone https://github.com/hashicorp/consul.gitcd consul
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2021/09/28/ipvs-svc/" >在非容器环境上实现散装的 IPVSSVC</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3418,11 +3416,6 @@ clone12git clone https://github.com/hashicorp/consul.gitcd consul
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2017/12/23/docker%E5%AE%B9%E5%99%A8%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94/" >docker容器网络互联</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/ipvs-svc/" >在非容器环境上实现散装的 IPVSSVC</a>
         </li>
     
     

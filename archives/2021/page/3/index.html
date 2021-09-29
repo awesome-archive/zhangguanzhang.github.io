@@ -23,7 +23,7 @@
     <meta name="description" content="记录生活点滴">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Zhangguanzhang">
-<meta property="og:url" content="http://zhangguanzhang.github.io/archives/2017/page/4/">
+<meta property="og:url" content="http://zhangguanzhang.github.io/archives/2021/page/3/">
 <meta property="og:site_name" content="Zhangguanzhang">
 <meta property="og:description" content="记录生活点滴">
 <meta property="og:locale" content="zh_CN">
@@ -387,27 +387,24 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2017/01/08/tuling-wx/" >
+        <a class="abstract-title" href = "/2021/02/02/node-shutdown-dns-unavailable/" >
             
-                <span>微信公众号接入图灵机器人api</span>
+                <span>集群节点关机导致dns在eviction pod之前几率不可用</span>
         </a>
         <div class="abstract-content">
-            <p>最近在弄微信远程控制，闲来无聊把图灵机器人接入自己公众号</p>
+            由来这几天我们内部在做新项目的容灾测试，业务都是在 K8S 上的。容灾里就是随便选节点 shutdown -h now。关机后同事便发现了（页面有错误，最终问题是）集群内 DNS 解析会有几率无法解析（导致的）。
+根据 SVC 的流程，node 关机后，由于 kubelet 没有 update 自己。node 和 pod 在 apiserver get 的时候显示还是正常的。在 kube-controller-manager 的 --node-monitor-grace-period 时间后再过 --pod-eviction-timeout 时间开始 eviction pod，大概流程是...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/01/08</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/02/02</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "原创">原创</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "微信">微信</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "api">api</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "coredns">coredns</a>
     
 </div>
             
@@ -417,7 +414,7 @@
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/2017/page/3/">&lt; PREV</a><a class="page-number" href="/archives/2017/">1</a><a class="page-number" href="/archives/2017/page/2/">2</a><a class="page-number" href="/archives/2017/page/3/">3</a><span class="page-number current">4</span>
+        <a class="extend prev" rel="prev" href="/archives/2021/page/2/">&lt; PREV</a><a class="page-number" href="/archives/2021/">1</a><a class="page-number" href="/archives/2021/page/2/">2</a><span class="page-number current">3</span>
     </nav>
     
 </main>
@@ -2596,8 +2593,6 @@
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 128
@@ -2613,6 +2608,11 @@
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2021/09/28/ipvs-svc/" >在非容器环境上实现散装的 IPVSSVC</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3128,11 +3128,6 @@
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2017/12/23/docker%E5%AE%B9%E5%99%A8%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94/" >docker容器网络互联</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/ipvs-svc/" >在非容器环境上实现散装的 IPVSSVC</a>
         </li>
     
     

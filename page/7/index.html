@@ -400,6 +400,37 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/03/18/keepalived-Heartbeat-use-mg-net/" >
+            
+                <span>使用管理网当作业务网keepalived VIP的心跳线</span>
+        </a>
+        <div class="abstract-content">
+            客户的业务情况如下，我们连的 vpn2 上去部署的业务，一开始三台机器，上面只有 NC1 这一个网卡，客户给了个 vip 让我们配置上，说 vip 两个 vpn 都能访问到。后面实际配置完发现不通，沟通了一番了解清楚网络后，使用了如下方案。
+NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 172.18.27.99/25 via 172.18.27.1，两个网卡不同的 vlan，172.18.27.0/25 的网络里没有多少 IP 了，所以拿来做 VIP 的话得用 NC1 做心跳线。
+123456789101112131415...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/18</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "vip">vip</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/02/15/linux-tc/" >
             
                 <span>Linux tc基础使用</span>
@@ -564,40 +595,6 @@ height:50vh;
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/09/28/ipvs-svc/" >
-            
-                <span>在非容器环境上实现散装的 IPVSSVC</span>
-        </a>
-        <div class="abstract-content">
-            前言内部有非 K8S 环境上需要类似 SVC 的负载实现，一开始是用 NGINX 做的，所有 SVC 域名都解析成一个 dummy IP ，然后 NGINX 根据 server_name 去 proxy 不同的 upstream 。 开始还是能用的，但是后面结果后面很多服务依赖 host 这个 header ，报错签名错误，而且毕竟这样是在用户态，效率不如内核态高。于是打算搞下之前的打算：把 IPVS 的 ClusterIP 的 SVC 扣到非 K8S 环境上使用。
-kube-proxy 的 SVC 简单讲就是 node 上任何进程访问 SVC IP:SVC PORT 会被 dnat 成...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/09/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "lvs">lvs</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ipvsadm">ipvsadm</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kube-proxy">kube-proxy</a>
     
 </div>
             
@@ -3185,8 +3182,6 @@ Linux 里的 so用白话说，就是类似于 windows 的 dll 文件，通常是
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 128
@@ -3202,6 +3197,11 @@ Linux 里的 so用白话说，就是类似于 windows 的 dll 文件，通常是
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2021/09/28/ipvs-svc/" >在非容器环境上实现散装的 IPVSSVC</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3717,11 +3717,6 @@ Linux 里的 so用白话说，就是类似于 windows 的 dll 文件，通常是
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2017/12/23/docker%E5%AE%B9%E5%99%A8%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94/" >docker容器网络互联</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/ipvs-svc/" >在非容器环境上实现散装的 IPVSSVC</a>
         </li>
     
     
