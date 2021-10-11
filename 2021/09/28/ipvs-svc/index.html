@@ -20,12 +20,12 @@
     <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="记录生活点滴">
-    <meta name="description" content="前言内部有非 K8S 环境上需要类似 SVC 的负载实现，一开始是用 NGINX 做的，所有 SVC 域名都解析成一个 dummy IP ，然后 NGINX 根据 server_name 去 proxy 不同的 upstream 。 开始还是能用的，但是后面结果后面很多服务依赖 host 这个 header ，报错签名错误，而且毕竟这样是在用户态，效率不如内核态高。于是打算搞下之前的打算：把 IP">
+    <meta name="description" content="前言内部有非 K8S 环境上需要类似 SVC 的负载实现，一开始是用 NGINX 做的，所有 SVC 域名都解析成一个 dummy IP ，然后 NGINX 根据 server_name 去 proxy 不同的 upstream 。 开始还是能用的，结果后面很多服务依赖 host 这个 header ，报错签名错误，而且毕竟这样是在用户态，效率不如内核态高。于是打算搞下之前的打算：把 IPVS 的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在非容器环境上实现散装的 IPVS SVC">
 <meta property="og:url" content="http://zhangguanzhang.github.io/2021/09/28/ipvs-svc/">
 <meta property="og:site_name" content="Zhangguanzhang">
-<meta property="og:description" content="前言内部有非 K8S 环境上需要类似 SVC 的负载实现，一开始是用 NGINX 做的，所有 SVC 域名都解析成一个 dummy IP ，然后 NGINX 根据 server_name 去 proxy 不同的 upstream 。 开始还是能用的，但是后面结果后面很多服务依赖 host 这个 header ，报错签名错误，而且毕竟这样是在用户态，效率不如内核态高。于是打算搞下之前的打算：把 IP">
+<meta property="og:description" content="前言内部有非 K8S 环境上需要类似 SVC 的负载实现，一开始是用 NGINX 做的，所有 SVC 域名都解析成一个 dummy IP ，然后 NGINX 根据 server_name 去 proxy 不同的 upstream 。 开始还是能用的，结果后面很多服务依赖 host 这个 header ，报错签名错误，而且毕竟这样是在用户态，效率不如内核态高。于是打算搞下之前的打算：把 IPVS 的">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangguanzhang/Image-Hosting/master/picgo/lvs-netfilter.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangguanzhang/Image-Hosting/master/picgo/iptables_netfilter.png">
@@ -456,7 +456,7 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>内部有非 K8S 环境上需要类似 SVC 的负载实现，一开始是用 NGINX 做的，所有 SVC 域名都解析成一个 dummy IP ，然后 NGINX 根据 <code>server_name</code> 去 proxy 不同的 upstream 。 开始还是能用的，但是后面结果后面很多服务依赖 <code>host</code> 这个 header ，报错签名错误，而且毕竟这样是在用户态，效率不如内核态高。于是打算搞下之前的打算：把 IPVS 的 <code>ClusterIP</code> 的 SVC 扣到非 K8S 环境上使用。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>内部有非 K8S 环境上需要类似 SVC 的负载实现，一开始是用 NGINX 做的，所有 SVC 域名都解析成一个 dummy IP ，然后 NGINX 根据 <code>server_name</code> 去 proxy 不同的 upstream 。 开始还是能用的，结果后面很多服务依赖 <code>host</code> 这个 header ，报错签名错误，而且毕竟这样是在用户态，效率不如内核态高。于是打算搞下之前的打算：把 IPVS 的 <code>ClusterIP</code> 的 SVC 扣到非 K8S 环境上使用。</p>
 <p>kube-proxy 的 SVC 简单讲就是 node 上任何进程访问 <code>SVC IP:SVC PORT</code> 会被 dnat 成 <code>endpoint</code> ，是工作在内核态的四层负载，不会在机器上看到端口监听，而默认非集群的机器是无法访问 SVC IP 。在 K8S 里，endpoint 的 ip 无非就是 <code>POD IP</code>，<code>host IP</code>。前者就是 SVC 选中 POD ，后者例如 <code>kubernetes</code> 这个 SVC ，会 DNAT 成每个 <code>kube-apiserver</code> 的 <code>host IP:6443</code> 端口，也可能是 <code>ExternalName</code> 或者手动创建的 endpoint 。既然 <code>kubernetes</code> 这个 SVC 可以。那我的打算应该也是可以实现的。但是一开始实际按照思路试了下发现不行，网上的文章基本都是在单机 docker 或者现有的 K8S 环境上搞的，漏掉了很多精华和核心思想，这里记录下我的思路和实现过程。</p>
 <h2 id="环境信息"><a href="#环境信息" class="headerlink" title="环境信息"></a>环境信息</h2><p>前面说的 SVC 现象是和 <code>kube-proxy</code> 的模式无关的。<code>iptables</code> 模式排查不直观，我更倾向于 <code>IPVS</code> 去搞，它更直观，而且支持更多的调度算法。管理 IPVS 规则的话我们需要安装 <code>ipvsadm</code> ，这里我是两台干净的 CentOS 7.8 来做环境。</p>
 <table>
