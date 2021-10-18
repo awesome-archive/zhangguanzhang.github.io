@@ -318,7 +318,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">441</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">459</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -472,6 +472,10 @@ height:50vh;
 
 <h4 id="持久化-rule"><a href="#持久化-rule" class="headerlink" title="持久化 rule"></a>持久化 rule</h4><p>建议写到子配置文件里，某些系统主配置文件的内容是等于 <code>子配置文件内容加起来后 &gt; /etc/audit/audit.rules</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &#x27;-w /proc/sys/net/ipv4/ip_forward -p w -k sysctl-exec&#x27; &gt; /etc/audit/rules.d/zgz.rules</span><br></pre></td></tr></table></figure>
+
+<h3 id="参考的一些rule"><a href="#参考的一些rule" class="headerlink" title="参考的一些rule"></a>参考的一些rule</h3><ul>
+<li>kill: <code>auditctl -a exit,always -F arch=b64 -S kill -k audit_kill</code></li>
+</ul>
 
     </article>
     <!-- license  -->
@@ -647,7 +651,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFaudit%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">什么是audit？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">2.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E5%A6%82%E8%BF%BD%E8%B8%AA%E4%B8%80%E4%B8%AA%E5%86%85%E6%A0%B8%E5%8F%82%E6%95%B0%E8%A2%AB%E8%B0%81%E4%BF%AE%E6%94%B9"><span class="toc-number">2.2.</span> <span class="toc-text">例如追踪一个内核参数被谁修改</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF%E6%9F%A5%E7%9C%8B"><span class="toc-number">2.2.1.</span> <span class="toc-text">基本信息查看</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AA-rule"><span class="toc-number">2.2.2.</span> <span class="toc-text">增加一个 rule</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%85%E7%A9%BA-rule"><span class="toc-number">2.2.3.</span> <span class="toc-text">清空 rule</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%81%E4%B9%85%E5%8C%96-rule"><span class="toc-number">2.2.4.</span> <span class="toc-text">持久化 rule</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFaudit%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">什么是audit？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">2.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E5%A6%82%E8%BF%BD%E8%B8%AA%E4%B8%80%E4%B8%AA%E5%86%85%E6%A0%B8%E5%8F%82%E6%95%B0%E8%A2%AB%E8%B0%81%E4%BF%AE%E6%94%B9"><span class="toc-number">2.2.</span> <span class="toc-text">例如追踪一个内核参数被谁修改</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF%E6%9F%A5%E7%9C%8B"><span class="toc-number">2.2.1.</span> <span class="toc-text">基本信息查看</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AA-rule"><span class="toc-number">2.2.2.</span> <span class="toc-text">增加一个 rule</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%85%E7%A9%BA-rule"><span class="toc-number">2.2.3.</span> <span class="toc-text">清空 rule</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%81%E4%B9%85%E5%8C%96-rule"><span class="toc-number">2.2.4.</span> <span class="toc-text">持久化 rule</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E7%9A%84%E4%B8%80%E4%BA%9Brule"><span class="toc-number">2.3.</span> <span class="toc-text">参考的一些rule</span></a></li></ol></li></ol>
     </div>
     
     <div class="sidebar sidebar-hide">
