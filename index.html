@@ -400,6 +400,30 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/10/29/kubelet-ephemeral-storage-loop-evicted/" >
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            故障现场 k8s node 很多 pod 都被硬性驱逐显示 Evicted ，现场人员查看分区容量和 inode 都正常，但是一直 reclaim ephemeral-storage。
+处理环境信息12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879$ uname -aLinux xxx-2 3.10.0-693.el7.x86_64 #1 SM...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/10/29</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/09/28/ipvs-svc/" >
             
                 <span>在非容器环境上实现散装的 IPVS SVC</span>
@@ -842,39 +866,6 @@ clone12git clone https://github.com/hashicorp/consul.gitcd consul
         <a class="post-tag" href="javascript:void(0);" data-tags = "openshift">openshift</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "ocp">ocp</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/05/26/docker-panic-invalid-freelist-page/" >
-            
-                <span>docker-ce 18.09.3 启动panic: invalid freelist page: 56, page type is leaf的解决处理</span>
-        </a>
-        <div class="abstract-content">
-            这个问题和之前的docker-18.06.3-ce启动panic: invalid page type: 0: 0的解决处理差不多，不过 db 文件不同。客户停止 docker 后起不来了，查看日志：
-1journalctl -xe -u docker
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879805月 26 18:42:17 xxxx...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
     
 </div>
             
@@ -3195,38 +3186,9 @@ clone12git clone https://github.com/hashicorp/consul.gitcd consul
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 128
+        Total : 129
         </div>
         <!-- search  -->
         
@@ -3923,6 +3885,20 @@ clone12git clone https://github.com/hashicorp/consul.gitcd consul
     
         <li class="archive-post-item">
             <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2016/10/28/hello/" >hello world</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/10/29/kubelet-ephemeral-storage-loop-evicted/" >[Untitled Post]</a>
         </li>
     
     </div>

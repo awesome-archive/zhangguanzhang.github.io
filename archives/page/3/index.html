@@ -387,6 +387,30 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/03/12/build-arm64-docker-compose-action/" >
+            
+                <span>使用github action 配合 docker buildx 编译 arm64 docker-compose</span>
+        </a>
+        <div class="abstract-content">
+            说明git 上搜索了很多 docker-compose 的 arm64 的编译基本都是使用 qemu-user-static 之类的设置下后编译的，也看到过用特权容器启动 qemu-user-static 或者 binfmt 之类的，但是我自己机器上试了无效，貌似是因为我操作系统是低版本内核的 centos ，github 上搜了下，其他很多人的编译感觉太啰嗦了。就在 action 上整了下，测试是可用的，而且非常简单。
+docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里安装 docker，创建 build...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/12</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/02/02/node-shutdown-dns-unavailable/" >
             
                 <span>集群节点关机导致dns在eviction pod之前几率不可用</span>
@@ -657,37 +681,6 @@ openshift 不像其他的 dashboard 诸如 rancher，k3s 之类的，它自己�
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "wireguard">wireguard</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/30/prometheus-rate-and-irate/" >
-            
-                <span>prometheus的rate与irate内部是如何计算的</span>
-        </a>
-        <div class="abstract-content">
-            由来市面上的翻译误导人，压根不是啥平均增长率，看了下源码和实际算下来让大家好理解
-rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/promql/functions.go 的extrapolatedRate 和 funcRate，funcRate为
-123func funcRate(vals []parser.Value, args parser.Expressions, enh *EvalNodeHelper) Vector &#123;  return extrapolatedRate(vals, args...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Prometheus">Prometheus</a>
     
 </div>
             
@@ -2847,38 +2840,9 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 128
+        Total : 129
         </div>
         <!-- search  -->
         
@@ -3575,6 +3539,20 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
     
         <li class="archive-post-item">
             <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2016/10/28/hello/" >hello world</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/10/29/kubelet-ephemeral-storage-loop-evicted/" >[Untitled Post]</a>
         </li>
     
     </div>

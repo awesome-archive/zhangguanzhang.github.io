@@ -400,6 +400,37 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/07/30/prometheus-rate-and-irate/" >
+            
+                <span>prometheus的rate与irate内部是如何计算的</span>
+        </a>
+        <div class="abstract-content">
+            由来市面上的翻译误导人，压根不是啥平均增长率，看了下源码和实际算下来让大家好理解
+rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/promql/functions.go 的extrapolatedRate 和 funcRate，funcRate为
+123func funcRate(vals []parser.Value, args parser.Expressions, enh *EvalNodeHelper) Vector &#123;  return extrapolatedRate(vals, args...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Prometheus">Prometheus</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/07/23/fs-error-fix-k8s-master/" >
             
                 <span>k8s master机器文件系统故障的一次恢复过程</span>
@@ -847,38 +878,6 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/15</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/08/docker-panic-invalid-page-type/" >
-            
-                <span>docker-18.06.3-ce启动panic: invalid page type: 0: 0的解决处理</span>
-        </a>
-        <div class="abstract-content">
-            凌晨pod状态异常且没有恢复，上线查看后docker ps -a命令无响应，kubelet日志也刷和docker的rpc通信context deadline cancel重启了docker后docker无法启动，前台运行开debug log level刚开始刷了个/var/lib/docker/tmp是个文件，对比了下其他机器上这个路径应该是个目录，然后改名后创建个权限和正常docker下权限一样的tmp文件夹再起
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-</div>
             
         </div>
     </article>
@@ -3197,38 +3196,9 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 128
+        Total : 129
         </div>
         <!-- search  -->
         
@@ -3925,6 +3895,20 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
         <li class="archive-post-item">
             <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2016/10/28/hello/" >hello world</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/10/29/kubelet-ephemeral-storage-loop-evicted/" >[Untitled Post]</a>
         </li>
     
     </div>
