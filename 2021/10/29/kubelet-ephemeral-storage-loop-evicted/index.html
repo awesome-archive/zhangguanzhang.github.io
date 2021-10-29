@@ -466,7 +466,7 @@ height:50vh;
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart kubelet</span><br></pre></td></tr></table></figure>
 
-<p>问题解决。</p>
+<p>问题解决。后面才发现 /var 是单独分区的，客户现场动过东西。。。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://github.com/kubernetes/kubernetes/tree/v1.15.5/vendor/github.com/google/cadvisor/manager/manager.go#L724">https://github.com/kubernetes/kubernetes/tree/v1.15.5/vendor/github.com/google/cadvisor/manager/manager.go#L724</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/kubernetes/kubernetes/tree/v1.15.5/vendor/github.com/google/cadvisor/container/libcontainer/handler.go">https://github.com/kubernetes/kubernetes/tree/v1.15.5/vendor/github.com/google/cadvisor/container/libcontainer/handler.go</a></li>
