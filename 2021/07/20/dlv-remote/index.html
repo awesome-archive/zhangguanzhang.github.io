@@ -321,7 +321,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">2.2k</span>阅读时长: <span class="post-count reading-time">9 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">2.2k</span>阅读时长: <span class="post-count reading-time">10 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -478,7 +478,9 @@ height:50vh;
 <p>这里我用容器演示，虽然容器的 pid namespaces 隔离了，但是实际上容器里的所有进程还是会在宿主机上有 pid 对应的。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux | grep gin-dem[o]</span><br><span class="line">root     15598  0.0  0.1 708540  5128 ?        Ssl  21:10   0:00 /gin-demo</span><br></pre></td></tr></table></figure>
 
-<h3 id="Linux-上的准备"><a href="#Linux-上的准备" class="headerlink" title="Linux 上的准备"></a>Linux 上的准备</h3><p>拷贝 Linux 的 dlv 可执行文件放到目标机器的 PATH 下，推荐按照 LFS 的规范放 /usr/local/bin/ 下</p>
+<h3 id="Linux-上的准备"><a href="#Linux-上的准备" class="headerlink" title="Linux 上的准备"></a>Linux 上的准备</h3><p>拷贝 Linux 的 dlv 可执行文件放到目标机器的 PATH 下，推荐按照 LFS 的规范放 /usr/local/bin/ 下，可以先通过 go install 安装，1.16 后者高于 1.16 版本：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">export GOPROXY=https://goproxy.cn,https://mirrors.aliyun.com/goproxy/,https://goproxy.io,direct</span><br><span class="line">export CGO_ENABLED=0</span><br><span class="line">go install github.com/go-delve/delve/cmd/dlv@latest</span><br><span class="line"></span><br><span class="line">echo `go env GOPATH`/bin/</span><br><span class="line"></span><br><span class="line"># 拷贝 dlv</span><br><span class="line">cp `go env GOPATH`/bin/dlv /usr/local/bin/</span><br></pre></td></tr></table></figure>
+
 <h4 id="http-接口之类的-server-类调试"><a href="#http-接口之类的-server-类调试" class="headerlink" title="http 接口之类的 server 类调试"></a>http 接口之类的 server 类调试</h4><p>比如我这个 demo 就是要调试接口内部的，也就是运行后触发的主要运行段是在接口内，所以我们不需要 <code>dlv run</code>， 而是下面这样 attach 执行</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dlv attach $(pgrep gin-demo) --listen=:2345 --headless=true --log=true  \</span><br><span class="line">  --log-output=debugger,debuglineerr,gdbwire,lldbout,rpc --accept-multiclient --api-version=2</span><br></pre></td></tr></table></figure>
 
