@@ -318,7 +318,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">3.1k</span>阅读时长: <span class="post-count reading-time">16 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">3.2k</span>阅读时长: <span class="post-count reading-time">16 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -487,12 +487,12 @@ height:50vh;
 <p>查看编译完成的</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 kubernetes]# ls -l _output/dockerized/bin/linux/amd64/</span><br><span class="line">total 202880</span><br><span class="line">-rwxr-xr-x 1 root root   9203530 Apr  7 22:02 conversion-gen</span><br><span class="line">-rwxr-xr-x 1 root root   9207908 Apr  7 22:02 deepcopy-gen</span><br><span class="line">-rwxr-xr-x 1 root root   9156147 Apr  7 22:02 defaulter-gen</span><br><span class="line">-rwxr-xr-x 1 root root   4709220 Apr  7 22:02 go2make</span><br><span class="line">-rwxr-xr-x 1 root root   2894872 Apr  7 22:03 go-bindata</span><br><span class="line">-rwxr-xr-x 1 root root 157545104 Apr  7 22:13 kubelet</span><br><span class="line">-rwxr-xr-x 1 root root  15018430 Apr  7 22:03 openapi-gen</span><br></pre></td></tr></table></figure>
 
-<h2 id="runc-关闭-kmem"><a href="#runc-关闭-kmem" class="headerlink" title="runc 关闭 kmem"></a>runc 关闭 kmem</h2><p>v1.0.0-rc94起 kmem 设置就被忽略了</p>
-<p>1.0.0 后的 <code>arm64</code> 的 runc 可以直接下面这样编译</p>
+<h2 id="runc-关闭-kmem"><a href="#runc-关闭-kmem" class="headerlink" title="runc 关闭 kmem"></a>runc 关闭 kmem</h2><p>v1.0.0-rc94起 kmem 设置就被忽略了，意味着直接下载最新版本的 runc 就行了，不需要自己去编译 runc 了。</p>
+<p> <code>arm64</code> 的 runc 可以直接下面这样编译，不过 arm64 目前国内的系统的内核都很高不存在这个问题，没必要编译 runc 。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make shell</span><br><span class="line">make localcross</span><br></pre></td></tr></table></figure>
 
 <h3 id="1-0-0-rc10-版本"><a href="#1-0-0-rc10-版本" class="headerlink" title="1.0.0-rc10 版本"></a>1.0.0-rc10 版本</h3><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1743789">https://cloud.tencent.com/developer/article/1743789</a> 这个文章里说了 runc 也需要关闭</p>
-<p>如果下面命令能成功执行则说明 runc 没关闭 kmem</p>
+<p>如果下面命令能成功执行则说明 runc 没关闭 kmem ，当然此方法不是绝对的，新 runc 下命令执行没有问题的，要看文章最后面的 <code>memory.kmem.slabinfo</code></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --rm --name test --kernel-memory 100M nginx:alpine</span><br></pre></td></tr></table></figure>
 <p><code>19.03.14</code> 测试发现可以运行，说明没有关闭，查看它的 <code>runc</code> 版本</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> runc --version</span></span><br><span class="line">runc version 1.0.0-rc10</span><br><span class="line">commit: dc9208a3303feef5b3839f4323d9beb36df0a9dd</span><br><span class="line">spec: 1.0.1-dev</span><br></pre></td></tr></table></figure>
