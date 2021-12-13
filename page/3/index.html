@@ -400,6 +400,37 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/08/05/wireguard-for-personal/" >
+            
+                <span>个人办公用 wireguard 组网笔记</span>
+        </a>
+        <div class="abstract-content">
+            作为 IT 人员，经常需要连到办公网工作，并不是每个公司都有 vpn，自己搭建的话 openvpn 之类的配置麻烦啰嗦。这里写下 wireguard 的简单搭建。它比 IPSec 更快，更简单，更精简，更有用。它比 OpenVPN 更高效。WireGuard 设计为通用 VPN，适用于多种不同情况。它是跨平台的，可大规模部署。
+通常如下图的部署: 一台 ECS 主机，得有公网 IP，下图就是 pc ----&gt; ECS &lt;------ 公司的 pc
+12345678910111213141516            +----------+            |     ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/05</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "wireguard">wireguard</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/07/30/prometheus-rate-and-irate/" >
             
                 <span>prometheus的rate与irate内部是如何计算的</span>
@@ -851,33 +882,6 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
         <a class="post-tag" href="javascript:void(0);" data-tags = "onedrive">onedrive</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/15/kill-ctr-with-grace-period/" >
-            
-                <span>Killing container &#34;docker://xxx with 30 second grace period</span>
-        </a>
-        <div class="abstract-content">
-            由来开发反应他们环境上有个 pod 不正常。他们先操作然后卡住后来找我的。
-12345$ kubectl -n xxx get pod -o wide | grep 0/1xstorage-6d959cd8c8-rdscv      0/1     Init:0/1    0       15m     xxxx$ kubectl -n xxx delete po xstorage-6d959cd8c8-rdscvpod &quot;xstorage-6d959cd8c8-rdscv&quot; deleted      ^[[A^[[A^[[A^[[A
-
-处理过程查看日志：
-1234$...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/15</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -3219,9 +3223,24 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 130
+        Total : 131
         </div>
         <!-- search  -->
         
@@ -3234,6 +3253,11 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2021/12/12/mod-rejected-by-service/" >docker数据盘损坏后启动报错 Error starting daemon: Error initializing network controller: Error creating default "bridge" network: package not installed</a>
+        </li>
     
     
         <li class="archive-post-item">

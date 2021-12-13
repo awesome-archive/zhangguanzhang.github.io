@@ -400,6 +400,39 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/06/08/ocp4.5.9-restore-etcd/" >
+            
+                <span>openshift 4.5.9 etcd损坏+脑裂修复过程</span>
+        </a>
+        <div class="abstract-content">
+            前言介绍内部机器和环境都是在 vcenter 里，之前的 ocp 集群是 3 master + 1 worker，也就是之前的openshift 4.5.9 离线安装后的环境，后面有几台宿主机负载太高，同事看我机器负载最高，关了几台，这几天需要用下 openshift 环境。登录到 bastion 上 get 超时，看了下 haproxy 的 stat web，全部红了。。然后把所有机器开机后发现还是起不来。
+操作openshift 的 master 节点和 kubeadm 很像，几个组件都是 staticPod 形式起的。客户端也不是 docker，使用 crictl 就行了
+查看 k...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/06/08</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "openshift">openshift</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "ocp">ocp</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/05/26/docker-panic-invalid-freelist-page/" >
             
                 <span>docker-ce 18.09.3 启动panic: invalid freelist page: 56, page type is leaf的解决处理</span>
@@ -823,37 +856,6 @@ openshift 不像其他的 dashboard 诸如 rancher，k3s 之类的，它自己�
         <a class="post-tag" href="javascript:void(0);" data-tags = "openshift">openshift</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "ocp">ocp</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/08/05/wireguard-for-personal/" >
-            
-                <span>个人办公用 wireguard 组网笔记</span>
-        </a>
-        <div class="abstract-content">
-            作为 IT 人员，经常需要连到办公网工作，并不是每个公司都有 vpn，自己搭建的话 openvpn 之类的配置麻烦啰嗦。这里写下 wireguard 的简单搭建。它比 IPSec 更快，更简单，更精简，更有用。它比 OpenVPN 更高效。WireGuard 设计为通用 VPN，适用于多种不同情况。它是跨平台的，可大规模部署。
-通常如下图的部署: 一台 ECS 主机，得有公网 IP，下图就是 pc ----&gt; ECS &lt;------ 公司的 pc
-12345678910111213141516            +----------+            |     ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "wireguard">wireguard</a>
     
 </div>
             
@@ -3197,9 +3199,24 @@ openshift 不像其他的 dashboard 诸如 rancher，k3s 之类的，它自己�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 130
+        Total : 131
         </div>
         <!-- search  -->
         
@@ -3212,6 +3229,11 @@ openshift 不像其他的 dashboard 诸如 rancher，k3s 之类的，它自己�
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2021/12/12/mod-rejected-by-service/" >docker数据盘损坏后启动报错 Error starting daemon: Error initializing network controller: Error creating default "bridge" network: package not installed</a>
+        </li>
     
     
         <li class="archive-post-item">

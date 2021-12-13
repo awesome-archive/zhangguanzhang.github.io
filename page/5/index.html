@@ -400,6 +400,37 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/07/07/golang-http/" >
+            
+                <span>golang的net/http包的客户端简单科普</span>
+        </a>
+        <div class="abstract-content">
+            之前准备写个简单的 api 的调用，百度和问了很多人后发现基本对于 http 的客户端熟悉的人非常少。或者对包的不了解自己造了效率很低的轮子，而且官方一些包里有坑，被坑过，这里简单科普下
+简单的get和posthttp 包里下列可以直接使用的请求方法
+1234func Head(url string) (resp *Response, err error)func Get(url string) (resp *Response, err error)func Post(url string, bodyType string, body io.Reader) (resp *Response...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/07</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "http">http</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/06/26/uefi-pxe/" >
             
                 <span>uefi模式下docker+交换机部署pxe批量安装</span>
@@ -840,38 +871,6 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
         <a class="post-tag" href="javascript:void(0);" data-tags = "openstack">openstack</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "cloud-init">cloud-init</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/04/black-box-exporter/" >
-            
-                <span>prometheus的黑盒监控</span>
-        </a>
-        <div class="abstract-content">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;常规的各种exporter都是和需要监控的机器一起安装的,如果需要监控一些tcp端口和七层应用层的状态呢,这个时候就需要黑盒监控了,不需要安装在目标机器上即可从外部去监控。
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9115是它的http端点的默认监听端口，blackbox.yml它的配置文件里以基础的http、dns、tcp、icmp等prober定制配置出各种监测模块(module)，在prometheus server的配置文件里声明用哪个模块去探测哪个targets，下面以doc...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "prometheus">prometheus</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "exporter">exporter</a>
     
 </div>
             
@@ -3215,9 +3214,24 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 130
+        Total : 131
         </div>
         <!-- search  -->
         
@@ -3230,6 +3244,11 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2021/12/12/mod-rejected-by-service/" >docker数据盘损坏后启动报错 Error starting daemon: Error initializing network controller: Error creating default "bridge" network: package not installed</a>
+        </li>
     
     
         <li class="archive-post-item">

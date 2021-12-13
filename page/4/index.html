@@ -400,6 +400,33 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/01/15/kill-ctr-with-grace-period/" >
+            
+                <span>Killing container &#34;docker://xxx with 30 second grace period</span>
+        </a>
+        <div class="abstract-content">
+            由来开发反应他们环境上有个 pod 不正常。他们先操作然后卡住后来找我的。
+12345$ kubectl -n xxx get pod -o wide | grep 0/1xstorage-6d959cd8c8-rdscv      0/1     Init:0/1    0       15m     xxxx$ kubectl -n xxx delete po xstorage-6d959cd8c8-rdscvpod &quot;xstorage-6d959cd8c8-rdscv&quot; deleted      ^[[A^[[A^[[A^[[A
+
+处理过程查看日志：
+1234$...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/15</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/01/08/docker-panic-invalid-page-type/" >
             
                 <span>docker-18.06.3-ce启动panic: invalid page type: 0: 0的解决处理</span>
@@ -856,37 +883,6 @@ ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "nodeport">nodeport</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/07/07/golang-http/" >
-            
-                <span>golang的net/http包的客户端简单科普</span>
-        </a>
-        <div class="abstract-content">
-            之前准备写个简单的 api 的调用，百度和问了很多人后发现基本对于 http 的客户端熟悉的人非常少。或者对包的不了解自己造了效率很低的轮子，而且官方一些包里有坑，被坑过，这里简单科普下
-简单的get和posthttp 包里下列可以直接使用的请求方法
-1234func Head(url string) (resp *Response, err error)func Get(url string) (resp *Response, err error)func Post(url string, bodyType string, body io.Reader) (resp *Response...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "http">http</a>
     
 </div>
             
@@ -3230,9 +3226,24 @@ ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 130
+        Total : 131
         </div>
         <!-- search  -->
         
@@ -3245,6 +3256,11 @@ ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2021/12/12/mod-rejected-by-service/" >docker数据盘损坏后启动报错 Error starting daemon: Error initializing network controller: Error creating default "bridge" network: package not installed</a>
+        </li>
     
     
         <li class="archive-post-item">

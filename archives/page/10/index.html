@@ -387,6 +387,44 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/05/05/Kubernetes_install/" >
+            
+                <span>[转载+修正]Kubernetes v1.10.x HA全手动苦工安装教学</span>
+        </a>
+        <div class="abstract-content">
+            转载自https://kairen.github.io/2018/04/05/kubernetes/deploy/manual-v1.10/作者文章的安装步骤文字是复制作者的1.8的安装步骤然后改的,安装过程变了部分,但是文字没有改正过来。
+此过程我写了ansible安装部署方案,地址(一些文件下载不了的话可以去下面的github里找对应的文件)
+
+多master高可用版
+单master版
+
+本文内容所有url都没改过，以下的添加的内容是我的建议和安装的经验
+本文里如果有些范围不知道在哪台主机上执行请看前后命令都可以判断出,不清楚的请下面评论我会更新
+以下我转载过来并修改+上我的提醒
+管...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/05</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/04/29/kubernetes-configMap-mount/" >
             
                 <span>kubernetes的configMap文件挂载不同的路径且不覆盖目录的解决方法</span>
@@ -652,38 +690,10 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/07/15/dd-make-boot-device/" >
-            
-                <span>使用 dd 利用 iso 文件制作 USB 启动盘</span>
-        </a>
-        <div class="abstract-content">
-            命令1234# bs ，每个块的填充字节，不足用空(NUL) 字符对齐# sync  直接写磁盘，不写缓存dd if=xxx.iso  of=/dev/xxx bs=8M
-
-可以利用 watch -n 5 每 5s 发送信号触发 dd 命令打印进度
-1watch -n 5 pkill -USR1 ^dd$
-
-块大小不带的速度对比123456789101112131415161718192021222324252627282930313233343536373839404142$ dd if=xxxxx.iso of=/dev/sdc oflag=sync2937+0 records in...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/07/15</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/9/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/archives/page/11/">11</a><a class="page-number" href="/archives/page/12/">12</a><a class="page-number" href="/archives/page/13/">13</a><a class="extend next" rel="next" href="/archives/page/11/">NEXT &gt;</a>
+        <a class="extend prev" rel="prev" href="/archives/page/9/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/archives/page/11/">11</a><a class="page-number" href="/archives/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/14/">14</a><a class="extend next" rel="next" href="/archives/page/11/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -2850,9 +2860,24 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 130
+        Total : 131
         </div>
         <!-- search  -->
         
@@ -2865,6 +2890,11 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2021/12/12/mod-rejected-by-service/" >docker数据盘损坏后启动报错 Error starting daemon: Error initializing network controller: Error creating default "bridge" network: package not installed</a>
+        </li>
     
     
         <li class="archive-post-item">
