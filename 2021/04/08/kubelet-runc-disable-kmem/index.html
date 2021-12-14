@@ -318,7 +318,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">3.2k</span>阅读时长: <span class="post-count reading-time">16 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">3.2k</span>阅读时长: <span class="post-count reading-time">17 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -478,8 +478,8 @@ height:50vh;
 <h3 id="前提操作"><a href="#前提操作" class="headerlink" title="前提操作"></a>前提操作</h3><p>查看 cross 镜像的版本号</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cat build/build-image/cross/VERSION</span><br><span class="line">v1.12.10-1</span><br></pre></td></tr></table></figure>
 
-<p>拉国内的镜像，然后改名</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull registry.aliyuncs.com/k8sxio/kube-cross:v1.12.10-1</span><br><span class="line">$ docker tag registry.aliyuncs.com/k8sxio/kube-cross:v1.12.10-1 k8s.gcr.io/kube-cross:v1.12.10-1</span><br></pre></td></tr></table></figure>
+<p>拉国内的镜像，然后改名，高版本，好像 1.16 以上最终镜像名是 <code>k8s.gcr.io/build-image/kube-cross</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull registry.aliyuncs.com/k8sxio/kube-cross:v1.12.10-1</span><br><span class="line">$ docker tag registry.aliyuncs.com/k8sxio/kube-cross:v1.12.10-1 k8s.gcr.io/kube-cross:v1.12.10-1</span><br><span class="line"></span><br><span class="line"># 高版本</span><br><span class="line">docker tag  registry.aliyuncs.com/k8sxio/kube-cross:xxx k8s.gcr.io/build-image/kube-cross:xxxx</span><br></pre></td></tr></table></figure>
 
 <p>编译，这个参数测试在 v1.15.5 里可用，网上的 <code>make BUILDTAGS=&quot;nokmem&quot; WHAT=cmd/kubelet GOFLAGS=-v GOGCFLAGS=&quot;-N -l&quot;</code> 会无法编译</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 在v1.15.5似乎无用</span><br><span class="line">./build/run.sh make kubelet KUBE_BUILD_PLATFORMS=linux/amd64 BUILDTAGS=&quot;nokmem&quot;</span><br><span class="line"># 用下面的</span><br><span class="line">./build/run.sh make kubelet GOFLAGS=&quot;-v -tags=nokmem&quot; KUBE_BUILD_PLATFORMS=linux/amd64</span><br></pre></td></tr></table></figure>
