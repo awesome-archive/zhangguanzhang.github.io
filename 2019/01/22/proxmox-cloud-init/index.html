@@ -324,7 +324,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">2.1k</span>阅读时长: <span class="post-count reading-time">10 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">2.2k</span>阅读时长: <span class="post-count reading-time">10 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -511,7 +511,7 @@ height:50vh;
 <h2 id="proxmox-笔记"><a href="#proxmox-笔记" class="headerlink" title="proxmox 笔记"></a>proxmox 笔记</h2><h3 id="移动一块盘到另一个机器上"><a href="#移动一块盘到另一个机器上" class="headerlink" title="移动一块盘到另一个机器上"></a>移动一块盘到另一个机器上</h3><p>先分离 200 的两个硬盘，参考 <a target="_blank" rel="noopener" href="https://pve.proxmox.com/wiki/Moving_disk_image_from_one_KVM_machine_to_another">https://pve.proxmox.com/wiki/Moving_disk_image_from_one_KVM_machine_to_another</a></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">$ lvs</span><br><span class="line">  LV                           VG  Attr       LSize    Pool Origin          Data%  Meta%  Move Log Cpy%Sync Convert</span><br><span class="line">  base-101-disk-0              pve Vri---tz-k   10.00g data                                                        </span><br><span class="line">  data                         pve twi-aotz-- &lt;350.29g                      39.87  2.40                            </span><br><span class="line">  root                         pve -wi-ao----   96.00g                                                             </span><br><span class="line">  snap_vm-102-disk-0_a20210429 pve Vri---tz-k   30.00g data vm-102-disk-0                                          </span><br><span class="line">  swap                         pve -wi-ao----    7.00g                                                             </span><br><span class="line">  vm-100-cloudinit             pve Vwi-a-tz--    4.00m data                 9.38                                   </span><br><span class="line">  vm-100-disk-0                pve Vwi-a-tz--   10.00g data base-101-disk-0 15.84                                  </span><br><span class="line">  vm-100-disk-1                pve Vwi-a-tz--    7.00g data                 0.17                                   </span><br><span class="line">  vm-101-cloudinit             pve Vwi-a-tz--    4.00m data                 0.00                                   </span><br><span class="line">  vm-102-cloudinit             pve Vwi-aotz--    4.00m data                 9.38                                   </span><br><span class="line">  vm-102-disk-0                pve Vwi-aotz--   70.00g data                 99.94                                  </span><br><span class="line">  vm-102-state-a20210429       pve Vwi-a-tz--   &lt;8.49g data                 44.03                                  </span><br><span class="line">  vm-103-disk-0                pve Vwi-aotz--   25.00g data                 99.98                                  </span><br><span class="line">  vm-104-disk-0                pve Vwi-aotz--   &lt;2.02g data                 99.32                                  </span><br><span class="line">  vm-105-cloudinit             pve Vwi-a-tz--    4.00m data                 9.38                                   </span><br><span class="line">  vm-105-disk-0                pve Vwi-a-tz--   10.00g data                 84.57                                  </span><br><span class="line">  vm-107-cloudinit             pve Vwi-a-tz--    4.00m data                 9.38                                   </span><br><span class="line">  vm-107-disk-0                pve Vwi-a-tz--   10.00g data                 85.32                                  </span><br><span class="line">  vm-200-disk-0                pve Vwi-a-tz--   &lt;2.02g data                 99.31                                  </span><br><span class="line">  vm-200-disk-1                pve Vwi-a-tz--   &lt;2.02g data                 99.32</span><br><span class="line">$ grep lvm /etc/pve/nodes/pve/qemu-server/200.conf </span><br><span class="line">unused0: local-lvm:vm-200-disk-0</span><br><span class="line">unused1: local-lvm:vm-200-disk-1</span><br><span class="line">$ sed &#x27;/200-disk-1/d&#x27; /etc/pve/nodes/pve/qemu-server/200.conf </span><br><span class="line">$ lvrename pve/vm-200-disk-1 pve/vm-104-disk-1</span><br><span class="line">$ echo &#x27;unused1: local-lvm:vm-104-disk-1&#x27; &gt;&gt; /etc/pve/nodes/pve/qemu-server/104.conf </span><br></pre></td></tr></table></figure>
 
-
+<h3 id="命令行替代-web-的一些操作"><a href="#命令行替代-web-的一些操作" class="headerlink" title="命令行替代 web 的一些操作"></a>命令行替代 web 的一些操作</h3><p>上传 iso 文件，实际上路径就在 <code>/var/lib/vz/template/iso/</code></p>
 
     </article>
     <!-- license  -->
@@ -687,7 +687,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#cloud-init%E7%9A%84%E9%95%9C%E5%83%8F%E6%A8%A1%E6%9D%BF%E5%88%B6%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">cloud-init的镜像模板制作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%88%B6%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text">模板制作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E6%A8%A1%E6%9D%BF"><span class="toc-number">1.2.</span> <span class="toc-text">转换模板</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#proxmox%E7%9A%84%E4%B8%80%E4%BA%9Bopenstack%E8%A7%92%E5%BA%A6%E7%AC%94%E8%AE%B0"><span class="toc-number">2.</span> <span class="toc-text">proxmox的一些openstack角度笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%AE%8Cproxmox%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%BE%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">安装完proxmox的一些设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9%E9%BB%98%E8%AE%A4%E7%9A%84web%E7%AB%AF%E5%8F%A3-proxmox-change-the-default-web-port-of-8006"><span class="toc-number">3.1.</span> <span class="toc-text">更改默认的web端口 proxmox change the default web port of 8006</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#proxmox-%E7%AC%94%E8%AE%B0"><span class="toc-number">4.</span> <span class="toc-text">proxmox 笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E4%B8%80%E5%9D%97%E7%9B%98%E5%88%B0%E5%8F%A6%E4%B8%80%E4%B8%AA%E6%9C%BA%E5%99%A8%E4%B8%8A"><span class="toc-number">4.1.</span> <span class="toc-text">移动一块盘到另一个机器上</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#cloud-init%E7%9A%84%E9%95%9C%E5%83%8F%E6%A8%A1%E6%9D%BF%E5%88%B6%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">cloud-init的镜像模板制作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%88%B6%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text">模板制作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E6%A8%A1%E6%9D%BF"><span class="toc-number">1.2.</span> <span class="toc-text">转换模板</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#proxmox%E7%9A%84%E4%B8%80%E4%BA%9Bopenstack%E8%A7%92%E5%BA%A6%E7%AC%94%E8%AE%B0"><span class="toc-number">2.</span> <span class="toc-text">proxmox的一些openstack角度笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%AE%8Cproxmox%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%BE%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">安装完proxmox的一些设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9%E9%BB%98%E8%AE%A4%E7%9A%84web%E7%AB%AF%E5%8F%A3-proxmox-change-the-default-web-port-of-8006"><span class="toc-number">3.1.</span> <span class="toc-text">更改默认的web端口 proxmox change the default web port of 8006</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#proxmox-%E7%AC%94%E8%AE%B0"><span class="toc-number">4.</span> <span class="toc-text">proxmox 笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E4%B8%80%E5%9D%97%E7%9B%98%E5%88%B0%E5%8F%A6%E4%B8%80%E4%B8%AA%E6%9C%BA%E5%99%A8%E4%B8%8A"><span class="toc-number">4.1.</span> <span class="toc-text">移动一块盘到另一个机器上</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%9B%BF%E4%BB%A3-web-%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C"><span class="toc-number">4.2.</span> <span class="toc-text">命令行替代 web 的一些操作</span></a></li></ol></li></ol>
     </div>
     
     <div class="sidebar sidebar-hide">
@@ -2776,9 +2776,86 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 131
+        Total : 132
         </div>
         <!-- search  -->
         
@@ -2791,6 +2868,11 @@ top:50vh;
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/19</span><a class="archive-post-title" href= "/2021/12/19/openwrt-update/" >openwrt 的在线升级固件的研究</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3714,6 +3796,8 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="ipvsadm"><span class="iconfont-archer">&#xe606;</span>ipvsadm</span>
     
         <span class="sidebar-tag-name" data-tags="kube-proxy"><span class="iconfont-archer">&#xe606;</span>kube-proxy</span>
+    
+        <span class="sidebar-tag-name" data-tags="squashfs"><span class="iconfont-archer">&#xe606;</span>squashfs</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
