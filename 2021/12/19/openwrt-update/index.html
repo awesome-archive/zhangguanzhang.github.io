@@ -491,9 +491,17 @@ height:50vh;
 <td align="left">wget</td>
 <td align="left">下载命令</td>
 </tr>
+<tr>
+<td align="left">mksquashfs</td>
+<td align="left">squashfs-tools-mksquashfs</td>
+<td align="left">squashfs格式需要</td>
+</tr>
+<tr>
+<td align="left">unsquashfs</td>
+<td align="left">squashfs-tools-unsquashfs</td>
+<td align="left">squashfs格式需要</td>
+</tr>
 </tbody></table>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parted losetup resize2fs truncate curl wget</span><br></pre></td></tr></table></figure>
-
 <h4 id="KERNEL-PARTSIZE-和-ROOTFS-PARTSIZE"><a href="#KERNEL-PARTSIZE-和-ROOTFS-PARTSIZE" class="headerlink" title="KERNEL_PARTSIZE 和 ROOTFS_PARTSIZE"></a>KERNEL_PARTSIZE 和 ROOTFS_PARTSIZE</h4><p><code>CONFIG_TARGET_KERNEL_PARTSIZE</code> 和 <code>CONFIG_TARGET_ROOTFS_PARTSIZE</code> 是 <code>.config</code> 文件里的，单位是 <code>M</code>，前者是类似常规大型 linux os 里的 <code>/boot</code> 分区，openwrt 默认就只有这两个分区。</p>
 <p>r2s 的话 <code>KERNEL_PARTSIZE</code> 一般 <code>12M</code> 就够用了，但是很多网上互相抄的人在 r2s 的 <code>.config</code> 里给 32、64 之类的非常浪费。<code>ROOTFS_PARTSIZE</code> 是最终的根分区大小，给小了因为编译带很多插件，导致最终的打包镜像容量不够，我的固件是 <code>635</code>。然后 r2s 是内存卡，一般现在内存大大小都是 4G 以上，也就是刷完固件后，根分区就是 635M ，卡的剩下空间都没使用，当然，x86_64 也是一样的问题。所以就有了这个升级顺带扩容的步骤。</p>
 <h4 id="提前的容量存储新固件"><a href="#提前的容量存储新固件" class="headerlink" title="提前的容量存储新固件"></a>提前的容量存储新固件</h4><p>1988 的固件非常小，下载 300M，从一个新手初次尝试来说，很可能尴尬的情况就是卡刷后 rootfs 是 600M，然后可用就200M，固件压缩后350M，所以我固件在初次扩容升级会暂时新建一个分区，用于存储下载升级的固件：</p>
