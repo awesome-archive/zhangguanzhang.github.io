@@ -16,4 +16,8 @@ function podCIDR(){
     kubectl get nodes -o go-template='{{- range .items}}{{ printf "name: %-20s, ip: %-15s, podCIDR: %-18s, creationTimestamp: %s\n" .metadata.name (index .status.addresses 0).address .spec.podCIDR .metadata.creationTimestamp}}{{- end}}'
 }
 
-
+function overlay_list(){
+    for container in $(docker ps --all --quiet --format '{{ .Names }}'); do
+        echo "$(docker inspect $container --format '{{.GraphDriver.Data.MergedDir }}' | sed -r 's#/merged##' ) = $container"
+    done
+}
