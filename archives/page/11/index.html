@@ -387,6 +387,35 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2017/12/23/docker%E5%AE%B9%E5%99%A8%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94/" >
+            
+                <span>docker容器网络互联</span>
+        </a>
+        <div class="abstract-content">
+            官方文档说–link将来会被废弃，而且确实很鸡肋,有时候还要进去容器改东西。在 1-2 年前，Docker 所有容器都连接于默认的桥接网络上，也就是很多老文章鼓捣的 docker0 桥接网卡。因此实际上默认情况下所有容器都是可以互联的，没有隔离，当然这样安全性不好。而服务发现，是在这种环境下发展出来的，通过修改容器内的 /etc/hosts文件来完成的。凡是 --link 的主机的别名就会出现于 /etc/hosts 中，其地址由 Docker 引擎维护。因此容器间才可以通过别名互访。但是这种办法并不是好的解决方案，Docker 早在一年多以前就已经使用自定义网络了。在同一个网络中的容器...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2017/07/25/linux-bridge/" >
             
                 <span>centos桥接测试</span>
@@ -646,35 +675,6 @@ Linux 里的 so用白话说，就是类似于 windows 的 dll 文件，通常是
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "ssh">ssh</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/05/06/shell%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%8F%90%E5%8D%87%E6%95%88%E7%8E%87/" >
-            
-                <span>shell利用快捷键提升命令输入和编辑</span>
-        </a>
-        <div class="abstract-content">
-            <p>快速编辑命令高效率输入</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/05/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "shell">shell</a>
     
 </div>
             
@@ -2904,48 +2904,9 @@ Linux 里的 so用白话说，就是类似于 windows 的 dll 文件，通常是
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 132
+        Total : 133
         </div>
         <!-- search  -->
         
@@ -3141,6 +3102,11 @@ Linux 里的 so用白话说，就是类似于 windows 的 dll 文件，通常是
     
         <li class="archive-post-item">
             <span class="archive-post-date">07/05</span><a class="archive-post-title" href= "/2020/07/05/linux-auditd/" >Linux audit 审计</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/25</span><a class="archive-post-title" href= "/2020/06/25/kubernetes-pprof/" >k8s pprof 分析 cpu 和内存</a>
         </li>
     
     

@@ -549,6 +549,33 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/06/25/kubernetes-pprof/" >
+            
+                <span>k8s pprof 分析 cpu 和内存</span>
+        </a>
+        <div class="abstract-content">
+            简单记录下 k8s 组件的 pprof 看内存和 cpu 情况
+kubectl 收集有证书 curl 也行，这里就偷懒了：
+123# 这个很耗时，耐心等待文件不为 0 即可kubectl get --raw /api/v1/nodes/&lt;nodeName&gt;/proxy/debug/pprof/profile &gt; kubelet.profilekubectl get --raw /api/v1/nodes/&lt;nodeName&gt;/proxy/debug/pprof/heap &gt; kubelet.heap
+
+123yum instal -y graphviz...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/25</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/06/23/host-gw-in-aliyun/" >
             
                 <span>阿里云上使用flannel host-gw跨节点pod不通的解决</span>
@@ -677,38 +704,6 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
         <a class="post-tag" href="javascript:void(0);" data-tags = "openwrt">openwrt</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "x86">x86</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/05/12/N1-flash/" >
-            
-                <span>斐讯N1刷机和旁路由的设置</span>
-        </a>
-        <div class="abstract-content">
-            由来&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;之前一直是使用k2p刷openwrt或者pandora跑 xx 用，前几天看到了个 xx 的订阅地址给写到openwrt上了。结果运行了几天发现 web 上任何配置都无法更改，ssh 上去发现 touch 报错没有容量(而且重装后感觉还是有问题，github 访问也不稳定了)，意识到 k2p 容量实在太小了，于是去恩山论坛逛了下准备买个 N1 盒子玩玩旁路由。
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N1有8G的rom 2G的ram，...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "N1">N1</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "openwrt">openwrt</a>
     
 </div>
             
@@ -2938,48 +2933,9 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 132
+        Total : 133
         </div>
         <!-- search  -->
         
@@ -3175,6 +3131,11 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
         <li class="archive-post-item">
             <span class="archive-post-date">07/05</span><a class="archive-post-title" href= "/2020/07/05/linux-auditd/" >Linux audit 审计</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/25</span><a class="archive-post-title" href= "/2020/06/25/kubernetes-pprof/" >k8s pprof 分析 cpu 和内存</a>
         </li>
     
     
