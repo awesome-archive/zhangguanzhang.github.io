@@ -466,9 +466,14 @@ height:50vh;
 <li><a target="_blank" rel="noopener" href="https://post.smzdm.com/">什么值得买</a>，该论坛的电视盒子版块也有人会讨论这个</li>
 <li><a target="_blank" rel="noopener" href="https://space.bilibili.com/97745521/video">b站的人中日月大佬</a>，他一般提供了整合包，业内也有名气</li>
 </ul>
-<h2 id="刷机"><a href="#刷机" class="headerlink" title="刷机"></a>刷机</h2><p>一般是两种，一种是电视盒子解密(并不是所有盒子都能折腾这个)后，在盒子上安装 <code>Reboot to LibreELEC</code> 的 apk ，运行它从安卓电视系统切换到 U 盘启动，从而进入到游戏系统。另一种是你盒子本身支持从 U 盘启动，你 U 盘写入 EmuELEC 的 img 文件后插到盒子上开机即可。刷机软件推荐 <a target="_blank" rel="noopener" href="https://www.balena.io/etcher/">balenaEtcher</a>，建议下载 Portable 免安装的版本。</p>
+<h2 id="刷机"><a href="#刷机" class="headerlink" title="刷机"></a>刷机</h2><p>一般是两种:</p>
+<ul>
+<li>电视盒子解密(并不是所有盒子都能折腾这个)后，在盒子上安装 <code>Reboot to LibreELEC</code> 的 apk ，运行它从安卓电视系统切换到 U 盘启动，从而进入到游戏系统。</li>
+<li>你盒子本身支持从 U 盘启动，你 U 盘写入 EmuELEC 的 img 文件后插到盒子上开机即可。</li>
+</ul>
+<p>刷机软件推荐 <a target="_blank" rel="noopener" href="https://www.balena.io/etcher/">balenaEtcher</a>，建议下载 Portable 免安装的版本。EmuELEC 的镜像去搜你设备关键字+EmuELC 找。</p>
 <p>初次打开需要设置手柄，手柄映射图<br><img src="https://raw.githubusercontent.com/zhangguanzhang/Image-Hosting/master/picgo/xbox-set.png"><br><img src="https://raw.githubusercontent.com/zhangguanzhang/Image-Hosting/master/picgo/controller-360.png"></p>
-<h2 id="分区讲解"><a href="#分区讲解" class="headerlink" title="分区讲解"></a>分区讲解</h2><p>刷好后系统弹出的让你是否格式化，记得点击否，一般是两个分区：</p>
+<h2 id="分区讲解"><a href="#分区讲解" class="headerlink" title="分区讲解"></a>分区讲解</h2><p>EmuELEC 的 img 刷到内存卡或者 U盘里后，windows 会弹出的让你是否格式化，记得点击否，一般是两个分区：</p>
 <ul>
 <li>EMUELEC 的 FAT32 分区 ，内存放有 dtb（device tree）的分区，不同电视盒子的 dtb 文件不一样，一般初次需要我们进里面的目录 device_trees 里把你设备的 xxx-dtb.img 拷贝到根目录的 <code>dtb.img</code></li>
 <li>ext4 的分区， windows 无法识别，单独存放游戏 roms 的分区。也是一些对外开放的配置引入。单独会被挂载成 <code>/storage</code> 目录</li>
