@@ -387,6 +387,44 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2022/01/26/nginx-static-build/" >
+            
+                <span>利用 docker buildx 静态编译 nginx</span>
+        </a>
+        <div class="abstract-content">
+            由来内部有需求需要静态编译 nginx，尝试了下，搞出来了。先是按照官方 nginx Dockerfile 的逻辑走不通，后面下载 nginx 官方源码编译才行。
+buildx 使用见文章 buildx 使用
+nginx Dockerfile先说下官方的失败尝试。先 clone 项目：
+12git clone https://github.com/nginxinc/docker-nginx.gitcd docker-nginx
+
+分为 stable 和 mainline。大概研究了下，发现 case &quot;$apkArch&quot; in x86_64|aarch64) 的情况是...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/01/26</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "nginx">nginx</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "linux">linux</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/12/12/mod-rejected-by-service/" >
             
                 <span>docker数据盘损坏后启动报错 Error starting daemon: Error initializing network controller: Error creating default &#34;bridge&#34; network: package not installed</span>
@@ -660,39 +698,6 @@
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/02/05/docker-image-can-t-rm/" >
-            
-                <span>docker无法删除掉镜像的解决方法</span>
-        </a>
-        <div class="abstract-content">
-            碰到了docker rmi无法删除掉image的问题版本如下
-12[root@guanvps ~]# docker --versionDocker version 17.12.1-ce, build 7390fc6
-
-问题如下,也没有任何容器在运行,重启发现依然无法删除掉
-12345678[root@guanvps ~]# docker imagesREPOSITORY          TAG                 IMAGE ID            CREATED             SIZEnginx               latest           ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/05</span>
             </div>
             <!-- tags  -->
             
@@ -2943,9 +2948,26 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 134
+        Total : 135
         </div>
         <!-- search  -->
         
@@ -2958,6 +2980,11 @@
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2022/01/26/nginx-static-build/" >利用 docker buildx 静态编译 nginx</a>
+        </li>
     
     
         <li class="archive-post-item">

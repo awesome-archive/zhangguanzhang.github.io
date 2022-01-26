@@ -387,6 +387,44 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2022/01/26/nginx-static-build/" >
+            
+                <span>利用 docker buildx 静态编译 nginx</span>
+        </a>
+        <div class="abstract-content">
+            由来内部有需求需要静态编译 nginx，尝试了下，搞出来了。先是按照官方 nginx Dockerfile 的逻辑走不通，后面下载 nginx 官方源码编译才行。
+buildx 使用见文章 buildx 使用
+nginx Dockerfile先说下官方的失败尝试。先 clone 项目：
+12git clone https://github.com/nginxinc/docker-nginx.gitcd docker-nginx
+
+分为 stable 和 mainline。大概研究了下，发现 case &quot;$apkArch&quot; in x86_64|aarch64) 的情况是...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/01/26</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "nginx">nginx</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "linux">linux</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2022/01/22/EmuELEC/" >
             
                 <span>EmuELEC 笔记</span>
@@ -671,39 +709,6 @@ N1 上的 usb 网络共享折腾固件依赖暂时没完全区分 usb 网络共�
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/08/27</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/08/25/flannel-a-host-net-tmout/" >
-            
-                <span>flannel下集群有个节点网络不通的一次排查</span>
-        </a>
-        <div class="abstract-content">
-            故障问题和版本没关系，客户的 node 信息啥的后面排错里有。有个节点通信有问题，其余节点都没问题。
-排查惯例信息先看下 flannel 的 vxlan 的 vtep 信息，客户是双网卡的，但是默认路由是这个网卡，不用管另外的网卡了。下面信息看了下 VtepMAC 和 public-ip 都正常。
-123456789101112131415161718192021222324252627282930313233343536$ kubectl get node -o yaml | grep -B4 public    annotations:      flannel.alpha.core...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/08/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "flannel">flannel</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
-    
-</div>
             
         </div>
     </article>
@@ -2946,9 +2951,26 @@ N1 上的 usb 网络共享折腾固件依赖暂时没完全区分 usb 网络共�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 134
+        Total : 135
         </div>
         <!-- search  -->
         
@@ -2961,6 +2983,11 @@ N1 上的 usb 网络共享折腾固件依赖暂时没完全区分 usb 网络共�
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2022/01/26/nginx-static-build/" >利用 docker buildx 静态编译 nginx</a>
+        </li>
     
     
         <li class="archive-post-item">

@@ -400,6 +400,38 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/08/24/gobot-build/" >
+            
+                <span>gobot控制esp8266</span>
+        </a>
+        <div class="abstract-content">
+            材料gobot官网是Arduino的demo，官网上看了下支持esp8266，整好之前整wifi攻击器的时候有就玩了下。我是在windows编译的，没有8266的话自己去淘宝上一块儿node-mcu+数据线(本质上就是个带串口和排针的esp8266-12，买驱动是CH340G的，就是usb口旁边有个长条形ic，方的是cp2102不稳定会导致windows蓝屏)
+环境搭建用goland写代码，不推荐vscode写golang，自行安装golang(记得设置好环境变量)和goland，现在golang最新版本是12.9整个demo分为两部分，客户端gobot去设置和控制esp8266，826...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/24</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "gobot">gobot</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "esp8266">esp8266</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/08/06/preseed/" >
             
                 <span>ubuntu preseed无人应答安装</span>
@@ -832,47 +864,6 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "operator">operator</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/02/19/jira-confluence/" >
-            
-                <span>docker部署jira(8.0.0)和confluence(6.14.1)</span>
-        </a>
-        <div class="abstract-content">
-            记录下这几天搭建的过程jira和confluence是分别两台，数据库也是分开的,数据库是用mysql的rpm的repo添加后安装的,jira和confluence是docker跑的,把破解的jar加到镜像里然后改了下别人的Dockerfile本次安装的版本：
-
-
-jira-software 8.0.0
-confluence 6.14.1
-Docker CE 18.06.02
-OS CentOS 7.5.1804
-
-
-系统基本设置
-所有防火墙与SELinux 已关闭：123systemctl disable --now firewalld NetworkManagersetenforce...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/19</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "jira">jira</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "confluence">confluence</a>
     
 </div>
             
@@ -3284,9 +3275,26 @@ OS CentOS 7.5.1804
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 134
+        Total : 135
         </div>
         <!-- search  -->
         
@@ -3299,6 +3307,11 @@ OS CentOS 7.5.1804
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2022/01/26/nginx-static-build/" >利用 docker buildx 静态编译 nginx</a>
+        </li>
     
     
         <li class="archive-post-item">

@@ -387,6 +387,38 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/04/30/kubernetes-sec-agent-node-network-error/" >
+            
+                <span>一次单节点单个pod网络问题排查过程</span>
+        </a>
+        <div class="abstract-content">
+            about现场反馈客户环境上业务不正常，根据调用链去看某个业务A日志，发现无法请求另一个业务B，把业务 A 的探针取消了，加上
+12tty: truecommand: [&quot;bash&quot;]
+起来后进去 curl 了下 B 对应的 svcIP 接口是能通的。然后手动起业务进程，再开个窗口 exec 进去 curl 发现就不通了，k8s node数量是只有一个，并且只有这一个 pod 有问题。后面排查到是用户的安全软件导致的。软件名是
+1234567$ ps aux | grep agentroot       6349  0.3  0.1 21046316 116820 ?...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/04/08/kubelet-runc-disable-kmem/" >
             
                 <span>kubelet 和 runc 编译关闭 kmem</span>
@@ -650,37 +682,6 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "Kylin">Kylin</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/10/30/uos20-nftables/" >
-            
-                <span>统信USO 20 hostPort 无法访问</span>
-        </a>
-        <div class="abstract-content">
-            由来这些天陆续发现很多客户是统信的系统，部署我们业务后无法访问
-环境信息我自己环境和客户的环境都遇到了无法访问，我自己测试的机器信息是:
-1234567891011$ cat /etc/os-releasePRETTY_NAME=&quot;Uniontech OS Server 20 Enterprise&quot;NAME=&quot;Uniontech OS Server 20 Enterprise&quot;VERSION_ID=&quot;20&quot;VERSION=&quot;20&quot;ID=UOSHOME_URL=&quot;https://www.chinauo...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "uos">uos</a>
     
 </div>
             
@@ -2925,9 +2926,26 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 134
+        Total : 135
         </div>
         <!-- search  -->
         
@@ -2940,6 +2958,11 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2022/01/26/nginx-static-build/" >利用 docker buildx 静态编译 nginx</a>
+        </li>
     
     
         <li class="archive-post-item">

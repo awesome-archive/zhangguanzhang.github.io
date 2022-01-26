@@ -400,6 +400,44 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2022/01/26/nginx-static-build/" >
+            
+                <span>利用 docker buildx 静态编译 nginx</span>
+        </a>
+        <div class="abstract-content">
+            由来内部有需求需要静态编译 nginx，尝试了下，搞出来了。先是按照官方 nginx Dockerfile 的逻辑走不通，后面下载 nginx 官方源码编译才行。
+buildx 使用见文章 buildx 使用
+nginx Dockerfile先说下官方的失败尝试。先 clone 项目：
+12git clone https://github.com/nginxinc/docker-nginx.gitcd docker-nginx
+
+分为 stable 和 mainline。大概研究了下，发现 case &quot;$apkArch&quot; in x86_64|aarch64) 的情况是...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/01/26</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "nginx">nginx</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "linux">linux</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2022/01/22/EmuELEC/" >
             
                 <span>EmuELEC 笔记</span>
@@ -844,45 +882,6 @@ N1 上的 usb 网络共享折腾固件依赖暂时没完全区分 usb 网络共�
         <a class="post-tag" href="javascript:void(0);" data-tags = "golang">golang</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "dlv">dlv</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/07/16/consul-mips64le/" >
-            
-                <span>编译mips64le架构的consul</span>
-        </a>
-        <div class="abstract-content">
-            编译建议使用容器编译，否则建议 clone 进 GOPATH 里
-clone12git clone https://github.com/hashicorp/consul.gitcd consul
-
-
-线上使用的是 v1.8 版本，这里我以 v1.8.14 (2021/07/19 发布的)搞的。
-1git checkout v1.8.14
-
-准备工作拉取需要的镜像。貌似 golang 1.16 更好的支持 mips64 了，所以条件允许的话，这里可以下改下 golang 的版本试试
-1234$ head -n2 build-support/docker/Build-Go.dockerfi...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/07/16</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "consul">consul</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "mips64le">mips64le</a>
     
 </div>
             
@@ -3294,9 +3293,26 @@ clone12git clone https://github.com/hashicorp/consul.gitcd consul
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 134
+        Total : 135
         </div>
         <!-- search  -->
         
@@ -3309,6 +3325,11 @@ clone12git clone https://github.com/hashicorp/consul.gitcd consul
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2022/01/26/nginx-static-build/" >利用 docker buildx 静态编译 nginx</a>
+        </li>
     
     
         <li class="archive-post-item">
