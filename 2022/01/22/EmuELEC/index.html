@@ -324,7 +324,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">5.4k</span>阅读时长: <span class="post-count reading-time">24 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">5.5k</span>阅读时长: <span class="post-count reading-time">25 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -595,7 +595,13 @@ height:50vh;
 <li>恩山 <a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/thread-4090331-1-1.html">EmuELEC 4.2 自主安装</a>里的，</li>
 <li>贴吧 <a target="_blank" rel="noopener" href="https://tieba.baidu.com/p/7619382778?pn=1&p_tk=1322QifLqSShpTFmTFD890NZYhknA/BTlYv+JMFCYG1WaXS0J558KEir1sr/GhyhKoYcYhmNaHzkHIG4uN84DH58wemMHpNVngGfh7poXSCPq1KfAiXaTvOnRW+aIz8lXqSf&p_timestamp=1643350078&p_sign=37ee8f2d0a49b58124628a8003121082&p_signature=f28e253e43066beb6450b9130d8fe53d&__pc2ps_ab=1322QifLqSShpTFmTFD890NZYhknA/BTlYv+JMFCYG1WaXS0J558KEir1sr/GhyhKoYcYhmNaHzkHIG4uN84DH58wemMHpNVngGfh7poXSCPq1KfAiXaTvOnRW+aIz8lXqSf%7C1643350078%7Cf28e253e43066beb6450b9130d8fe53d%7C37ee8f2d0a49b58124628a8003121082&red_tag=0480290028&qq-pf-to=pcqq.group">N1可用的鬼灭之刃EmuELEC v4.3</a></li>
 </ul>
-<p>下载官方的 img 文件，然后 N1 的补丁文件我用在 4.3 的官方文件里去替换是可以的。对比了下我之前的人中日月的固件和官方 img 替换了 N1 补丁文件后，发现内核是一样的都是 <code>3.14.29</code>，说明人中日月打包也只是基础设置+游戏 roms 而已。<br>先官方的 img 文件刷到 U 盘里，然后 windows 上把补丁覆盖到第一个分区。然后插 N1 开机启动后设置好后拔下来，插 Linux 上。</p>
+<p>下载官方的 img 文件，然后 N1 的补丁文件我用在 4.3 的官方文件里去替换是可以的。对比了下我之前的人中日月的固件和官方 img 替换了 N1 补丁文件后，发现内核是一样的都是 <code>3.14.29</code>，说明人中日月打包也只是基础设置+游戏 roms 而已。<br>先官方的 img 文件刷到 U 盘里，然后 windows 上把补丁覆盖到第一个分区。然后插 N1 开机启动后设置如下：</p>
+<ul>
+<li>emuelec 菜单时区，也可以可以 ssh 上去</li>
+<li>ra 的中文乱码，<code>systemctl cat tmp-assets.mount</code> ， <code>cp -a /tmp/assets/* /storage/assets/</code> 后提取中文字体覆盖 <code>/storage/assets/ozone/</code> 下的俩 ttf 后重启机器后选择中文</li>
+<li>自家 wifi 设置啥的</li>
+</ul>
+<p>然后拔下来，插 Linux 上。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ parted /dev/sda u s p</span><br><span class="line">Model: SanDisk Extreme Pro (scsi)</span><br><span class="line">Disk /dev/sda: 250085376s</span><br><span class="line">Sector size (logical/physical): 512B/512B</span><br><span class="line">Partition Table: msdos</span><br><span class="line">Disk Flags: </span><br><span class="line"></span><br><span class="line">Number  Start     End         Size        Type     File system  Flags</span><br><span class="line"> 1      8192s     4202495s    4194304s    primary  fat32        boot, lba</span><br><span class="line"> 2      4202496s  8388608s    4186113s    primary  ext4</span><br><span class="line"> 3      8390656s  250085375s  241694720s  primary  fat32        lba</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>有三个分区，先打包一个纯净版，考虑到 U 盘容量问题和现在购买基本都是 16G（jd 上好像最小 8G），打包一个 7350M 的纯净版。</p>
