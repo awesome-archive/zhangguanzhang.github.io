@@ -598,7 +598,7 @@ height:50vh;
 <p>下载官方的 img 文件，然后 N1 的补丁文件我用在 4.3 的官方文件里去替换是可以的。对比了下我之前的人中日月的固件和官方 img 替换了 N1 补丁文件后，发现内核是一样的都是 <code>3.14.29</code>，说明人中日月打包也只是基础设置+游戏 roms 而已。<br>先官方的 img 文件刷到 U 盘里，然后 windows 上把补丁覆盖到第一个分区。然后插 N1 开机启动后设置如下：</p>
 <ul>
 <li>emuelec 菜单时区，也可以可以 ssh 上去</li>
-<li>ra 的中文乱码，<code>systemctl cat tmp-assets.mount</code> ， <code>cp -a /tmp/assets/* /storage/assets/</code> 后提取中文字体覆盖 <code>/storage/assets/ozone/</code> 下的俩 ttf 后重启机器后选择中文</li>
+<li>ra 的中文乱码，<code>systemctl cat tmp-assets.mount</code> ， <code>cp -a /tmp/assets/* /storage/assets/</code> 后提取中文字体覆盖 <code>/storage/assets/ozone/</code> 下的俩 ttf 后（似乎下面的 pkg 目录也要处理？）。重启机器后选择中文</li>
 <li>自家 wifi 设置啥的</li>
 </ul>
 <p>然后拔下来，插 Linux 上。</p>
