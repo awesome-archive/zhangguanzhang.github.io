@@ -400,6 +400,50 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/09/27/consul-tls/" >
+            
+                <span>高可用的SSL consul cluster实践</span>
+        </a>
+        <div class="abstract-content">
+            同事dnsmasq + consul 整服务自动发现，但是不是 tls 且consul server是单点，而且进程启动用的nohub而不是systemd，这里查了下资料实践了下
+部署过程已经写成了ansible，地址 https://github.com/zhangguanzhang/consul-tls-ansible
+开了五台云主机，总体规划为下面，角色那有条件的可以分开，例如 client 单独一台。不分开的话得配置 client 的端口和 server 的分开，自己去探索
+
+
+
+IP
+Hostname
+CPU
+Memory
+role
+nodeName
+
+
+
+172.19.0.3...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/27</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "consul">consul</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/09/05/prometheus-change-timezone/" >
             
                 <span>修改源码更改prometheus的时区问题</span>
@@ -841,30 +885,6 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
         <a class="post-tag" href="javascript:void(0);" data-tags = "flannel">flannel</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/03/11/k8s-ha/" >
-            
-                <span>k8s高可用涉及到ip填写的相关配置和一些坑</span>
-        </a>
-        <div class="abstract-content">
-            etcd就不说了,奇数个副本,可以坏(n-1)/2个,但是不可能同时坏那么多,这里不讨论etcd单独不单独跑。推荐个文档 https://github.com/etcd-io/etcd/tree/master/Documentation/op-guide
-管理组件&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;先说说k8s组件,kubelet和kube-proxy啥的肯定写LB或者VIP:HA_port,如官方的图和 https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/h...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/11</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -3313,50 +3333,9 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 136
+        Total : 137
         </div>
         <!-- search  -->
         
@@ -3369,6 +3348,11 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/10</span><a class="archive-post-title" href= "/2022/02/10/docker-daemon-layer-broken/" >18.09.03 docker daemon layer broken 的一次不优雅处理</a>
+        </li>
     
     
         <li class="archive-post-item">

@@ -387,6 +387,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2022/02/10/docker-daemon-layer-broken/" >
+            
+                <span>18.09.03 docker daemon layer broken 的一次不优雅处理</span>
+        </a>
+        <div class="abstract-content">
+            <p>记录一次 18.09.03 docker daemon 存储的层损坏无法修复的过程，虽然不优雅，但是没找到更好的解决办法，暂时记录仅供参考。</p>
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/02/10</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "linux">linux</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2022/01/26/nginx-static-build/" >
             
                 <span>利用 docker buildx 静态编译 nginx</span>
@@ -670,42 +701,6 @@ buildx 使用见文章 buildx 使用
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/05/11/container-too-many-open-file/" >
-            
-                <span>standard_init_linux.go:211: exec user process caused &#34;too many open files in system&#34;</span>
-        </a>
-        <div class="abstract-content">
-            故障现象部署好业务 pod 后，有很多 pod 一直 Crash 或者无法就绪。
-处理过程describe pod 的状态有显示下面的：
-1Error: failed to start container &quot;xxxxx&quot;: Error response from daemon: OCI runtime start failed: cannot start a container that has stopped: unkown
-
-上去这个节点查看容器状态:
-12345$ docker ps -a | grep 6cb6440a7e90bde reg.xxx.lan:5...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "linux">linux</a>
     
 </div>
             
@@ -2989,50 +2984,9 @@ buildx 使用见文章 buildx 使用
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 136
+        Total : 137
         </div>
         <!-- search  -->
         
@@ -3045,6 +2999,11 @@ buildx 使用见文章 buildx 使用
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/10</span><a class="archive-post-title" href= "/2022/02/10/docker-daemon-layer-broken/" >18.09.03 docker daemon layer broken 的一次不优雅处理</a>
+        </li>
     
     
         <li class="archive-post-item">
