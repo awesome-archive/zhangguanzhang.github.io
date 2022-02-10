@@ -387,6 +387,40 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/11/06/onlyoffice/" >
+            
+                <span>一次docker镜像的解耦--onlyoffice</span>
+        </a>
+        <div class="abstract-content">
+            年初的时候就考虑过搭建个在线编辑excel的,之前试过很多owncloud，seafile,nextcloud,kodexplorer基本都是纯网盘或者不免费
+这几天又有需求多人同时在线编辑office文件,同事找了个onlyoffice的用docker跑起来了. dockerhub上看了下镜像挺大的而且没有跳转到github上Dockerfile的超链接
+稍微用docker history看了下发现里面一堆各种数据库都放同一个镜像里,根本没有解耦
+于是便有了解耦这个镜像的冲动
+先找官方的例子跑跑看
+地址：https://api.onlyoffice.com/editors/demopr...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/06</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/02/05/docker-image-can-t-rm/" >
             
                 <span>docker无法删除掉镜像的解决方法</span>
@@ -2757,9 +2791,72 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 135
+        Total : 136
         </div>
         <!-- search  -->
         
@@ -2820,6 +2917,11 @@
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/03</span><a class="archive-post-title" href= "/2021/09/03/openwrt-usb-net/" >[持续更新] - Openwrt USB 网络</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2021/09/02/fio/" >fio 静态编译和基础使用</a>
         </li>
     
     
@@ -3728,6 +3830,8 @@
         <span class="sidebar-tag-name" data-tags="squashfs"><span class="iconfont-archer">&#xe606;</span>squashfs</span>
     
         <span class="sidebar-tag-name" data-tags="EmuELEC"><span class="iconfont-archer">&#xe606;</span>EmuELEC</span>
+    
+        <span class="sidebar-tag-name" data-tags="fio"><span class="iconfont-archer">&#xe606;</span>fio</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

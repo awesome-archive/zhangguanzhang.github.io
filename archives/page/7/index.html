@@ -387,6 +387,39 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/09/05/prometheus-change-timezone/" >
+            
+                <span>修改源码更改prometheus的时区问题</span>
+        </a>
+        <div class="abstract-content">
+            先说明一点，时区UTC不影响prometheus和grafana，这篇文章只是提供一个修改的思路和步骤
+日志时区修改代码分析先起最新的prometheus挂载时区文件
+1234567docker run --net host -v &#x2F;etc&#x2F;localtime:&#x2F;etc&#x2F;localtime prom&#x2F;prometheuslevel&#x3D;info ts&#x3D;2019-09-05T09:44:40.409Z caller&#x3D;main.go:293 msg&#x3D;&quot;no time or size retenti...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/05</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "prometheus">prometheus</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "timezone">timezone</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/08/24/gobot-build/" >
             
                 <span>gobot控制esp8266</span>
@@ -661,42 +694,6 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "cobra">cobra</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/05/11/container-too-many-open-file/" >
-            
-                <span>standard_init_linux.go:211: exec user process caused &#34;too many open files in system&#34;</span>
-        </a>
-        <div class="abstract-content">
-            故障现象部署好业务 pod 后，有很多 pod 一直 Crash 或者无法就绪。
-处理过程describe pod 的状态有显示下面的：
-1Error: failed to start container &quot;xxxxx&quot;: Error response from daemon: OCI runtime start failed: cannot start a container that has stopped: unkown
-
-上去这个节点查看容器状态:
-12345$ docker ps -a | grep 6cb6440a7e90bde reg.xxx.lan:5...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "linux">linux</a>
     
 </div>
             
@@ -2958,9 +2955,72 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 135
+        Total : 136
         </div>
         <!-- search  -->
         
@@ -3021,6 +3081,11 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/03</span><a class="archive-post-title" href= "/2021/09/03/openwrt-usb-net/" >[持续更新] - Openwrt USB 网络</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2021/09/02/fio/" >fio 静态编译和基础使用</a>
         </li>
     
     
@@ -3929,6 +3994,8 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
         <span class="sidebar-tag-name" data-tags="squashfs"><span class="iconfont-archer">&#xe606;</span>squashfs</span>
     
         <span class="sidebar-tag-name" data-tags="EmuELEC"><span class="iconfont-archer">&#xe606;</span>EmuELEC</span>
+    
+        <span class="sidebar-tag-name" data-tags="fio"><span class="iconfont-archer">&#xe606;</span>fio</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

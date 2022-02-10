@@ -665,6 +665,42 @@ N1 上的 usb 网络共享折腾固件依赖暂时没完全区分 usb 网络共�
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/09/02/fio/" >
+            
+                <span>fio 静态编译和基础使用</span>
+        </a>
+        <div class="abstract-content">
+            由来amd64,arm64 的静态编译和基础使用
+buildx 使用见文章 buildx 使用
+编译buildx Dockerfile 构建:
+123456789101112131415161718FROM ubuntu as buildWORKDIR /optARG VER=fio-3.29#ARG DEBIAN_FRONTEND=noninteractiveRUN if [  -e /etc/apt/sources.list ];then sed -ri &#x27;s/[a-zA-Z0-9.]+(debian.org|ubuntu.com)/mirrors.aliyun.com/g...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/02</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "linux">linux</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "fio">fio</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/09/01/ubuntu18-and-cfq/" >
             
                 <span>ubuntu18下io调度算法是cfq导致mysql非常慢</span>
@@ -684,30 +720,6 @@ N1 上的 usb 网络共享折腾固件依赖暂时没完全区分 usb 网络共�
         <a class="post-tag" href="javascript:void(0);" data-tags = "ubuntu18">ubuntu18</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/08/27/k8s-runxtables.lock/" >
-            
-                <span>干掉烦人的 open /run/xtables.lock: is a directory</span>
-        </a>
-        <div class="abstract-content">
-            环境信息suse 这辣鸡系统，使用官方文档 docker-static 的二进制安装的话会无法起来，所以我们在 suse 上用的是很久之前的 rpm 安装的 docker。
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162$ cat /etc/os-release NAME=&quot;SLES&quot;VERSION=&quot;12-SP5&quot;VERSION_ID=&quot;12.5&quot...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/08/27</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -2967,9 +2979,72 @@ N1 上的 usb 网络共享折腾固件依赖暂时没完全区分 usb 网络共�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 135
+        Total : 136
         </div>
         <!-- search  -->
         
@@ -3030,6 +3105,11 @@ N1 上的 usb 网络共享折腾固件依赖暂时没完全区分 usb 网络共�
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/03</span><a class="archive-post-title" href= "/2021/09/03/openwrt-usb-net/" >[持续更新] - Openwrt USB 网络</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2021/09/02/fio/" >fio 静态编译和基础使用</a>
         </li>
     
     
@@ -3938,6 +4018,8 @@ N1 上的 usb 网络共享折腾固件依赖暂时没完全区分 usb 网络共�
         <span class="sidebar-tag-name" data-tags="squashfs"><span class="iconfont-archer">&#xe606;</span>squashfs</span>
     
         <span class="sidebar-tag-name" data-tags="EmuELEC"><span class="iconfont-archer">&#xe606;</span>EmuELEC</span>
+    
+        <span class="sidebar-tag-name" data-tags="fio"><span class="iconfont-archer">&#xe606;</span>fio</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

@@ -595,6 +595,42 @@ N1 上的 usb 网络共享折腾固件依赖暂时没完全区分 usb 网络共�
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/09/02/fio/" >
+            
+                <span>fio 静态编译和基础使用</span>
+        </a>
+        <div class="abstract-content">
+            由来amd64,arm64 的静态编译和基础使用
+buildx 使用见文章 buildx 使用
+编译buildx Dockerfile 构建:
+123456789101112131415161718FROM ubuntu as buildWORKDIR /optARG VER=fio-3.29#ARG DEBIAN_FRONTEND=noninteractiveRUN if [  -e /etc/apt/sources.list ];then sed -ri &#x27;s/[a-zA-Z0-9.]+(debian.org|ubuntu.com)/mirrors.aliyun.com/g...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/02</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "linux">linux</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "fio">fio</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/09/01/ubuntu18-and-cfq/" >
             
                 <span>ubuntu18下io调度算法是cfq导致mysql非常慢</span>
@@ -669,38 +705,6 @@ N1 上的 usb 网络共享折腾固件依赖暂时没完全区分 usb 网络共�
         <a class="post-tag" href="javascript:void(0);" data-tags = "flannel">flannel</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/08/24/cni-plugins-bridge-err/" >
-            
-                <span>一次 cni-plugins 导致集群 dns 无法解析的排错</span>
-        </a>
-        <div class="abstract-content">
-            问题环境是 1.15.5 的 x86_64 的 k8s 。命令输出被我查看日志给冲掉了，大致描述下。中间件 kafka 无法连上 zookeeper ，看了下日志报错域名无法解析。看了下 coredns 都挂了：
-12345$ kubectl -n kube-system get po -o wide -l k8s-app=kube-dnsNAME                       READY   STATUS             RESTARTS   AGE     IP           NODE         NOMINATED NODE   READINESS ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/08/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "cni-plugins">cni-plugins</a>
     
 </div>
             
@@ -2962,9 +2966,72 @@ N1 上的 usb 网络共享折腾固件依赖暂时没完全区分 usb 网络共�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 135
+        Total : 136
         </div>
         <!-- search  -->
         
@@ -3025,6 +3092,11 @@ N1 上的 usb 网络共享折腾固件依赖暂时没完全区分 usb 网络共�
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/03</span><a class="archive-post-title" href= "/2021/09/03/openwrt-usb-net/" >[持续更新] - Openwrt USB 网络</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2021/09/02/fio/" >fio 静态编译和基础使用</a>
         </li>
     
     
@@ -3933,6 +4005,8 @@ N1 上的 usb 网络共享折腾固件依赖暂时没完全区分 usb 网络共�
         <span class="sidebar-tag-name" data-tags="squashfs"><span class="iconfont-archer">&#xe606;</span>squashfs</span>
     
         <span class="sidebar-tag-name" data-tags="EmuELEC"><span class="iconfont-archer">&#xe606;</span>EmuELEC</span>
+    
+        <span class="sidebar-tag-name" data-tags="fio"><span class="iconfont-archer">&#xe606;</span>fio</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
