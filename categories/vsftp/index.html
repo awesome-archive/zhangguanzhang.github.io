@@ -392,11 +392,13 @@
                 <span>vsftpd虚拟用户简单部署</span>
         </a>
         <div class="abstract-content">
-            关闭防火墙和selinux
-123systemctl disable --now firewalld NetworkManagersetenforce 0sed -ri &#39;&#x2F;^[^#]*SELINUX&#x3D;&#x2F;s#&#x3D;.+$#&#x3D;disabled#&#39; &#x2F;etc&#x2F;selinux&#x2F;config
-安装vsftpd和db4
+            安装关闭防火墙和selinux
+123systemctl disable --now firewalld NetworkManagersetenforce 0sed -ri &#x27;/^[^#]*SELINUX=/s#=.+$#=disabled#&#x27; /etc/selinux/config
+
+安装 vsftpd 和 db4
 12345yum install -y epel-release &amp;&amp; \yum install -y \	vsftpd \	db4-utils \	db4
-创建vsftpd...
+
+创建 vsftpd 使用的系统用户，主目录为 /home/vsftpd，禁止 ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
