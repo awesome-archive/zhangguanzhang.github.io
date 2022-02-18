@@ -321,7 +321,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">973</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">988</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -471,7 +471,7 @@ height:50vh;
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ mount /dev/mapper/pve-root /mnt/sysimage</span><br><span class="line">$ cd /mnt/sysimage</span><br><span class="line">$ ls -l boot/</span><br><span class="line">total 58496</span><br><span class="line">-rw-r--r-- 1 root root   237698 May  7  2020 config-5.4.34-1-pve</span><br><span class="line">drwxr-xr-x 3 root root     4096 Jan  1  1970 efi</span><br><span class="line">drwxr-xr-x 6 root root     4096 Feb 18 12:59 grub</span><br><span class="line">-rw-r--r-- 1 root root 42573458 Aug 18  2021 initrd.img-5.4.34-1-pve</span><br><span class="line">-rw-r--r-- 1 root root   182704 Jun 26  2015 memtest86+.bin</span><br><span class="line">-rw-r--r-- 1 root root   184840 Jun 26  2015 memtest86+_multiboot.bin</span><br><span class="line">drwxr-xr-x 2 root root     4096 Sep  9  2020 pve</span><br><span class="line">-rw-r--r-- 1 root root  4795341 May  7  2020 System.map-5.4.34-1-pve</span><br><span class="line">-rw-r--r-- 1 root root 11901312 May  7  2020 vmlinuz-5.4.34-1-pve</span><br></pre></td></tr></table></figure>
 
 <p>然后里面去折腾了下，重启还是不行，看了下 <code>/etc/lvm/backup/pve</code> 也没啥问题。</p>
-<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>尝试备份 grub.cfg 后 grub-mkconfig 了下， diff 对比了下也没变啥 uuid 相关的地方，然后重启再进 CentOS Rescue 模式里，选择 1 自动挂载。然后尝试 chroot 进去安装 <code>grub-install</code>:</p>
+<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>lvm 信息和文件都在，可能是 grub 损坏了。尝试备份 grub.cfg 后 grub-mkconfig 了下， diff 对比了下也没变啥 uuid 相关的地方，然后重启再进 CentOS Rescue 模式里，选择 1 自动挂载。然后尝试 chroot 进去安装 <code>grub-install</code>:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">chroot /mnt/sysimage</span><br><span class="line">cd /boot/grub</span><br><span class="line">cp grub.cfg grub.cfg.bak</span><br><span class="line"># pve 是 grub-install 不是也没有 grub2-install</span><br><span class="line">grub-install --debug --recheck --root-directory=/ /dev/mapper/pve-root</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
 
 <p>然后就好了。</p>
