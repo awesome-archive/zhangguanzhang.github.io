@@ -387,6 +387,41 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2017/03/20/ftp-install/" >
+            
+                <span>vsftpd虚拟用户简单部署</span>
+        </a>
+        <div class="abstract-content">
+            安装关闭防火墙和selinux
+123systemctl disable --now firewalld NetworkManagersetenforce 0sed -ri &#x27;/^[^#]*SELINUX=/s#=.+$#=disabled#&#x27; /etc/selinux/config
+
+安装 vsftpd 和 db4
+12345yum install -y epel-release &amp;&amp; \yum install -y \	vsftpd \	db4-utils \	db4
+
+创建 vsftpd 使用的系统用户，主目录为 /home/vsftpd，禁止 ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/03/20</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "ftp">ftp</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2017/03/15/lnmp/" >
             
                 <span>源码编译安装lnmp</span>
@@ -2923,9 +2958,26 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 138
+        Total : 139
         </div>
         <!-- search  -->
         
@@ -2938,6 +2990,11 @@
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/18</span><a class="archive-post-title" href= "/2022/02/18/proxmox-boot-disk-lvmid-not-found/" >proxmox 开机 error: disk `lvmid/<vg uuid>/<lv uuid>` not found</a>
+        </li>
     
     
         <li class="archive-post-item">

@@ -400,6 +400,36 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/11/23/ansible-hang-in-docker/" >
+            
+                <span>ansible hang in docker container</span>
+        </a>
+        <div class="abstract-content">
+            由来这几天同事发现在 docker 容器里运行 ansible 命令很卡，发来了个命令叫我试试 ansible localhost -m setup -a &#39;filter=ansible_default_ipv4&#39; 2&gt;/dev/null |grep &#39;\&quot;address\&quot;&#39; |awk -F&#39;\&quot;&#39; &#39;&#123;print $4&#125;&#39;
+环境信息12345678910111213141516171819202122232425262728293031323334353637383...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/11/20/disable-swap/" >
             
                 <span>永久关闭swap的正确姿势</span>
@@ -843,39 +873,6 @@ pod cidr
         <a class="post-tag" href="javascript:void(0);" data-tags = "63s">63s</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "timeout">timeout</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/05/13/x86-router-flash/" >
-            
-                <span>proxmox x86软路由笔记</span>
-        </a>
-        <div class="abstract-content">
-            由来办公室有台式机，不想整天带着N1上下班，整下x86的软路由，exsi性能会比pve好，但是pve毕竟Linux，兼容性和对接很多场景方便，这里我使用pve开机器安装openwrt。
-pve已经安装好系统(如果你还没安装且打算安装，安装完后可以看看我这个文章安装完proxmox的一些设置)，并且台式机的口子接主路由的lan口。主路由是我的路由器，它wan口接办公室的网口，台式机只有一个口子，所以软路由作为旁路由使用。
-前置工作虚机准备先去恩山论坛x86版块下一个固件，或者下载我的 action 编译的固件找 Build OpenWrt的 step 点进去，然后最下面的OpenWrt_f...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "openwrt">openwrt</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "x86">x86</a>
     
 </div>
             
@@ -3349,9 +3346,26 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 138
+        Total : 139
         </div>
         <!-- search  -->
         
@@ -3364,6 +3378,11 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/18</span><a class="archive-post-title" href= "/2022/02/18/proxmox-boot-disk-lvmid-not-found/" >proxmox 开机 error: disk `lvmid/<vg uuid>/<lv uuid>` not found</a>
+        </li>
     
     
         <li class="archive-post-item">

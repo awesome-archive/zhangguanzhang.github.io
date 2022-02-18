@@ -387,6 +387,35 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2017/04/20/lvm-practice/" >
+            
+                <span>记录LVM和raid的练习</span>
+        </a>
+        <div class="abstract-content">
+            <p>LVM和raid的创建和调整</p>
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/04/20</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "linux">linux</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2017/04/20/linux-partition-grow/" >
             
                 <span>虚拟化扩容硬盘大小</span>
@@ -641,41 +670,6 @@ about讲解下扩分区的步骤。扩容只有两种情况，lvm（改 pv 所�
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/03/23</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/03/20/ftp-install/" >
-            
-                <span>vsftpd虚拟用户简单部署</span>
-        </a>
-        <div class="abstract-content">
-            安装关闭防火墙和selinux
-123systemctl disable --now firewalld NetworkManagersetenforce 0sed -ri &#x27;/^[^#]*SELINUX=/s#=.+$#=disabled#&#x27; /etc/selinux/config
-
-安装 vsftpd 和 db4
-12345yum install -y epel-release &amp;&amp; \yum install -y \	vsftpd \	db4-utils \	db4
-
-创建 vsftpd 使用的系统用户，主目录为 /home/vsftpd，禁止 ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/03/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ftp">ftp</a>
-    
-</div>
             
         </div>
     </article>
@@ -2980,9 +2974,26 @@ about讲解下扩分区的步骤。扩容只有两种情况，lvm（改 pv 所�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 138
+        Total : 139
         </div>
         <!-- search  -->
         
@@ -2995,6 +3006,11 @@ about讲解下扩分区的步骤。扩容只有两种情况，lvm（改 pv 所�
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/18</span><a class="archive-post-title" href= "/2022/02/18/proxmox-boot-disk-lvmid-not-found/" >proxmox 开机 error: disk `lvmid/<vg uuid>/<lv uuid>` not found</a>
+        </li>
     
     
         <li class="archive-post-item">
