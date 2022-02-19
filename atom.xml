@@ -17,7 +17,7 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>proxmox 开机 error: disk &#39;lvmid/&lt;vg uuid&gt;/&lt;lv uuid&gt;&#39; not found</title>
+    <title>proxmox 开机 error: disk &#39;lvmid/[vg uuid]/[lv uuid]&#39; not found</title>
     <link href="http://zhangguanzhang.github.io/2022/02/18/proxmox-boot-disk-lvmid-not-found/"/>
     <id>http://zhangguanzhang.github.io/2022/02/18/proxmox-boot-disk-lvmid-not-found/</id>
     <published>2022-02-18T14:17:30.000Z</published>
