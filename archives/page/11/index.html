@@ -387,6 +387,45 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/04/29/kubernetes-configMap-mount/" >
+            
+                <span>kubernetes的configMap文件挂载不同的路径且不覆盖目录的解决方法</span>
+        </a>
+        <div class="abstract-content">
+            看到configMap这个资源对象,突发奇想
+
+
+如何让一个configMap里文件挂载到容器的不同路径
+
+
+书上和网上都找不到对应例子
+最终github上搜索到了有个subPath选项除了支持路径还不会覆盖容器内部的整个目录参考链接https://github.com/dshulyak/kubernetes.github.io/commit/d58ba7b075bb4848349a2c920caaa08ff3773d70这里记录下
+123456789101112131415161718192021222324252627282930313233343536373839404142434...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/29</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "ConfigMap">ConfigMap</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/03/18/keepalived-Heartbeat-use-mg-net/" >
             
                 <span>使用管理网当作业务网keepalived VIP的心跳线</span>
@@ -635,33 +674,6 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/07/15</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/07/06/windows/" >
-            
-                <span>windows 笔记</span>
-        </a>
-        <div class="abstract-content">
-            激活相关win server
-123https://docs.microsoft.com/zh-cn/windows-server/get-started/kms-client-activation-keyshttp://www.kaixinit.com/info/os/1128.html
-
-
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/07/06</span>
             </div>
             <!-- tags  -->
             
@@ -2985,9 +2997,66 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 139
+        Total : 140
         </div>
         <!-- search  -->
         
@@ -3000,6 +3069,11 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/24</span><a class="archive-post-title" href= "/2022/02/24/keepalived-static-build/" >keepalived static link build</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3980,6 +4054,8 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
         <span class="sidebar-tag-name" data-tags="fio"><span class="iconfont-archer">&#xe606;</span>fio</span>
     
         <span class="sidebar-tag-name" data-tags="skopeo"><span class="iconfont-archer">&#xe606;</span>skopeo</span>
+    
+        <span class="sidebar-tag-name" data-tags="keepalived"><span class="iconfont-archer">&#xe606;</span>keepalived</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

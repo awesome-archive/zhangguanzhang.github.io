@@ -387,6 +387,39 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2022/02/24/keepalived-static-build/" >
+            
+                <span>keepalived static link build</span>
+        </a>
+        <div class="abstract-content">
+            由来之前那篇 ipvs svc 的文章，内部已经上生产了，客户的环境可能完全内网，包管理安装 keepalived 不显示，所以 keepalived 是部署容器里的。在容灾测试的时候，例如 3 台机器部署好业务，然后跑压测脚本模拟用户使用，发现关台机器的时候故障时间很短，但是这个机器开机的期间，还是很大概率故障时间很长，体现在接口的错误数量很多。大概看了下，是 keepalived 启动慢，于是就想着看看能不能 keepalived 拿出来，也就是静态编译。
+buildx 使用见文章 buildx 使用
+折腾在官方仓库提了 issue is there any way to stati...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/02/24</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "linux">linux</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "keepalived">keepalived</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2022/02/18/proxmox-boot-disk-lvmid-not-found/" >
             
                 <span>proxmox 开机 error: disk &#39;lvmid/[vg uuid]/[lv uuid]&#39; not found</span>
@@ -2826,9 +2859,66 @@ EmuELEC 介绍EmuELEC 是专为 Amlogic（晶晨）S905/S912 方案的盒子开�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 139
+        Total : 140
         </div>
         <!-- search  -->
         
@@ -2841,6 +2931,11 @@ EmuELEC 介绍EmuELEC 是专为 Amlogic（晶晨）S905/S912 方案的盒子开�
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/24</span><a class="archive-post-title" href= "/2022/02/24/keepalived-static-build/" >keepalived static link build</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3821,6 +3916,8 @@ EmuELEC 介绍EmuELEC 是专为 Amlogic（晶晨）S905/S912 方案的盒子开�
         <span class="sidebar-tag-name" data-tags="fio"><span class="iconfont-archer">&#xe606;</span>fio</span>
     
         <span class="sidebar-tag-name" data-tags="skopeo"><span class="iconfont-archer">&#xe606;</span>skopeo</span>
+    
+        <span class="sidebar-tag-name" data-tags="keepalived"><span class="iconfont-archer">&#xe606;</span>keepalived</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
