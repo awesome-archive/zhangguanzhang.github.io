@@ -392,9 +392,8 @@
                 <span>keepalived static link build</span>
         </a>
         <div class="abstract-content">
-            由来之前那篇 ipvs svc 的文章，内部已经上生产了，客户的环境可能完全内网，包管理安装 keepalived 不现实，所以 keepalived 是部署容器里的。在容灾测试的时候，例如 3 台机器部署好业务，然后跑压测脚本模拟用户使用，发现关台机器的时候故障时间很短，但是这个机器开机的期间，还是很大概率故障时间很长，体现在接口的错误数量很多。大概看了下，是 keepalived 启动慢，于是就想着看看能不能 keepalived 拿出来，也就是静态编译。
-buildx 使用见文章 buildx 使用
-折腾在官方仓库提了 issue is there any way to stati...
+            由来之前那篇 ipvs svc 的文章，内部已经上生产了，客户的环境可能完全内网，包管理安装 keepalived 不现实，所以 keepalived 是部署容器里的。在容灾测试的时候，例如 3 台机器部署好业务，然后跑压测脚本模拟用户使用，发现关台机器的时候故障时间很短，但是这个机器开机的期间，还是很大概率故障时间很长，体现在接口的错误数量很多。大概看了下，是 keepalived 启动慢，先试启动 docker daemon，然后容器启动是顺序不固定，可能 keepalived 很后起来，于是就想着看看能不能 keepalived 拿出来，也就是静态编译。
+buildx 使用见文章 ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
