@@ -318,7 +318,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">870</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">872</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -476,20 +476,20 @@ height:50vh;
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;stdout&quot;: &quot;uid=1000(xxx) gid=1000(xxx) 组=1000(xxx)&quot;, &quot;stdout_lines&quot;: [&quot;uid=1000(xxx) gid=1000(xxx) 组=1000(xxx)&quot;]</span><br></pre></td></tr></table></figure>
 
 <p>我们的安装步骤时间线是：</p>
-<ol>
-<li>会话持久开始，执行 ansible，最开始 xxx 用户并不在 docker 组里</li>
-<li>安装 docker 前，添加 docker 组，xxx 用户追加到 docker 组里，启动 docker</li>
-<li>root 和非 root docker login，但是非 root docker login 报错</li>
-<li>非 root 的 docker login 前面加 <code>id;</code> 命令，输出结果显示 xxx 用户并不在 docker 组里</li>
-</ol>
-<p>突然意识到是 ansible 配置的 ssh 会话持久导致的，删掉会话持久的文件路径后是可以的，但是这样不人性化。搜了下 <code>ansible reload user group</code> 找到了结尾参考里有个老哥和我一样的问题，但是里面的：</p>
+<ul>
+<li>会话持久开始，执行 <code>ansible</code>，最开始 <code>xxx</code> 用户并不在 <code>docker</code> 组里</li>
+<li>安装 <code>docker</code> 前，添加 <code>docker</code> 组，<code>xxx</code> 用户追加到 <code>docker</code> 组里，启动 <code>docker</code></li>
+<li><code>root</code> 和非 <code>root docker login</code>，但是非 <code>root docker login</code> 报错</li>
+<li>非 <code>root</code> 的 <code>docker login</code> 前面加 <code>id;</code> 命令，输出结果显示 <code>xxx</code> 用户并不在 <code>docker</code> 组里</li>
+</ul>
+<p>突然意识到是 <code>ansible</code> 配置的 ssh 会话持久导致的，删掉会话持久的文件路径后是可以的，但是这样不人性化。搜了下 <code>ansible reload user group</code> 找到了有个老哥和我一样的问题，但是里面的：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">reset</span> <span class="string">ssh</span> <span class="string">connection</span></span><br><span class="line">  <span class="attr">meta:</span> <span class="string">reset_connection</span></span><br></pre></td></tr></table></figure>
 
 <p>执行会报错：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[WARNING]: Reset is not implemented for this connection</span><br></pre></td></tr></table></figure>
 
-<p>同时发现偶尔 <code>ansible_ssh_user</code> 莫名奇妙会消失，在之前就 set_facts 下 <code>ansible_ssh_user</code> 到另一个变量 <code>HOST_USER</code> (下面代码没改，如果遇到了就提前自行 set_facts 下)。然后使用 <code>su -c</code> 避免该问题：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- name: test2</span><br><span class="line">  shell: |</span><br><span class="line"> su -c &#x27;docker login &#123;&#123; REGISTRY_DOMAIN &#125;&#125;:&#123;&#123; REGISTRY_PORT &#125;&#125; -u xxx -p xxx&#x27; ansible_ssh_user</span><br><span class="line">  when: </span><br><span class="line">    # if use ansible_connection=local, the var ansible_ssh_user will not defined</span><br><span class="line">    - ansible_ssh_user is defined</span><br><span class="line">    - ansible_ssh_user != &#x27;root&#x27;</span><br></pre></td></tr></table></figure>
+<p>后面自己解决了该问题，使用 <code>su -c</code> 不使用 <code>become</code> ，同时发现偶尔 <code>ansible_ssh_user</code> 莫名奇妙会消失，在之前就 set_facts 下 <code>ansible_ssh_user</code> 到另一个变量 <code>HOST_USER</code> (下面代码没改，如果遇到了就提前自行 set_facts 下)：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">test2</span></span><br><span class="line">  <span class="attr">shell:</span> <span class="string">|</span></span><br><span class="line"><span class="string"> su -c &#x27;docker login &#123;&#123; REGISTRY_DOMAIN &#125;&#125;:&#123;&#123; REGISTRY_PORT &#125;&#125; -u xxx -p xxx&#x27; ansible_ssh_user</span></span><br><span class="line"><span class="string">  when: </span></span><br><span class="line"><span class="string">    # if use ansible_connection=local, the var ansible_ssh_user will not defined</span></span><br><span class="line"><span class="string">    - ansible_ssh_user is defined</span></span><br><span class="line"><span class="string">    - ansible_ssh_user != &#x27;root&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://docs.ansible.com/ansible/2.6/modules/meta_module.html">https://docs.ansible.com/ansible/2.6/modules/meta_module.html</a></li>
