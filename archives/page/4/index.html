@@ -417,13 +417,12 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/11/23/ansible-hang-in-docker/" >
+        <a class="abstract-title" href = "/2020/11/23/ansible-reload-user/" >
             
-                <span>ansible hang in docker container</span>
+                <span>ansible reload user group</span>
         </a>
         <div class="abstract-content">
-            由来这几天同事发现在 docker 容器里运行 ansible 命令很卡，发来了个命令叫我试试 ansible localhost -m setup -a &#39;filter=ansible_default_ipv4&#39; 2&gt;/dev/null |grep &#39;\&quot;address\&quot;&#39; |awk -F&#39;\&quot;&#39; &#39;&#123;print $4&#125;&#39;
-环境信息12345678910111213141516171819202122232425262728293031323334353637383...
+            <p>记录下今天被 ansible 会话持久坑到的一个 user group 问题</p>
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -447,12 +446,13 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/11/23/ansible-reload-user/" >
+        <a class="abstract-title" href = "/2020/11/23/ansible-hang-in-docker/" >
             
-                <span>ansible reload user group</span>
+                <span>ansible hang in docker container</span>
         </a>
         <div class="abstract-content">
-            <p>记录下今天被 ansible 会话持久坑到的一个 user group 问题</p>
+            由来这几天同事发现在 docker 容器里运行 ansible 命令很卡，发来了个命令叫我试试 ansible localhost -m setup -a &#39;filter=ansible_default_ipv4&#39; 2&gt;/dev/null |grep &#39;\&quot;address\&quot;&#39; |awk -F&#39;\&quot;&#39; &#39;&#123;print $4&#125;&#39;
+环境信息12345678910111213141516171819202122232425262728293031323334353637383...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -3231,12 +3231,12 @@ openshift 不像其他的 dashboard 诸如 rancher，k3s 之类的，它自己�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2020/11/23/ansible-hang-in-docker/" >ansible hang in docker container</a>
+            <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2020/11/23/ansible-reload-user/" >ansible reload user group</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2020/11/23/ansible-reload-user/" >ansible reload user group</a>
+            <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2020/11/23/ansible-hang-in-docker/" >ansible hang in docker container</a>
         </li>
     
     
