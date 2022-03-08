@@ -318,7 +318,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">838</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">870</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -460,7 +460,13 @@ height:50vh;
 <h3 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h3><p>查看了下执行日志，并没有执行 <code>perform docker login for ansible_ssh_user</code>。找个干净环境单独执行下面 task 调试：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">hosts:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">all</span></span><br><span class="line">  <span class="attr">tasks:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">test</span></span><br><span class="line">      <span class="attr">shell:</span> <span class="string">docker</span> <span class="string">login</span> &#123;&#123; <span class="string">REGISTRY_DOMAIN</span> &#125;&#125;<span class="string">:&#123;&#123;</span> <span class="string">REGISTRY_PORT</span> <span class="string">&#125;&#125;</span> <span class="string">-u</span> <span class="string">xxx</span> <span class="string">-p</span> <span class="string">xxx</span></span><br><span class="line">      <span class="attr">when:</span> </span><br><span class="line">        <span class="comment"># if use ansible_connection=local, the var ansible_ssh_user will not defined</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">ansible_ssh_user</span> <span class="string">is</span> <span class="string">defined</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">ansible_ssh_user</span> <span class="type">!=</span> <span class="string">&#x27;root&#x27;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">test2</span></span><br><span class="line">      <span class="attr">shell:</span> <span class="string">docker</span> <span class="string">login</span> &#123;&#123; <span class="string">REGISTRY_DOMAIN</span> &#125;&#125;<span class="string">:&#123;&#123;</span> <span class="string">REGISTRY_PORT</span> <span class="string">&#125;&#125;</span> <span class="string">-u</span> <span class="string">xxx</span> <span class="string">-p</span> <span class="string">xxx</span></span><br><span class="line">      <span class="attr">become:</span> <span class="literal">yes</span></span><br><span class="line">      <span class="attr">become_user:</span> <span class="string">&quot;<span class="template-variable">&#123;&#123; ansible_ssh_user &#125;&#125;</span>&quot;</span></span><br><span class="line">      <span class="attr">when:</span> </span><br><span class="line">        <span class="comment"># if use ansible_connection=local, the var ansible_ssh_user will not defined</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">ansible_ssh_user</span> <span class="string">is</span> <span class="string">defined</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">ansible_ssh_user</span> <span class="type">!=</span> <span class="string">&#x27;root&#x27;</span></span><br></pre></td></tr></table></figure>
 
-<p>发现第二个报错 <code>Post http://%2Fvar%2Frun%2Fdocker.sock/v1.40/auth: dial unix /var/run/docker.sock: connect: permission denied</code>。ssh 上去看了下，<code>/var/run/docker.sock</code> 的组是 docker，<code>ansible_ssh_user</code> 也包含 docker 组：</p>
+<p>我们是使用非 root 带 sudo 部署的：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible-playbook -i conf/k8s.conf tasks/test.yml --private-key=/root/.ssh/id_rsa -u xxx -b --become-method=sudo </span><br></pre></td></tr></table></figure>
+
+<p>发现第二个报错:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Post http://%2Fvar%2Frun%2Fdocker.sock/v1.40/auth: dial unix /var/run/docker.sock: connect: permission denied</span><br></pre></td></tr></table></figure>
+
+<p>ssh 上去看了下，<code>/var/run/docker.sock</code> 的组是 docker，<code>ansible_ssh_user</code> 也包含 docker 组：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ id</span><br><span class="line">uid=1000(xxx) gid=1000(xxx) groups=1000(xxx),1001(docker)</span><br></pre></td></tr></table></figure>
 
 <p>最后改了下前面加下 id 命令调试看出眉目：</p>
@@ -471,10 +477,10 @@ height:50vh;
 
 <p>我们的安装步骤时间线是：</p>
 <ol>
-<li>会话持久开始，执行 ansible，最开始 wps 用户并不在 docker 组里</li>
-<li>安装 docker 前，添加 docker 组，wps 用户追加到 docker 组里，启动 docker</li>
+<li>会话持久开始，执行 ansible，最开始 xxx 用户并不在 docker 组里</li>
+<li>安装 docker 前，添加 docker 组，xxx 用户追加到 docker 组里，启动 docker</li>
 <li>root 和非 root docker login，但是非 root docker login 报错</li>
-<li>非 root 的 docker login 前面加 <code>id;</code> 命令，输出结果显示 wps 用户并不在 docker 组里</li>
+<li>非 root 的 docker login 前面加 <code>id;</code> 命令，输出结果显示 xxx 用户并不在 docker 组里</li>
 </ol>
 <p>突然意识到是 ansible 配置的 ssh 会话持久导致的，删掉会话持久的文件路径后是可以的，但是这样不人性化。搜了下 <code>ansible reload user group</code> 找到了结尾参考里有个老哥和我一样的问题，但是里面的：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">reset</span> <span class="string">ssh</span> <span class="string">connection</span></span><br><span class="line">  <span class="attr">meta:</span> <span class="string">reset_connection</span></span><br></pre></td></tr></table></figure>
