@@ -387,6 +387,36 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/10/24/deployment-consul-in-k8s/" >
+            
+                <span>consul仅当服务发现在k8s无状态部署使用</span>
+        </a>
+        <div class="abstract-content">
+            由来&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;consul server在机器上的部署已经写完了，但是dba还是希望部署在k8s上，昨天搜了下相关文章扣出来部分步骤自己验证实现了。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;先说下需求，三台物理机单独跑mysql主从mha，利用consul client的服务注册+ttl向consul server注册成域名，然后配置k8s内部的coredns把域名*.service.consul转发到consul server。架构为下图
+123456789101112131415161718P...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/24</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "consul">consul</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/10/21/k8s-v1.14-v1.15-fix-issue/" >
             
                 <span>手动修复v1.14-v1.15版本k8s的issue:76956</span>
@@ -681,41 +711,10 @@ ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/07/07/golang-http/" >
-            
-                <span>golang的net/http包的客户端简单科普</span>
-        </a>
-        <div class="abstract-content">
-            之前准备写个简单的 api 的调用，百度和问了很多人后发现基本对于 http 的客户端熟悉的人非常少。或者对包的不了解自己造了效率很低的轮子，而且官方一些包里有坑，被坑过，这里简单科普下
-简单的get和posthttp 包里下列可以直接使用的请求方法
-1234func Head(url string) (resp *Response, err error)func Get(url string) (resp *Response, err error)func Post(url string, bodyType string, body io.Reader) (resp *Response...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "http">http</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/6/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/14/">14</a><a class="extend next" rel="next" href="/archives/page/8/">NEXT &gt;</a>
+        <a class="extend prev" rel="prev" href="/archives/page/6/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/15/">15</a><a class="extend next" rel="next" href="/archives/page/8/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -3059,36 +3058,9 @@ ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 140
+        Total : 141
         </div>
         <!-- search  -->
         
@@ -3278,6 +3250,11 @@ ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2020/11/23/ansible-hang-in-docker/" >ansible hang in docker container</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2020/11/23/ansible-reload-user/" >ansible reload user group</a>
         </li>
     
     

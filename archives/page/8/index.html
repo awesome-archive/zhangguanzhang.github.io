@@ -387,6 +387,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/07/07/golang-http/" >
+            
+                <span>golang的net/http包的客户端简单科普</span>
+        </a>
+        <div class="abstract-content">
+            之前准备写个简单的 api 的调用，百度和问了很多人后发现基本对于 http 的客户端熟悉的人非常少。或者对包的不了解自己造了效率很低的轮子，而且官方一些包里有坑，被坑过，这里简单科普下
+简单的get和posthttp 包里下列可以直接使用的请求方法
+1234func Head(url string) (resp *Response, err error)func Get(url string) (resp *Response, err error)func Post(url string, bodyType string, body io.Reader) (resp *Response...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/07</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "http">http</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/06/26/uefi-pxe/" >
             
                 <span>uefi模式下docker+交换机部署pxe批量安装</span>
@@ -654,8 +685,8 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
                 <span>k8s高可用涉及到ip填写的相关配置和一些坑</span>
         </a>
         <div class="abstract-content">
-            etcd就不说了,奇数个副本,可以坏(n-1)/2个,但是不可能同时坏那么多,这里不讨论etcd单独不单独跑。推荐个文档 https://github.com/etcd-io/etcd/tree/master/Documentation/op-guide
-管理组件&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;先说说k8s组件,kubelet和kube-proxy啥的肯定写LB或者VIP:HA_port,如官方的图和 https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/h...
+            etcd 就不说了,奇数个副本,可以坏 (n-1)/2 个,但是不可能同时坏那么多,这里不讨论 etcd 单独不单独跑。推荐个文档 https://github.com/etcd-io/etcd/tree/master/Documentation/op-guide
+管理组件&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;先说说 k8s 组件, kubelet 和 kube-proxy 啥的肯定写 LB 或者 VIP:HA_port,如官方的图和 https://kubernetes.io/zh/docs/setup/production-environment/t...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -667,44 +698,10 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/03/03/kubernetes-1-13-4/" >
-            
-                <span>二进制部署Kubernetes v1.13.12 HA可选</span>
-        </a>
-        <div class="abstract-content">
-            本次采用二进制文件方式部署,本文过程写成了更详细更多可选方案的ansible部署方案 https://github.com/zhangguanzhang/Kubernetes-ansible和之前的步骤差不多都是和kubeadm步骤一样,不过这次所有kubelet全部走bootstrap不会像之前master上的kubelet生成证书,另外证书换成openssl生成
-不建议使用secureCRT这个ssh软件复制本篇博客内容的命令,因为它的部分版本对包含多条命令的处理结果并不完美,可能很多命令不是预期结果
-本文命令里有些是输出,不要乱粘贴输入(虽然也没影响)
-本文命令全部是在k8s-m1...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "operator">operator</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/7/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/archives/page/9/">9</a><a class="page-number" href="/archives/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/14/">14</a><a class="extend next" rel="next" href="/archives/page/9/">NEXT &gt;</a>
+        <a class="extend prev" rel="prev" href="/archives/page/7/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/archives/page/9/">9</a><a class="page-number" href="/archives/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/15/">15</a><a class="extend next" rel="next" href="/archives/page/9/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -3048,36 +3045,9 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 140
+        Total : 141
         </div>
         <!-- search  -->
         
@@ -3267,6 +3237,11 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2020/11/23/ansible-hang-in-docker/" >ansible hang in docker container</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2020/11/23/ansible-reload-user/" >ansible reload user group</a>
         </li>
     
     

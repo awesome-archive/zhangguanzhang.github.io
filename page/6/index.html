@@ -400,6 +400,42 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/05/11/container-too-many-open-file/" >
+            
+                <span>standard_init_linux.go:211: exec user process caused &#34;too many open files in system&#34;</span>
+        </a>
+        <div class="abstract-content">
+            故障现象部署好业务 pod 后，有很多 pod 一直 Crash 或者无法就绪。
+处理过程describe pod 的状态有显示下面的：
+1Error: failed to start container &quot;xxxxx&quot;: Error response from daemon: OCI runtime start failed: cannot start a container that has stopped: unkown
+
+上去这个节点查看容器状态:
+12345$ docker ps -a | grep 6cb6440a7e90bde reg.xxx.lan:5...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/11</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "linux">linux</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/04/28/k8s-java-start-time-not-same/" >
             
                 <span>闲谈线上俩k8s环境同等limits下pod启动时间不一样解决过程</span>
@@ -501,8 +537,8 @@ height:50vh;
                 <span>k8s高可用涉及到ip填写的相关配置和一些坑</span>
         </a>
         <div class="abstract-content">
-            etcd就不说了,奇数个副本,可以坏(n-1)/2个,但是不可能同时坏那么多,这里不讨论etcd单独不单独跑。推荐个文档 https://github.com/etcd-io/etcd/tree/master/Documentation/op-guide
-管理组件&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;先说说k8s组件,kubelet和kube-proxy啥的肯定写LB或者VIP:HA_port,如官方的图和 https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/h...
+            etcd 就不说了,奇数个副本,可以坏 (n-1)/2 个,但是不可能同时坏那么多,这里不讨论 etcd 单独不单独跑。推荐个文档 https://github.com/etcd-io/etcd/tree/master/Documentation/op-guide
+管理组件&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;先说说 k8s 组件, kubelet 和 kube-proxy 啥的肯定写 LB 或者 VIP:HA_port,如官方的图和 https://kubernetes.io/zh/docs/setup/production-environment/t...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -847,39 +883,6 @@ CA (Certificate ...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "kubeconfig">kubeconfig</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/12/prometheus-operator/" >
-            
-                <span class="stick-top iconfont-archer">&#xe63d;</span>
-                
-                <span>全手动部署prometheus-operator监控K8S集群以及一些坑</span>
-        </a>
-        <div class="abstract-content">
-            写这篇文章原因&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所有的监控的agent底层最终都是查询的/proc和/sys里的信息推送(如果错了轻喷),因为收集宿主机信息方面也想用pod跑,会面临到问题&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;常见的zabbix_agent默认读取fs的/proc和/sys,容器跑agent会导致读取的不是宿主机的/proc和/sys&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;而prometheus的n...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "operator">operator</a>
     
 </div>
             
@@ -3400,36 +3403,9 @@ CA (Certificate ...
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 140
+        Total : 141
         </div>
         <!-- search  -->
         
@@ -3619,6 +3595,11 @@ CA (Certificate ...
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2020/11/23/ansible-hang-in-docker/" >ansible hang in docker container</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2020/11/23/ansible-reload-user/" >ansible reload user group</a>
         </li>
     
     
