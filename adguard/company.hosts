@@ -1,10 +1,11 @@
-0.0.0.0 www.jetbrains.com
-0.0.0.0 account.jetbrains.com
-0.0.0.0 jetbrains.com
+www.jetbrains.com
+account.jetbrains.com
+jetbrains.com
 
 ||xshell.com^
 ||xshell.cn^
 
 ||altium.com^
-||autodesk.com^
 
+||autodesk.com^
+||autodesk^
