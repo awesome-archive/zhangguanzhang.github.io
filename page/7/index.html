@@ -400,6 +400,39 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/10/27/create-kubeconfig/" >
+            
+                <span>生成kubeconfig常规的两种方法</span>
+        </a>
+        <div class="abstract-content">
+            方式总得来讲有两种创建 kubeconfig，证书的话市面上很多教程，要注意下面事项为以下:
+
+
+要注意 CN(Common Name) 与 O(Organization) 等内容是会影响 Kubernetes 认证的。具体可见 https://kubernetes.io/docs/setup/best-practices/certificates/CN Common Name, apiserver 会从证书中提取该字段作为请求的用户名 (User Name)O Organization, apiserver 会从证书中提取该字段作为请求用户所属的组 (Group)
+CA (Certif...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/27</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "kubeconfig">kubeconfig</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/10/12/prometheus-operator/" >
             
                 <span class="stick-top iconfont-archer">&#xe63d;</span>
@@ -875,39 +908,6 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/15</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/02/05/docker-image-can-t-rm/" >
-            
-                <span>docker无法删除掉镜像的解决方法</span>
-        </a>
-        <div class="abstract-content">
-            碰到了docker rmi无法删除掉image的问题版本如下
-12[root@guanvps ~]# docker --versionDocker version 17.12.1-ce, build 7390fc6
-
-问题如下,也没有任何容器在运行,重启发现依然无法删除掉
-12345678[root@guanvps ~]# docker imagesREPOSITORY          TAG                 IMAGE ID            CREATED             SIZEnginx               latest           ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-</div>
             
         </div>
     </article>
@@ -3414,9 +3414,26 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 141
+        Total : 142
         </div>
         <!-- search  -->
         
@@ -3429,6 +3446,11 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/24</span><a class="archive-post-title" href= "/2022/03/24/python-list-kubernetes-permission/" >python kubernetes client list permission</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -4421,6 +4443,8 @@ NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 17
         <span class="sidebar-tag-name" data-tags="skopeo"><span class="iconfont-archer">&#xe606;</span>skopeo</span>
     
         <span class="sidebar-tag-name" data-tags="keepalived"><span class="iconfont-archer">&#xe606;</span>keepalived</span>
+    
+        <span class="sidebar-tag-name" data-tags="python"><span class="iconfont-archer">&#xe606;</span>python</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

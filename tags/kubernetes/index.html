@@ -387,6 +387,39 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2022/03/24/python-list-kubernetes-permission/" >
+            
+                <span>python kubernetes client list permission</span>
+        </a>
+        <div class="abstract-content">
+            由来这几天内部有个功能就是看 kubernetes client 的权限有哪些
+过程kubeconfig 生成先制作一个非 admin 的 kubeconfig，记得以前有个项目是部署后可以生成 kubeconfig 的，询问了一番后，其他群友提示下想起来是 permission-manager，部署后结果发现生成的 kubeconfig 压根不能用，报错未知机构签署的，结果还是按照以前 生成kubeconfig常规的两种方法 生成了一个简单的。
+尝试过程其实一开始打算自己写逻辑，增删改查需要的资源便利来检查，然后突然想起来 kubectl (忘了哪个版本开始)有个 auth 子命令的 ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/03/24</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "python">python</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/08/25/flannel-a-host-net-tmout/" >
             
                 <span>flannel下集群有个节点网络不通的一次排查</span>
@@ -2789,9 +2822,26 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 141
+        Total : 142
         </div>
         <!-- search  -->
         
@@ -2804,6 +2854,11 @@
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/24</span><a class="archive-post-title" href= "/2022/03/24/python-list-kubernetes-permission/" >python kubernetes client list permission</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3796,6 +3851,8 @@
         <span class="sidebar-tag-name" data-tags="skopeo"><span class="iconfont-archer">&#xe606;</span>skopeo</span>
     
         <span class="sidebar-tag-name" data-tags="keepalived"><span class="iconfont-archer">&#xe606;</span>keepalived</span>
+    
+        <span class="sidebar-tag-name" data-tags="python"><span class="iconfont-archer">&#xe606;</span>python</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

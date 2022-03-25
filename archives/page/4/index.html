@@ -387,6 +387,36 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/02/02/node-shutdown-dns-unavailable/" >
+            
+                <span>集群节点关机导致dns在eviction pod之前几率不可用</span>
+        </a>
+        <div class="abstract-content">
+            由来这几天我们内部在做新项目的容灾测试，业务都是在 K8S 上的。容灾里就是随便选节点 shutdown -h now。关机后同事便发现了（页面有错误，最终问题是）集群内 DNS 解析会有几率无法解析（导致的）。
+根据 SVC 的流程，node 关机后，由于 kubelet 没有 update 自己。node 和 pod 在 apiserver get 的时候显示还是正常的。在 kube-controller-manager 的 --node-monitor-grace-period 时间后再过 --pod-eviction-timeout 时间开始 eviction pod，大概流程是...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/02/02</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "coredns">coredns</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/12/04/docker1803-hang-container-restore/" >
             
                 <span>docker18.03 hang at &#39;restoring container&#39;</span>
@@ -656,37 +686,6 @@ openshift 不像其他的 dashboard 诸如 rancher，k3s 之类的，它自己�
         <a class="post-tag" href="javascript:void(0);" data-tags = "linux">linux</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "skopeo">skopeo</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/08/05/wireguard-for-personal/" >
-            
-                <span>个人办公用 wireguard 组网笔记</span>
-        </a>
-        <div class="abstract-content">
-            作为 IT 人员，经常需要连到办公网工作，并不是每个公司都有 vpn，自己搭建的话 openvpn 之类的配置麻烦啰嗦。这里写下 wireguard 的简单搭建。它比 IPSec 更快，更简单，更精简，更有用。它比 OpenVPN 更高效。WireGuard 设计为通用 VPN，适用于多种不同情况。它是跨平台的，可大规模部署。
-通常如下图的部署: 一台 ECS 主机，得有公网 IP，下图就是 pc ----&gt; ECS &lt;------ 公司的 pc
-12345678910111213141516            +----------+            |     ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "wireguard">wireguard</a>
     
 </div>
             
@@ -3040,9 +3039,26 @@ openshift 不像其他的 dashboard 诸如 rancher，k3s 之类的，它自己�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 141
+        Total : 142
         </div>
         <!-- search  -->
         
@@ -3055,6 +3071,11 @@ openshift 不像其他的 dashboard 诸如 rancher，k3s 之类的，它自己�
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/24</span><a class="archive-post-title" href= "/2022/03/24/python-list-kubernetes-permission/" >python kubernetes client list permission</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -4047,6 +4068,8 @@ openshift 不像其他的 dashboard 诸如 rancher，k3s 之类的，它自己�
         <span class="sidebar-tag-name" data-tags="skopeo"><span class="iconfont-archer">&#xe606;</span>skopeo</span>
     
         <span class="sidebar-tag-name" data-tags="keepalived"><span class="iconfont-archer">&#xe606;</span>keepalived</span>
+    
+        <span class="sidebar-tag-name" data-tags="python"><span class="iconfont-archer">&#xe606;</span>python</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
