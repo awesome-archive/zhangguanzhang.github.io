@@ -460,7 +460,7 @@ height:50vh;
 <h3 id="排查过程"><a href="#排查过程" class="headerlink" title="排查过程"></a>排查过程</h3><p>一开始看到这个报错的时候就知道，这个报错就是 client 端的 port range 不够用了，一般是这个 B 服务机器上 client 的端口达到上限了，可以通过下面参数调整下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl -a |&amp; grep port | grep range</span><br></pre></td></tr></table></figure>
 
-<p>结果实际上上去 B 服务商 curl 这个 url 能返回 http 状态码。起初以为真的是我们服务 B 在瞬间有端口没释放的 bug，但是 curl 能返回 http 状态码（但是内容是空的），说明 tcp 层面没问题。应为 http 返回信息是空的，我们初步怀疑到是客户的回调服务偷偷更新了后导致的。后面让客户取消掉他们回调 url 的后端校验 token 逻辑。他们换了后还是一样，然后他们把这个接口的逻辑截图了，以及把日志发过来的。</p>
+<p>结果实际上上去 B 服务上 curl 这个 url 能返回 http 状态码。起初以为真的是我们服务 B 在瞬间有端口没释放的 bug，但是 curl 能返回 http 状态码（但是内容是空的），说明 tcp 层面没问题。应为 http 返回信息是空的，我们初步怀疑到是客户的回调服务偷偷更新了后导致的。后面让客户取消掉他们回调 url 的后端校验 token 逻辑。他们换了后还是一样，然后他们把这个接口的逻辑截图了，以及把日志发过来的。</p>
 <p>看了下日志，发现报错信息是 token 校验失败，原因是过期了。询问了下发现回调的 IP 后面有好几个服务副本，让客户他们去检查机器时间试试，然后客户下班了，另一个同事说可以单独修改我们服务 B 的设置，指向单台副本绕过负载均衡试试，最后发现 5 个每个单独都正常，指向负载均衡的 IP 就不行，询问后发现是硬件负载均衡。最后第二天客户排查到是硬件负载均衡的连接数异常。是深信服的硬件负载均衡。</p>
 <h2 id="结论和学习"><a href="#结论和学习" class="headerlink" title="结论和学习"></a>结论和学习</h2><p>其实一开始的 curl 正常能返回 http 状态码就说明 tcp 没问题，不过这次也算是见识到了，server 端的端口不够也会返回 <code>cannot assign requested address</code> 的报错。</p>
 
