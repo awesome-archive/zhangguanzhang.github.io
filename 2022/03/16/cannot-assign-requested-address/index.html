@@ -321,7 +321,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">598</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">667</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -457,12 +457,12 @@ height:50vh;
 <p>然后我们接口 A 返回 B 访问回调的报错：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;Get http://10.192.xxx.xxx/xxxxinfo?...: dial tcp 10.192.xxx.xxx:80: connect: cannot assign requested address&quot;</span><br></pre></td></tr></table></figure>
 
-<h3 id="排查过程"><a href="#排查过程" class="headerlink" title="排查过程"></a>排查过程</h3><p>一开始看到这个报错的时候就知道，这个报错就是 client 端的 port range 不够用了，一般是这个 B 服务机器上 client 的端口达到上限了，可以通过下面参数调整下：</p>
+<h3 id="排查过程"><a href="#排查过程" class="headerlink" title="排查过程"></a>排查过程</h3><p>一开始看到这个报错的时候就知道，这个报错是 TCP 四元组哪个组不够用都会报错这个的，但是最优先和最常见的就是 client 的端口耗尽，也就是 client 端的 port range 不够用了，一般是这个 B 服务机器上 client 的端口达到上限了，可以通过下面参数调整下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl -a |&amp; grep port | grep range</span><br></pre></td></tr></table></figure>
 
-<p>结果实际上上去 B 服务上 curl 这个 url 能返回 http 状态码。起初以为真的是我们服务 B 在瞬间有端口没释放的 bug，但是 curl 能返回 http 状态码（但是内容是空的），说明 tcp 层面没问题。应为 http 返回信息是空的，我们初步怀疑到是客户的回调服务偷偷更新了后导致的。后面让客户取消掉他们回调 url 的后端校验 token 逻辑。他们换了后还是一样，然后他们把这个接口的逻辑截图了，以及把日志发过来的。</p>
+<p>结果实际上上去 B 服务上 curl 这个 url 能返回 http 状态码。起初以为真的是我们服务 B 在瞬间有端口没释放的 bug，但是 curl 能返回 http 状态码（但是内容是空的），说明 tcp 层面没问题。因为 http 返回信息是空的，我们初步怀疑到是客户的回调服务偷偷更新了后导致的。后面让客户取消掉他们回调 url 的后端校验 token 逻辑。他们换了后还是一样，然后他们把这个接口的逻辑代码截图了，以及把回调服务的日志发过来的。</p>
 <p>看了下日志，发现报错信息是 token 校验失败，原因是过期了。询问了下发现回调的 IP 后面有好几个服务副本，让客户他们去检查机器时间试试，然后客户下班了，另一个同事说可以单独修改我们服务 B 的设置，指向单台副本绕过负载均衡试试，最后发现 5 个每个单独都正常，指向负载均衡的 IP 就不行，询问后发现是硬件负载均衡。最后第二天客户排查到是硬件负载均衡的连接数异常。是深信服的硬件负载均衡。</p>
-<h2 id="结论和学习"><a href="#结论和学习" class="headerlink" title="结论和学习"></a>结论和学习</h2><p>其实一开始的 curl 正常能返回 http 状态码就说明 tcp 没问题，不过这次也算是见识到了，server 端的端口不够也会返回 <code>cannot assign requested address</code> 的报错。</p>
+<h2 id="结论和学习"><a href="#结论和学习" class="headerlink" title="结论和学习"></a>结论和学习</h2><p>其实一开始的 curl 正常能返回 http 状态码就说明 tcp 没问题，不过这次也算是见识到了，server 端的端口不够也会返回 <code>cannot assign requested address</code> 的报错，也就是主动打开还是被动打开，这个错误的信息都是一样的。</p>
 
     </article>
     <!-- license  -->
