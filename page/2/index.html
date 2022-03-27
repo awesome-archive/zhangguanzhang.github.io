@@ -400,6 +400,30 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/08/27/k8s-runxtables.lock/" >
+            
+                <span>干掉烦人的 open /run/xtables.lock: is a directory</span>
+        </a>
+        <div class="abstract-content">
+            环境信息suse 这辣鸡系统，使用官方文档 docker-static 的二进制安装的话会无法起来，所以我们在 suse 上用的是很久之前的 rpm 安装的 docker。
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162$ cat /etc/os-release NAME=&quot;SLES&quot;VERSION=&quot;12-SP5&quot;VERSION_ID=&quot;12.5&quot...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/08/27</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/08/25/flannel-a-host-net-tmout/" >
             
                 <span>flannel下集群有个节点网络不通的一次排查</span>
@@ -848,30 +872,6 @@ CentOS Linux release 7.8.2003 (Core) - 3.1...
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/12/build-arm64-docker-compose-action/" >
-            
-                <span>使用github action 配合 docker buildx 编译 arm64 docker-compose</span>
-        </a>
-        <div class="abstract-content">
-            说明git 上搜索了很多 docker-compose 的 arm64 的编译基本都是使用 qemu-user-static 之类的设置下后编译的，也看到过用特权容器启动 qemu-user-static 或者 binfmt 之类的，但是我自己机器上试了无效，貌似是因为我操作系统是低版本内核的 centos ，github 上搜了下，其他很多人的编译感觉太啰嗦了。就在 action 上整了下，测试是可用的，而且非常简单。
-docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里安装 docker，创建 build...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/12</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -3395,9 +3395,26 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 142
+        Total : 143
         </div>
         <!-- search  -->
         
@@ -3414,6 +3431,11 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/24</span><a class="archive-post-title" href= "/2022/03/24/python-list-kubernetes-permission/" >python kubernetes client list permission</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span><a class="archive-post-title" href= "/2022/03/16/cannot-assign-requested-address/" >server 端的 cannot assign requested address</a>
         </li>
     
     
@@ -4409,6 +4431,8 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
         <span class="sidebar-tag-name" data-tags="keepalived"><span class="iconfont-archer">&#xe606;</span>keepalived</span>
     
         <span class="sidebar-tag-name" data-tags="python"><span class="iconfont-archer">&#xe606;</span>python</span>
+    
+        <span class="sidebar-tag-name" data-tags="tcp"><span class="iconfont-archer">&#xe606;</span>tcp</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

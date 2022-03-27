@@ -387,6 +387,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/07/14/chromedp/" >
+            
+                <span>golang headless browser包chromedp初探</span>
+        </a>
+        <div class="abstract-content">
+            什么是cdp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前天晚上想写个网站自动投稿，但是chrome F12抓的包里请求的几个参数里的值不知道js咋生成的，看不懂js。询问了下网友，网友看我截图请求蛮多的，说有空帮我看看。并且他说到了模拟过程虽然能成功但是可能反爬措施强会导致封号，建议我用无头浏览器整。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;搜了下相关概念，无头浏览器的话python里就是selenium驱动的，广泛使用的headless browser解决方案PhantomJS已...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/14</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "golang">golang</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "chromedp">chromedp</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/07/08/nodeport-err/" >
             
                 <span>为什么我不用nodePort之偶然中奖几率</span>
@@ -669,37 +700,6 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "kube-controller-manager">kube-controller-manager</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/03/15/flannel-bin/" >
-            
-                <span>不走etcd v2 api下二进制跑flannel的总结</span>
-        </a>
-        <div class="abstract-content">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这几天给线上搭建 k8s 集群,文件和 systemd 参数大多是从 kubeadm 的 staticPod 的 yml 里扣出来的，起初是除了 flanneld 全部是 systemd 管理二进制。起初因为脚本问题导致 kube-proxy 的 kubeocnfig少执行了use-context所以显示的是匿名用户无法list node信息，kube-proxy是在运行但是无法维持 svc 的网络，flanneld 因为是 pod 要 watch 节点是通过 kubernetes 这个 svc 走的连接导致不通，然...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "flannel">flannel</a>
     
 </div>
             
@@ -3070,9 +3070,26 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 142
+        Total : 143
         </div>
         <!-- search  -->
         
@@ -3089,6 +3106,11 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/24</span><a class="archive-post-title" href= "/2022/03/24/python-list-kubernetes-permission/" >python kubernetes client list permission</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span><a class="archive-post-title" href= "/2022/03/16/cannot-assign-requested-address/" >server 端的 cannot assign requested address</a>
         </li>
     
     
@@ -4084,6 +4106,8 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
         <span class="sidebar-tag-name" data-tags="keepalived"><span class="iconfont-archer">&#xe606;</span>keepalived</span>
     
         <span class="sidebar-tag-name" data-tags="python"><span class="iconfont-archer">&#xe606;</span>python</span>
+    
+        <span class="sidebar-tag-name" data-tags="tcp"><span class="iconfont-archer">&#xe606;</span>tcp</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

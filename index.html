@@ -433,6 +433,42 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2022/03/16/cannot-assign-requested-address/" >
+            
+                <span>server 端的 cannot assign requested address</span>
+        </a>
+        <div class="abstract-content">
+            由来今天碰到了这个问题，但是最终结果出乎意料
+过程项目相关部分客户的 OA 对接我们的应用，使用过程中会调用我们的接口，我们的接口再回调客户的回调地址。调用流是：
+1客户 OA 后端 ----&gt; 我们应用 A 的后端 -----&gt; 我们应用 B 后端  -----&gt; 客户写的回调地址
+
+然后我们接口 A 返回 B 访问回调的报错：
+1&quot;Get http://10.192.xxx.xxx/xxxxinfo?...: dial tcp 10.192.xxx.xxx:80: connect: cannot assign requested address&quot;...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/03/16</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "golang">golang</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "tcp">tcp</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2022/02/24/keepalived-static-build/" >
             
                 <span>keepalived static link build</span>
@@ -860,30 +896,6 @@ buildx 使用见文章 buildx 使用
         <a class="post-tag" href="javascript:void(0);" data-tags = "ubuntu18">ubuntu18</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/08/27/k8s-runxtables.lock/" >
-            
-                <span>干掉烦人的 open /run/xtables.lock: is a directory</span>
-        </a>
-        <div class="abstract-content">
-            环境信息suse 这辣鸡系统，使用官方文档 docker-static 的二进制安装的话会无法起来，所以我们在 suse 上用的是很久之前的 rpm 安装的 docker。
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162$ cat /etc/os-release NAME=&quot;SLES&quot;VERSION=&quot;12-SP5&quot;VERSION_ID=&quot;12.5&quot...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/08/27</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -3407,9 +3419,26 @@ buildx 使用见文章 buildx 使用
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 142
+        Total : 143
         </div>
         <!-- search  -->
         
@@ -3426,6 +3455,11 @@ buildx 使用见文章 buildx 使用
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/24</span><a class="archive-post-title" href= "/2022/03/24/python-list-kubernetes-permission/" >python kubernetes client list permission</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span><a class="archive-post-title" href= "/2022/03/16/cannot-assign-requested-address/" >server 端的 cannot assign requested address</a>
         </li>
     
     
@@ -4421,6 +4455,8 @@ buildx 使用见文章 buildx 使用
         <span class="sidebar-tag-name" data-tags="keepalived"><span class="iconfont-archer">&#xe606;</span>keepalived</span>
     
         <span class="sidebar-tag-name" data-tags="python"><span class="iconfont-archer">&#xe606;</span>python</span>
+    
+        <span class="sidebar-tag-name" data-tags="tcp"><span class="iconfont-archer">&#xe606;</span>tcp</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

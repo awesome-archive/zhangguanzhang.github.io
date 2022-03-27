@@ -420,6 +420,42 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2022/03/16/cannot-assign-requested-address/" >
+            
+                <span>server 端的 cannot assign requested address</span>
+        </a>
+        <div class="abstract-content">
+            由来今天碰到了这个问题，但是最终结果出乎意料
+过程项目相关部分客户的 OA 对接我们的应用，使用过程中会调用我们的接口，我们的接口再回调客户的回调地址。调用流是：
+1客户 OA 后端 ----&gt; 我们应用 A 的后端 -----&gt; 我们应用 B 后端  -----&gt; 客户写的回调地址
+
+然后我们接口 A 返回 B 访问回调的报错：
+1&quot;Get http://10.192.xxx.xxx/xxxxinfo?...: dial tcp 10.192.xxx.xxx:80: connect: cannot assign requested address&quot;...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/03/16</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "golang">golang</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "tcp">tcp</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2022/02/24/keepalived-static-build/" >
             
                 <span>keepalived static link build</span>
@@ -2938,9 +2974,26 @@ EmuELEC 介绍EmuELEC 是专为 Amlogic（晶晨）S905/S912 方案的盒子开�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 142
+        Total : 143
         </div>
         <!-- search  -->
         
@@ -2957,6 +3010,11 @@ EmuELEC 介绍EmuELEC 是专为 Amlogic（晶晨）S905/S912 方案的盒子开�
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/24</span><a class="archive-post-title" href= "/2022/03/24/python-list-kubernetes-permission/" >python kubernetes client list permission</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span><a class="archive-post-title" href= "/2022/03/16/cannot-assign-requested-address/" >server 端的 cannot assign requested address</a>
         </li>
     
     
@@ -3952,6 +4010,8 @@ EmuELEC 介绍EmuELEC 是专为 Amlogic（晶晨）S905/S912 方案的盒子开�
         <span class="sidebar-tag-name" data-tags="keepalived"><span class="iconfont-archer">&#xe606;</span>keepalived</span>
     
         <span class="sidebar-tag-name" data-tags="python"><span class="iconfont-archer">&#xe606;</span>python</span>
+    
+        <span class="sidebar-tag-name" data-tags="tcp"><span class="iconfont-archer">&#xe606;</span>tcp</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

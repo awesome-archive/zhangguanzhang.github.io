@@ -400,6 +400,30 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/03/12/build-arm64-docker-compose-action/" >
+            
+                <span>使用github action 配合 docker buildx 编译 arm64 docker-compose</span>
+        </a>
+        <div class="abstract-content">
+            说明git 上搜索了很多 docker-compose 的 arm64 的编译基本都是使用 qemu-user-static 之类的设置下后编译的，也看到过用特权容器启动 qemu-user-static 或者 binfmt 之类的，但是我自己机器上试了无效，貌似是因为我操作系统是低版本内核的 centos ，github 上搜了下，其他很多人的编译感觉太啰嗦了。就在 action 上整了下，测试是可用的，而且非常简单。
+docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里安装 docker，创建 build...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/12</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/02/02/node-shutdown-dns-unavailable/" >
             
                 <span>集群节点关机导致dns在eviction pod之前几率不可用</span>
@@ -830,33 +854,6 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
         <a class="post-tag" href="javascript:void(0);" data-tags = "audit">audit</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/06/25/kubernetes-pprof/" >
-            
-                <span>k8s pprof 分析 cpu 和内存</span>
-        </a>
-        <div class="abstract-content">
-            简单记录下 k8s 组件的 pprof 看内存和 cpu 情况
-kubectl 收集有证书 curl 也行，这里就偷懒了：
-123# 这个很耗时，耐心等待文件不为 0 即可kubectl get --raw /api/v1/nodes/&lt;nodeName&gt;/proxy/debug/pprof/profile &gt; kubelet.profilekubectl get --raw /api/v1/nodes/&lt;nodeName&gt;/proxy/debug/pprof/heap &gt; kubelet.heap
-
-123yum instal -y graphviz...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/25</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -3380,9 +3377,26 @@ kubectl 收集有证书 curl 也行，这里就偷懒了：
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 142
+        Total : 143
         </div>
         <!-- search  -->
         
@@ -3399,6 +3413,11 @@ kubectl 收集有证书 curl 也行，这里就偷懒了：
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/24</span><a class="archive-post-title" href= "/2022/03/24/python-list-kubernetes-permission/" >python kubernetes client list permission</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span><a class="archive-post-title" href= "/2022/03/16/cannot-assign-requested-address/" >server 端的 cannot assign requested address</a>
         </li>
     
     
@@ -4394,6 +4413,8 @@ kubectl 收集有证书 curl 也行，这里就偷懒了：
         <span class="sidebar-tag-name" data-tags="keepalived"><span class="iconfont-archer">&#xe606;</span>keepalived</span>
     
         <span class="sidebar-tag-name" data-tags="python"><span class="iconfont-archer">&#xe606;</span>python</span>
+    
+        <span class="sidebar-tag-name" data-tags="tcp"><span class="iconfont-archer">&#xe606;</span>tcp</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

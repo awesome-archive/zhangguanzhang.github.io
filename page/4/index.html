@@ -400,6 +400,33 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/06/25/kubernetes-pprof/" >
+            
+                <span>k8s pprof 分析 cpu 和内存</span>
+        </a>
+        <div class="abstract-content">
+            简单记录下 k8s 组件的 pprof 看内存和 cpu 情况
+kubectl 收集有证书 curl 也行，这里就偷懒了：
+123# 这个很耗时，耐心等待文件不为 0 即可kubectl get --raw /api/v1/nodes/&lt;nodeName&gt;/proxy/debug/pprof/profile &gt; kubelet.profilekubectl get --raw /api/v1/nodes/&lt;nodeName&gt;/proxy/debug/pprof/heap &gt; kubelet.heap
+
+123yum instal -y graphviz...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/25</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/06/23/host-gw-in-aliyun/" >
             
                 <span>阿里云上使用flannel host-gw跨节点pod不通的解决</span>
@@ -844,39 +871,6 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
         <a class="post-tag" href="javascript:void(0);" data-tags = "boot">boot</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "suse">suse</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/03/dos-to-gpt/" >
-            
-                <span>从PTTYPE=&#34;dos&#34;到TYPE=&#34;LVM2_member&#34;的救援</span>
-        </a>
-        <div class="abstract-content">
-            同事叫我救援一台云主机，虽说是虚拟机，但是类比到硬件服务器还是一样的操作，这里记录下给后来者查阅
-故障信息控制台进去看到centos7的背景虚化的数字7+转圈，重启下看下完整的错误，重启选了内核然后进到图形界面的时候按下ecs取消，观察终端
-123456789101112131415161718192021222324[  OK ] Started Show Plymouth Boot Screen.[  OK ] Reached target Paths.[  OK ] Reached target Basic System.[  124.522110] dracut-initqueu...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "grub">grub</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "boot">boot</a>
     
 </div>
             
@@ -3402,9 +3396,26 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 142
+        Total : 143
         </div>
         <!-- search  -->
         
@@ -3421,6 +3432,11 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/24</span><a class="archive-post-title" href= "/2022/03/24/python-list-kubernetes-permission/" >python kubernetes client list permission</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span><a class="archive-post-title" href= "/2022/03/16/cannot-assign-requested-address/" >server 端的 cannot assign requested address</a>
         </li>
     
     
@@ -4416,6 +4432,8 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
         <span class="sidebar-tag-name" data-tags="keepalived"><span class="iconfont-archer">&#xe606;</span>keepalived</span>
     
         <span class="sidebar-tag-name" data-tags="python"><span class="iconfont-archer">&#xe606;</span>python</span>
+    
+        <span class="sidebar-tag-name" data-tags="tcp"><span class="iconfont-archer">&#xe606;</span>tcp</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
