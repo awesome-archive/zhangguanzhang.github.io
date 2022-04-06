@@ -455,7 +455,7 @@ height:50vh;
 
 <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>上午 ssh 到 proxmox 上的虚机上做实验，突然机器断开了，以为是虚机的问题，结果发现是 proxmox 机器有问题了，接上显示器重启看到进入了 grub rescue 模式。</p>
 <p>pve 版本信息为如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ pveversion</span><br><span class="line">pve-manager/6.2-4/9824574a (running kernel: 5.4.34-1-pve)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ pveversion</span><br><span class="line">pve-manager/6.2-4/9824574a (running kernel: 5.4.34-1-pve)</span><br><span class="line"># 2022/04/06 </span><br><span class="line"># 帮别人一个 7.1-7 的这样问题也是按照文章步骤恢复的</span><br><span class="line"># 并更新文章里部分命令和介绍</span><br></pre></td></tr></table></figure>
 
 <h2 id="处理过程"><a href="#处理过程" class="headerlink" title="处理过程"></a>处理过程</h2><h3 id="错误信息"><a href="#错误信息" class="headerlink" title="错误信息"></a>错误信息</h3><p>错误信息为如下，暂时看了下 lvm 是存在的。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">error: disk `lvmid/ExzA22-yHkV-0ymE-XbMT-zrD6-69Wp-bboRVP/zbB3V2-Kg2Y-EdI6-dbs1-6uSo-e6wk-ZRBJdh&#x27; not found.</span><br><span class="line">Entering rescue mode...</span><br><span class="line">grub rescue&gt; ls</span><br><span class="line">(lvm/pve-root) (lvm/pve-swap) (hd0) (hd1) (hd1,gpt3) (hd1,gpt2) (hd1,gpt1) </span><br></pre></td></tr></table></figure>
@@ -482,6 +482,7 @@ height:50vh;
 
 <p>然后就好了。</p>
 <h3 id="一些其他命令"><a href="#一些其他命令" class="headerlink" title="一些其他命令"></a>一些其他命令</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">grub-probe -d /dev/mapper/pve-root -t drive</span><br><span class="line"># 如果下面命令报错就无法 grub-install</span><br><span class="line">grub-probe -d /dev/mapper/pve-root </span><br><span class="line"># 用于更新 grub 信息，但是一般对这种情况没多大用貌似</span><br><span class="line">grup-update</span><br></pre></td></tr></table></figure>
+
 
 
     </article>
