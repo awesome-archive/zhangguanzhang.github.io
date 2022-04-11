@@ -400,6 +400,35 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/03/22/jsonpatch-doc-is-missing-path/" >
+            
+                <span>Internal error occurred: jsonpatch add operation does not apply: doc is missing path: xxx</span>
+        </a>
+        <div class="abstract-content">
+            由来今天在折腾 admission webhook 注入一些属性的时候遇到了 Error from server (InternalError): error when creating &quot;xxx.yml&quot;: Internal error occurred: jsonpatch add operation does not apply: doc is missing path: &quot;/spec/template/spec/dnsConfig/options&quot;。折腾半天才发现在代码里使用 jsonPatch 的话不能直接绕过结构体实例去 patch。 ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/22</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/03/12/build-arm64-docker-compose-action/" >
             
                 <span>使用github action 配合 docker buildx 编译 arm64 docker-compose</span>
@@ -818,40 +847,6 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
         <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "etcd">etcd</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/05/linux-auditd/" >
-            
-                <span>Linux audit 审计</span>
-        </a>
-        <div class="abstract-content">
-            什么是audit？linux audit子系统是一个用于收集记录系统、内核、用户进程发生的行为事件的一种安全审计系统。该系统可以可靠地收集有关上任何与安全相关（或与安全无关）事件的信息，它可以帮助跟踪在系统上执行过的一些操作。
-使用安装好像高版本 os 都自带了，没有就 yum install -y audit
-1systemctl status auditd.service
-
-例如追踪一个内核参数被谁修改要注意的是 auditctl 只能临时生效，要想永久生效使用文件 audit.rules
-基本信息查看12345678910111213# 查看状态$ auditctl -senabl...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "audit">audit</a>
     
 </div>
             
@@ -3394,9 +3389,78 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 143
+        Total : 144
         </div>
         <!-- search  -->
         
@@ -3409,6 +3473,11 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "/2022/04/11/sdn-tcp-keepalive/" >无数据的 tcp 链接被 SDN 干掉的一种处理办法</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -4415,6 +4484,8 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
         <span class="sidebar-tag-name" data-tags="python"><span class="iconfont-archer">&#xe606;</span>python</span>
     
         <span class="sidebar-tag-name" data-tags="tcp"><span class="iconfont-archer">&#xe606;</span>tcp</span>
+    
+        <span class="sidebar-tag-name" data-tags="keepalive"><span class="iconfont-archer">&#xe606;</span>keepalive</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

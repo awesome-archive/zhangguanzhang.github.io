@@ -400,6 +400,37 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/03/18/keepalived-Heartbeat-use-mg-net/" >
+            
+                <span>使用管理网当作业务网keepalived VIP的心跳线</span>
+        </a>
+        <div class="abstract-content">
+            客户的业务情况如下，我们连的 vpn2 上去部署的业务，一开始三台机器，上面只有 NC1 这一个网卡，客户给了个 vip 让我们配置上，说 vip 两个 vpn 都能访问到。后面实际配置完发现不通，沟通了一番了解清楚网络后，使用了如下方案。
+NC1 的网络是 172.18.27.252/25 via 172.18.27.129 是默认路由，NC2 是 172.18.27.99/25 via 172.18.27.1，两个网卡不同的 vlan，172.18.27.0/25 的网络里没有多少 IP 了，所以拿来做 VIP 的话得用 NC1 做心跳线。
+123456789101112131415...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/18</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "vip">vip</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/02/15/linux-tc/" >
             
                 <span>Linux tc基础使用</span>
@@ -806,35 +837,6 @@ Linux 里的 so用白话说，就是类似于 windows 的 dll 文件，通常是
         <a class="post-tag" href="javascript:void(0);" data-tags = "rpm">rpm</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "rpmbuild">rpmbuild</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/05/12/ssh-trust/" >
-            
-                <span>ssh互信</span>
-        </a>
-        <div class="abstract-content">
-            <p>ssh公钥免密码登录</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/05/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ssh">ssh</a>
     
 </div>
             
@@ -3377,9 +3379,78 @@ Linux 里的 so用白话说，就是类似于 windows 的 dll 文件，通常是
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 143
+        Total : 144
         </div>
         <!-- search  -->
         
@@ -3392,6 +3463,11 @@ Linux 里的 so用白话说，就是类似于 windows 的 dll 文件，通常是
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "/2022/04/11/sdn-tcp-keepalive/" >无数据的 tcp 链接被 SDN 干掉的一种处理办法</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -4398,6 +4474,8 @@ Linux 里的 so用白话说，就是类似于 windows 的 dll 文件，通常是
         <span class="sidebar-tag-name" data-tags="python"><span class="iconfont-archer">&#xe606;</span>python</span>
     
         <span class="sidebar-tag-name" data-tags="tcp"><span class="iconfont-archer">&#xe606;</span>tcp</span>
+    
+        <span class="sidebar-tag-name" data-tags="keepalive"><span class="iconfont-archer">&#xe606;</span>keepalive</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

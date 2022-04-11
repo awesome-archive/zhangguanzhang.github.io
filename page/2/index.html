@@ -400,6 +400,35 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/09/01/ubuntu18-and-cfq/" >
+            
+                <span>ubuntu18下io调度算法是cfq导致mysql非常慢</span>
+        </a>
+        <div class="abstract-content">
+            <p>记录线上一次 io 调度算法导致的 mysql 读写慢问题</p>
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/01</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "ubuntu18">ubuntu18</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/08/27/k8s-runxtables.lock/" >
             
                 <span>干掉烦人的 open /run/xtables.lock: is a directory</span>
@@ -835,35 +864,6 @@ CentOS Linux release 7.8.2003 (Core) - 3.1...
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/22/jsonpatch-doc-is-missing-path/" >
-            
-                <span>Internal error occurred: jsonpatch add operation does not apply: doc is missing path: xxx</span>
-        </a>
-        <div class="abstract-content">
-            由来今天在折腾 admission webhook 注入一些属性的时候遇到了 Error from server (InternalError): error when creating &quot;xxx.yml&quot;: Internal error occurred: jsonpatch add operation does not apply: doc is missing path: &quot;/spec/template/spec/dnsConfig/options&quot;。折腾半天才发现在代码里使用 jsonPatch 的话不能直接绕过结构体实例去 patch。 ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/22</span>
             </div>
             <!-- tags  -->
             
@@ -3412,9 +3412,78 @@ CentOS Linux release 7.8.2003 (Core) - 3.1...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 143
+        Total : 144
         </div>
         <!-- search  -->
         
@@ -3427,6 +3496,11 @@ CentOS Linux release 7.8.2003 (Core) - 3.1...
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "/2022/04/11/sdn-tcp-keepalive/" >无数据的 tcp 链接被 SDN 干掉的一种处理办法</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -4433,6 +4507,8 @@ CentOS Linux release 7.8.2003 (Core) - 3.1...
         <span class="sidebar-tag-name" data-tags="python"><span class="iconfont-archer">&#xe606;</span>python</span>
     
         <span class="sidebar-tag-name" data-tags="tcp"><span class="iconfont-archer">&#xe606;</span>tcp</span>
+    
+        <span class="sidebar-tag-name" data-tags="keepalive"><span class="iconfont-archer">&#xe606;</span>keepalive</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

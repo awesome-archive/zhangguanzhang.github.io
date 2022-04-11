@@ -321,7 +321,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">1.2k</span>阅读时长: <span class="post-count reading-time">6 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.3k</span>阅读时长: <span class="post-count reading-time">6 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -474,15 +474,14 @@ height:50vh;
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mount -o bind /dev /mnt/sysimage/dev</span><br><span class="line">mount -o bind /proc /mnt/sysimage/proc</span><br><span class="line">mount -o bind /run /mnt/sysimage/run</span><br><span class="line">mount -o bind /sys /mnt/sysimage/sys</span><br><span class="line"># 上面如果在chroot之前不 mount 会导致一些lstat /dev /proc /sys 的命令报错无法读取这些目录 </span><br><span class="line">chroot /mnt/sysimage</span><br></pre></td></tr></table></figure>
 
 <p>里面去折腾了下，好像是 vg 和 lv 的 uuid 变了，尝试<code>vgcfgrestore</code> :</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 结尾 pve 是 root 所在的 vg 名字</span><br><span class="line">vgcfgrestore --force -f /etc/lvm/backup/pve pve</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 结尾 pve 是 root 所在的 vg 名字</span><br><span class="line">vgcfgrestore --test -f /etc/lvm/backup/pve pve</span><br><span class="line"># 输入 y 回车，失败了就下面的 --force 选项运行</span><br><span class="line">vgcfgrestore --force -f /etc/lvm/backup/pve pve</span><br></pre></td></tr></table></figure>
 
 <p>重启还是不行，看了下 <code>/etc/lvm/backup/pve</code> 也没啥问题。</p>
 <h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>lvm 信息和文件都在，可能是 grub 损坏了。尝试备份 grub.cfg 后 <code>grub-mkconfig</code> 了下， diff 对比了下也没变啥 uuid 相关的地方，然后重启再进 CentOS Rescue 模式里，选择 1 自动挂载。然后尝试 chroot 进去 <code>grub-install</code>:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 退出了 chroot 的话就再 chroot 进来</span><br><span class="line">chroot /mnt/sysimage</span><br><span class="line">cd /boot/grub</span><br><span class="line">cp grub.cfg grub.cfg.bak</span><br><span class="line">lvscan</span><br><span class="line">vgscan</span><br><span class="line">pvscan</span><br><span class="line"></span><br><span class="line"># df -h 看看，如果目录 /boot/efi 为空且 /boot/efi 没挂载，则执行下面命令</span><br><span class="line">mount /dev/sda2 /boot/efi</span><br><span class="line"></span><br><span class="line"># pve 是 grub-install 不是也没有 grub2-install</span><br><span class="line">grub-install --debug --recheck --root-directory=/ /dev/mapper/pve-root</span><br><span class="line"># 上面的 grub-install 没失败就可以了</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># 退出了 chroot 的话就再 chroot 进来</span><br><span class="line">chroot /mnt/sysimage</span><br><span class="line">cd /boot/grub</span><br><span class="line">cp grub.cfg grub.cfg.bak</span><br><span class="line">lvscan</span><br><span class="line">vgscan</span><br><span class="line">pvscan</span><br><span class="line"></span><br><span class="line"># df -h 看看，如果目录 /boot/efi 为空且 /boot/efi 没挂载</span><br><span class="line"># cat /etc/fstab 找到 /boot/efi 的分区的 UUID，lsblk找到该 UUID 的 dev 设备</span><br><span class="line"># 例如我的是 /dev/sda2 执行下面命令挂载 /boot/efi</span><br><span class="line">mount /dev/sda2 /boot/efi</span><br><span class="line"></span><br><span class="line"># pve 是 grub-install 不是也没有 grub2-install</span><br><span class="line">grub-install --debug --recheck --root-directory=/ /dev/mapper/pve-root</span><br><span class="line"># 上面的 grub-install 没失败就可以了</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
 
 <p>然后就好了。</p>
 <h3 id="一些其他命令"><a href="#一些其他命令" class="headerlink" title="一些其他命令"></a>一些其他命令</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">grub-probe -d /dev/mapper/pve-root -t drive</span><br><span class="line"># 如果下面命令报错就无法 grub-install</span><br><span class="line">grub-probe -d /dev/mapper/pve-root </span><br><span class="line"># 用于更新 grub 信息，但是一般对这种情况没多大用貌似</span><br><span class="line">grup-update</span><br></pre></td></tr></table></figure>
-
 
 
     </article>
@@ -2944,9 +2943,78 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 143
+        Total : 144
         </div>
         <!-- search  -->
         
@@ -2959,6 +3027,11 @@ top:50vh;
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "/2022/04/11/sdn-tcp-keepalive/" >无数据的 tcp 链接被 SDN 干掉的一种处理办法</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3965,6 +4038,8 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="python"><span class="iconfont-archer">&#xe606;</span>python</span>
     
         <span class="sidebar-tag-name" data-tags="tcp"><span class="iconfont-archer">&#xe606;</span>tcp</span>
+    
+        <span class="sidebar-tag-name" data-tags="keepalive"><span class="iconfont-archer">&#xe606;</span>keepalive</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

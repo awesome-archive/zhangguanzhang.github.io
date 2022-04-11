@@ -387,6 +387,36 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/08/06/preseed/" >
+            
+                <span>ubuntu preseed无人应答安装</span>
+        </a>
+        <div class="abstract-content">
+            之前的centos自动安装整得差不多了，今天有空研究下ubuntu的自动应答安装，过程是按照我遇到的问题的时间线的角度来描述，并不是总结后正确的开始姿势。kickstart是red hat开发的。ubuntu的安装界面是一个debian-installer的二进制文件进程运行tty1提供的选择交互安装界面:
+ubuntu自带的应答是preseed，相关文档页面是 https://help.ubuntu.com/lts/installation-guide/amd64/apb.html实际上安装完成后我们可以安装debconf-utils后使用debconf-get-selections ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/06</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "preseed">preseed</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/07/14/chromedp/" >
             
                 <span>golang headless browser包chromedp初探</span>
@@ -668,38 +698,6 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
         <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "springboot">springboot</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/03/22/k8s-controller-error/" >
-            
-                <span>一次kube-controller-manager的bug导致的线上无法调度处理过程</span>
-        </a>
-        <div class="abstract-content">
-            线上的k8s环境普遍版本很低，今天同事心血来潮去一个新节点上去看了下发现根分区满了,清理了后发有一个pod没有创建出来。清理后把因为文件系统满了而down掉的k8s相关进程起来后发现kubelet的log一直报错cannot remove /var/lib/kubelet/xxxxconfig/key resource busy now 啥的。查看了下describe对应rc还没有任何Event
-1234567891011121314151617181920212223242526272829303132333435363738$ kubectl describe rc rabbit3r...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kube-controller-manager">kube-controller-manager</a>
     
 </div>
             
@@ -3087,9 +3085,78 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 143
+        Total : 144
         </div>
         <!-- search  -->
         
@@ -3102,6 +3169,11 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "/2022/04/11/sdn-tcp-keepalive/" >无数据的 tcp 链接被 SDN 干掉的一种处理办法</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -4108,6 +4180,8 @@ Cobra介绍是一个golang的库，其提供简单的接口来创建强大现代
         <span class="sidebar-tag-name" data-tags="python"><span class="iconfont-archer">&#xe606;</span>python</span>
     
         <span class="sidebar-tag-name" data-tags="tcp"><span class="iconfont-archer">&#xe606;</span>tcp</span>
+    
+        <span class="sidebar-tag-name" data-tags="keepalive"><span class="iconfont-archer">&#xe606;</span>keepalive</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
