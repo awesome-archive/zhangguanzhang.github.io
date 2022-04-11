@@ -20,12 +20,12 @@
     <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="记录生活点滴">
-    <meta name="description" content="客户的环境下，业务运行在 dmz 区，mysql 在非 dmz 区，业务连 mysql 的空闲 tcp 连接 240s 后会被 SDN 干掉，本文实际介绍一种不动业务代理，利用代理的解决办法">
+    <meta name="description" content="客户的环境下，业务运行在 dmz 区，mysql 在非 dmz 区，业务连 mysql 的空闲 tcp 连接 240s 后会被 SDN 干掉，本文实际介绍一种不动业务(代码)，利用代理的解决办法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="无数据的 tcp 链接被 SDN&#x2F;防火墙 干掉的一种处理办法">
 <meta property="og:url" content="http://zhangguanzhang.github.io/2022/04/11/sdn-tcp-keepalive/">
 <meta property="og:site_name" content="Zhangguanzhang">
-<meta property="og:description" content="客户的环境下，业务运行在 dmz 区，mysql 在非 dmz 区，业务连 mysql 的空闲 tcp 连接 240s 后会被 SDN 干掉，本文实际介绍一种不动业务代理，利用代理的解决办法">
+<meta property="og:description" content="客户的环境下，业务运行在 dmz 区，mysql 在非 dmz 区，业务连 mysql 的空闲 tcp 连接 240s 后会被 SDN 干掉，本文实际介绍一种不动业务(代码)，利用代理的解决办法">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-11T11:28:30.000Z">
 <meta property="article:modified_time" content="2022-04-11T11:28:30.000Z">
@@ -453,7 +453,7 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>客户的环境下，业务运行在 dmz 区，mysql 在非 dmz 区，业务连 mysql 的空闲 tcp 连接 240s 后会被 SDN 干掉，本文实际介绍一种不动业务代理，利用代理的解决办法</p>
+        <p>客户的环境下，业务运行在 dmz 区，mysql 在非 dmz 区，业务连 mysql 的空闲 tcp 连接 240s 后会被 SDN 干掉，本文实际介绍一种不动业务(代码)，利用代理的解决办法</p>
 <span id="more"></span>
 
 <h2 id="由来"><a href="#由来" class="headerlink" title="由来"></a>由来</h2><p>客户提供的环境是 ACS 虚拟化平台，我们业务部署在他们的 dmz 区，mysql 他们提供的，在非 dmz 区，部署后有个问题就是页面经常 504，504 后刷新下就好了，最后排查到是业务连 mysql 的 tcp 连接没有数据传输超过 240s 后会被 SDN 干掉。</p>
