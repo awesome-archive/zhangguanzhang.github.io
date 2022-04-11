@@ -17,7 +17,7 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>无数据的 tcp 链接被 SDN 干掉的一种处理办法</title>
+    <title>无数据的 tcp 链接被 SDN/防火墙 干掉的一种处理办法</title>
     <link href="http://zhangguanzhang.github.io/2022/04/11/sdn-tcp-keepalive/"/>
     <id>http://zhangguanzhang.github.io/2022/04/11/sdn-tcp-keepalive/</id>
     <published>2022-04-11T11:28:30.000Z</published>
