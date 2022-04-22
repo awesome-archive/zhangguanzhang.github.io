@@ -321,7 +321,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">1.2k</span>阅读时长: <span class="post-count reading-time">6 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.3k</span>阅读时长: <span class="post-count reading-time">6 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -477,18 +477,19 @@ height:50vh;
 
 
 <h3 id="检查系统的-so-和开机启动项"><a href="#检查系统的-so-和开机启动项" class="headerlink" title="检查系统的 so 和开机启动项"></a>检查系统的 so 和开机启动项</h3><p>搜了下这个 ip 是外国的，查看下 ld 的 so 导入配置文件，看看是否有被加入额外的 so 导入：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ rpm -qf /etc/ld.so.conf</span><br><span class="line">glibc-2.17-260.el7.x86_64</span><br><span class="line"># glibc 也提供了很多基础的 so，这部同时也可以看出来</span><br><span class="line"># 基础的 so 有被替换不</span><br><span class="line">$ rpm -V glibc</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ rpm -qf /etc/ld.so.conf</span><br><span class="line">glibc-2.17-260.el7.x86_64</span><br><span class="line"># glibc 也提供了很多基础的 so，这步同时也可以看出来</span><br><span class="line"># 基础的 so 有被替换不</span><br><span class="line">$ rpm -V glibc</span><br></pre></td></tr></table></figure>
 
 <p>同理查看下 systemd 的</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ rpm -V systemd</span><br><span class="line">.M.......  c /etc/machine-id</span><br><span class="line">SM5....T.  c /etc/rc.d/rc.local # 这个文件也记得查下</span><br><span class="line">S.5....T.  c /etc/systemd/system.conf</span><br><span class="line">.M.......  g /etc/udev/hwdb.bin</span><br><span class="line">.M.......  g /var/lib/systemd/random-seed</span><br><span class="line">.M....G..  g /var/log/journal</span><br><span class="line">.M....G..  g /var/log/wtmp</span><br><span class="line">.M....G..  g /var/run/utmp</span><br><span class="line"># 查看下有没有被添加 systemd 的开机启动任务</span><br><span class="line">$ systemctl list-units</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ rpm -V systemd</span><br><span class="line">.M.......  c /etc/machine-id</span><br><span class="line">SM5....T.  c /etc/rc.d/rc.local # 这个文件也记得查下</span><br><span class="line">S.5....T.  c /etc/systemd/system.conf</span><br><span class="line">.M.......  g /etc/udev/hwdb.bin</span><br><span class="line">.M.......  g /var/lib/systemd/random-seed</span><br><span class="line">.M....G..  g /var/log/journal</span><br><span class="line">.M....G..  g /var/log/wtmp</span><br><span class="line">.M....G..  g /var/run/utmp</span><br><span class="line"># 查看下有没有被添加 systemd 的开机启动任务，异常的 timer</span><br><span class="line">$ systemctl list-units</span><br></pre></td></tr></table></figure>
 
 <h3 id="清理进程相关"><a href="#清理进程相关" class="headerlink" title="清理进程相关"></a>清理进程相关</h3><p>我们环境是 k8s 和 docker 的，etcd 没证书，kubelet 的 http 可写，docker 开网络端口不 tls，redis 无密码这种现象是不存在的。看了下我们配置的部署配置文件，初步怀疑是一个有 sudo 的弱密码用户被爆破导致的中毒，查看了具有 sudo 权限和 root 的 <code>~/.ssh/authorized_keys</code> 也没被添加别人的公钥（有的话记得清理下），开始删除挖矿进程的目录：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -rf /dev/shm/.x/</span><br><span class="line">kill -9 1206</span><br></pre></td></tr></table></figure>
 
-<h3 id="排查网络"><a href="#排查网络" class="headerlink" title="排查网络"></a>排查网络</h3><p>看看是否还有其他后台进程上报或者下载的，看了下 udp 的正常，所以提取所有活跃的 tcp 连接 ip 看看有异常的 IP 没：</p>
+<h3 id="排查网络"><a href="#排查网络" class="headerlink" title="排查网络"></a>排查网络</h3><p>看看是否还有其他后台进程上报或者下载的，看了下 udp 的正常，tcp监听的端口也没莫名其妙的端口，所以提取所有活跃的 tcp 连接 ip 看看有异常的 IP 没：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ netstat -ant |&amp; grep -Po &#x27;(\d&#123;1,3&#125;\.)&#123;3&#125;\d&#123;1,3&#125;&#x27; | sort | grep -v 10.187.0 | uniq -c</span><br><span class="line">     49 0.0.0.0</span><br><span class="line">      2 119.82.135.65</span><br><span class="line">    111 127.0.0.1</span><br><span class="line">      4 169.254.169.254</span><br><span class="line">   2271 192.168.0.235</span><br><span class="line">     13 2xx.1xx.15.161</span><br><span class="line">      1 3x.1xx.2x.7</span><br><span class="line">     27 4x.x.1xx.x3</span><br><span class="line">      1 xx.1xx.6x.x54</span><br><span class="line"></span><br><span class="line">$ netstat -ant | grep 119.82.135.65</span><br><span class="line">tcp        0   1281 192.168.0.235:22        119.82.135.65:38525     LAST_ACK   </span><br><span class="line">tcp        0      1 192.168.0.235:22        119.82.135.65:54598     LAST_ACK   </span><br><span class="line">$ lsof -nPi :38525</span><br><span class="line">$ lsof -nPi :54598</span><br><span class="line">$ </span><br></pre></td></tr></table></figure>
 
 <p>看了下只有不断被外国 IP 暴力 ssh 的 IP，其余几个 IP 是我和客户那边的人员 IP。让客户改密码后再观察下。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>只是列举了大概的排查范围，有其他的自己独特的排查范围也可以尝试下。</p>
 
     </article>
     <!-- license  -->
@@ -504,6 +505,11 @@ height:50vh;
     <!-- paginator  -->
     <ul class="post-paginator">
         <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2022/04/22/segfault-often/" title= "docker containerd 不定时的 segfault 的一次处理过程">
+                    <div class="nextTitle">docker containerd 不定时的 segfault 的一次处理过程</div>
+                </a>
             
         </li>
         <li class="previous">
@@ -659,7 +665,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B1%E6%9D%A5"><span class="toc-number">1.</span> <span class="toc-text">由来</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">处理过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%85%E7%90%86%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="toc-number">2.1.</span> <span class="toc-text">清理定时任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5%E7%B3%BB%E7%BB%9F%E7%9A%84-so-%E5%92%8C%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E9%A1%B9"><span class="toc-number">2.2.</span> <span class="toc-text">检查系统的 so 和开机启动项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%85%E7%90%86%E8%BF%9B%E7%A8%8B%E7%9B%B8%E5%85%B3"><span class="toc-number">2.3.</span> <span class="toc-text">清理进程相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E6%9F%A5%E7%BD%91%E7%BB%9C"><span class="toc-number">2.4.</span> <span class="toc-text">排查网络</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B1%E6%9D%A5"><span class="toc-number">1.</span> <span class="toc-text">由来</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">处理过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%85%E7%90%86%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="toc-number">2.1.</span> <span class="toc-text">清理定时任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5%E7%B3%BB%E7%BB%9F%E7%9A%84-so-%E5%92%8C%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E9%A1%B9"><span class="toc-number">2.2.</span> <span class="toc-text">检查系统的 so 和开机启动项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%85%E7%90%86%E8%BF%9B%E7%A8%8B%E7%9B%B8%E5%85%B3"><span class="toc-number">2.3.</span> <span class="toc-text">清理进程相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E6%9F%A5%E7%BD%91%E7%BB%9C"><span class="toc-number">2.4.</span> <span class="toc-text">排查网络</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
     </div>
     
     <div class="sidebar sidebar-hide">
@@ -2988,9 +2994,26 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 145
+        Total : 146
         </div>
         <!-- search  -->
         
@@ -3003,6 +3026,11 @@ top:50vh;
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/22</span><a class="archive-post-title" href= "/2022/04/22/segfault-often/" >docker containerd 不定时的 segfault 的一次处理过程</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -4025,6 +4053,8 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="ecs"><span class="iconfont-archer">&#xe606;</span>ecs</span>
     
         <span class="sidebar-tag-name" data-tags="xmrig"><span class="iconfont-archer">&#xe606;</span>xmrig</span>
+    
+        <span class="sidebar-tag-name" data-tags="segfault"><span class="iconfont-archer">&#xe606;</span>segfault</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

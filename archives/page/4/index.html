@@ -387,6 +387,41 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/04/08/kubelet-runc-disable-kmem/" >
+            
+                <span>kubelet 和 runc 编译关闭 kmem</span>
+        </a>
+        <div class="abstract-content">
+            前提详情在 3.x 的内核上，cgroup 的 kmem account 特性有内存泄露问题。kubelet 和 runc 都需要修复。
+网上有言论说升级 Linux 内核至 kernel-3.10.0-1075.el7 及以上就可以修复这个问题，详细可见 slab leak causing a crash when using kmem control group。但是我测试了下面的都不行：
+
+CentOS7.4
+CentOS7.6
+CentOS7.7的 3.10.0-1062.el7.x86_64 
+CentOS Linux release 7.8.2003 (Core) - 3.1...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/08</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/03/23/iptables-docker-no-chain/" >
             
                 <span>iptables --wait -t nat -A DOCKER...: iptables NO chain/target/match by that name</span>
@@ -644,37 +679,6 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "Kylin">Kylin</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/10/30/uos20-nftables/" >
-            
-                <span>统信USO 20 hostPort 无法访问</span>
-        </a>
-        <div class="abstract-content">
-            由来这些天陆续发现很多客户是统信的系统，部署我们业务后无法访问
-环境信息我自己环境和客户的环境都遇到了无法访问，我自己测试的机器信息是:
-1234567891011$ cat /etc/os-releasePRETTY_NAME=&quot;Uniontech OS Server 20 Enterprise&quot;NAME=&quot;Uniontech OS Server 20 Enterprise&quot;VERSION_ID=&quot;20&quot;VERSION=&quot;20&quot;ID=UOSHOME_URL=&quot;https://www.chinauo...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "uos">uos</a>
     
 </div>
             
@@ -3106,9 +3110,26 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 145
+        Total : 146
         </div>
         <!-- search  -->
         
@@ -3121,6 +3142,11 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/22</span><a class="archive-post-title" href= "/2022/04/22/segfault-often/" >docker containerd 不定时的 segfault 的一次处理过程</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -4143,6 +4169,8 @@ docker-practice/actions-setup-docker@master 将会在在 action 的 runner 里�
         <span class="sidebar-tag-name" data-tags="ecs"><span class="iconfont-archer">&#xe606;</span>ecs</span>
     
         <span class="sidebar-tag-name" data-tags="xmrig"><span class="iconfont-archer">&#xe606;</span>xmrig</span>
+    
+        <span class="sidebar-tag-name" data-tags="segfault"><span class="iconfont-archer">&#xe606;</span>segfault</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

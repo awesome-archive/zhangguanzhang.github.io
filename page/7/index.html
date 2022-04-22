@@ -400,6 +400,38 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/12/04/black-box-exporter/" >
+            
+                <span>prometheus的黑盒监控</span>
+        </a>
+        <div class="abstract-content">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;常规的各种exporter都是和需要监控的机器一起安装的,如果需要监控一些tcp端口和七层应用层的状态呢,这个时候就需要黑盒监控了,不需要安装在目标机器上即可从外部去监控。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9115是它的http端点的默认监听端口，blackbox.yml它的配置文件里以基础的http、dns、tcp、icmp等prober定制配置出各种监测模块(module)，在prometheus server的配置文件里声明用哪个模块去探测哪个targets，下面以doc...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/04</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "prometheus">prometheus</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "exporter">exporter</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/11/24/how-to-use-kubeadm/" >
             
                 <span>对于初入k8s和kubeadm的一些建议</span>
@@ -882,44 +914,6 @@ An example of a pod that uses pod affinity:
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "PodAffinity">PodAffinity</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/05/05/Kubernetes_install/" >
-            
-                <span>[转载+修正]Kubernetes v1.10.x HA全手动苦工安装教学</span>
-        </a>
-        <div class="abstract-content">
-            转载自https://kairen.github.io/2018/04/05/kubernetes/deploy/manual-v1.10/作者文章的安装步骤文字是复制作者的1.8的安装步骤然后改的,安装过程变了部分,但是文字没有改正过来。
-此过程我写了ansible安装部署方案,地址(一些文件下载不了的话可以去下面的github里找对应的文件)
-
-多master高可用版
-单master版
-
-本文内容所有url都没改过，以下的添加的内容是我的建议和安装的经验
-本文里如果有些范围不知道在哪台主机上执行请看前后命令都可以判断出,不清楚的请下面评论我会更新
-以下我转载过来并修改+上我的提醒
-管...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
 </div>
             
@@ -3506,9 +3500,26 @@ An example of a pod that uses pod affinity:
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 145
+        Total : 146
         </div>
         <!-- search  -->
         
@@ -3521,6 +3532,11 @@ An example of a pod that uses pod affinity:
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/22</span><a class="archive-post-title" href= "/2022/04/22/segfault-often/" >docker containerd 不定时的 segfault 的一次处理过程</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -4543,6 +4559,8 @@ An example of a pod that uses pod affinity:
         <span class="sidebar-tag-name" data-tags="ecs"><span class="iconfont-archer">&#xe606;</span>ecs</span>
     
         <span class="sidebar-tag-name" data-tags="xmrig"><span class="iconfont-archer">&#xe606;</span>xmrig</span>
+    
+        <span class="sidebar-tag-name" data-tags="segfault"><span class="iconfont-archer">&#xe606;</span>segfault</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

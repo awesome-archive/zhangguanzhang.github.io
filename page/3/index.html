@@ -400,6 +400,41 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/04/08/kubelet-runc-disable-kmem/" >
+            
+                <span>kubelet 和 runc 编译关闭 kmem</span>
+        </a>
+        <div class="abstract-content">
+            前提详情在 3.x 的内核上，cgroup 的 kmem account 特性有内存泄露问题。kubelet 和 runc 都需要修复。
+网上有言论说升级 Linux 内核至 kernel-3.10.0-1075.el7 及以上就可以修复这个问题，详细可见 slab leak causing a crash when using kmem control group。但是我测试了下面的都不行：
+
+CentOS7.4
+CentOS7.6
+CentOS7.7的 3.10.0-1062.el7.x86_64 
+CentOS Linux release 7.8.2003 (Core) - 3.1...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/08</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/03/23/iptables-docker-no-chain/" >
             
                 <span>iptables --wait -t nat -A DOCKER...: iptables NO chain/target/match by that name</span>
@@ -814,37 +849,6 @@ openshift 不像其他的 dashboard 诸如 rancher，k3s 之类的，它自己�
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "wireguard">wireguard</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/30/prometheus-rate-and-irate/" >
-            
-                <span>prometheus的rate与irate内部是如何计算的</span>
-        </a>
-        <div class="abstract-content">
-            由来市面上的翻译误导人，压根不是啥平均增长率，看了下源码和实际算下来让大家好理解
-rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/promql/functions.go 的extrapolatedRate 和 funcRate，funcRate为
-123func funcRate(vals []parser.Value, args parser.Expressions, enh *EvalNodeHelper) Vector &#123;  return extrapolatedRate(vals, args...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Prometheus">Prometheus</a>
     
 </div>
             
@@ -3431,9 +3435,26 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 145
+        Total : 146
         </div>
         <!-- search  -->
         
@@ -3446,6 +3467,11 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/22</span><a class="archive-post-title" href= "/2022/04/22/segfault-often/" >docker containerd 不定时的 segfault 的一次处理过程</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -4468,6 +4494,8 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
         <span class="sidebar-tag-name" data-tags="ecs"><span class="iconfont-archer">&#xe606;</span>ecs</span>
     
         <span class="sidebar-tag-name" data-tags="xmrig"><span class="iconfont-archer">&#xe606;</span>xmrig</span>
+    
+        <span class="sidebar-tag-name" data-tags="segfault"><span class="iconfont-archer">&#xe606;</span>segfault</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
