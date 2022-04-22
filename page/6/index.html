@@ -400,6 +400,40 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/06/26/uefi-pxe/" >
+            
+                <span>uefi模式下docker+交换机部署pxe批量安装</span>
+        </a>
+        <div class="abstract-content">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;华三服务器的ipmi的web提供了nfs挂载iso去安装，也是我之前使用的，发现研发给的镜像在4g以上(镜像基于centos7.3改的，我之前测试都是用的minimal镜像890M左右)。安装的时候报错，然后当面测试得出结论nfs的网速原因，其次也是我们这边办公网是百兆。。。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;办公网被it接管了，交换机密码不给，自己找了台5130交换机，下面接服务器和我自己电脑搭建测了下定制iso的pxe流程
+这是组...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/26</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "initrd">initrd</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "grub">grub</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "tftp">tftp</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/06/23/autoInstallServer/" >
             
                 <span>拟定excel表格服务器自动按照表格配置信息和安装的实现过程</span>
@@ -792,7 +826,7 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
                 <span>proxmox里使用cloud-init和一些笔记</span>
         </a>
         <div class="abstract-content">
-            cloud-init的镜像模板制作模板制作记录下proxmox制作带有 cloud-init 的虚机模板过程&nbsp;&nbsp;&nbsp;&nbsp;因为刚开始制作虚机模板的硬盘是固定大小,后面通过克隆后调整硬盘大小就会自动 growpart ,需要安装 cloud-utils-growpart。好像只能往大的扩,我个人也倾向于最小 20G,所以这里我开的是20G硬盘的虚机&nbsp;&nbsp;&nbsp;&nbsp;另外查了下和实际试了下 cloud-utils-growpart 好像只支持ext3和ext4不支持lvm自动扩,其他的文件系统可以考虑试试 lvm 自己写个脚本去...
+            cloud-init的镜像模板制作模板制作记录下proxmox制作带有 cloud-init 的虚机模板过程&nbsp;&nbsp;&nbsp;&nbsp;因为刚开始制作虚机模板的硬盘是固定大小,后面通过克隆后调整硬盘大小就会自动 growpart ,需要安装 cloud-utils-growpart。好像只能往大的扩,我个人也倾向于最小 20G,所以这里我开的是20G硬盘的虚机&nbsp;&nbsp;&nbsp;&nbsp;另外查了下和实际试了下 cloud-utils-growpart 好像只支持 ext3 和 ext4 不支持 lvm 自动扩,其他的文件系统可以考虑试试 lvm 自...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -838,48 +872,6 @@ ingress tls 代理http[s]的dashboard以及最后讲解的如何定义带权...
         <a class="post-tag" href="javascript:void(0);" data-tags = "prometheus">prometheus</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "exporter">exporter</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/11/24/how-to-use-kubeadm/" >
-            
-                <span>对于初入k8s和kubeadm的一些建议</span>
-        </a>
-        <div class="abstract-content">
-            主要还是简单说下kubeadm
-说说一些现象&nbsp;&nbsp;&nbsp;&nbsp;无论docker还是K8s群看见过太多人盲目了有些是赶鸭子上来的,有的是跟风盲目进来乱学的.其中较多的分类为:
-
-
-不学docker直接学k8s的跟风狗
-没有熟悉Linux操作和一些基础知识的开发
-Docker学得不怎么样就迫不及待来学的跟风狗
-
-
-入门最具有争议的问题就是如何开始,k8s各个组件对于小白来说搭建方式和配置文件对于入门的人来说太庞大了,对于环境来学习一般分为下面两种
-
-
-按照别人博客或者文章去手动搭建一个环境后学习
-找个简易部署的方案来部署环境来学(kubeadm或者ansible...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
     
 </div>
             
@@ -3466,34 +3458,9 @@ Docker学得不怎么样就迫不及待来学的跟风狗
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 144
+        Total : 145
         </div>
         <!-- search  -->
         
@@ -3506,6 +3473,11 @@ Docker学得不怎么样就迫不及待来学的跟风狗
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2022/04/21/ecs-xmrig/" >ecs 中毒的一次处理过程</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -4519,6 +4491,10 @@ Docker学得不怎么样就迫不及待来学的跟风狗
         <span class="sidebar-tag-name" data-tags="tcp"><span class="iconfont-archer">&#xe606;</span>tcp</span>
     
         <span class="sidebar-tag-name" data-tags="keepalive"><span class="iconfont-archer">&#xe606;</span>keepalive</span>
+    
+        <span class="sidebar-tag-name" data-tags="ecs"><span class="iconfont-archer">&#xe606;</span>ecs</span>
+    
+        <span class="sidebar-tag-name" data-tags="xmrig"><span class="iconfont-archer">&#xe606;</span>xmrig</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

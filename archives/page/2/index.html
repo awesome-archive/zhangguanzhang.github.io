@@ -387,6 +387,36 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/12/12/mod-rejected-by-service/" >
+            
+                <span>docker数据盘损坏后启动报错 Error starting daemon: Error initializing network controller: Error creating default &#34;bridge&#34; network: package not installed</span>
+        </a>
+        <div class="abstract-content">
+            前言客户现场的数据盘损坏了，修复启动机器后 docker 无法启动
+123456789101112131415[root@db1 docker]# /data/kube/bin/dockerdWARN[0000] The &quot;graph&quot; config file option is deprecated. Please use &quot;data-root&quot; instead. WARN[2021-12-11T21:16:07.917969366+08:00] could not change group /var/run/docker.sock to doc...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/12/12</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/10/29/kubelet-ephemeral-storage-loop-evicted/" >
             
                 <span>1.15 kubelet 在 nodefs 容量富裕下循环 reclaim ephemeral-storage</span>
@@ -662,36 +692,6 @@ buildx 使用见文章 buildx 使用
         <a class="post-tag" href="javascript:void(0);" data-tags = "kubernetes">kubernetes</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "cni-plugins">cni-plugins</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/08/16/reserve-compute-resources/" >
-            
-                <span>kubelet 为系统配置预留资源</span>
-        </a>
-        <div class="abstract-content">
-            前情提要我们环境有部分 pod 特殊，单独节点部署，oom 的时候会搞挂一些系统进程，这几天折腾了下配置了下 kubelet 相关的 reserved。主要是 kubelet 的配置文件一些参数，不写 systemd 里，全部写配置文件里。版本是如下，因为我们不单单是 x86_64 ，由于还有其他的架构以及会部署在客户的现场，为了减少维护，所以我们都是除了 flanneld 和 coredns 以外。k8s 相关的二进制的形式部署的。
-12345678910111213141516171819202122232425$ kubectl version -o json&#123;  &qu...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/08/16</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "kubelet">kubelet</a>
     
 </div>
             
@@ -3123,34 +3123,9 @@ buildx 使用见文章 buildx 使用
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 144
+        Total : 145
         </div>
         <!-- search  -->
         
@@ -3163,6 +3138,11 @@ buildx 使用见文章 buildx 使用
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2022/04/21/ecs-xmrig/" >ecs 中毒的一次处理过程</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -4176,6 +4156,10 @@ buildx 使用见文章 buildx 使用
         <span class="sidebar-tag-name" data-tags="tcp"><span class="iconfont-archer">&#xe606;</span>tcp</span>
     
         <span class="sidebar-tag-name" data-tags="keepalive"><span class="iconfont-archer">&#xe606;</span>keepalive</span>
+    
+        <span class="sidebar-tag-name" data-tags="ecs"><span class="iconfont-archer">&#xe606;</span>ecs</span>
+    
+        <span class="sidebar-tag-name" data-tags="xmrig"><span class="iconfont-archer">&#xe606;</span>xmrig</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

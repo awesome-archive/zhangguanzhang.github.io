@@ -400,6 +400,37 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/03/23/iptables-docker-no-chain/" >
+            
+                <span>iptables --wait -t nat -A DOCKER...: iptables NO chain/target/match by that name</span>
+        </a>
+        <div class="abstract-content">
+            由来我们内部有套部署的工具， 我们部署的流程是先在部署机器（部署机器可能也是node1 ）上用脚本安装好 docker，然后进容器里去起我们部署平台，有个很久的 bug 就是，部署机器上端口映射起容器会有如下报错
+1iptables --wait -t nat -A DOCKER -p tcp -d 0&#x2F;8 --dport 8089 -j DNAT --to-destination 172.25.0.2:80 ! -i docker0: iptables NO chain&#x2F;target&#x2F;match by that name
+排查也很简单，缺少链，添加上即可:...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/03/22/jsonpatch-doc-is-missing-path/" >
             
                 <span>Internal error occurred: jsonpatch add operation does not apply: doc is missing path: xxx</span>
@@ -814,39 +845,6 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "Prometheus">Prometheus</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/23/fs-error-fix-k8s-master/" >
-            
-                <span>k8s master机器文件系统故障的一次恢复过程</span>
-        </a>
-        <div class="abstract-content">
-            由来研发反馈他们那边一套集群有台master文件系统损坏无法开机，他们是三台openstack上的虚机，是虚拟化宿主机故障导致的虚机文件系统损坏。三台机器是master+node，指导他修复后开机，修复过程和我之前文章opensuse的一次救援步骤一样
-起来后我上去看，因为做了 HA 的，所以只有这个node有问题，集群没影响
-12345[root@k8s-m1 ~]# kubectl get node -o wideNAME             STATUS     ROLES    AGE   VERSION   INTERNAL-IP      EXTERNAL-IP   OS...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "etcd">etcd</a>
     
 </div>
             
@@ -3433,34 +3431,9 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 144
+        Total : 145
         </div>
         <!-- search  -->
         
@@ -3473,6 +3446,11 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2022/04/21/ecs-xmrig/" >ecs 中毒的一次处理过程</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -4486,6 +4464,10 @@ rate主要代码是在 https://github.com/prometheus/prometheus/blob/master/prom
         <span class="sidebar-tag-name" data-tags="tcp"><span class="iconfont-archer">&#xe606;</span>tcp</span>
     
         <span class="sidebar-tag-name" data-tags="keepalive"><span class="iconfont-archer">&#xe606;</span>keepalive</span>
+    
+        <span class="sidebar-tag-name" data-tags="ecs"><span class="iconfont-archer">&#xe606;</span>ecs</span>
+    
+        <span class="sidebar-tag-name" data-tags="xmrig"><span class="iconfont-archer">&#xe606;</span>xmrig</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

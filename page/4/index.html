@@ -400,6 +400,39 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/07/23/fs-error-fix-k8s-master/" >
+            
+                <span>k8s master机器文件系统故障的一次恢复过程</span>
+        </a>
+        <div class="abstract-content">
+            由来研发反馈他们那边一套集群有台master文件系统损坏无法开机，他们是三台openstack上的虚机，是虚拟化宿主机故障导致的虚机文件系统损坏。三台机器是master+node，指导他修复后开机，修复过程和我之前文章opensuse的一次救援步骤一样
+起来后我上去看，因为做了 HA 的，所以只有这个node有问题，集群没影响
+12345[root@k8s-m1 ~]# kubectl get node -o wideNAME             STATUS     ROLES    AGE   VERSION   INTERNAL-IP      EXTERNAL-IP   OS...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "etcd">etcd</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/07/05/linux-auditd/" >
             
                 <span>Linux audit 审计</span>
@@ -841,38 +874,6 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/15</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/08/docker-panic-invalid-page-type/" >
-            
-                <span>docker-18.06.3-ce启动panic: invalid page type: 0: 0的解决处理</span>
-        </a>
-        <div class="abstract-content">
-            凌晨 pod 状态异常且没有恢复，上线查看后 docker ps -a 命令无响应，kubelet 日志也刷和 docker 的 rpc 通信context deadline cancel重启了 docker 后 docker 无法启动，前台运行开 debug log level刚开始刷了个 /var/lib/docker/tmp 是个文件，对比了下其他机器上这个路径应该是个目录，然后改名后创建个权限和正常 docker 下权限一样的 tmp 文件夹再起
-1234567891011121314151617181920212223242526272829303132333435363738...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
-    
-</div>
             
         </div>
     </article>
@@ -3457,34 +3458,9 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 144
+        Total : 145
         </div>
         <!-- search  -->
         
@@ -3497,6 +3473,11 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2022/04/21/ecs-xmrig/" >ecs 中毒的一次处理过程</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -4510,6 +4491,10 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
         <span class="sidebar-tag-name" data-tags="tcp"><span class="iconfont-archer">&#xe606;</span>tcp</span>
     
         <span class="sidebar-tag-name" data-tags="keepalive"><span class="iconfont-archer">&#xe606;</span>keepalive</span>
+    
+        <span class="sidebar-tag-name" data-tags="ecs"><span class="iconfont-archer">&#xe606;</span>ecs</span>
+    
+        <span class="sidebar-tag-name" data-tags="xmrig"><span class="iconfont-archer">&#xe606;</span>xmrig</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

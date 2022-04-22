@@ -400,6 +400,42 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/09/02/fio/" >
+            
+                <span>fio 静态编译和基础使用</span>
+        </a>
+        <div class="abstract-content">
+            由来amd64,arm64 的静态编译和基础使用
+buildx 使用见文章 buildx 使用
+编译buildx Dockerfile 构建:
+123456789101112131415161718FROM ubuntu as buildWORKDIR /optARG VER=fio-3.29#ARG DEBIAN_FRONTEND=noninteractiveRUN if [  -e /etc/apt/sources.list ];then sed -ri &#x27;s/[a-zA-Z0-9.]+(debian.org|ubuntu.com)/mirrors.aliyun.com/g...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/02</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "linux">linux</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "fio">fio</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/09/01/ubuntu18-and-cfq/" >
             
                 <span>ubuntu18下io调度算法是cfq导致mysql非常慢</span>
@@ -833,37 +869,6 @@ CentOS Linux release 7.8.2003 (Core) - 3.1...
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "k8s">k8s</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/23/iptables-docker-no-chain/" >
-            
-                <span>iptables --wait -t nat -A DOCKER...: iptables NO chain/target/match by that name</span>
-        </a>
-        <div class="abstract-content">
-            由来我们内部有套部署的工具， 我们部署的流程是先在部署机器（部署机器可能也是node1 ）上用脚本安装好 docker，然后进容器里去起我们部署平台，有个很久的 bug 就是，部署机器上端口映射起容器会有如下报错
-1iptables --wait -t nat -A DOCKER -p tcp -d 0&#x2F;8 --dport 8089 -j DNAT --to-destination 172.25.0.2:80 ! -i docker0: iptables NO chain&#x2F;target&#x2F;match by that name
-排查也很简单，缺少链，添加上即可:...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/23</span>
             </div>
             <!-- tags  -->
             
@@ -3456,34 +3461,9 @@ CentOS Linux release 7.8.2003 (Core) - 3.1...
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 144
+        Total : 145
         </div>
         <!-- search  -->
         
@@ -3496,6 +3476,11 @@ CentOS Linux release 7.8.2003 (Core) - 3.1...
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2022/04/21/ecs-xmrig/" >ecs 中毒的一次处理过程</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -4509,6 +4494,10 @@ CentOS Linux release 7.8.2003 (Core) - 3.1...
         <span class="sidebar-tag-name" data-tags="tcp"><span class="iconfont-archer">&#xe606;</span>tcp</span>
     
         <span class="sidebar-tag-name" data-tags="keepalive"><span class="iconfont-archer">&#xe606;</span>keepalive</span>
+    
+        <span class="sidebar-tag-name" data-tags="ecs"><span class="iconfont-archer">&#xe606;</span>ecs</span>
+    
+        <span class="sidebar-tag-name" data-tags="xmrig"><span class="iconfont-archer">&#xe606;</span>xmrig</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
