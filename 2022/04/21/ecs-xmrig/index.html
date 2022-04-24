@@ -455,7 +455,7 @@ height:50vh;
 
 <h2 id="由来"><a href="#由来" class="headerlink" title="由来"></a>由来</h2><p>客户机器中毒了，pm 找我来让处理下，记录下，给其他人做个处理过程的参考。</p>
 <h2 id="处理过程"><a href="#处理过程" class="headerlink" title="处理过程"></a>处理过程</h2><p>机器是 centos ，先利用 <code>rpm -V &lt;pkg_name&gt;</code> 确认基础的排查命令没被修改过：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ rpm -qf `<span class="built_in">which</span> ps`</span><br><span class="line">procps-ng-3.3.10-23.el7.x86_64</span><br><span class="line">$ rpm -V procps-ng </span><br><span class="line">$ rpm -qf `<span class="built_in">which</span> top`</span><br><span class="line">procps-ng-3.3.10-23.el7.x86_64</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ rpm -qf `<span class="built_in">which</span> ps`</span><br><span class="line">procps-ng-3.3.10-23.el7.x86_64</span><br><span class="line">$ rpm -V procps-ng </span><br><span class="line">$ rpm -qf `<span class="built_in">which</span> top`</span><br><span class="line">procps-ng-3.3.10-23.el7.x86_64</span><br><span class="line"><span class="comment"># 看sshd 的 so被修改了没，配置文件也可以看下</span></span><br><span class="line">$ rpm -v `<span class="built_in">which</span> sshd`</span><br><span class="line">S.5....T.  c /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
 
 <p>top 看到异常 cpu 的进程占用 cpu 很高：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ top</span><br><span class="line">top - 19:44:29 up 34 days,  5:08,  4 users,  load average: 612.03, 617.15, 482.75</span><br><span class="line">Tasks: 2014 total,  66 running, 1946 sleeping,   0 stopped,   2 zombie</span><br><span class="line">%Cpu(s): 96.6 us,  3.1 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.0 hi,  0.3 si,  0.0 st</span><br><span class="line">KiB Mem : 13186040+total,  2722452 free, 48820448 used, 80317504 buff/cache</span><br><span class="line">KiB Swap:        0 total,        0 free,        0 used. 78946784 avail Mem </span><br><span class="line"></span><br><span class="line">  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND                                                                                                                                                                </span><br><span class="line"> 1206 root      20   0 5251748   2.3g   3584 S  2956  1.8 465:37.77 ld-linux-x86-64</span><br></pre></td></tr></table></figure>
@@ -3011,9 +3011,26 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 146
+        Total : 147
         </div>
         <!-- search  -->
         
@@ -3026,6 +3043,11 @@ top:50vh;
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/23</span><a class="archive-post-title" href= "/2022/04/23/nfc/" >nfc 折腾笔记，ACR122U/proxmark3</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -4055,6 +4077,10 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="xmrig"><span class="iconfont-archer">&#xe606;</span>xmrig</span>
     
         <span class="sidebar-tag-name" data-tags="segfault"><span class="iconfont-archer">&#xe606;</span>segfault</span>
+    
+        <span class="sidebar-tag-name" data-tags="nfc"><span class="iconfont-archer">&#xe606;</span>nfc</span>
+    
+        <span class="sidebar-tag-name" data-tags="pm3"><span class="iconfont-archer">&#xe606;</span>pm3</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
