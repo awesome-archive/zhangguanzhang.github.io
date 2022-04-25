@@ -321,7 +321,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">3k</span>阅读时长: <span class="post-count reading-time">14 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">3.1k</span>阅读时长: <span class="post-count reading-time">14 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -528,9 +528,10 @@ height:50vh;
 
 <p>运气好能分析到 <code>PWD-AUTH KEY</code> ，然后破解，参考 <a target="_blank" rel="noopener" href="https://raycn.pub/2021/08/21/reset-xiaomi-air-purifier-filters/">【PM3】重置小米空气净化器滤芯</a>。运气不好就无法嗅探。</p>
 <h3 id="破解的一些说明"><a href="#破解的一些说明" class="headerlink" title="破解的一些说明"></a>破解的一些说明</h3><ol>
-<li>把卡片解密后 dump 出来，dump 的数据是没加密的，再写入白卡，手机再读取白卡模拟</li>
+<li>把卡片解密后 dump 出来，dump 的数据是没加密的，再写入白卡，手机或者手环再读取白卡模拟</li>
 <li>设备可以读取 dump 数据写入手机的 nfc 卡片里，但是最好不要这样做，很多手机的 nfc 是单独一块电路，不跟随刷机恢复出厂设置的，读写可能会损坏 nfc 相关硬件只有换主板了。</li>
 <li>有些门禁设备是还校验厂商码的，这种就放弃吧，手机模拟白卡不会让写厂商码的，涉及到法律问题。</li>
+<li>有些公司的 oa 软件支持添加电子工牌，实际添加行为是 oa 软件里点了添加后会给手机的钱包-nfc 添加一张模拟卡片，这个卡片是 cpu 模拟卡，SAK 显示 20，说明门禁联网的。</li>
 </ol>
 <h3 id="其他补充"><a href="#其他补充" class="headerlink" title="其他补充"></a>其他补充</h3><ol>
 <li>windows 我有安装串口驱动，但是下的 client 和 GUI 都无法通过 COM 口连上 pm3 ，进安全模式安装 <a target="_blank" rel="noopener" href="https://github.com/RfidResearchGroup/proxmark3/tree/master/driver">官方的驱动</a> 也不行。尝试过串口软件打开 com 口，看源码是 <code>baud=115200 parity=N data=8 stop=1</code>，但是还是不行</li>
