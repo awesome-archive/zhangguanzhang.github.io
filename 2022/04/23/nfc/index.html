@@ -493,7 +493,7 @@ height:50vh;
 <p>开始编译的依赖：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if [ -f /etc/apt/sources.list ];then sed -ri &#x27;s/(deb|security|archive|ports).(debian.org|ubuntu.com)/mirrors.aliyun.com/g&#x27; /etc/apt/sources.list; fi &amp;&amp; \</span><br><span class="line">    apt-get update &amp;&amp; \</span><br><span class="line">    DEBIAN_FRONTEND=noninteractive apt install gcc g++ make autoconf pkg-config cmake git libbz2-dev libreadline-dev gcc-arm-none-eabi libssl-dev usbutils -y</span><br></pre></td></tr></table></figure>
 
-<p>编译之前看下 <code>Makefile.platform.sample</code> ，代码里默认是 <code>pm3 rdv4</code> 版本，就是 1k 多元带蓝牙的版本，我们一般是 pm3 GENERIC，所以编译命令为：</p>
+<p>编译之前看下 <code>Makefile.platform.sample</code> ，代码里默认是 <code>pm3 rdv4</code> 版本，就是 1k 多元带蓝牙的版本，我们一般是 pm3 GENERIC（右侧一个按钮，中间一个 usb 口，线圈内就 LF Antenna/Rreq: 125kHZ的版本），所以编译命令为：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">make all PLATFORM=PM3GENERIC</span><br><span class="line"># 单独编译客户端的话</span><br><span class="line"># make client</span><br></pre></td></tr></table></figure>
 
 <p>我的 openwrt 能用是因为有很多模块，例如下面的：</p>
@@ -532,9 +532,11 @@ height:50vh;
 <li>设备可以读取 dump 数据写入手机的 nfc 卡片里，但是最好不要这样做，很多手机的 nfc 是单独一块电路，不跟随刷机恢复出厂设置的，读写可能会损坏 nfc 相关硬件只有换主板了。</li>
 <li>有些门禁设备是还校验厂商码的，这种就放弃吧，手机模拟白卡不会让写厂商码的，涉及到法律问题。</li>
 </ol>
-<h3 id="其他补充"><a href="#其他补充" class="headerlink" title="其他补充"></a>其他补充</h3><p>windows 我有安装串口驱动，但是下的 client 和 GUI 都无法通过 COM 口连上 pm3 ，进安全模式安装 <a target="_blank" rel="noopener" href="https://github.com/RfidResearchGroup/proxmark3/tree/master/driver">官方的驱动</a> 也不行。</p>
-<p>安卓客户端 <a target="_blank" rel="noopener" href="https://github.com/AndProx/AndProx">AndProx/AndProx</a> 因为我手机内核编译没开 <code>USB_ACM</code> 导致无法使用，<a target="_blank" rel="noopener" href="https://github.com/RfidResearchGroup/proxmark3/blob/master/doc/termux_notes.md">termux</a> 同样。</p>
-<p>多看看 <a target="_blank" rel="noopener" href="https://github.com/RfidResearchGroup/proxmark3/blob/master/README.md">官方的 README.md</a></p>
+<h3 id="其他补充"><a href="#其他补充" class="headerlink" title="其他补充"></a>其他补充</h3><ol>
+<li>windows 我有安装串口驱动，但是下的 client 和 GUI 都无法通过 COM 口连上 pm3 ，进安全模式安装 <a target="_blank" rel="noopener" href="https://github.com/RfidResearchGroup/proxmark3/tree/master/driver">官方的驱动</a> 也不行。尝试过串口软件打开 com 口，看源码是 <code>baud=115200 parity=N data=8 stop=1</code>，但是还是不行</li>
+<li>安卓客户端 <a target="_blank" rel="noopener" href="https://github.com/AndProx/AndProx">AndProx/AndProx</a> 因为我手机内核编译没开 <code>USB_ACM</code> 导致无法使用，<a target="_blank" rel="noopener" href="https://github.com/RfidResearchGroup/proxmark3/blob/master/doc/termux_notes.md">termux</a> 同样。</li>
+<li>多看看 <a target="_blank" rel="noopener" href="https://github.com/RfidResearchGroup/proxmark3/blob/master/README.md">官方的 README.md</a></li>
+</ol>
 <p>也有离线嗅探固件，我就不折腾了。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://raycn.pub/2021/08/21/reset-xiaomi-air-purifier-filters/">【PM3】重置小米空气净化器滤芯</a></li>
