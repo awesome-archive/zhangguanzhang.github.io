@@ -459,9 +459,93 @@ height:50vh;
 <li>ID 卡一般低频，不可写入数据，只读卡号，还有 HID 卡（一些大厂工牌），卡表明有编号，里面一般是圆形线圈。</li>
 <li>IC 卡高频，大部分可以擦写，银行，交通，门禁，饭卡，工牌之类都用使用。RFID、NFC 属于 IC 卡，线圈一般是矩形。IC 卡我们破解啥的一般是下面几种类型相关:</li>
 </ol>
-<p>|  类型   |  说明|频率|擦写情况|<br>|———–|———–|———|———|———–|<br>| M1 |   NXP Mifare系列卡, 工作在高频（13.56Mhz），全称Mifare S50，是最常见的卡，出厂固化UID  |  13.56Mhz  | UID 部分不可擦写     |<br>| M0 |   相当于M1卡的精简版，容量更小、功能更少，但价格更低  |  13.56Mhz  | UID 部分不可擦写     |<br>| UID | 全称Mifare UID Chinese magic card，国外叫做中国魔术卡，M1卡的变异版本，使用后门指令(magic指令)，可修改UID（UID在block0分区），可以用来完整克隆M1卡的数据；但是现在新的读卡系统通过检测卡片对后门指令的回应，可以检测出UID卡，因此可以来拒绝UID卡的访问，来达到屏蔽复制卡的功能（即UID防火墙系统）；  |  13.56Mhz  | UID 部分可擦写     |<br>| CUID | 为了避开UID防火墙系统，CUID卡应运而生，取消响应后门指令(magic指令)，可修改UID，是目前市场上最常用的复制卡；但是现在貌似也有 CUID 卡的防火墙  |  13.56Mhz  | UID 部分可擦写     |<br>| FUID | FUID卡只能写一次UID，写完之后自动固化UID所在分区，就等同M1卡，目前任何防火墙系统都无法屏蔽，复制的卡几乎和原卡一模一样；  |  13.56Mhz  | 可擦写一次     |<br>| UFUID |集UID卡和FUID卡的优点于一身，使用后门指令，可修改UID，再手动锁卡，变成M1卡。可先反复读写UID，确认数据无误，手动锁卡变成M1，解决了UID卡的UID防火墙屏蔽，也解决FUID的一次性写入容易写错的问题，且价格比FUID卡还便宜；  |  13.56Mhz  | 可擦写一次     |</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+<th>频率</th>
+<th>擦写情况</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>M1</td>
+<td>NXP Mifare系列卡, 工作在高频（13.56Mhz），全称Mifare S50，是最常见的卡，出厂固化UID</td>
+<td>13.56Mhz</td>
+<td>UID 部分不可擦写</td>
+</tr>
+<tr>
+<td>M0</td>
+<td>相当于M1卡的精简版，容量更小、功能更少，但价格更低</td>
+<td>13.56Mhz</td>
+<td>UID 部分不可擦写</td>
+</tr>
+<tr>
+<td>UID</td>
+<td>全称Mifare UID Chinese magic card，国外叫做中国魔术卡，M1卡的变异版本，使用后门指令(magic指令)，可修改UID（UID在block0分区），可以用来完整克隆M1卡的数据；但是现在新的读卡系统通过检测卡片对后门指令的回应，可以检测出UID卡，因此可以来拒绝UID卡的访问，来达到屏蔽复制卡的功能（即UID防火墙系统）；</td>
+<td>13.56Mhz</td>
+<td>UID 部分可擦写</td>
+</tr>
+<tr>
+<td>CUID</td>
+<td>为了避开UID防火墙系统，CUID卡应运而生，取消响应后门指令(magic指令)，可修改UID，是目前市场上最常用的复制卡；但是现在貌似也有 CUID 卡的防火墙</td>
+<td>13.56Mhz</td>
+<td>UID 部分可擦写</td>
+</tr>
+<tr>
+<td>FUID</td>
+<td>FUID卡只能写一次UID，写完之后自动固化UID所在分区，就等同M1卡，目前任何防火墙系统都无法屏蔽，复制的卡几乎和原卡一模一样；</td>
+<td>13.56Mhz</td>
+<td>可擦写一次</td>
+</tr>
+<tr>
+<td>UFUID</td>
+<td>集UID卡和FUID卡的优点于一身，使用后门指令，可修改UID，再手动锁卡，变成M1卡。可先反复读写UID，确认数据无误，手动锁卡变成M1，解决了UID卡的UID防火墙屏蔽，也解决FUID的一次性写入容易写错的问题，且价格比FUID卡还便宜；</td>
+<td>13.56Mhz</td>
+<td>可擦写一次</td>
+</tr>
+</tbody></table>
 <p>判断是 M0卡(Mifare UltraLight)，还是 M1卡(Mifare Classic 1k)，可以通过 SAK 值判断。</p>
-<p>|  产品   |  ATQA | SAK | UID长度 |<br>|———–|———–|———|———|———–|<br>| Mifare Mini       |   00 04  |  09 | 4 bytes<br>| Mifare Classic 1k |   00 04  |  08 | 4 bytes<br>| Mifare Classic 4k |   00 02  |  18 | 4 bytes<br>| Mifare Ultraligh  |   00 44  |  00 | 4 bytes写     |<br>| Mifare Plus       |   00 44  |  20 | 4 bytes</p>
+<table>
+<thead>
+<tr>
+<th>产品</th>
+<th>ATQA</th>
+<th>SAK</th>
+<th>UID长度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Mifare Mini</td>
+<td>00 04</td>
+<td>09</td>
+<td>4 bytes</td>
+</tr>
+<tr>
+<td>Mifare Classic 1k</td>
+<td>00 04</td>
+<td>08</td>
+<td>4 bytes</td>
+</tr>
+<tr>
+<td>Mifare Classic 4k</td>
+<td>00 02</td>
+<td>18</td>
+<td>4 bytes</td>
+</tr>
+<tr>
+<td>Mifare Ultraligh</td>
+<td>00 44</td>
+<td>00</td>
+<td>4 bytes写</td>
+</tr>
+<tr>
+<td>Mifare Plus</td>
+<td>00 44</td>
+<td>20</td>
+<td>4 bytes</td>
+</tr>
+</tbody></table>
 <p>SAK 为 20 的是 CPU 模拟卡，基本无解，还有种 SAK 是 28的，是带 M1 数据的 cpu 模拟卡，只能读取 M1 的数据部分，不一定能模拟成功。</p>
 <h3 id="卡片数据存储介绍"><a href="#卡片数据存储介绍" class="headerlink" title="卡片数据存储介绍"></a>卡片数据存储介绍</h3><p>M1(Mifare classic 1K) 卡片，即存储容量 1K = 1024Byte，有 16 个扇区，每个扇区有 4 个块，每个块 16 个字节：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">0 扇区</span><br><span class="line">0区块:00000000000000000000000000000000</span><br><span class="line">1区块:00000000000000000000000000000000</span><br><span class="line">2区块:00000000000000000000000000000000</span><br><span class="line">3区块:FFFFFFFFFFFFFF078069FFFFFFFFFFFF</span><br><span class="line"></span><br><span class="line">1 扇区</span><br><span class="line">0区块:00000000000000000000000000000000</span><br><span class="line">1区块:00000000000000000000000000000000</span><br><span class="line">2区块:00000000000000000000000000000000</span><br><span class="line">3区块:FFFFFFFFFFFFFF078069FFFFFFFFFFFF</span><br></pre></td></tr></table></figure>
