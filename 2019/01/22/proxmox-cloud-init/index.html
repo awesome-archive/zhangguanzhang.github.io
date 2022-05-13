@@ -565,13 +565,13 @@
 <p>8006 是进程 pveproxy bind 的，查该包文件为</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ dpkg -S pveproxy</span><br><span class="line">pve-docs: /usr/share/pve-docs/pveproxy.8.html</span><br><span class="line">pve-manager: /lib/systemd/system/pveproxy.service</span><br><span class="line">pve-manager: /var/log/pveproxy</span><br><span class="line">pve-manager: /usr/share/man/man8/pveproxy.8.gz</span><br><span class="line">pve-manager: /usr/share/bash-completion/completions/pveproxy</span><br><span class="line">pve-manager: /usr/bin/pveproxy</span><br><span class="line">pve-manager: /usr/share/perl5/PVE/Service/pveproxy.pm</span><br><span class="line">pve-manager: /usr/share/zsh/vendor-completions/_pveproxy</span><br></pre></td></tr></table></figure>
 
-<p>可以看到8006是写死在perl库文件里的</p>
+<p>可以看到 8006 是写死在 perl 库文件里的</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ grep 8006 /usr/share/perl5/PVE/Service/pveproxy.pm</span><br><span class="line">    my $socket = $self-&gt;create_reusable_socket(8006, undef, $family);</span><br></pre></td></tr></table></figure>
 
 <p>备份更改</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cp /usr/share/perl5/PVE/Service/pveproxy.pm&#123;,.bak&#125;</span><br><span class="line">sed -ri &#x27;s#8006#6443#&#x27; /usr/share/perl5/PVE/Service/pveproxy.pm</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 删掉登录的banner端口信息</span><br><span class="line">sed -ri &#x27;s#:8006#:6443#&#x27; /usr/bin/pvebanner</span><br><span class="line"></span><br><span class="line"># 重启相关服务</span><br><span class="line">systemctl restart pvebanner pveproxy</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cp /usr/share/perl5/PVE/Service/pveproxy.pm&#123;,.bak&#125;</span><br><span class="line">sed -ri &#x27;s#8006#6443#&#x27; /usr/share/perl5/PVE/Service/pveproxy.pm</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 删掉登录的 banner 端口信息</span><br><span class="line">sed -ri &#x27;s#:8006#:6443#&#x27; /usr/bin/pvebanner</span><br><span class="line"></span><br><span class="line"># 重启相关服务</span><br><span class="line">systemctl restart pvebanner pveproxy</span><br></pre></td></tr></table></figure>
 
-<p>摸索了下 perl，发现这个 web 完全是 pve 官方自己 perl5 写的库启动的 web，无法bind 1024以下的端口，setcap 和 systemctl 文件里都加过NET相关权限还是不行。看了下脚本前台 debug 可以用</p>
+<p>摸索了下 perl，发现这个 web 完全是 pve 官方自己 perl5 写的库启动的 web，无法 bind 1024 以下的端口，setcap 和 systemctl 文件里都加过 NET 相关权限还是不行。看了下脚本前台 debug 可以用</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pveproxy start --debug</span><br></pre></td></tr></table></figure>
 
 <p>暂时不知道如何解决，目前版本是<code>6.1.3</code>，搜到个改端口的正确姿势但是是以前的老版本，perl 脚本有定义，但是现阶段看了perl脚本完全变了行不通</p>
@@ -1525,43 +1525,12 @@
         
         
         
+        
+        
+        
+        
+        
     
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         
         
@@ -3210,7 +3179,7 @@
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 148
+        Total : 149
         </div>
         <!-- search  -->
         
@@ -3451,6 +3420,12 @@
         <li class="archive-post-item">
             <span class="archive-post-date">02/02</span>
             <a class="archive-post-title" href="/2021/02/02/node-shutdown-dns-unavailable/">集群节点关机导致dns在eviction pod之前几率不可用</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/24</span>
+            <a class="archive-post-title" href="/2021/01/24/e2fsprogs/">e2fsck 太老报错 has unsupported feature(s): metadata_csum，从而尝试静态编译</a>
         </li>
     
         
@@ -4789,6 +4764,16 @@
             <span class="sidebar-tag-name" data-tags="chrony">
                 <span class="iconfont-archer">&#xe606;</span>
                 chrony
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="e2fsck">
+                <span class="iconfont-archer">&#xe606;</span>
+                e2fsck
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="fsck">
+                <span class="iconfont-archer">&#xe606;</span>
+                fsck
             </span>
         
     </div>
