@@ -457,6 +457,46 @@
         
         
             
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/05/13/overlayfs-unix-socket/">
+                
+                <span class="abstract-title-text">低版本内核下容器内部无法使用 unix socket 通信</span>
+            </a>
+            <div class="abstract-content">
+                由来最近几次遇到的机器上所有容器内，都无法使用 unix:&#x2F;&#x2F; 去通信的的一个问题。
+遇到的几个错误现象最开始是我们部署容器内无法使用 ansible 链接，后面是机器上所有容器内的 supervisorctl 无法通过 unix sock 连接 supervisord 
+ansible报错如下：
+1failt: [10.x.x.x]: UNREACHABLE! =&gt; &#123;&quot;changed&quot;: false, &quot;msg&quot;: &quot;Data could not be sent to remote host \&q...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/05/13">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/13</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="overlay">overlay</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="kernal">kernal</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
             
         
         <article class="index-post">
@@ -998,46 +1038,6 @@ parted
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="kubelet">kubelet</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/09/28/ipvs-svc/">
-                
-                <span class="abstract-title-text">在非容器环境上实现散装的 IPVS SVC</span>
-            </a>
-            <div class="abstract-content">
-                前言内部有非 K8S 环境上需要类似 SVC 的负载实现，一开始是用 NGINX 做的，所有 SVC 域名都解析成一个 dummy IP ，然后 NGINX 根据 server_name 去 proxy 不同的 upstream 。 开始还是能用的，结果后面很多服务依赖 host 这个 header ，报错签名错误，而且毕竟这样是在用户态，效率不如内核态高。于是打算搞下之前的打算：把 IPVS 的 ClusterIP 的 SVC 扣到非 K8S 环境上使用。
-kube-proxy 的 SVC 简单讲就是 node 上任何进程访问 SVC IP:SVC PORT 会被 dnat 成 end...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2021/09/28">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/28</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="lvs">lvs</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ipvsadm">ipvsadm</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="kube-proxy">kube-proxy</a>
     
 </div>
 
@@ -2073,7 +2073,24 @@ kube-proxy 的 SVC 简单讲就是 node 上任何进程访问 SVC IP:SVC PORT �
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -3722,7 +3739,7 @@ kube-proxy 的 SVC 简单讲就是 node 上任何进程访问 SVC IP:SVC PORT �
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 149
+        Total : 150
         </div>
         <!-- search  -->
         
@@ -3740,6 +3757,12 @@ kube-proxy 的 SVC 简单讲就是 node 上任何进程访问 SVC IP:SVC PORT �
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/13</span>
+            <a class="archive-post-title" href="/2022/05/13/overlayfs-unix-socket/">低版本内核下容器内部无法使用 unix socket 通信</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/23</span>
@@ -5317,6 +5340,16 @@ kube-proxy 的 SVC 简单讲就是 node 上任何进程访问 SVC IP:SVC PORT �
             <span class="sidebar-tag-name" data-tags="fsck">
                 <span class="iconfont-archer">&#xe606;</span>
                 fsck
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="overlay">
+                <span class="iconfont-archer">&#xe606;</span>
+                overlay
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="kernal">
+                <span class="iconfont-archer">&#xe606;</span>
+                kernal
             </span>
         
     </div>

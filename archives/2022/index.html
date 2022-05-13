@@ -442,6 +442,46 @@
         
         
             
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/05/13/overlayfs-unix-socket/">
+                
+                <span class="abstract-title-text">低版本内核下容器内部无法使用 unix socket 通信</span>
+            </a>
+            <div class="abstract-content">
+                由来最近几次遇到的机器上所有容器内，都无法使用 unix:&#x2F;&#x2F; 去通信的的一个问题。
+遇到的几个错误现象最开始是我们部署容器内无法使用 ansible 链接，后面是机器上所有容器内的 supervisorctl 无法通过 unix sock 连接 supervisord 
+ansible报错如下：
+1failt: [10.x.x.x]: UNREACHABLE! =&gt; &#123;&quot;changed&quot;: false, &quot;msg&quot;: &quot;Data could not be sent to remote host \&q...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/05/13">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/13</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="overlay">overlay</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="kernal">kernal</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
             
         
         <article class="index-post">
@@ -776,50 +816,6 @@ buildx 使用见文章 ...
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/01/26/nginx-static-build/">
-                
-                <span class="abstract-title-text">利用 docker buildx 静态编译 nginx</span>
-            </a>
-            <div class="abstract-content">
-                由来内部有需求需要静态编译 nginx，尝试了下，搞出来了。先是按照官方 nginx Dockerfile 的逻辑走不通，后面下载 nginx 官方源码编译才行。
-buildx 使用见文章 buildx 使用
-nginx Dockerfile先说下官方的失败尝试。先 clone 项目：
-12git clone https://github.com/nginxinc/docker-nginx.gitcd docker-nginx
-
-分为 stable 和 mainline。大概研究了下，发现 case &quot;$apkArch&quot; in x86_64|aarch64) 的情况是...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/01/26">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/01/26</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nginx">nginx</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
     
@@ -1690,7 +1686,24 @@ nginx Dockerfile先说下官方的失败尝试。先 clone 项目：
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -3339,7 +3352,7 @@ nginx Dockerfile先说下官方的失败尝试。先 clone 项目：
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 149
+        Total : 150
         </div>
         <!-- search  -->
         
@@ -3357,6 +3370,12 @@ nginx Dockerfile先说下官方的失败尝试。先 clone 项目：
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/13</span>
+            <a class="archive-post-title" href="/2022/05/13/overlayfs-unix-socket/">低版本内核下容器内部无法使用 unix socket 通信</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/23</span>
@@ -4934,6 +4953,16 @@ nginx Dockerfile先说下官方的失败尝试。先 clone 项目：
             <span class="sidebar-tag-name" data-tags="fsck">
                 <span class="iconfont-archer">&#xe606;</span>
                 fsck
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="overlay">
+                <span class="iconfont-archer">&#xe606;</span>
+                overlay
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="kernal">
+                <span class="iconfont-archer">&#xe606;</span>
+                kernal
             </span>
         
     </div>
