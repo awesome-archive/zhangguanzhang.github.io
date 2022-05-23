@@ -719,6 +719,45 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2020/05/12/openwrt-dns-formerr/">
+                
+                <span class="abstract-title-text">adguardhome dns FORMERR 错误</span>
+            </a>
+            <div class="abstract-content">
+                由来这几天 openwrt 上发现某个 zone 上游时不时地址无法解析，dnsmasq -&gt; adguardhome 的 /xxx.com/10.x.x.x。
+排查先用 dig 排查，发现是上游的问题，加上 noedns 就能解析了
+12345678910111213141516171819202122232425262728293031323334353637383940root@OpenWrt:~# dig @10.x.x.x  xxx.xxxxx.net ; &lt;&lt;&gt;&gt; DiG 9.17.13 &lt;&lt;&gt;&gt; @10.x.x.x xx...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2020/05/12">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/12</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="adguardhome">adguardhome</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="dns">dns</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2020/05/12/N1-flash/">
                 
                 <span class="abstract-title-text">斐讯N1刷机和旁路由的设置</span>
@@ -786,48 +825,10 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/03/26/KubeXXXMismatch/">
-                
-                <span class="abstract-title-text">一次deploy,rs,sts Mismatch 的处理</span>
-            </a>
-            <div class="abstract-content">
-                  这次文章是远程帮群友解决故障后的总结，以时间线描述  群友一开始是apiserver响应慢，使用角度上就是kubectl请求慢，如
-123E0326 07:49:37.586690       1 available_controller.go:416] v1beta1.metrics.k8s.io failed with: failing or missing response  from https:&#x2F;&#x2F;10.99.174.208:443&#x2F;apis&#x2F;metrics.k8s.io&#x2F;v1beta1: Get https:&#x2F;&...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2020/05/04">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/26</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="k8s">k8s</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Mismatch">Mismatch</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/page/5/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/15/">15</a><a class="extend next" rel="next" href="/archives/page/7/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/archives/page/5/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/16/">16</a><a class="extend next" rel="next" href="/archives/page/7/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1689,7 +1690,24 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -3350,7 +3368,7 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 150
+        Total : 151
         </div>
         <!-- search  -->
         
@@ -3726,6 +3744,12 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
         <li class="archive-post-item">
             <span class="archive-post-date">05/13</span>
             <a class="archive-post-title" href="/2020/05/13/x86-router-flash/">proxmox x86软路由笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/12</span>
+            <a class="archive-post-title" href="/2020/05/12/openwrt-dns-formerr/">adguardhome dns FORMERR 错误</a>
         </li>
     
         
@@ -4961,6 +4985,16 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
             <span class="sidebar-tag-name" data-tags="kernal">
                 <span class="iconfont-archer">&#xe606;</span>
                 kernal
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="adguardhome">
+                <span class="iconfont-archer">&#xe606;</span>
+                adguardhome
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="dns">
+                <span class="iconfont-archer">&#xe606;</span>
+                dns
             </span>
         
     </div>

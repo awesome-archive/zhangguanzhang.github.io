@@ -347,7 +347,7 @@
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">1.6k</span>阅读时长: <span class="post-count reading-time">8 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.8k</span>阅读时长: <span class="post-count reading-time">10 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -509,7 +509,7 @@
                 <main class="main post-page">
     <article class="article-entry">
         <h2 id="about"><a href="#about" class="headerlink" title="about"></a>about</h2><p>记录下 openwrt 下 usb 网络的折腾，后续折腾这块内容的话也在这个文章内更新</p>
-<h3 id="N1-上的-usb-网络共享折腾"><a href="#N1-上的-usb-网络共享折腾" class="headerlink" title="N1 上的 usb 网络共享折腾"></a>N1 上的 usb 网络共享折腾</h3><h4 id="固件依赖"><a href="#固件依赖" class="headerlink" title="固件依赖"></a>固件依赖</h4><p>暂时没完全区分 usb 网络共享和 <code>usb-cdc</code> 的关系，所以我编译的时候把很多 <code>usb-net-xxx</code> 都编译进去了</p>
+<h2 id="N1-上的-usb-网络共享折腾"><a href="#N1-上的-usb-网络共享折腾" class="headerlink" title="N1 上的 usb 网络共享折腾"></a>N1 上的 usb 网络共享折腾</h2><h3 id="固件依赖"><a href="#固件依赖" class="headerlink" title="固件依赖"></a>固件依赖</h3><p>暂时没完全区分 usb 网络共享和 <code>usb-cdc</code> 的关系，所以我编译的时候把很多 <code>usb-net-xxx</code> 都编译进去了</p>
 <p>听其他大佬说编译的时候主要有下面的包:</p>
 <ul>
 <li>安卓: <code>kmod-usb-net kmod-usb-net-rndis</code></li>
@@ -524,7 +524,7 @@
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CONFIG_PACKAGE_uqmi=y</span><br><span class="line">kmod-usb-acm kmod-usb-net kmod-usb-net-qmi-wwan kmod-usb-ohci kmod-usb-serial kmod-usb-serial-option</span><br></pre></td></tr></table></figure>
 
-<h4 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h4><p>N1 建议开下无线，虽然辣鸡，但是它只有一个网口，方便我们操作。我是我的 <code>redmi k30s</code> usb 网络共享插给 N1，另一个手机连 N1 无线后 ssh 上去敲命令的。</p>
+<h3 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h3><p>N1 建议开下无线，虽然辣鸡，但是它只有一个网口，方便我们操作。我是我的 <code>redmi k30s</code> usb 网络共享插给 N1，另一个手机连 N1 无线后 ssh 上去敲命令的。</p>
 <p>先备份下网络配置文件，防止后面搞崩了。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /etc/config/network /etc/config/network.bak</span><br></pre></td></tr></table></figure>
 
@@ -549,15 +549,18 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">uci set dhcp.@dnsmasq[0].server=&#x27;127.0.0.1#5300&#x27;</span><br><span class="line">uci set dhcp.@dnsmasq[0].noresolv=&#x27;1&#x27;</span><br><span class="line">uci commit dhcp</span><br><span class="line">/etc/init.d/dnsmasq reload</span><br></pre></td></tr></table></figure>
 
 <h3 id="hotplug-脚本"><a href="#hotplug-脚本" class="headerlink" title="hotplug 脚本"></a>hotplug 脚本</h3><p>自行百度或者谷歌了解基础，先获取基础信息：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; /etc/hotplug.d/net/01_usb-rndis.sh &lt;&lt;&#x27;EOF</span><br><span class="line">#!/bin/sh</span><br><span class="line"></span><br><span class="line">[ &quot;$ACTION&quot; = add -a &quot;$DEVTYPE&quot; = usb_device ] || exit 0</span><br><span class="line"></span><br><span class="line">. /lib/functions.sh</span><br><span class="line">. /lib/netifd/netifd-proto.sh</span><br><span class="line">logger -t RNDIS: &quot;$(env)&quot;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> &gt; /etc/hotplug.d/net/01_usb-rndis.sh &lt;&lt;<span class="string">&#x27;EOF</span></span><br><span class="line"><span class="string">#!/bin/sh</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># &quot;$DEVTYPE&quot; = usb_device </span></span><br><span class="line"><span class="string"># [ &quot;$ACTION&quot; = add -a &quot;$DEVTYPE&quot; = usb_device ] || exit 0</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">. /lib/functions.sh</span></span><br><span class="line"><span class="string">. /lib/netifd/netifd-proto.sh</span></span><br><span class="line"><span class="string">logger -t RNDIS: &quot;$(env)&quot;</span></span><br><span class="line"><span class="string">EOF</span></span><br></pre></td></tr></table></figure>
 
 <p>手机插 usb 后，<code>logread</code> 查看日志：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user.notice RNDIS:: DEVNAME=bus/usb/001/003 USER=root ACTION=add SHLVL=1 HOME=/ SEQNUM=2012 BUSNUM=001 MAJOR=189 HOTPLUG_TYPE=usb DEVPATH=/devices/platform/17000000.usb/usb1/1-1 LOGNAME=root DEVICENAME=1-1 TERM=linux SUBSYSTEM=usb PATH=/usr/sbin:/usr/bin:/sbin:/bin MINOR=2 TYPE=0/0/0 DEVNUM=003 PRODUCT=2717/ff88/419 PWD=/ DEVTYPE=usb_device</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">user.notice RNDIS:: DEVNAME=bus/usb/001/003 USER=root ACTION=add SHLVL=1 HOME=/ SEQNUM=2012 BUSNUM=001 MAJOR=189 HOTPLUG_TYPE=usb DEVPATH=/devices/platform/17000000.usb/usb1/1-1 LOGNAME=root DEVICENAME=1-1 TERM=linux SUBSYSTEM=usb PATH=/usr/sbin:/usr/bin:/sbin:/bin MINOR=2 TYPE=0/0/0 DEVNUM=003 PRODUCT=2717/ff88/419 PWD=/ DEVTYPE=usb_device</span><br><span class="line"></span><br><span class="line">user.notice RNDIS:: USER=root ACTION=add SHLVL=1 HOME=/ SEQNUM=2059 IFINDEX=17 HOTPLUG_TYPE=net DEVPATH=/devices/platform/17000000.usb/usb1/1-1/1-1:1.0/net/usb0 LOGNAME=root DEVICENAME=usb0 TERM=linux SUBSYSTEM=net PATH=/usr/sbin:/usr/bin:/sbin:/bin INTERFACE=usb0 PWD=/</span><br></pre></td></tr></table></figure>
 
-<p>脚本：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; /etc/hotplug.d/net/01_usb-rndis.sh &lt;&lt;&#x27;EOF</span><br><span class="line">#!/bin/sh</span><br><span class="line"></span><br><span class="line">[ &quot;$DEVTYPE&quot; = usb_device ] || exit 0</span><br><span class="line"></span><br><span class="line">. /lib/functions.sh</span><br><span class="line">. /lib/netifd/netifd-proto.sh</span><br><span class="line">case &quot;$ACTION&quot; in</span><br><span class="line">	add)</span><br><span class="line">        if [ -L /sys/class/net/usb0 ];then</span><br><span class="line">            ip link set usb0 up</span><br><span class="line">            udhcpc -i usb0</span><br><span class="line">            uci set network.mobile=interface</span><br><span class="line">            uci set network.mobile.proto=&#x27;dhcp&#x27;</span><br><span class="line">            uci set network.mobile.ifname=&#x27;usb0&#x27;</span><br><span class="line">            op_local_ip=$(ip r s | grep -Ev &#x27;docker|usb0&#x27; | awk &#x27;$0~&quot;src&quot;&#123;print $NF&#125;&#x27;)</span><br><span class="line">            uci set network.mobile.dns=&quot;$&#123;op_local_ip&#125;&quot;</span><br><span class="line"></span><br><span class="line">            uci commit network</span><br><span class="line"></span><br><span class="line">            wan_zone_network=$(uci get firewall.@zone[1].network)</span><br><span class="line"></span><br><span class="line">            if ! echo &quot;$wan_zone_network&quot; | grep -q mobile;then</span><br><span class="line">                uci set firewall.@zone[1].network=&quot;&#x27;&quot;&quot;$wan_zone_network&quot; mobile&quot;&#x27;&quot;</span><br><span class="line">                uci commit firewall</span><br><span class="line">            fi</span><br><span class="line">            </span><br><span class="line">        fi</span><br><span class="line">		;;</span><br><span class="line">esac</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+<p>根据此信息编写出我自己的 usb-rndis 的 <code>hotplug</code> 脚本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> &gt; /etc/hotplug.d/net/01_usb-rndis.sh &lt;&lt; <span class="string">&#x27;EOF&#x27;</span></span><br><span class="line"><span class="comment">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># [ &quot;$DEVICENAME&quot; = usb0 ]</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$DEVPATH</span> | grep -Eq <span class="string">&#x27;/net/usb0$&#x27;</span> || <span class="built_in">exit</span> 0</span><br><span class="line"></span><br><span class="line">. /lib/functions.sh</span><br><span class="line">. /lib/netifd/netifd-proto.sh</span><br><span class="line"><span class="keyword">case</span> <span class="string">&quot;<span class="variable">$ACTION</span>&quot;</span> <span class="keyword">in</span></span><br><span class="line">	add)</span><br><span class="line">        <span class="keyword">if</span> [ -L /sys/class/net/usb0 ];<span class="keyword">then</span></span><br><span class="line">            ip <span class="built_in">link</span> <span class="built_in">set</span> usb0 up</span><br><span class="line">            udhcpc -i usb0</span><br><span class="line">            <span class="built_in">sleep</span> 1</span><br><span class="line">            uci <span class="built_in">set</span> network.mobile=interface</span><br><span class="line">            uci <span class="built_in">set</span> network.mobile.proto=<span class="string">&#x27;dhcp&#x27;</span></span><br><span class="line">            uci <span class="built_in">set</span> network.mobile.ifname=<span class="string">&#x27;usb0&#x27;</span></span><br><span class="line">            <span class="comment"># 设置本机 dns 好像会 loop</span></span><br><span class="line">            <span class="comment"># op_local_ip=$(ip r s | grep -Ev &#x27;docker|usb0&#x27; | awk &#x27;$0~&quot;src&quot;&#123;print $NF&#125;&#x27;)</span></span><br><span class="line">            <span class="comment"># uci set network.mobile.dns=&quot;$&#123;op_local_ip&#125;&quot;</span></span><br><span class="line">            uci delete network.mobile.dns</span><br><span class="line"></span><br><span class="line">            uci commit network</span><br><span class="line">            <span class="built_in">sleep</span> 1</span><br><span class="line"></span><br><span class="line">            wan_zone_network=$(uci get firewall.@zone[1].network)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> ! <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$wan_zone_network</span>&quot;</span> | grep -q mobile;<span class="keyword">then</span></span><br><span class="line">                uci <span class="built_in">set</span> firewall.@zone[1].network=<span class="string">&quot;<span class="variable">$wan_zone_network</span> mobile&quot;</span></span><br><span class="line">                uci commit firewall</span><br><span class="line">            <span class="keyword">fi</span></span><br><span class="line">            <span class="keyword">if</span> ! grep -Eq <span class="string">&#x27;^\s*nameserver &#x27;</span> /etc/resolv.conf;<span class="keyword">then</span></span><br><span class="line">                <span class="built_in">echo</span> <span class="string">&#x27;nameserver 127.0.0.1&#x27;</span> &gt;&gt; /etc/resolv.conf</span><br><span class="line">            <span class="keyword">fi</span></span><br><span class="line">        <span class="keyword">fi</span></span><br><span class="line">        ;;</span><br><span class="line"><span class="keyword">esac</span></span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
 
-<h4 id="参考"><a href="#参考" class="headerlink" title="参考:"></a>参考:</h4><ul>
+<p>理论上获取配置和修改配置应该使用 <code>/lib/functions.sh</code> 里提供的函数，但是我没细看，上面脚本我在非 N1 设备测试的。</p>
+<h3 id="命令设置-wifi"><a href="#命令设置-wifi" class="headerlink" title="命令设置 wifi"></a>命令设置 wifi</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># https://openwrt.org/docs/guide-quick-start/basic_wifi</span><br><span class="line"></span><br><span class="line">uci set wireless.default_radio0.ssid=&#x27;CMCC-SFT-5G&#x27;</span><br><span class="line">uci set wireless.default_radio0.encryption=&#x27;psk-mixed&#x27;</span><br><span class="line">uci set wireless.default_radio0.key=&#x27;password&#x27;</span><br><span class="line">uci set wireless.radio0.legacy_rates=&#x27;1&#x27;</span><br><span class="line"></span><br><span class="line">uci set wireless.default_radio1.ssid=&#x27;CMCC-SFT&#x27;</span><br><span class="line">uci set wireless.default_radio1.encryption=&#x27;psk-mixed&#x27;</span><br><span class="line">uci set wireless.default_radio1.key=&#x27;password&#x27;</span><br><span class="line">uci set wireless.radio1.legacy_rates=&#x27;1&#x27;</span><br><span class="line">uci commit wireless</span><br><span class="line">wifi reload</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考:"></a>参考:</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/thread-220887-1-1.html">https://www.right.com.cn/forum/thread-220887-1-1.html</a></li>
 <li><a target="_blank" rel="noopener" href="https://iyzm.net/openwrt/775.html">https://iyzm.net/openwrt/775.html</a></li>
 <li><a target="_blank" rel="noopener" href="https://blog.umoe.vip/2020/12/31/bb3180dd6d20/">https://blog.umoe.vip/2020/12/31/bb3180dd6d20/</a></li>
@@ -751,7 +754,7 @@
                 <div class="toc-catalog">
                     <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
                 </div>
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#about"><span class="toc-number">1.</span> <span class="toc-text">about</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#N1-%E4%B8%8A%E7%9A%84-usb-%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB%E6%8A%98%E8%85%BE"><span class="toc-number">1.1.</span> <span class="toc-text">N1 上的 usb 网络共享折腾</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BA%E4%BB%B6%E4%BE%9D%E8%B5%96"><span class="toc-number">1.1.1.</span> <span class="toc-text">固件依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E6%88%98"><span class="toc-number">1.1.2.</span> <span class="toc-text">实战</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hotplug-%E8%84%9A%E6%9C%AC"><span class="toc-number">1.2.</span> <span class="toc-text">hotplug 脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">1.2.1.</span> <span class="toc-text">参考:</span></a></li></ol></li></ol></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#about"><span class="toc-number">1.</span> <span class="toc-text">about</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#N1-%E4%B8%8A%E7%9A%84-usb-%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB%E6%8A%98%E8%85%BE"><span class="toc-number">2.</span> <span class="toc-text">N1 上的 usb 网络共享折腾</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BA%E4%BB%B6%E4%BE%9D%E8%B5%96"><span class="toc-number">2.1.</span> <span class="toc-text">固件依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E6%88%98"><span class="toc-number">2.2.</span> <span class="toc-text">实战</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hotplug-%E8%84%9A%E6%9C%AC"><span class="toc-number">2.3.</span> <span class="toc-text">hotplug 脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%AE%BE%E7%BD%AE-wifi"><span class="toc-number">2.4.</span> <span class="toc-text">命令设置 wifi</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">3.</span> <span class="toc-text">参考:</span></a></li></ol>
             </div>
         
         <!-- sidebar -->
@@ -1515,7 +1518,24 @@
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -3176,7 +3196,7 @@
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 150
+        Total : 151
         </div>
         <!-- search  -->
         
@@ -3552,6 +3572,12 @@
         <li class="archive-post-item">
             <span class="archive-post-date">05/13</span>
             <a class="archive-post-title" href="/2020/05/13/x86-router-flash/">proxmox x86软路由笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/12</span>
+            <a class="archive-post-title" href="/2020/05/12/openwrt-dns-formerr/">adguardhome dns FORMERR 错误</a>
         </li>
     
         
@@ -4787,6 +4813,16 @@
             <span class="sidebar-tag-name" data-tags="kernal">
                 <span class="iconfont-archer">&#xe606;</span>
                 kernal
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="adguardhome">
+                <span class="iconfont-archer">&#xe606;</span>
+                adguardhome
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="dns">
+                <span class="iconfont-archer">&#xe606;</span>
+                dns
             </span>
         
     </div>

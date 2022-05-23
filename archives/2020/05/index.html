@@ -522,6 +522,45 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2020/05/12/openwrt-dns-formerr/">
+                
+                <span class="abstract-title-text">adguardhome dns FORMERR 错误</span>
+            </a>
+            <div class="abstract-content">
+                由来这几天 openwrt 上发现某个 zone 上游时不时地址无法解析，dnsmasq -&gt; adguardhome 的 /xxx.com/10.x.x.x。
+排查先用 dig 排查，发现是上游的问题，加上 noedns 就能解析了
+12345678910111213141516171819202122232425262728293031323334353637383940root@OpenWrt:~# dig @10.x.x.x  xxx.xxxxx.net ; &lt;&lt;&gt;&gt; DiG 9.17.13 &lt;&lt;&gt;&gt; @10.x.x.x xx...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2020/05/12">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/12</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="adguardhome">adguardhome</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="dns">dns</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2020/05/12/N1-flash/">
                 
                 <span class="abstract-title-text">斐讯N1刷机和旁路由的设置</span>
@@ -1414,7 +1453,24 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -3075,7 +3131,7 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 150
+        Total : 151
         </div>
         <!-- search  -->
         
@@ -3451,6 +3507,12 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
         <li class="archive-post-item">
             <span class="archive-post-date">05/13</span>
             <a class="archive-post-title" href="/2020/05/13/x86-router-flash/">proxmox x86软路由笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/12</span>
+            <a class="archive-post-title" href="/2020/05/12/openwrt-dns-formerr/">adguardhome dns FORMERR 错误</a>
         </li>
     
         
@@ -4686,6 +4748,16 @@ pve已经安装好系统(如果你还没安装且打算安装，安装完后可�
             <span class="sidebar-tag-name" data-tags="kernal">
                 <span class="iconfont-archer">&#xe606;</span>
                 kernal
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="adguardhome">
+                <span class="iconfont-archer">&#xe606;</span>
+                adguardhome
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="dns">
+                <span class="iconfont-archer">&#xe606;</span>
+                dns
             </span>
         
     </div>
